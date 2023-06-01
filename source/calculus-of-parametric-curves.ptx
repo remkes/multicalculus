@@ -3,6 +3,7 @@
   <subsection xml:id="subsection-curve-tangents">
     <title>Tangents</title>
     <p>
+      REWORK THIS SECTION TO TIE TOGETHER TANGENTS AND LENGTHS 
       Parametric curves are vector-valued functions, so they have
       derivatives as defined earlier. Since parametric curves are
       interpreted as  motion through <m>\RR^n</m>, the derivative has
@@ -222,46 +223,323 @@
       </statement>
     </example>
   </subsection>
-  <subsection xml:id="subsection-tangents-non-linear-coords">
-    <title>Tangents in Non-Linear Coordinates</title>
+  <subsection xml:id="subsection-arc-length">
+    <title>Arc Length</title>
+    <figure xml:id="figure-arclength-approximation">
+      <caption>Arclength setup by approximation</caption>
+      <image xml:id="figure08" width="90%"> 
+        <asymptote>
+          size(12cm,7cm,IgnoreAspect);
+          import graph;
+
+          xlimits(-2,6);
+          ylimits(-2,6);
+
+          xaxis("$x$");
+          yaxis("$y$");
+
+          draw((-1,-1)--(1,-1)--(2,0)--(3,2)--(4,4)--(5,4));
+          draw((-1,-1)..(1,-1)..(2,0)..(3,2)..(4,4)..(5,4));
+
+          dot((-1,-1));
+          dot((1,-1));
+          dot((2,0));
+          dot((3,2));
+          dot((4,4));
+          dot((5,4));
+
+          draw((3,2)--(4,2)--(4,4));
+
+          label("$\gamma(t)$", (3.5,3.7),NW);
+          label("$\gamma(a)$", (-1,-1),NW);
+          label("$\gamma(b)$", (5,4),NE);
+          label("$\Delta y$",(4,3),E);
+          label("$\Delta x$",(3.5,2),S);
+        </asymptote>
+      </image>
+    </figure>
     <p>
-      Tangents are a Cartesian notion. If a curve is given in a
-      different coordinate systems, I still want the word
-      <sq>tangent</sq> to mean the Cartesian tangent. Cartesian
-      tangents carry the desired interepretation: the direction of
-      motion. Therefore, to find tangent in other coordinate systems,
-      I relate them back to Cartesian coordinates. In polar
-      coordinates, the coordinate transformations are <m>x = r \cos
-      \theta</m> and <m>y = r \sin \theta</m>. If <m>r</m> and
-      <m>\theta</m> depend on <m>t</m>, then I can differentiation
-      these expressions using the product rule.
-      <md>
-        <mrow>
-          x \amp = r \cos \theta
-        </mrow>
-        <mrow>
-          x^\prime \amp = r^\prime \cos \theta - (r \sin \theta)
-          \theta^\prime
-        </mrow>
-        <mrow>
-          y \amp = r \sin \theta
-        </mrow>
-        <mrow>
-          y^\prime \amp = r^\prime \sin \theta + (r \cos \theta)
-          \theta^\prime
-        </mrow>
-        <mrow>
-          \gamma^\prime(t) \amp = (r^\prime \cos \theta - (r \sin
-          \theta) \theta^\prime, r^\prime \sin \theta + (r \cos
-          \theta) \theta^\prime)
-        </mrow>
-      </md>
-      I am not going to make any substantial use of these polar
-      calculations for tangents, since I will develop the calculus of
-      parametric curves almost exclusively in Cartesian coordinates,
-      but I still wanted to briefly mention the behavior of tangents
-      in other coordinate systems.
+      My goal in this section is to produce a formula describing the
+      length of a parametric curve. I approximate this length by
+      breaking up a curve <m>\gamma</m> into a series of straight
+      lines. In order to visualize the process, I work in
+      <m>\RR^2</m> for the moment, as in <xref
+      ref="figure-arclength-approximation" />. 
     </p>
+    <p>
+      For each straight line segment, the length of the segment is
+      given by using pythagorus on the triange formed by the segment
+      and the changes in each variable. I know <m>\Delta y</m> and
+      <m>\Delta x</m>, then the length of the segment is
+      <m>\sqrt{\Delta x^2 + \Delta y^2}</m>. I approximate the total
+      length of the curve by adding up the lengths of these segments.
+      <me>
+        L \cong \sum \sqrt{\Delta x^2 + \Delta y^2}
+      </me>
+    </p>
+    <p>
+      If I take the limit of this process, breaking the curve into
+      smaller and smaller pieces, I produce a Riemann sum which
+      defines a definite integral. In the limit, the <m>\Delta</m>
+      terms become the infinitesimals <m>dy</m> and <m>dx</m>.
+      <me>
+        L = \int_a^b \sqrt{dx^2 + dy^2}
+      </me>
+    </p>
+    <p>
+      Both <m>x</m> and <m>y</m> depend on <m>t</m>, so I can change
+      this to a integral in <m>t</m>. (This is is poor notation, I
+      admit, confusiong fractions and derivatives. The deeper
+      situation here is a chain rule replacement, but I don't want to
+      belabour the technical details.) 
+      <me>
+        L = \int_a^b \sqrt{ \left( \frac{dx}{dt} \right)^2 + \left(
+        \frac{dy}{dt} \right)^2 } dt
+      </me>
+    </p>
+    <p>
+      The same arguments work in any <m>\RR^n</m>, leading to the
+      general result.
+    </p>
+    <proposition>
+      <statement>
+        <p>
+          Let <m>\gamma(t): [a,b] \rightarrow \RR^n</m> be a
+          parametric curve. I'll explicitly write the components of
+          the curve as <m>\gamma_1(t), \gamma_2(t), \ldots,
+          \gamma_n(t)</m>. Then the length of the parametric curve is
+          calculated by this integral.
+          <me>
+            L = \int_a^b \sqrt{ \left( \frac{d\gamma_1}{dt} \right)^2
+            + \left( \frac{d\gamma_2}{dt} \right)^2 + \ldots + +
+            \left( \frac{d\gamma_n}{dt} \right)^2 } dt
+          </me>
+        </p>
+      </statement>
+    </proposition>
+    <example>
+      <statement>
+        <p>
+          In <m>\RR^3</m>, consider the helix <m>\gamma(t) = (\cos t,
+          \sin t, t)</m>. On the domain <m>t \in [0, 8\pi]</m>, the
+          helix makes four revolutions. I calculate its arclength.
+          <me>
+            L = \int_0^{8\pi} \sqrt{ \sin^2 t + \cos^2 t + 1} dt =
+            \int_0^{8\pi} \sqrt{2} dt = 8 \sqrt{2} \pi
+          </me>
+        </p>
+      </statement>
+    </example>
+    <example xml:id="example-asteroid">
+      <statement>
+        <p>
+          The asteroid is the parametric curve <m>\gamma(t) = (\cos^3
+          t, \sin^3 t)</m> for <m>t \in [0,2\pi]</m>, shown in <xref
+          ref="figure-asteroid">Figure</xref>. I want to calculate
+          its arclength.
+        </p>
+        <figure xml:id="figure-asteroid">
+          <caption>The Asteroid</caption>
+          <image xml:id="figure09" width="90%">
+            <asymptote>
+              size(7cm,7cm);
+              import graph;
+
+              xlimits(-1.1,1.1);
+              ylimits(-1.1,1.1);
+
+              xaxis("$x$");
+              yaxis("$y$");
+
+              real x(real t) {return (cos(t))^3;}
+              real y(real t) {return (sin(t))^3;}
+
+              draw(graph(x,y,0,2*pi));
+            </asymptote>
+          </image>
+        </figure>
+        <md>
+          <mrow>
+            L \amp = \int_a^b \sqrt{ \left( \frac{dx}{dt} \right)^2 +
+            \left( \frac{dy}{dt} \right)^2 } dt
+          </mrow>
+          <mrow>
+            \amp = \int_0^{2\pi} \sqrt{ (-3 \cos^2 t (\sin t))^2 + (3
+            \sin^2 t (\cos t))^2} dt
+          </mrow>
+          <mrow>
+            \amp = \int_0^{2\pi} \sqrt{ 9 \cos^4 t \sin^2 t + 9
+            \sin^4 t \cos^2 t} dt
+          </mrow>
+          <mrow>
+            \amp = \int_0^{2\pi} |3 \sin t \cos t | \sqrt{ \sin^2 +
+            \cos^2 t} dt
+          </mrow>
+          <mrow>
+            \amp = \int_0^{2\pi} |3 \sin t \cos t | dt
+          </mrow>
+        </md>
+        <p>
+          The absolute value here causes trouble. A convenient way to
+          drop it is to notice that both <m>\sin t</m> and <m>\cos
+          t</m> are positive on <m>[0, \pi/2]</m>. That range covers
+          a quarter of the asteroid and the asteroid is symmetric, so
+          I can calculate the length of that quarter and multiply by
+          4.
+          <me>
+            L = 4\int_0^{\frac{\pi}{2}} 3 \sin t \cos t dt = 6
+            \int_0^{\frac{\pi}{2}} \sin 2t = -3\cos 2t
+            \Big|_0^{\frac{\pi}{2}} = 6
+          </me>
+        </p>
+      </statement>
+    </example>
+    <p>
+      The symmetric argument in <xref ref="example-asteroid" />
+      deserves some attention. In parametric curves, this kind of
+      symmetry argument can be very valuable. It's often easier to
+      work with a small section of a curve, particularly for
+      integration. If I can argue that the whole curve is just a
+      repetition of a small portion (perhaps reflected or rotated),
+      then I can reasonable use the small portion to calculate
+      information about the whole curve. 
+    </p>
+  </subsection>
+  <subsection xml:id="subsection-parametrization-by-arclength">
+    <title>Parametrization by Arclength</title>
+    <p>
+      MAYBE TAKE THIS OUT?
+      The arclength calculation determins the length of the whole
+      curve. However, I can also ask for the length of sections of the
+      curve.
+    </p>
+    <definition>
+      <statement>
+        <p>
+          Let <m>\gamma(t): [a,b] \rightarrow \RR^n</m> be a
+          parametric curve with components <m>(\gamma_1(t), \ldots,
+          \gamma_n(t))</m>. The <term>arclength function</term>
+          <m>s(t): [a,b] \rightarrow [0, \infty)</m> is defined by
+          this integral.
+          <me>
+            s(t) = \int_a^t \sqrt{ \left( \frac{d\gamma_1(u)}{du}
+            \right)^2 + \left( \frac{d\gamma_2(u)}{du} \right)^2 +
+            \ldots + + \left( \frac{d\gamma_n(u)}{du} \right)^2 } du
+          </me>
+        </p>
+        <p>
+          The letter <m>s</m> is conventional notation for the
+          arclength function.
+        </p>
+      </statement>
+    </definition>
+    <p>
+      The arclength function measures the length of the curve as a
+      function of the parameter; it is simply the distance travelled
+      along the curve. For example, if <m>t \in [0,10]</m>, then
+      <m>s(3)</m> is the distance along the curve from
+      <m>\gamma(0)</m> to <m>\gamma(3)</m>, <m>s(5)</m> is the
+      distance the curve has covered from <m>\gamma(0)</m> to
+      <m>\gamma(5)</m>, <m>s(8)</m> is the distance along the curve
+      from <m>\gamma(0)</m> to <m>\gamma(8)</m> and so on. Since
+      <m>s</m> depends on <m>t</m> outside the integral, I have to
+      choose a temporary variable <m>u</m> inside the integral; in
+      the integral, <m>t</m> is simply repalced with <m>u</m>.
+    </p>
+    <p>
+      I want to use the arclength function to reparametrize curve.
+      The process, therefore, has three steps.
+      <ol>
+        <li>
+          <p>
+            I calculate the arclength fuction <m>s(t)</m> by
+            integration.
+          </p>
+        </li>
+        <li>
+          <p>
+            I invert the arclength function. Arclength is always an
+            increasing function, so it is always invertible. I write
+            the inverse as <m>t(s)</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            I use the inverse of the arclength function to
+            reparametrize by replacing <m>t</m> with <m>t(s)</m>.
+          </p>
+        </li>
+      </ol>
+    </p>
+    <definition>
+      <statement>
+        <p>
+          Let <m>\gamma(t) : [a,b] \rightarrow \RR^n</m> be a
+          parametric curve. Let <m>s(t)</m> be the arclength
+          function, with <m>t(s)</m> its inverse. The
+          reparametrization <m>\gamma(t(s))</m> is called the
+          <term>parametrization by arclength</term>. It is the unique
+          parametrization where the parameter is the distance along
+          the curve.
+        </p>
+      </statement>
+    </definition>
+    <example xml:id="example-helix-reparametrized">
+      <statement>
+        <p>
+          Consider the helix <m>\gamma(t) = (2 \cos t, 2 \sin t,
+          4t)</m> defined for <m>t > 0</m>, shown in <xref
+          ref="figure-helix" />. 
+        </p>
+        <figure xml:id="figure-helix">
+          <caption>
+            The helix <m>\gamma(t) = (2 \cos t, 2 \sin t, 4t)</m>
+          </caption>.
+          <image xml:id="figure10" width="90%">
+            <asymptote>
+              size(12cm,7cm,IgnoreAspect);
+              import graph3;
+              currentprojection=orthographic(1,1,1);
+
+              limits((-4,-4,0),(4,4,14));
+
+              dot((1,1,1));
+
+              axes3("$x$", "$y$", "$z$", Arrow3);
+
+              real x(real t) {return 2*cos(t);}
+              real y(real t) {return 2*sin(t);}
+              real z(real t) {return t;}
+
+              draw(graph(x,y,z,0,14));
+            </asymptote>
+          </image>
+        </figure>
+        <p>
+          I calculate the arclength function.
+          <md>
+            <mrow>
+              s(t) \amp = \int_0^t \sqrt{x^\prime(u)^2 +
+              y^\prime(u)^2 + z^\prime(u)^2} du
+            </mrow>
+            <mrow>
+              \amp = \int_0^t \sqrt{4\sin^2 u + 4 \cos^2 u + 4^2} du
+              = \int_0^t \sqrt{20} du = t \sqrt{20}
+            </mrow>
+          </md>
+        </p>
+        <p>
+          The arclength function is <m>s = t \sqrt{20}</m>; the
+          inverse is <m>t = \frac{s}{\sqrt{20}}</m>. I replace
+          <m>t</m> with <m>t(s)</m> in <m>\gamma(t)</m>.
+          <me>
+            \gamma(s) = \left( 2 \cos \left( \frac{s}{\sqrt{20}}
+            \right), 2 \sin \left( \frac{s}{\sqrt{20}} \right),
+            \frac{4s}{\sqrt{20}} \right)
+          </me>
+        </p>
+      </statement>
+    </example>
   </subsection>
   <subsection xml:id="subsection-arclength-and-tangents">
     <title>Arclength and Tangents</title>

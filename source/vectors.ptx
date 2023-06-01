@@ -1,12 +1,265 @@
 <section xml:id="section-vectors">
   <title>Vectors in <m>\RR^2</m> and <m>\RR^3</m></title>
   <subsection xml:id="subsection-describing-space">
-  <title>Describing Space</title>
+    <title>Describing Space</title>
     <p>
-      Add: definitions of vectors, description of space, idea of
-      cartesian coordinates, importance of <m>\RR^3</m> to this
-      particular course, idea of extension to higher dimensional
-      spaces.
+      The purpose of vectors is to describe the geometry of space. For
+      the purposes of this course, I means two and three dimensional
+      space, but many of the tools are more general and can describe
+      higher dimensional spaces. That's very interesting for a more
+      abstract treatment, but to do multivariable calculus, I need
+      two and three dimensional vectors. 
+    </p>
+    <p>
+      I imagine this is not your first exposure to vectors. However,
+      this week is nevertheless important to review the main ideas as
+      well as set our conventions for notation and terminology.
+      Vectors are used in many places (linear algebra, physics,
+      computer graphcis, engineering, among others) and most of those
+      places have minor or even major differences in terms and
+      notations. This review will get us all on the same page for the
+      discussions through the course. So, let me start with the basic
+      definitions. 
+    </p>
+    <definition>
+      <statement>
+        <p>
+          In the context of geometry, ordinary numbers (integers, rational
+          numbers or real numbers) are called <term>scalars</term>.
+        </p>
+      </statement>
+    </definition>
+    <definition>
+      <statement>
+        <p>
+          A <term>vector</term> is a finite ordered list of scalars.
+          Vectors can be written either as columns or rows. If a
+          vector is a list of the numbers <m>4</m>, <m>15</m>,
+          <m>\pi</m> and <m>-e</m> (in that order), I write the
+          vector in one of two ways:
+          <md>
+           <mrow>
+             \amp \begin{pmatrix} 4 \\ 15 \\ \pi \\ -e \end{pmatrix} 
+             \amp \text{or} \amp \amp (4, 15, \pi, -e) \amp
+            </mrow>.
+          </md>
+        </p>
+      </statement>
+    </definition>
+    <p>
+      If you have taken my linear algebra course, you will know that,
+      in that course, I almost exclusively use column vectors. Here
+      the convention is reversed: I will almost exclusively use row
+      vectors. 
+    </p>
+    <definition>
+      <statement>
+        <p>
+          Let <m>n</m> be a positive integer. <term>Real Euclidean
+          Space</term> or <term>Cartesian Space</term>, written
+          <m>\RR^n</m>, is the set of all vectors of length <m>n</m>
+          with real number entries. 
+        </p>
+        <p>
+          Since there are <m>n</m> coefficieint in its vectors, the
+          space <m>\RR^n</m> has <term>dimension</term> <m>n</m>.
+        </p>
+        <p>
+          In this course, I am exclusively interested in <m>\RR^2</m>
+          (the familiar <term>Cartesian Plane</term>) and in
+          <m>\RR^3</m> (which I will call <term>Cartesian
+          Three-Space</term> or, more briefly, just <term>Cartesian
+          Soace</term>). 
+        </p>
+      </statement>
+    </definition>
+    <definition>
+      <statement>
+        <p>
+          If I have a vector <m>(a,b)</m> in <m>\RR^2</m> or
+          <m>(a,b,c)</m> in <m>\RR^3</m>, the scalars <m>a</m>,
+          <m>b</m> and <m>c</m> are called the 
+          <term>entries</term>, <term>coordinates</term> or
+          <term>components</term> of that vector. Specifically,
+          <m>a</m> is the first component, <m>b</m> is the second
+          component and <m>c</m> is the third component. 
+        </p>
+      </statement>
+    </definition>
+    <definition>
+      <statement>
+        <p>
+          The vector <m>(0,0)</m> in <m>\RR^2</m> and the vector
+          <m>(0,0,0)</m> in <m>\RR^3</m> are called  the
+          <term>origin</term> of each space. Each is also called the
+          <term>zero vector</term>. 
+        </p>
+      </statement>
+    </definition>
+    <p>
+      Euclidean space is visualized by drawing axes, one in each
+      independent perpendicular direction. In this visualization, the
+      vector <m>(a,b)</m> corresponds to the unique point I get moving
+      <m>a</m> units in the direction of the <m>x</m> axis and
+      <m>b</m> units in the direction of the <m>y</m> axis. <xref
+      ref="figure-points-in-the-cartesian-plane" /> shows the location
+      of several points in <m>\RR^2</m>.
+    </p>
+    <figure xml:id="figure-points-in-the-cartesian-plane">
+      <caption>Points in <m>\RR^2</m></caption>
+      <description>Points in <m>\RR^2</m></description>
+      <image xml:id="image-points-in-the-cartesian-plane" width="90%">
+        <asymptote>
+          size(12cm);
+          import graph;
+
+          xlimits(-8,8);
+          ylimits(-8,8);
+
+          xaxis("$x$",Ticks("%"));
+          yaxis("$y$",Ticks("%"));
+
+          dot((3,6));
+          dot((0,0));
+          dot((4,-4));
+          dot((-5,-2));
+          dot((-7,7));
+          label("$(3, 6)$",(3,6),E);
+          label("$(0, 0)$",(0.4,0.4),NE);
+          label("$(4, -4)$",(4,-4),E);
+          label("$(-5, -2)$",(-5,-2),E);
+          label("$(-7, 7)$",(-7,7),E);
+        </asymptote>
+      </image>
+    </figure>
+    <p>
+      As with <m>\RR^2</m>, the point <m>(a,b,c)
+      \in \RR^3</m> is the unique point I find by
+      moving <m>a</m> units in the <m>x</m> direction, <m>b</m> units
+      in the <m>y</m> direction and <m>c</m> units in the <m>z</m>
+      direction. When visualizing <m>\RR^2</m>, the convention is to 
+      draw the <m>x</m> axis horizontally, with a positive direction
+      to the right, and the <m>y</m> axis vertically, with a positive
+      direction upwards. For <m>\RR^3</m>, the <m>x</m> and <m>y</m>
+      axes form a flat plane, and the <m>z</m> axis extends vertically
+      from that plane as shown in <xref
+      ref="figure-points-in-three-space" />. 
+    </p>
+    <figure xml:id="figure-points-in-three-space">
+      <caption>Points in <m>\RR^3</m></caption>
+      <description>Points in <m>\RR^3</m></description>
+      <image xml:id="image-points-in-three-space" width="80%">
+        <asymptote> 
+          import graph3;
+          size(200,200,keepAspect=false);
+          currentprojection=orthographic(1,1,1);
+          limits((-5,-5,-5),(5,5,5));
+          xaxis3("$x$", OutTicks());
+          yaxis3("$y$", OutTicks());
+          zaxis3("$z$", OutTicks());
+          dot(Label("$(1, 3, 2)$",align=Y), (1,3,2));
+          dot(Label("$(-2, -4, 1)$",align=X), (-2,-4,1));
+          dot(Label("$(1, -1, -3)$",align=X), (1,-1,-3));
+        </asymptote>
+      </image>
+    </figure>
+  </subsection>
+  <subsection xml:id="subsection-point-or-directions">
+    <title>Points or Directions?</title>
+    <p>
+      I can think of an element of <m>\RR^2</m>, say <m>(1,4)</m>, as
+      both the point located at <m>(1,4</m> and the vector drawn from
+      the origin to the point <m>(1,4)</m>, as shown in <xref
+      ref="figure-points-and-directions" />. Though these two ideas
+      are distinct, I will frequently switch between them, often
+      without explicitly saying so. Part of becoming proficient in
+      vector geometry is becoming accustomed to the switch between the
+      perspectives of points and directions.
+    </p>
+    <figure xml:id="figure-points-and-directions">
+      <caption>Vectors as Points and Directions</caption>
+      <description>Vectors as Points and Directions</description>
+      <image xml:id="image-points-and-directions" width="80%"> 
+        <asymptote>
+          size(10cm);
+          import graph;
+          
+          xlimits(0,5);
+          ylimits(0,5);
+
+          xaxis("$x$",Ticks("%"));
+          yaxis("$y$",Ticks("%"));
+
+          dot((1,4));
+          draw((0,0)--(1,4),Arrow); 
+          label("Point: $(1,4)$",(1,4),NE);
+          label("Vector: $(1,4)$",(0.8,2.5),E);
+
+          dot((4,2));
+          draw((0,0)--(4,2),Arrow); 
+          label("Point: $(4,2)$",(4,2),N);
+          label("Vector: $(4,2)$",(2,1),SE);
+        </asymptote>
+      </image>
+    </figure>
+  </subsection>
+  <subsection xml:id="subsection-local-direction-vectors">
+    <title>Local Direction Vectors</title>
+    <p>
+      I've already spoken about the distinction between elements of
+      <m>\RR^n</m> as points and vectors. There is another important
+      subtlety that shows up all throughout vector geometry. In
+      addition to thinking of vectors as directions starting at the
+      origin, I can think of them as directions starting anywhere in
+      <m>\RR^n</m>. I call these <term>local direction vectors</term>.
+    </p>
+    <figure xml:id="figure-local-direction-vectors">
+      <description>Local Direction Vectors</description>
+      <caption>Local Direction Vectors</caption>
+      <image xml:id="image-local-direction-vectors" width="80%">
+        <asymptote>
+          size(10cm);
+          import graph;
+
+          xlimits(0,4);
+          ylimits(0,4);
+
+          xaxis("$x$",Ticks("%"));
+          yaxis("$y$",Ticks("%"));
+
+          draw((0,0)--(2,2),Arrow); 
+          draw((2,2)--(2,3),Arrow); 
+          draw((2,2)--(3,2),Arrow); 
+
+          label("$(2,2)$",(1,1),SE);
+          label("Local $(1,0)$",(3,2),S);
+          label("Local $(0,1)$",(2,3),E);
+        </asymptote>
+      </image>
+    </figure>
+    <p>
+      <xref ref="figure-local-direction-vectors" /> shows local
+      direction vectors starting at the point <m>(2,2) \in \RR^2</m>.
+      The two local vectors <m>(1,0)</m> and <m>(0,1)</m> are relative
+      to the point <m>(2,2) \in \RR^2</m> as if that were their
+      origin.
+    </p>
+    <p>
+      Using vectors to define local directions is a useful tool. A
+      standard example is a camera in a three-dimensional virtual
+      environment. First, I need to know the location of the camera,
+      which is an ordinary vector starting from the origin. Second, I
+      need to know what direction the camera is pointing, which is a
+      local direction vector which treats the camera location as the
+      current origin.
+    </p>
+    <p>
+      One of the most difficult things about learning vector geometry
+      is becoming accustomed to local direction vectors. I won't
+      always carefully distinguish between vectors at the origin and
+      local direction vectors; often, the difference is implied, and it
+      is up to the reader/student to figure out how the vectors are
+      being used.
     </p>
   </subsection>
 </section>

@@ -1,10 +1,671 @@
 <section xml:id="section-vector-operations">
   <title>Vector Operations</title>
-  <subsection xml:id="subsection-dot-product">
-  <title>Dot Product</title>
+
+<section xml:id="section-vector-arithmetic">
+  <title>Vector Arithmetic</title>
+  <subsection xml:id="subsection-linear-operations">
+    <title>Linear Operations</title>
     <p>
-      Add: Addition, scalar multiplication, dot product, cross
-      product, interpretations.
+      In this section, I go through the basic arithmetic of vectors.
+      In some ways, it mimics the arithmetic of scalars; in other
+      ways, scalar operations no longer work and are replaced with
+      other operations. 
+    </p>
+    <definition>
+      <statement>
+        <p>
+          The <term>sum</term> of two vectors <m>u</m> and <m>v</m> in
+          <m>\RR^n</m> is the sum taken component wise.
+          <me>
+            u + v = \begin{pmatrix} u_1 \\ u_2 \\ \vdots \\ u_n
+            \end{pmatrix} + \begin{pmatrix} v_1 \\ v_2 \\ \vdots \\
+            v_n \end{pmatrix} = \begin{pmatrix} u_1 + v_1 \\ u_2 + v_2
+            \\ \vdots \\ u_n + v_n \end{pmatrix}
+          </me>
+        </p>
+      </statement>
+    </definition>
+    <p>
+      The sum is visualized by placing the start of the second vector
+      at the end of the first, as in <xref
+      ref="figure-visualizing-vector-addition" />. Note that I
+      can only add two vectors in the same dimension. I can't add a
+      vector in <m>\RR^2</m> to a vector in <m>\RR^3</m>.
+    </p>
+    <figure xml:id="figure-visualizing-vector-addition">
+      <caption>Visualizing Vector Addition</caption>
+      <image xml:id="figure04" width="80%">
+        <asymptote>
+          size(10cm);
+          import graph;
+          usepackage("amsmath");
+
+          xlimits(0,5);
+          ylimits(0,5);
+
+          xaxis("$x$",Ticks("%"));
+          yaxis("$y$",Ticks("%"));
+
+          draw((0,0)--(1,3),Arrow); 
+          draw((1,3)--(4,4),Arrow); 
+          draw((0,0)--(4,4),Arrow);
+          draw((0,0)--(3,1),Arrow);
+          draw((3,1)--(4,4),Arrow);
+
+          label("$u = \begin{pmatrix} 1 \\ 3
+            \end{pmatrix}$",(0.8,2.4),E);
+          label("$v = \begin{pmatrix} 3 \\ 1
+            \end{pmatrix}$",(2,3.5),N);
+          label("$u = \begin{pmatrix} 1 \\ 3
+            \end{pmatrix}$",(3.5,2.5),E);
+          label("$v = \begin{pmatrix} 3 \\ 1
+            \end{pmatrix}$",(1.5,0.7),SE);
+          label("$u+v$",(2,2),SE);
+        </asymptote>
+      </image>
+    </figure>
+    <definition>
+      <statement>
+        <p>
+          If <m>u</m> is a vector in <m>\RR^n</m> and <m>a \in \RR</m>
+          is a real number, then the <term>scalar
+          multiplication</term> of <m>u</m> and <m>a</m> is
+          multiplication by <m>a</m> in each component of <m>u</m>.
+          By convention, scalar multiplication is written with the
+          scalar on the left of the vector.
+          <me>
+            au = a \begin{pmatrix} u_1 \\ u_2 \\ \vdots \\ u_n
+            \end{pmatrix} = \begin{pmatrix} au_1 \\ au_2 \\ \vdots \\
+            au_n \end{pmatrix}
+          </me>
+        </p>
+      </statement>
+    </definition>
+    <p>
+      Though there will be other <sq>multiplications</sq> to come, it
+      is mostly true that I can't multiply vectors together in any way
+      reminiscent of numbers. Instead, I can only multiply by
+      scalars. Scalar multiplication is visualized by scaling the
+      vector by the value of the scalar. (Hence the term
+      <sq>scalar</sq>!) If the scalar is negative, the direction is
+      also reversed, as in <xref
+      ref="figure-visualizing-scalar-multiplication" />.
+    </p>
+    <figure xml:id="figure-visualizing-scalar-multiplication">
+      <caption>Visualizing Scalar Multiplication</caption>
+      <image xml:id="figure05" width="80%">
+        <asymptote>
+          size(10cm);
+          import graph;
+          usepackage("amsmath");
+
+          xaxis("$x$",Ticks("%"));
+          yaxis("$y$",Ticks("%"));
+
+          draw((0,0)--(1,2),Arrow); 
+          draw((0,0)--(2,4),Arrow); 
+          draw((0,0)--(0.24,0.5),Arrow); 
+          draw((0,0)--(-1,-2),Arrow); 
+          draw((0,0)--(-2,-4),Arrow); 
+
+          label("$u = \begin{pmatrix} 1 \\ 2
+            \end{pmatrix}$",(1.1,2),E);
+          label("$2u = \begin{pmatrix} 2 \\ 4
+            \end{pmatrix}$",(2,4),E);
+          label("$\frac{1}{4} u = \begin{pmatrix} \dfrac{1}{4} \\[1em]
+            \dfrac{1}{2} \end{pmatrix}$",(-0.2,0.2),NW);
+          label("$-u = \begin{pmatrix} -1 \\ -2
+            \end{pmatrix}$",(-1,-2),W);
+          label("$-2u = \begin{pmatrix} -2 \\ -4
+            \end{pmatrix}$",(-2,-4),W);
+        </asymptote>
+      </image>
+    </figure>
+    <p>
+      Scalar multiplication also lets me define the difference between
+      vectors.
+    </p>
+    <definition>
+      <statement>
+        <p>
+          The difference between two vectors <m>u</m> and <m>v</m> is
+          the vector <m>u + (-1)v</m>, defined using addition and
+          scalar multiplication. This works out to be componentwise
+          subtraction.
+          <me>
+            u - v = u + (-1) v= \begin{pmatrix} u_1 \\ u_2 \\ \vdots
+            \\ u_n \end{pmatrix} + (-1) \begin{pmatrix} v_1 \\ v_2 \\
+            \vdots \\ v_n \end{pmatrix} = \begin{pmatrix} u_1 - v_ 1\\
+            u_2 - v_2 \\ \vdots \\ u_n - v_n \end{pmatrix}
+          </me>
+        </p>
+      </statement>
+    </definition>
+    <definition>
+      <statement>
+        <p>
+          With respect to some set of scalars (such as <m>\RR</m>),
+          whenever I find a mathematical structure that has the two
+          properties of addition and scalar multiplication, I call
+          the structure <term>linear</term>. <m>\RR^n</m> is a linear
+          space because vectors allow for addition and scalar
+          multiplication.
+        </p>
+      </statement>
+    </definition>
+    <definition>
+      <statement>
+        <p>
+          The <term>length</term> of a vector <m>u</m> in <m>\RR^n</m>
+          is written <m>|u|</m> and is given by a generalized form of
+          the Pythagorean rule for right triangles.
+          <me>
+            |u| = \sqrt{u_1^2 + u_2^2 + \ldots + u_n^2}
+          </me>
+        </p>
+        <p>
+          This length is also called the <term>norm</term> of the
+          vector. A vector of length one is called a <term>unit
+          vector</term>.
+        </p>
+      </statement>
+    </definition>
+    <p>
+      If I think of vectors as directions from the origin towards a
+      point, this definition of length gives exactly what I expect:
+      the physical length of that arrow in <m>\RR^2</m> and
+      <m>\RR^3</m>. Past <m>\RR^3</m>, I don't have a natural notion
+      of length. This definition serves as a reasonable
+      generalization to <m>\RR^4</m> and higher dimensions, which I
+      can't visualize. Note also that <m>|u| = 0</m> only if <m>u</m>
+      is the zero vector. All other vectors have a positive length.
+    </p>
+    <p>
+      Often the square root is annoying, and I find it convenient to
+      work with the square of the length.
+      <me>
+        |u|^2 = u_1^2 + u_2^2 + \ldots + u_n^2
+      </me>
+    </p>
+    <p>
+      The notions of length and difference allow me to define the
+      distance between two vectors.
+    </p>
+    <definition>
+      <statement>
+        <p>
+          The <term>distance between two vectors</term> <m>u</m> and
+          <m>v</m> in <m>\RR^n</m> is the length of their difference:
+          <m>|u-v|</m>.
+        </p>
+      </statement>
+    </definition>
+    <p>
+      You can check from the definition that <m>|u-v| = |v-u|</m>, so
+      distance doesn't depend on which comes first. If <m>|\cdot|</m>
+      were absolute value in <m>\RR</m>, this definition would match
+      the notion of distance between numbers on the number line.
+      Difference and length are visualized in <xref
+      ref="figure-difference-and-length" />.
+    </p>
+    <figure xml:id="figure-difference-and-length">
+      <caption>Visualizing Distance Between Vectors</caption>
+      <image xml:id="figure06" width="80%"> 
+        <asymptote>
+          size(10cm);
+          import graph;
+          usepackage("amsmath");
+
+          xlimits(0,5);
+          ylimits(0,5);
+
+          xaxis("$x$",Ticks("%"));
+          yaxis("$y$",Ticks("%"));
+
+          draw((0,0)--(1,4),Arrow); 
+          draw((0,0)--(4,2),Arrow); 
+          draw((1,4)--(4,2),Arrow); 
+
+          label("$u = \begin{pmatrix} 1 \\ 4
+            \end{pmatrix}$",(0.5,2),E);
+          label("$v = \begin{pmatrix} 4 \\ 2
+            \end{pmatrix}$",(2,0.8),S);
+          label("$|v-u| = \sqrt{3^2 + (-2)^2} =
+            \sqrt{13}$",(1.8,3.6),E);
+          label("$v-u = \begin{pmatrix} 3 \\ -2
+            \end{pmatrix}$",(3,2.9),E);
+        </asymptote>
+      </image>
+    </figure>
+    <proposition>
+      <statement>
+        <p>
+          I will briefly state two properties of vector lengths without
+          proof.
+          <md>
+            <mrow>
+              |u+v| \amp  \leq |u| + |v| \amp  \hspace{1cm} \ \text{
+              Triangle Inequality }
+            </mrow> 
+            <mrow>
+              |au| \amp  = |a||u| \amp
+            </mrow>
+          </md>
+        </p>
+      </statement>
+    </proposition>
+    <p>
+      The last line deserves some attention for the notation. When I
+      write <m>|a| |u|</m>, <m>|a|</m> is an absolute value of a real
+      number and <m>|u|</m> is the length of a vector. The fact that
+      they have the same notation is frustrating, but these notations
+      are common. (Some text use double bars for the length of a
+      vector, <m>||v||</m>, to avoid this particular issue.)
+    </p>
+  </subsection>
+</section>
+
+
+
+<section xml:id="section-dot-product">
+  <title>Dot Product</title>
+  <subsection xml:id="subsection-dot-product-definition">
+    <title>Definition</title>
+    <p>
+      Earlier, I said that I couldn't multiply two vectors together.
+      That's mostly true: there is no general product of two vectors
+      <m>uv</m>, which is still a vector, as least none that has any
+      useful or reasonable geometric meaning.  However, there are
+      other kinds of <sq>multiplication</sq> which combine two
+      vectors. The operation defined in this lecture multiplies two
+      vectors, but the result is a scalar.
+    </p>
+    <definition>
+      <statement>
+        <p>
+          The <term>dot product</term> or <term>inner product</term>
+          or <term>scalar product</term> of two vectors <m>u</m> and
+          <m>v</m> is given by the following formula.
+          <me>
+            u \cdot v = \begin{pmatrix} u_1 \\ u_2 \\ \vdots \\ u_n
+            \end{pmatrix} \cdot \begin{pmatrix} v_1 \\ v_2 \\ \vdots
+            \\ v_n \end{pmatrix} = u_1 v_1 + u_2 v_2 + \ldots + u_n
+            v_n
+          </me>
+        </p>
+      </statement>
+    </definition>
+    <p>
+      I can think of the dot product as a scalar measure of the
+      similarity of direction between the two vectors. If the two
+      vectors point in a similar direction, their dot product is
+      large, but if they point in very different directions, their dot
+      product is small. This is a bit strange, since there already is
+      a measure, at least in <m>\RR^2</m>, of this difference: the
+      angle between two vectors. Thankfully, the two measures of
+      difference agree, and the dot product can be expressed in terms
+      of angles.
+    </p>
+    <definition>
+      <statement>
+        <p>
+          The <term>angle</term> <m>\theta</m> between two non-zero
+          vectors <m>u</m> and <m>v</m> in <m>\RR^n</m> is given by
+          the follow equation.
+          <me>
+            \cos \theta = \frac{u \cdot v}{|u||v|}
+          </me>
+        </p>
+      </statement>
+    </definition>
+    <p>
+      This definition agrees with the angles in <m>\RR^2</m> and
+      <m>\RR^3</m>, which I can visualize. However, this serves as a
+      new <em>definition</em> for angles between vectors in all
+      <m>\RR^n</m> when <m>n \geq 4</m>. Since I can't visualize those
+      spaces, I don't have a way of drawing angles and calculating
+      them with conventional trigonometry. This definition allows me
+      to extend angles in a completely algebraic way. Notes that
+      this angle <m>\theta \in [0, \pi]</m>, since I can always choose
+      the smallest possible angle between two vectors. This means that
+      the inverse cosine is unique for this calculation. 
+    </p>
+    <definition>
+      <statement>
+        <p>
+          Two vectors <m>u</m> and <m>v</m> in <m>\RR^n</m> are called
+          <term>orthogonal</term> or <term>perpendicular</term> or
+          <term>normal</term> if <m>u \cdot v = 0</m>.
+        </p>
+      </statement>
+    </definition>
+  </subsection>
+  <subsection xml:id="subsection-dot-product-properties">
+    <title>Properties of the Dot Product</title>
+    <p>
+      There are many pairs of orthogonal vectors. Thinking of the dot
+      product as a multiplication, I have uncovered a serious
+      difference between the dot product and the conventional
+      multiplication of numbers. If <m>a,b\in \RR</m>, then
+      <m>ab=0</m> implies that one of <m>a</m> or <m>b</m> must be
+      zero. For vectors, it can be true that <m>\begin{pmatrix} 1 \\ 0
+      \end{pmatrix} \cdot \begin{pmatrix} 0 \\ 1 \end{pmatrix} 
+      = 0</m> even though neither factor in the product is the zero
+      vector. Here is a definition to keep track of this new
+      property.
+    </p>
+    <definition>
+      <statement>
+        <p>
+          Assume <m>A</m> is a set with addition and some kind of
+          multiplication. Also assume that <m>0 \in A</m>. If <m>u
+          \neq 0</m> and <m>v \neq 0</m> but <m>uv =0</m>, then
+          <m>u</m> and <m>v</m> are called <term>zero
+          divisors</term>.
+        </p>
+      </statement>
+    </definition>
+    <p>
+      An important property of ordinary numbers, as I just noted, is
+      that there are no zero divisors. Other algebraic structures,
+      such as vectors with the dot product, may have many zero
+      divisors.
+    </p>
+    <p>
+      Now that I have defined a new operation, it is useful to see how
+      it interacts with previously defined structures. I'll take up
+      the proofs of these in <xref ref="section-proofs-week2" /> and
+      in the activity for this week. 
+    </p>
+    <proposition xml:id="proposition-dot-product-properties">>
+      <statement>
+        <p>
+          Let <m>u,v,w</m> be vectors in <m>\RR^n</m> and let <m>a</m>
+          be a scalar in <m>\RR</m>. The following four identities are
+          true for all vectors and scalars. 
+          <md>
+            <mrow>
+            u \cdot v \amp = v \cdot u \amp \text{Commutative} 
+            </mrow>
+            <mrow>
+            u \cdot u \amp = |u|^2 \amp 
+            </mrow>
+            <mrow>
+            u \cdot (v+w) \amp = u \cdot v + u \cdot w \amp
+            \text{Distributive} 
+            </mrow>
+            <mrow>
+            u \cdot (av) \amp = (au) \cdot v = a (u \cdot v)
+            </mrow>
+          </md>
+        </p>
+      </statement>
+    </proposition>
+    <p>
+      In <m>\RR^2</m>, norms and dot products allow me to recreate
+      some well-known geometric constructions. For example, now that
+      I have defined lengths and angles, I can state the cosine law in
+      terms of vectors. The visualization of the vector relationships
+      of the cosine law is shown in <xref ref="figure-the-cosine-law"
+      />.
+    </p>
+    <figure xml:id="figure-the-cosine-law">
+      <caption>The Cosine Law</caption>
+      <image xml:id="figure07" width="80%">
+        <asymptote>
+          size(10cm);
+          import graph;
+
+          xlimits(0,5);
+          ylimits(0,5);
+
+          xaxis("$x$",Ticks("%"));
+          yaxis("$y$",Ticks("%"));
+
+          draw((0,0)--(1,4),Arrow); 
+          draw((0,0)--(4,2),Arrow); 
+          draw((1,4)--(4,2),Arrow); 
+
+          label("$u$",(0.5,2),E);
+          label("$v$",(2,0.8),S);
+          label("$v-u$",(3,2.9),E);
+          label("$\theta$",(0.25,0.3),NE);
+          label("$|v-u|^2 = |u|^2 + |v|^2 - 2|u||v| \cos
+            \theta$",(0.2,4.5), E);
+        </asymptote>
+      </image>
+    </figure>
+    <proposition>
+      <title>The Cosine Law</title>
+      <statement>
+        <p>
+          Let <m>u</m> and <m>v</m> be vectors in <m>\RR^n</m>.
+          <me>
+            |u-v|^2 = |u|^2 + |v|^2 - 2|u||v| \cos \theta = |u|^2 +
+            |v|^2 - 2 u \cdot v
+          </me>
+        </p>
+      </statement>
+      <proof>
+        <p>
+          To prove the cosine law using vectors, I'm going to interpret the
+          left side, <m>|u-v|^2</m>, as <m>(u-v) \cdot (u-v)</m>, using
+          the second identity in <xref
+          ref="proposition-dot-product-properties" />. Then I can go
+          through some algebraic manipulation with the dot product.
+          First, I'll distribute the dot product.
+           <me>
+            |u-v|^2 = (u-v) \cdot (u-v) = u \cdot u - v \cdot u - u \cdot
+            v + v \cdot v
+          </me>
+          Then I can interchange the order of the second term, since the
+          dot product is commutative.
+          <me>
+            |u-v|^2 = u \cdot u - u \cdot v - u \cdot v + v \cdot v
+          </me>
+          Then I can group the middle terms.
+          <me>
+            |u-v|^2 = u \cdot u - 2u \cdot v + v \cdot v
+          </me>
+          Then I can interpret the first and last terms as length squared. 
+          <me>
+            |u-v|^2 = |u|^2 - 2u \cdot v + |v|^2 
+          </me>
+          Then I can reorder the terms.
+          <me>
+            |u-v|^2 = |u|^2 + |v|^2 - 2u \cdot v 
+          </me>
+          Finally, using the definition of angle, I can replace the dot
+          product with <m>|u||v| \cos \theta</m>, where <m>\theta</m> is
+          the angle between the two vectors. 
+          <me>
+            |u-v|^2 = |u|^2 + |v|^2 - 2|u||v| \cos \theta
+          </me>
+          This is the cosine law.
+        </p>
+      </proof>
+    </proposition>
+  </subsection>
+</section>
+
+
+
+<section xml:id="section-cross-product">
+  <title>Cross Product</title>
+  <subsection xml:id="subsection-cross-product-definition">
+    <title>Definition of the Cross Product</title>
+    <p>
+      The dot product is an operation that can be performed on any
+      two vectors in <m>\RR^n</m> for any <m>n \geq 1</m>. There are
+      no other conventional products that work in all dimensions.
+      However, there is a special product that works in three
+      dimensions.
+    </p>
+    <definition>
+      <statement>
+        <p>
+          Let <m>u = \begin{pmatrix} u_1 \\ u_2 \\ u_3
+          \end{pmatrix}</m> and <m>v = \begin{pmatrix} v_1 \\ v_2 \\
+          v_3 \end{pmatrix}</m> be two vectors in <m>\RR^3</m>. The
+          <term>cross product</term> of <m>u</m> and <m>v</m> is
+          written <m>u \times v</m> and defined by the following
+          formula.
+          <me>
+            u \times v = \begin{pmatrix} u_2v_3 - u_3v_2 \\ u_3v_1 -
+            u_1v_3 \\ u_1v_2 - u_2v_1 \end{pmatrix}
+          </me>
+        </p>
+      </statement>
+    </definition>
+    <p>
+      The cross product differs from the dot product in several
+      important ways. First, it produces a new vector in
+      <m>\RR^3</m>, not a scalar. For this reason, when working in
+      <m>\RR^3</m>, the dot product is often referred to as the
+      <term>scalar product</term> and the cross product as the
+      <term>vector product</term>. Second, the dot product measures,
+      in some sense, the similarity of two vectors. The cross product
+      measures, in some sense, the difference between two vectors. The
+      cross product has a greater magnitude if the vectors are closer
+      to being perpendicular. If <m>\theta</m> is the angle between
+      <m>u</m> and <m>v</m>, the dot product was expressed in terms of
+      <m>\cos \theta</m>. This measures similarity, since <m>\cos 0 =
+      1</m>.  There is a similar identity for the cross product.
+      <me>
+        |u \times v| = |u||v| \sin \theta
+      </me>
+    </p>
+    <p>
+      This identity tells me that the cross product measures
+      difference in direction, since <m>\sin 0 = 0</m>. In
+      particular, this tells me that <m>|u \times u| = 0</m>, implying
+      that <m>u \times u = 0</m> (the zero vector is the only vector
+      which has zero length). This is another new and strange
+      property: in this particular multiplication, everything squares
+      to zero. The cross product is obviously very different from the
+      multiplication of scalars, where <m>a^2 = 0</m> cannot happen
+      unless <m>a=0</m>.
+    </p>
+    <p>
+      Also consider the relationship between <m>u</m> and
+      <m>u \times v</m> as calculated through the dot product.
+      <md>
+        <mrow>
+          u \cdot (u \times v) \amp = 
+          \begin{pmatrix}
+          u_1 \\ u_2 \\ u_3  
+          \end{pmatrix} \cdot
+          \begin{pmatrix}
+          u_2 v_3 - u_3 v_2 \\ u_3 v_1 - u_1 v_3 \\ u_1 v_2 - u_2 v_1
+          \end{pmatrix}
+        </mrow>
+        <mrow>
+          \amp = u_1u_2v_3 - u_1u_3v_2 + u_2u_3v_1 - u_2u_1v_3 +
+          u_3u_1v_2 - u_3u_2v_1 = 0
+        </mrow>
+      </md>
+    </p>
+    <p>
+      A similar calculation shows that <m>v \cdot (u \times v) =
+      0</m>. Since a dot product of two vectors is zero if and only
+      if the vectors are perpendicular, the vector <m>v \times u</m>
+      is perpendicular to both <m>u</m> and <m>v</m>. This turns out
+      to be a very useful property of the cross product.
+    </p>
+    <p>
+      Finally, a calculation from the definition shows that <m>u
+      \times v = -(v \times u)</m>. So far, multiplication of scalars
+      and the dot product of vectors have not depended on order. The
+      cross product is one of many products in mathematics which
+      depends on order. If I change the order of the cross product,
+      I introduce a negative sign.
+    </p>
+    <definition>
+      <statement>
+        <p>
+          Products that do not depend on the order of the factors,
+          such as multiplication of scalars and the dot product of
+          vectors, are called <term>commutative products</term>.
+          Products where changing the order of the factors introduces
+          a negative sign are called <term>anti-commutative
+          products</term>. The cross product is an anti-commutative
+          product. Other products that have neither of these
+          properties are called <term>non-commutative
+          products</term>.
+        </p>
+      </statement>
+    </definition>
+  </subsection>
+  <subsection xml:id="subsection-angular-motion">
+    <title>Angular Motion</title>
+    <p>
+      An important application of the cross product is found in
+      describing rotational motion. Linear mechanics describes the
+      motion of an object through space, but rotational mechanics
+      describes the rotation of an object independent of its movement
+      through space. A force on an object can cause both kinds of
+      movement, obviously. The following table summarizes the
+      parallel questions of linear motion and rotational motion in
+      <m>\RR^3</m>.
+    </p>
+    <tabular>
+      <row>
+        <cell>Linear Motion</cell>
+        <cell>Rotational Motion</cell>
+      </row>
+      <row bottom="minor">
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell>Moving in a straight line</cell>
+        <cell>Continual spinning</cell>
+      </row>
+      <row>
+        <cell>Direction of motion</cell>
+        <cell>Axis of spin</cell>
+      </row>
+      <row>
+        <cell>Force</cell>
+        <cell>Torque</cell>
+      </row>
+      <row>
+        <cell>Momentum</cell>
+        <cell>Angular Momentum</cell>
+      </row>
+      <row>
+        <cell>Mass (resistance to motion)</cell>
+        <cell>Moment of Inertia (resistance
+          to spin)</cell>
+      </row>
+      <row>
+        <cell>Velocity</cell>
+        <cell>Frequency (Angular Velocity)</cell>
+      </row>
+      <row>
+        <cell>Acceleration</cell>
+        <cell>Angular Acceleration</cell>
+      </row>
+    </tabular>
+    <p>
+      How should I describe torque?  If there is a linear force applied
+      to an object which can only rotate around an axis, and if the
+      linear force is applied at a distance <m>r</m> from the axis, I
+      can think of the force <m>F</m> and the distance <m>r</m> as
+      vectors. The torque is then <m>\tau = r \times F</m>. Notice
+      that <m>|\tau| = |r||F| \sin \theta</m>, indicating that linear
+      force perpendicular to the radius gives the greatest angular
+      acceleration. That makes sense. If <m>F</m> and <m>r</m> share
+      a direction, then I am pushing directly along the axis, and no
+      rotation can occur.
+    </p>
+    <p>
+      The use of cross products in rotational dynamics is ubiquitous.
+      In fluid dynamics, local rotational motion of the fluid result
+      in turbulence, vortices and similar effects. Tornadoes and
+      hurricanes are particularly extreme examples of vortices. All
+      the descriptions of the force and motion of these vortices
+      involve cross products in the vectors describing the fluid.
     </p>
   </subsection>
 </section>

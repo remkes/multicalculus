@@ -1,7 +1,5 @@
 <chapter xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="chapter-week5">
   <title>Week 5</title>
-  <xi:include href="matrices.ptx" />
-  <xi:include href="linear-approximation.ptx" />
   <xi:include href="extrema.ptx" />
   <xi:include href="week5-activity.ptx" />
 </chapter>
