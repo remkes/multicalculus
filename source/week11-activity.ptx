@@ -1,0 +1,1406 @@
+<section xml:id="week11-activity">
+  <title>Week 11 Activity</title>
+  <subsection xml:id="subsection-activity-parametric-surfaces">
+    <title>Parametric Surfaces and Areas</title>
+    <activity>
+      <statement>
+        <p>
+          Consider the portion of the plane <m>3x - 4y - z = 4</m>
+          which lies above the interval <m>[3,6] \times [-1,4]</m> in
+          the <m>xy</m> plane.
+        </p>
+        <ul>
+          <li><p>
+            Describe this as a parametric surface.
+          </p></li>
+          <li><p>
+            Calculate its surface area. 
+          </p></li>
+        </ul>
+      </statement>
+      <solution>
+        <p>
+          I would like to use <xref ref="example-surface-graph" /> to
+          parametrization this. To make this the graph of a function,
+          I can solve for <m>z</m> in the equation of the plane as
+          <m>z = 3x-4y-4</m>. The bounds of the parameter domain are
+          precisely the bounds on <m>x</m> and <m>y</m> given in the
+          descriptions.  
+        </p>
+        <md>
+          <mrow>
+            \sigma(u,v) \amp = (u,v,3u - 4v - 4) 
+          </mrow>
+          <mrow>
+            D \amp = (u,v) \in [3,6] \times[-1,4] 
+          </mrow>
+        </md>
+        <p>
+          To calculate the surface area, I'll need the partial
+          derivative, the normal, and the length of the normal. 
+        </p>
+        <md>
+          <mrow>
+            \sigma_u \amp = (1,0,3) 
+          </mrow>
+          <mrow>
+            \sigma_v \amp = (0,1,-4) 
+          </mrow>
+          <mrow>
+            \sigma_u \times \sigma_v \amp = (-3,4,1) 
+          </mrow>
+          <mrow>
+            |\sigma_u \times \sigma_v| \amp = \sqrt{9+16+1} = \sqrt{26} 
+          </mrow>
+        </md>
+        <p>
+          Then I can calculate the surface area by integrating the
+          length of the normal over the parameter domain. 
+        </p>
+        <md>
+          <mrow>
+            A \amp = \int_D |\sigma_u \times \sigma_v| du dv 
+          </mrow>
+          <mrow>
+            \amp = \int_{-1}^4 \int_3^6 \sqrt{26} du dv = \sqrt{26}
+            (4-(-1))(6-3)
+          </mrow>
+          <mrow>
+            \amp= 15 \sqrt{26}
+          </mrow>
+        </md>
+      </solution>
+    </activity>
+    <activity>
+      <statement>
+        <p>
+          Consider the sphere of radius <m>4</m> centred at
+          <m>(-1,-2,3)</m>. 
+        </p>
+        <ul>
+          <li><p>
+            Describe this as a parametric surface.
+          </p></li>
+          <li><p>
+            Calculate its surface area. 
+          </p></li>
+        </ul>
+      </statement>
+      <solution>
+        <p>
+          From <xref ref="example-sphere-parametrization" />, I already
+          have the parametrization of the sphere. However, now I have
+          shifted the centre. How to I adjust the parametrization in
+          the example? I can simply at the offset to each coordinate,
+          which moves each coordinate to give the correct centre
+          point. 
+        </p>
+        <md>
+          <mrow>
+            \sigma(\phi,v) \amp = (4 \sin \phi \cos v - 1, 4 \sin
+            \phi \sin v -
+            2, 4 \cos \phi + 3) 
+          </mrow>
+          <mrow>
+            D \amp = (\phi,\theta) \in [0,\pi] \times [0, 2\pi] 
+          </mrow>
+        <md>
+        <p>
+          To calculate the surface area, I'll need the partial
+          derivative, the normal, and the length of the normal. 
+        </p>
+        </md>
+          <mrow>
+            \sigma_\phi \amp = (4 \cos \phi \cos \theta, 4 \cos \phi
+            \sin \theta, -4 \sin \phi)
+          </mrow>
+          <mrow>
+            \sigma_\theta \amp = (-4 \sin \phi \sin \theta, 4 \sin
+            \phi \cos \theta, 0)
+          </mrow>
+          <mrow>
+            \sigma_\phi \times \sigma_\theta \amp = (16 \sin^2 \phi
+            \cos \theta, 16 \sin^2 \phi \sin \theta, 16 \cos \phi \sin
+            \phi )
+          </mrow>
+          <mrow>
+            |\sigma_\phi \times \sigma_\theta| \amp = 16 \sqrt{\sin^4
+            \phi \cos^2 \theta+ \sin^4 \phi \sin^2 \theta + \cos^2
+            \phi \sin^2\phi}
+          </mrow>
+          <mrow>
+            \amp = 16 \sqrt{\sin^4 \phi + \cos^2 \phi \sin^2 \phi } =
+            16 \sqrt{\sin^2 \phi} = 16 \sin \phi
+          </mrow>
+        </md>
+        <p>
+          Then I can calculate the surface area by integrating the
+          length of the normal over the parameter domain. 
+        </p>
+        <md>
+          <mrow>
+            A = \amp = \int_0^{2\pi} \int_0^{\pi} 16 \sin \phi d\phi
+            d\theta = (16) 2\pi (-\cos \phi) \bigg|_0^\pi =  64 \pi 
+          </mrow>
+          <mrow>
+            \int_\sigma f dA \amp = \int_0^{2\pi} \int_0^\pi (4\sin
+            \phi \cos \theta - 1)(4 \sin \phi \sin \theta - 2) (4 \cos
+            \phi + 3)(16 \sin \phi) d\phi d\theta 
+          </mrow>
+        </md>
+        <p>
+          This gets very intense. I asekd a computer algebra system
+          for the expanded form. 
+        </p>
+        <md>
+          <mrow>
+            \amp = \int_0^{2\pi} \int_0^\pi -199 \sin^2 \phi \sin
+            \theta + 1024 \sin^3\phi \cos \phi \sin \theta \cos \theta
+            + 768 \sin^3 \phi \sin \theta \cos \theta 
+          </mrow>
+          <mrow>
+            \amp - 512 \sin^2 \phi \cos \phi \cos \theta - 384 \sin^2
+            \phi \cos \theta - 256 \sin^2\phi \cos \phi \sin
+            \theta
+          </mrow>
+          <mrow>
+            \amp + 96 \sin \phi + 128 \sin \phi \cos \phi d\phi d\theta 
+          </mrow>
+        </md>
+        <p>
+          This is a bit ridiculous, but the bounds of <m>\theta</m>
+          are <m>[0,2\pi]</m>. Therefore, any integral involving
+          <m>\sin \theta</m>, <m>\cos \theta</m>, or <m>\sin \theta
+          \cos \theta</m> is zero by symmetry. That (thankfully)
+          removes all the but last two integrals.
+        </p>
+        <md>
+          <mrow>
+            \amp = \int_0^{2\pi} \int_0^\pi 96 \sin \phi + 128 \sin
+            \phi \cos \phi d\phi d\theta 
+          </mrow>
+          <mrow>
+            \amp = 96 \int_0^{2\pi} d\theta \int_0^\pi \sin d\phi +
+            128 \int_0^{2\pi} d\theta \int_0^\pi \sin \phi \cos \phi
+            d\phi d\theta = 192 
+          </mrow>
+        </md>
+      </solution>
+    </activity>
+    <activity>
+      <statement>
+        <p>
+          Consider the ellipsoid centred at the origin described by
+          the following locus.
+        </p>
+        <me>
+          \frac{x^2}{9} + y^2 + \frac{z^2}{25} = 1 
+        </me>
+        <ul>
+          <li><p>
+            Describe this as a parametric surface.
+          </p></li>
+          <li><p>
+            Calculate its surface area. (Start the integral, but you
+            can stop when you get to a point where the integration is
+            impossibly by elementary functions.) 
+          </p></li>
+        </ul>
+      </statement>
+      <solution>
+        <p>
+          The approach is like previous examples for ellipses and
+          ellipsoids. I use a version of spherical coordinates where I
+          adjust the coordinates of <m>x</m>, <m>y</m> and <m>z</m> by
+          a scaling factor.   
+        </p>
+        <md>
+          <mrow>
+            \sigma(\phi,\theta) \amp = (3 \sin \phi \cos \theta, \sin
+            \phi \sin \theta, 5 \cos \phi) 
+          </mrow>
+          <mrow>
+            D \amp = (\phi,\theta) \in [0,\pi] \times [0, 2\pi] 
+          </mrow>
+        </md>
+        <p>
+          To calculate the surface area, I'll need the partial
+          deri\theta, the normal, and the length of the normal. 
+        </p>
+        <md>
+          <mrow>
+            \sigma_\phi \amp = (3 \cos \phi \cos \theta, \cos \phi
+            \sin \theta, -5 \sin \phi)
+          </mrow>
+          <mrow>
+            \sigma_\theta \amp = (-3 \sin \phi \sin \theta, \sin \phi
+            \cos \theta, 0) 
+          </mrow>
+          <mrow>
+            \sigma_\phi \times \sigma_\theta \amp = (5\sin^2 \phi \cos
+            \theta, 15 \sin^2 \phi \sin \theta, 3\cos \phi \sin \phi)
+          </mrow>
+          <mrow>
+            |\sigma_\phi \times \sigma_\theta| \amp = \sqrt{25 \sin^4
+            \phi \cos^2 \theta+ 225 \sin^4 \phi \sin^2 \theta + 9
+            \cos^2 \phi \sin^2 \phi} 
+          </mrow>
+        </md>
+        <p>
+          I can already see a problem arising here. The scalaing
+          factors mess with the lovely trig identities that simplify
+          this square root in the spherical case. I can't get rid of
+          this square root. The integral is, like other elliptic
+          integrals, impossibly by elementary functions.
+        </p>
+        <md>
+          <mrow>
+            A \amp = \int_0^{2\pi} \int_0^{\pi}  \sqrt{25 \sin^4 \phi
+            \cos^2 \theta + 225 \sin^4 \phi \sin^2 \theta + 9 \cos^2
+            \phi \sin^2 \phi} d\phi d\theta 
+          </mrow>
+        </md>
+        <p>
+          This is as far as I can go with elementary functions. Notice
+          the parallel with the circle/ellipse perimeter problem. The
+          circumference of the circle is easy to calculate with
+          parametric curves, but the circumference of the ellipse
+          leads to impossible elliptic integrals. The same is true
+          here for parametric surfaces, spheres and ellipsoids. 
+        </p>
+      </solution>
+    </activity>
+    <activity>
+      <statement>
+        <p>
+          Consider the portion of hyperboloid <m>x^2 + y^2 -z^2 =
+          1</m> which has <m>z \in [-3,3]</m>. 
+        </p>
+        <ul>
+          <li><p>
+            Describe this as a parametric surface.
+          </p></li>
+          <li><p>
+            Calculate its surface area. (Start the integral, but you
+            can stop when you get to a point where the integration is
+            impossibly by elementary functions.) 
+          </p></li>
+        </ul>
+      </statement>
+      <solution>
+        <p>
+          There are a variety of ways to approach this. I could take
+          <m>x</m> and <m>y</m> as parameter and solve for <m>z</m>;
+          however, the square root gives multiple values, so I can't
+          get a whole parametric description this way. I could also
+          treat this as a surface of revolution about the <m>z</m>
+          axis and use <xref ref="example-surface-revolution" />.
+          Notice that, in the example, the axis of revolution was the
+          <m>x</m> axis. I'll just adjust for rotation around the
+          <m>z</m> axis by switching the variables.
+        </p>
+        <p>
+          However, I'm going to do something else entirely. This
+          hyperboloid is very similar to the sphere. I'd like to
+          parallel the coordinate system of the sphere to get a
+          coordinate system for this, building a kind-of hyperbolic
+          coordinate system. For rotation about the <m>z</m> axis,
+          this is still like the longitude of the sphere. However,
+          instead of the coltatitue of the sphere, I have hyperbolic
+          cross-section for vertical slices. Therefore, I can use
+          hyperbolic functions for the <sq>colatitude</sq> instead of
+          trig function. That leads to the following parametrization.
+        </p>
+        <md>
+          <mrow>
+            \sigma(\phi,\theta) \amp = (\cosh \phi \sin \theta, \cosh
+            \phi \cos \theta, \sinh \phi)
+          </mrow>
+          <mrow>
+            D \amp = (\phi,\theta) \in [\arcsinh (-3), \arcsinh (3)]
+            \times [0, 2\pi]
+          </mrow>
+        </md>
+        <p>
+          To calculate the surface area, I'll need the partial
+          derivative, the normal, and the length of the normal. 
+        </p>
+        <md>
+          <mrow>
+            \sigma_\phi \amp = (\sinh \phi \sin \theta, \sinh \phi
+            \cos \theta, \cosh \phi \phi) 
+          </mrow>
+          <mrow>
+            \sigma_\theta \amp = (\cosh \phi \cos \theta, -\cosh \phi
+            \sin \theta, 0) 
+          </mrow>
+          <mrow>
+            \sigma_\phi \times \sigma_\theta \amp = (\cosh^2 \phi \sin
+            \theta, \cosh^2 \phi \cos \theta, -\sinh \phi \cosh \phi )
+          </mrow>
+          <mrow>
+            |\sigma_\phi \times \sigma_\theta| \amp = \sqrt{\cosh^4
+            \phi \sin^2 \theta + \cosh^4 \phi \cos^2 \theta + \sinh^2
+            \phi \cosh^2 \phi}
+          </mrow>
+          <mrow>
+            \amp = \cosh \phi \sqrt{\cosh^2 \phi + \sinh^2 \phi} 
+          </mrow>
+        </md>
+        <p>
+          Here I run into a similar program as previous question. The
+          situation is not as nasty, as some simplification does
+          occur. But there is no identity for <m>\sinh^2 \phi +
+          \cosh^2 \phi</m> which can remove the square root (unlike
+          the case of the sphere). Therefore, like the last question,
+          I am stuck with this square root. For the surace area
+          integral, this will lead to integral without elementary
+          anti-derivatives.
+        </p>
+        <md>
+          <mrow>
+            A \amp = \int_0^{2\pi} \int_{\arcsinh (-3)}^{\arcsinh (3)}
+            \cosh \phi \sqrt{\cosh^2 \phi + \sinh^2 \phi} d\phi
+            d\theta 
+          </mrow>
+        </md> 
+      </solution>
+    </activity>
+    <activity>
+      <statement>
+        <p>
+          Consider the portion of the cuspoidal horn <m>z^3 = x^2 +
+          y^2</m> which has <m>z \in [0,4]</m>.
+        </p>
+        <ul>
+          <li><p>
+            Describe this as a parametric surface.
+          </p></li>
+          <li><p>
+            Calculate its surface area. (Start the integral, but you
+            can stop when you get to a point where the integration is
+            impossibly by elementary functions.) 
+          </p></li>
+        </ul>
+      </statement>
+      <solution>
+        <p>
+          I'd like to treat this as a surface of revolution about the
+          <m>z</m> axis. I'll use the setup from <xref
+          ref="example-surface-revolution" />, but I switch the
+          variables to reflect the axis of revolution. 
+        </p>
+        <md>
+          <mrow>
+            \sigma(z,\theta) \amp = \left (z^{\frac{3}{2}} \cos
+            \theta, z^{\frac{3}{2}} \sin \theta, z \right)
+          </mrow>
+          <mrow>
+            D \amp = (z,\theta) \in [0,4] \times [0,2\pi] 
+          </mrow>
+        </md>
+        <p>
+          To calculate the surface area, I'll need the partial
+          derivative, the normal, and the length of the normal. 
+        </p>
+        <md>
+          <mrow>
+            \sigma_z \amp = \left( \frac{3}{2} z^{\frac{1}{2}} \cos
+            \theta, \frac{3}{2} z^{\frac{1}{2}} \sin \theta, 1 \right) 
+          </mrow>
+          <mrow>
+            \sigma_\theta \amp = \left( -z^{\frac{3}{2}} \sin \theta,
+            z^{\frac{3}{2}} \cos \theta, 0 \right) 
+          </mrow>
+          <mrow>
+            \sigma_z \times \sigma_\theta \amp = \left(
+            -z^{\frac{3}{2}} \cos \theta, -z^{\frac{3}{2}} \sin
+            \theta, \frac{3}{2}z^2 \right) 
+          </mrow>
+          <mrow>
+            |\sigma_z \times \sigma_\theta| \amp = \sqrt{z^3 +
+            \frac{9z^4}{4}}
+          </mrow>
+        </md>
+        <p>
+          Again, the problems are similar. I don't have a nice
+          technique like trigononmetric subsitution to deal with this
+          strange square root term. It leads to non-elementary
+          antiderivative for the surface area integarl. 
+        </p>
+        <md>
+          <mrow>
+            A = \int_D |\sigma_z \times \sigma_\theta| dz d\theta \amp = 
+            \int_0^{2\pi} \int_0^4 \sqrt{z^3 + \frac{9z^4}{4}} dz
+            d\theta  
+          </mrow>
+        </md>
+      </solution>
+    </activity>
+  </subsection>
+  <subsection xml:id="subsection-activity-flux">
+    <title>Activity</title>
+    <activity>
+      <statement>
+        <p>
+          Consider this vector field. 
+        </p>
+        <me>
+          F(x,y,z) = (4z - x, 3y + 3z, x + z) 
+        </me>
+        <p>
+          Calculate the flux of this vector field over the following
+          surface. 
+        </p>
+        <ol>
+          <li>
+            <p>
+              The rectangle with vertices <m>(0,0)</m>, <m>(0,4)</m>,
+              <m>(3,0)</m> and <m>(3,4)</m> in the <m>xy</m> plane.
+            </p>
+          </li>
+          <li>
+            <p>
+              The unit sphere centred at the origin.
+            </p>
+          </li>
+          <li>
+            <p>
+              The open cylinder about the <m>z</m> axis with radius
+              <m>3</m> and <m>z \in [0,2]</m>. 
+            </p>
+          </li>
+          <li>
+            <p>
+              The same cylinder as the previous point, but now also
+              including the top and bottom discs to make it a closed
+              cylinder. 
+            </p>
+          </li>
+        </ol>
+      </statement>
+      <solution>
+        <p>
+          For each part, I need to parametrize the surface, calculate
+          the normal, then use the normal and the field to calculate
+          the flux integral.
+        </p>
+        <ol>
+          <li>
+            <p>
+              The rectangle can be parametrized by the variables
+              <m>x</m> and <m>y</m> with <m>z</m> set to constant
+              zero. 
+            </p>
+            <md>
+              <mrow>
+                \sigma(x,y) \amp = (x,y,0) \amp \amp (x,y) \in [0,3]
+                \times [0,4] 
+              </mrow>
+              <mrow>
+                \sigma_x (x,y) \amp = (1,0,0) \amp \amp 
+              </mrow>
+              <mrow>
+                \sigma_y (x,y) \amp = (0,1,0) \amp \amp 
+              </mrow>
+              <mrow>
+                \sigma_x \times \sigma_y (x,y) \amp = (0,0,1) 
+              </mrow>
+            </md>
+            <p>
+              Then I calculate the flux integral. 
+            </p>
+            <md>
+              <mrow>
+                \int_\sigma F \cdot dA \amp = \int_D F(\sigma(x,y))
+                \cdot (\sigma_x \times \sigma_y) dx dy
+              </mrow>
+              <mrow>
+                \amp = \int_0^4 \int_0^3 (-u,
+                3v, u) \cdot (0,0,1) dx dy 
+              </mrow>
+              <mrow>
+                \amp = \int_0^4 \int_0^3 x dx dy = 4 \frac{9}{2} = 18 
+              </mrow>
+            </md>
+          </li>
+          <li>
+            <p>
+              The sphere can be parametrized by following <xref
+              ref="example-sphere-parametrization" />. Here, the
+              radius is one. 
+            </p>
+            <md>
+              <mrow>
+                \sigma(\theta,\phi) \amp = (\sin \phi \cos \theta,
+                \sin \phi \sin \theta, \cos \phi) 
+              </mrow>
+              <mrow>
+                \amp (\theta,\phi) \in [0,2\pi] \times [0,\pi] 
+              </mrow>
+              <mrow>
+                \sigma_\theta (\theta,\phi) \amp = (-\sin \phi \sin
+                \theta, \sin \phi \sin \theta, 0) 
+              </mrow>
+              <mrow>
+                \sigma_\phi (\theta,\phi) \amp = (\cos \phi \cos
+                \theta, \cos \phi \sin \theta, - \sin \phi)
+              </mrow>
+              <mrow>
+                \sigma_\theta \times \sigma_\phi (u,\phi) \amp = -\sin
+                \phi (\sin \phi \cos \theta, \sin \phi \sin \theta,
+                \cos \phi) 
+              </mrow>
+            </md>
+            <p>
+              Then I calculate the flux integral. 
+            </p>
+            <md>
+              <mrow>
+                \amp \int_\sigma F \cdot dA = \int_D
+                F(\sigma(\theta,\phi)) \cdot (\sigma_\theta \times
+                \sigma_\phi) d\theta d\phi
+              </mrow>
+              <mrow>
+                \amp = \int_0^{2\pi}
+                \int_0^{\pi} (4 \cos \phi - \sin \phi
+                \cos \theta, 3 \sin \phi \sin \theta + 3 \cos \phi,
+                \sin \phi \cos \theta + \cos \phi) 
+              </mrow>
+              <mrow>
+                \amp \cdot -\sin \phi
+                (\sin \phi \cos \theta, \sin \phi \sin \theta, \cos
+                \phi) d \phi d \theta 
+              </mrow>
+              <mrow>
+                \amp = \int_0^{2\pi} \int_0^{\pi} 4 \cos \phi \sin^2
+                \phi \cos \theta- \sin^3 \phi \cos^2 \phi + 3 \sin^3
+                \phi \sin^2 \theta 
+              </mrow>
+              <mrow>
+                \amp + 3 \cos \phi \sin^2 \phi \sin
+                \theta + \sin^2 \phi \cos \phi \cos \theta + \sin \phi
+                \cos^2 \theta d \phi d \theta 
+              </mrow>
+            </md>
+            <p>
+              There are many terms in this integral. I'm going to use
+              some symmetry to simplify before I calculate. Any
+              integral that involves an odd power of <m>\sin
+              \theta</m>, <m>\cos \theta</m>, or <m>\sin \theta \cos
+              \theta</m> is the integral of a trig function over a
+              whole period, which must vanish by symmetry. Since the
+              <m>\phi</m> and <m>\theta</m> integrals of each piece of
+              the sum are individually seperably, if the <m>\theta</m>
+              integral is zero, the integral of the whole term is
+              zero. Therefore, I'll remove any term that satisfies my
+              criterion. What's left over is this integral, which I
+              split up by linearity, seperate, and solve. I'll ask a
+              computer for the values of each single-variable definite
+              integral. 
+            </p>
+            <md>
+              <mrow>
+                \amp = \int_0^{2\pi} \int_0^\pi -\sin^3 \phi \cos^2
+                \theta + 3 \sin^3 \phi \sin^2 \theta + \sin \phi
+                \cos^2 \phi d \phi d \theta 
+              </mrow>
+              <mrow>
+                \amp = \int_0^{2\pi} \cos^2 \theta d \theta \int_0^\pi
+                -\sin^3 \phi d \phi + \int_0^{2\pi} \sin^2 \theta d
+                \theta \int_0^\pi 3 \sin^3 \phi d \phi 
+              </mrow>
+              <mrow>
+                \amp + \int_0^{2\pi}
+                d\theta \int_0^\pi \sin \phi \cos^2 \phi d \phi 
+              </mrow>
+              <mrow>
+                \amp = (\pi) \left( \frac{-4}{3} \right)+ (\pi)(4) +
+                (2\pi) \left( \frac{2}{3} \right) = 4\pi
+              </mrow>
+            </md>
+          </li>
+          <li>
+            <p>
+              The cylinder can be parametrized following <xref
+              ref="example-cylinder-parametrization" />. The radius
+              here is <m>3</m>. The range for <m>z</m> is <m>[0,2]</m>
+              as given in the question. 
+            </p>
+            <md>
+              <mrow>
+                \sigma(\theta,z) \amp = (3 \cos \theta, 3 \sin \theta,
+                z) \amp \amp (\theta,z) \in [0,2\pi] \times [0,2] 
+              </mrow>
+              <mrow>
+                \sigma_\theta (\theta,z) \amp = (-3 \sin \theta, 3
+                \cos \theta, 0)  \amp \amp 
+              </mrow>
+              <mrow>
+                \sigma_z (\theta,z) \amp = (0,0,1) \amp \amp 
+              </mrow>
+              <mrow>
+                \sigma_\theta \times \sigma_z (\theta,z) \amp = (3
+                \cos \theta, 3 \sin \theta, 0) 
+              </mrow>
+            </md>
+            <p>
+              Then I calculate the flux integral. 
+            </p>
+            <md>
+              <mrow>
+                \amp \int_\sigma F \cdot dA = \int_D
+                F(\sigma(\theta,z)) \cdot (\sigma_\theta \times
+                \sigma_z) d\theta dz
+              </mrow>
+              <mrow>
+                \amp = \int_0^2 \int_0^{2\pi}
+                (4z - 3 \cos \theta, 9 \sin \theta + 4 z, 3 \cos
+                \theta + z) \cdot (3 \cos \theta, 3 \sin \theta, 0) 
+              </mrow>
+              <mrow>
+                \amp = \int_0^2 \int_0^{2\pi} 12 z \cos \theta -
+                9\cos^2 \theta + 27 \sin^2 \theta + 12 z \sin \theta d
+                \theta dz 
+              </mrow>
+            </md>
+            <p>
+              The integrals of the first and last term are integrals
+              of sine or cosine over a whole period, therefore must be
+              zero. What remains is the two middle integrals. Both are
+              separable and the <m>z</m> integral is trivial. 
+            </p>
+            <md>
+              <mrow>
+                \amp = -9 \int_0^2 \int_0^{2\pi} \cos^2 \theta d \theta
+                dz + 27 \int_0^2 \int_0^{2\pi} \sin^2 \theta d \theta
+                dz 
+              </mrow>
+              <mrow>
+                \amp = -18 \int_0^{2\pi} \cos^2 \theta d \theta + 54
+                \int_0^{2\pi} \sin^2 \theta d \theta = -18\pi + 54\pi
+                = 26\pi 
+              </mrow>
+            </md>
+          </li>
+          <li>
+            <p>
+              There are three pieces to the surface. The first piece is
+              the cylinder calcualted in the previous part of this
+              question. I don't need to recalculate this flux
+              integral. The other two parts are the top disc (with an
+              upward, outward normal) and the bottom disc (again with
+              a downward, outward normal). The discs can be
+              parametrized using something like polar coordinates with
+              a constant <m>z</m> term. I must make sure I order the
+              variables to give the correct direction of the normal.
+              I'll start with the top disc. 
+            </p>
+            <md>
+              <mrow>
+                \sigma(r,\theta) \amp = (r \cos \theta, r \sin \theta,
+                2) \amp \amp (r,\theta) \in [0,3] \times [0,2\pi] 
+              </mrow>
+              <mrow>
+                \sigma_r (r,\theta) \amp = (\cos \theta, \sin \theta,
+                0) \amp \amp 
+              </mrow>
+              <mrow>
+                \sigma_\theta (r,\theta) \amp = (-r \sin \theta, r
+                \cos \theta, 0)  \amp \amp 
+              </mrow>
+              <mrow>
+                \sigma_r \times \sigma_\theta (r,\theta) \amp = (0,0,r) 
+              </mrow>
+            </md>
+            <p>
+              Then I calculate the flux integral. 
+            </p>
+            <md>
+              <mrow>
+                \int_\sigma F \cdot dA \amp = \int_D
+                F(\sigma(r,\theta)) \cdot (\sigma_r \times
+                \sigma_\theta) dr d\theta
+              </mrow>
+              <mrow>
+                \amp = \int_0^{2\pi} \int_0^3
+                (8 - r \cos \theta, 3 r \sin \theta + 9, r \cos \theta
+                + 3) \cdot (0,0,r) dr d\theta
+              </mrow>
+              <mrow>
+                \amp = \int_0^{2\pi} \int_0^3 r^2 \cos \theta + 3r dr
+                d\theta = 0 + 2\pi \frac{27}{2} = 27 \pi 
+              </mrow>
+            </md>
+            <p>
+              Then I do the bottom disc. I reverse the variable order
+              to get a downward pointing normal. 
+            </p>
+            <md>
+              <mrow>
+                \sigma(\theta,r) \amp = (r \cos \theta, r \sin \theta,
+                0) \amp \amp (r,\theta) \in [0,3] \times [0,2\pi] 
+              </mrow>
+              <mrow>
+                \sigma_\theta (\theta,r) \amp = (-r \sin \theta, r
+                \cos \theta, 0)  \amp \amp 
+              </mrow>
+              <mrow>
+                \sigma_r (\theta,r) \amp = (\cos \theta, \sin \theta,
+                0) \amp \amp 
+              </mrow>
+              <mrow>
+                \sigma_\theta \times \sigma_r (\theta,r) \amp = (0,0,-r) 
+              </mrow>
+            </md>
+            <p>
+              Then I calculate the flux integral. 
+            </p>
+            <md>
+              <mrow>
+                \int_\sigma F \cdot dA \amp = \int_D
+                F(\sigma(r,\theta)) \cdot (\sigma_r \times
+                \sigma_\theta) dr d\theta
+              </mrow>
+              <mrow>
+                \amp = \int_0^{2\pi} \int_0^3
+                (-r\cos \theta, 3v \sin \theta, r \cos \theta) \cdot
+                (0,0,-r) dr d\theta 
+              </mrow>
+              <mrow>
+                \amp = \int_0^{2\pi} \int_0^3 -r^2 \cos \theta dr
+                d\theta = 0 
+              </mrow>
+            </md>
+            <p>
+              Flux over the entire closed cylinder is the sum of the
+              flux other the three pieces. 
+            </p>
+            <me>
+              \int_C F \cdot da = 27 \pi + 26 \pi + 0 = 53 \pi 
+            </me>
+          </li>
+        </ol>
+      </solution>
+    </activity>
+    <activity>
+      <statement>
+        <p>
+          Consider this vector field. 
+        </p>
+        <me>
+          F(x,y,z) = (2y, -2x, 2x + 2y) 
+        </me>
+        <p>
+          Calculate the flux of this vector field over the following
+          surface. 
+        </p>
+        <ol>
+          <li>
+            <p>
+              The rectangle with vertices <m>(0,0)</m>, <m>(0,4)</m>,
+              <m>(3,0)</m> and <m>(3,4)</m> in the <m>xy</m> plane.
+            </p>
+          </li>
+          <li>
+            <p>
+              The unit sphere centred at the origin.
+            </p>
+          </li>
+          <li>
+            <p>
+              The open cylinder about the <m>z</m> axis with radius
+              <m>3</m> and <m>z \in [0,2]</m>. 
+            </p>
+          </li>
+          <li>
+            <p>
+              The same cylinder as the previous point, but now also
+              including the top and bottom discs to make it a closed
+              cylinder. 
+            </p>
+          </li>
+        </ol>
+      </statement>
+      <solution>
+        <p>
+          For each part, I need to parametrize the surface, calculate
+          the normal, then use the normal and the field to calculate
+          the flux integral.
+        </p>
+        <ol>
+          <li>
+            <p>
+              The rectangle can be parametrized by the variables
+              <m>x</m> and <m>y</m> with <m>z</m> set to constant
+              zero. 
+            </p>
+            <md>
+              <mrow>
+                \sigma(x,y) \amp = (x,y,0) \amp \amp (x,y) \in [0,3]
+                \times [0,4] 
+              </mrow>
+              <mrow>
+                \sigma_x (x,y) \amp = (1,0,0) \amp \amp 
+              </mrow>
+              <mrow>
+                \sigma_y (x,y) \amp = (0,1,0) \amp \amp 
+              </mrow>
+              <mrow>
+                \sigma_x \times \sigma_y (x,y) \amp = (0,0,1) 
+              </mrow>
+            </md>
+            <p>
+              Then I calculate the flux integral. 
+            </p>
+            <md>
+              <mrow>
+                \int_\sigma F \cdot dA \amp = \int_D F(\sigma(x,y))
+                \cdot (\sigma_x \times \sigma_y) dx dy
+              </mrow>
+              <mrow>
+                \amp = \int_0^4 \int_0^3 (2y,
+                -2x, 2x + 2y) \cdot (0,0,1) dx dy 
+              </mrow>
+              <mrow>
+                \amp = \int_0^4 \int_0^3 2x + 2y dx dy = \int_0^4 (x^2
+                + 2xy) \Bigg|_0^3 dy 
+              </mrow>
+              <mrow>
+                \amp = \int_0^4 9 + 6y dy = 36 + 48 = 84 
+              </mrow>
+            </md>
+          </li>
+          <li>
+            <p>
+              The sphere can be parametrized by following <xref
+              ref="example-sphere-parametrization" />. Here, the
+              radius is one. 
+            </p>
+            <md>
+              <mrow>
+                \sigma(\theta,\phi) \amp = (\sin \phi \cos \theta,
+                \sin \phi \sin \theta, \cos \phi) 
+              </mrow>
+              <mrow>
+                \amp (\theta,\phi) \in [0,2\pi] \times [0,\pi] 
+              </mrow>
+              <mrow>
+                \sigma_\theta (\theta,\phi) \amp = (-\sin \phi \sin
+                \theta, \sin \phi \sin \theta, 0) 
+              </mrow>
+              <mrow>
+                \sigma_\phi (\theta,\phi) \amp = (\cos \phi \cos
+                \theta, \cos \phi \sin \theta, - \sin \phi 
+              </mrow>
+              <mrow>
+                \sigma_\theta \times \sigma_\phi (u,\phi) \amp = -\sin
+                \phi (\sin \phi \cos \theta, \sin \phi \sin \theta,
+                \cos \phi) 
+              </mrow>
+            </md>
+            <p>
+              Then I calculate the flux integral. 
+            </p>
+            <md>
+              <mrow>
+                \amp \int_\sigma F \cdot dA = \int_D
+                F(\sigma(\theta,\phi)) \cdot (\sigma_\theta \times
+                \sigma_\phi) d\theta d\phi
+              </mrow>
+              <mrow>
+                \amp = \int_0^{2\pi} \int_0^\pi
+                (2 \sin \phi \sin \theta, -2 \sin \phi \cos \theta, 2
+                \sin \phi \cos \theta + 2 \sin \phi cos \theta) 
+              </mrow>
+              <mrow>
+                \amp \cdot -\sin \phi( \sin \phi \cos \theta, \sin \phi
+                \sin \theta, \cos \phi) d \phi d \theta 
+              </mrow>
+              <mrow>
+                \amp = \int_0^{2\pi} \int_0^\pi 2 \sin^3 \phi \sin
+                \theta \cos \theta - 2 \sin^2 \phi \sin \theta \cos
+                \theta 
+              </mrow>
+              <mrow>
+                \amp + 2 \sin^2 \phi \cos \phi \cos \theta + 2
+                \sin^2 \phi \cos \phi \sin \theta 
+              </mrow>
+            </md>
+            <p>
+              By the same symmetry arguments at the previous problem,
+              I can remove any terms in the integral which have
+              <m>\sin \theta</m>, <m>\cos \theta</m> and <m> \sin
+              \theta \cos \theta</m>. However, all of the terms have
+              one of these expressions in <m>\theta</m>, so the entire
+              integral is zero. 
+            </p>
+          </li>
+          <li>
+            <p>
+              The cylinder can be parametrized following <xref
+              ref="example-cylinder-parametrization" />. The radius
+              here is <m>3</m>. The range for <m>z</m> is <m>[0,2]</m>
+              as given in the question. 
+            </p>
+            <md>
+              <mrow>
+                \sigma(\theta,z) \amp = (3 \cos \theta, 3 \sin \theta,
+                z) \amp \amp (\theta,z) \in [0,2\pi] \times [0,2] 
+              </mrow>
+              <mrow>
+                \sigma_\theta (\theta,z) \amp = (-3 \sin \theta, 3
+                \cos \theta, 0)  \amp \amp 
+              </mrow>
+              <mrow>
+                \sigma_z (\theta,z) \amp = (0,0,1) \amp \amp 
+              </mrow>
+              <mrow>
+                \sigma_\theta \times \sigma_z (\theta,z) \amp = (R
+                \cos \theta, R \sin \theta, 0) 
+              </mrow>
+            </md>
+            <p>
+              Then I calculate the flux integral. 
+            </p>
+            <md>
+              <mrow>
+                \int_\sigma F \cdot dA \amp = \int_D
+                F(\sigma(\theta,z)) \cdot (\sigma_\theta \times
+                \sigma_z) d\theta dz
+              </mrow>
+              <mrow>
+                \amp = \int_0^2 \int_0^{2\pi}
+                (2 z \sin \theta, -2 z \cos \theta, 2 z \cos \theta +
+                2 z \sin \theta) \cdot (0,0,z) d \theta dz 
+              </mrow>
+              <mrow>
+                \amp = \int_0^2 \int_0^{2\pi} 2 z^2 \cos \theta + 2
+                z^2 \sin \theta d \theta d z
+              </mrow>
+            </md>
+            <p>
+              Again, by symmetry of integrating sine or cosine over a
+              full period, both terms in this integral vanish and the
+              integral is zero. 
+            </p>
+          </li>
+          <li>
+            <p>
+              There are three pieces to the surface. The first piece is
+              the cylinder calcualted in the previous part of this
+              question. I don't need to recalculate this flux
+              integral. The other two parts are the top disc (with an
+              upward, outward normal) and the bottom disc (again with
+              a downward, outward normal). The discs can be
+              parametrized using something like polar coordinates with
+              a constant <m>z</m> term. I must make sure I order the
+              variables to give the correct direction of the normal.
+              I'll start with the top disc. 
+            </p>
+            <md>
+              <mrow>
+                \sigma(r,\theta) \amp = (r \cos \theta, r \sin \theta,
+                2) \amp \amp (r,\theta) \in [0,3] \times [0,2\pi] 
+              </mrow>
+              <mrow>
+                \sigma_r (r,\theta) \amp = (\cos \theta, \sin \theta,
+                0) \amp \amp 
+              </mrow>
+              <mrow>
+                \sigma_\theta (r,\theta) \amp = (-r \sin \theta, r
+                \cos \theta, 0)  \amp \amp 
+              </mrow>
+              <mrow>
+                \sigma_r \times \sigma_\theta (r,\theta) \amp = (0,0,r) 
+              </mrow>
+            </md>
+            <p>
+              Then I calculate the flux integral. 
+            </p>
+            <md>
+              <mrow>
+                \int_\sigma F \cdot dA \amp = \int_D
+                F(\sigma(r,\theta)) \cdot (\sigma_r \times
+                \sigma_\theta) dr d\theta
+              </mrow>
+              <mrow>
+                \amp = \int_0^3 \int_0^{2\pi}
+                (2 r \sin \theta, -2 r \cos \theta, 2r \cos \theta +
+                2r \sin \theta) d\theta dr 
+              </mrow>
+              <mrow>
+                \amp = \int_0^3 \int_0^{2\pi} 2 r^2 \cos \theta + 2
+                r^2 \sin \theta d\theta dr 
+              </mrow>
+            </md>
+            <p>
+              Again, by symmetry of integrating over a full period,
+              both terms of the integral vanish. 
+            </p>
+            <p>
+              Then I do the bottom disc. I reverse the variable order
+              to get a downward pointing normal. 
+            </p>
+            <md>
+              <mrow>
+                \sigma(\theta,r) \amp = (r \cos \theta, r \sin \theta,
+                0) \amp \amp (r,\theta) \in [0,3] \times [0,2\pi] 
+              </mrow>
+              <mrow>
+                \sigma_\theta (\theta,r) \amp = (-r \sin \theta, r
+                \cos \theta, 0)  \amp \amp 
+              </mrow>
+              <mrow>
+                \sigma_r (\theta,r) \amp = (\cos \theta, \sin \theta,
+                0) \amp \amp 
+              </mrow>
+              <mrow>
+                \sigma_\theta \times \sigma_r (\theta,r) \amp = (0,0,-r) 
+              </mrow>
+            </md>
+            <p>
+              Then I calculate the flux integral. 
+            </p>
+            <md>
+              <mrow>
+                \int_\sigma F \cdot dA \amp = \int_D
+                F(\sigma(r,\theta)) \cdot (\sigma_r \times
+                \sigma_\theta) dr d\theta
+              </mrow>
+              <mrow>
+                \amp = \int_0^3 \int_0^{2\pi}
+                (2 r \sin \theta, -2 r \cos \theta, 2 r \cos \theta +
+                2 r \sin \theta) d\theta dr 
+              </mrow>
+              <mrow>
+                \amp = \int_0^3 \int_0^{2\pi} 2 r^2 \cos \theta + 2r^2
+                \sin \theta d\theta dr = 0 
+              </mrow>
+            </md>
+            <p>
+              Flux over the entire closed cylinder is the sum of the
+              flux other the three pieces. 
+            </p>
+            <me>
+              \int_C F \cdot da = 0 + 0 + 0 = 0 
+            </me>
+          </li>
+        </ol>
+      </solution>
+    </activity>
+    <activity>
+      <statement>
+        <p>
+          Consider this vector field. 
+        </p>
+        <me>
+          F(x,y,z) = (x^2, y^2, z^2) 
+        </me>
+        <p>
+          Calculate the flux of this vector field over the following
+          surface. 
+        </p>
+        <ol>
+          <li>
+            <p>
+              The rectangle with vertices <m>(0,0)</m>, <m>(0,4)</m>,
+              <m>(3,0)</m> and <m>(3,4)</m> in the <m>xy</m> plane.
+            </p>
+          </li>
+          <li>
+            <p>
+              The unit sphere centred at the origin.
+            </p>
+          </li>
+          <li>
+            <p>
+              The open cylinder about the <m>z</m> axis with radius
+              <m>3</m> and <m>z \in [0,2]</m>. 
+            </p>
+          </li>
+          <li>
+            <p>
+              The same cylinder as the previous point, but now also
+              including the top and bottom discs to make it a closed
+              cylinder. 
+            </p>
+          </li>
+        </ol>
+      </statement>
+      <solution>
+        <p>
+          For each part, I need to parametrize the surface, calculate
+          the normal, then use the normal and the field to calculate
+          the flux integral.
+        </p>
+        <ol>
+          <li>
+            <p>
+              The rectangle can be parametrized by the variables
+              <m>x</m> and <m>y</m> with <m>z</m> set to constant
+              zero. 
+            </p>
+            <md>
+              <mrow>
+                \sigma(x,y) \amp = (x,y,0) \amp \amp (x,y) \in [0,3]
+                \times [0,4] 
+              </mrow>
+              <mrow>
+                \sigma_x (x,y) \amp = (1,0,0) \amp \amp 
+              </mrow>
+              <mrow>
+                \sigma_y (x,y) \amp = (0,1,0) \amp \amp 
+              </mrow>
+              <mrow>
+                \sigma_x \times \sigma_y (x,y) \amp = (0,0,1) 
+              </mrow>
+            </md>
+            <p>
+              Then I calculate the flux integral. 
+            </p>
+            <md>
+              <mrow>
+                \int_\sigma F \cdot dA \amp = \int_D F(\sigma(x,y))
+                \cdot (\sigma_x \times \sigma_y) dx dy
+              </mrow>
+              <mrow>
+                \amp = \int_0^4 \int_0^3 (x^2,
+                y^2, 0) \cdot (0,0,1) dy dz = \int_0^4 \int_0^3 0 dy
+                dx = 0  
+              </mrow>
+            </md>
+          </li>
+          <li>
+            <p>
+              The sphere can be parametrized by following <xref
+              ref="example-sphere-parametrization" />. Here, the
+              radius is one. 
+            </p>
+            <md>
+              <mrow>
+                \sigma(\theta,\phi) \amp = (\sin \phi \cos \theta,
+                \sin \phi \sin \theta, \cos \phi) 
+              </mrow>
+              <mrow>
+                \amp (\theta,\phi) \in [0,2\pi] \times [0,\pi] 
+              </mrow>
+              <mrow>
+                \sigma_\theta (\theta,\phi) \amp = (-\sin \phi \sin
+                \theta, \sin \phi \sin \theta, 0) 
+              </mrow>
+              <mrow>
+                \sigma_\phi (\theta,\phi) \amp = (\cos \phi \cos
+                \theta, \cos \phi \sin \theta, - \sin \phi 
+              </mrow>
+              <mrow>
+                \sigma_\theta \times \sigma_\phi (u,\phi) \amp = -\sin
+                \phi (\sin \phi \cos \theta, \sin \phi \sin \theta,
+                \cos \phi) 
+              </mrow>
+            </md>
+            <p>
+              Then I calculate the flux integral. 
+            </p>
+            <md>
+              <mrow>
+                \int_\sigma F \cdot dA \amp = \int_D
+                F(\sigma(\theta,\phi)) \cdot (\sigma_\theta \times
+                \sigma_\phi) d\theta d\phi
+              </mrow>
+              <mrow>
+                \amp = \int_0^{2\pi} \int_0^\pi
+                (\sin^2 \phi \cos^2 \theta, \sin^2 \phi \sin^2 \theta,
+                \cos^2 \phi) 
+              </mrow>
+              <mrow>
+                \amp \cdot -\sin \phi (\sin \phi \cos \theta,
+                \sin \phi \sin \theta, \cos \phi) d\phi d \theta 
+              </mrow>
+              <mrow>
+                \amp = \int_0^{2\pi} \int_0^\pi \sin^4 \phi \cos^3
+                \theta + \sin^4 \phi \sin^3 \theta + \cos^3 \phi \sin
+                \phi d\phi d \theta 
+              </mrow>
+            </md>
+            <p>
+              The first two of the three terms all evaluate to zero by
+              the now very familiar symmetry arguments for the
+              <m>\theta</m> integrals. All that remains is the third
+              term. 
+            </p>
+            <md>
+              <mrow>
+                \amp = \int_0^{2\pi} \int_0^\pi \cos^3 \phi \sin
+                \phi d \phi d \theta = 2\pi \int_0^\pi \cos^3 \phi
+                \sin \phi d \phi = 2\pi (0) = 0 
+              </mrow>
+            </md>
+          </li>
+          <li>
+            <p>
+              The cylinder can be parametrized following <xref
+              ref="example-cylinder-parametrization" />. The radius
+              here is <m>3</m>. The range for <m>z</m> is <m>[0,2]</m>
+              as given in the question. 
+            </p>
+            <md>
+              <mrow>
+                \sigma(\theta,z) \amp = (3 \cos \theta, 3 \sin \theta,
+                z) \amp \amp (\theta,z) \in [0,2\pi] \times [0,2] 
+              </mrow>
+              <mrow>
+                \sigma_\theta (\theta,z) \amp = (-3 \sin \theta, 3
+                \cos \theta, 0)  \amp \amp 
+              </mrow>
+              <mrow>
+                \sigma_z (\theta,z) \amp = (0,0,1) \amp \amp 
+              </mrow>
+              <mrow>
+                \sigma_\theta \times \sigma_z (\theta,z) \amp = (R
+                \cos \theta, R \sin \theta, 0) 
+              </mrow>
+            </md>
+            <p>
+              Then I calculate the flux integral. 
+            </p>
+            <md>
+              <mrow>
+                \int_\sigma F \cdot dA \amp = \int_D
+                F(\sigma(\theta,z)) \cdot (\sigma_\theta \times
+                \sigma_z) d\theta dz
+              </mrow>
+              <mrow>
+                \amp = \int_0^2 \int_0^{2\pi}
+                (9 \cos^2 \theta, 9 \sin^2 \theta, z^2) \cdot (3 \cos
+                \theta, 3 \sin \theta, 0) d\theta dz 
+              </mrow>
+              <mrow>
+                \amp = \int_0^2 \int_0^{2\pi} 27 \cos^3 \theta + 27
+                \sin^3 \theta d \theta 
+              </mrow>
+            </md>
+            <p> 
+              By symmetry, both integrals are zero. 
+            </p>
+          </li>
+          <li>
+            <p>
+              There are three pieces to the surface. The first piece is
+              the cylinder calcualted in the previous part of this
+              question. I don't need to recalculate this flux
+              integral. The other two parts are the top disc (with an
+              upward, outward normal) and the bottom disc (again with
+              a downward, outward normal). The discs can be
+              parametrized using something like polar coordinates with
+              a constant <m>z</m> term. I must make sure I order the
+              variables to give the correct direction of the normal.
+              I'll start with the top disc. 
+            </p>
+            <md>
+              <mrow>
+                \sigma(r,\theta) \amp = (r \cos \theta, r \sin \theta,
+                2) \amp \amp (r,\theta) \in [0,3] \times [0,2\pi] 
+              </mrow>
+              <mrow>
+                \sigma_r (r,\theta) \amp = (\cos \theta, \sin \theta,
+                0) \amp \amp 
+              </mrow>
+              <mrow>
+                \sigma_\theta (r,\theta) \amp = (-r \sin \theta, r
+                \cos \theta, 0)  \amp \amp 
+              </mrow>
+              <mrow>
+                \sigma_r \times \sigma_\theta (r,\theta) \amp = (0,0,r) 
+              </mrow>
+            </md>
+            <p>
+              Then I calculate the flux integral. 
+            </p>
+            <md>
+              <mrow>
+                \int_\sigma F \cdot dA \amp = \int_D
+                F(\sigma(r,\theta)) \cdot (\sigma_r \times
+                \sigma_\theta) dr d\theta
+              </mrow>
+              <mrow>
+                \amp = \int_0^3 \int_0^{2\pi}
+                (r^2 \cos^2 \theta, r ^2 \sin^2 \theta, 4) \cdot
+                (0,0,r) d\theta dr 
+              </mrow>
+              <mrow>
+                \amp = \int_0^3 \int_0^{2\pi} 4r dr d\theta = 2\pi
+                (18) = 36\pi 
+              </mrow>
+            </md>
+            <p>
+              Then I do the bottom disc. I reverse the variable order
+              to get a downward pointing normal. 
+            </p>
+            <md>
+              <mrow>
+                \sigma(\theta,r) \amp = (r \cos \theta, r \sin \theta,
+                0) \amp \amp (r,\theta) \in [0,3] \times [0,2\pi] 
+              </mrow>
+              <mrow>
+                \sigma_\theta (\theta,r) \amp = (-r \sin \theta, r
+                \cos \theta, 0)  \amp \amp 
+              </mrow>
+              <mrow>
+                \sigma_r (\theta,r) \amp = (\cos \theta, \sin \theta,
+                0) \amp \amp 
+              </mrow>
+              <mrow>
+                \sigma_\theta \times \sigma_r (\theta,r) \amp = (0,0,-r) 
+              </mrow>
+            </md>
+            <p>
+              Then I calculate the flux integral. 
+            </p>
+            <md>
+              <mrow>
+                \int_\sigma F \cdot dA \amp = \int_D
+                F(\sigma(r,\theta)) \cdot (\sigma_r \times
+                \sigma_\theta) dr d\theta
+              </mrow>
+              <mrow>
+                \amp = \int_0^3 \int_0^{2\pi}
+                (r^2 \cos^2 \theta, r^2 \sin^2 \theta, 0) \cdot
+                (0,0,-r) d\theta dr 
+              </mrow>
+              <mrow>
+                \amp = \int_0^3 \int_0^{2\pi} 0 d\theta dr = 0 
+              </mrow>
+            </md>
+            <p>
+              Flux over the entire closed cylinder is the sum of the
+              flux other the three pieces. 
+            </p>
+            <me>
+              \int_C F \cdot da = 0 + 36\pi + 0 = 36\pi 
+            </me>
+          </li>
+        </ol>
+      </solution>
+    </activity>
+  </subsection>
+  <subsection xml:id="subsection-week11-concepts">
+    <title>Conceptual Review Questions</title>
+    <ul>
+      <li><p>
+        What is a parametric surface?
+      </p></li>
+      <li><p>
+        How does the normal to a parametric surface determine its
+        properties?
+      </p></li>
+        <li>
+          What is a flux integral? What does it measure?
+        </li>
+        <li>
+          Why does a flux integral need a parametrized surface instead
+          of just a locus?
+        </li>
+    </ul>
+  </subsection>
+</section>

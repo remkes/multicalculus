@@ -1,0 +1,294 @@
+<section xml:id="section-conservative">
+  <title>Conservative Vector Fields</title>
+  <p>
+    In <xref ref="section-vector-fields" />, I talked about two
+    motivating examples: fluid flows and fields of force. In this
+    section, I'll focus particularly on fields of force. I'm
+    interested in describing force (per unit mass) of gravitational
+    attration due to a massive particle and force (per unit charge) of
+    electronmatic attraction or repulsion due to a charged particle.
+    I'm going to dip briefly into some physics to motivate the
+    definitions of this section.
+  </p>
+  <p>
+    There are many ways to describe the force or gravity or the
+    electromagnetic force. One of them is to describe changes in
+    potential energy. Potential energy is a <em>scalar</em> that
+    describes the state of an object with relation to another
+    electromagnetic or massive object. State in terms of potential
+    energy, force is understood at the tendency for object to minimize
+    their potential energy as quickly as possible. That is, an object
+    will move in the direction of greatest decrease. Thankfully, we
+    already have a tool to describe the direction of greatest
+    increase/decrease for a scalar field: the gradient. So, the fields
+    of force I want to discuss are fields of force that can be
+    described as gradients of some potential energy. There is a name
+    for these vector fields.
+  </p>
+  <definition>
+    <statement>
+      <p>
+        Let <m>f</m> be a scalar field. Then field <m>\nabla f</m>
+        created from a potential energy field is called a
+        <term>conservative vector field</term>. If <m>F</m> is a
+        vector field with <m>F = \nabla f</m> then <m>f</m> is a
+        <term>scalar potential</term> for <m>F</m>.
+      </p>
+    </statement>
+  </definition>
+  <p>
+    Given a general vector field <m>F</m>, I would like to
+    check whether or not it is conservative. From <xref
+    ref="proposition-composition-nabla" />, for any scalar field
+    <m>f</m>, <m>\nabla \times \nabla f=0</m>. Therefore, all
+    conservative fields are irrotation. Is the converse true? If it
+    were, then checking the curl would be a very convenient way to
+    find conservative vector fields. It turns out that the converse is
+    often true, but I need to define a technical definition to
+    describe the conditions when this work. 
+  </p>
+  <definition>
+    <statement>
+      <p>
+        Let <m>U</m> be an open subset of <m>\RR^n</m>. <m>U</m> is
+        called <term>path connected</term> if there is a parametric
+        curve connecting any two points <m>a, b \in U</m>. (Recall in
+        the definition in Calculus III that parametric curves are
+        always continuous.) A parametric curve is falled
+        <term>closed</term> if its start and end poitns are the same. If
+        <m>U</m> is path connected, it is also called <term>simply
+        connected</term> if any closed path can be contracted
+        down to a point. (Think of the path as a loop in a rope, and
+        contraction as pulling the rope so that the loop disappears.
+        This needs to happen in such a way that all the intermediate
+        steps are still paths in the set <m>U</m>).
+      </p>
+    </statement>
+  </definition>
+  <p>
+    Naively, a simply connected set has no holes in it. A solid
+    cylinder is simply connected. However, the hollow cylinder is
+    not, since a loop around the cylinder can never be contracted. A
+    disc is simply connected; a ring is not. Now I can state the test
+    for conservative vector fields.
+  </p>
+  <proposition>
+    <statement>
+      <p>
+        Let <m>U</m> be a simply connected open set in <m>\RR^3</m>
+        and let <m>F: U \rightarrow \RR^3</m> be a differentiable
+        vector field. Then <m>F</m> is conservative on <m>U</m> if an
+        only if <m>\nabla \times F = 0</m>.
+      </p>
+    </statement>
+  </proposition>
+  <p>
+    If <m>F</m> is conservative, then there exists at least one (in
+    fact, infinitely many!) scalar potential <m>f</m> with <m>F = \nabla
+    f</m>. Given a conservative vector fields, I'd like to be able to
+    calculate this scalar potent. How is it done? I'll start by
+    expanding the equation <m>F = \nabla f</m> in its components. I'll
+    work just in <m>\RR^3</m>, though potentials can happy in any
+    dimension. 
+  </p>
+  <md>
+    <mrow>
+      F_1 \amp = \frac{\del f}{\del x} \amp \amp 
+      F_2 \amp = \frac{\del f}{\del y} \amp \amp 
+      F_3 \amp = \frac{\del f}{\del z}
+    </mrow>
+  </md>
+  <p>
+    I can integrate each of these equations. However, I have to be
+    careful with the <sq>constants</sq>: in each integral, since all
+    varaible other than the variable of integration are being treated
+    as constant, the constants of integration can be functions of both
+    of the remaining variables.
+  </p>
+  <md>
+    <mrow>
+      f \amp = \int F_1 dx + g_1(y,z)
+    </mrow>
+    <mrow>
+      f \amp = \int F_2 dy + g_2(x,z)
+    </mrow>
+    <mrow>
+      f \amp = \int F_3 dz + g_3(x,y)
+    </mrow>
+  </md>
+  <p>
+    Finding <m>f</m> amounts to finding a scalar field that fits this
+    system. For reasonable <m>F</m>, this isn't too terrible. Often,
+    the information from the other equations will help determine the
+    functions <m>g_i</m>. Since there is all this choice, however, it
+    is reasonable to wonder how many scalar potentials a conservative
+    vector field actually has.
+  </p>
+  <proposition>
+    <statement>
+      <p>
+        Let <m>F</m> be a conservative vector field on a connected set
+        (not necessarily simply connected). Then the scalar potential
+        of <m>F</m> is unique up to a constant. That is, if <m>f</m>
+        is a scalar potential, then any other scalar potential for
+        <m>F</m> has the form <m>f + c</m> for <m>c \in \RR</m>. 
+      </p>
+    </statement>
+  </proposition>
+  <p>
+    This situation is pretty good; from all the possibility
+    variability in the system of differential equations, the
+    difference in potential basically comes down to a constant (an
+    actual, real constant!) of integration. Let me do a couple
+    exmaples. 
+  </p>
+  <example>
+    <statement>
+      <p>
+        If <m>F = (y \cos (xy), x \cos (xy), 2z)</m> then <m>F</m>
+        is defined on <m>\RR^3</m>, which is simply connected.
+      </p>
+      <md>
+        <mrow>
+          \nabla \times F \amp = \left( \frac{\del}{\del y} 2z -
+          \frac{\del}{\del z} x \cos (xy), \frac{\del}{\del z} y
+          \cos (xy) - \frac{\del}{\del x} 2z, \right. 
+        </mrow>
+        <mrow>
+          \amp \left. \frac{\del}{\del x}
+          x \cos (xy) - \frac{\del}{\del y} y \cos (xy) \right)
+        </mrow>
+        <mrow>
+          \amp = (0, 0, \cos xy - xy \sin xy - \cos xy + xy \sin
+          xy) = (0,0,0)
+        </mrow>
+      </md>
+      <p>
+        Therefore, <m>F</m> is a conservative field. I can try
+        calculate its potential.
+      </p>
+      <md>
+        <mrow>
+          f \amp = \int y \cos (xy) dx + g_1(y,z) = \sin (xy) +
+          g_1(y,z)
+        </mrow>
+        <mrow>
+          f \amp = \int x \cos (xy) dy + g_2(x,z) = \sin (xy) +
+          g_2(x,z)
+        </mrow>
+        <mrow>
+          f \amp = \int 2z dz + g_3(x,y) = z^2 + g_3(x,y)
+        </mrow>
+        <mrow>
+          f \amp = \sin (xy) + z^2 + c
+        </mrow>
+      </md>
+      <p>
+        I can check <m>\nabla f</m> to see that we recover the
+        original field <m>F</m>. 
+      </p>
+    </statement>
+  </example>
+  <example>
+    <statement>
+      <p>
+        If <m>F = (3y^2z - 8xz^2 + 3x^2 y, 6xyz + x^3 + 2yz^2, 3xy^2
+        - 8x^2z + 2y^2z)</m>, then <m>F</m> is defined on all
+        <m>\RR^3</m>.
+      </p>
+      <md>
+        <mrow>
+          \amp \nabla \times F 
+        </mrow>
+        <mrow>
+          \amp = (6xy+4yz-6xy-4yz, 3y^2 -16z -3y^2 + 16z, 6yz + 3x^2 -
+          3yz - 3x^2) 
+        </mrow>
+        <mrow>
+          \amp = (0,0,0)
+        </mrow>
+      </md>
+      <p>
+        Therefore, <m>F</m> is conservative. I will try to 
+        calculate its potential.
+      </p>
+      <md>
+        <mrow>
+          f \amp = \int F_1 dx = 3xy^2 z - 4x^2z^2 + x^3 y +
+          g_1(y,z)
+        </mrow>
+        <mrow>
+          f \amp = \int F_2 dy = 3xy^2 z + x^3 y + y^2 z^2 +
+          g_2(x,z)
+        </mrow>
+        <mrow>
+          f \amp = \int F_3 dz = 3xy^2 z - 4x^2 z^2 + y^2 z^2 +
+          g_3 (x,y)
+        </mrow>
+        <mrow>
+          f \amp = 3xy^2 z - 4x^2 z^2 + x^3 y + y^2 z^2 + c
+        </mrow>
+      </md>
+    </statement>
+  </example>
+  <p>
+    Returning to the physics that motivated this whole
+    section: what does this constant of integration mean? If a force
+    is described by potential energey, then why does potential energy
+    have an unknown or arbitrary constant? 
+  </p>
+  <p>
+    The constant of integration reflects the fact that energy levels
+    are arbitrarily set. Energy is relative to some arbitrary set base
+    level. On the surface of the earth, you can set potential energy
+    to be zero when something is on the ground, so that it can gain
+    potential energey as it moves up. In planetary systems with the
+    gravitional source at the origin, the convention is to set
+    potential energy to <m>-\infty</m> (in the limit) at the origin,
+    increasing to <m>0</m> as the distance from the origin goes to
+    <m>\infty</m>. These are convenient conventions for the
+    calculations physicists want to do with energy, but they are just
+    convention.
+  </p>
+  <p>
+    This leads me to an interesting and important point: energy is a
+    fiction. In the mathematical models of Newtonian physics (leaving
+    the subtleties of relativity and quantumn mechanics aside for
+    now), things like mass, charge, distance and time are real, fixed
+    quantities. They mean something about the physical universe.
+    Energy is not like these. Energy is fiction we made up and set to
+    an arbitrary reference level, because it leads to very nice
+    explanations of movement (i.e. objects accelerate to minimize
+    their potential energy). Whether energy is positive or negative,
+    large or small in magnitude, doesn't matter to the system. There
+    is no intrinsic energy. What is real is difference in energey, how
+    much potential energy changes with position, how much kinetic
+    energey changes with velocity (relatively, of course, to some
+    fixed reference frame).
+  </p>
+  <p>
+    In the initial discussion on potential energy, you may have
+    noticed some small confusion about increase and decrease. Gradient
+    points in the direction of greatest increase. However, in the
+    interpretations of phyics for forces, objects move in the
+    direction of greatest decrease. There is a sign issue here. The
+    terminology in this section is correct: if <m>F</m> is a
+    conservative with with <m>F = \nabla f</m>, then <m>f</m> is its
+    scalar potential. However, for the actual conservative forces in
+    physics (gravitational and electromagnetic), to account for this
+    sign difference, the force will be the negative gradient: <m>F =
+    -\nabla f</m>
+  </p>
+  <p>
+    Let me end with one final observation about the interpretation of
+    conservative forces and their potential energy scalar fields. If
+    <m>-f</m> is the (sign-corrected) scalar potential for <m>F</m>,
+    then <m>F</m> points in the direction of greatest decrease of
+    <m>f</m>. The integral curves of <m>F</m> are parametric curves
+    whose tangents are all these direction of greatest decrease. 
+    They are the direction of movement of an object starting at rest
+    under the action of the force. In this sense, a potential energy
+    <m>f</m> cause movement (on object starting at rest) along the
+    integral curves of its gradient.
+  </p>
+</section>

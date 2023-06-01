@@ -1,0 +1,1252 @@
+<section xml:id="section-applications">
+  <title>Applications of Multiple Integration</title>
+  <subsection xml:id="subsection-applications-definitions">
+    <title>Definitions for Mass and Moments</title>
+    <p>
+      I've done a bunch of volume calculations so far. Similar but
+      more practical is the calculation of the mass of a solid object.
+      If the object has a fixed desnity, then its mass is just this
+      constant density multiplied by volumes. However, sometimes 
+      density is variables. The first application I want to introduce
+      for multiples integrals is calculating the mass of an object
+      with variable density. 
+    </p>
+    <definition>
+      <statement>
+        <p>
+          If <m>\rho(x,y,z)</m> is a density function, integrable on a
+          region <m>S \in \RR^3</m>, the <term>mass</term> of the
+          object <m>S</m> is found from by integrating the density
+          function.
+        </p>
+        <me>
+          m = \int_S \rho dV
+        </me>
+        <p>
+          This can also be done in <m>\RR^2</m> for flat objects with
+          variable density depending on only <m>x</m> and <m>y</m>.
+          Such objects are normally refered at laminae (the singular
+          is lamina). 
+        </p>
+      </statement>
+    </definition>
+    <p>
+      A similar interesting physical problem is the problem of centre
+      of mass. The centre of mass of an rigid object (or system) is
+      the point in space where linear forces on the object can be
+      accuratly modeled as forces on a point-mass. In particular,
+      forces on the centre of mass do not cause rotational
+      acceleration. The calculation of centre of mass involves the
+      calculation of so-called first moments. These definition vary
+      by dimension. First I will defined moments for a lamina in
+      <m>\RR^2</m>.
+    </p>
+    <definition>
+      <statement>
+        <p>
+          Let <m>S</m> be a region in <m>\RR^2</m> with density
+          <m>\rho(x,y)</m> and mass <m>m</m>. Its <term>first
+          moments</term> are defined b the following integrals.
+        </p>
+        <md>
+          <mrow>
+            M_x \amp = \int_S y \rho dA
+          </mrow>
+          <mrow>
+            M_y \amp = \int_S x \rho dA
+          </mrow>
+        </md>
+        <p>
+          Then the <term>coordinates of the centre of mass</term> are
+          written <m>(\bar{x}, \bar{y})</m> and calculated from the
+          moments.
+        </p>
+        <md>
+          <mrow>
+            \bar{x} \amp = \frac{M_x}{m}
+          </mrow>
+          <mrow>
+            \bar{y} \amp = \frac{M_y}{m}
+          </mrow>
+        </md>
+        <p>
+          If <m>S</m> is a solid region in <m>\RR^3</m> with density
+          <m>\rho(x,y,z)</m> and mass <m>m</m>, then its <term>first
+          moments</term> are defined by the following integrals.
+        </p>
+        <md>
+          <mrow>
+            M_{yz} \amp = \int_S x \rho dV
+          </mrow>
+          <mrow>
+            M_{xz} \amp = \int_S y \rho dV
+          </mrow>
+          <mrow>
+            M_{xy} \amp = \int_S z \rho dV
+          </mrow>
+        </md>
+        <p>
+          The <term>coordinates of the centre of mass</term> are
+          written <m>(\bar{x}, \bar{y}, \bar{z})</m> and calculated
+          from the moments.
+        </p>
+        <md>
+          <mrow>
+            \bar{x} \amp = \frac{M_{yz}}{m}
+          </mrow>
+          <mrow>
+            \bar{y} \amp = \frac{M_{xz}}{m}
+          </mrow>
+          <mrow>
+            \bar{z} \amp = \frac{M_{xy}}{m}
+          </mrow>
+        </md>
+      </statement>
+    </definition>
+    <p>
+      Centre of mass and first moments are important physical
+      properties that deal with linear acceleration; for the purpose
+      of linear acceleration, the object acts like a point-mass at the
+      centre of mass. However, there are also moments involved in
+      rotational movement and acceleration. These are called second
+      moments or moments of intertia.
+    </p>
+    <definition>
+      <statement>
+        <p>
+          Let <m>S \subset \RR^2</m> be a laminae with density function
+          <m>\rho</m>. Its <term>second moments</term> are calcaulted
+          by the following integrals. 
+        </p>
+        <md>
+          <mrow>
+            I_x \amp = \int_S y^2 \rho dA
+          </mrow>
+          <mrow>
+            I_y \amp = \int_S x^2 \rho dA
+          </mrow>
+          <mrow>
+            I_0 \amp = \int_S (x^2+y^2) \rho dA
+          </mrow>
+        </md>
+        <p>
+          These moment measure the resistance to rotation: <m>I_x</m>
+          is the resistance to rotation about the <m>x</m> axis;
+          <m>I_y</m> is the resistance to rotation about the <m>y</m>
+          axis; and <m>I_0</m> is resistance to rotation about the
+          origin. The three <term>radii of gyration</term> are
+          calcluated from the second moments.
+        </p>
+        <md>
+          <mrow>
+            \bar{\bar{x}}^2 \amp = \frac{I_x}{m}
+          </mrow>
+          <mrow>
+            \bar{\bar{y}}^2 \amp = \frac{I_y}{m}
+          </mrow>
+          <mrow>
+            \bar{\bar{R}}^2 \amp = \frac{I_0}{m}
+          </mrow>
+        </md>
+        <p>
+          The radii of gyration are similar to centre of mass for
+          movement. The object acts as a point mass at radius
+          <m>\bar{\bar{R}}</m> for rotation about the origin. Similar,
+          it acts like a point mass at radius <m>\bar{\bar{x}}</m> for
+          rotation about the <m>x</m> axis and radius
+          <m>\bar{\bar{y}}</m> for rotation about the <m>y</m> axis.
+        </p>
+        <p>
+          Let <m>S</m> be a solid object in <m>\RR^3</m> with density
+          function <m>\rho</m>. Its <term>second moments</term> are
+          calculated by the following integrals.
+        </p>
+        <md>
+          <mrow>
+            I_x \amp = \int_S (y^2 + z^2) \rho dV
+          </mrow>
+          <mrow>
+            I_y \amp = \int_S (x^2 + z^2) \rho dV
+          </mrow>
+          <mrow>
+            I_z \amp = \int_S (x^2 + y^2) \rho dV
+          </mrow>
+        </md>
+        <p>
+          Its <term>radii of gyration</term> are calculated from the second
+          moments.
+        </p>
+        <md>
+          <mrow>
+            \bar{\bar{x}}^2 \amp = \frac{I_x}{m}
+          </mrow>
+          <mrow>
+            \bar{\bar{y}}^2 \amp = \frac{I_y}{m}
+          </mrow>
+          <mrow>
+            \bar{\bar{z}}^2 \amp = \frac{I_z}{m}
+          </mrow>
+        </md>
+        <p>
+          The object acts like a point mass at radius
+          <m>(\bar{\bar{x}}</m> for purposes of rotation around the
+          <m>x</m> axis, and similarly for the other two axes.
+        </p>
+      </statement>
+    </definition>
+  </subsection>
+  <subsection xml:id="subsection-applications-examples">
+    <title>Mass and Moments Examples</title>
+    <example>
+      <statement>
+        <p>
+          Consider a quarter circle of radius <m>a</m> in the first
+          quadrant with density function <m>\rho = k\sqrt{x^2 +
+          y^2}</m>. What is its centre of mass? I need to calculate
+          the mass, the first moments, and then the coordinates of the
+          centre of mass. Since there is circular geometry here, I do
+          all the integrals in polar coordinates; in thses coordinates
+          the density function is <m>\rho = kr</m>. In each integral,
+          I have to remember the Jacobian of polar coordinates. 
+        </p>
+        <md>
+          <mrow>
+            m \amp = \int_0^{\frac{\pi}{2}} \int_0^a krrdr d\theta
+          </mrow>
+          <mrow>
+            \amp = \frac{\pi}{2} \frac{kr^3}{3} \Bigg|_0^a
+            = \frac{\pi ka^3}{6}
+          </mrow>
+          <mrow>
+            \bar{x} \amp = \frac{1}{m} \int_0^{\frac{\pi}{2}}
+            \int_0^a y \rho dA = \frac{1}{m} \int_0^{\frac{\pi}{2}}
+            \int_0^a kr^3 \sin \theta dr d\theta
+          </mrow>
+          <mrow>
+            \amp = \frac{k}{m} \int_0^{\frac{\pi}{2}} \sin \theta
+            d\theta \int_0^a r^3 dt
+          </mrow>
+          <mrow>
+            \amp = \frac{k}{m} \left( -\cos \theta \right)
+            \Bigg|_0^{\frac{\pi}{2}} \frac{r^4}{4}
+            \Bigg|_0^a = \frac{6}{\pi a^3} 1 \frac{a^4}{4} =
+            \frac{3a}{2\pi}
+          </mrow>
+          <mrow>
+            \bar{y} \amp = \frac{3a}{2\pi}
+          </mrow>
+        </md>
+        <p>
+          I don't actually have to calculate the second moment;
+          <m>\bar{x} = \bar{y}</m> due to the symmetry of the
+          situation. Whenever possible, I like to look for symmetries
+          that can save me some calculation. The centre of mass is
+          found at <m>\left( \frac{3a}{2\pi}, \frac{3a}{2\pi}
+          \right)</m>.
+        </p>
+      </statement>
+    </example>
+    <example>
+      <statement>
+        <p>
+          Now consider a lamina with <m>y \in [-1,1]</m> and <m>x</m>
+          bounded between <m>\pm y^4</m> with <m>\rho = 1</m>. What
+          is the area and moment of intertia about the <m>x</m>-axis?
+          I need to calculate the mass and then the second moments. I
+          do these integrals in cartesian coordinates. 
+        </p>
+        <md>
+          <mrow>
+            A \amp = \int_{-1}^1 \int_{-y^4}^{y^4}1 dx dy
+          </mrow>
+          <mrow>
+            \amp = \int_{-1}^1 2y^4 dy = \frac{2y^5}{5}
+            \Bigg|_{-1}^1 = \frac{4}{5}
+          </mrow>
+          <mrow>
+            I_x \amp = \int_{-1}^1 \int_{-y^4}^{y^4} y^2 dx dy
+          </mrow>
+          <mrow>
+            \amp = \int_{-1}^1 xy^2 \Bigg|_{-y^4}^{y^4} =
+            \int_{-1}^1 2y^6 dy = \frac{2y^7}{7} \Bigg|_{-1}^1
+            = \frac{4}{7}
+          </mrow>
+        </md>
+        <p>
+          Now I want to compare this lamina to a rectangle of height
+          <m>2</m> and width <m>\frac{2}{5}</m>, which has the same area. I
+          can quickly  calculate the moment of inertia for the
+          rectangle.
+        </p>
+        <me>
+          I_x = \int_{-1}^1 \int_{-\frac{1}{5}}^\frac{1}{5} y^2 dx
+          dy = \frac{4}{15}
+        </me>
+        <p>
+          The previous shape has twice the resitance to rotation
+          compare with the rectangle, even though it has the same
+          cross-section area. The reasons for the higher moment of
+          intertia is that the area is distributed futher away from
+          the origin; things that are farther away are harder to cause
+          to rotate. This physical fact demonstrated in this example
+          partially explains the use of <m>I</m> beams in
+          construction: they have more resistance to twisting and
+          shear forces than a rectangular cross-section beam of the
+          same size or weight, since the material is distributed
+          further away from the central axis of a twist or shear
+          force.
+        </p>
+      </statement>
+    </example>
+    <example>
+      <statement>
+        <p>
+          Now consider a hemisphere above the <m>xy</m> plane with
+          radius <m>a</m> and density <m>\rho = kz</m>. I will 
+          calculate all the properties here: mass, centre of mass, and
+          moments of inertia. Since I am calculating over a
+          hemisphere, I'll be using spherical coordinates. Wherever
+          possible, I'll use symmetry to simplify things. In
+          particular, for first moments, if the mass is equally
+          distributed on either side of an axis, that moment must be
+          zero due to symmetry.
+        </p>
+        <md>
+          <mrow>
+            m \amp = \int_0^{2\pi} \int_0^{\pi/2} \int_0^a k (r\cos
+            \phi) r^2 \sin \phi dr d\phi d\theta
+          </mrow>
+          <mrow>
+            \amp = 2\pi k \int_0^{\pi/2} \frac{r^4}{4}
+            \Bigg|_0^a \cos \phi \sin \phi d\phi
+          </mrow>
+          <mrow>
+            \amp = \frac{2\pi ka^4}{4} \int_0^{\pi/2} \frac{\sin
+            2\phi}{2} d\phi
+          </mrow>
+          <mrow>
+            \amp = \frac{\pi ka^4}{2} \left(
+            \frac{-\cos2\phi}{4} \right) \Bigg|_0^{\pi/2} =
+            \frac{\pi ka^4}{8} ( -\cos \pi + \cos 0) = \frac{\pi
+            ka^4}{4}
+          </mrow>
+          <mrow>
+            M_{yz} \amp = 0 \text{ due to symmetry. }
+          </mrow>
+          <mrow>
+            M_{xz} \amp = 0 \text{ due to symmetry. }
+          </mrow>
+          <mrow>
+            M_{xy} \amp = \int_D z \rho dV
+          </mrow>
+          <mrow>
+            \amp = \int_0^{2\pi} \int_0^{\pi/2} \int_0^a kr^2
+            \cos^2\phi r^2 \sin \phi dr d\phi d\theta.
+          </mrow>
+          <mrow>
+            \amp = 2\pi k \int_0^a r^4 dr \int_0^{\pi/2} \cos^2
+            \phi \sin \phi d \phi
+          </mrow>
+          <mrow>
+            \amp = \frac{2\pi k a^5}{5} \left( \frac{-\cos^3
+            \phi}{3} \right) \Bigg|_0^{\pi/2} = \frac{2\pi k
+            a^5}{15}
+          </mrow>
+          <mrow>
+            \bar{x} \amp = 0
+          </mrow>
+          <mrow>
+            \bar{y} \amp = 0
+          </mrow>
+          <mrow>
+            \bar{z} \amp = \frac{\frac{2\pi ka^5}{15}}{\frac{\pi
+            ka^4}{4}} = \frac{8a}{15}
+          </mrow>
+        </md>
+        <p>
+          The centre of mass is at <m>(0,0, \frac{8a}{15})</m>. Now I
+          will calculate the moments of inertia.
+        </p>
+        <md>
+          <mrow>
+            I_x \amp = \int_D (y^2 + z^2) \rho dV = \int_D (y^2 +
+            z^2) z k dV
+          </mrow>
+          <mrow>
+            \amp = k \int_0^{2\pi} \int_0^{\pi/2} \int_0^a r^2
+            (\sin^2 \phi \sin^2 \theta + \cos^2 \phi) r \cos \phi
+            r^2 \sin\phi drd\phi d\theta
+          </mrow>
+          <mrow>
+            \amp = k \int_0^a r^5 dr \int_0^{2\pi} \int_0^{\pi/2}
+            \left( \sin^3 \phi \cos \phi \sin^2 \theta + \cos^3 \phi
+            \sin \phi \right) d\phi d\theta
+          </mrow>
+          <mrow>
+            \amp = \frac{ka^6}{6} \left[ \left( \frac{\sin^4
+            \phi}{4} \right) \Bigg|_0^{\pi/2} \left(
+            \frac{\theta}{2} - \frac{\sin 2\theta}{4} \right)
+            \Bigg|_0^{2\pi} + \left( \frac{-\cos^4 \phi}{4}
+            \right) \Bigg|_0^{\pi/2} 2\pi \right]
+          </mrow>
+          <mrow>
+            \amp = \frac{ka^6}{6} \left[ \left( \frac{1}{4} - 0
+            \right) \pi _ 2\pi \left( \frac{1}{4} - 0 \right)
+            \right] = \frac{\pi ka^6}{8}
+          </mrow>
+          <mrow>
+            I_y \amp = \frac{\pi ka^6}{8} \text{ by symmetry }
+          </mrow>
+          <mrow>
+            I_z \amp = \int_D (x^2 + y^2) \rho dV
+          </mrow>
+          <mrow>
+            \amp = k \int_0^{2\pi} \int_0^{\pi/2} \int_0^a r^2
+            \sin^2 \phi r \cos \phi r^2 \sin \phi dr d\phi d\theta
+          </mrow>
+          <mrow>
+            \amp = \frac{2\pi ka^6}{6} \int_0^{\pi/2} \sin^3 \phi
+            \cos \phi d\phi
+          </mrow>
+          <mrow>
+            \amp = \frac{\pi ka^6}{3} \frac{\sin^4 \phi}{4}
+            \Bigg|_0^{\pi/2} = \frac{\pi ka^6}{12}
+          </mrow>
+          <mrow>
+            \bar{\bar{x}}^2 \amp = \frac{\frac{\pi
+            ka^6}{8}}{\frac{\pi ka^4}{4}} = \frac{a^2}{2}
+          </mrow>
+          <mrow>
+            \bar{\bar{x}} \amp = \frac{a}{\sqrt{2}}
+          </mrow>
+          <mrow>
+            \bar{\bar{y}}^2 \amp = \frac{a^2}{2}
+          </mrow>
+          <mrow>
+            \bar{\bar{y}} \amp = \frac{a}{\sqrt{2}}
+          </mrow>
+          <mrow>
+            \bar{\bar{z}}^2 \amp = \frac{\frac{\pi
+            ka^6}{12}}{\frac{\pi ka^4}{4}} = \frac{a^3}{3}
+          </mrow>
+          <mrow>
+            \bar{\bar{z}} \amp = \frac{a}{\sqrt{3}}
+          </mrow>
+        </md>
+        <p>
+          The centre of rotation is at <m>\left( \frac{a}{\sqrt{2}},
+          \frac{a}{\sqrt{2}}, \frac{a}{\sqrt{3}} \right)</m>.
+        </p>
+      </statement>
+    </example>
+    <example>
+      <statement>
+        <p>
+          Now consider a parabaloid bounded by <m>z = b(x^2 + y^2)</m>
+          with height <m>h</m> and density <m>\rho = 1</m>. What are
+          its moments of inertia? I will use cylindrical coordinates,
+          which are well suited to describe the parabaloid. However, I
+          need a bound on the radius term at the height <m>h</m>. The
+          equation of the parabaloid in cylindrical coordinates is
+          <m>z = br^2</m> and when <m>z=h</m>, I see that <m>r =
+          \sqrt{\frac{h}{b}}</m>. This is the outer bound on radius.
+          With contstant bounds on angle and radius, I can let
+          <m>z</m> range from the parabaloid graph <m>z=br^2</m> to
+          the constant height <m>h</m>.
+        </p>
+        <md>
+          <mrow>
+            m \amp = \int_S 1 dV = \int_0^{2\pi}
+            \int_0^{\sqrt{\frac{h}{b}}} \int_{br^2}^h r dz dr d\theta
+          </mrow>
+          <mrow>
+            \amp = \int_0^{2\pi} d\theta \int_0^{\sqrt{\frac{h}{b}}} z
+            \Bigg|_{br^2}^h rdr
+          </mrow>
+          <mrow>
+            \amp = 2\pi \int_0^{\sqrt{\frac{h}{b}}} (h-br^2)rdr 
+          </mrow>
+          <mrow>
+            \amp = 2\pi \left( \frac{hr^2}{2} - \frac{br^4}{4} \right)
+            \Bigg|_0^{\sqrt{\frac{h}{b}}} = 2\pi \left( \frac{h^2}{2b}
+            - \frac{bh^2}{4b^2} \right) 
+          </mrow>
+          <mrow>
+            \amp = 2\pi \frac{h^2}{b} \left( \frac{1}{2} - \frac{1}{4}
+            \right) = \frac{\pi h^2}{2b}
+          </mrow>
+          <mrow>
+            I_z \amp = \int_0^{2\pi} \int_0^{\sqrt{\frac{h}{b}}}
+            \int_{br^2}^h (x^2 + y^2) r dz dr d\theta
+          </mrow>
+          <mrow>
+            \amp = \int_0^{2\pi} \int_0^{\sqrt{\frac{h}{b}}}
+            \int_{br^2}^h r^3 dz dr d\theta
+          </mrow>
+          <mrow>
+            \amp = 2\pi \int_0^{\sqrt{\frac{h}{b}}} \left( r^3h -
+            r^5 b \right) dr
+          </mrow>
+          <mrow>
+            \amp = 2\pi \left( \frac{hr^4}{4} -
+            \frac{br^6}{6} \right) \Bigg|_0^{\sqrt{\frac{h}{b}}}
+          </mrow>
+          <mrow>
+            \amp = 2\pi \left( \frac{h^3}{4b^2} - \frac{bh^3}{6b^3}
+            \right) = \frac{2\pi h^3}{b^2} \left( \frac{1}{4} -
+            \frac{1}{6} \right) = \frac{\pi h^3}{6b^2}
+          </mrow>
+          <mrow>
+            \bar{\bar{z}}^2 \amp = \frac{I_z}{m} = \frac{\frac{\pi
+            h^3}{6b^2}}{\frac{\pi h^2}{2b}} = \frac{h}{3b}
+          </mrow>
+          <mrow>
+            \bar{\bar{z}} \amp = \sqrt{\frac{h}{3b}}
+          </mrow>
+          <mrow>
+            I_x \amp = \int_0^{2\pi} \int_0^{\sqrt{\frac{h}{b}}}
+            \int_{br^2}^h (y^2 + z^2) r dz dr d\theta
+          </mrow>
+          <mrow>
+            \amp = \int_0^{2\pi} \int_0^{\sqrt{\frac{h}{b}}}
+            \int_{br^2}^h (r^2 \sin^2 \theta + z^2) r dz dr d\theta
+          </mrow>
+          <mrow>
+            \amp = \int_0^{2\pi} \int_0^{\sqrt{\frac{h}{b}}} r^3
+            \sin^2 \theta \left( h- br^2 \right) + r \left(
+            \frac{h^3}{3} - \frac{b^3r^6}{3}\right) dr d\theta
+          </mrow>
+          <mrow>
+            \amp = \int_0^{2\pi} \frac{r^4}{4} h \sin^2
+            \theta - \frac{r^6}{6} b \sin^2 \theta + \frac{r^2}{2}
+            \frac{h^3}{3} - \frac{r^8}{8} \frac{b^3}{3}
+            \Bigg|_0^{\sqrt{\frac{h}{b}}} d \theta
+          </mrow>
+          <mrow>
+            \amp = \int_0^{2\pi} \frac{h^2}{4b^2} h \sin^2 \theta -
+            \frac{h^3}{6b^3} b \sin^2 \theta + \frac{h^4}{6b} -
+            \frac{h^4 b^3}{24 b^4} d\theta
+          </mrow>
+          <mrow>
+            \amp = \frac{h^3}{b^2} \int_0^{2\pi} \sin^2 \theta d
+            \theta \left( \frac{1}{4} - \frac{1}{6} \right) +
+            \frac{2\pi h^4}{b} \left( \frac{1}{6} - \frac{1}{24}
+            \right)
+          </mrow>
+          <mrow>
+            \amp = \frac{h^3}{12b^2} \left( \frac{\theta}{2}
+            - \frac{\sin 2\theta}{4} \right) \Bigg|_0^{2\pi} +
+            \frac{3\pi h^4}{12b}
+          </mrow>
+          <mrow>
+            \amp = \frac{h^3 \pi}{12b^2} + \frac{3\pi h^4}{12b} =
+            \frac{h^3 \pi}{12b} \left( \frac{1}{b} + 3h \right)
+          </mrow>
+          <mrow>
+            \bar{\bar{x}}^2 \amp = \frac{ \frac{h^3\pi}{12b} \left(
+            \frac{1}{b} + 3h \right)}{\frac{\pi h^2}{2b}} =
+            \frac{h}{6} \left( \frac{1}{b} + 3h \right) 
+          </mrow>
+          <mrow>
+            \bar{\bar{x}} \amp = \sqrt{\frac{h}{6} \left( \frac{1}{b}
+            + 3h \right)}
+          </mrow>
+          <mrow>
+            \bar{\bar{y}} \amp = \bar{\bar{x}} \text{ by symmetry }
+          </mrow>
+        </md>
+      </statement>
+    </example>
+    <p>
+      As a final example for this section, I can prove a a nice
+      theorem from physics. This is a fact that is used all through
+      high school and first year physics: large objects (like stars,
+      planets, etc) are treated as point masses for the purpose of the
+      force of gravity. This fact seemed intuitive, but now I actually
+      want to formally prove it. I can't, unfortunately, construct a
+      general proof at this time, but I will prove it for the special
+      case of a sphere. 
+    </p>
+    <theorem>
+      <statement>
+        <p>
+          A body of uniform density under the action of a external
+          conservative force (such a gravity) acts like a point mass
+          at its centre of mass.
+        </p>
+      </statement>
+    </theorem>
+    <proof>
+      <p>
+        I'll just prove the theorem for the special case of a
+        sphere. The force of gravity between two masses <m>m_1</m>
+        and <m>m_2</m> is
+        <me>
+          F = \frac{Gm_1m_2}{r^2}
+        </me>
+      </p>
+      <p>
+        I'll assume the source of the gravitational attraction sits
+        at <m>(0,0,c)</m> where <m>c \gt a</m> is larger than <m>a</m>
+        the radius of the sphere. I'll also assume that <m>\rho</m>
+        is the constant density of the sphere. Then <m>\rho dV</m> is
+        an infinitesimal piece of mass in the sphere, and I can write
+        <m>\omega</m> for the distance from the infinitesimal mass to
+        the gravitational source.
+      </p>
+      <p>
+        The force on the infinitesimal mass is
+      </p>
+      <me>
+        F dV = \frac{Gm\rho dV}{\omega^2}
+      </me>.
+      <p>
+        I'll write this in polar coordinates. 
+      </p>
+      <me>
+        F dV = \frac{Gm\rho r^2 \sin \phi dr d\phi d\theta}{\omega^2}
+      </me>.
+      <p>
+        By symmetry of the sphere, all lateral forces will cancel. I
+        only care about the <m>z</m> component of the force. Let
+        <m>\alpha</m> be the angle from the <m>z</m> axis of the line
+        from <m>(0,0,c)</m> to the infinitesimal mass. Then I can
+        rewrite the force again.
+      </p>
+      <me> 
+        F_z dV = \frac{Gm\rho r^2 \sin \phi \cos \alpha dr d\phi
+        d\theta}{\omega^2}
+      </me>
+      <p>
+        Now I'll do some trigonometry. Consider the triange with
+        vertices <m>(0,0,c)</m>, <m>(0,0,0)</m> and the location of
+        our infinitesimal mass. The angle at <m>(0,0,c)</m> is
+        <m>\alpha</m> by definition, and likewise the angle at
+        <m>(0,0,0)</m> is <m>\phi</m>. The side lengths are <m>c</m>,
+        <m>\omega</m> and <m>r</m>, also by definition. I will also
+        use the cosine law.
+      </p>
+      <md>
+        <mrow>
+          \omega^2 \amp = r^2 + c^2 - 2rc \cos \phi
+        </mrow>
+        <mrow>
+          \omega \amp = \sqrt{r^2 + c^2 - 2rc \cos \phi}
+        </mrow>
+      </md>
+      <p>
+        The length <m>c</m> along the <m>x</m> axis can be divided
+        into two pieces, so that <m>c = \omega \cos \alpha + r \cos
+        \phi</m>. I can solve for <m>\cos \alpha</m>.
+      </p>
+      <me>
+        \cos \alpha = \frac{ c - r \cos \phi}{\omega}
+      </me>
+      <p>
+        I can replace <m>\omega</m> with the square root expression.
+      </p>
+      <me>
+        \cos \alpha = \frac{ c - r \cos \phi}{\sqrt{r^2 + c^2 - 2rc
+        \cos \phi}}
+      </me>
+      <p>
+        Now I can replace both <m>\cos \alpha</m> and <m>\omega</m>in the
+        force expression.
+      </p>
+      <me>
+        F_z dV = \frac{Gm\rho r^2 \sin \phi}{r^2 + c^2 - 2rc\cos
+        \phi} \left( \frac{c - r\cos \phi}{\sqrt{r^2 + c^2 - 2rc
+        \cos \phi}} \right) dr d\phi d\theta
+      </me>
+      <p>
+        The total force is this integral of this infinitesimal force
+        over the sphere.
+      </p>
+      <me>
+        F_z = \int_0^{2\pi} \int_0^{\pi} \int_0^a \frac{Gm\rho r^2
+        \sin \phi}{r^2 + c^2 - 2rc\cos \phi} \left( \frac{c - r\cos
+        \phi}{\sqrt{r^2 + c^2 - 2rc \cos \phi}} \right) dr d\phi
+        d\theta
+      </me>
+      <p>
+        I'll do some substitution here, more or less reversing the
+        trigonometry. I leave <m>r</m> and <m>\theta</m> alone, but
+        write <m>\omega^2 = r^2 + c^2 - 2rc\cos\phi</m> with the
+        cosine law as before. 
+      </p>
+      <me> 
+        2\omega d\omega = 2rc \sin \phi d\phi \implies r \sin \phi
+        d\phi = \frac{\omega}{c} d\omega
+      </me>
+      <p>
+        The bounds are <m>\omega(0) = c-r</m> and <m>\omega(\pi) =
+        c+r</m>.  Finally, I can solve to get <m>r\cos \phi =
+        \frac{r^2 + c^2 - \omega^2}{2c}</m>. I use this as a
+        substitution in the <m>\phi</m> integral. 
+      </p>
+      <md>
+        <mrow>
+          F_z \amp = \int_0^{2\pi} \int_0^{\pi} \int_0^a
+          \frac{Gm\rho r}{(r^2 + c^2 - 2rc\cos \phi)} \frac{(c-r\cos
+          \phi)}{\sqrt{r^2+c^2-2rc\cos\phi}} (r\sin \phi d\phi) dr
+          d\theta
+        </mrow>
+        <mrow>
+          \amp = \int_0^{2\pi} \int_0^a \int_{c-r}^{c+r}
+          \frac{Gm\rho r}{\omega^2} \frac{c - \frac{r^2 + c^2 -
+          \omega^2}{2c}}{\omega} \frac{\omega}{c} d\omega dr
+          d\theta
+        </mrow>
+        <mrow>
+          \amp = \int_0^{2\pi} \int_0^a \int_{c-r}^{c+r}
+          \frac{Gm\rho r}{\omega^2} \frac{2c^2 - r^2 - c^2 +
+          \omega^2}{2c^2} \omega dr d\theta
+        </mrow>
+        <mrow>
+          \amp = \frac{2\pi Gm \rho}{2c^2} \int_0^a \int_{c-r}^{c+r}
+          r \left( \frac{c^2 -r^2 +\omega^2}{\omega^2} \right) d
+          \omega dr
+        </mrow>
+        <mrow>
+          \amp = \frac{\pi Gm \rho}{c^2} \int_0^a \int_{c-r}^{c+r} r
+          \left( (c^2 -r^2) \frac{1}{\omega^2} + 1 \right) d \omega
+          dr
+        </mrow>
+        <mrow>
+          \amp = \frac{\pi Gm \rho}{c^2} \int_0^a r \left(
+          (c^2-r^2) \frac{-1}{\omega} + \omega \right)
+          \Bigg|_{c-r}^{c+r} dr
+        </mrow>
+        <mrow>
+          \amp = \frac{\pi Gm\rho}{c^2} \int_0^a (rc^2 - r^3)
+          \left( \frac{1}{c-r} - \frac{1}{c+r} \right) + r
+          (c+r-(c-r)) dr
+        </mrow>
+        <mrow>
+          \amp = \frac{\pi G m \rho}{c^2} \int_0^a
+          \frac{-r(c^2-r^2)(-2r)}{c^2-r^2} + 2r^2 dr
+        </mrow>
+        <mrow>
+          \amp = \frac{\pi G m \rho}{c^2} 2r^2 + 2r^2 dr
+        </mrow>
+        <mrow>
+          \amp = \frac{\pi G m \rho}{c^2} 4r^2 dr = \frac{4\pi Gm
+          \rho a^3}{3c^2} = \frac{Gm \left( \frac{\rho 4 \pi a^3}{3}
+          \right)}{c^2}
+        </mrow>
+      </md>
+      <p>
+        The expression in brackets is the mass of the sphere and
+        <m>c</m> is the distance from the centre of mass to the
+        gravitational sources. This is exactly the expression we
+        wanted: it is the force due to a point mass at the origin with
+        mass equal to the total mass of the sphere.
+      </p>
+    </proof>
+    <p>
+      In the proof, the two masses were seperated from each
+      other. I could instead consider hollow sphere, with outside
+      radius <m>a</m> and inside radius <m>b</m>, and a point mass at
+      <m>(0,0,c)</m> with <m>c\lt b</m>, so that the point mass is
+      inside the sphere. What is the force of gravity on that point
+      mass? The set-up is almost the same; the only difference is
+      that the bounds on <m>\omega</m> are reversed in sign. Let me do
+      the final calculation with this adjustment.
+    </p>
+    <md>
+      <mrow>
+        F_z \amp = \int_0^{2\pi} \int_a^b \int_{r-c}^{r+c}
+        \frac{Gm\rho r (c^2 -r^2 + \omega^2)}{2\omega^2 c^2} d\omega
+        dr d\theta
+      </mrow>
+      <mrow>
+        \amp = \frac{\pi G m \rho}{c^2} \int_a^b (r^3-rc^2)
+        \frac{1}{\omega} \Bigg|_{r-c}^{r+c} + r\omega
+        \bigg|_{r-c}^{r+c} dr
+      </mrow>
+      <mrow>
+        \amp = \frac{\pi G m \rho}{c^2} \int_a^b r(r^2 -c^2) \left(
+        \frac{1}{r+c} - \frac{1}{r-c} \right) + 2rc dr
+      </mrow>
+      <mrow>
+        \amp = \frac{\pi G m \rho}{c^2} \int_a^b r(r^2 -c^2)
+        \frac{-2c}{r^2-c^2} + 2rc dr
+      </mrow>
+      <mrow>
+        \amp = \frac{\pi G m \rho}{c^2} \int_a^b -2rc + 2rc dr =
+        \frac{\pi G m \rho}{c^2} \int_a^b 0 dr = 0
+      </mrow>
+    </md>
+    <p>
+      Everything cancels out, and I reach a fairly strange conclusion:
+      no matter the location of a point mass is inside a hollow sphere
+      (of uniform density), it experiences no force of gravity.
+    </p>
+  </subsection>
+  <subsection xml:id="subsection-applications-probability">
+    <title>Moments and Probability Distributions</title>
+    <p>
+      Let me recall some definitions about continuous probability from
+      previous courses. 
+    </p>
+    <definition>
+      <statement>
+        <p>
+          A <term>probability distribution</term> on an integrable set
+          <m>D \subset \RR^n</m> is a function <m>\rho: D \rightarrow
+          [0, \infty)</m> such that
+        </p>
+        <me>
+          \int_D \rho dV = 1
+        </me>.
+        <p>
+          The set <m>D</m> is called the <term>set of states</term>;
+          each point represents the state of the system. For any
+          integrable subset <m>A \subset D</m>, the probability that
+          the state of the system is in the subset <m>A</m> is the
+          integral over that subset.
+        </p>
+        <me>
+          P(A) = \int_A \rho dV
+        </me>
+      </statement>
+    </definition>
+    <definition>
+      <statement>
+        <p>
+          An integrable function <m>f: D \rightarrow \RR</m> is called
+          an <term>observable</term> or <term>measurable</term>; for
+          each state, an observable measure some property of that
+          state. The <term>expectation value</term> of the observable
+          <m>f</m> is the continuous version of the average value of
+          <m>f</m> over the state. It is written <m>\langle
+          f\rangle</m> and calculated by integration.
+        </p>
+        <me>
+          \langle f\rangle = \int_D f \rho dV
+        </me>
+      </statement>
+    </definition>
+    <p>
+      If <m>D \subset \RR^3</m>, then <m>D</m> may be a domain of
+      positions. These points in <m>D</m> are the states of a
+      probabilistic system: are simply the possible places where a
+      particle may be found. Then I cancalculate the expectation of
+      each coordinate, using the definition.
+    </p>
+    <md>
+      <mrow>
+        \langle x\rangle \amp = \int_D x \rho dV
+      </mrow>
+      <mrow>
+        \langle y\rangle \amp = \int_D y \rho dV
+      </mrow>
+      <mrow>
+        \langle z\rangle \amp = \int_D z \rho dV
+      </mrow>
+      <mrow>
+        \langle r \rangle = \langle \sqrt{x^2+y^2+z^2}\rangle \amp
+        = \int_D \sqrt{x^2+y^2+z+^2} \rho dV
+      </mrow>
+    </md>
+    <p>
+      The first three of these are the expectation values of each
+      coordinate of position and the last is the expectation value of
+      the distance to the origin.
+    </p>
+    <p>
+      Alternatively, with <m>D \subset \RR^3</m>, <m>\rho</m> could be
+      an ordinay mass-density. I can think of this as the
+      probability of finding mass at each point in the set. In that
+      context, <m>\langle x\rangle</m>, <m>\langle y\rangle</m> and
+      <m>\langle z\rangle</m> are just the first moment and the
+      coordinates of the centre of mass. That also makes sense: the
+      centre of mass is the <sq>average</sq> location of the mass of
+      the object.
+    </p>
+    <p>
+      The second moments are also expectation values. For example,
+      <m>\langle x^2 + y^2\rangle</m> is the average (square) distance
+      from the <m>z</m> axis. Objects further away from the <m>z</m>
+      axis are more difficult to rotate around that axis, so this
+      naturally measure the resistance to rotation around the <m>z</m>
+      axis. Likewise for <m>\langle x^2 + z^2\rangle</m> about the
+      <m>y</m> axis and <m>\langle y^2 + z^2\rangle</m> about the
+      <m>x</m> axis.
+    </p>
+    <p>
+      The use of the term <sq>moment</sq> is historical. The entire
+      subject of continuous probability can be developed using the
+      terminology of moments. For the rest of  notes, I'll use the
+      term <sq>expectation value</sq> instead of <sq>moment</sq>.
+    </p>
+    <definition>
+      <statement>
+        <p>
+          The standard deviation of a observable is a measure of the
+          width of the distribution. It can be expressed as the
+          expectation value of the distance from the average. In
+          practice, I use the square of distance and calculate the
+          square of standard deviation (much like the pythagorean
+          theorem). Let <m>f</m> be a observable. Its standard
+          deviation <m>\sigma_f</m> is calculate by the following
+          integral.
+        </p>
+        <me>
+          \sigma^2_f = \int_D (f-\langle f\rangle)^2 \rho dV
+        </me>
+      </statement>
+    </definition>
+    <p>
+      With some algebra, I can uncover some interesting properties of
+      standard deviation.
+      <md>
+        <mrow>
+          \sigma_f^2 \amp = \int_D (f - \langle f\rangle)^2 \rho dV
+        </mrow>
+        <mrow>
+          \amp = \int_D (f^2 - 2 f\langle f\rangle + \langle
+          f\rangle^2)\rho dV
+        </mrow>
+        <mrow>
+          \amp = \int_D f^2 \rho dV - 2 \int_D f \langle f\rangle
+          \rho dV + \int_D \langle f\rangle^2 \rho dV
+        </mrow>
+        <mrow>
+          \amp = \langle f^2\rangle - 2 \langle f\rangle \int_D f
+          \rho dV + \langle f\rangle^2 \int_D \rho dV
+        </mrow>
+        <mrow>
+          \amp = \langle f^2\rangle - 2 \langle f\rangle \langle
+          f\rangle + \langle f\rangle^2 = \langle f^2\rangle - \langle
+          f\rangle^2
+        </mrow>
+        <mrow>
+          \sigma_f^2 \amp = \langle f^2\rangle - \langle f\rangle^2
+        </mrow>
+      </md>
+    </p>
+    <p>
+      The last line above is an important identity for standard
+      deviation and expectation values.
+    </p>
+  </subsection>
+  <subsection xml:id="subsection-quantum">
+    <title>Quantum Mechanics</title>
+    <p>
+      One of the most well-known applications of continuous
+      probability is quantum mechanics. The whole field is built on
+      the assumption that states of physical systems are
+      probabilistically determined and that we should study the
+      physics of the system by studying the probability distribution.
+    </p>
+    <p>
+      The state of a physical system in quantum mechnics is measured
+      by a function <m>\Psi</m>, called a wave function. <m>\Psi</m>
+      itself is not exactly the probability density; quantum mechanics
+      works with a <m>\CC</m>-valued function, which adds another
+      layer of complexity. With <m>\CC</m>-valued functions, there is
+      an operation called complex conjugation, which changes the sign
+      of the imaginary piece of the function. It is written with a
+      bar, so <m>\bar{\Psi}</m> is the conjugate. Then, expectation
+      values in quantum mechanics are given by the following integral,
+      where <m>D</m> is the domain of states and <m>f</m> is a
+      observable on that domain of states.
+    </p>
+    <me>
+      \langle f\rangle = \int_D \bar{\Psi} f \Psi dV
+    </me>
+    <p>
+      All observables in quantum mechancs are calcualted from the wave
+      function. Determining the behaviour of the wave function over
+      time is the goal of the discpline; that behaviour is given by
+      the famour Schrodinger equation. In this equation <m>V</m> is a
+      potential energy function on the space of states, <m>\hbar</m>
+      is a constant, <m>m</m> is the mass and <m>\imath</m> is the
+      imaginary number, with <m>\imath^2 = -1</m>.
+    </p>
+    <me>
+      \imath \hbar \frac{\del \Psi}{\del t} = \frac{-\hbar}{2m}
+      \nabla^2 \Psi + V \Psi
+    </me>
+    <p>
+      I'll assume that <m>\Psi(x,t)</m> has only one variable of
+      position. (The following derivation works in three variables of
+      position with roughly the same steps, but the notation becomes
+      much more challenging). The expectation value for position is
+      <m>\langle x\rangle</m>. What is momentum? It should be (up to
+      a mass term) the rate of change of position. But the only
+      available sense of position is the expectation value.
+      Therefore, I should try to calculate <m>\frac{\del \langle
+      x\rangle}{\del t}</m>. I use the compatibility of integration
+      and differentiation to exchange the operations. (There are
+      theorems, which I've omitted in this course, which allow this
+      exchange).
+    </p>
+    <me>
+      \frac{\del \langle x\rangle}{\del t} = \frac{\del}{\del t}
+      \int_{\RR} \bar{\Psi} x \Psi dx = \int_{\RR} \frac{\del}{\del
+      t} x \bar{\Psi}\Psi dx = \int_{\RR} x \frac{\del}{\del t}
+      \left( \bar{\Psi}\Psi \right) dx
+    </me>
+    <p>
+      I need to calculate this derivative term. I make use of the
+      Schrodinger equation to change the time derivatives into space
+      derivatives. (This is really what the Schrodinger equation is
+      all about!)
+    </p>
+    <md>
+      <mrow>
+        \frac{\del}{\del t} \left( \bar{\Psi}\Psi \right) \amp =
+        \bar{\Psi} \frac{\del}{\del t} \Psi + \Psi \frac{\del}{\del
+        t} \bar{\Psi}
+      </mrow>
+      <mrow>
+        \amp = \bar{\Psi} \frac{1}{\imath \hbar} \left[
+        \frac{-\hbar^2}{2m} \frac{\del^2}{\del x^2} \Psi + V \Psi
+        \right] + \Psi \frac{-1}{\imath \hbar} \left[
+        \frac{-\hbar^2}{2m} \frac{\del^2}{\del x^2} \bar{\Psi} + V
+        \bar{\Psi} \right]
+      </mrow>
+      <mrow>
+        \amp = \frac{\imath \hbar}{2m} \bar{\Psi} \frac{\del^2
+        \Phi}{\del^2 x} - \frac{\imath V \Phi \bar{\Phi}}{\hbar} -
+        \frac{\imath \hbar}{2m} \Psi \frac{\del^2 \bar{\Phi}}{\del
+        x^2} + \frac{\imath V \Psi \bar{\Psi}}{\hbar}
+      </mrow>
+      <mrow>
+        \amp = \frac{\del}{\del x} \left[ \frac{\imath \hbar}{2m}
+        \left( \bar{\Psi} \frac{\del \Psi}{\del x} - \frac{\del
+        \bar{\Psi}}{\del x} \Psi \right) \right]
+      </mrow>
+      <mrow>
+        \frac{d\langle x\rangle}{dt} \amp = \frac{\imath \hbar}{2m}
+        \int x \frac{\del}{\del x} \left( \bar{\Psi} \frac{\del
+        \Psi}{\del x} - \frac{\del \bar{\Psi}}{\del x} \Psi \right)
+        dx
+      </mrow>
+    </md>
+    <p>
+      Here I integrate by parts. 
+    </p>
+    <me>
+      = \frac{\imath \hbar}{2m} x \left( \bar{\Psi}
+      \frac{\del \Psi}{\del x} - \frac{\del \bar{\Psi}}{\del x}
+      \Psi \right) \Bigg|_{-\infty}^{\infty} - \frac{\imath
+      \hbar}{2m} \int \left( \bar{\Psi} \frac{\del \Psi}{\del x} -
+      \frac{\del \bar{\Psi}}{\del x} \Psi \right) dx
+    </me>
+    <p>
+      The first term, when evaluated on the bounds, decays to zero
+      due to the normalization limits. Then I integrate by parts
+      again. In the second integration by parts, half the terms will
+      cancell. 
+    </p>
+    <md>
+      <mrow>
+        \amp = \frac{-\imath \hbar}{m} \int \bar{\Psi} \frac{\del
+        \Psi}{\del x} dx = \frac{\hbar}{\imath m} \int \bar{\Psi}
+        \frac{\del \Psi}{\del x} dx
+      </mrow>
+      <mrow>
+        \langle p\rangle \amp = \frac{d \langle x \rangle}{dt} =
+        \int \bar{\Psi} \frac{\hbar}{\imath} \frac{\del}{\del x}
+        \Psi dx = \left\langle \frac{\hbar}{\imath} \frac{\del}{\del
+        x} \right\rangle
+      </mrow>
+    </md>
+    <p>
+      This is something new: the expectation value of an
+      <em>operator</em> instead of a function. This is well defined
+      because the operator acts on the wave function. This leads to a 
+      general correspondence.
+    </p>
+    <tabular>
+      <row>
+        <cell>
+          Expectation Values
+        </cell>
+        <cell>
+          <m>\rightarrow</m>
+        </cell>
+        <cell>
+          Operators on Wave Functions
+        </cell>
+      </row>
+      <row>
+        <cell>
+          Position
+        </cell>
+        <cell>
+          <m>\rightarrow</m>
+        </cell>
+        <cell>
+          Multiplication by <m>x</m>
+        </cell>
+      </row>
+      <row>
+        <cell>
+          Momentum
+        </cell>
+        <cell>
+          <m>\rightarrow</m>
+        </cell>
+        <cell>
+          Operator <m>\frac{\hbar}{\imath} \frac{\del}{\del x}</m>
+        </cell>
+      </row>
+    </tabular>
+    <p>
+      Any observable in quantum mechanics can be reduced to an
+      operator <m>F</m> on the space of wave functions. Its
+      expectation value is its integral.
+    </p>
+    <me>
+      \langle F\rangle = \int_D \bar{\Psi} (F\Psi) dV
+    </me>
+    <p>
+      Moreover, all operators in quantum mechanics can be derived from
+      combination of the position and momentum opreators.
+    </p>
+  </subsection>
+  <subsection xml:id="subsection-uncertainty">
+    <title>The Uncertainty Principle</title>
+    <p>
+      The study of quantum mechanics thus becomes the study of
+      operators on wave functions. This is a mathematically intense
+      study, leading to whole new branches of mathematics focused on
+      operator algebra. One of the first and most important question
+      concerning operator is this: given two operators, do they
+      commute? That is, if <m>F</m> and <m>G</m> are operators, is
+      <m>F(G\Psi) = G(F\Psi)</m>?
+    </p>
+    <definition>
+      <statement>
+        <p>
+          For any objects with multiplication <m>a</m> and <m>b</m>,
+          the commutator bracket is defined as
+        </p>
+        <me>
+          [a,b]= ab - ba
+        </me>.
+        <p>
+          The two items commute if and only is <m>[a,b] = 0</m>.
+        </p>
+      </statement>
+    </definition>
+    <p>
+      I use the commutator bracket to study the commutativity of
+      operators. In studying operator algebra and continuous
+      probability, I can derive the following inequality. (I don't
+      have the time or machinery for the proof, unfortunately).
+    </p>
+    <theorem xml:id="theorem-commutator">
+      <statement>
+        <p>
+          Let <m>F</m> and <m>G</m> be operators on wave functions.
+        </p>
+        <me>
+          \sigma_F \sigma_G \geq \frac{1}{2i} \left\langle [F,G]
+          \right\rangle
+        </me>
+      </statement>
+    </theorem>
+    <p>
+      The commutator bracket is still an operator, so it has an
+      expectation value. Let's look at position and momentum, to see
+      if they commute. Let <m>f</m> be a test function (something to
+      act upon, for an operator).
+    </p>
+    <md>
+      <mrow>
+        \left[x, \frac{\hbar}{\imath} \frac{\del}{\del x} \right] f
+        \amp = x \frac{\hbar}{\imath} \frac{\del f}{\del x} -
+        \frac{\hbar}{\imath} \frac{\del}{\del x} (xf)
+      </mrow>
+      <mrow>
+        \amp = x \frac{\hbar}{\imath} \frac{\del f}{\del x} - x
+        \frac{\hbar}{\imath} \frac{\del f}{\del x} -
+        \frac{\hbar}{\imath} f
+      </mrow>
+      <mrow>
+        \amp = \frac{-\hbar}{\imath} f
+      </mrow>
+      <mrow>
+        [x, \frac{\hbar}{\imath} \frac{\del}{\del x} ] \amp =
+        \frac{-\hbar}{\imath} = \imath \hbar
+      </mrow>
+    </md>
+    <p>
+      So I know the commutator of position and momentum. What is its
+      expectation value?
+    </p>
+    <me>
+      \left\langle \imath \hbar \right\rangle = \int \bar{\Psi}
+      \imath \hbar \Psi dx = \imath \hbar \int \bar{\Psi} \Psi dx =
+      \imath \hbar
+    </me>
+    <p>
+      This makes some sense: this operator is simply multiplication by
+      a constant; it doesn't change the wave functions at all. It's
+      expectation is simply itself <mdash/> it is a constant.
+    </p>
+    <p>
+      Then I apply the <xref ref="theorem-commutator" /> to get the
+      next result, where <m>x</m> stands for position and <m>p</m> for
+      momentum.
+    </p>
+    <me>
+      \sigma_x \sigma_p \geq \frac{\hbar}{2}
+    </me>
+    <p>
+      What does this mean? The <m>\sigma</m> is the standard
+      deviation: it measures how wide the probability is for each of
+      the measurements. This can be thought of as error. If a
+      <m>\sigma</m> is very small, we have a very precise observable.
+      If <m>\sigma</m> is large, the possible values in a reasonable
+      probabity are much larger. The product of these two
+      <m>\sigma</m> is the product of the uncertain in the measurement
+      of position and moment. This is the famous uncertainty
+      princple. Because the operators do not commute, I can't
+      measure them both precisely at the same time. That fact comes
+      directly the the operator mathematics; this makes it intrinsic
+      to this quantum mechanical model. The uncertainly is not a
+      problem of measurement, but a mathematical fact of the systems.
+    </p>
+    <p>
+      This can be thought of in terms of particple/wave duality. A
+      particle, as a probability distribution, is just a single peak.
+      A wave, as a probability distribution, has a sinusoidal graph.
+      Momentum is essentially wavelength in this interpretation. A
+      particple has a definite position: the single peak is located
+      somewhere. However, with no repetition, it has no wavelength.
+      A wave has a wavelength, but since the graph extends outward, it
+      has no fixed position. The uncertainly principle reflects how
+      elementary objects have both wave and particple like behaviour,
+      one to the exclusion of the other.
+    </p>
+    <p>
+      This commutator analysis works for all operators. Two operators
+      are compatible observables if they commute. If they do not, a
+      version of the uncertainly princples holds for them.
+    </p>
+    <p>
+      This leads to some of the standard philosophical problems of
+      measurement in Quantum Mechanics. What does a measurement do?
+      Why does it collapse a wave function? Is it human observation?
+      Machine observation? Consciousness?
+    </p>
+    <p>
+      Historically, there were three main camps. The Realist camp
+      claimed that things existed in reality and that probability is
+      an illusion and weakness of the model. The Orthodox camp said
+      that nothing exists before a measurement. The system
+      <em>is</em> a probability<ndash/>nothing more or less. The
+      Agnostic camp said that before measurement, any such question is
+      meaningless, since measurement is all we have to interact with
+      the universe. Many feel that none of the three answers are
+      entirely satisfactory and the mystery of quantum mechanics
+      remains with us.
+    </p>
+  </subsection>
+</section>

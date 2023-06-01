@@ -1,0 +1,10 @@
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="chapter-week6">
+  <title>Week 6</title>
+  <xi:include href="topology.ptx" />
+  <xi:include href="indefinite-integrals.ptx" />
+  <xi:include href="definite-integrals.ptx" />
+  <xi:include href="iterated-integrals.ptx" />
+  <xi:include href="week6-activity.ptx" />
+</chapter>
+
+

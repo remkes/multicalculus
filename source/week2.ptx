@@ -1,0 +1,6 @@
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="chapter-week2">
+  <title>Week 2</title>
+  <xi:include href="curves.ptx" />
+  <xi:include href="calculus-of-parametric-curves.ptx" />
+  <xi:include href="week2-activity.ptx" />
+</chapter>

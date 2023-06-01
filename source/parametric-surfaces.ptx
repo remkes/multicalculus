@@ -1,0 +1,440 @@
+<section xml:id="parametric-surfaces">
+  <title>Parametric Surfaces</title>
+  <subsection xml:id="subsection-parametric-surfaces-motivations">
+    <title>Motivation</title>
+    <p>
+      For the last few sections, I've focused heavily on the force
+      example of fields. Now, let me return to the idea of a fluid flow.
+      Conisder a field <m>F</m> that describe the flow of water or air
+      currents. If I have a net or other porus object in the field, then
+      unless the flow is perfectly across the edge of the object, some
+      amount of the medium will be flowing through the net. Is there a
+      way to measure such a thing?
+    </p>
+    <p>
+      This seems like a difficult project. The net can have a
+      complicated geometry. At different points on the net, the
+      interaction with the fluid can vary. If could be flowing through
+      one part of the net in one direction, but in the opposite
+      direciton through another part. I'd like a way to put all this
+      together into some kind of collective sense of the flow through
+      the net.
+    </p>
+    <p>
+      I'll look back at line integrals for motivation. For line
+      integrals, I looked at the interaction of a parametric curve and a
+      field. To do that, I needed the tangent to the curve, so that I
+      could take the dot product to measure the interaction. That
+      tangent came from the parametrization.
+    </p>
+    <p>
+      I'm going to need something similar to describe the net -- I need
+      a two dimensional analogue of a parametric curve. Such a thing is
+      called a parametric surface (with a formal definition to follow
+      below. For this section, I'll be defining parametric surfaces and
+      giving some examples. <xref ref="section-flux-integrals" /> will
+      then use parametric surfaces to try to answer the motivation
+      question of flow through a net. 
+    </p>
+  </subsection>
+  <subsection xml:id="subsection-parametric-surface-definition">
+    <title>Definitions</title>
+    <definition>
+      <statement>
+        <p>
+          Let <m>D \subset \RR^2</m> be a simply connected
+          set. A <term>parametric surface</term> in <m>\RR^n</m> is a
+          continuous function 
+        </p>
+        <me>
+          \sigma: D \rightarrow \RR^n
+        </me>
+      </statement>
+    </definition>
+    <p>
+      Even though the definition is given for any <m>\RR^n</m>, for
+      the purpose of this course, I'll assume that all surface are in
+      <m>\RR^3</m>. 
+    </p>
+    <p>
+      Like parametric curves, we visualize surfaces only by their
+      outputs. The input set <m>D</m> isn't visualized; rather, it is
+      thought of as the parameter space. The difference, compared to
+      curves, is that we now have a 2-dimensional parameter space. This
+      allows two independent directions of movement on the surface. I
+      lose the notion of travelling in time with the parameter
+      <m>t</m>. Instead, there are two parameters (with conventional
+      variable <m>u</m> and <m>v</m>). I can move independently in
+      either variable. Between moving in either parameter, I can range
+      over all the points in the output. 
+    </p>
+    <p>
+      Again similar to a curve, each coordinate is a scalar function
+      of the parameter. 
+    </p>
+    <me>
+      \sigma(u,v) = \left( \sigma_1(u,v), \sigma_2(u,v), \sigma_3(u,v)
+      \right) 
+    </me>
+    <p>
+      Typically, parametric surfaces are use to give a parametrization
+      to an already known 2-dimensional object: planes, a hollow
+      spheres, cones, cylinders, etc. Let me work through some
+      examples of this. 
+    </p>
+    <example xml:id="example-surface-graph">
+      <statement>
+        <p>
+          In Calculus III, I analyzed graphs of scalar fields. In
+          particular, for a scalar field on two variables
+          <m>f(x,y)</m>, the graph is a surface in <m>\RR^3</m>. In
+          Calculus III, I used gradients to interpret these surfaces
+          as altitudes; contour plots were the equivalent of
+          topographical maps. Now, I can also treat these as
+          parametric surfaces.
+        </p>
+        <p>
+          Assume <m>f(x,y)</m> is a scalar field on a
+          simply-connected domain <m>D</m>. Then using the same
+          <m>D</m> as the parameter domain, the surface
+          <m>\sigma (u,v) = (u,v,f(u,v))</m> is a parametric
+          description of the graph of the function.
+        </p>
+      </statement>
+    </example>
+    <example xml:id="example-surface-revolution">
+      <statement>
+        <p>
+          In calculating volumes in Calculus II, I introduced the idea
+          of a surface of revolution. Such a surface is formed by
+          taking the graph of a single variable function <m>y =
+          f(x)</m>, and spinning it around the <m>x</m> axis to create
+          a surface in <m>RR^3</m>. Such surfaces always have circular
+          cross-section, resembling something that might be formed on
+          a lathe. I can also describe them as parametric surfaces
+        </p>
+        <p>
+          The axis of the surface of revolution is unchanges. The
+          other two axes have rotation; parametrically, that is given
+          by sine and cosine. Let <m>f(x)</m> be a continuous function
+          on <m>[a,b]</m>. Let <m>D = [a,b] \times [0,2\pi]</m>. Then
+          the surface of revolution is describe as a parametric
+          surface on the parameter domain <m>D</m>. 
+        </p>
+        <me>
+          \sigma(u,v) = (u, f(u) \cos v, f(u) \sin v)
+        </me>
+        <p>
+          I don't have to use <m>u</m> and <m>v</m> as the variable of
+          the paremtrization. If I want to be reminded that one of the
+          parameter is the angle of a rotation, I'll use
+          <m>\theta</m>. If one of the parameter perfectly aligns with
+          the <m>x</m>, <m>y</m> or <m>z</m> axis in on the surface,
+          it's reasonable to call that the parameter. In that was, a
+          surface of revolution about the <m>x</m> axis on the
+          parameter domain <m>D = [a,b] \times [2,\pi]</m> can be
+          described this way. 
+        </p>
+        <me>
+          \sigma(x,\theta) = (x, f(x) \cos \theta, f(x) \sin \theta)
+        </me>
+      </statement>
+    </example>
+    <example xml:id="example-sphere-parametrization">
+      <statement>
+        <p>
+          The sphere is a useful and important shape to have a
+          parametrization. The sphere has a fixed radisu <m>R</m>.
+          Location on the sphere can be described, then, by the same
+          logitude and colatitude used for spherical coordnations.
+          This should be the parameter domain: 
+          <m> D = [0, 2\pi] \times [0, \pi]</m>. Then the sphere is
+          described as a parametric surface in the following way.
+        </p>
+        <me>
+          \sigma (\theta, \phi) = (R \sin \phi \cos \theta, R
+          \sin \phi \sin \theta, R \cos \phi)
+        </me>
+      </statement>
+    </example>
+    <example xml:id="example-cylinder-parametrization">
+      <statement>
+        <p>
+          Very similar to the sphere, I can copy the setup of
+          cylindrical coordinates to give a parametric description of
+          a cylinder of length <m>h</m> and radiius <m>R</m>. The
+          parameter domain is <m>D = [0, 2\pi] \times [0,h]</m>. I use
+          <m>\theta</m> as one parameter for the angle, and <m>z</m>
+          as the other parameter, since it is mapped direclty to the
+          normal <m>z</m> coordinate. 
+        </p>
+        <me>
+          \sigma (\theta, z) = (R \cos \theta, R \sin \theta, z)
+        </me>
+      </statement>
+    </example>
+    <example xml:id="example-cone-parametrization">
+      <statement>
+        <p>
+          I can adjust the cylinder slightly to make a parametric
+          decription of the cone of base radius <m>R</m> and height
+          <m>h</m>. The cylinder has fixed radius, but the radius of
+          the cone decreases linearly as the height increase. On the
+          same parameter domain, <m> D = [0, 2\pi] \times [0,h] </m>,
+          the cone is described by this parametric surface. 
+        </p>
+        <me>
+          \sigma(\theta, z) = \left( \frac {R(h-z)}{h} \cos \theta,
+          \frac{R(h-z)}{h} \sin \theta, z \right) 
+        </me>
+      </statement>
+    </example>
+  </subsection>
+  <subsection xml:id="subsection-parametric-surfaces-calculus">
+    <title>Calculus of Parametric Surfaces</title>
+    <p>
+      The calculus of parametric curves started with the tangent
+      vector. All the other constructions (arclength, curvature,
+      torsion) were based on that starting point. For parametric
+      surface, there isn't a unique tangent, since there isn't a
+      unique parameter. Like the graphs of multivariable functions,
+      there is a higher-dimensional tangent object. Since I am
+      restricting my attention to surface in <m>\RR^3</m> in this
+      course, instead of a tangent line, a surface (if it is
+      differentiable) has a tangent plane. In <m>\RR^3</m>, a plane is
+      describe by a normal. Therefore, the important piece of
+      information for a parametric surface is the normal to the
+      tangent plane. Like the tangent vector for a parametric curve,
+      the normal will be the key to the calculus of parametric curve.
+      Let me move on the definition. 
+    </p>
+    <definition>
+      <statement>
+        <p>
+          A parametric surface <m>\sigma: D \rightarrow \RR^3</m> is
+          called a <m>C^1</m> surface if all the partial
+          derivtive of both components of <m>\sigma</m> exist and are
+          continuous. For a <m>C^1</m> parametric surface
+          <m>\sigma</m>, write <m>\sigma_u</m> for the vector of
+          partial <m>\left( \frac{\del \sigma_1}{\del u}, \frac{\del
+          \sigma_2}{\del u}, \frac{\del \sigma_3}{\del u} \right)</m>
+          and likewise for <m>\sigma_v</m> with partials in the
+          variable <m>v</m>. For such a surface, the <term>normal
+          vector</term> is the vector <m>\sigma_u \times \sigma_v</m>.
+          A parametric surface is called <term>non-singular</term> if
+          its normal is never the zero vector. 
+        </p>
+      </statement>
+    </definition>
+    <p>
+      Let me make a couple of points aobut this definition. First,
+      because I'm using the cross product, this definition only works
+      in <m>\RR^3</m>. There are notions of tangents and normals to
+      parametric surfaces in higher dimensions, but more machinery is
+      needed to define these tangents and normals. To do so moves in
+      to the study of differentiable manifolds. Second, I can think of
+      the <m>C^1</m> condition saying that the parametric curve has no
+      sharp corners (and no singularities of the parametrization,
+      which I'll discuss in examples later). A natural term for having
+      no sharp concers would be <sq>smooth</sq>. Unfortunately, this
+      has a slightly different definition. A <term>smooth parametric
+      surface</term> (alternatively a <m>C^\infty</m> parametric surface)
+      is a parametric surface where all higher partial derivatives, of
+      any degree, exist and where the normal is never zero. For the
+      purpose of this course, most of the surface I introduce will be
+      smooth; I could use this terminology if I wanted, saying
+      <sq>smooht</sq> instead of <sq><m>C^1</m> and non-singular</sq>.
+      However, only <m>C^1</m> is required for the definition of the
+      normal.
+    </p>
+    <p>
+      I'll calculate the normals for the five examples I use above. 
+    </p>
+    <example>
+      <statement>
+        <p>
+          Here is the graph of a scalar field in two dimensions on a
+          simply connected domain <m>D</m>. 
+        </p>
+        <me>
+          \sigma (u,v) = (u,v,f(u,v))
+        </me>
+        <p>
+          I'll calculate the partial derivative and take the cross
+          product to calculate the normal. 
+        </p>
+        <md>
+          <mrow>
+            \sigma_u \amp = \left( 1, 0, \frac{\del f}{\del u} \right) 
+          </mrow>
+          <mrow>
+            \sigma_v \amp = \left( 0, 1, \frac{\del f}{\del v} \right) 
+          </mrow>
+          <mrow>
+            \sigma_u \times \sigma_v  \amp = \left( -\frac{\del
+            f}{\del u}, -\frac{\del f}{\del v} , 1 \right) 
+          </mrow>
+        </md>
+        <p>
+          This is precisely the same result found in Calculus III for
+          the normal to the tangent plane. The construcitons of the
+          tangent options are the same, but now described by the
+          parameters <m>u</m> and <m>v</m>. 
+        </p>
+      </statement>
+    </example>
+    <example>
+      <statement>
+        <p>
+          Here is the surface of revolution about the <m>x</m> axis
+          for <m>f: [a,b] \rightarrow \RR</m>. 
+        </p>
+        <me>
+          \sigma (x,\theta) = (x, f(x) \cos \theta, f(x), \sin \theta) 
+        </me>
+        <p>
+          I'll calculate the partial derivative and take the cross
+          product to calculate the normal. 
+        </p>
+        <md>
+          <mrow>
+            \sigma_x \amp = \left(1, f^\prime(x) \cos \theta, f^\prime(x)
+            \sin \theta \right) 
+          </mrow>
+          <mrow>
+            \sigma_{\theta} \amp = \left( 0, -f(x) \sin \theta, f(x) \cos
+            \theta \right) 
+          </mrow>
+          <mrow>
+            \sigma_x \times \sigma_{\theta} \amp = \left( f(x)
+            f^\prime(x), -f(x) \cos \theta, -f(x) \sin \theta \right)
+          </mrow>
+        </md>
+        <p>
+          The normal still has the same circular symmetry, as would be
+          expected for this shape. 
+        </p>
+      </statement>
+    </example>
+    <example>
+      <statement>
+        <p>
+          Here is the parametric description of the sphere. 
+        </p>
+        <me>
+          \sigma (\theta, \phi) = (R \sin \phi \cos \theta, R \sin
+          \phi \sin \theta, R \cos \phi) 
+        </me>
+        <p>
+          I'll calculate the partial derivative and take the cross
+          product to calculate the normal. 
+        </p>
+        <md>
+          <mrow>
+            \sigma_{\theta} \amp = \left(-R \sin \phi \sin \theta, R \sin
+            \phi \cos \theta, 0 \right) 
+          </mrow>
+          <mrow>
+            \sigma_{\phi} \amp = \left( R \cos \phi \cos \theta, R \cos
+            \phi \sin \theta, -R \sin \phi \right) 
+          </mrow>
+          <mrow>
+            \sigma_{\theta} \times \sigma_{\phi} \amp = \left( -R^2
+            \sin^2 \phi \cos \theta, -R^2 \sin^2 \phi \sin \theta,
+            -R^2 \sin \phi \cos \phi \right)
+          </mrow>
+          <mrow>
+            \amp = -R \sin \phi \left( R \sin \phi \cos \theta, R \sin
+            \phi \sin \theta, R \cos \phi) \right) 
+          </mrow>
+        </md>
+        <p>
+          I factored out the common term in the normal. After
+          factoring out this, I see that the resulting normal is
+          precisely same as the original position. So, the normal is a
+          multiple of the position. This makes sense: for a sphere
+          centred at the origin, the vector that points out of the
+          sphere at point (as a local direction vector) has the same
+          direction as the vector from the origin to that point. 
+        </p>
+        <p>
+          The normal is <m>(0,0,0)</m> when <m>\phi = 0</m>, which
+          happens at the top and bottom poles of the sphere. These
+          points are singularities of the parametrization. This was
+          the same problem for spherical coordinates: the longitude is
+          not propely defined at the north and south poles. The sphere
+          itself is a surface without sharp corners, but the system of
+          parametrization is the problem. It breaks down at the poles. 
+        </p>
+      </statement>
+    </example>
+    <example>
+      <statement>
+        <p>
+          Here is the parametric description of the cylinder. 
+        </p>
+        <me>
+          \sigma (\theta,z) = (R \cos \theta, R \sin \theta, z) 
+        </me>
+        <p>
+          I'll calculate the partial derivative and take the cross
+          product to calculate the normal. 
+        </p>
+        <md>
+          <mrow>
+            \sigma_{\theta} \amp = \left(-R \sin \theta, R \cos \theta, 0
+            \right) 
+          </mrow>
+          <mrow>
+            \sigma_z \amp = \left(0, 0, 1 \right) 
+          </mrow>
+          <mrow>
+            \sigma_{\theta} \times \sigma_z \amp = ( R \cos \theta, R
+            \sin \theta, 0)
+          </mrow>
+        </md>
+        <p>
+          The normals to the cylinder point outwards from the
+          cylinder, with no vertical components. 
+        </p>
+      </statement>
+    </example>
+    <example>
+      <statement>
+        <p>
+          Here is the parametric description of the cone. 
+        </p>
+        <me>
+          \sigma (\theta,z) = \left( \frac{R(h-z)}{h} \cos \theta,
+          \frac{R(h-z)}{h} \sin \theta z \right) 
+        </me>
+        <p>
+          I'll calculate the partial derivative and take the cross
+          product to calculate the normal. 
+        </p>
+        <md>
+          <mrow>
+            \sigma_{\theta} \amp = \left( -\frac{R(h-z)}{h} \sin \theta,
+            \frac{R(h-z)}{h} \cos \theta, z \right) 
+          </mrow>
+          <mrow>
+            \sigma_z \amp = \left( \frac{-R}{h} \cos \theta, \frac{-R}{h}
+            \sin \theta, 1 \right) 
+          </mrow>
+          <mrow>
+            \sigma_{\theta} \times \sigma_z \amp = \left(
+            \frac{R(h-z)}{h} \cos \theta + \frac{Rz}{h} \sin \theta,
+            \frac{-Rz}{h} \cos \theta + \frac{R(h-z)}{h} \sin \theta,
+            \frac{R^2(h-z)}{h^2} \right)
+          </mrow>
+        </md>
+        <p>
+          This is a complicated normal. It does have a positive
+          vertical component, which is expected. Unlike the cylinder,
+          the vector point out from the cylinder should point
+          updwards. 
+        </p>
+      </statement>
+    </example>
+  </subsection>
+</section>

@@ -1,0 +1,1743 @@
+<section xml:id="week2-activity">
+  <title>Week 2 Activity</title>
+  <subsection xml:id="problems-sketching-parametric-curves">
+    <title>Examples Parametric Curves</title>
+    <activity xml:id="activity-pc1">
+      <statement>
+        <p>
+          Give an informal analysis of this curve by looking at its
+          component functions, perhaps calculating some sample points,
+          and trying to determine the behaviour of the shape. Check
+          your informal analysis by computer to see the actual shape
+          of the curve.
+          <md>
+            <mrow>
+              \amp \gamma(t) = (t^2, t^3) \amp \amp t \in [-3,3]
+            </mrow>
+          </md>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          The <m>x</m> coordinate is always positive, starting at
+          <m>9</m>, dropping back down to <m>0</m> and then rising up
+          to <m>9</m> again. The <m>y</m> coordinates starts at
+          <m>-27</m> and increases to <m>27</m>. Since the two
+          coordinates have different exponents, I expect a non-linear
+          shape following the trends I just described. 
+          This parametric curve is shown in <xref
+          ref="figure-activity-parametric-curve-1" />
+          <figure xml:id="figure-activity-parametric-curve-1">
+            <caption>
+              <m>\gamma(t) = (t^2, t^3) </m>
+            </caption>
+            <image xml:id="figure11" width="90%">
+              <asymptote>
+                import graph;
+                size(10cm,10cm);
+
+                xaxis("$x$");
+                yaxis("$y$");
+
+                real x(real t) {return t^2;}
+                real y(real t) {return (1/8)*t^3;}
+
+                dot("$t=0\mapsto(0,0)$",(0,0),NW);
+                dot("$t=2\mapsto(4,8)$",(4,1),NW);
+                dot("$t=-2\mapsto(4,-8)$",(4,-1),SW);
+                dot("$t=3\mapsto(9,27)$",(9,3.375),NW);
+                dot("$t=-3\mapsto(9,-27)$",(9,-3.375),SW);
+                
+                draw(graph(x,y,-3,3),Arrow);
+              </asymptote>
+            </image>
+          </figure>
+        </p>
+      </solution>
+    </activity>
+    <activity xml:id="activity-pc2">
+      <statement>
+        <p>
+          Give an informal analysis of this curve by looking at its
+          component functions, perhaps calculating some sample points,
+          and trying to determine the behaviour of the shape. Check
+          your informal analysis by computer to see the actual shape
+          of the curve.
+          <md>
+            <mrow>
+              \amp \gamma(t) = (\cos t, 2 \sin t)  \amp \amp t \in
+              [0,2\pi]
+            </mrow>
+          </md>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Both coordinates are period functions, so I expect a shape
+          that loops around and return to its starting point. The
+          <m>y</m> coordinate has a larger amplitude, but both have
+          the same period, so I expect this to be stretch out in the
+          <m>y</m> direction. Possible an ellipse. 
+          This parametric curve is shown in <xref
+          ref="figure-activity-parametric-curve-2" />
+          <figure xml:id="figure-activity-parametric-curve-2">
+            <caption>
+              <m>\gamma(t) = (\cos t, 2 \sin t) </m>
+            </caption>
+            <image xml:id="figure12" width="90%">
+              <asymptote>
+                import graph;
+                size(10cm,10cm);
+
+                xaxis("$x$");
+                yaxis("$y$");
+
+                real x(real t) {return cos(t);}
+                real y(real t) {return 2*sin(t);}
+
+                draw(graph(x,y,0,2*pi),Arrow);
+
+                dot("$t=0\mapsto(1,0)$",(1,0),NE);
+                dot("$t=\frac{\pi}{4}\mapsto\left(\frac{1}{\sqrt{2}},
+                \sqrt{2}\right)$",(0.707,1.414),NE);
+                dot("$t=\frac{\pi}{2}\mapsto(0,2)$",(0,2),NE);
+                dot("$t=\frac{3\pi}{4}\mapsto\left(\frac{-1}{\sqrt{2}},
+                \sqrt{2}\right)$",(-0.707,1.414),NW);
+                dot("$t=\pi\mapsto(-1,0)$",(-1,0),NW);
+                dot("$t=\frac{5\pi}{4}\mapsto\left(\frac{-1}{\sqrt{2}},
+                -\sqrt{2}\right)$",(-0.707,-1.414),SW);
+                dot("$t=\frac{3\pi}{2}\mapsto(0,-2)$",(0,-2),SW);
+                dot("$t=\frac{7\pi}{4}\mapsto\left(\frac{1}{\sqrt{2}},
+                -\sqrt{2}\right)$",(0.707,-1.414),SE);
+              </asymptote>
+            </image>
+          </figure>
+        </p>
+      </solution>
+    </activity>
+    <activity xml:id="activity-pc3">
+      <statement>
+        <p>
+          Give an informal analysis of this curve by looking at its
+          component functions, perhaps calculating some sample points,
+          and trying to determine the behaviour of the shape. Check
+          your informal analysis by computer to see the actual shape
+          of the curve.
+          <md>
+            <mrow>
+              \amp \gamma(t) = (4 \cos t + \sin 2t, 4 \sin t + \cos 2
+              t) \amp \amp t \in [0,2\pi]
+            </mrow>
+          </md>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          This is hard to immediately guess the shape. Both
+          coordinates are bounded and periodic, so I do expect a shape
+          that loops around in some way and return to the origin.
+          However, since we have sums of trig functions with different
+          amplitues and periods, I expect a slightly complicated kind
+          of looping. Possible like a sinusoidal oscilaton along a
+          circle, but maybe with self-intersections as well. 
+          This parametric curve is shown in <xref
+          ref="figure-activity-parametric-curve-3" />
+          <figure xml:id="figure-activity-parametric-curve-3">
+            <caption>
+              <m>\gamma(t) = (4 \cos t + \sin 2t, 4 \sin t + \cos 2t)
+              </m>
+            </caption>
+            <image xml:id="figure13" width="100%">
+              <asymptote>
+                import graph;
+                size(15cm,15cm);
+
+                xaxis("$x$");
+                yaxis("$y$");
+
+                real x(real t) {return 4*cos(t) + sin(2*t);}
+                real y(real t) {return 4*sin(t) + cos(2*t);}
+
+                draw(graph(x,y,0,2*pi),Arrow);
+
+                dot("$t=0\mapsto(4,1)$",(4,1),E);
+                dot("$t=\frac{\pi}{2}\mapsto(0,3)$",(0,3),NE);
+                dot("$t=\pi\mapsto(-4,1)$",(-4,1),W);
+                dot("$t=\frac{3\pi}{2}\mapsto(0,-5)$",(0,-5),SW);
+
+                dot("$t=\frac{\pi}{4}\mapsto\left(2\sqrt{2}+1,
+                2\sqrt{2}\right)$",(3.828,2.828),NE);
+                dot("$t=\frac{3\pi}{4}\mapsto\left(-2\sqrt{2}-1,
+                2\sqrt{2}\right)$",(-3.828,2.828),NW);
+                dot("$t=\frac{5\pi}{4}\mapsto\left(-2\sqrt{2}+1,
+                2\sqrt{2}\right)$",(-1.828,-2.828),SW);
+                dot("$t=\frac{7\pi}{4}\mapsto\left(2\sqrt{2}-1,
+                2\sqrt{2}\right)$",(1.828,-2.828),SE);
+              </asymptote>
+            </image>
+          </figure>
+        </p>
+      </solution>
+    </activity>
+    <activity xml:id="activity-pc4">
+      <statement>
+        <p>
+          Give an informal analysis of this curve by looking at its
+          component functions, perhaps calculating some sample points,
+          and trying to determine the behaviour of the shape. Check
+          your informal analysis by computer to see the actual shape
+          of the curve.
+          <md>
+            <mrow>
+              \amp \gamma(t) = (3-t^2,t) \amp \amp t \in [-4,4]
+            </mrow>
+          </md>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          The <m>y</m> coordinates is just the parameter <m>t</m>, so
+          I can think of this as a graph of the other coordinate (with
+          the axes reverse, since here <m>x</m> will be a function of
+          <m>y</m>. The <m>x</m> coordinate is a quadratic, so I
+          expect a sideways parabola.
+          This parametric curve is shown in <xref
+          ref="figure-activity-parametric-curve-4" />
+          <figure xml:id="figure-activity-parametric-curve-4">
+            <caption>
+              <m>\gamma(t) = (3-t^2,t)</m>
+            </caption>
+            <image xml:id="figure14" width="90%">
+              <asymptote>
+                import graph;
+                size(15cm,15cm);
+
+                xaxis("$x$");
+                yaxis("$y$");
+
+                real x(real t) {return 3-t^2;}
+                real y(real t) {return t;}
+
+                draw(graph(x,y,-4,4),Arrow);
+
+                dot("$t=0\mapsto(3,0)$",(3,0),NE);
+                dot("$t=1\mapsto(2,1)$",(2,1),NE);
+                dot("$t=-1\mapsto(2,-1)$",(2,-1),SE);
+                dot("$t=2\mapsto(-1,2)$",(-1,2),NE);
+                dot("$t=-2\mapsto(-1,-2)$",(-1,-2),SE);
+                dot("$t=3\mapsto(-6,3)$",(-6,3),NE);
+                dot("$t=-3\mapsto(-6,-3)$",(-6,-3),SE);
+                dot("$t=4\mapsto(-13,4)$",(-13,4),NE);
+                dot("$t=-4\mapsto(-13,-4)$",(-13,-4),SE);
+              </asymptote>
+            </image>
+          </figure>
+        </p>
+      </solution>
+    </activity>
+    <activity xml:id="activity-pc5">
+      <statement>
+        <p>
+          Give an informal analysis of this curve by looking at its
+          component functions, perhaps calculating some sample points,
+          and trying to determine the behaviour of the shape. Check
+          your informal analysis by computer to see the actual shape
+          of the curve.
+          <md>
+            <mrow>
+              \amp \gamma(t) = \left( \frac{\pi^2}{t^2} \cos t,
+              \frac{\pi^2}{t^2} \sin t \right) \amp \amp t \in [\pi,
+              4\pi] 
+            </mrow>
+          </md>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          This is a typical setup for a spiral, with sine and cosine
+          terms of the same period but an amplitude which changes with
+          the parameter. Here, the amplitude is decreasing, so I
+          expect an curve spiraling inward. 
+          This parametric curve is shown in <xref
+          ref="figure-activity-parametric-curve-5" />
+          <figure xml:id="figure-activity-parametric-curve-5">
+            <caption>
+              <m>\gamma(t) = \left( \frac{\pi^2}{t^2} \cos t,
+              \frac{\pi^2}{t^2} \sin t \right) </m>
+            </caption>
+            <image xml:id="figure15" width="90%">
+              <asymptote>
+                import graph;
+                size(15cm,15cm);
+
+                xaxis("$x$");
+                yaxis("$y$");
+
+                real x(real t) {return (pi)^2*(1/t)^2*cos(t);}
+                real y(real t) {return (pi)^2*(1/t)^2*sin(t);}
+
+                draw(graph(x,y,pi,4*pi),Arrow);
+
+                dot("$t=\pi\mapsto(-1,0)$",(-1,0),NW);
+                dot("$t=\frac{3\pi}{2}\mapsto\left( 0,\frac{4}{9}
+                \right)$",(0,-0.444),SE);
+                dot("$t=2\pi\mapsto\left( \frac{1}{4},0
+                \right)$",(0.25,0),NE);
+                dot("$t=\frac{5\pi}{2}\mapsto\left( 0,\frac{4}{25}
+                \right)$",(0,0.16),NE);
+                dot("$t=3\pi\mapsto\left( \frac{-1}{9},0
+                \right)$",(-0.111,0),NW);
+                dot("$t=\frac{7\pi}{2}\mapsto\left( 0,\frac{4}{49}
+                \right)$",(0,-0.082),SW);
+                dot((0.063,0));
+                draw((0.063,0)--(0.3,-0.2),dashed);
+                label("$t=4\pi\mapsto\left( \frac{1}{16},0
+                \right)$",(0.3,-0.2),E);
+              </asymptote>
+            </image>
+          </figure>
+        </p>
+      </solution>
+    </activity>
+    <activity xml:id="activity-pc6">
+      <statement>
+        <p>
+          Give an informal analysis of this curve by looking at its
+          component functions, perhaps calculating some sample points,
+          and trying to determine the behaviour of the shape. Check
+          your informal analysis by computer to see the actual shape
+          of the curve.
+          <md>
+            <mrow>
+              \amp \gamma(t) = (\sqrt{t}, \sqrt[3]{t} ) \amp \amp t
+              \in [0,100]
+            </mrow>
+          </md>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          I expect a curved path out from the origin to <m>(10,
+          \sqrt[3]{10}</m>. 
+          This parametric curve is shown in <xref
+          ref="figure-activity-parametric-curve-6" />
+          <figure xml:id="figure-activity-parametric-curve-6">
+            <caption>
+              <m>\gamma(t) = (\sqrt{t}, \sqrt[3]{t})</m>
+            </caption>
+            <image xml:id="figure16" width="90%">
+              <asymptote>
+                import graph;
+                size(15cm,15cm);
+
+                xaxis("$x$");
+                yaxis("$y$");
+
+                real x(real t) {return sqrt(t);}
+                real y(real t) {return t^(1/3);}
+
+                draw(graph(x,y,0,100),Arrow);
+
+                dot("$t=0\mapsto(0,0)$",(0,0),SE);
+                dot("$t=20\mapsto(\sqrt{20},\sqrt[3]{20})$",
+                (4.47,2.71),SE);
+                dot("$t=40\mapsto(\sqrt{40},\sqrt[3]{40})$",
+                (6.32,3.42),NW);
+                dot("$t=60\mapsto(\sqrt{60},\sqrt[3]{60})$",
+                (7.74,3.91),SE);
+                dot("$t=80\mapsto(\sqrt{80},\sqrt[3]{80})$",
+                (8.94,4.31),NW);
+                dot("$t=1000\mapsto(\sqrt{1000},\sqrt[3]{1000})$",
+                (10,4.64),SE);
+              </asymptote>
+            </image>
+          </figure>
+        </p>
+      </solution>
+    </activity>
+    <activity>
+      <statement>
+        <p>
+          Give an informal analysis of this curve by looking at its
+          component functions, perhaps calculating some sample points,
+          and trying to determine the behaviour of the shape. Check
+          your informal analysis by computer to see the actual shape
+          of the curve.
+          <md>
+            <mrow>
+              \amp r(t) = t \amp \amp \theta(t) = t \amp \amp t \in
+              [0,4\pi]
+            </mrow>
+          </md>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Both the radius and the angle grow at the same rate. I
+          expect a spiral with linearly growing radius. 
+          This parametric curve is shown in <xref
+          ref="figure-activity-parametric-curve-7" />
+          <figure xml:id="figure-activity-parametric-curve-7">
+            <caption>
+              <m>r(t) = t</m> and <m>\theta(t) = t</m>
+            </caption>
+            <image xml:id="figure17" width="90%">
+              <asymptote>
+                import graph; size(15cm,15cm);
+
+                xaxis("$x$");
+                yaxis("$y$");
+
+                real x(real t) {return t*cos(t);}
+                real y(real t) {return t*sin(t);}
+
+                draw(graph(x,y,0,4*pi),Arrow);
+
+                dot((0,0));
+                dot((0,1.57));
+                dot((-3.14,0));
+                dot("$t=\frac{3\pi}{2} \mapsto \left(0, \frac{-3\pi}{2}
+                \right)$",(0,-4.71),SE);
+                dot("$t=2\pi \mapsto (2\pi, 0)$", (6.28,0),NE);
+                dot("$t=\frac{5\pi}{2} \mapsto \left(0, \frac{5\pi}{2}
+                \right)$",(0,7.85),NE);
+                dot("$t=3\pi \mapsto (-3\pi, 0)$", (-9.42,0),SW);
+                dot("$t=\frac{7\pi}{2} \mapsto \left(0, \frac{-7\pi}{2}
+                \right)$",(0,-11),SE);
+                dot((12.57,0),SE);
+
+                label("$t=0\mapsto(0,0)$",(8,3),NE);
+                label("$t=\frac{\pi}{2} \mapsto \left(0, \frac{\pi}{2}
+                \right)$",(6,6),NE);
+                label("$t=\pi \mapsto (-\pi, 0)$", (-11,4),NW);
+                label("$t=4\pi \mapsto (4\pi, 0)$", (12.57,-5),SE);
+
+                draw((0,0)--(8,3),dotted);
+                draw((0,1.57)--(6,6),dotted);
+                draw((-3.14,0)--(-11,4),dotted);
+                draw((12.57,0)--(12.57,-5),dotted);
+              </asymptote>
+            </image>
+          </figure>
+        </p>
+      </solution>
+    </activity>
+    <activity>
+      <statement>
+        <p>
+          Give an informal analysis of this curve by looking at its
+          component functions, perhaps calculating some sample points,
+          and trying to determine the behaviour of the shape. Check
+          your informal analysis by computer to see the actual shape
+          of the curve.
+          <md>
+            <mrow>
+              \amp r(t) = 4 + \sin t \amp \amp \theta(t) = t \amp
+              \amp t \in [0, 2\pi] 
+            </mrow>
+          </md>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          As the angle goes around, the radius oscilated between
+          <m>3</m> and <m>5</m>. I expect a wobbly kind of circle, or
+          perhaps more like an ellipse, since there is only one period
+          of the oscilations as we go around the circle.
+          This parametric curve is shown in <xref
+          ref="figure-activity-parametric-curve-8" />
+          <figure xml:id="figure-activity-parametric-curve-8">
+            <caption>
+              <m>r(t) = 4 + \sin t</m> and <m>\theta(t) = t</m>
+            </caption>
+            <image xml:id="figure18" width="90%">
+              <asymptote>
+                import graph; 
+                size(20cm,20cm);
+
+                xaxis("$x$");
+                yaxis("$y$");
+
+                real x(real t) {return (4+sin(t))*cos(t);}
+                real y(real t) {return (4+sin(t))*sin(t);}
+
+                draw(graph(x,y,0,4*pi),Arrow);
+
+                dot("$t=0 \mapsto (4, 0)$", (4,0),NE);
+                dot("$t=\frac{\pi}{4} \mapsto
+                \left(\left(4+\frac{1}{\sqrt{2}}\right) \frac{1}{\sqrt{2}},
+                \left(4+\frac{1}{\sqrt{2}}\right) \frac{1}{\sqrt{2}}
+                \right)$",(3.33,3.33),NE);
+                dot("$t=\frac{\pi}{2} \mapsto (0,5)$",(0,5),NE);
+                dot("$t=\frac{3\pi}{4} \mapsto
+                \left(\left(4+\frac{1}{\sqrt{2}}\right)
+                \frac{-1}{\sqrt{2}},\left(4+\frac{1}{\sqrt{2}}\right)
+                \frac{1}{\sqrt{2}} \right)$",
+                (-3.33,3.33),NW);
+                dot("$t=\pi \mapsto (-4,0)$",(-4,0),SW);
+                dot("$t=\frac{5\pi}{4} \mapsto
+                \left(\left(4-\frac{1}{\sqrt{2}}\right)
+                \frac{-1}{\sqrt{2}}, \left(4-\frac{1}{\sqrt{2}}\right)
+                \frac{-1}{\sqrt{2}} \right)$", (-2.33,-2.33),SW);
+                dot("$t=\frac{3\pi}{2} \mapsto (0,-3)$",(0,-3),SE);
+                dot("$t=\frac{7\pi}{4} \mapsto
+                \left(\left(4-\frac{1}{\sqrt{2}}\right) \frac{1}{\sqrt{2}},
+                \left(4-\frac{1}{\sqrt{2}}\right) \frac{-1}{\sqrt{2}}
+                \right)$", (2.33,-2.33),SE);
+                dot("$t=2\pi \mapsto (4,0)$",(4,0),SE);
+              </asymptote>
+            </image>
+          </figure>
+        </p>
+      </solution>
+    </activity>
+    <activity>
+      <statement>
+        <p>
+          Give an informal analysis of this curve by looking at its
+          component functions, perhaps calculating some sample points,
+          and trying to determine the behaviour of the shape. Check
+          your informal analysis by computer to see the actual shape
+          of the curve.
+          <md>
+            <mrow>
+              \amp r(t) = 2^{-t} \amp \amp \theta(t) = \pi 2^t  \amp
+              \amp t \in [-2,2]
+            </mrow>
+          </md>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          The rate of revolution is increasing. At the same time, the
+          radius is increasing. I expect a spiral into the origin. 
+          This parametric curve is shown in <xref
+          ref="figure-activity-parametric-curve-9" />
+          <figure xml:id="figure-activity-parametric-curve-9">
+            <caption>
+              <m>r(t) = 2^{-t}</m> and <m>\pi 2^t</m>
+            </caption>
+            <image xml:id="figure19" width="90%">
+              <asymptote>
+                import graph; 
+                size(15cm,15cm);
+
+                xaxis("$x$");
+                yaxis("$y$");
+
+                real x(real t) {return 2^(-1*t)*cos(pi*2^t);}
+                real y(real t) {return 2^(-1*t)*sin(pi*2^t);}
+
+                draw(graph(x,y,-2,2),Arrow);
+
+                dot("$t=-2 \mapsto \left(2\sqrt{2},2\sqrt{2}\right)$",
+                (2.83,2.83),SE);
+                dot("$t=-1 \mapsto (0,2)$", (0,2),NW);
+                dot("$t=0 \mapsto (-1,0)$", (-1,0),SW);
+                dot("$t=1 \mapsto \left(\frac{1}{2},0\right)$",
+                (0.5,0),SE);
+                dot((0.25,0));
+
+                draw((0.25,0)--(0.75,0.75),dotted);
+                label("$t=2 \mapsto \left(\frac{1}{4},0\right)$",
+                (0.75,0.75),E);
+              </asymptote>
+            </image>
+          </figure>
+        </p>
+      </solution>
+    </activity>
+  </subsection>
+  <subsection xml:id="problems-reparametrization">
+    <title>Reparametrization</title>
+    <activity>
+      <statement>
+        <p>
+          Consider a general parametric curve (in either <m>\RR^2</m>
+          or <m>\RR^3</m>)  <m>\gamma(t)</m> with <m>t \in
+          [0,\infty)</m>. For each of these substitutions, describe
+          how the reparametrization changes the movement along the
+          curve and the domain of the parameter.
+          <ol>
+            <li>
+              <m>t = 3s</m>
+            </li>
+            <li>
+              <m>t = \frac{s}{4}</m>
+            </li>
+            <li>
+              <m>t = s + 7</m>
+            </li>
+            <li>
+              <m>t = s - 10</m>
+            </li>
+            <li>
+              <m>t = s^2</m>
+            </li>
+            <li>
+              <m>t = \sqrt{s}</m>
+            </li>
+            <li>
+              <m>t = e^s</m>
+            </li>
+            <li>
+              <m>t = -s</m>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <me>t = 3s</me>
+              <p>
+                The movement will be consistently three times faster.
+                For any value of <m>s</m>, the position based on the
+                original parameter would be three times further along
+                the curve, so movement along the curve happens three
+                times as fast. The domain is still <m>s \in [0,
+                \infty)</m>.  
+              </p>
+            </li>
+            <li>
+              <me>t = \frac{s}{4}</me>
+              <p>
+                The movement will be one quarter th eoriginal speed.
+                For any value of <m>s</m>, the position based on the
+                original parameter would be only one quarter as far
+                along the curve, so motvement along the curve happens
+                at one quarter the original speed. The domain is still
+                <m>s \in [0, \infty)</m>
+              </p>
+            </li>
+            <li>
+              <me>t = s + 7</me>
+              <p>
+                The speed doesn't change. However, at <m>s=0</m> (the
+                starting time for the new variable), the position is
+                already partially along the curve, where the original
+                parametrization would have been at <m>t=7</m>. The
+                domain, to match the original curve, would be <m>s \in
+                [-7,\infty)</m>. 
+              </p>
+            </li>
+            <li>
+              <me>t = s - 10</me>
+              <p>
+                The speed doesn't change. However, at <m>s=0</m> (the
+                starting time for the new variable), the position has
+                moved back along the curve to <m>t = -10</m>. If
+                <m>t</m> doesn't take negative values, then the curve
+                would have to start the new variable at <m>s =
+                10</m>. The domain, to match the original curve, would
+                be <m>s \in [10,\infty)</m>.
+              </p>
+            </li>
+            <li>
+              <me>t = s^2</me>
+              <p>
+                By squaring the new variable, the movement  will be
+                faster and faster compared with the old variable.
+                Moving linearly in <m>s</m> is moving quadratically in
+                <m>t</m>. The domain is still <m>s\ in [0,\infty)</m>. 
+              </p>
+            </li>
+            <li>
+              <me>t = \sqrt{s}</me>
+              <p>
+                By taking the square root, movement along the curve
+                will be going slower and slower compared with the old
+                variable. Moving linearly in <m>s</m> is moving only
+                <m>\sqrt{s}</m> in <m>t</m>.The domain is still <m>s\
+                in [0,\infty)</m>. 
+              </p>
+            </li>
+            <li>
+              <me>t = e^s</me>
+              <p>
+                The speed will accelerate more and more compared with
+                the old variable. This is like the quadratic change,
+                but more dramatic, since the exponential function
+                grows faster. The domain cannot actually match the
+                original curve, since producing <m>t = 0</m> is
+                impossible with the new variable. The closest domain
+                is <m>s \in (-\infty, \infty)</m>. 
+              </p>
+            </li>
+            <li>
+              <me>t = -s</me>
+              <p>
+                The speed will not change, but the direction of
+                movement along the curve will be reversed. The domain
+                is <m>s \in (-\infty,0]</m>. 
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </activity>
+  </subsection>
+  <subsection xml:id="problems-arclength">
+    <title>Arclength</title>
+    <activity>
+      <statement>
+        <p>
+          Calculate the arclength of this parametric curve.
+          <md>
+            <mrow>
+              \amp \gamma(t) = (t, 3t-6) \amp \amp t \in [0,7]
+            </mrow>
+          </md>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          I calculate the derivatives of the two coordinates.
+          <md>
+            <mrow>
+              \amp x^{\prime}(t) = 1
+              \amp \amp y^\prime(t) = 3
+            </mrow>
+          </md>
+          I then put them into a pythagorian combination.
+          <me>
+            \sqrt{1^2 + 3^2} = \sqrt{10}
+          </me>
+          For arclength, I need to integrate this expression over the
+          length of the curve.
+          <md>
+            <mrow>
+              \int_0^7 \sqrt{10} dt \amp = 7\sqrt{10}  
+            </mrow>
+          </md>
+          The result of this integral is the arclength of the
+          curve. 
+        </p>
+      </solution>
+    </activity>
+    <activity>
+      <statement>
+        <p>
+          Calculate the arclength of this parametric curve.
+          <md>
+            <mrow>
+              \amp \gamma(t) = (t^2, 1-t^2) \amp \amp t \in [0,4]
+            </mrow>
+          </md>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          I calculate the derivatives of the two coordinates.
+          <md>
+            <mrow>
+              \amp x^{\prime}(t) = 2t 
+              \amp \amp y^\prime(t) = -2t 
+            </mrow>
+          </md>
+          I then put these into a pythagorian combination.
+          <me>
+            \sqrt{(2t)^2 + (-2t)^2} = \sqrt{8t^2} = (2\sqrt{2})t
+          </me>
+          For arclength, I need to integrate this expression over the
+          length of the curve.
+          <md>
+            <mrow>
+              \int_0^4 (2\sqrt{2}) t \amp = (2\sqrt{2}) \frac{t^2}{2}
+              \Big|_0^4 = (2\sqrt{2}) \frac{16}{2} = 16 \sqrt{2} 
+            </mrow>
+          </md>
+          The result of this integral is the arclength of the
+          curve. 
+        </p>
+      </solution>
+    </activity>
+    <activity>
+      <statement>
+        <p>
+          Calculate the arclength of this parametric curve.
+          <md>
+            <mrow>
+              \amp \gamma(t) = (4\cos(t^2),4\sin(t^2)) \amp \amp t \in
+              [0,\sqrt{2\pi}]
+            </mrow>
+          </md>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          I calculate the derivatives of the two coordinates.
+          <md>
+            <mrow>
+              \amp x^{\prime}(t) = -8t\sin (t^2) 
+              \amp \amp y^\prime(t) = 8t \cos (t^2) 
+            </mrow>
+          </md>
+          I then put these into a pythagorian combination.
+          <me>
+            \sqrt{64 \sin^2 (t^2) + 64 \cos^2 (t^2)} = \sqrt{64} = 8 
+          </me>
+          For arclength, I need to integrate this expression over the
+          length of the curve.
+          <md>
+            <mrow>
+              \int_0^{\sqrt{2\pi}} 8 \amp = 8 \sqrt{2\pi} 
+            </mrow>
+          </md>
+          The result of this integral is the arclength of the
+          function. 
+        </p>
+      </solution>
+    </activity>
+    <activity>
+      <statement>
+        <p>
+          This is a multi-part question on a historically important
+          arclength calculation. (Some historical context is given
+          and the end of the solution). 
+          <ol>
+            <li>
+              Find a parametric curve which descrives an ellipse with
+              semimajor axis <m>a</m> and semiminor axis <m>b</m>.
+              (It is easiest for future stpes to orient the larger
+              ellipse axis along the <m>x</m> axis.)
+            </li>
+            <li>
+              Set up the arclength calculation to find the
+              circumference of the ellipse.
+            </li>
+            <li>
+              Factor <m>a</m> out of the square root and subtract a
+              cosine term so that you can simplify using <m>(\sin^2 t
+              + \cos^2 t = 1)</m>.
+            </li>
+            <li>
+              The <em>eccentricity</em> of the ellipse is defined to
+              be the number <m>e = \sqrt{1 - \frac{b^2}{a^2}}</m>.
+              Manipulate the integral so that <m>e</m> shows up under
+              the square root, but <m>a</m> amd <m>b</m> are no longer
+              under the square root.
+            </li>
+            <li>
+               Calculate the integral in the special case <m>e=0</m>.
+               (Since this happens only when <m>a=b</m>, this is a
+               circle with radius <m>a</m>; you should recover the
+               familiar circumference of a circle).
+            </li>
+            <li>
+              Try to solve the integral for general eccentricity <m>0
+              \lt e \lt 1</m>. Comment on the problems and barriers to
+              integration.
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <p>
+                Find a parametric curve which descrives an ellipse with
+                semimajor axis <m>a</m> and semiminor axis <m>b</m>.
+              </p>
+              <p>
+                I can take the standard curve for the circle and just
+                scale the amplitude of the two coordinate functions.
+                <me>
+                  \gamma(t) = (a \cos t, b \sin t) 
+                </me>
+                The shape is given by one period of the sine and
+                cosine functions, so <m>t \in [0,2\pi]</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Set up the arclength calculation to find the
+                circumference of the ellipse.
+              </p>
+              <p>
+                The derivatives are <m>x^\prime = -a \sin t</m> and
+                <m>y^\prime = b \cos t</m>. I put these in a
+                pythagorian combination and integrate to find the
+                arclength.
+                <me>
+                  \int_0^{2\pi} \sqrt{a^2 \sin^2 (t) + b^2 \cos^2
+                  (t)} dt
+                </me>
+              </p>
+            </li>
+            <li>
+              <p>
+                Factor <m>a</m> out of the square root and subtract a
+                cosine term to that you can simplify using <m>(\sin^2 t
+                + \cos^2 t = 1)</m>.
+              </p>
+              <md>
+                <mrow>
+                  \amp \int_0^{2\pi} \sqrt{a^2 \sin^2 (t) + b^2
+                  \cos^2 (t)} dt
+                </mrow>
+                <mrow>
+                  \amp = \int_0^{2\pi} \sqrt{a^2 \left( \sin^2 (t) +
+                  \frac{b^2}{a^2} \cos^2 (t)\right)} dt
+                </mrow>
+                <mrow>
+                  \amp = \int_0^{2\pi} a \sqrt{ \sin^2 (t) +
+                  \frac{b^2}{a^2} \cos^2 (t)} dt
+                </mrow>
+                <mrow>
+                  \amp = \int_0^{2\pi} a \sqrt{ \sin^2 (t) +
+                  \cos^2 t + \left( \frac{b^2}{a^2} - 1 \right) \cos^2
+                  (t)} dt
+                </mrow>
+                <mrow>
+                  \amp = \int_0^{2\pi} a \sqrt{ 1 + \left(
+                  \frac{b^2}{a^2} - 1 \right) \cos^2 (t)} dt
+                </mrow>
+              </md>
+            </li>
+            <li>
+              <p>
+                The eccentricity of the ellipse is defined to be the
+                number <m>e = \sqrt{1 - \frac{b^2}{a^2}}</m>.
+                Manipulate the integral so that <m>e</m> shows up
+                under the square root, but <m>a</m> amd <m>b</m> are
+                no longer under the square root.
+              </p>
+              <md>
+                <mrow>
+                  \int_0^{2\pi} a \sqrt{ 1 + \left(
+                  \frac{b^2}{a^2} - 1 \right) \cos^2 (t)} dt
+                </mrow>
+                <mrow>
+                  \int_0^{2\pi} a \sqrt{ 1 - \left(
+                  1 - \frac{b^2}{a^2} \right) \cos^2 (t)} dt
+                </mrow>
+                <mrow>
+                  = \int_0^{2\pi} a \sqrt{ 1 - e \cos^2 (t)} dt
+                </mrow>
+              </md>
+            </li>
+            <li>
+              <p>
+                 Calculate the integral in the special case <m>e=0</m>.
+               </p>
+               <me>
+                  = \int_0^{2\pi} a \sqrt{ 1 - 0 \cos^2 (t)} dt = 
+                  \int_0^{2\pi} a dt = 2\pi a
+               </me>
+            </li>
+            <li>
+              <p>
+                Try to solve the integral for general eccentricity <m>0
+                \lt e \lt 1</m>. Comment on the problems and barriers to
+                integration.
+              </p>
+              <p>
+                This is an impossible integral to solve with the
+                methods in this course, or even with more advanced
+                method. Without <m>e=0</m>, I can't make use of a trig
+                identity to remove all the trig functions. I am left
+                with this annoying <m>\cos^2 t</m> function inside the
+                integral.  No substitution works, since there are no
+                trig functions outside the integral.
+              </p>
+              <p>
+                This is called an elliptic integral (of the second
+                kind, technically). It was a major motivator in 19th
+                century mathematics, since the circumference of the
+                ellipse was considered an important geometric problem.
+                It led, indirectly, to the objects known as elliptic
+                curves. These are very important geometric object
+                which seem strangely named, since they don't look like
+                they have anything to do with ellipses. The connection
+                is these integrals. Elliptic curves were invented as
+                part of some clever and complicated new methods to
+                approach ellitpic integrals. In this sense, elliptic
+                curves are not <dq>curves which are like ellipses</dq>,
+                but rather, <dq>curves that solve some elliptic
+                integrals.</dq>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </activity>
+  </subsection>
+  <subsection xml:id="problems-parametrization-by-arclength">
+    <title>Parametrization by Arclength</title>
+    <activity>
+      <statement>
+        <p>
+          Parametrize this curve by arclength.
+          <md>
+            <mrow>
+              \amp \gamma(t) = (t^2 \cos t, t^2 \sin t) \amp \amp t
+              \in [0, \infty) 
+            </mrow>
+          </md>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          First, I calculate the derivatives of the coordinate
+          functions.
+          <md>
+            <mrow>
+              \amp x^\prime = -2t \sin t - t^2 \sin t 
+              \amp \amp y^\prime = 2t \cos t + t^2 \cos t 
+            </mrow>
+          </md>
+          Then I calculate the pythagorian combination of these. This
+          is a pretty long calculation, but I will be able to make use
+          of a number of trig identities to simplify the terms inside
+          the square root, and some terms cancel. 
+          <md>
+            <mrow>
+              \amp \sqrt{4t^2 \cos^2 t - 4t^3 \cos t \sin t + t^2 \sin^2 t + 4t^2 \sin^2 t + 4t^3 \cos t \sin t + t^4 \cos^2 t}
+            </mrow>
+            <mrow>
+              \amp = \sqrt{4t^2 (\cos^2 t + \sin^2 t) + t^4 (\cos^2 t + \sin^2 t} 
+            </mrow>
+            <mrow>
+              \amp = \sqrt{4t^2 + t^4} = t \sqrt{4+t^2}
+            </mrow>
+          </md>
+          Then I set up the arclength function, which is the integral
+          of this pythagorian combination.
+          <md>
+            <mrow>
+              s(t) \amp = \int_0^t u \sqrt{4 + u^2} du 
+            </mrow>
+          </md>
+          I can use a substitution here.
+          <md>
+            <mrow>
+              v \amp = 4 + u^2 \implies dv = 2u du     
+            </mrow>
+            <mrow>
+              s(t) \amp = \int_4^{4+t^2} \frac{\sqrt{v}}{2} dv 
+            </mrow>
+            <mrow>
+              \amp = \frac{v^{\frac{3}{2}}}{3} \Bigg|_4^{4+t^2} =
+              \frac{(4 +t^2)^{\frac{3}{2}}}{3} - \frac{1}{3} 
+            </mrow>
+          </md>
+          Then I invert the arclength function.
+          <md>
+            <mrow>
+              s + \frac{1}{3}  \amp = \frac{(4+t^2)^\frac{3}{2}}{3} 
+            </mrow>
+            <mrow>
+              3s + 1 \amp = (4+t^2)^\frac{3}{2}
+            </mrow>
+            <mrow>
+              (3s + 1)^{\frac{2}{3}} \amp = 4+t^2
+            </mrow>
+            <mrow>
+              (3s + 1)^{\frac{2}{3}} - 4  \amp = t^2
+            </mrow>
+            <mrow>
+              \sqrt{(3s + 1)^{\frac{2}{3}} - 4} \amp = t
+            </mrow>
+            <mrow>
+              t(s) \amp = \sqrt{(3s + 1)^{\frac{2}{3}} - 4} 
+            </mrow>
+          </md>
+          Finally, I repalce <m>t</m> with this expression to get a
+          parametrization in <m>s</m>, which is the parametrization by
+          arclength. 
+          <md>
+            <mrow>
+              \amp \sqrt{(3s + 1)^{\frac{2}{3}} - 4} 
+              \gamma(s) \amp = \amp \left( 
+              \left((3s + 1)^{\frac{2}{3}} - 4 \right) 
+              \cos \left( \sqrt{(3s + 1)^{\frac{2}{3}} - 4} \right),
+              \right.  
+            </mrow>
+            <mrow>
+              \amp \amp \amp \left. \left( (3s + 1)^{\frac{2}{3}} - 4
+              \right) \sin \left( \sqrt{(3s + 1)^{\frac{2}{3}} - 4}
+              \right) \right) 
+            </mrow>
+          </md>
+        </p>
+      </solution>
+    </activity>
+    <activity>
+      <statement>
+        <p>
+          Parametrize this curve by arclength. (The function
+          <m>s(t)</m> will turn out to be imposible to invert
+          algebraically.  You can just leave the inverse implicit.
+          Also, the integral is a difficult trig substitution; please
+          just ask a computer algebra system for the result of the
+          integral.) 
+          <md>
+            <mrow>
+              \amp \gamma(t) = (\ln t, 2t^2 - 1) \amp \amp t
+              \in [1, \infty) 
+            </mrow>
+          </md>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          First, I calculate the derivatives of the coordinate
+          functions.
+          <md>
+            <mrow>
+              \amp x^\prime = \frac{1}{t} 
+              \amp \amp y^\prime = 4t 
+            </mrow>
+          </md>
+          Then I calculate the pythagorian combination of these.
+          <me>
+            \sqrt{\frac{1}{t^2} + 16t^2} = \sqrt{\frac{1 +
+            16t^4}{t^2}} = \frac{1}{t} \sqrt{1+ 16t^4} 
+          </me>
+          Then I set up the arclength function, which is the integral
+          of this pythagorian combination.
+          <md>
+            <mrow>
+              s(t) \amp = \int_1^t \frac{1}{u} \sqrt{ 1+ 16 u^4} du 
+            </mrow>
+          </md>
+          I asked a computer algebra system for the value of this
+          integral. 
+          <md>
+            <mrow>
+              s(t) \amp =  \frac{1}{2} \left( \sqrt{1 + 16t^4} -
+              \arctanh \left( \sqrt{ 1 + 16t^4} \right) - \sqrt{17} +
+              \arctanh (17) \right) 
+            </mrow>
+          </md>
+          This is not algebraically invertible. All I can do is call
+          the inverse <m>t(s)</m> and replace it implicitly. 
+          <md>
+            <mrow>
+              \gamma(s) \amp = \left( \ln t(s), 2(t(s))^2 - 1)
+              \right) \amp \amp s \in [0,\infty) 
+            </mrow>
+          </md>
+        </p>
+      </solution>
+    </activity>
+    <activity>
+      <statement>
+        <p>
+          Parametrize this curve by arclength. (The function
+          <m>s(t)</m> will turn out to be impossible to invert
+          algebraically.  You can just leave the inverse implicit.
+          Also, the integral is a difficult trig substitution; please
+          just ask a computer algebra system for the result of the
+          integral.) 
+          <md>
+            <mrow>
+              \amp \gamma(t) = (t^2 - 4t + 1, 2t - 2) \amp \amp t
+              \in [0, \infty) 
+            </mrow>
+          </md>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          First, I calculate the derivatives of the coordinate
+          functions.
+          <md>
+            <mrow>
+              \amp x^\prime = 2t - 4
+              \amp \amp y^\prime = 2
+            </mrow>
+          </md>
+          Then I calculate the pythagorian combination of these.
+          <me>
+            \sqrt{4t^2 - 16t + 16 + 4} = \sqrt{4t^2 - 16t + 20} = 2
+            \sqrt{t^2 - 4t + 5} 
+          </me>
+          I'm going to complete the square here to make this more
+          approachable.
+          <me>
+            2 \sqrt{t^2 - 4t + 5} = 2 \sqrt{(t-2)^2 + 1}
+          </me>
+          Then I set up the arclength function, which is the integral
+          of this pythagorian combination.
+          <md>
+            <mrow>
+              s(t) \amp = \int_0^t 2 \sqrt{(u-2)^2 + 1} du 
+            </mrow>
+          </md>
+          I can shift using the substitution <m>v = u-2</m>
+          <md>
+            <mrow>
+              s(t) \amp = \int_{-2}^{t-2} 2 \sqrt{v^2 + 1} du 
+            </mrow>
+          </md>
+          This is a trig substitution. I asked a computer algebra for
+          the solution.
+          <md>
+            <mrow>
+              s(t) \amp = \frac{1}{2} \left( \sqrt{(t-2)^2 + 1} +
+              \arcsinh t - 2 - \sqrt{3} - \arcsinh (-2) \right)  
+            </mrow>
+          </md>
+          This is not algebraically invertible. All I can do is
+          implicitly write <m>t(s)</m> for the inverse. Then I can
+          replace <m>t</m> with this <m>t(s)</m> in this curve. 
+          <md>
+            <mrow>
+              \gamma(s) \amp = \left( (t(s))^2 - 4t(s) + 1, 2t(s) - 2
+              \right) \amp \amp t \in [0, \infty) 
+            </mrow>
+          </md>
+        </p>
+      </solution>
+    </activity>
+  </subsection>
+  <subsection xml:id="problems-tangents-parametric-curves">
+    <title>Tangents to Parametric Curves</title>
+    <activity>
+      <statement>
+        <p>
+          Calculate the tangent to this parametric curve. (This is the
+          same curve from <xref ref="activity-pc1" />). Choose
+          some points and draw some tangents to inspect if they fit
+          the curve.
+          <md>
+            <mrow>
+              \amp \gamma(t) = (t^2, t^3) \amp \amp t \in [-3,3]
+            </mrow>
+          </md>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          The tangent is the derivative calculated termwise.
+          <me>
+            \gamma^\prime(t) = (2t, 3t^2) 
+          </me>
+          This parametric curve with some example tangents is shown in
+          <xref ref="figure-activity-parametric-tangent-1" />
+          <figure xml:id="figure-activity-parametric-tangent-1">
+            <caption>
+              Tangents to <m>\gamma(t) = (t^2, t^3) </m>
+            </caption>
+            <image xml:id="figure25" width="90%">
+              <asymptote>
+                import graph;
+                size(12cm)
+
+                xaxis("$x$");
+                yaxis("$y$");
+
+                real x(real t) {return t^2;}
+                real y(real t) {return (1/8)*t^3;}
+
+                draw(graph(x,y,-3,3),Arrow);
+
+                draw((4,1)--(8,2.5),Arrow);
+                draw((4,-1)--(0,0.5),Arrow);
+
+                dot((4,1));
+                dot((4,-1));
+              </asymptote>
+            </image>
+          </figure>
+        </p>
+      </solution>
+    </activity>
+    <activity>
+      <statement>
+        <p>
+          Calculate the tangent to this parametric curve. (This is the
+          same curve from <xref ref="activity-pc2" />. Choose
+          some points and draw some tangents to inspect if they fit
+          the curve.
+          <md>
+            <mrow>
+              \amp \gamma(t) = (\cos t, 2 \sin t)  \amp \amp t \in
+              [0,2\pi]
+            </mrow>
+          </md>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          The tangent is the derivative calculated termwise.
+          <me>
+            \gamma^\prime(t) = (\sin t, - 2 \cos t) 
+          </me>
+          This parametric curve with some example tangents is shown in
+          <xref ref="figure-activity-parametric-tangent-2" />
+          <figure xml:id="figure-activity-parametric-tangent-2">
+            <caption>
+              Tangents to <m>\gamma(t) = (\cos t, 2 \sin t) </m>
+            </caption>
+            <image xml:id="figure26" width="50%">
+              <asymptote>
+                import graph;
+                size(12cm);
+
+                xaxis("$x$");
+                yaxis("$y$");
+
+                real x(real t) {return cos(t);}
+                real y(real t) {return 2*sin(t);}
+
+                draw(graph(x,y,0,2*pi),Arrow);
+                
+                dot((1,0));
+                dot((0.707,1.414));
+                dot((0,2));
+                dot((-0.707,1.414));
+                dot((-1,0));
+                dot((-0.707,-1.414));
+                dot((0,-2));
+                dot((0.707,-1.414));
+
+                draw((1,0)--(1,2),Arrow);
+                draw((0.707,1.414)--(0,2.828),Arrow);
+                draw((0,2)--(-1,2),Arrow);
+                draw((-0.707,1.414)--(-1.414,0),Arrow);
+                draw((-1,0)--(-1,-2),Arrow);
+                draw((-0.707,-1.414)--(0,-2.828),Arrow);
+                draw((0,-2)--(1,-2),Arrow);
+                draw((0.707,-1.414)--(1.414,0),Arrow);
+              </asymptote>
+            </image>
+          </figure>
+        </p>
+      </solution>
+    </activity>
+    <activity>
+      <statement>
+        <p>
+          Calculate the tangent to this parametric curve. (This is the
+          same curve from <xref ref="activity-pc3" />). Choose
+          some points and draw some tangents to inspect if they fit
+          the curve.
+          <md>
+            <mrow>
+              \amp \gamma(t) = (4 \cos t + \sin 2t, 4 \sin t + \cos 2
+              t) \amp \amp t \in [0,2\pi]
+            </mrow>
+          </md>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          The tangent is the derivative calculated termwise.
+          <me>
+            \gamma^\prime(t) = (-4 \sin t + 2 \cos 2t, 4 \cos t - 2
+            \sin 2t) 
+          </me>
+          This parametric curve with some example tangents is shown in
+          <xref ref="figure-activity-parametric-tangent-3" />
+          <figure xml:id="figure-activity-parametric-tangent-3">
+            <caption>
+              Tangents to <m>\gamma(t) = (4 \cos t + \sin 2t, 4 \sin t
+              + \cos 2t)
+              </m>
+            </caption>
+            <image xml:id="figure27" width="90%">
+              <asymptote>
+                import graph;
+                size(12cm);
+
+                xaxis("$x$");
+                yaxis("$y$");
+
+                real x(real t) {return 4*cos(t) + sin(2*t);}
+                real y(real t) {return 4*sin(t) + cos(2*t);}
+
+                draw(graph(x,y,0,2*pi),Arrow);
+
+                dot((4,1));
+                dot((0,3));
+                dot((-4,1));
+                dot((0,-5));
+
+                dot((3.828,2.828));
+                dot((-3.828,2.828));
+                dot((-1.828,-2.828));
+                dot((1.828,-2.828));
+
+                draw((3.828,2.828)--(0,3.656),Arrow);
+                draw((-3.828,2.828)--(-7.656,2),Arrow);
+                draw((-1.828,-2.828)--(1,-7.656),Arrow);
+                draw((1.828,-2.828)--(3.656,0),Arrow);
+
+                draw((4,1)--(6,5),Arrow);
+                draw((0,3)--(-4,3),Arrow);
+                draw((-4,1)--(-2,-3),Arrow);
+                draw((0,-5)--(5,-5),Arrow);
+              </asymptote>
+            </image>
+          </figure>
+        </p>
+      </solution>
+    </activity>
+    <activity>
+      <statement>
+        <p>
+          Calculate the tangent to this parametric curve. (This is the
+          same curve from <xref ref="activity-pc4" />). Choose
+          some points and draw some tangents to inspect if they fit
+          the curve.
+          <md>
+            <mrow>
+              \amp \gamma(t) = (3-t^2,t) \amp \amp t \in [-4,4]
+            </mrow>
+          </md>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          The tangent is the derivative calculated termwise.
+          <me>
+            \gamma^\prime(t) = (-t, 1)
+          </me>
+          This parametric curve with some example tangents is shown in
+          <xref ref="figure-activity-parametric-tangent-4" />
+          <figure xml:id="figure-activity-parametric-tangent-4">
+            <caption>
+              Tangents to <m>\gamma(t) = (3-t^2,t)</m>
+            </caption>
+            <image xml:id="figure28" width="90%">
+              <asymptote>
+                import graph;
+                size(12cm);
+
+                xaxis("$x$");
+                yaxis("$y$");
+
+                real x(real t) {return 3-t^2;}
+                real y(real t) {return t;}
+
+                draw(graph(x,y,-4,4),Arrow);
+
+                dot((3,0));
+                dot((2,1));
+                dot((2,-1));
+                dot((-1,2));
+                dot((-1,-2));
+                dot((-6,3));
+                dot((-6,-3));
+
+                draw((3,0)--(3,1),Arrow);
+                draw((2,1)--(0,2),Arrow);
+                draw((2,-1)--(4,0),Arrow);
+                draw((-1,2)--(-5,3),Arrow);
+                draw((-1,-2)--(3,-1),Arrow);
+                draw((-6,3)--(-12,4),Arrow);
+                draw((-6,-3)--(0,-2),Arrow);
+              </asymptote>
+            </image>
+          </figure>
+        </p>
+      </solution>
+    </activity>
+    <activity>
+      <statement>
+        <p>
+          Calculate the tangent to this parametric curve. (This is the
+          same curve from <xref ref="activity-pc5" />). Choose
+          some points and draw some tangents to inspect if they fit
+          the curve.
+          <md>
+            <mrow>
+              \amp \gamma(t) = \left( \frac{\pi^2}{t^2} \cos t,
+              \frac{\pi^2}{t^2} \sin t \right) \amp \amp t \in [\pi,
+              4\pi] 
+            </mrow>
+          </md>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          The tangent is the derivative calculated termwise.
+          <me>
+            \gamma^\prime(t) = \left( \frac{-2\pi^2}{t^3} \cos t -
+            \frac{\pi^2}{t^2} \sin t, \frac{-2\pi^2}{t^3} \sin t +
+            \frac{\pi^2}{t^2} \cos t \right)
+          </me>
+          This parametric curve with some example tangents is shown in
+          <xref ref="figure-activity-parametric-tangent-5" />
+          <figure xml:id="figure-activity-parametric-tangent-5">
+            <caption>
+              Tangents to <m>\gamma(t) = \left( \frac{\pi^2}{t^2} \cos
+              t, \frac{\pi^2}{t^2} \sin t \right) </m>
+            </caption>
+            <image xml:id="figure29" width="90%">
+              <asymptote>
+                import graph;
+                size(12cm);
+
+                xaxis("$x$");
+                yaxis("$y$");
+
+                real x(real t) {return (pi)^2*(1/t)^2*cos(t);}
+                real y(real t) {return (pi)^2*(1/t)^2*sin(t);}
+
+                draw(graph(x,y,pi,4*pi),Arrow);
+
+                dot((-1,0));
+                dot((0,-0.444));
+                dot((0.25,0));
+                dot((0,0.16));
+                dot((-0.111,0));
+                dot((0,-0.082));
+                dot((0.063,0));
+
+                draw((0,-0.444)--(0.444,-0.255),Arrow);
+                draw((0.25,0)--(0.170,0.25),Arrow);
+                draw((0,0.16)--(-0.16,0.119),Arrow);
+                draw((-0.111,0)--(-0.087,-0.111),Arrow);
+                draw((0,-0.082)--(0.082,-0.067),Arrow);
+              </asymptote>
+            </image>
+          </figure>
+        </p>
+      </solution>
+    </activity>
+    <activity>
+      <statement>
+        <p>
+          Calculate the tangent to this parametric curve. (This is the
+          same curve from <xref ref="activity-pc6" />). Choose
+          some points and draw some tangents to inspect if they fit
+          the curve.
+          <md>
+            <mrow>
+              \amp \gamma(t) = (\sqrt{t}, \sqrt[3]{t} ) \amp \amp t
+              \in [0,100]
+            </mrow>
+          </md>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          The tangent is the derivative calculated termwise.
+          <me>
+            \gamma^\prime(t) = \left( \frac{1}{2\sqrt{t}}, \frac{1}{3
+            \sqrt[3]{t^2}} \right) 
+          </me>
+          This parametric curve with some example tangents is shown in
+          <xref ref="figure-activity-parametric-tangent-6" />.
+          <figure xml:id="figure-activity-parametric-tangent-6">
+            <caption>
+              Tangents to <m>\gamma(t) = (\sqrt{t}, \sqrt[3]{t})</m>
+            </caption>
+            <image xml:id="figure30" width="90%">
+              <asymptote>
+                import graph;
+                size(12cm);
+
+                xaxis("$x$");
+                yaxis("$y$");
+
+                real x(real t) {return sqrt(t);}
+                real y(real t) {return t^(1/3);}
+
+                draw(graph(x,y,0,100),Arrow);
+
+                dot((0,0));
+                dot((4.47,2.71));
+                dot((6.32,3.42));
+                dot((7.74,3.91));
+                dot((8.94,4.31));
+                dot((10,4.64));
+                
+                draw((4.47,2.71)--(5.57,3.14),Arrow);
+                draw((6.32,3.42)--(7.02,3.69),Arrow);
+                draw((7.74,3.91)--(8.34,4.13),Arrow);
+                draw((8.94,4.31)--(9.54,4.48),Arrow);
+              </asymptote>
+            </image>
+          </figure>
+        </p>
+      </solution>
+    </activity>
+  </subsection>
+  <subsection xml:id="problems-curvature-torsion">
+    <title>Full Descriptions of Curves in <m>\RR^3</m></title>
+    <activity>
+      <statement>
+        <p>
+          For this curve, calculate the speed, curvature, torsion.
+          Also calculate the tangent vector, normal vector and
+          binormal vector. 
+          <me>
+            \gamma(t) = (t^3, 1 - t^2, 1 + t^2)
+          </me>
+          Interpret the curve using the three scalars, focusing on the
+          asymptotic behaviour.  (The expressions get very hectic in
+          this example -- it is very hard to construct examples where
+          the functions don't quickly grow difficult. Use a computer
+          to do the derivatives and cross product to save yourself
+          some calculation. I used Wolfram Alpha for all the
+          derivatives and cross products, and some of the algebraic
+          simplifications as well. By the time you get to
+          <m>B^\prime</m>, expect some complicated results.) 
+        </p>
+      </statement>
+      <solution>
+        <p>
+          I follow the lengthy process of calculating speed,
+          curvature, torsion, the tangent vector, the normal vector,
+          and the binormal vector. 
+          <md>
+            <mrow>
+              \gamma(t) \amp = (t^3, 1 - t^2, 1 + t^2) 
+            </mrow>
+            <mrow>
+              \gamma^\prime(t) \amp = (x^\prime(t), y^\prime(t),
+              z^\prime(t)) = (3t^2, -2t, 2t) 
+            </mrow>
+            <mrow>
+              v(t) \amp = |\gamma^\prime(t)| = \sqrt{x^\prime(t)^2 +
+              y^\prime(t)^2 + z^\prime(t)^2 }
+            </mrow>
+            <mrow>
+             \amp = \sqrt{ 9t^4 + 4t^2 + 4t^2} = t \sqrt{9t^2 + 4} 
+            </mrow>
+            <mrow>
+              T(t) \amp = \frac{\gamma^\prime(t)}{|\gamma^\prime(t)|} =
+              \frac{1}{t\sqrt{9t^2 + 4}} \left( 3t^2, -2t, 2t \right)
+            </mrow>
+            <mrow>
+              \amp = \left( \frac{3t}{\sqrt{9t^2+4}}
+              \frac{-2}{\sqrt{9t^2+4}} \frac{2}{\sqrt{9t^2+4}} \right)
+            </mrow>
+            <mrow>
+              T^\prime(t) \amp = \left( \frac{12}{(9t^2 +
+              4)^{\frac{3}{2}}}, \frac{-18t}{(9t^2+4)^{\frac{3}{2}}},
+              \frac{18t}{(9t^2+4)^{\frac{3}{2}}} \right) 
+            </mrow>
+            <mrow>
+              \amp = \frac{1}{(9t^2+4)^{\frac{3}{2}}} (12, -18t, 18t)
+            </mrow>
+            <mrow>
+              |T^\prime(t)| \amp = \frac{1}{(9t^2+4)^{\frac{3}{2}}}
+              \sqrt{144 + 324t^2 + 324t^2} =
+              \frac{1}{(9t^2+4)^{\frac{3}{2}}} \sqrt{144 + 648t^2}
+            </mrow>
+            <mrow>
+              \kappa(t) \amp =
+              \frac{|T^\prime(t)|}{|\gamma^\prime(t)|} =
+              \frac{\frac{1}{(9t^2+4)^{\frac{3}{2}}} \sqrt{ 144 +
+              648t^2}}{\sqrt{ 9t^4 + 4t^2}} = \frac{144 + 648
+              t^2}{(9t^2+4)^2}
+            </mrow>
+            <mrow>
+              N(t) \amp = \frac{T^\prime(t)}{|T^\prime(t)|}
+              \frac{1}{\sqrt{144 + 648t^2}} \left( 12, -18t, 18t
+              \right) 
+            </mrow>
+            <mrow>
+              B(t) \amp = T(t) \times N(t) = \frac{1}{\sqrt{9t^2+4}}
+              (3t, -2, -2) \times \frac{1}{\sqrt{144+684t^2}} (12,
+              -18t, 18t)
+            </mrow>
+            <mrow>
+              \amp = \frac{1}{\sqrt{(9t^2+4)(144+648t^2)}} \left[ 
+              (3t, -2, -2) \times (12, -18t, 18t) \right] 
+            </mrow>
+            <mrow>
+              \amp = \frac{1}{\sqrt{5832t^4 + 3888t^2 + 576}} (-72t,
+              -24 - 54t^2, 24 - 54t^2)
+            </mrow>
+            <mrow>
+              B^\prime(t) \amp = \frac{1}{(81t^4 +54t^2 +
+              8)^{\frac{3}{2}}} \left( 6\sqrt{2} (81t^4 - 8),
+              9\sqrt{2} t(9t^2 + 4), -9\sqrt{2}t (63t^2 + 20) \right) 
+            </mrow>
+            <mrow>
+              \tau(t) \amp = - \frac{B^\prime(t)}{|\gamma^\prime(t)|}
+              \cdot N(t)
+            </mrow>
+            <mrow>
+              \amp = \frac{-\left( 12(6\sqrt{2}) (81t^4 - 8) -
+              18t(9\sqrt{2})(9t^2 + 4) - 18t(9\sqrt{2})(63t^2 + 20)
+              \right)}{t\sqrt{(9t^2+4)(81t^4 + 54t^2 + 8)^3}}
+            </mrow>
+            <mrow>
+              \amp = \frac{-\sqrt{2}}{t\sqrt{(9t^2+4)(81t^4 + 54t^2 +
+              8)^3}} (5832t^4 - 11664t^2 - 4464)
+            </mrow>
+          </md>
+          As I warned you, this got pretty intense. However, I can
+          simplify and gain useful information by just looking 
+          at the asymptotic order of the three scalars. 
+          <md>
+            <mrow>  
+              v \amp \cong t^2 
+            </mrow>
+            <mrow>
+              \kappa \amp \cong \frac{1}{t^2} 
+            </mrow>
+            <mrow>
+              \tau \amp \cong \frac{t^4}{t^9} = \frac{1}{t^5}
+            </mrow>
+          </md>
+          The speed is increasing. This makes sense, since the
+          components are cubic and quadratic. The curve covers more
+          distance as the inputs to these polynomials become large.
+          The curvature starts out significant, incidating a curving
+          shape at the start. However, asymptotically, the curvature
+          drops to zero, making this approach a straight line.
+          Something similar is true for torsion. Torsion is large when
+          <m>t</m> is small, showing the twisting of the curve near
+          the origin. Asymptotically, torsion decays very quickly, so
+          the twisting quickly become insignificant as the curve
+          straightens out.
+        </p>
+      </solution>
+    </activity>
+  </subsection>
+  <subsection xml:id="week2-concepts">
+    <title>Conceptual Review Questions</title>
+    <p>
+      <ul>
+        <li>
+          What is a parametric curve?
+        </li>
+        <li>
+          What is a parametrization?
+        </li>
+        <li>
+          What is the difference between a parametric curve and an
+          implicit curve?
+        </li>
+        <li>
+          What is the arclength of a curve?
+        </li>
+        <li>
+          What is special about the parametrization by arclength?
+        </li>
+        <li>
+          What is a tangent to a parametric curve?
+        </li>
+        <li>
+          What is the relationship betwee arclength and tangents?
+        </li>
+        <li>
+          What are normals and binormals?
+        </li>
+        <li>
+          What is curvature?
+        </li>
+        <li>
+          What is the osculating plane and how does it relate to
+          torsion?
+        </li>
+        <li>
+          How to tangents, normals and binormals (alternativley speed,
+          curvature and torsion) completely describe the motion of
+          curves in <m>\RR^3</m>?
+        </li>
+      </ul>
+    </p>
+  </subsection>
+</section>

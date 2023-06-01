@@ -1,0 +1,156 @@
+<section xml:id="section-integrable-sets">
+  <title>Integrable Sets</title>
+  <subsection xml:id="subsection-characteristic-functions">
+    <title>Characteristic Functions</title>
+    <p>
+      In single variable calculus, integrating over intervals is
+      sufficient for basically any purpose. Even a more complicated
+      subset of <m>\RR</m> for integration is almost certainly
+      something that can be broken down into a number of intervals. 
+    </p>
+    <p>
+      For multivariable integrals, the situation is very different.
+      The domain of a scalar field can be any kind of strange subset
+      of <m>\RR^n</m>, not necessarily the nice rectangles or
+      rectangular prisms that are intervals. We may want to integrate
+      over circular domains, or any kind of more complicated shapes.
+      This section builds up the theory to understand such integrals:
+      how to move from integration over intervals to integration over
+      arbitrary domain in <m>\RR^n</m>.
+    </p>
+    <p>
+      First, not all domains are possible. I said <sq>arbitrary</sq>
+      domains, but there are some restrictions. Some formal
+      definitions are needed here.
+    </p>
+    <definition>
+      <statement>
+        <p>
+          Let <m>S</m> be a subset of <m>\RR^n</m>. The
+          <term>characteristic function of <m>S</m></term> is defined as
+          follows, where <m>v \in \RR^n</m>.
+        </p>
+        <me>
+          \chi_S (v) : = \left\{ \begin{matrix} 1 \amp v \in S \\ 0
+          \amp v \notin S \end{matrix} \right.
+        </me>
+      </statement>
+    </definition>
+    <p>
+      The characteristic function is very simple: it has value <m>1</m>
+      on the set <m>S</m> and <m>0</m> everywhere else. 
+    </p>
+  </subsection>
+  <subsection xml:id="subsection-integrable-sets">
+    <title>Integrable Sets</title>
+    <p> 
+      The characteristic function lets us make another formal
+      definition. 
+    </p>
+    <definition>
+      <statement>
+        <p>
+          Let <m>S</m> be a subset of <m>\RR^n</m> which is contained in
+          an interval <m>I</m>. <m>S</m> is called a <term>integrable
+          set</term> if the following integral exists.
+        </p>
+        <me>
+          \int_I \chi_S dV
+        </me>
+      </statement>
+    </definition>
+    <p>
+      Almost all sets we will work with are integrable. Sets which are
+      not integrable are very strange sets (at least, for doing anything
+      geometric). The archetypical example is <m>\QQ \subset \RR</m>:
+      <m>\QQ</m> is not an integrable subset of <m>\RR</m>. What does
+      is mean, for a single variable function, to integrate over all
+      rational points but not over the irrational points? Since the
+      rational and irrational points are everywhere in <m>\RR</m>,
+      there is no notion of <sq>area under a curve</sq> here at all.
+      This integral doesn't make any sense; the set it not an
+      integrable set. Equivalently, the Riemann integral limit doesn't
+      not converges, since you can always choose rational or
+      irrational <m>x_k^*</m>; the different choices lead to different
+      values of the limit for these choices, so the integral doesn't
+      work. 
+    </p>
+    <p>
+      As I said, this is a formal definition. It won't be necessary to
+      check integrability of the domain each time I do an integral.
+      All reasonably geometric sets will be integrable. But the formal
+      definition of an integrable set is necessary to give the the
+      next formal definition. As with most formal definitions this is
+      pretty useless for actual calculations.  We'll move on to
+      calculations in <xref ref="section-variable-bounds" /> after we
+      make the proper, formal definitions. 
+    </p>
+  </subsection>
+  <subsection xml:id="subsection-integration-arbitrary-sets">
+    <title>Integration over Integrable Sets</title>
+    <p>
+      Formally, let me now define how to integrate an integrable
+      function over any integrable set.
+    </p>
+    <definition>
+      <statement>
+        <p>
+          Let <m>S</m> be a integrable subset of <m>\RR^n</m> with <m>S
+          \subset I</m> for some interval <m>I</m>. Let <m>f: S
+          \rightarrow \RR</m> be an integrable function which can be
+          extended to an integrable function <m>\tilde{f}</m> on
+          <m>I</m>. Then the integral of <m>f</m> over <m>S</m> is
+          defined as:
+        </p>
+        <me>
+          \int_S f dV \defeq \int_I \tilde{f} \chi_S dV
+        </me>
+      </statement>
+    </definition>
+    <p>
+      The characteristic function removes all values of <m>f</m> outside
+      the set <m>S</m>, so all that the integral measure are the values
+      of <m>f</m> over <m>S</m>. 
+    </p> 
+    <p>
+      I mentioned earlier that all open sets are integrable. I have
+      another simplifying theorem that ensure we only need to integrate
+      over open sets.
+    </p>
+    <proposition>
+      <statement>
+        <p>
+          Let <m>S</m> be an integrable set in <m>\RR^n</m>. Let
+          <m>S^0</m> be the set of interior points of <m>S</m>. Let
+          <m>f: S \rightarrow \RR</m> be an integrable function. Then
+        </p>
+        <me>
+          \int_S f dV = \int_{S^0} f dV
+        </me>
+      </statement>
+    </proposition>
+    <p>
+      This proposition means that we can ignore any inconveniences which
+      happen on the boundaries of sets. (Note that we still do need
+      limits for improper integrals, when the value of a function
+      approaches <m>\infty</m> near the boundary of a set). The
+      proposition also means that sets which are essentially of lower
+      dimensions do not matter in integration. If we are integrating
+      over subsets of <m>\RR^3</m>, then integrating over points, line
+      and planes amounts to nothing. Points, lines, and planes don't
+      have any interior points in <m>\RR^3</m>, so we might as well be
+      integrating over the empty set, which gives zero.
+    </p>
+    <p>
+      Other than ignoring boundaries and smaller dimensional pieces, our
+      approach to general sets is to break them up into pieces. It is a
+      general result in topology, which we won't get into here, that any
+      (reasonable) set can be broken up in to pieces (possibly
+      infinitely many) where the previous style of integral applies. We
+      can also be creative: for example, we could integrate over a
+      larger circle and subtract the integral over a small circle to
+      integrate over a ring-shaped domain. In these various ways we can
+      set up integrals over any (reasonable) subset of <m>\RR^n</m>.
+    </p>
+  </subsection>
+</section>

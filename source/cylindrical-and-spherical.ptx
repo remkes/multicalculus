@@ -1,0 +1,510 @@
+<section xml:id="section-cylindrical-and-spherical">
+  <title>Cylindrical and Spherical Coordinates</title>
+  <subsection xml:id="subsection-curvilinear">
+    <title>Curvilinear Coordinate Systems</title>
+    <p>
+      Polar coordinates was the most important change of variables in
+      <m>\RR^2</m>. In <m>\RR^3</m>, there are two extremely useful
+      changes of coordinates: cylindrical and sphereical coordinates.
+      This section will review the definitions of these coordinate
+      systems and give exmaples where they are used to solve multiple
+      integrals.
+    </p>
+    <p>
+      Before I move on, I want to define a term for these three
+      coordinate system (and other similar systems). All three of
+      these coordinate systems are based around circle. Their utility
+      comes from this; cartesian coordinates are not really good for
+      anything with a circular structure. In cartesian coordinates,
+      circles and spheres inevitably lead to annoying square roots in
+      the calculations. These other coordinate systems simplify those
+      calculations substantially. I want to use the fact that all of
+      these systems involve circles (and thus angle and radii) to
+      define a term that unites them.
+    </p>
+    <definition>
+      <statement>
+        A coordinate system for <m>\RR^n</m> where at least one of the
+        coordinates is an angle and at least one of the coordinates is
+        a radius is called a <term>curvilinear coordinate
+        syste</term>. By contrast, cartesian coordinates are often
+        referred to as a <term>rectangular coordinate system</term>.
+      </statement>
+    </definition>
+  </subsection>
+  <subsection xml:id="subsection-cylindrical">
+    <title>Cylindrical Coordinates</title>
+    <p>
+      Cylindrical coordinates leave <m>z</m> unchanges and use polar
+      coordinates in the <m>xy</m>-plane. Here are the transformation.
+      As before, the typical way to write the transformation is
+      treating the cartesian variables as the dependent variables, the
+      output. 
+    </p>
+    <md>
+      <mrow>
+        x \amp = r \cos \theta
+      </mrow>
+      <mrow>
+        y \amp = r \sin \theta
+      </mrow>
+      <mrow>
+        z \amp = z
+      </mrow>
+    </md>
+    <p>
+      It is useful to know the reverse transformations as well. 
+    </p>
+    <md>
+      <mrow>
+        r \amp = \sqrt{x^2 + y^2} 
+      </mrow>
+      <mrow>
+        \theta \amp = \arctan \frac{y}{x}
+      </mrow>
+      <mrow>
+        z \amp = z
+      </mrow>
+    </md>
+    <p>
+      Let me calculate the Jacobian. The matrix of partial derivative
+      is a <m>3 \times 3</m> matrix. 
+    </p>
+    <md>
+      <mrow>
+        \amp \frac{\del x}{\del r} = \cos \theta
+        \amp \amp \frac{\del x}{\del \theta} = -r \sin \theta 
+        \amp \amp \frac{\del x}{\del z} = 0 
+      </mrow>
+      <mrow>
+        \amp \frac{\del y}{\del r} = \sin \theta 
+        \amp \amp \frac{\del y}{\del \theta} = r \cos \theta 
+        \amp \amp \frac{\del y}{\del z} = 0 
+      </mrow>
+      <mrow>
+        \amp \frac{\del z}{\del r} = 0 
+        \amp \amp \frac{\del z}{\del \theta} = 0 
+        \amp \amp \frac{\del z}{\del z} = 1 
+      </mrow>
+    </md>
+    <md>
+      <mrow>
+        J \amp = \begin{pmatrix}
+         \cos \theta \amp -r \sin \theta \amp 0 \\
+         \sin \theta \amp r \cos \theta \amp 0 \\
+         0 \amp 0 \amp 1 
+        \end{pmatrix} 
+      </mrow>
+      <mrow>
+        \det J \amp = r 
+      </mrow>
+    </md>
+    <p>
+      Like with polar coordinates, it is useful to know the shapes
+      give by setting one of the three coordinates to a constant. The
+      locus of <m>r=c</m> is a cylinder of radius <m>c</m> around the
+      <m>z</m> axis. The cylinder extends infinitely in the positive
+      and negative <m>z</m> axis. This cylinder is the source of the
+      names of the system and, indeed, if it the easiest system to
+      describe or integration over a cylinder. The locus of <m>\theta
+      = c</m> is a halfplace extending out from the <m>z</m> axis; all
+      points which have a particular angle in the <m>xy</m> plane.
+      Finally, <m>z=c</m> is a horizontal plane at a fixed height
+      <m>c</m>. This is the same as cartesian coordinates, since the
+      <m>z</m> of cylindrical and the <m>z</m> of cartesian
+      coordinates are excatly the same. 
+    </p>
+    <p>
+      To describe a solid cylinder of radius <m>3</m> which starts at
+      the <m>xy</m> plane and stops at neight <m>z = 5</m>, I can use
+      constant bounds in each variable: <m>r \in [0,3]</m>, <m>\theta
+      \in [0,2\pi]</m> and <m>z \in 0,5</m>. Many other objects that
+      have some kind of cylindrical symmetry, or even just circular
+      cross-sectiosn along the <m>z</m> axis, can be conveniently
+      describe with cylindrical coordinates. 
+    </p>
+  </subsection>
+  <subsection xml:id="subsection-cylindrical-examples">
+    <title>Examples with Cylindrical Coordinates</title>
+    <example>
+      <statement>
+        <p>
+          Consider the region <m>D</m> defined by <m>x^2 + y^2 \leq
+          4</m> and <m>1 \leq z \leq 5</m>. This is a cylinder of
+          radius <m>2</m> of height <m>4</m>. I want to
+          integrate the function <m>f(x,y,z) = z\sqrt{x^2+y^2}</m>
+          over this cylinder. I can use cylindrical coordinates with
+          constant bounds. I change the integrand into cylindrical
+          coordinates, which is convenient since <m>r = \sqrt{x^2 +
+          y^2}</m>. I must also remember the Jacobian.
+        </p>
+        <md>
+          <mrow>
+            \int_D z\sqrt{x^2+y^2} dV \amp = \int_0^{2\pi} \int_0^2
+            \int_1^5 z r r dz dr d\theta
+          </mrow>
+          <mrow>
+            \amp = \int_0^{2\pi} d\theta \int_0^2 r^2 dr \int_1^5 z dz
+          </mrow>
+          <mrow>
+            \amp = 2\pi \frac{r^3}{3} \Bigg|_0^2 
+            \frac{z^2}{2} \Bigg|_1^5 = 2\pi \frac{8}{3} \frac{24}{2}
+            = 64\pi
+          </mrow>
+        </md>
+      </statement>
+    </example>
+    <example>
+      <statement>
+        <p>
+          I can set up the integral for volume of a cone in cylindrical
+          coordinates. If the cone has height <m>h</m> and base
+          radius <m>R</m>, and if I set it opening upwards with its
+          point at the origin, then the bounds for <m>z</m> are <m>z
+          \in [0,h]</m>. The radius increases linearly with
+          <m>z</m> as <m>r = \frac{zR}{h}</m>. In <m>\RR^3</m>, we
+          integrate <m>1</m> over the cone to calculate its volume.
+          The bounds for <m>z</m> are non-constant, so <m>z</m> must
+          be the inside variable. I must also remember the Jacobian. 
+        </p>
+        <md>
+          <mrow>
+            \int_C 1 dV \amp = \int_0^{2\pi} \int_0^h
+            \int_0^{\frac{Rz}{h}} r dr dz d\theta
+          </mrow>
+          <mrow>
+            \amp = 2\pi \int_0^h \frac{r^2}{2}
+            \Bigg|_0^{\frac{Rz}{h}} dz
+          </mrow>
+          <mrow>
+            \amp = 2\pi \int_0^h \frac{R^2 z^2}{2h^2} dz
+          </mrow>
+          <mrow>
+            \amp = 2\pi \frac{R^2}{2h^2} \frac{z^3}{3}
+            \Bigg|_0^h
+          </mrow>
+          <mrow>
+            \amp = 2\pi \frac{R^2}{2h^2} \frac{h^3}{3} =
+            \frac{R^2h\pi}{3}
+          </mrow>
+        </md>
+      </statement>
+    </example>
+    <example>
+      <statement>
+        <p>
+          Similarly, I can calculate the volume of a parabaloid this
+          way. I orient it along the <m>z</m> axis, opening upwards.
+          If the parabaloid has height <m>h</m> and base radius
+          <m>R</m>, then the radius is <m>r =
+          \frac{R\sqrt{z}}{\sqrt{h}}</m>. By solving for <m>z</m>, I
+          get <m>z = \frac{hr^2}{R^2}</m>. The bounds for <m>z</m>
+          are non-constant, so <m>z</m> must be the inside integral.
+        </p>
+        <md>
+          <mrow>
+            \int_D 1 dV \amp = \int_0^{2\pi} \int_0^R
+            \int_{\frac{hr^2}{R^2}}^h r dz dr d\theta
+          </mrow>
+          <mrow>
+            \amp = 2\pi \int_0^R r \left( h - \frac{hr^2}{R^2}
+            \right) dr
+          </mrow>
+          <mrow>
+            \amp = 2\pi \left( \frac{hr^2}{2} -
+            \frac{hr^4}{4R^2} \right) \Bigg|_0^R
+          </mrow>
+          <mrow>
+            \amp = 2\pi \left( \frac{hR^2}{2} - \frac{hR^4}{4R^2}
+            \right)
+          </mrow>
+          <mrow>
+            \amp = hR^2 2\pi \left( \frac{1}{2} - \frac{1}{4}
+            \right)
+          </mrow>
+          <mrow>
+            \amp = \frac{hR^2 \pi}{2}
+          </mrow>
+        </md>
+      </statement>
+    </example>
+    <example>
+      <statement>
+        <p>
+          This example it quite a tricky volume problem, but shows
+          some clever use of polar coordinates. 
+          Assume there are three cylinders of radius <m>R</m> along
+          each axis in <m>\RR^3</m>. What is the volume of the
+          intersection of all three cylinders? (This object is called the
+          tricylinder Steinmetz solid). Setting up the geometry is
+          difficult. I will integrate a volume over the <m>xy</m>
+          plane. By symmetry, I can work with one 16th of the
+          shape: the portion that lies above one 8th of the circle
+          above the axis. The first 8th of the circle is described by
+          the bounds <m>\theta \in \left[0, \frac{\pi}{4} \right]</m>
+          in cylindrical coordinates. The <m>z</m>-axis cylinder
+          restricts the shape to the circle in the
+          <m>xy</m>-plane and the <m>x</m>-axis cylinder is lower than
+          the <m>y</m>-axis cylinder over this particular <m>8th</m>
+          or a circle, so the <m>x</m>-axis cylinder is the limit on
+          height. What is that height function? The equation of the
+          cylinder is <m>y^2 + z^2 = R^2</m>. I can solve for <m>z</m> 
+          to get  <m>z ^2 = R^2 - y^2 = R^2 - r^2 \sin^2\theta</m>,
+          writing <m>y</m> in cylindrical coordinates. This determines
+          a region of integration. I integrate constant <m>1</m> and I
+          remember to include the Jacobian.
+        </p>
+        <md>
+          <mrow>
+            V \amp = 16 \int_0^{\frac{\pi}{4}} \int_0^R
+            \int_0^{\sqrt{R^2-r^2 \cos^2\theta}} r dz dr d\theta
+          </mrow>
+          <mrow>
+            \amp = 16 \int_0^{\frac{\pi}{4}} \int_0^R \sqrt{R^2-r^2
+            \cos^2\theta} r dr d\theta
+          </mrow>
+          <mrow>
+            \amp = 16 \int_0^{\frac{\pi}{4}} \left( (R^2-r^2
+            \cos^2\theta)^{\frac{3}{2}} \frac{2}{3}
+            \frac{-1}{2\cos^2\theta} \right) \Bigg|_0^R d\theta
+          </mrow>
+          <mrow>
+            \amp = \frac{16}{3} \int_0^{\frac{\pi}{4}} \left(
+            \frac{R^3}{\cos^2 \theta} - \frac{(R^2-R^2\cos^2
+            \theta)^{\frac{3}{2}}}{\cos^2 \theta} \right) d \theta
+          </mrow>
+          <mrow>
+            \amp = \frac{16}{3} \int_0^{\frac{\pi}{4}} \left(
+            R^3\sec^2 \theta - \frac{R^3\sin^3 \theta}{\cos^2
+            \theta} \right) d \theta
+          </mrow>
+          <mrow>
+            \amp = \frac{16R^3}{3} \int_0^{\frac{\pi}{4}} \left(
+            \sec^2 \theta - \frac{\sin \theta}{\cos^2 \theta} + \sin
+            \theta \right) d \theta
+          </mrow>
+          <mrow>
+            \amp = \frac{16R^3}{3} \left( \tan \theta +
+            \frac{-1}{\cos \theta} - \cos \theta \right)
+            \Bigg|_0^{\frac{\pi}{4}}
+          </mrow>
+          <mrow>
+            \amp = \frac{16R^3}{3} \left( 1 - \frac{2}{\sqrt{2}} -
+            \frac{\sqrt{2}}{2} - 0 + 1 + 1 \right)
+          </mrow>
+          <mrow>
+            \amp = \frac{16R^3}{3} \left( 3 - \frac{2\sqrt{2} +
+            \sqrt{2}}{2} = \frac{16R^3}{3} \frac{6-3\sqrt{2}}{2}
+            \right) = 8R^3 (2-\sqrt{2})
+          </mrow>
+        </md>
+      </statement>
+    </example>
+  </subsection>
+  <subsection xml:id="subsection-spherical">
+    <title>Spherical Coordinates</title>
+    <p>
+      Cylindrical coordinates are very close to polar coordinates: I
+      just added the ordinary <m>z</m> from cartesian coordinates to
+      the existing <m>r</m> and <m>\theta</m> of polar coordiantes. The
+      fundamental shape is a cylinder around the <m>z</m> axis, any
+      cross section of which is a circle. The radius term is the
+      radius of this circle around the <m>z</m> axis. 
+    </p>
+    <p>
+      Spherical coordinates are more novel. Instead of using polar
+      coordinates and circles, I now start with the sphere. The
+      coordinate <m>r</m>, instead of being the radius of a circle,
+      will now be the distance from the point to the origin.
+      Equivalently, <m>r</m> is the radius of the sphere, centred at
+      the origin, which contains the point. Once a sphere has been
+      identified, I need to use the other two coordinates to specify
+      which point on this sphere. 
+    </p>
+    <p>
+      The system to identify points of a sphere is very similar to
+      latitude and longitude; the reference points just different. I
+      am going to defined two angles: <m>\theta</m> and <m>\phi</m>.
+      The <m>\theta</m> angle will be the equivalent of longitute.
+      Starting from the positive <m>x</m> axis and moving
+      counterclockwise, <m>\theta</m> indicates an arc on the sphere
+      from the <sq>north pole</sq> to the <sq>south pole</sq>. This is
+      essentially longitude, just instead of going from <m>-180</m> to
+      <m>180</m>, using radius the range is <m>[0, 2\pi]</m>.
+      Finally, the second angle is something I will call colatitutde.
+      This is, again, essentially latitude, but <m>0</m> is now at the
+      north poth. The range here is only <m>\phi \in [0,\pi)</m>,
+      since after <m>\pi</m> radians, I am already at the south pole
+      of the sphere. 
+    </p>
+    <p>
+      A bunch of trigonometry with these angles gives the
+      transformation equations. 
+    </p>
+    <md>
+      <mrow>
+        x \amp = r \sin \phi \cos \theta
+      </mrow>
+      <mrow>
+        y \amp = r \sin \phi \sin \theta
+      </mrow>
+      <mrow>
+        z \amp = r \cos \phi
+      </mrow>
+    </md>
+    <p>
+      I'm not going to write the full inverse transformation, since
+      the inverse transformations for the angles are rarely useful.
+      However, the equation <m>r = \sqrt{x^2 + y^2 +z^2}</m> is very
+      useful to remember. 
+    </p>
+    <p>
+      Let me calculate the Jacobian. The matrix of partial derivative
+      is a <m>3 \times 3</m> matrix. 
+    </p>
+    <md>
+      <mrow>
+        \amp \frac{\del x}{\del r} = \sin \phi \cos \theta
+        \amp \amp \frac{\del x}{\del \theta} = -r \sin \phi \sin
+          \theta 
+        \amp \amp \frac{\del x}{\del \phi} = r \cos \phi \cos \theta
+      </mrow>
+      <mrow>
+        \amp \frac{\del y}{\del r} = \sin \phi \sin \theta
+        \amp \amp \frac{\del y}{\del \theta} = r \sin \phi \cos \theta
+        \amp \amp \frac{\del y}{\del \phi} =  r \cos \phi \sin \theta
+      </mrow>
+      <mrow>
+        \amp \frac{\del z}{\del r} = \cos \phi 
+        \amp \amp \frac{\del z}{\del \theta} = 0 
+        \amp \amp \frac{\del z}{\del \phi} = - r \sin \phi 
+      </mrow>
+    </md>
+    <md>
+      <mrow>
+        J \amp = \begin{pmatrix}
+          \sin \phi \cos \theta \amp -r \sin \phi \sin \theta \amp r
+            \cos \phi \cos \theta \\
+          \sin \phi \sin \theta \amp r \sin \phi \cos \theta \amp r
+            \cos \phi \sin \theta \\
+          \cos \phi \amp 0 \amp -r \sin \phi 
+        \end{pmatrix} 
+      </mrow>
+      <mrow>
+        \det J \amp = r^2 \sin \phi 
+      </mrow>
+    </md>
+    <p>
+      Notice that the Jacobian has <m>r^2</m>, so units of
+      area. As with polar coordinates, this corrects the units in
+      the infinitesimal expression <m>dr d\theta d\phi</m>. With two
+      angles, the infinitesimal expression only has unit of length.
+      Mutiplying by the Jacobian produces units of volume, as we
+      expect for this infinitesimal in <m>\RR^2</m>.
+    </p>
+    <p>
+      As with the other curvilinear coordinates, I'm interesting in
+      the loci described by setting each coordinate to a constant. The
+      most important of these is <m>r =c</m>, which describes a sphere
+      of radius <m>c</m>; I already used this in the definition and
+      this is what gives the coordinates their name. Setting
+      longitutde to be constant (but allowing any radius and any
+      lattitude) gives a halfplane going out from the <m>z</m> axis,
+      must like with cylindrical coordiantes. Setting the colatitude
+      to be constant (but allowing any radius and any longitute)
+      produces a cone. The cone expands upwards if the latitute is
+      less than <m>\frac{\pi}{2}</m> and expands downwards if the
+      latitude is greater than <m>\frac{\pi}{2}</m>. The special case
+      of <m>\phi = \frac{\pi}{2}</m> (which corresponds to points of
+      the equators of each sphere) gives the <m>xy</m> plane. 
+    </p>
+    <example>
+      <statement>
+        <p>
+          The easiest example is calculating volume of a sphere of
+          radius <m>R</m>. The bounds are all constant: <m>r \in
+          [0,R</m>, <m>\theta \in [0,2\pi]</m> and <m>\phi \in
+          [0,\pi]</m>. This describes any longitude, an colatitude,
+          and all radii up to <m>R</m>, thus giving the solid sphere.
+          Since this is volume, the integrand is <m>1</m>. I must also
+          remember the Jacobian.
+        </p>
+        <md>
+          <mrow>
+            \int_S 1 dV \amp = \int_0^{2\pi} \int_0^{\pi} \int_0^R
+            r^2 \sin \phi dr d\phi d\theta
+          </mrow>
+          <mrow>
+            \amp = \int_0^{2\pi} d\theta \int_0^{\pi} \sin \phi d
+            \phi \int_0^R r^2 dr
+          </mrow>
+          <mrow>
+            \amp = 2\pi \left( -\cos \phi \right)
+            \Bigg|_0^{\pi} \frac{r^3}{3} \Bigg|_0^R
+          </mrow>
+          <mrow>
+            \amp = 2\pi ( 1+1) \frac{R^3}{3} = \frac{4\pi R^3}{3}
+          </mrow>
+        </md>
+      </statement>
+    </example>
+    <example>
+      <statement>
+        <p>
+          Consider a sphere of radius <m>R</m>. Inside this sphere is
+          a cone with flare angle <m>\frac{\pi}{6}</m>, where the tip of the
+          cone is located at very bottom of the sphere and the cone
+          opens up inside the sphere. The cone, plus the portion of
+          the sphere above the cone, gives a shape that is something
+          like an ice-cream cone; it's a cone plus a spherically
+          curved cap at the top of the cone. What is the volume of
+          this object?
+        </p>
+        <p>
+          If I put the centre of the sphere at <m>(0,0,R)</m>, then
+          the vertex of the cone can be put at the origin. The
+          equation of such a sphere is
+        </p>
+        <me>
+          x^2+ y^2 + (z-R)^2 = R^2
+        </me>.
+        <p>
+          Since <m>r^2 = x^2 + y^2 + z^2</m>, this equation simplifies
+          into <m>r^2 = 2 R z</m> which is <m>r^2 = 2Rr\cos \phi</m>
+          or <m>r = 2R\cos \phi</m>. This can be taken at the outside
+          bound of the radius term, as <m>\phi \in \left[0,
+          \frac{\pi}{2} \right]</m> and
+          <m>\theta \in [0, 2\pi]</m>. The flare of the cone is
+          <m>\frac{\pi}{6}</m>, which restricts <m>\phi \in \left[0,
+          \frac{\pi}{6} \right]</m>.
+          I integrate with these bounds for the volume, making sure
+          that <m>r</m> is an inside integral since its bounds depend
+          on <m>\theta</m>. Since this is volume, the integrand is
+          <m>1</m>. I need to remember the Jacobian.
+        </p>
+        <md>
+          <mrow>
+            \int_D 1 dV \amp = \int_0^{2\pi} \int_0^{\frac{\pi}{6}}
+            \int_0^{2 R \cos \phi} r^2 \sin \phi dr d\phi d\theta
+          </mrow>
+          <mrow>
+            \amp = 2\pi \int_0^{\frac{\pi}{6}} \frac{r^3}{3}
+            \Bigg|_0^{2R\cos \phi} \sin \phi d \phi
+          </mrow>
+          <mrow>
+            \amp = 2\pi \int_0^{\frac{\pi}{6}} \frac{8R^3 \cos^3
+            \phi \sin \phi}{3} d\phi
+          </mrow>
+          <mrow>
+            \amp = \frac{16\pi r^3}{3} \left(
+            \frac{-\cos^4\phi}{4} \right) \Bigg|_0^{\frac{\pi}{6}}
+          </mrow>
+          <mrow>
+            \amp = \frac{16R^3\pi}{3} \left( \frac{1}{4} -
+            \frac{9}{64} \right) = \frac{7\pi R^3}{12}
+          </mrow>
+        </md>
+      </statement>
+    </example>
+  </subsection>
+</section>

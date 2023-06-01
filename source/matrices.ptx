@@ -1,0 +1,11 @@
+<section xml:id="section-matrices">
+  <title>Matrices and Linear Transformations</title>
+  <subsection xml:id="subsection-linear-transformations">
+  <title>Linear Transformations</title>
+    <p>
+      Definition of a linear transformation, a matrix, a determinant
+      (just in r2 and r3) and the matrix action. Specialization to r1,
+      where after translation, just multiplication
+    </p>
+  </subsection>
+</section>

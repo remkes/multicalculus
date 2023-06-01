@@ -1,0 +1,350 @@
+<section xml:id="section-multivariable-functions">
+  <title>Multivariable Functions</title>
+  <subsection xml:id="section-multivariable-definitions">
+    <title>Definitions</title>
+    <p>
+      First year calculus dealt with functions <m>\RR \rightarrow
+      \RR</m>. Parametric curves dealt with functions <m>\RR
+      \rightarrow \RR^n</m>. Multivariable functions are functions
+      <m>\RR^n \rightarrow \RR^m</m>. They having an arbitrary number
+      of inputs and outputs. I can distinguish between two main
+      categories, classified by output.
+    </p>
+    <definition>
+      <statement>
+        <p>
+          A <term>scalar function</term> or <term>scalar field</term>
+          is a function <m>f: \RR^n \rightarrow \RR</m>.
+        </p>
+      </statement>
+    </definition>
+    <definition>
+      <statement>
+        <p>
+          A <term>vector function</term> or <term>vector field</term> 
+          is a function <m>f: \RR^n \rightarrow \RR^m</m> for <m>m >
+          1</m>.
+        </p>
+      </statement>
+    </definition>
+    <p>
+      Vector functions are the most difficult and complicated, since
+      they have both multiple inputs and multiple outputs. The study
+      of vector functions is the major topic of Calculus IV. For the
+      remainder of these notes, I will restrict my attention to
+      scalar functions.
+    </p>
+    <example>
+      <statement>
+        <p>
+          There are many familiar scalar functions. The potential
+          energy due to gravity on an object with mass <m>m</m> and
+          height <m>h</m> above the surface of the earth is <m>PE =
+          mgh</m> is a two variable function. In a circuit, voltage
+          in terms of current and reisistance is <m>V = IR</m> is
+          another two variable function. The force of gravity between
+          two celestial object <m>F = -MmG/r^2</m> is a three-variable
+          functions which depends on both masses, <m>M</m> and
+          <m>m</m>, as well as the distance between them <m>r</m>.
+          Any quantity which can vary in three dimensional space, such
+          a pressure, temperature, humidity, is a functions of the
+          three variables of location <m>(x,y,z)</m>.
+        </p>
+      </statement>
+    </example>
+    <example xml:id="example-multivariable1">
+      <statement>
+        <p>
+          Here are some explicit functions <m>\RR^2 \rightarrow \RR</m>.
+          <md>
+            <mrow>  
+              f_1(x,y) \amp = x-y
+            </mrow>
+            <mrow>
+              f_2(x,y) \amp = \sin (xy)
+            </mrow>
+            <mrow>
+              f_3(x,y) \amp = \frac{1}{2} x^y
+            </mrow>
+            <mrow>
+              f_4(x,y) \amp = x^2 + y^2 - xy
+            </mrow>
+            <mrow>
+              f_5(x,y) \amp = \sqrt{x} + \sqrt{y}
+            </mrow>
+            <mrow>
+              f_6(x,y) \amp = \sqrt{4 - x^2 -y^2}
+            </mrow>
+          </md>
+        </p>
+        <p>
+          Any other algebraic expression in <m>x</m> and <m>y</m>
+          would also define a function <m>\RR^2 \rightarrow \RR</m>.
+        </p>
+      </statement>
+    </example>
+    <definition>
+      <statement>
+        <p>
+          The <term>domain</term> of a scalar function <m>f: \RR^n
+          \rightarrow \RR</m> is the subset of <m>\RR^n</m> where the
+          function can be defined.
+        </p>
+      </statement>
+    </definition>
+    <p>
+      Domain has the same kind of restrictions as for single-variable
+      functions: no division by zero, no negative even roots, no
+      negative logarithms, etc. However, now domain
+      restrictions may apply to any of the input variables. The
+      domains themselves may be very complicated subsets of
+      <m>\RR^n</m>.
+    </p>
+    <example>
+      <statement>
+        <p>
+          I'll start with at the domains of the five explicitly stated
+          functions in the Example <xref ref="example-multivariable1"
+          />.
+          <ul>
+            <li>
+              <p>
+                <m>f_1</m> and <m>f_4</m> are polynomials (in two
+                variables), so there are no restrictions. Their
+                domain is <m>\RR^2</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>f_2</m> is a sine function, which again imposes no
+                restrictions, so it also has domain <m>\RR^2</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>f_5</m> has two square roots, one involving
+                <m>x</m> and one involving <m>y</m>. Therefore,
+                <m>x\geq 0</m> and <m>y \geq 0</m> are necessary to
+                define <m>f_5</m>. That domain is the positive
+                <m>x</m> and <m>y</m> quadrant, including the origin
+                and the positive pieces of both axes.
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>f_6</m> also has a square root. To ensure that the
+                square root has a positive argument, I require <m>4 -
+                x^2 - y^2 \geq 0</m>, or <m>x^2 + y^2 \leq 4</m>.
+                This domain is a a circular disc of radius <m>2</m>,
+                including its boundary.
+              </p>
+            </li>
+            <li>
+              <p>
+                Lastly, <m>f_3</m>, has an strange exponential. This
+                leads to very strange domain behaviour. If <m>y</m>
+                is an integer, <m>x</m> can be any non-zero real
+                number. If <m>y</m> is a fraction, <m>x</m> must be
+                positive if the denominator of <m>y</m> is even, to
+                avoid square roots of negative numbers. If <m>y</m>
+                is irrational, <m>x</m> must be positive. This all
+                leads to a very complicated domain in <m>\RR^2</m>,
+                something hard to describe directly as a shape. 
+              </p>
+            </li>
+          </ul>
+        </p>
+      </statement>
+    </example>
+  </subsection>
+  <subsection xml:id="section-graphs">
+    <title>Geometry and Graphs of Functions</title>
+    <p>
+      The graph of a single variable <m>f: \RR \rightarrow \RR</m> was
+      a curve in <m>\RR^2</m> where one axis was input and one axis
+      was output. The idea generalizes, but in all cases, a graph has
+      to show both the inputs and output.
+    </p>
+    <definition>
+      <statement>
+        <p>
+          Let <m>A \subset \RR^n</m> be the domain of a scalar
+          function <m>f: A \rightarrow \RR</m>. The
+          <term>graph</term> of the scalar function is the subset of
+          <m>\RR^{n+1}</m> consisting of all points <m>(x_1, x_2,
+          \ldots, x_n, f(x_1, x_2, \ldots, x_n))</m> for <m>(x_1, x_2,
+          \ldots x_n) \in A</m>.
+        </p>
+      </statement>
+    </definition>
+    <p>
+      Since the graph must show inputs and outputs, it need many
+      dimensions. If <m>n \geq 3</m>, then the graph is in
+      <m>\RR^4</m> or some other higher dimensional space. I can only
+      actually see graphs of scalar function on <m>\RR^2</m>.  
+    </p>
+    <p>
+      The <m>\RR^2</m> case is useful to understand the general
+      situation. In this case, <m>x</m> and <m>y</m> are in input
+      (domain) and <m>z</m> is the output (range). I can think of
+      the graph as a height function: over some point <m>(x,y)</m> in
+      the domain of <m>f</m>, the graph sits at some height <m>z =
+      f(x,y)</m>.
+    </p>
+    <figure xml:id="figure-3d-graph1">
+      <caption>
+        The graph of <m>f(x,y) = \frac{5}{x^2 + y^2 + 1}</m>
+      </caption>
+      <image xml:id="figure31" width="90%">
+        <asymptote>
+          import graph3;
+          import palette;
+          size(12cm,5cm,IgnoreAspect);
+          currentprojection=orthographic(-0.5,-1,0.4);
+
+          real f(pair z) { return 2/((z.x)^2+(z.y)^2+1);}
+
+          limits((-2,-2,0),(2,2,3));
+
+          xaxis3("$x$",Bounds(Both,Value),OutTicks(Step=1));
+          yaxis3("$y$",Bounds(Both,Value),OutTicks(Step=1));
+
+          surface s=surface(f,(-2,-2),(2,2),100,Spline);
+
+          pen[] pens=mean(palette(s.map(zpart),Gradient(green,blue)));
+
+          draw(s,pens);
+        </asymptote>
+      </image>
+    </figure>
+    <p>
+      I used graphs extensively in single-variable calculus to
+      understand derivatives and integrals: derivative were slopes of
+      tangent lines and integrals were area under curves. I want to
+      generalize this to the new higher-dimensional graphs. For
+      functions <m>f:\RR^2 \rightarrow \RR</m>, it's not too difficult
+      to extend the notions. Instead of tangent line, the graph will
+      now have a <em>tangent plane</em>. Instead of area under the
+      curve, a graph has volume under the surface. For <m>f: \RR^n
+      \rightarrow \RR</m>, there are tangent n-spaces and
+      (n+1)-hyper-volume under the n-dimensions graph surface.
+    </p>
+  </subsection>
+  <subsection xml:id="section-contour-plots">
+    <title>Contour Plots</title>
+    <p>
+      As an alternative to conventional graphs of function, a nice way
+      to visualize height functions is as topological maps. These 
+      visualizations are called plots.
+    </p>
+    <definition>
+      <statement>
+        <p>
+          Let <m>f: A \rightarrow \RR</m> be a scalar function for a
+          domain <m>A \subset \RR^2</m>. A <term>contour plot</term>
+          for <m>f</m> is a plot of curves in <m>\RR^2</m> where each
+          curve is a locus of the form <m>f(x,y) = c</m> for some
+          constant <m>c</m>.
+        </p>
+      </statement>
+    </definition>
+    <p>
+      A contour plot has a series of implicit curves at constant
+      elevation; the constants <m>c</m> are the elevation. It shows
+      curves where the function takes a specific value. By looking at
+      the relationships of the curves, I can intuit how the function
+      behaves.
+    </p>
+    <example>
+      <statement>
+        <p>
+          Consider <m>f(x,y) = \frac{5}{x^2+y^2+1}</m>. It's graph is
+          <xref ref="figure-3d-graph1">Figure</xref>. This function
+          has a simple hill at the origin and slopes down in all
+          directions. The contours are loci of the form
+          <m>\frac{5}{x^2 + y^2 + 1} = c</m>, which can be rearranged
+          as <m>\frac{5}{c} - 1 = x^2 + y^2</m>. These contours are
+          all circles, and are shown in <xref
+          ref="figure-contour-plot1">Figure</xref>.
+        </p>
+      </statement>
+    </example>
+    <figure xml:id="figure-contour-plot1">
+      <caption>
+        The circular contours of <m>f(x,y) = \frac{5}{x^2 + y^2 +
+        1}</m>
+      </caption>
+      <image xml:id="figure32" width="90%">
+        <asymptote>
+          size(7cm,7cm);
+          import contour;
+          import graph;
+          
+          xaxis();
+          yaxis();
+
+          real f(real x, real y) {return 1/(x^2 + y^2 +1);}
+
+          int n=10;
+          real[] c=new real[n];
+          for(int i=0; i \lt n; ++i) c[i]=1/(i+1);
+
+          draw(contour(f,(-4,-4),(4,4),c));
+        </asymptote>
+      </image>
+    </figure>
+    <example>
+      <statement>
+        <p>
+          Contour diagrams can show many behaviours. <xref
+          ref="figure-contour-plot2">Figure</xref> shows a pass or
+          saddle point. (The saddle point will be formally defined in
+          <xref ref="def-saddle-point">Definition</xref>).
+        </p>
+      </statement>
+    </example>
+    <figure xml:id="figure-contour-plot2">
+      <caption>
+        The contours of a saddle point
+      </caption>
+      <image xml:id="figure33" width="90%">
+        <asymptote>
+          size(12cm,7cm,IgnoreAspect);
+          import contour;
+          import graph;
+
+          xaxis();
+          yaxis();
+
+          real f(real x, real y) {return x^2 - y^2 + 2x*y - 3y + x;}
+
+          int n=20;
+          real[] c=new real[n];
+          for(int i=0; i \lt n; ++i) c[i]=i-10;
+
+          draw(contour(f,(-4,-4),(4,4),c));
+        </asymptote>
+      </image>
+    </figure>
+    <p>
+      These contour plots lead to a general definition.
+    </p>
+    <definition>
+      <statement>
+        <p>
+          Let <m>f: \RR^n \rightarrow \RR</m> be a scalar function. A
+          <term>level set</term> for <m>f</m> is a subset of
+          <m>\RR^n</m> given by the equation <m>f(x_1, x_2, \ldots,
+          x_n) = c</m> for some <m>c \in \RR</m>.
+        </p>
+      </statement>
+    </definition>
+    <p>
+      Then a contour plot is just a drawing of a variety of level
+      sets of a function <m>\RR^2 \rightarrow \RR</m>. It is useful
+      to see where a function is constant. The resulting shapes tell
+      a great deal about the behaviour of the function. Level sets
+      for <m>f: \RR^3 \rightarrow \RR</m> are called level surfaces.
+    </p>
+  </subsection>
+</section>

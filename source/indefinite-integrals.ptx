@@ -1,0 +1,127 @@
+<section xml:id="indefinite-integral">
+  <title>The Indefinite Integral</title>
+  <p>
+    A major goal of Calculus III was the extention of the derivative
+    to multivariable functions: particularly to parametric curves and
+    scalar fields. This course pursues the matching goal of extending
+    the integral to multivariable functions. The course will consider
+    new kinds of integrals involving parametric curves in <xref
+    ref="section-line-integrals" />, as part of the material called
+    Vector Calculus. For the start, though, I'm interesting in scalar
+    fields. What should it mean to integrate a scalar field? Well,
+    there are two kinds of integral: definite and indefinite, so the
+    questions needs to asked twice. First, I'm going to think about
+    indefinite integrals. 
+  </p>
+  <p>
+    The indefinite integral <m>\int f dx</m> was a notation for 
+    <em>all</em> anti-derivatives of the single-variable function. Is
+    there a multivariable version of this anti-derivative? Calculus
+    III tried to extend the derivative to multi-variable functions.
+    The result was a collection of construction: partial derivatives,
+    tangent (hyper-)planes, gradients and the Jacobian matrix.
+    However, none of these notions of the derivative gave a new
+    multi-variable funciton. Therefore, there isn't a nice notion of
+    anti-derivative: going back doesn't make sense, since going
+    forward led to more complicated constructions. If <m>f(x,y,z)</m>
+    is a scalar field, then <m>\int f</m> doesn't have any clear
+    meaning. 
+  </p>
+  <p>
+    I can, however, take indefinite integrals in one variable, much
+    like partial derivatives. If <m>f(x,y,z)</m> is a multivariable
+    continuous function, then the following three integrals are the
+    counterparts of partial differentiation. In each of the following,
+    I pretend the other two variables are constant; only the variable
+    indicated by the infintesimal term is non-constant.
+  </p>
+  <md>
+    <mrow>
+      \int f(x,y,z) dx \amp
+    </mrow>
+    <mrow>
+      \int f(x,y,z) dy \amp
+    </mrow>
+    <mrow>
+      \int f(x,y,z) dz \amp
+    </mrow>
+  </md>
+  <p>
+    In addition to extending the integral, a major theme of this
+    course will be extensions of the fundamental theorem. Let me
+    remind you of the various forms of the fundametanl theorem.
+  </p>
+  <theorem>
+    <statement>
+      <p>
+        Let <m>f: [a,b] \rightarrow \RR</m> be a continuous function.
+        Then if <m>F(x)</m> is any antiderivative of <m>f</m> (i.e.
+        <m>F^\prime(x) = f(x)</m>). Any of the following
+        expressions are versions of the Fundamental Theorem of
+        Calculus.
+      </p>
+      <md>
+        <mrow>
+          \int_a^b f(x) dx = F(b) - F(a)
+        </mrow>
+        <mrow>
+          \int_a^b F^\prime(x) dx = F(b) - F(a)
+        </mrow>
+        <mrow>
+          \int f(x) dx = F(x) + c 
+        </mrow>
+        <mrow>
+          \int F^\prime(x) dx = F(x) + c 
+        </mrow>
+      </md>
+      <p>
+        All these equations essentially encode the same concept: that
+        integration and differentiation are inverse processes. 
+      </p>
+    </statement>
+  </theorem>
+  <p>
+    The fundamental gheorem deserves its name: it really is the basis
+    for single variable calculus, giving the deep and remarkable
+    connection between differentiate and integration. As this course
+    extends the derivative and the integral to multivariable
+    situations, there will be new opportunities to create connections
+    between new derivatives and new integrals in the spirit of the
+    fundamental theorem. Major goals of this course are new theorems
+    that extend the fundanmental theorem. Therefore, whenever I can, I
+    will be looking for these fundamental-theorem type constructions.
+  </p>
+  <p>
+    Here, I had defined partial derivatives and indefinite integrals
+    in one variable. These are essentially one-variable constructions;
+    I am just pretending all the other variables are constant.
+    Therefore, the conventional single-variable fundamental theorem
+    applies. Here is how I would write the fundamental theorem for a
+    function of three varialbes, using partial derivatives and
+    indefinite integrals in one variable. 
+  </p>
+  <md>
+    <mrow>
+      \int \frac{\del}{\del x} f(x,y,z) dx \amp = f(x,y,z) + g(y,z)
+    </mrow>
+    <mrow>
+      \int \frac{\del}{\del y} f(x,y,z) dy \amp = f(x,y,z) + g(x,z)
+    </mrow>
+    <mrow>
+      \int \frac{\del}{\del z} f(x,y,z) dz \amp = f(x,y,z) + g(x,y)
+    </mrow>
+  </md>
+  <p>
+    Note that the <sq>constants of integration</sq> <m>g</m> now may
+    involve the other variables. When I do single variable integration
+    or partial differentiation, I pretend all the other variables are
+    constant; therefore, the constant term can include those
+    variables.
+  </p>
+  <p>
+    There is nothing more to be said about the indefinite integral and
+    this is as far as I can extend the notation. All the future
+    extensions of the integral (and there are many!) will be
+    extensions of thd definite integral. 
+  </p>
+</section>

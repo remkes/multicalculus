@@ -1,0 +1,327 @@
+<section xml:id="section-partial-derivatives">
+  <title>Partial Derivatives</title>
+  <subsection xml:id="subsection-partial-deriavties-definition">
+    <title>Definition</title>
+    <p>
+      A major goal of this course is extending the notion of the
+      derivative to multivariable functions. For parametric curves,
+      the previous idea of the derivative (measuring the slope of a
+      tangent line) became the tangent vector instead. For scalar
+      fields which depend on multiple inputs, the extension of the
+      derivative is more difficult. In this and the following
+      sections, I'm going to introduce a variety of different ways to
+      extend the derivative, each trying to capture some aspect of the
+      single variable derivative. The first extention is the partial
+      derivative.
+      
+    </p>
+    <definition>
+      <statement>
+        <p>
+          Let <m>f: \RR^n \rightarrow \RR</m> be a scalar field.
+          If <m>x</m> is one of the variables, then the derivative of
+          <m>f</m> which pretends that all other variables are constant
+          is called the <term>partial derivative</term> of <m>f</m> in
+          the variable <m>x</m>.
+        </p>
+      </statement>
+    </definition>
+    <p>
+      The notation for partial derivatives resembles Leibniz notation
+      for ordinary derivatives: <m>\frac{df}{dx}</m>. Leibniz style
+      notation is useful since the variable of differentiation is
+      explicit. The partial derivatives of <m>f</m> in terms of
+      <m>x</m>, <m>y</m>, <m>z</m>, or <m>x_i</m> are written with a
+      stylized version of <m>d</m> in Leibniz notation.
+      <md><mrow>
+        \amp \frac{\del f}{\del x} \amp \amp \frac{\del f}{\del y}
+        \amp \amp \frac{\del f}{\del z} \amp \amp \frac{\del f}{\del
+        x_i}
+      </mrow></md>
+    </p>
+    <p>
+      For interpretation, the partial derivative gives the rate of
+      change of <m>f</m> with respect to one of its variables. There
+      isn't a holisitic notion of rate of change, but this definitions
+      hows how a function changes in each variable.
+    </p>
+    <p>
+      If we wanted to be formal, pretending that all the other
+      variales are constant is the same as taking limits in one
+      variable. For <m>f: \RR^2 \rightarrow \RR</m>, these limits
+      defined the two partial derivatives.
+      <md>
+        <mrow>
+          \frac{\del f}{\del x} (a,b) \amp = \lim_{h \rightarrow
+          0} \frac{ f(a+h, b) - f(a,b)}{h}
+        </mrow>
+        <mrow>
+          \frac{\del f}{\del y} (a,b) \amp = \lim_{h \rightarrow
+          0} \frac{ f(a, b+h) - f(a,b)}{h}
+        </mrow>
+      </md>
+    </p>
+    <p>
+      Notice that the value of <m>\frac{\del f}{\del x}</m> still
+      depends on the value of the coordinate <m>y</m>. Different
+      <m>y</m> values identify different points in the domain, where
+      the rate of change with respect to <m>x</m> may differ. The
+      partial derivative pretends that <m>y</m> is constant, but the
+      value of that constant can have an effect on the partial
+      derivative. 
+    </p>
+    <p>
+      As was the case for single-variable calculus, I use
+      <m>\frac{\del}{\del x}</m> and similar expressions as operators
+      <mdash/> the things that take derivatives.
+    </p>
+    <p>
+      There are various notational conventions for partial
+      derivatives. In addition to <m>\frac{\del f}{\del x}</m>, I
+      can also write this as <m>f_x</m>, <m>\del_x f</m> and <m>D_x
+      f</m>. The first of these is a nice short-hand which I will
+      use frequently.
+    </p>
+    <example>
+      <statement>
+        <p>
+          Here is a function of two variables. I'll calculate both the
+          partial derivatives. In each partial derivative, I pretend
+          the other variable is constant and use the ordinary rules of
+          single-variable derivatives. 
+          <md>
+            <mrow>
+              f(x,y) \amp = x^2 + y^2 \sin x 
+            </mrow>
+            <mrow>
+              \frac{\del f}{\del x} \amp = 2x + y^2 \cos x 
+            </mrow>
+            <mrow>
+              \frac{\del f}{\del y} \amp = 2y \sin x
+            </mrow>
+          </md>
+        </p>
+      </statement>
+    </example>
+    <example>
+      <statement>
+        <p>
+          Here is a function of two variables. I'll calculate both the
+          partial derivatives. In each partial derivative, I pretend
+          the other variable is constant and use the ordinary rules of
+          single-variable derivatives. 
+        </p>
+        <md>
+          <mrow>
+            f(x,y) \amp = \frac{1}{xy} + e^{xy} 
+          </mrow>
+          <mrow>
+            \frac{\del f}{\del x} \amp = \frac{-1}{x^2y} + xe^{xy} 
+          </mrow>
+          <mrow>
+            \frac{\del f}{\del y} \amp = \frac{-1}{xy^2} + ye^{xy}
+          </mrow>
+        </md>
+      </statement>
+    </example>
+    <example>
+      <statement>
+        <p>
+          Here is a function of two variables. I'll calculate both the
+          partial derivatives. In each partial derivative, I pretend
+          the other variable is constant and use the ordinary rules of
+          single-variable derivatives. 
+        </p>
+        <md>
+          <mrow>
+            f(x,y) \amp = \frac{x^2y^2+xy}{x^2 + y^2 + 1}
+          </mrow>
+          <mrow>
+           \frac{\del f}{\del x} \amp = \frac{(2xy^2+y)(x^2 + y^2 + 1)
+           - (x^2 + y^2 + xy)(2x)}{(x^2 + y^2 + 1)^2}
+          </mrow>
+          <mrow>
+            \frac{\del f}{\del y} \amp = \frac{(2x^2y + x)(x^2+ y^2 +
+            1) - (x^2 y^2 + 2y)(2y)}{(x^2 + y^2 + 1)^2}
+          </mrow>
+        </md>
+      </statement>
+    </example>
+  </subsection>
+  <subsection xml:id="subsection-differentiability">
+    <title>Differentiability</title>
+    <p>
+      The partial derivative allows me to define a holistic notion of
+      the differentiability of a scalar field.
+    </p>
+    <definition>
+      <statement>
+        <p>
+          A function <m>f: \RR^n \rightarrow \RR</m> is
+          <term>differentiable</term> at
+          <m>(a_1, a_2, \ldots,
+          a_n)</m> if <term>all</term> of its partial derivatives
+          <m>\frac{\del f}{\del x_i}</m> exist at that point.
+        </p>
+      </statement>
+    </definition>
+    <p>
+      In this sense, the partial derivatives will be the building
+      blocks of all the various extensions of the single-variable
+      derivative to scalar fields. If all the partial derivatives
+      exists, then any extension of the derivative will work. All of
+      the other extensions I define can be expressed in terms of the
+      partial derivatives. One could consider the collection of all
+      partial derivatives as <sq>the derivative</sq> of a scalar field
+      (though I will eventually argue that other extensions have a
+      better claim to the term). 
+    </p>
+  </subsection>
+  <subsection xml:id="subsection-clairaut">
+    <title>Higher Partial Derivatives and Clairaut's Theorem</title>
+    <p>
+      Like the ordinary single variable derivative, I can iterate
+      partial derivatives to get higher derivatives. First, I can
+      iterate the same partial derivative, with the pretense that the
+      other variables are constant. If <m>f</m> involves any of the
+      variablse <m>x, y, z</m> or <m>x_i</m>, then here are the second
+      partials. 
+      <md><mrow>
+        \amp \frac{\del^2 f}{\del x^2} \amp \amp \frac{\del^2 f}{\del
+        y^2} \amp \amp \frac{\del^2 f}{\del z^2} \amp \amp
+        \frac{\del^2 f}{\del x_i^2}
+      </mrow></md>
+    </p>
+    <p>
+      However, I can also iterate partial derivatives in different
+      variables. Consider a function of two variables <m>f(x,y)</m>. I
+      can pretend <m>x</m> is constant and take the derivative in
+      <m>y</m>. Then, having done that, I can switch and present
+      <m>y</m> is constant to take the derivative in <m>x</m>. This is
+      called a mixed partial and is written with the following notation.
+      <me>
+        \frac{\del^2 f}{\del x \del y}
+      </me>
+      In the denominator of this notation, <m>\del x \del y</m>, the
+      derivative in <m>y</m> happens first and the derivative in
+      <m>x</m> happens second. This is like the right-to-left notation
+      for functions. This notation (hopefully) makes sense in terms of 
+      of differential operators. An operator acts on functions on the
+      left, so the piece closest to the function (the <m>y</m>
+      derivative in this case) happens first. 
+    </p>
+    <p>
+      I can iterate this as many times as I want. If I have a function
+      of three variables, <m>f(x,y,z)</m>, consider this mixed
+      partial.
+      <me>
+        \frac{\del^4 f}{\del x \del y \del z \del y}
+      </me>
+      In this partial, I differentiate first in <m>y</m>, then in
+      <m>z</m>, then in <m>y</m> again, and finally in <m>x</m>.
+    </p>
+    <p>
+      There is a useful piece of notation to refer to the
+      differentiability of multivariables functions.
+    </p>
+    <definition>
+      <statement>
+        Let <m>f: \RR^n \rightarrow \RR</m> be a scalar field. Then
+        <m>f</m> is in the class <m>C^n</m> is all of its
+        degree <m>n</m> partial derivatives (both pure and mixed)
+        exist and are continuous. This property is often written<m>f
+        \in C^n</m>. If I want to specify the domain, say some subset
+        <m>A \subset \RR^n</m>, I can write <m>f \in C^n(A)</m>,
+        meaning that all the partial derivatives of degree <m>n</m>
+        exist over that domain. If the function is infinitely
+        differentiable, this notation becomes <m>f \in
+        C^{\infty}</m>.
+      </statement>
+    </definition>
+    <example>
+      <statement>
+        <p>
+          I'll calcualte a variety of non-mixed higher partial
+          derivatives for this function.
+          <md>
+            <mrow>
+              f(x,y) \amp = 3x^3 y^2 - xy^4 + x^2 y^2 - 3 
+            </mrow>
+            <mrow>
+              \frac{\del f}{\del x } \amp = 9x^2y^2 - y^4 + 2xy^2
+            </mrow>
+            <mrow>
+              \frac{\del f}{\del y } \amp = 6x^3y - 4xy^3 + 2x^2y 
+            </mrow>
+            <mrow>
+              \frac{\del^2 f}{\del x^2 } \amp = 18xy^2 + 2y^2 
+            </mrow>
+            <mrow>
+              \frac{\del^2 f}{\del y^2 } \amp = 6x^3 - 12xy^2 + 2x^2 
+            </mrow>
+            <mrow>
+              \frac{\del^3 f}{\del x^3 } \amp = 18y^2 
+            </mrow>
+            <mrow>
+              \frac{\del^3 f}{\del y^3 } \amp = -24xy 
+            </mrow>
+            <mrow>
+              \frac{\del^4 f}{\del x^4 } \amp = 0 
+            </mrow>
+            <mrow>
+              \frac{\del^4 f}{\del y^4 } \amp = -24x
+            </mrow>
+            <mrow>
+              \frac{\del^5 f}{\del x^5 } \amp = 0 
+            </mrow>
+            <mrow>
+              \frac{\del^5 f}{\del y^5 } \amp = 0 
+            </mrow>
+          </md>
+          Now I'll calculate the first two mixed the partial derivatives
+          <md>
+            <mrow>
+              \frac{\del}{\del y} \frac{\del f}{\del x} = \frac{\del^2
+              f}{\del y \del x} = 18x^2y - 4y^3 + 4xy
+            </mrow>
+            <mrow>
+              \frac{\del}{\del x} \frac{\del f}{\del y} = \frac{\del^2
+              f}{\del x \del y} = 18x^2y - 4y^3 + 4xy
+            </mrow>
+          </md>
+          Curiously, I get the same answer from either order of the
+          mixed partial derivatives. 
+        </p>
+      </statement>
+    </example>
+    <p>
+      The situation in the previous example was not a coincidence.
+      There is a very useful theorem for calculating mixed partial
+      derivativaes.
+    </p>
+    <proposition>
+      <statement>
+        <p>
+          <emph>(Clairaut's Theorem)</emph> Let <m>A \subset \RR^n</m>
+          be an open subset. Let <m>f(x_1, \ldots x_n)</m> be a
+          function <m>A \rightarrow \RR</m> and let <m>x_i</m> and
+          <m>x_j</m> represent any two of the <m>n</m> variables. If
+          <m>f \in C^2(A)</m> (that is, all the second partial
+          derivatives of <m>f</m> exist and are continuous an the  pen
+          set <m>A</m>), then <m>f_{x_ix_j} = f_{x_jx_ix}</m> on that
+          set. Informally. for <m>C^2</m> function, I can do mixed
+          second partial derivatives in any order. 
+        </p>
+      </statement>
+    </proposition>
+    <p>
+      All of our elementary functions (polynomials, roots,
+      exponentials, etc) will have this property of having continuous
+      second derivative. That means for most usual functions, I can be
+      flexible in the order in which I calculate mixed partials. This
+      flexibility is over very useful, since partial derivatives in
+      one variable might be much easier to calculate than partials in
+      a different variable. 
+    </p>
+  </subsection>
+</section>

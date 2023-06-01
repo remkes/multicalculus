@@ -1,0 +1,501 @@
+<section xml:id="week9-activity">
+  <title>Week 9 Activity</title>
+  <subsection xml:id="subsection-proofs">
+    <title>Proofs for Differential Operators</title>
+    <activity>
+      <statement>
+        <p>
+          Prove the four statements in <xref
+          ref="proposition-nabla-linearity" />. You can work entirey
+          with vector in <m>\RR^3</m>. 
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Each of the linearity properties involves expanding the
+          vector field in components and using the linearity of
+          single-variable derivatives in the components. I'll just
+          show the divergence identity as an example. I expand the
+          components and then apply the divergence operator. I use the
+          rules for vector addition and scalar multiplication. 
+        </p>
+        <md>
+          <mrow>
+            \nabla \cdot (aF \pm bG) \amp = \nabla \cdot \left( a
+            (F_1, F_2, F_3) \pm b (G_1, G_2, G_3) \right)
+          </mrow>
+          <mrow>
+            \amp = \nabla \cdot \left( (aF_1,aF_2,aF_3) \pm
+            (bG_1,bG_2,bG_3) \right) 
+          </mrow>
+          <mrow>
+            \amp = \nabla \cdot \left( aF_1 \pm bG_1,aF_2 \pm
+            bG_2,aF_3 \pm bG_3 \right) 
+          </mrow>
+          <mrow>
+            \amp = \frac{\del}{\del x} (aF_1 \pm bG_1) +
+            \frac{\del}{\del y} (aF_2 \pm bG_2) + \frac{\del}{\del z}
+            (aF_3 \pm bG_2)
+          </mrow>
+        </md>
+        <p>
+          I use the linearity of the single variable derivatives.
+        </p>
+        <me>
+          = a \frac{\del}{\del x} F_1 \pm b \frac{\del}{\del x} G_1 +
+          = a \frac{\del}{\del y} F_2 \pm b \frac{\del}{\del y} G_2 +
+          = a \frac{\del}{\del z} F_3 \pm b \frac{\del}{\del z} G_3 a
+        </me>
+        <p>
+          Then I reoder the terms.
+        </p>
+        <md>
+          <mrow>
+            \amp= a \left( \frac{\del}{\del x} F_1 + \frac{\del}{\del
+            y} F_2 + \frac{\del}{\del z} F_3 \right) \pm b \left(
+            \frac{\del}{\del x} G_1 + \frac{\del}{\del y} G_2 +
+            \frac{\del}{\del z} G_3 \right) 
+          </mrow>
+          <mrow>
+            \amp = a \nabla \cdot F \pm b \nabla \cdot G
+          </mrow>
+        </md>
+        <p>
+          The other three solutions follow this pattern almost
+          exactly, just with different use of the specific rules for
+          vector algebra. The calculations for the cross product are a
+          bit lengthy, but no more conceptually challenging than this. 
+        </p>
+      </solution>
+    </activity>
+    <activity>
+      <statement>
+        <p>
+          Prove this identity for vector fields in <m>\RR^3</m>.
+        </p>
+        <me>
+          \nabla \cdot (F \times G) = (\nabla \times F) \cdot G - F
+          \cdot (\nabla \times G)
+        </me>
+      </statement>
+      <solution>
+        <p>
+          I expand in components and apply definition of the cross
+          product. 
+        </p>
+        <md>
+          <mrow>
+            \amp \nabla \cdot (F \times G) = \nabla \cdot \left(
+            (F_1,F_2,F_3) \times (G_1,G_2,G_3) \right) 
+          </mrow>
+          <mrow>
+            \amp = \nabla \cdot \left( (F_2G_3 - F_3G_2), (F_3G_1 -
+            F_1G_3), (F_1G_2 - F_2G_1) \right) 
+          </mrow>
+          <mrow>
+            \amp = \frac{\del}{\del x} (F_2G_3 - F_3G_2)) +
+            \frac{\del}{\del y} (F_3G_1 - F_1G_3)) + \frac{\del}{\del
+            z} (F_1G_2 - F_2G_1)) 
+          </mrow>
+        </md>
+        <p>
+          I use linearity and the power rule for the partial
+          derivatives to expand this further. 
+        </p>
+        <md>
+          <mrow>
+            \amp = G_3 \frac{\del}{\del x} F_2 + F_2 \frac{\del}{\del
+            x} G_3 - (G_2 \frac{\del}{\del x} F_3 + F_3
+            \frac{\del}{\del x} G_2)
+          </mrow>
+          <mrow>
+            \amp + G_1 \frac{\del}{\del y} F_3 + F_3 \frac{\del}{\del
+            y} G_1 - (G_3 \frac{\del}{\del y} F_1 + F_1
+            \frac{\del}{\del y} G_3) 
+          </mrow>
+          <mrow>
+            \amp + G_2 \frac{\del}{\del z} F_1 + F_1 \frac{\del}{\del
+            z} G_2 - (G_1 \frac{\del}{\del z} F_2 + F_2
+            \frac{\del}{\del z} G_1) 
+          </mrow>
+        </md>
+        <p>
+          I have twelve terms here. I reorder them in the following
+          way. 
+        </p>
+        <md>
+          <mrow>
+           \amp = G_1 \left( \frac{\del}{\del y} F_3 -
+           \frac{\del}{\del z} F_2 \right) + G_2 \left(
+           \frac{\del}{\del z} F_1 - \frac{\del}{\del x} F_3 \right) +
+           G_3 \left( \frac{\del}{\del x} F_2 - \frac{\del}{\del y}
+           F_1 \right) 
+          </mrow>
+          <mrow>
+            \amp - \left( F_1 \left( \frac{\del}{\del y} G_3 -
+            \frac{\del}{\del z} G_2 \right) + F_2 \left(
+            \frac{\del}{\del z} G_1 - \frac{\del}{\del x} G_3 \right)
+            + F_3 \left( \frac{\del}{\del x} G_2 - \frac{\del}{\del y}
+            G_1 \right)  \right)
+          </mrow>
+        </md>
+        <p>
+          From here, I just need to recognize that the result is
+          precisely the expanded form of the right side that I'm
+          trying to work towards. 
+        </p>
+        <me>
+          = G \cdot ( \nabla \times F) - F \cdot ( \nabla \times G) 
+        </me>
+      </solution>
+    </activity>
+  </subsection>
+  <subsection xml:id="subsection-vector-field-operations">
+    <title>Vector Field Differential Operators</title>
+    <activity>
+      <statement>
+        <p>
+          Determine if the following vector field is irrotational
+          and/or incompressible. 
+        </p>
+        <me>
+          F(x,y,z) = (yz,xz,xy) 
+        </me>
+      </statement>
+      <solution>
+        <p>
+          I need to calculate both the curl and the divergence. 
+        </p>
+        <md>
+          <mrow>
+            \nabla \cdot F \amp = \frac{\del}{\del x} yz +
+            \frac{\del}{\del y} xz +
+            \frac{\del}{\del z} xy = 0+0+0 = 0 
+          </mrow>
+          <mrow>
+            \nabla \times F \amp = \left( \frac{\del}{\del y} xy -
+            \frac{\del}{\del z} xz, \frac{\del}{\del z} yz -
+            \frac{\del}{\del x} xz, \frac{\del}{\del x} xz -
+            \frac{\del}{\del y} yz \right) 
+          </mrow>
+          <mrow>
+            \amp = (x-x,y-y,z-z) = (0,0,0)
+          </mrow>
+        </md>
+        <p>
+          The field is both irrotational and incompressible. 
+        </p>
+      </solution>
+    </activity>
+    <activity>
+      <statement>
+        <p>
+          Determine if the following vector field is irrotational
+          and/or incompressible. 
+        </p>
+        <me>
+          F(x,y,z) = \left( \ln(xy),\frac{1}{x}, \frac{-x}{z} \right)
+        </me>
+      </statement>
+      <solution>
+        <p>
+          I need to calculate both the curl and the divergence. 
+        </p>
+        <md>
+          <mrow>
+            \nabla \cdot F \amp = \frac{\del}{\del x} \ln (xy) +
+            \frac{\del}{\del y} \frac{1}{x}  + \frac{\del}{\del z}
+            \frac{-x}{z}  = \frac{1}{y} + 0 + \frac{x}{z^2} =
+            \frac{1}{y} - \frac{x}{z^2}
+          </mrow>
+          <mrow>
+            \nabla \times F \amp = \left( \frac{\del}{\del y}
+            \frac{-x}{z} - \frac{\del}{\del z} \frac{1}{x},
+            \frac{\del}{\del z} \ln (xy) - \frac{\del}{\del x}
+            \frac{-x}{z}, \frac{\del}{\del x} \frac{1}{x} -
+            \frac{\del}{\del y} \ln (xy)\right)
+          </mrow>
+          <mrow>
+            \amp = \left( 0-0, 0 + \frac{1}{z}, \frac{-1}{x^2} - 0
+            \right) = \left( 0, \frac{1}{z}, \frac{-1}{x^2} \right) 
+          </mrow>
+        </md>
+        <p>
+          The field is neither irrotational nor incompressible.
+        </p>
+      </solution>
+    </activity>
+    <activity>
+      <statement>
+        <p>
+          Determine if the following vector field is irrotational
+          and/or incompressible. 
+        </p>
+        <me>
+          F(x,y,z) = (x^2,yz,xz) 
+        </me>
+      </statement>
+      <solution>
+        <p>
+          I need to calculate both the curl and the divergence. 
+        </p>
+        <md>
+          <mrow>
+            \nabla \cdot F \amp = \frac{\del}{\del x} x^2 +
+            \frac{\del}{\del y} yz + \frac{\del}{\del z} xz = 2x + z +
+            z = 2x + 2z
+          </mrow>
+          <mrow>
+            \nabla \times F \amp = \left( \frac{\del}{\del y} xz -
+            \frac{\del}{\del z} yz, \frac{\del}{\del z} x^2 -
+            \frac{\del}{\del x} xz, \frac{\del}{\del x} yz -
+            \frac{\del}{\del y} x^2 \right)
+          </mrow>
+          <mrow>
+            \amp = ( 0 - 0, 0 - z, 0 - 0) = (0,-z,0)
+          </mrow>
+        </md>
+        <p>
+         The field neither irroational or incompressible
+        </p>
+      </solution>
+    </activity>
+    <activity>
+      <statement>
+        <p>
+          Determine if the following vector field is irrotational
+          and/or incompressible. 
+        </p>
+        <me>
+          F(x,y,z) = (4,9,-12) 
+        </me>
+      </statement>
+      <solution>
+        <p>
+          I need to calculate both the curl and the divergence. 
+        </p>
+        <md>
+          <mrow>
+            \nabla \cdot F \amp = \frac{\del}{\del x} 4 +
+            \frac{\del}{\del y} 9 + \frac{\del}{\del z} -12  = 0 + 0 +
+            0 = 0 
+          </mrow>
+          <mrow>
+            \nabla \times F \amp = \left( \frac{\del}{\del y} -12 -
+            \frac{\del}{\del z} 9, \frac{\del}{\del z} 4 -
+            \frac{\del}{\del x} -12, \frac{\del}{\del x} 9 -
+            \frac{\del}{\del y} 4 \right) = (0,0,0)
+          </mrow>
+        </md>
+        <p>
+          The field is irrotational and incompressible. 
+        </p>
+      </solution>
+    </activity>
+    <activity>
+      <statement>
+        <p>
+          Determine if the following vector field is irrotational
+          and/or incompressible. 
+        </p>
+        <me>
+          F(x,y,z) = (\sin(x),\cos(y),\sin(z)) 
+        </me>
+      </statement>
+      <solution>
+        <p>
+          I need to calculate both the curl and the divergence. 
+        </p>
+        <md>
+          <mrow>
+            \nabla \cdot F \amp = \frac{\del}{\del x} \sin x +
+            \frac{\del}{\del y} \cos y + \frac{\del}{\del z} \sin z =
+            \cos x - \sin y + \cos z 
+          </mrow>
+          <mrow>
+            \nabla \times F \amp = \left( \frac{\del}{\del y} \sin z -
+            \frac{\del}{\del z} \cos y, \frac{\del}{\del z} \sin x -
+            \frac{\del}{\del x} \sin z, \frac{\del}{\del x} \cos y -
+            \frac{\del}{\del y} \sin x \right)
+          </mrow>
+          <mrow>
+            \amp = (0,0,0)
+          </mrow>
+        </md>
+        <p>
+          The field is irrotational but not incompressible. 
+        </p>
+      </solution>
+    </activity>
+    <activity>
+      <statement>
+        <p>
+          Determine if the following vector field is irrotational
+          and/or incompressible. 
+        </p>
+        <me>
+          F(x,y,z) = (xy^2,z^2+y^2,x^2-z^2) 
+        </me>
+      </statement>
+      <solution>
+        <p>
+          I need to calculate both the curl and the divergence. 
+        </p>
+        <md>
+          <mrow>
+            \nabla \cdot F \amp = \frac{\del}{\del x} xy^2 +
+            \frac{\del}{\del y} z^2 + y^2 + \frac{\del}{\del z} x^2 -
+            z^2  = y^2 + 2y - 2z
+          </mrow>
+          <mrow>
+            \nabla \times F \amp = \left( \frac{\del}{\del y} x^2 -
+            z^2 - \frac{\del}{\del z} z^2 + y^2, \frac{\del}{\del z}
+            xy^2 - \frac{\del}{\del x} z^2 + y^2, \frac{\del}{\del x}
+            z^2 + y^2 - \frac{\del}{\del y} xy^2
+            \right)
+          </mrow>
+          <mrow>
+            \amp = ( 0 - 2z, 0 - 0, 0 - 2xy) 
+          </mrow>
+        </md>
+        <p>
+          The field is neither irrotational nor incompressible.
+        </p>
+      </solution>
+    </activity>
+  </subsection>
+  <subsection xml:id="subsection-harmonic-scalar-fields">
+    <title>Harmonic Scalar Fields</title>
+    <activity>
+      <statement>
+        <p>
+          Determine if this scalar field is harmonic.
+        </p>
+        <me>
+          f(x,y,z) = x^2yz 
+        </me>
+      </statement>
+      <solution>
+        <p>
+          I calculate the Laplacian (the divergence of the gradient). 
+        </p>
+        <md>
+          <mrow>
+            \nabla^2 f \amp = \frac{\del^2}{\del x^2} x^2 y z +
+            \frac{\del^2}{\del y^2} x^2 y z + \frac{\del^2}{\del z^2}
+            x^2 y z = 2yz + x^2 z + x^2 y
+          </mrow>
+        </md>
+        <p>
+          The field is not harmonic. 
+        </p>
+      </solution>
+    </activity>
+    <activity>
+      <statement>
+        <p>
+          Determine if this scalar field is harmonic.
+        </p>
+        <me>
+          f(x,y,z) = x^2+3y^2-4z^2 
+        </me>
+      </statement>
+      <solution>
+        <p>
+          I calculate the Laplacian (the divergence of the gradient). 
+        </p>
+        <md>
+          <mrow>
+            \nabla^2 f \amp = \frac{\del^2}{\del x^2} x^2 + 3y^2 -
+            4z^2 + \frac{\del^2}{\del y^2} x^2 + 3y^2 - 4z^2 +
+            \frac{\del^2}{\del z^2} x^2 + 3y^2 - 4z^2 
+          </mrow>
+          <mrow>
+            \amp = 2 + 6 - 8 = 0 
+          </mrow>
+        </md>
+        <p>
+          The field is harmonic. 
+        </p>
+      </solution>
+    </activity>
+    <activity>
+      <statement>
+        <p>
+          Determine if this scalar field is harmonic.
+        </p>
+        <me>
+          f(x,y,z) = e^{x+y+z} 
+        </me>
+      </statement>
+      <solution>
+        <p>
+          I calculate the Laplacian (the divergence of the gradient). 
+        </p>
+        <md>
+          <mrow>
+            \nabla^2 f \amp = \frac{\del^2}{\del x^2} e^{x+y+z} +
+            \frac{\del^2}{\del y^2} e^{x+y+z} + \frac{\del^2}{\del
+            z^2} e^{x+y+z} 
+          </mrow>
+          <mrow>
+            \amp = e^{x+y+z} + e^{x+y+z} + e^{x+y+z} = 3 e^{x+y+z}
+          </mrow>
+        </md>
+        <p>
+          The field is not harmonic.
+        </p>
+      </solution>
+    </activity>
+    <activity>
+      <statement>
+        <p>
+          Determine if this scalar field is harmonic.
+        </p>
+        <me>
+          f(x,y,z) = 7x+8y-4z 
+        </me>
+      </statement>
+      <solution>
+        <p>
+          I calculate the Laplacian (the divergence of the gradient). 
+        </p>
+        <md>
+          <mrow>
+            \nabla^2 f \amp = \frac{\del^2}{\del x^2} 7x+8y-4z +
+            \frac{\del^2}{\del y^2} 7x+8y-4z + \frac{\del^2}{\del z^2}
+            7x+8y-4z 
+          </mrow>
+          <mrow>
+            = 0+0+0 = 0
+          </mrow>
+        </md>
+        <p>
+          The field is harmonic.
+        </p>
+      </solution>
+    </activity>
+  </subsection>
+  <subsection xml:id="subsection-week9-concepts">
+    <title>Conceptual Review Questions</title>
+    <p>
+      <ul>
+        <li>
+          What is a vector field?
+        </li>
+        <li>
+          What is an integral curve?
+        </li>
+        <li>
+          What is curl?
+        </li>
+        <li>
+          What is divergence?
+        </li>
+        <li>
+          How does the Leibniz rule extend?
+        </li>
+      </ul>
+    </p>
+  </subsection>
+</section>

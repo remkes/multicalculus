@@ -1,0 +1,302 @@
+<section xml:id="section-definite-integral">
+<title>The Definite Integral</title>
+  <subsection xml:id="subsection-definite-integral-definition">
+    <title>The Conceptual Integral</title>
+    <p>
+      The single-variable definite integral measured the area under the
+      graph of a function. Multivariable functions also have graphs. 
+      For a function of two variables, the graph is in
+      <m>\RR^3</m> and there is volume under the grpah instead of area.
+      For functions of three or more variables, the graphs are in higher
+      dimensional spaces and enclose a hyper-volume. If the definite
+      integral of a single variable function asked for the area under
+      its graph, the definite integral for a multivariable integral
+      should ask for the value of the volume or hyper-volume under its
+      graph. This is, indeed, the case. 
+    </p>
+    <definition xml:id="definition-conceptual-definite-integral">
+      <statement>
+        <p>
+          Let <m>U</m> be an subset of <m>\RR^n</m> and let
+          <m>f: U \rightarrow \RR</m> be a function. The
+          graph of <m>f</m> is a hypersurface in <m>\RR^{n+1}</m>
+          lying over <m>U</m> (thought of as a subset of the copy of
+          <m>\RR^n</m> which is the <m>x_{n+1} = 0</m> hyperplane.
+          Then the integral
+        </p>
+        <md>
+          <mrow>
+            \int_U f dV \amp \amp \amp \int_U f(x,y) dA 
+          </mrow>
+        </md>
+        <p>
+          is the volume or hypervolume under the graph of <m>f</m> in
+          <m>\RR^{n+1}</m> (if such a volume or hypervolume can be
+          defined). Like the single variable integral, (hyper)volume
+          above the <m>x_{n+1} = 0</m> hyperplane is consider positive
+          and (hyper)volume below is considered negative. The notation
+          <m>dV</m> is used for functions of three or more variables,
+          indicating the (hyper)volume in the domain. For functions of
+          only two variables, the notation <m>dA</m> is used to
+          represent the area in the domain. 
+        </p>
+      </statement>
+    </definition>
+    <p>
+      Before moving on, I have a couple important notes to make about
+      this definition. First, note that the function needs to be
+      defined on the set <m>U</m>.  As with single variable integrals,
+      I should always be aware of the domain of the function. If the
+      function is undefined on some points in <m>U</m>, the integral
+      will be undefined. If the function is undefined on the boundary
+      of <m>U</m>, the volume may still be defined. This will be an
+      extension of improper integrals, which I will discuss in <xref
+      ref="subsection-improper-iterated-integrals" />.
+    </p>
+    <p>
+      Also note that I said, in parenthesis, the integral is defined
+      only if this volume is defined.  Note all functions will be
+      integrable (indeed, not all single variable functions are
+      integrable). Continuity will be enough to conclude this volume
+      exists, but I will also investigate less restrictive conditions
+      when I define the Riemann integral below.  In addition, not all
+      subsets <m>U</m> allow for this volume to be defined. The
+      definitions in <xref ref="section-iterated-integrals" />  will
+      describe which sets <m>U</m> lead to well-defined volumes. For
+      the integrals to be defined, both the function <m>f</m> and the
+      subset<m>U</m> have to be reasonable. 
+    </p>
+    <p>
+      Finally, note that this is a very conceptual definition, but it
+      is hard to work with. I will try to work towards a better
+      definition that allows for calculation. I can't start with
+      arbitrary domains <m>U</m>; I need to start with simpler
+      domains: intervals. 
+    </p>
+  </subsection>
+  <subsection xml:id="subsection-review-intervals">
+    <title>Intervals in <m>\RR^n</m></title>
+    <p>
+      Intervals were originally defined in <xref
+      ref="subsection-intervals" />. Rewrite this section to match. 
+    </p>
+    <definition>
+      <statement>
+        <p>
+          An closed interval <m>I</m> in <m>\RR^n</m> is the (geometric)
+          product of single-variable closed intervals.
+        </p>
+        <me>
+          I = [a_1,b_1] \times [a_2,b_2] \times \ldots \times [a_n,b_n]
+        </me>
+        <p>
+          This (geometric) product is defined to be the subset of
+          <m>\RR^n</m> consisting of all <m>(x_1, x_2, \ldots, x_n)</m>
+          such that <m>a_1 \leq x_1 \leq b_1</m>, <m>a_2 \leq x_2, \leq
+          b_2</m> and so on until <m>a_n \leq x_n \leq b_n</m>. In
+          <m>\RR^2</m> it is a rectangle. In <m>\RR^3</m> it is a
+          rectangular prism. Similarly, by using open interval,
+          <m>(a,b)</m> in the definition, I can define an open
+          interval in <m>\RR^n</m>. Likewise, I can define various
+          types of partially closed, partially open intervals by
+          changing the inequalities (strict or non-strict) of the
+          various endpoints of the single variable intervals in the
+          product. 
+        </p>
+      </statement>
+    </definition>
+  </subsection>
+  <subsection xml:id="subsection-riemann-integral">
+    <title>The Riemann Integral</title>
+    <p>
+      Now I'm going to try to construct the definite integral extending
+      the Riemann integral from single variable calculus. Recall that
+      definition, noting that it was explicity defined for a function
+      whose domain was an interval. 
+    </p>
+    <definition>
+      <statement>
+        <p>
+          Let <m>f : [a,b] \rightarrow \RR</m> be a function. The
+          <term>Riemann integral</term> of <m>f</m> on the interval
+          <m>[a,b]</m> is the following limit (if it exists), where in
+          the sum the interval is divided into <m>n</m> equal pieces and
+          <m>x_k^*</m> is any point in the <m>k</m>th subinterval.
+        </p>
+        <me>
+          \int_a^b f(x) dx = \lim_{n \rightarrow 0} \sum_{k=1}^n
+          f(x_k^*) \frac{b-a}{n} 
+        </me>
+        <p>
+          If the limit exists, the function is called
+          <term>integrable</term>. 
+        </p>
+      </statement>
+    </definition>
+    <p>
+      I want to extend the pieces of this definition, now that I had
+      defined the multivariable interval. 
+      For the single-variable integral, I partitioned the interval into
+      <m>n</m> pieces. I can also partition these multi-variable
+      intervals. In general, there are several ways to do so; one of
+      the easiest is simply to divide each of the single variable
+      intervals into <m>k</m> pieces. In <m>\RR^2</m>, this splits the
+      rectangle into a checkerboard pattern, with <m>k^2</m> small
+      rectangles. In <m>\RR^3</m>, it splits into <m>k^3</m> small
+      rectangular prisms. In <m>\RR^n</m> there are <m>k^n</m>
+      subdivisions.
+    </p>
+    <p>
+      In a partition of <m>I</m> into <m>k^n</m> pieces, I
+      can use the same limit process as the single variable integral.
+      Let <m>x^*</m> be any point in each piece of the partition and
+      estimate the (hyper-)volume over that piece of the interval by a
+      rectangular (hyper-)volume. The height is <m>f(x^*)</m>. The
+      (hyper-) volume of one pieces of the approximation is this height
+      multiplied by the size of the small partition pieces, in the
+      appropriate dimension. I will write <m>\Delta V</m> for this
+      size, thinking of <m>V</m> for volume or hypervolume. (As
+      before, in the special case of two variables, I would write
+      <m>\Delta A</m> instead). 
+    </p>
+    <definition xml:id="definition-definite-riemann-integral">
+      <statement>
+        <p>
+          Let <m>I \subset \RR^n</m> be an interval and <m>f: I
+          \rightarrow \RR</m> a function. The <term> Riemann
+          integral</term>  of a function is the following limit (if it
+          exists), where the sum is taken over all <m>k^n</m>
+          subdivision of the interval and <m>x_l^*</m> is any point in
+          the <m>l</m>th subinterval, and <m>\Delta V</m> is the
+          (hyper)volume of the subinterval.
+        </p>
+        <me>
+          \int_{I} f(x_1, x_2, \ldots, x_n) dV = \lim_{k \rightarrow
+          \infty} \sum_{l=0}^{k^n} f(x_l^*) \Delta V
+        </me>
+        <p>
+          If the limit exists, the function <m>f</m> is called 
+          <term>(Riemann) integrable</term> on the interval <m>I</m>.
+        </p>
+      </statement>
+    </definition>
+    <p>
+      In the multivariable integral, the <m>\Delta V</m> becomes an
+      infinitesimal piece of area, volume or hypervolume, which explains
+      the notation <m>dV</m> that I used in <xref
+      ref="definition-conceptual-definite-integral" />. 
+    </p>
+  </subsection>
+  <subsection xml:id="subsection-integrable-functions">
+    <title>Integrable Functions</title>
+    <p>
+      In <xref ref="definition-definite-riemann-integral" />, I defined
+      an integrable function, on an interval, to be a function such
+      that the limit defining the Riemann integral exists. Most usual
+      functions are integrable, particular functions defined on closed
+      intervals so that they don't diverge near the edges of the
+      interval. There is a whole theory of integrable functions.
+      However, for the purposes of this course, I'm going to work with
+      a slightly restricted class of functions. This won't affect any
+      applications, since all the reasonable functions I want to use
+      will still be in this category. 
+    </p>
+    <definition>
+      <statement>
+        <p>
+          Let <m>I</m> be a closed interval in <m>\RR^n</m> and let
+          <m>f: I \rightarrow \RR</m> be a function.  If I can break
+          the interval <m>I</m> up into finitely many closed
+          subintervals and if <m>f</m> is continuous on each of the
+          closed subintervals, I say the function is <term>piecewise
+          continuous</term>.
+        </p>
+      </statement>
+    </definition>
+    <p>
+      The purpose of this definition is in the the following
+      proposition. 
+    </p>
+    <proposition>
+      <statement>
+        <p>
+          All piecewise continuous functions of several variables are
+          integrable.
+        </p>
+      </statement>
+    </proposition>
+    <p>
+      As I said above, this is a convenience, since piecewise
+      continuous is good enough for our purposes. 
+      There are, in fact, other functions which are also integrable.
+      Notice, also, that I defined this exlictly on closed intervals.
+      Piecewise-continuous function on open intervals can have
+      divergent behaviour (like vertical asymptote) at the edges of
+      the intervals. These produce a multivariable version of
+      improper integrals. I will consider these later, but insisting
+      on functions defined on closed intervals ensure that I don't
+      have problems like asymptotes at the edges.
+    </p>
+    <p>
+      As an aside, there are also different notions of integrability
+      and different definition of the integral. What I have discussed
+      here is the Riemann integral, and this notion of integrability
+      is Riemann-integrability. In higher mathematics, the most
+      commonly used definition of the integral is a different
+      definition, called the Lebesgue integral. It is also an
+      approximation process, but it involve approximating the function
+      with a special functions that only take finitely many values.
+      The Lebesgue integral agrees with the Riemann integral on all
+      Riemann-integrable functions.  However, there are functions
+      where the Lebesgue integral is defined but the limit in the
+      Riemann integral fails to converge.  It is interesting to
+      observe that something as fundamental as the integral has
+      multiple definitions and the choice of definitions has a real,
+      measurable effect on our mathematics. A different kind of
+      calculus course, one more interested in the mathematical
+      foundations, would delve into the details of these different
+      notions of the integral and integrebility. 
+    </p>
+  </subsection>
+  <subsection xml:id="subsection-definite-integral-properties">
+    <title>Properties of the Definite Integral</title>
+    <p>
+      The multi-variable definite integral has some familiar
+      properties.
+    </p>
+    <proposition>
+      <statement>
+        <p>
+          Let <m>I</m> be an interval in <m>\RR^n</m>, <m>f: I
+          \rightarrow \RR</m> and <m>g: I \rightarrow \RR</m> integrable
+          functions on I, and <m>c \in \RR</m>. First, the integral is
+          linear.
+        </p>
+        <md>
+          <mrow>
+            \int_I c f dV \amp = c \int_I f dV
+          </mrow>
+          <mrow>
+            \int_I (f \pm g) dV \amp = \int_I f dV \pm \int_I g
+            dV
+          </mrow>
+        </md>
+        <p>
+          Assume, in addition, that <m>f \leq g</m> on all of <m>I</m>.
+        </p>
+        <me>
+          \int_I f dV \leq \int_I g dV
+        </me>
+        <p>
+          Let <m>J</m> be another interval where <m>f</m> is integrable
+          and assume <m>J</m> is of matching size and adjacent to
+          <m>I</m> (such that they have no open intersection and their
+          union <m>I \cup J</m> is also also an interval).
+        </p>
+        <me>
+          \int_{I \cup J} f dV = \int_I f dV + \int_I f dV
+        </me>
+      </statement>
+    </proposition>
+  </subsection>
+</section>

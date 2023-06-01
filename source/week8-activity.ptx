@@ -1,0 +1,1270 @@
+<section xml:id="section-week8-activity">
+  <title>Week 8 Activity</title>
+  <subsection xml:id="subsection-activity-jacobians">
+    <title>Jacobians</title>
+    <activity>
+      <statement>
+        <p>
+          Calculate the Jacobian of this transformation.
+        </p>
+        <me>
+          (x,y) = (u^2 - v^2, u^2 + v^2)
+        </me>
+      </statement>
+      <solution>
+        <p>
+          First, I need to calculate the partial derivatives.
+        </p>
+        <md>
+          <mrow>
+            \frac{\del F_1}{\del u} \amp = 2u 
+          </mrow>
+          <mrow>
+            \frac{\del F_1}{\del v} \amp = -2v 
+          </mrow>
+          <mrow>
+            \frac{\del F_2}{\del u} \amp = 2u 
+          </mrow>
+          <mrow>
+            \frac{\del F_2}{\del v} \amp = 2v 
+          </mrow>
+        </md>
+        <p>
+          Then I put the partial derivative into the Jacobian matrix
+          and take the determinant to calculate the Jacobian.
+        </p>
+        <md>
+          <mrow>
+            J(f) \amp = \begin{pmatrix} 
+              2u \amp  -2v \\
+              2u \amp  2v 
+            \end{pmatrix} 
+          </mrow>
+          <mrow>
+            |J(f)| \amp = |4uv + 4uv| = |8uv| 
+          </mrow>
+        </md>
+      </solution>
+    </activity>
+    <activity>
+      <statement>
+        <p>
+          Calculate the Jacobian of this transformation.
+        </p>
+        <me>
+          (x,y) = (3u  - 4v, u + 6v)
+        </me>
+      </statement>
+      <solution>
+        <p>
+          First, I need to calculate the partial derivatives.
+        </p>
+        <md>
+          <mrow>
+            \frac{\del F_1}{\del u} \amp = 3 
+          </mrow>
+          <mrow>
+            \frac{\del F_1}{\del v} \amp = -4 
+          </mrow>
+          <mrow>
+            \frac{\del F_2}{\del u} \amp = 1 
+          </mrow>
+          <mrow>
+            \frac{\del F_2}{\del v} \amp = 6 
+          </mrow>
+        </md>
+        <p>
+          Then I put the partial derivative into the Jacobian matrix
+          and take the determinant to calculate the Jacobian.
+        </p>
+        <md>
+          <mrow>
+            J(f) \amp = \begin{pmatrix} 
+              3 \amp  -4 \\
+              1 \amp  6 
+            \end{pmatrix} 
+          </mrow>
+          <mrow>
+            |J(f)| \amp = (3)(6) - (1)(-4) = 22 
+          </mrow>
+        </md>
+      </solution>
+    </activity>
+    <activity>
+      <statement>
+        <p>
+          Calculate the Jacobian of this transformation.
+        </p>
+        <me>
+          (x,y) = (u \sin v, v \cos u)
+        </me>
+      </statement>
+      <solution>
+        <p>
+          First, I need to calculate the partial derivatives.
+        </p>
+        <md>
+          <mrow>
+            \frac{\del F_1}{\del u} \amp = \sin v
+          </mrow>
+          <mrow>
+            \frac{\del F_1}{\del v} \amp = u \cos v 
+          </mrow>
+          <mrow>
+            \frac{\del F_2}{\del u} \amp = -v \sin u 
+          </mrow>
+          <mrow>
+            \frac{\del F_2}{\del v} \amp = \cos u  
+          </mrow>
+        </md>
+        <p>
+          Then I put the partial derivative into the Jacobian matrix
+          and take the determinant to calculate the Jacobian.
+        </p>
+        <md>
+          <mrow>
+            J(f) \amp = \begin{pmatrix} 
+              \sin v \amp  u \cos v \\
+              -v \sin u  \amp  \cos u 
+            \end{pmatrix} 
+          </mrow>
+          <mrow>
+            |J(f)| \amp = |(\sin v) (\cos u) - (-v \sin u)(u \cos v)|
+            = |\sin v \cos u + uv \sin u \cos v|
+          </mrow>
+        </md>
+      </solution>
+    </activity>
+    <activity>
+      <statement>
+        <p>
+          Calculate the Jacobian of this transformation.
+        </p>
+        <me>
+          (x,y) = (u \ln v, (uv)^2)
+        </me>
+      </statement>
+      <solution>
+        <p>
+          First, I need to calculate the partial derivatives.
+        </p>
+        <md>
+          <mrow>
+            \frac{\del F_1}{\del u} \amp = \ln v 
+          </mrow>
+          <mrow>
+            \frac{\del F_1}{\del v} \amp = \frac{u}{v} 
+          </mrow>
+          <mrow>
+            \frac{\del F_2}{\del u} \amp = 2uv^2 
+          </mrow>
+          <mrow>
+            \frac{\del F_2}{\del v} \amp = 2u^2v 
+          </mrow>
+        </md>
+        <p>
+          Then I put the partial derivative into the Jacobian matrix
+          and take the determinant to calculate the Jacobian.
+        </p>
+        <md>
+          <mrow>
+            J(f) \amp = \begin{pmatrix} 
+              \ln v \amp  \frac{u}{v} \\
+              2uv^2 \amp  2u^2 v
+            \end{pmatrix} 
+          </mrow>
+          <mrow>
+            |J(f)| \amp = |\ln v (2u^2 v) - \frac{u}{v} 2uv^2 = 2u^2
+            v\ln v - 2u^2 v| = |2u^2 v(\ln v - 1)|
+          </mrow>
+        </md>
+      </solution>
+    </activity>
+  </subsection>
+  <subsection xml:id="subsection-activity-change-of-variables">
+    <title>Change of Variables</title>
+    <activity>
+      <statement>
+        <figure xml:id="figure-cov3">
+          <caption>
+            A Region of Integration.
+          </caption>
+          <image xml:id="figure60" width="80%">
+            <asymptote>
+              size(10cm);
+
+              import graph;
+
+              path p4=(0,0)--(4,-1);
+              path p5=(4,-1)--(7,1);
+              path p6=(7,1)--(3,2);
+              path p7=(3,2)--(0,0);
+
+              draw(p4);
+              draw(p5);
+              draw(p6);
+              draw(p7);
+
+              path c1=buildcycle(p4,p5,p6,p7);
+              fill(c1,gray);
+
+              dot("$(4,-1)$",(4,-1),SE);
+              dot("$(3,2)$",(3,2),NW);
+              dot("$(7,1)$",(7,1),NE);
+
+              xaxis(Ticks);
+              yaxis(Ticks);
+            </asymptote>
+          </image>
+        </figure>
+        <p>
+          Calculate the integral using a change of variables. (There
+          is a transformation which will simplify both the region of
+          integration and the integrand.) 
+        </p>
+        <me>
+          \int_D \frac{2x - 3y}{4y + x} dA 
+        </me>
+        <p>
+          The region of integration <m>D</m> is the parallelogram with
+          vertices <m>(0,0)</m>, <m>(4,-1)</m>, <m>(3,2)</m>,
+          <m>(7,1)</m>, as show in <xref ref="figure-cov3" />.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          It would simplify the integrand if <m>u = 2x-3y</m> and <m>v
+          = 4y+x</m>.  If I solve the system to invert this
+          transformation, I get <m>x = 3u+4v</m> and <m>y = 2u-v</m>.
+          Furthermore, if I look at the line that bound the
+          parallelogram, I get the lines <m>y = \frac{2}{3}x</m>, <m>y
+          = \frac{3}{2} x - \frac{11}{3}</m>, <m>y = \frac{-1}{4}
+          x</m> and <m>y = \frac{-1}{4} x + \frac{11}{4}</m>. If I
+          substitute for <m>u</m> and <m>v</m> in these bounds, I get
+          the bounds (respective) <m>u=0</m>, <m>u=11</m>, <m>v=0</m>
+          and <m>v=11</m>. This means I can use constant bounds for
+          the new integral. Finally, the Jacobian of the
+          transformation is <m>11</m>, so I can set up the new
+          integral (note that the new integral, like the old integral,
+          is improper).
+        </p>
+        <md>
+          <mrow>
+            \int_0^{11} \int_0^{11} \frac{u}{v} 11 dv du = 11
+            \int_0^{11} u du \int_0^{11} \frac{1}{v} = 11 \left(
+            \frac{u^2}{2} \bigg|_0^{11} \right) + \lim_{a \rightarrow
+            0} \left( \ln v \bigg|_a^{11} \right)
+          </mrow>
+        </md>
+        <p>
+          The limit does not converge, but diverges to
+          <m>-\infty</m>, so I conclude that the integral does not
+          represent a finite volume. 
+        </p>
+      </solution>
+    </activity>
+    <activity>
+      <statement>
+        <figure xml:id="figure-cov4">
+          <caption>
+            A Region of Integration.
+          </caption>
+          <image xml:id="figure61" width="80%">
+            <asymptote>
+              size(10cm,10cm,IgnoreAspect);
+
+              import graph;
+              xaxis(Ticks);
+              yaxis(Ticks);
+
+              path p4=(2,5)--(2,6);
+              path p5=(2,5){1,4}::(4,17){1,8};
+              path p6=(4,17)--(4,18);
+              path p7=(2,6){1,4}::(4,18){1,8};
+
+              draw(p4);
+              draw(p6);
+
+              draw((0,1){1,0}::(2,5){1,4}::(4,17){1,8});
+              draw((0,2){1,0}::(2,6){1,4}::(4,18){1,8});
+
+              path c1=buildcycle(p4,p5,p6,p7);
+              fill(c1,gray);
+
+              label("$y = x^2 + 1$",(2.5,7.25),SE);
+              label("$y = x^2 + 2$",(3,11),NW);
+            </asymptote>
+          </image>
+        </figure>
+        <p>
+          Calculate the integral using a change of variables. (There
+          is a transformation which will simplify both the region of
+          integration and the integrand.) 
+        </p>
+        <me>
+          \int_D \frac{x^3 + 4x + 1}{x^2 - y} dA 
+        </me>
+        <p>
+          The region of integration <m>D</m> is the area bounded above
+          by <m>y = x^2 + 1</m>, below by <m>y = x^2 +2</m>, on the
+          left by the line <m>x=2</m>, and on the first by the line
+          <m>x=4</m>. This region is shown in <xref ref="figure-cov4"
+          />. 
+        </p>
+      </statement>
+      <solution>
+        <p>
+          It's not entirely clear what is happening with the
+          integrand, so I'll work on making eaiser bounds. The
+          <m>x=2</m> and <m>x=4</m> lines are fine, so I will set
+          <m>u=x</m>. The other lines can be re-arranged as <m>y-x^2 =
+          1</m> and <m>y-x^2 = 2</m>, so I'll set <m>v = y-x^2</m>, so
+          that the new bounds are <m>v=1</m> and <m>v=2</m>. This
+          gives me a region with constant bounds; let me see what
+          happens to the integrand. I can invert the transformation
+          with <m>x = u</m> and <m>y = v+u^2</m>. The integrand
+          becomes <m>\frac{u^3 + 4u + u}{-v} = -\frac{u^3 + 4u +
+          u}{v}</m>, which is much more reasonable. Finally, the
+          Jacobian of this tranformation is <m>1</m>.
+        </p>
+        <md>
+          <mrow>
+            \int_2^4 \int_1^2 \frac{u^3 + 4u + 1}{-v} dv du \amp =
+            -\int_2^4 (u^3+4u+1) du \int_1^2 \frac{1}{v} dv 
+          </mrow>
+          <mrow>
+            \amp = -\left( \frac{u^4}{4} + 2u^2 + u \right) \bigg|_2^4
+            \left( \ln v \right) \bigg|_1^2 
+          </mrow>
+          <mrow>
+            \amp = -(64 + 32 + 4 - 4 - 8 - 2) (\ln 2 - \ln 1) = -86
+            \ln 2
+          </mrow>
+        </md>
+      </solution>
+    </activity>
+    <activity>
+      <statement>
+        <figure xml:id="figure-cov5">
+          <caption>
+            A Region of Integration.
+          </caption>
+          <image xml:id="figure62" width="80%">
+            <asymptote>
+              size(10cm);
+
+              import graph;
+              xaxis();
+              yaxis();
+
+              path p4=(4,0)--(10,6);
+              path p5=(10,6)--(16,0);
+              path p6=(16,0)--(10,-6);
+              path p7=(10,-6)--(4,0);
+
+              draw(p4);
+              draw(p5);
+              draw(p6);
+              draw(p7);
+
+              path c1=buildcycle(p4,p5,p6,p7);
+              fill(c1,gray);
+
+              dot("$(4,0)$",(4,0),SW);
+              dot("$(10,6)$",(10,6),NW);
+              dot("$(16,0)$",(16,0),NE);
+              dot("$(10,-6)$",(10,-6),SE);
+            </asymptote>
+          </image>
+        </figure>
+        <p>
+          Calculate the integral using a change of variables. (There
+          is a transformation which will simplify both the region of
+          integration and the integrand.) 
+        </p>
+        <me>
+          \int_D \sqrt{x^2 - y^2} dA 
+        </me>
+        <p>
+          The region of integration <m>D</m> is the diamon with
+          coordinates <m>(4,0)</m>, <m>(10,6)</m>, <m>(10,-6)</m> and
+          <m>(16,0)</m>, as show in <xref ref="figure-cov5" />. 
+        </p>
+      </statement>
+      <solution>
+        <p>
+          It's not entirely clear what is happening with the
+          integrand, so I'll work on making easier bounds. The lines
+          that bound the diamond are <m>x+y = 4</m>, <m>x+y = 16</m>,
+          <m>x-y = 4</m>, and <m>x-y = 16</m>. I could try <m>u =
+          x+y</m> and <m>v = x-y</m>. The integrand factors into
+          <m>\sqrt{(x+y)(x-y)}</m>, which would translate into
+          <m>\sqrt{uv}</m>, which would work. If I invert, we get <m>x
+          = \frac{u+v}{2}</m> and <m>y = \frac{u-v}{2}</m>. The
+          Jacobian of this transformation is <m>\frac{1}{2}</m>. In
+          the calculation, after I seperate the integrals, I notice
+          that are exactly the same. Therefore, I just do one of the
+          integral and square the result.
+        </p>
+        <md>
+          <mrow>
+            \amp \int_4^{16} \int_4^{16} \sqrt{uv} \frac{1}{2} du dv =
+            \frac{1}{2} \left( \int_4^{16} \sqrt{u} dv \right)^2 =
+            \frac{1}{2} \left( 2 \frac{u^{\frac{3}{2}}}{3}
+            \bigg|_4^{16} \right)^2 
+          </mrow>
+          <mrow>
+            \amp = \frac{1}{2} \left( \frac{2}{3}
+            \left( 4^3 - 2^3 \right) \right)^2 = \frac{1}{2}
+            \frac{4}{9} (56)^2 = \frac{6272}{9}
+          </mrow>
+        </md>
+      </solution>
+    </activity>
+  </subsection>
+  <subsection xml:id="subsection-activity-polar-coordinates">
+    <title>Activity</title>
+    <activity>
+      <statement>
+        <p>
+          Use polar coordinates to solve this integral of the function
+          <m>f(x,y) = \sqrt{x^2 + y^2}</m> on the wedge of the circle
+          of radius <m>3</m> between <m>\theta = \frac{3\pi}{4}</m>
+          and <m>\theta = \frac{5\pi}{4}</m>. 
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Since <m>r = \sqrt{x^2+y^2}</m>, the integrand here is
+          simply <m>r</m>.  The region is a section of a circle, so
+          the radius will vary from <m>0</m> to <m>3</m> and the angle
+          between the two angles given.  The Jacobian for polar
+          coordinates is <m>r</m>.
+        </p>
+        <md>
+          <mrow>
+            \int_0^3 \int_{\frac{3\pi}{4}}^{\frac{5\pi}{4}} r r
+            d\theta dr = \frac{r^3}{3} \bigg|_0^3 \theta
+            \bigg|_{\frac{3\pi}{4}}^{\frac{5\pi}{4}} = 9 \left(
+            \frac{5\pi}{4} - \frac{3\pi}{4} \right) = \frac{9\pi}{2}
+          </mrow>
+        </md>
+      </solution>
+    </activity>
+    <activity>
+      <statement>
+        <p>
+          Use polar coordinates to solve this integral of the function
+          <m>f(x,y) = x^2 - y^2</m> on the quarter circle of radius
+          <m>4</m> which is above line <m>y=-x</m>, below the line
+          <m>y=x</m> and include the positive <m>x</m> axis. 
+        </p>
+      </statement>
+      <solution>
+        <p>
+          The region is a section of a circle. The radius will range
+          from <m>0</m> to <m>4</m> and, for this section, I can take
+          <m>\theta \in \left[ \frac{-\pi}{4}, \frac{\pi}{4}
+          \right]</m>. For the integrand, I replace <m>x = r \cos
+          \theta</m> and <m>y = r \sin \theta</m> to get <m>r^2(\cos^2
+          \theta - \sin^2 \theta)</m>. Using trig identities, I can
+          write this as <m>r^2 \cos 2\theta</m>. The Jacobian of polar
+          coordinates is <m>r</m>. 
+        </p>
+        <md>
+          <mrow>
+            \int_0^4 \int_{\frac{-\pi}{4}}^{\frac{\pi}{4}} r^2 \cos
+            (2\theta) r d\theta dr \amp = \int_0^4 r^3 dr
+            \int_{\frac{-\pi}{4}}^{\frac{\pi}{4}} \cos (2\theta) d
+            \theta = \frac{r^4}{4} \bigg|_0^4 \frac{\sin 2\theta}{2}
+            \bigg|_{\frac{-\pi}{2}}^{\frac{\pi}{2}} 
+          </mrow>
+          <mrow>
+            \amp = 32 \left( \sin \left( \frac{\pi}{2} \right) - \sin
+            \left( \frac{-\pi}{2} \right) \right) = 32(2) = 64
+          </mrow>
+        </md>
+      </solution>
+    </activity>
+    <activity>
+      <statement>
+        <p>
+          Use polar coordinates to solve this integral of the function
+          <m>f(x,y) = (x^2 + y^2)^{\frac{3}{2}}</m> on the unit circle
+          centred at <m>(0,1)</m>. 
+        </p>
+      </statement>
+      <solution>
+        <p>
+          The region is a an offset circle, so I need its in polar
+          locus. In cartesian coordinates, the circle is <m>x^2 +
+          (y-1)^2 = 1</m>. If I replace the cartesian coordinates with
+          their polar replacements and simplifity, I get these
+          calculations.
+        </p>
+        <md>
+          <mrow>
+            r^2 \cos^2 \theta + (r \sin \theta - 1)^2 \amp = 1 
+          </mrow>
+          <mrow>
+            r^2 \cos^2 \theta + r^2 \sin^2 \theta - 2r \sin \theta + 1
+            \amp = 1 
+          </mrow>
+          <mrow>
+            r^2 - 2r \sin \theta \amp = 0  
+          </mrow>
+          <mrow>
+            r =  2 \sin \theta 
+          </mrow>
+        </md>
+        <p>
+          I can take <m>r \in [0, 2 \sin \theta]</m>, since the
+          circle touches the origin at one point. The circle is in the
+          half-plane where <m>y</m> is positive, so the appropriate
+          range of the angle is <m>\theta \in [0, \pi]</m>. If I use
+          <m>\theta</m> as the outside integral, this gives me a way
+          to setup an interated integral with non-constant bounds in
+          polar coordinates. The integral simplifies to <m>r^3</m>. (A
+          asked a computer for the antiderivative of <m>\sin^5
+          \theta</m>.) 
+        </p>
+        <md>
+          <mrow>
+            \int_0^{pi} \int_0^{2 \sin} \theta r^3 rdr d\theta \amp =
+            \int_0^{\pi} \frac{r^5}{5} \Bigg|_{0}^{2\sin theta}
+            d\theta 
+          </mrow>
+          <mrow>
+            \amp = \frac{32}{5} \int_0^{\pi} \sin^5 \theta d \theta 
+          </mrow>
+          <mrow>
+            \amp = \frac{32}{5} \left( \frac{-5 \cos x}{8} +
+            \frac{5}{48} \cos (3x) - \frac{1}{80} \cos(5x) \right)
+            \Bigg|_0^{\pi} 
+          </mrow>
+          <mrow>
+            \amp = \frac{32}{5} \left( \frac{-5 \cos \pi}{8} +
+            \frac{5}{48} \cos (3\pi) - \frac{1}{80} \cos (5\pi)
+            \right) 
+          </mrow>
+          <mrow>
+            \amp - \left( \frac{-5 \cos 0}{8} + \frac{5}{48}
+            \cos (0) - \frac{1}{80} \cos(0) \right) 
+          </mrow>
+          <mrow>
+            \amp = \frac{32}{5} \left( \left( \frac{5}{8} -
+            \frac{5}{48} + \frac{1}{80} \right) - \left( \frac{5}{8} +
+            \frac{5}{48} - \frac{1}{80} \right) \right) 
+          </mrow>
+          <mrow>
+            \amp = \frac{32}{5} \left( \frac{10}{8} -
+            \frac{10}{48} + \frac{2}{80} \right) = \frac{712}{75}
+          </mrow>
+        </md>
+      </solution>
+    </activity>
+    <activity>
+      <statement>
+        <p>
+          Use polar coordinates to solve this integral of the function
+          <m>f(x,y) = 3x^3 - (y-3)^2</m> on circle of radius <m>2</m>
+          centred at the origin. 
+        </p>
+      </statement>
+      <solution>
+        <p>
+          The region here is easy: <m>r \in [0,2]</m> and <m>\theta
+          \in [0, 2\pi]</m>. The integrand, however, doesn't look that
+          pleasant after I change to polar coordinates: <m>3r^3 \cos^3
+          \theta - (r \sin \theta - 3)^2</m>. Adding the Jacobian
+          gives the new integral. I split it up into several pieces to
+          complete the integral. I did some of the trig integrals
+          using a computer algebra system (though you can see,
+          directly, that some evaluate to zero using symmetry arguments.) 
+        </p>
+        <md>
+          <mrow>
+            \amp \int_0^{2\pi} \int_0^2 (3r^3 \cos^3 \theta - r^2
+            \sin^2 \theta + 6r \sin \theta - 9) r dr d\theta 
+          </mrow>
+          <mrow>
+            \amp = \int_0^{2\pi} \int_0^2 3r^4 \cos^3 \theta dr
+            d\theta - \int_0^{2\pi} \int_0^2 r^3 \sin^2 \theta dr
+            d\theta 
+          </mrow>
+          <mrow>
+            \amp + \int_0^{2\pi} \int_0^2 6r^2 \sin
+            \theta dr d\theta - \int_0^{2\pi} \int_0^2 9r dr d\theta 
+          </mrow>
+          <mrow>
+            \amp = \int_0^{2\pi} \cos^3 \theta d\theta \int_0^2 3r^4
+            dr - \int_0^{2\pi} \sin^2 \theta d\theta  \int_0^2 r^3 dr
+          </mrow>
+          <mrow>
+            \amp + \int_0^{2\pi} \sin \theta d\theta
+            \int_0^2 6r^2 dr - \int_0^{2\pi} d\theta \int_0^2 9r dr 
+          </mrow>
+          <mrow>
+            \amp = (0) \frac{3r^5}{5} \bigg|_0^2 - (\pi) \frac{r^4}{4}
+            \bigg|_0^2 + (0) 2r^3 \bigg|_0^2 - (2\pi) \frac{9r^2}{2}
+            \bigg|_0^2 
+          </mrow>
+          <mrow>
+            \amp = 0 - 4\pi + 0 - 36\pi = -40\pi 
+          </mrow>
+        </md>
+      </solution>
+    </activity>
+  </subsection>
+  <subsection xml:id="subsection-activity-spherical-cylindrical">
+    <title>Spherical and Cylindrical Coordinates</title>
+    <activity>
+      <statement>
+        <p>
+          Integrate <m>f(x,y,z) = 2x^2 + y^2 +z^2</m> on the sphere of
+          radius <m>2</m> centred at the origin. 
+        </p>
+      </statement>
+      <solution>
+        <p>
+          The sphere is described nicely in spherical coordinates as
+          <m>r \in [0,2]</m>, <m>\theta \in [0, 2\pi]</m> and <m>\phi
+          \in [0, \pi]</m>. The integrand can be seperated as <m>x^2
+          + (x^2 + y^2 + z^2)</m> and written as <m>r^2 \sin^2 \phi
+          \cos^2 \theta + r^2</m>. I can write the integral in
+          spherical coordinates and split it up into two integrals.
+          The Jacobian is <m>r^2 \sin \phi</m>.
+        </p>
+        <md>
+          <mrow>
+            \amp \int_0^2 \int_0^{2\pi} \int_0^{\pi} (r^2 \sin^2 \phi
+            \cos^2 \theta + r^2) r^2 \sin \phi d\phi d\theta dr 
+          </mrow>
+          <mrow>
+            \amp = \int_0^2 \int_0^{2\pi} \int_0^{\pi} r^3 \sin^3 \phi
+            \cos^2 \theta d\phi d\theta dr + \int_0^2 \int_0^{2\pi}
+            \int_0^{\pi} r^4 \sin \phi d\phi d\theta dr 
+          </mrow>
+          <mrow>
+            \amp = \int_0^2 r^4 dr \int_0^{2\pi} \cos^2 \theta d
+            \theta \int_0^{\pi} \sin^3 \phi d\phi + \int_0^2 r^4 dr
+            \int_0^{2\pi} d\theta \int_0^{\pi} \sin \phi d\phi 
+          </mrow>
+          <mrow>
+            \amp = \left( \frac{32}{5} \right) (\pi)\left( \frac{4}{3}
+            \right) + \left( \frac{32}{5} \right) (2\pi) (2) =
+            \frac{128\pi}{15} + \frac{128\pi}{5} = \frac{512 \pi}{15}
+          </mrow>
+        </md>
+      </solution>
+    </activity>
+    <activity>
+      <statement>
+        <p>
+          Integrate <m>f(x,y,z) = x^2 + y^2 - 4z</m> on the cylinder
+          of radius <m>4</m> about the <m>z</m> axis restricted to the
+          height <m>z \in [-1,3]</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          The cylinder is described nicely in cylindrical coordinates
+          as <m>r \in [0,4]</m>, <m>\theta \in [0, 2\pi]</m> and <m>z
+          \in [-1,3]</m>. The integrand becomes <m>r^2 - 4z</m>. The
+          Jacobian is <m>r</m>.
+        </p>
+        <md>
+          <mrow>
+            \amp \int_0^4 \int_0^{2\pi} \int_{-1}^3 (r^2 - 4z) r dz
+            d\theta dr = \int_0^4 \int_0^{2\pi} \int_{-1}^3 r^3 dz
+            d\theta dr - \int_0^4 \int_0^{2\pi} \int_{-1}^3 4rz dz
+            d\theta dr 
+          </mrow>
+          <mrow>
+            \amp = \int_0^4 r^3 dr \int_0^{2\pi} d\theta \int_{-1}^3
+            dz - 4 \int_0^4 r dr \int_0^{2\pi} d\theta \int_{-1}^3 z
+            dz 
+          </mrow>
+          <mrow>
+            \amp = (16)(2\pi)(4) - 4 (8)(2\pi)(4) = 128 \pi - 256 \pi
+            = 128 \pi
+          </mrow>
+        </md>
+      </solution>
+    </activity>
+    <activity>
+      <statement>
+        <p>
+          Integrate <m>f(x,y,z) = x^2 + y^2</m> on he sphere of
+          radius <m>1</m> centred at the <m>(0,0,1</m>. 
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Even though the region is a sphere, the integrand looks
+          better in cylindrical coordinates, so I'll try that. The
+          integrand simply becomes <m>r^2</m>. The sphere has
+          cartesian equation <m>x^2 + y^2 + (z-1)^2 = 1</m>. In
+          cylindrical coordinates, this becomes <m>r^2 + (z-1)^2 =
+          1</m>. I can take <m>z \in [0,2]</m> and <m>r</m> ranging
+          from <m>0</m> to  <m>r = \sqrt{1-(z-1)^2} =
+          \sqrt{2z-z^2}</m>. The Jacobian is <m>r</m>.
+        </p>
+        <md>
+          <mrow>
+            \amp \int_0^{2\pi} \int_0^2 \int_0^{\sqrt{2z-z^2}} r^2 r dr dz
+            d\theta = \int_0^{2\pi} d\theta \int_0^2
+            \int_0^{\sqrt{2z-z^2}} r^3 dr dz 
+          </mrow>
+          <mrow>
+            \amp = (2\pi) \int_0^2 \frac{r^4}{4}
+            \Bigg|_0^{\sqrt{2z-z^2}} dz = \frac{\pi}{2} \int_0^2
+            (2z-z^2)^2 dz 
+          </mrow>
+          <mrow>
+            \amp = \frac{\pi}{2} \int_0^2 z^4 - 4z^3 + 4z^2 dz =
+            \frac{\pi}{2} \left( \frac{z^5}{5} - z^4 + \frac{4z^3}{3}
+            \right) \Bigg|_0^2 
+          </mrow>
+          <mrow>
+            \amp = \frac{\pi}{2} \left( \frac{32}{5} - 16 +
+            \frac{64}{3} \right) = \frac{88\pi}{15} 
+          </mrow>
+        </md>
+      </solution>
+    </activity>
+    <activity>
+      <statement>
+        <p>
+          Find the volume of the sphere of radius <m>3</m> with the
+          parabaloid <m>z = (x^2 + y^2) - 3</m> cut out of it. 
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Though I am dealing with a sphere, the parabaloid is
+          easier to describe in cylindrical coordinates, so I will
+          use that system. The whole system is symetrical about the
+          <m>z</m> axis, so <m>\theta</m> can simply range from
+          <m>0</m> to <m>2\pi</m>. The sphere is the outside range of
+          <m>r</m> and the paraboloid is the inside range of <m>r</m>,
+          but both depend on <m>z</m>. I need equations for both. The
+          sphere is <m>x^2 + y^2 +z^2 = 9</m>, which changes to <m>r^2
+          + z^2 = 9</m>. Solving for <m>r</m> gives <m>r =
+          \sqrt{9-z^2}</m>. The parabaloid is <m>z = r^2 - 3</m>,
+          which simplifies to <m>r = \sqrt{z+3}</m>. The range on
+          <m>z</m> starts at <m>-3</m> and ends at the point where the
+          paraboloid and the sphere meet. In the two equations, I can
+          isolate the replace <m>r^2</m> to get <m>z+3+z^2 = 9</m>,
+          which is the quadratic <m>z^2 + z - 6 = (z-3)(z+2)</m>.
+          Therefore, the parabaloid and sphere meet at the <m>z=2</m>
+          plane and <m>z=2</m> is the upper bound for <m>z</m>. The
+          Jacobian is <m>r</m>.
+        </p>
+        <md>
+          <mrow>
+            \amp \int_0^{2\pi} \int_{-3}^2
+            \int_{\sqrt{z+3}}^{\sqrt{9-z^2}} r dr dz d\theta 
+          </mrow>
+          <mrow>
+            \amp = \int_0^{2\pi} d\theta \int_{-3}^2 \frac{r^2}{2}
+            \Bigg|_{\sqrt{z+3}}^{\sqrt{9-z^2}} dz 
+          </mrow>
+          <mrow>
+            \amp = 2\pi \int_{-3}^2 \frac{1}{2} \left( 9-z^2 - (z+3)
+            \right) dz
+          </mrow>
+          <mrow>
+            \amp = \pi \int_{-3}^2  6 - z - z^2 dz 
+          </mrow>
+          <mrow>
+            \amp = \pi \left( 6z - \frac{z^2}{2} - \frac{z^3}{3}
+            \right) \Bigg|_{-3}^2
+          </mrow>
+          <mrow>
+            \amp = \pi \left( 6(2-(-3)) - \frac{4 - 9}{2} - \frac{8 -
+            (-27)}{3} \right) = \pi \left(30 + \frac{5}{2} -
+            \frac{35}{3} \right) = \frac{125\pi}{6}
+          </mrow>
+        </md>
+      </solution>
+    </activity>
+    <activity>
+      <statement>
+        <p>
+          Find the volume of the portion of the cylinder about the
+          <m>z</m> axis of radius <m>3</m> which is above the <m>z =
+          -1</m> plane but below the <m>x + y + z = 5</m> plane.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          I can work in cylindrical coordinates. The planes <m>z =
+          -1</m> remains <m>z=-1</m>. The plane <m>x + y + z = 5</m>
+          is trickier. In changed into <m>r \cos \theta + r \sin
+          \theta + z = 5 = r (\cos \theta + \sin \theta) + z = 5</m>.
+          I can use a trig identity to write this as <m>r \left(
+          \sqrt{2} \sin \left( \theta + \frac{\pi}{4} \right) \right)
+          + z = 5</m>. This is tricky, since the equation involves all
+          of the variables. I choose to set <m>z</m> first, then
+          <m>\theta</m>, then <m>r</m>. For <m>z</m>, I need to
+          calculate the maximum value; the highest point where the
+          cylinder meets the plane. This happens when <m>x = y =
+          -3</m>, so <m>z=11</m> is the highest value and I can take
+          <m>z \in [-1,11]</m>. Then at each value of <m>z</m>, 
+          I have the relationship <m>r \left( \sqrt{2} \sin \left(
+          \theta + \frac{\pi}{4} \right) \right) + z = 5</m> between
+          <m>r</m> and <m>\theta</m>. If I solve for <m>r</m>, I get
+        </p>
+        <me>
+          r = \frac{5-z}{\left( \sqrt{2} \sin \left( \theta +
+          \frac{\pi}{4} \right) \right)} 
+        </me>
+        <p>
+          This gets particularly tricky. I can't choose either
+          <m>r</m> or <m>\theta</m> to be the outside variable for the
+          whole cylinder; I need two different cases for <m>z \lt
+          5</m> and <m>z \gt 5</m>. On the bottom half of the
+          cylinder, I can use the previous equation to bound <m>r</m>
+          for <m>\theta \in \left[\frac{-\pi}{4} \frac{3\pi}{4}
+          \right]</m>, but <m>r</m> goes from <m>0</m> to <m>3</m> for
+          the rest of the range. For the tope half of the cylinder,
+          the bound of <m>r</m> in terms of <m>\theta</m> works for
+          <m>\theta in \left[ \frac{3\pi}{4}, \frac{7\pi}{4}
+          \right]</m>. For the rest of the range of <m>\theta</m>,
+          there isn't anything at all. This gives three integrals.
+        </p>
+        <md>
+          <mrow>
+            V \amp = \int_{-1}^5
+            \int_{\frac{-\pi}{4}}^{\frac{3\pi}{4}}
+            \int_0^{\frac{5-z}{\left( \sqrt{2} \sin \left( \theta +
+            \frac{\pi}{4} \right) \right)}} r dr d\theta dz +
+            \int_{-1}^5 \int_{\frac{3\pi}{4}}^{\frac{7\pi}{4}}
+            \int_0^3 r dr d\theta dz
+          </mrow>
+          <mrow>
+            \amp \hspace{2cm} +
+            \int_5^{11}\int_{\frac{3\pi}{4}}^{\frac{7\pi}{4}}
+            \int_0^{\frac{5-z}{\left( \sqrt{2} \sin \left( \theta +
+            \frac{\pi}{4} \right) \right)} }r dr d\theta dz
+          </mrow>
+        </md>
+        <p>
+          This is a miserable set of integrals, to be sure. Luckly for
+          us, there is another way to approach this entire question.
+          If we look at the full cylinder for <m>z \in [-1,11]</m>,
+          the plane cuts this cylinder into two equal pieces.
+          Therefore, the desired volume should be one half of the
+          volume of the cylinder of height <m>12</m> and radius
+          <m>3</m>, which is <m>72\pi</m>.
+        </p>
+      </solution>
+    </activity>
+  </subsection>
+  <subsection xml:id="subsection-activity-applications">
+    <activity>
+      <statement>
+        <p>
+          Let <m>S</m> be the solid cone about the <m>z</m> axis with
+          height <m>5</m> and base radius <m>1</m>. The point of the
+          cone is at the origin and it opens upwards, readhing ther
+          radius of <m>1</m> at <m>z = 5</m>. Let <m>\rho(x,y,z)
+          = \frac{z^2}{10}</m> be the density of <m>S</m>. Calculate
+          the mass, centre of mass, the moments of intertia, and the
+          raddi of gyration.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Cylindrical coordiantes are the best system to describe this
+          cone, since it is about the <m>z</m> axis. I can set
+          constant bounds <m>\theta \in [0,2\pi]</m> and <m>r \in
+          [0,1]</m>. Then the boundary of the cone can be described as
+          <m>z \in \left[ 5r,5 \right]</m>. With these bounds, I can
+          move on to do the many integrals to calculate mass, first
+          moments, centre of mass, and second moments. 
+        </p>
+        <md>
+          <mrow>
+            m \amp = \int_S \rho dV = \int_0^1 \int_0^{2\pi}
+            \int_{5r}^5 \frac{z^2}{10} rdz d\theta dr 
+          </mrow>
+          <mrow>
+            \amp = 2\pi \int_0^1 r\frac{z^3}{30} \Bigg|_{5r}^5 dr =
+            \frac{\pi}{15} \int_0^1 r (125 - 125 r^3) dr 
+          </mrow>
+          <mrow>
+            \amp = \frac{125\pi}{15} \int_0^1 r - r^4 dr =
+            \frac{25\pi}{3} \left( \frac{r^2}{2} - \frac{r^5}{5}
+            \right) \Bigg|_0^1 = \frac{25\pi}{3} \left( \frac{1}{2} -
+            \frac{1}{5} \right) = \frac{25\pi}{3} \frac{3}{10} =
+            \frac{5\pi}{2} 
+          </mrow>
+        </md>
+        <p>
+          I do not need to calculate the first moments <m>M_{yz}</m>
+          and <m>M_{xz}</m>. These moments measure the balance of the
+          object in the <m>x</m> and <m>y</m> axes. The cone is
+          completely symmetric in these axes, and the density function
+          is also symmetric. Therefore, the mass is perfectly balances
+          in the <m>x</m> and <m>y</m> axes and the moments must be
+          zero. I only need to calculate the moment <m>M_{xy}</m>.
+        </p>
+        <md>
+          <mrow>
+            M_{xy} \amp = \int_S z\rho dV  = \int_0^1 \int_0^{2\pi}
+            \int_{5r}^5 z\frac{z^2}{10} r dz d\theta dr = \frac{1}{10}
+            2\pi \int_0^1 \frac{z^4}{4} \Bigg|_{5r}^5 rdr 
+          </mrow>
+          <mrow>
+            \amp = \frac{\pi}{5} \frac{1}{4} \int_0^1 (625r - 625r^5)
+            rdr = \frac{625\pi}{20} \left( \frac{r^2}{2} -
+            \frac{r^6}{6} \right) \Bigg|_0^1 
+          </mrow>
+          <mrow>
+            \amp = \frac{125\pi}{4} \left( \frac{1}{2} - \frac{1}{6}
+            \right) = \frac{125\pi}{4} \frac{1}{3} = \frac{125\pi}{12} 
+          </mrow>
+        </md>
+        <p>
+          With the mass and first momemnts calculated, I can calculate
+          the coordinates of the centre of mass. 
+        </p>
+        <md>
+          <mrow>
+            \bar{x} \amp = \frac{M_{yz}}{m} = 0 
+          </mrow>
+          <mrow>
+            \bar{y} \amp = \frac{M_{xz}}{m} = 0 
+          </mrow>
+          <mrow>
+            \bar{z} \amp = \frac{M_{xy}}{m} =
+            \frac{\frac{125\pi}{12}}{\frac{5\pi}{2}} = \frac{25}{6}
+          </mrow>
+        </md>
+        <p>
+          Note that this is a reasonable answer. The cone is located
+          in the range <m>z \in [0,5]</m>. This <m>z</m> coordinate
+          for the centre of mass is in that range, as should be
+          expected. Now I continue with the moments of intertia. 
+        </p>
+        <md>
+          <mrow>
+            I_x \amp = \int_S (y^2 + z^2) \rho dV  = \int_0^1
+            \int_0^{2\pi} \int_{5r}^5 (r^2 \sin^2 \theta + z^2)
+            \frac{z^2}{10} dz rd\theta dr = 
+          </mrow>
+          <mrow>
+            \amp = \frac{1}{10} \int_0^1 \int_0^{2\pi} \int_{5r}^5 r^3
+            \sin^2 \theta z^2dz d\theta dr + \frac{1}{10} \int_0^1
+            \int_0^{2\pi} \int_{5r}^5 z^4 rdz d\theta dr
+          </mrow>
+          <mrow>
+            \amp = \frac{1}{10} \int_0^{2\pi} \sin^2 \theta d\theta
+            \int_0^1 r^3 \frac{z^3}{3} \Bigg|_{5r}^5 dr + \frac{1}{10}
+            2\pi \int_0^1 \frac{z^5}{5} \Bigg|_{5r}^5 rdr
+          </mrow>
+          <mrow>
+            \amp = \frac{1}{30} \pi \int_0^1 (125) (r^3 -  r^6) dr +
+            \frac{\pi}{25} \int_0^1 (3125) (r-r^6) dr
+          </mrow>
+          <mrow>
+            \amp = \frac{25\pi}{6} \left( \frac{r^4}{4} -
+            \frac{r^7}{7} \right)  \Bigg|_0^1 + 125\pi \left(
+            \frac{r^2}{2} -  \frac{r^7}{7} \right) \Bigg|_0^1 
+          </mrow>
+          <mrow>
+            \amp = \frac{25\pi}{6} \left( \frac{1}{4} - \frac{1}{7}
+            \right) + 125\pi \left( \frac{1}{2} - \frac{1}{7} \right)
+          </mrow>
+          <mrow>
+            \amp = \frac{25\pi}{6} \frac{3}{14} + 125\pi \frac{5}{14}
+            = \frac{2875\pi}{84}
+          </mrow>
+        </md>
+        <p>
+          By symmetry, the moments about the <m>x</m> and <m>y</m>
+          axis are the same. 
+        </p>
+        <md>
+          <mrow>
+            I_y \amp = I_x = \frac{2875\pi}{84} 
+          </mrow>
+          <mrow>
+            I_z \amp = \int_S (x^2 + y^2) \rho dV  = \int_0^1
+            \int_0^{2\pi} \int_{5r}^5 r^2 \frac{z^2}{10} rdz d\theta
+            dr
+          </mrow>
+          <mrow>
+            \amp = \frac{1}{10} 2\pi \int_0^1 r^3 \frac{z^3}{3}
+            \Bigg|_{5r}^5 dr = \frac{\pi}{15} \int_0^1 125(r^3-r^6) dr
+            = \frac{25\pi}{3} \left( \frac{r^4}{4} - \frac{r^7}{7}
+            \right) \Bigg|_0^1
+          </mrow>
+          <mrow>
+            \amp = \frac{25\pi}{3} \left (\frac{1}{4} - \frac{1}{7}
+            \right) = \frac{25\pi}{28}
+          </mrow>
+        <md>
+        <p>
+          Now that I have the moments of intertia, I can also
+          calculate the radii of gyration. By the same symmetry as
+          before, I know the radii of gyration around the <m>x</m> and
+          <m>y</m> axes will be the same.
+        </p>
+        </md>
+          <mrow>
+            \bar{\bar{x}}^2 \amp = \frac{I_{x}}{m} =
+            \frac{\frac{2875\pi}{84}}{\frac{5\pi}{2}} =
+            \frac{(2875)(2)}{(84)(5)} = \frac{575}{42} \implies
+            \bar{\bar{x}} = \sqrt{\frac{575}{42}}
+          </mrow>
+          <mrow>
+            \bar{\bar{y}} \amp = \bar{\bar{x}} = \sqrt{\frac{575}{42}} 
+          </mrow>
+          <mrow>
+            \bar{\bar{z}}^2 \amp = \frac{I_{z}}{m} =
+            \frac{\frac{25\pi}{28}}{\frac{5\pi}{2}} = \frac{50}{140} =
+            \frac{5}{14} \implies \bar{\bar{z}} = \sqrt{\frac{5}{14}}
+          </mrow>
+        </md> 
+      </solution>
+    </activity>
+    <activity>
+      <statement>
+        <p>
+          Let <m>S</m> be the solid hemisphersphere of radius <m>2</m>
+          above the <m>xy</m> plane excluding the ocstant where all
+          the variables are positive Let <m>\rho(x,y,z) =
+          \frac{1}{\sqrt{x^2 + y^2 + z^2}}</m> be the density function
+          on the sphere. Calculate the the mass, centre of mass, 
+          the moments of intertia, and the radii of gyration.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          This object is a portion of the sphere, so spherical
+          coordinates are obviously appropriate. The hemisphere about
+          the <m>xy</m> is the hemisphere where the colatitude
+          <m>\phi</m> is limited to <m>\left[ 0, \frac{\pi}{2}
+          \right]</m>. Then, to exclude the octants where all
+          variables are positive, I restrict the longitute to
+          <m>\theta \in \left[ \frac{\pi}{2}, 2\pi \right]</m>. The
+          radius bounds are still <m>r \in [0,2]</m>. Those bound
+          describe the region, so I can progress to do all the
+          integrals in spherical coordinates.
+        </p>
+        <md>
+          <mrow>
+            m \amp = \int_S \rho dV 
+          </mrow>
+          <mrow>
+            \amp = \int_0^2 \int_0^{\frac{\pi}{2}}
+            \int_{\frac{\pi}{2}}^{2\pi} \frac{1}{r} r^2 \sin \phi
+            d\theta d\phi dr 
+          </mrow>
+          <mrow>
+            \amp = \int_0^2 r dr \int_0^{\frac{\pi}{2}} \sin \phi
+            d\phi \int_{\frac{\pi}{2}}^{2\pi} d \theta = (2)(1)\left(
+            \frac{3\pi}{2} \right) = 3\pi
+          </mrow>
+        </md> 
+        <p>
+          Now I calculate the centre of mass. By symmetry, I expect
+          <m>M_{yz}</m> and <m>M_{xz}</m> to be the same; I only need
+          to calculate one of them.
+        </p>
+        <md>
+          <mrow>
+            M_{yz} \amp = \int_S x\rho dV = 0 
+          </mrow>
+          <mrow>
+            \amp = \int_0^2 \int_0^{\frac{\pi}{2}}
+            \int_{\frac{\pi}{2}}^{2\pi} r \sin \phi \cos \theta
+            \frac{1}{r} r^2 \sin \phi d\theta d\phi dr 
+          </mrow>
+          <mrow>
+            \amp = \int_0^2 r^2 dr \int_0^{\frac{\pi}{2}} \sin^2 \phi
+            d\phi \int_{\frac{\pi}{2}}^{2\pi} \cos \theta d\theta 
+          </mrow>
+          <mrow>
+            \amp = \left( \frac{r^3}{3} \Bigg|_0^2 \right) \left( 
+            \frac{x}{2} - \frac{\sin 2x}{4} \Bigg|_0^{\frac{\pi}{2}}
+            \right) \left( \sin \theta \Bigg|_{\frac{\pi}{2}}^{2\pi}
+            \right) 
+          </mrow>
+          <mrow>
+            \amp = \frac{8}{3} \left( \frac{\pi}{4} - 0 - 0 + 0
+            \right) \left( 0  - 1 \right) = \frac{-\pi}{6} 
+          </mrow>
+          <mrow>
+            M_{xz} \amp = \frac{-\pi}{6} 
+          </mrow>
+          <mrow>
+            M_{xy} \amp = \int_S z\rho dV = 0 
+          </mrow>
+          <mrow>
+            \amp = \int_0^2 \int_0^{\frac{\pi}{2}}
+            \int_{\frac{\pi}{2}}^{2\pi} r \cos \phi 
+            \frac{1}{r} r^2 \sin \phi d\theta d\phi dr 
+          </mrow>
+          <mrow>
+            \amp = \int_0^2 r^2 dr \int_0^{\frac{\pi}{2}} \cos \phi
+            \sin \phi d \phi \int_{\frac{\pi}{2}}^{2\pi} d\theta 
+          </mrow>
+          <mrow>
+            \amp = \left( \frac{r^3}{3} \Bigg|_0^2 \right) \left(
+            \frac{-\cos 2x}{4} - \frac{1}{4} \Bigg|_0^{\frac{\pi}{2}}
+            \right) \left( \theta \Bigg|_{\frac{\pi}{2}}^{2\pi}
+            \right) 
+          </mrow>
+          <mrow>
+            \amp = \left( \frac{8}{3} - 0 \right) \left( \frac{1}{4} -
+            \frac{1}{4} + \frac{1}{4} + \frac{1}{4} \right) \left(
+            \frac{3\pi}{2} \right) 
+          </mrow>
+          <mrow>
+            \amp = \frac{8}{3} \frac{1}{2} \frac{3\pi}{2} =
+            \frac{\pi}{32} 
+          </mrow>
+        </md>
+        <p>
+          Then I can calculate the coordinates of the centre of mass. 
+        </p>
+        <md>
+          <mrow>
+            \bar{x} \amp = \frac{M_{yz}}{m} =
+            \frac{\frac{-\pi}{6}}{3\pi} = \frac{-1}{18} 
+          </mrow>
+          <mrow>
+            \bar{y} \amp = \frac{M_{xz}}{m} = 
+            \frac{\frac{-\pi}{6}}{3\pi} = \frac{-1}{18} 
+          </mrow>
+          <mrow>
+            \bar{z} \amp = \frac{M_{xy}}{m} =
+            \frac{\frac{\pi}{32}}{3\pi} = \frac{1}{96} 
+          </mrow>
+        </md> 
+        <p>
+          Now I proceed with calculating the moments of inertia.
+        </p>
+        <md>
+          <mrow>
+            I_x \amp = \int_S (y^2 + z^2) \rho dV 
+          </mrow>
+          <mrow>
+            \amp = \int_0^2 \int_0^{\frac{\pi}{2}}
+            \int_{\frac{\pi}{2}}^{2\pi} (r^2 \sin^2 \phi \sin^2 \theta
+            + r^2 \cos^2 \phi) \frac{1}{r} r^2 \sin \phi d\theta d\phi
+            dr 
+          </mrow>
+          <mrow>
+            \amp = \int_0^2 \int_0^{\frac{\pi}{2}}
+            \int_{\frac{\pi}{2}}^{2\pi} r^3 \sin^3 \phi \sin^2 \theta
+            d\theta d\phi dr + \int_0^2 \int_0^{\frac{\pi}{2}}
+            \int_{\frac{\pi}{2}}^{2\pi} r^3 \cos^2 \phi \sin \phi
+            d\theta d\phi dr
+          </mrow>
+          <mrow>
+            \amp = \int_0^2 r^3 dr \int_0^{\frac{\pi}{2}} \sin^3 \phi
+            d\phi \int_{\frac{\pi}{2}}^{2\pi} \sin^2 \theta d\theta +
+            \int_0^2 r^3 dr \int_0^{\frac{\pi}{2}} \cos^2 \phi \sin
+            \phi d \phi \int_{\frac{\pi}{2}}^{2\pi} d\theta
+          </mrow>
+          <mrow>
+            \amp = (4) \left( \frac{2}{3} \right) \left(
+            \frac{3\pi}{4} \right) + (4)\left( \frac{1}{3} \right)
+            \left( \frac{3\pi}{4}\right)  = 2\pi + \pi = 3\pi
+          </mrow>
+        </md>
+        <p>
+          By symmetry, I expect <m>I_y</m> to be the same as
+          <m>I_x</m>. 
+        </p>
+        <md>
+          <mrow>
+            I_y \amp = 3\pi 
+          </mrow>
+        </md>
+        <p>
+          Finally, I need to calculate the last moment of inertia.
+        </p>
+        <md>
+          <mrow>
+            I_z \amp = \int_S (x^2 + y^2) \rho dV 
+          </mrow>
+          <mrow>
+            \amp = \int_0^2 \int_0^{\frac{\pi}{2}}
+            \int_{\frac{\pi}{2}}^{2\pi} (r^2 \sin^2 \phi \cos^2 \theta
+            + r^2 \sin^2 \phi \sin^2 \theta) \frac{1}{r} r^2 \sin \phi
+            d\theta d\phi dr 
+          </mrow>
+          <mrow>
+            \amp = \int_0^2 \int_0^{\frac{\pi}{2}}
+            \int_{\frac{\pi}{2}}^{2\pi} r^3 \sin^3 \phi \cos^2 \theta
+            d\theta d\phi dr + \int_0^2 \int_0^{\frac{\pi}{2}}
+            \int_{\frac{\pi}{2}}^{2\pi} r^3 \sin^3 \phi \sin^2 \theta
+            d\theta d\phi dr
+          </mrow>
+          <mrow>
+            \amp = \int_0^2 r^3 dr \int_0^{\frac{\pi}{2}} \sin^3 \phi
+            d\phi \int_{\frac{\pi}{2}}^{2\pi} \cos^2 \theta d\theta +
+            \int_0^2 r^3 dr \int_0^{\frac{\pi}{2}} \sin^3 \phi d \phi
+            \int_{\frac{\pi}{2}}^{2\pi} \sin^2 d\theta
+          </mrow>
+          <mrow>
+            \amp = (4) \left( \frac{2}{3} \right) \left(
+            \frac{3\pi}{4} \right) + (4)\left( \frac{2}{3} \right)
+            \left( \frac{3\pi}{4}\right) = 2\pi  + 2\pi = 4\pi
+          </mrow>
+        </md>
+        <p>
+          Now I can calculate the radii of gyration.
+        </p>
+        <md>
+          <mrow>
+            \bar{\bar{x}}^2 \amp = \frac{I_{x}}{m} = \frac{3\pi}{3\pi}
+            = 1 \implies
+            \bar{\bar{x}} = 1 
+          </mrow>
+          <mrow>
+            \bar{\bar{y}}^2 \amp = \frac{I_{y}}{m} = \frac{3\pi}{3\pi}
+            \implies \bar{\bar{y}} = 1 
+          </mrow>
+          <mrow>
+            \bar{\bar{z}}^2 \amp = \frac{I_{z}}{m} = \frac{4\pi}{3\pi}
+            \implies \bar{\bar{z}} = \frac{2}{\sqrt{3}} 
+          </mrow>
+        </md> 
+      </solution>
+    </activity>
+  </subsection>
+  <subsection xml:id="subsection-week8-concepts">
+    <title>Conceptual Review Questions</title>
+    <p>
+      <ul>
+        <li>
+          What are polar coordinates?
+        </li>
+        <li>
+          How is it that change of variable can be arranged to help
+          either the integrand or the region (and sometimes both)?
+        </li>
+        <li>
+          What is a Jacobian and what does it measure?
+        </li>
+        <li>
+          What are first and second moments? What do they do?
+        </li>
+        <li>
+          How are density/mass calculations similar to probability
+          calculations?
+        </li>
+        <li>
+          What are the advantages of curvilinear coordinate systems?
+        </li>
+      </ul>
+    </p>
+  </subsection>
+</section>

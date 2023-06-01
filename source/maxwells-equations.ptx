@@ -1,0 +1,649 @@
+<section xml:id="section-maxwell">
+  <title>Maxwell's Equations</title>
+  <subsection xml:id="subsection-electromagnetism-observations">
+    <title>19th Century Electromagnetic Observations</title>
+    <p>
+      In this section, I'm presenting a brief version of background to
+      vector calculus. All the major tools defined in this course
+      (vector fields, curl, gradient, line integrals, flux integrals,
+      Gauss-Green-Stokes) are 19th century mathematics. They were
+      invented very specifically to describe electricity and
+      magnetism. Without getting to deep into the physics, I want to
+      show you how the physical property of electricity and magnetism
+      required these tools <emdash/> how these tools are precisely
+      what was needed for these problems. 
+    </p>
+    <p>
+      I want to start with a summary of the experimental results that
+      inspired this mathematics. This list below comes from people
+      experimenting in laboratories and workships. Once it was
+      understood how electricity could be generated and stored, people
+      were playing around with various machines to see how electricity
+      behaved.  Magnets, of course, have been used since antinquity,
+      but new methods of understanding how magnets worked were being
+      developed at the same time. I'll start with observations of
+      electricty and magnetism as two separate things. 
+      (Note that all the sign conventions are arbitrary.
+      What observers decided was <sq>positivie</sq> or
+      <sq>negative</sq> is just a choice of conventions. The opposite
+      choice could have been made and also would have produced
+      consistent mathematical models.) 
+    </p>
+    <ul>
+      <li>
+        <p>
+          Electric charge exists. There is such a thing as a
+          electrically charged particle. Moreover, charge comes in two
+          types: positive and negative. Charges of the same type
+          repel each other and charges of opposite type attract each
+          other.
+        </p>
+      </li>
+      <li>
+        <p>
+          Electric charges create electric fields. An electric field
+          is a field of force in the volume surrounding a charged
+          object. It acts on other charged object, creating an
+          attractive force on objects of opposite charge and a
+          repulsive force on object of the same chare. 
+        </p>
+      </li>
+      <li>
+        <p>
+          Electric charge can move though a medium (usually metalic).
+          Such a movement is called current. Typically, current
+          refers to the flow of negative charges. 
+        </p>
+      </li>
+      <li>
+        <p>
+          Unlike electric charge, isolated magnetic charge is
+          impossible. There is no such thing as an isolated positive
+          or negative magnetic charge (which likewise implies that
+          there is no such things as magnetic current). Instead,
+          magnetic charge only appears in dipoles: objects that have a
+          positive pole and a negative pole. 
+        </p>
+      </li>
+      <li>
+        <p>
+          Magnetic dipoles create a magnetic field. A magnetic field
+          is a field of force in the volume surrounding a magnetic
+          dipoles which acts on other magnetic dipoles. The field
+          pulls the negative end of other dipoles towards the
+          positive end of the original dipole, and likewise for the
+          pulling the positive end of other dipoles towards the
+          negative ned of the original dipole. 
+        </p>
+      </li>
+    </ul>
+    <p>
+      That summarizes the observations about electricity and magnetism
+      by themselves. But perhaps the most important observation was
+      the fact that electricity and magnetism interact. Moreover, the
+      interact in some very strange and unexpected ways. Here is a
+      list of various interactions that were observed. 
+    </p>
+    <ul>
+      <li>
+        <p>
+          A current (moving electric charge) through a wire creates
+          a magnetic field. The direct of this field is circular,
+          moving around the wire. The direction of the current and the
+          direction of the rotation agree by a right-hand-rule. (The
+          right-hand-rule is a result of the various sign conventions;
+          different choices of positive and negative charge, or
+          positive and negative ends of a magnet, would have lead
+          instead to a left-hand-rule.) 
+        </p>
+      </li>
+      <li>
+        <p>
+          As an application of the previous point, if the wire is
+          wrapped into a solenoid (a ring formed of coiled wire,
+          essentially), it creates a magnetic field inside the
+          solenoid. The direction of this magnetic field is point
+          through the ring (again, following a right-hand-rule) for the
+          direction of the field and the direction of rotation of the
+          current in the ring. 
+        </p>
+      </li>
+      <li>
+        <p>
+          A changing magnetic field (produced, say, by spinning a
+          magnetc and thus moving the resulting magnetic field)
+          produces an electric field and thus an electric force on
+          nearby electrically charged particles. 
+        </p>
+      </li>
+      <li>
+        <p>
+          Magnetic fields act only on moving charged particles and
+          induce torque to change the direction of movement.
+        </p>
+      </li>
+    </ul>
+    <p>
+      The key piece in all these interactions is change or movement. A
+      static electric field doesn't do anything to a stationy magnets.
+      Likewise, a stationary magnets doesn't have an effect on a
+      stational electrically charge particular. It's only when
+      something is changing (the magnetic field is changing, the
+      charge is moving in a curren, etc) that the interaction happens.
+      The interactions are all dynamic. 
+    </p>
+  </subsection>
+  <subsection xml:id="subsection-electromagnetism-formalism">
+    <title>Mathematics Formalism for Electromagnetism</title>
+    <p>
+      Now I'm going to try to take the observations from the previous
+      list and describe them in a mathematical model. I'm going to use
+      all the tools of this course, but remember, when this was first
+      done, the mathematics tools had to be <em>invented</em>. First,
+      let me describe the model for static situation. 
+    </p>
+    <ul>
+      <li>
+        <p>
+          Isolated electric charges exit. If there is a charge at a
+          point, I can just attach a value <m>q</m> to that point.
+          <m>q</m> is the conventional letter for charge and has units
+          of coulombs. In the SI system, coulombs are a derived unit,
+          since it was decided that current should be the fundamental
+          unit. A coulomb is the same as an amp-second, written
+          <m>A\cdot s</m>. In addition to point charges, often there
+          is a distribution of charge in a region. This can be described
+          as a charge density, which is a scalar field
+          <m>\rho(x,y,z)</m>. Charge density has units of coulombs per
+          cubic metre, <m>\frac{C}{m^3}</m> or amp-seconds per cubic metre,
+          <m>\frac{A \cdot s}{m^3}</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Electric charge (either a point charge or a distribution of
+          charge in a region) creates a field  <m>E(x,y,z)</m> of
+          force per unit charge. The field acts on other potential
+          charges in the region around the existing charge. 
+          The field <m>E</m> has unit of volts per meter. Again, in
+          the SI system, the volt is a derived unit and the base units
+          for electric fields are <m>\frac{kg \cdot m}{s^3 \cdot A}</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          In addition to charge, the flow of charge in current exists.
+          This is usually described by a current density <m>J</m>
+          which describe current flowing through a cross-sectional
+          area. <m>J</m> has units of coulombs per
+          second-square-metre. In SI units, <m>J</m> has units of
+          <m>\frac{A}{m^2}</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          There is a universal constant which determine the strength
+          of interaction due to electric fields. This constant is
+          called the permittivity of the vacuum and has the value 
+          <m>\epsilon_0 = 8.85 \times 10^{-12}</m> with units
+          <m>\frac{s^4 \cdot A^2}{m^3 \cdot kg}</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          If a charge density <m>\rho</m> is creating the electric
+          field <m>E</m>, the relationship between the charge
+          density and the field is given by the divergence
+          differential operator: <m>\nabla \cdot E =
+          \frac{\rho}{\epsilon_0}</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Isoated magnetic charge does not exist, so not symbols or
+          units are assigned to it. 
+        </p>
+      </li>
+      <li>
+        <p>
+          A magnetic dipole creates a force <m>B</m>. Following the
+          observations, this force acts on a <em>moving</em>
+          electrically charged particle by changing its direction of
+          movement. Therefore, it is natural to describe this field
+          as thee force per charge-velocity The unit of <m>B</m>
+          the telsa, which in SI base units is <m>\frac{kg}{A\cdot
+          s^2}</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          There is a universial constant that describe the strengh
+          of magnetic field interactions. This constant is called
+          permeability of the vacuum and has value 
+          <m>\mu_0 = 4\pi \times 10^{-7}</m> with units <m>\frac{m 
+          \cdot kg}{s^2 \cdot A^2}</m>. (This universal constant is not
+          independent of other constants; it is, in fact, a derived
+          value. This explains why it has a value involving
+          <m>4\pi</m> instead of just an arbitrary decimal.) 
+        </p>
+      </li>
+      <li>
+        <p>
+          Since there are no monopoles, all magnetic charged is
+          balanced. This is reflected in the mathematical by the
+          equation <m>\nabla \times B = 0</m>. 
+        </p>
+      </li>
+    </ul>
+    <p>
+      Now I can move on to the dynamic interactions between
+      electricity and magnetism. I'll start with the effect of statis
+      fields on a charged particle. Both static situations (electric and
+      magnetic) produce fields and forces on charged particles. The
+      action on charged particles by both <m>E</m> and <m>B</m> is
+      summarized in an equation called the Lorentz force law. If
+      <m>q</m> is a charged particle travelling with velocity
+      <m>v</m>, then the force caused by electric and magnetic fields
+      on the charged particular satisfies this equation.
+    </p>
+    <me>
+      F = Eq + q (v \times B)
+    </me>
+    <p>
+      Now I need the model to consider changinge electric and magnetic
+      fields. A key part of the observation what that changes in
+      electrical fields produce magnetic fields and vice-versa. How is
+      this described, mathematically? 
+    </p>
+    <ul>
+      <li>
+        <p>
+          A changing <m>E</m> fields induces a <m>B</m> field and
+          vice-versa.
+        </p>
+      </li>
+      <li>
+        <p>
+          In addition, a current induces a <m>B</m> field.
+        </p>
+      </li>
+      <li>
+        <p>
+          Magnetic current is impossible, so it cannot induce a
+          <m>E</m> field.
+        </p>
+      </li>
+      <li>
+        <p>
+          The induced <m>E</m> field due to a changing 
+          <m>B</m> field satisfies a differential equation.
+        </p>
+        <me>
+          \nabla \times E = \frac{-\del B}{\del t}
+        </me>
+      </li>
+      <li>
+        <p>
+          The induced <m>B</m> field due to a changing electric field
+          <m>E</m> and a current density <m>J</m>
+          also satisfies a differential equation.
+        </p>
+        <me>
+          \nabla \times B = \mu_0 J + \mu_0 \epsilon_0 \frac{\del
+          E}{\del t}
+        </me>
+      </li>
+    </ul>
+    <p>
+      In this mathematical object, I have written down four
+      differential equations. This is the first presentation of
+      Maxwell's equations. (This version is the presentation via
+      differential operators; a second presentation will follow
+      below). There are four equations: two for statics, which
+      calculate divergence of the fields, and two for dynmanics, which
+      calculate curl of the fields. Without fields, curl and
+      divergence, such differential equations are impossible to state;
+      therefore, the concepts of vector fields, curl and divergence
+      were invented in order to be able to state the fundamental
+      equations that govern electricity and magnetism. To determine
+      the time behaviour of an electromagnetic system means solving
+      these four differential equations for whatever initial
+      conditions describe the system. (This is, in general, a very
+      difficult problem). 
+    </p>
+    <md>
+      <mrow>
+        \nabla \cdot B \amp = 0
+      </mrow>
+      <mrow>
+        \nabla \cdot E \amp = \frac{\rho}{\epsilon_0}
+      </mrow>
+      <mrow>
+        \nabla \times B \amp = \mu_0 J + \mu_0 \epsilon_0
+        \frac{\del E}{ \del t}
+      </mrow>
+      <mrow>
+        \nabla \times E \amp = \frac{-\del B}{\del t}
+      </mrow>
+    </md>
+  </subsection>
+  <subsection xml:id="subsection-maxwell">
+    <title>Gauss-Green-Stokes and Maxwell's Equations</title>
+    <p>
+      Some of the 19th century electro-magnetic observations directly
+      measured charge, field and current, leading to the equations in
+      the previous section. However, often the fields are difficult
+      to measure directly; instead, their flux through various
+      surfaces can be measured in the laboratory. Flux essentially
+      measure the fields strength via particular apparatus in a
+      laboratory. To that end, there is a second presentation of 
+      Maxwell's equations using the flux of fields, not just the
+      fields themselves.
+    </p>
+    <p>
+      What is the relationship between the two presentations? How do I
+      go from the equations above, with curls and divergences, to
+      equations of flux? I apply Gauss' and Stokes' theorem to the
+      first presentation of Maxwell's equations. This is why Gauss'
+      and Stokes' theorems were discovered and what made them so
+      fundamental to the discipline.  They transform the equation of
+      fields into equations of flux which can be measure more
+      reasonable in laboratory situations.
+    </p>
+    <p>
+      Let <m>D</m> be a solid region of space and <m>\sigma</m> a
+      parametric surface (not necessarily the boundary of <m>D</m>).
+      Before stating the new version of Maxwell's equations, I need
+      some new notations.
+    </p>
+    <ul>
+      <li>
+        <p>
+          <m>Q_D</m> is the total charge in the solid region
+          <m>D</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>I_\sigma</m> is the total current flowing through a
+          surface.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\Phi_{E,\sigma}</m> is the flux of <m>E</m> through
+          <m>\sigma</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\Phi_{B,\sigma}</m> is the flux of <m>B</m> through
+          <m>\sigma</m>.
+        </p>
+      </li>
+    </ul>
+    <p>
+      Now, if <m>\sigma</m> is the bounding surface for the region
+      <m>D</m>, then I can apply Gauss' theorem to the field
+      <m>E</m>.
+    </p>
+    <me>
+      \Phi_{E,\sigma} = \int_\sigma E \cdot dA = \int_D \nabla \cdot
+      E dV = \int_D \frac{\rho}{\epsilon_0} dV =
+      \frac{Q_D}{\epsilon_0}
+    </me>
+    <p>
+      I can do the same for <m>B</m>, remembering that <m>\nabla
+      \cdot B = 0</m>.
+    </p>
+    <me>
+      \Phi_{B,\sigma} = \int_\sigma B \cdot dA = \int_D \nabla \cdot
+      B dV = \int_D 0 dV = 0
+    </me>
+    <p>
+      Now let <m>\sigma</m> be any surface (not the boundary of
+      <m>D</m>) and let <m>\gamma</m> be its boundary. I can think
+      of <m>\gamma</m> as a loop of wire, and <m>\sigma</m> the
+      surface inside the loop. The line integral of <m>E</m> along
+      the wire is the work done on by the field moving electrons along
+      the wire. I can use Stokes' theorem and the firsr presentation
+      of Maxwell's equation to calculate the line integral.
+    </p>
+    <me>
+      \int_\gamma E \cdot ds = \int_{\sigma} (\nabla \times E) \cdot
+      dA = - \int_\sigma \frac{\del B}{\del t} \cdot dA  =
+      -\frac{\del}{\del
+      t} \Phi_{B,\sigma}
+    </me>
+    <p>
+      Thinking the other way around, this calculates the flux through
+      the wire of the magnetic field induced by the current. If the
+      loop is now a series of loops in a solenoid, the flux adds up,
+      so more loops gives move surface area, hence more flux, hence a
+      greater induced magnetic field. A transformer is formed from two
+      solenoids, where a current in one solenoid induced a magnetic
+      fields which, in turn, induces a new current in the other
+      solenoid. In such a transformer, the designer can adjusting the
+      ingoing and outgoing current by having different numbers of
+      coils on each solenoid.
+    </p>
+    <p>
+      For magnetic fields, I can do the same Stokes' theorem
+      calculation.
+    </p>
+    <me>
+      \int_\gamma B \cdot ds = \int_{\sigma} (\nabla \times B) \cdot
+      dA = \int_\sigma \mu_0 J \cdot dA + \int_\sigma \mu_0
+      \epsilon_0 \frac{\del E}{\del t} = \mu_0 I_\sigma + \mu_0
+      \epsilon_0 \frac{\del}{\del t} \Phi_{E, \sigma}
+    </me>
+    <p>
+      Now I can put all these equation together into the second
+      presentation of Maxwell's equations. In the first two equations,
+      <m>\sigma</m> is the closed boundary of <m>D</m>. In the second
+      two equations, <m>\sigma</m> is an open surface with boundary
+      <m>\gamma</m>.
+    </p>
+    <md>
+      <mrow>
+        \int_\sigma E \cdot dA \amp = \frac{Q_D}{\epsilon_0}
+      </mrow>
+      <mrow>
+        \int_\sigma B \cdot dA \amp = 0
+      </mrow>
+      <mrow>
+        \int_\gamma E \cdot ds \amp = \frac{-\del}{\del t}
+        \Phi_{B,\sigma}
+      </mrow>
+      <mrow>
+        \int_\gamma B \cdot ds \amp = \mu_0 I_{\sigma} + \mu_0
+        \epsilon_0 \frac{\del}{\del t} \Phi_{E,\sigma}
+      </mrow>
+    </md>
+  </subsection>
+  <subsection xml:id="subsection-maxwell-vacuum">
+    <title>Maxwell's Equations in a Vacuum</title>
+    <p>
+      As I said above, actually solving Maxwell's equations is very
+      difficult. This is particularly true since all of the physical
+      condition of the situation are build into the initial conditions
+      of the differential equations, which can be very complicated.
+      However, I could choose the easiest initial condition possible:
+      none at all. 
+    <p>
+    </p>
+      This train of through leads to a very strange question: what
+      happens if I consider Maxwell's
+      equation in a vacuum with no external influence? There is
+      nothing there, no charge, no current, no wires. However, the
+      existence of electrical and magnetic fields in a vacuum is
+      possible, so the differential equations still might have
+      something to say. I'll work with the first presentation of
+      Maxwell's equations here. I'll see all the charge and current
+      terms to zero, since there are no charge particles, no currents,
+      and no magnets in a vacuum. Here are the resulting differential
+      equations. 
+    </p>
+    <md>
+      <mrow>
+        \nabla \cdot B \amp = 0
+      </mrow>
+      <mrow>
+        \nabla \cdot E \amp = 0
+      </mrow>
+      <mrow>
+        \nabla \times B \amp = \mu_0 \epsilon_0 \frac{\del E}{\del t}
+      </mrow>
+      <mrow>
+        \nabla \times E \amp = \frac{-\del B}{\del t}
+      </mrow>
+    </md>
+    <p>
+      This is a difficult system of differential equations, but it
+      does have a solution. Therefore, at least mathematically, there
+      can be electic and magnetic field existing in a vacuum, even
+      without any charge, current, or magnetic dipoles. The method for
+      solving this differential equation is strange; I'm going to
+      perform some random operations, but they do eventually lead
+      towards a solution. The general stragtegy is to work with the
+      third and fourth equations and try to decouple them, producing
+      equations for <m>E</m> and <m>B</m> separately. In the process,
+      the first two equations will be use to remove any divergence
+      terms that arise while working with the other equations.
+    </p>
+    <p>
+      The first operation is to take the last of
+      Maxwell's equation an apply the curl operator to both sides of
+      the equation. On the right side, there is a curl and a time
+      derivative. With reasonably assumption about <m>B</m>, I can
+      interchange the order of these derivatives and then use
+      Maxwell's third equation to replace <m>B</m>. 
+    </p>
+    <md>
+      <mrow>
+        \nabla \times (\nabla \times E) \amp = \nabla \times
+        -\frac{\del B}{\del t} = \frac{-\del}{\del t} (\nabla \times
+        B)
+      </mrow>
+      <mrow>
+        \amp = - \frac{\del}{\del t} \mu_0 \epsilon_0 \frac{\del
+        E}{\del t}
+      </mrow>
+      <mrow>
+        \nabla \times (\nabla \times E) \amp = -\mu_0 \epsilon_0
+        \frac{\del^2 E}{\del t^2}
+      </mrow>
+    </md>
+    <p>
+      I've manage to get away from equations that involves <m>E</m>
+      and <m>B</m> and produce a differential equation that only
+      involves the electric field. This is progress. Now I want to
+      adjust this equation into something I can actually solve.  There
+      is an identity for doing the curl twice:  <m>\nabla \times
+      (\nabla \times F) = \nabla (\nabla \cdot F) - \nabla^2 F</m>,
+      where the Laplacian here means the Laplacian of each of the
+      three components of <m>E</m>. (Feel free to verify this identity
+      if you wish).  IN this case, the first term is <m>0</m>, since
+      <m>\nabla \cdot E =0</m>, so the remaining term is <m>\nabla
+      \times( \nabla \times E) = -\nabla^2 E</m>. I'll replace the
+      left side of the previous equation with this expression.
+    </p>
+    <me>
+      \nabla^2 E = \mu_0 \epsilon_0 \frac{\del^2 E}{\del t^2}
+    </me>
+    <p>
+      A similar process exists starting with the third equation,
+      applying the curl to both sides, replacing the <m>E</m> field
+      with the fourth equation and simplifying the differential
+      operators. It produces a very similar equation for <m>B</m>
+    </p>
+    <me>
+      \nabla^2 B = \mu_0 \epsilon_0 \frac{\del^2 B}{\del t^2}
+    </me>
+    <p>
+      These are wave equations, so I expect that we will have wave
+      solutions for <m>E</m> and <m>B</m>. The full solutions are
+      very general, so I'm going to make some more assumptions which
+      are justified by observation. First, I'll assume <m>E \perp
+      B</m>. Second, I'll assume that <m>z</m> is the direction of
+      propogation of the waves and the waves displacements are only in
+      the <m>xy</m> plane.  By readjusting coordinates under these
+      assumption, I can write <m>E = (E_1(z,t),0,0)</m> and <m>B = (0,
+      B_2(z,t),0)</m>. Then we have two differential equations in the
+      scalar fields <m>E_1</m> and <m>B_2</m>.
+    </p>
+    <md>
+      <mrow>
+        \frac{\del^2 E_1}{\del z^2} \amp = \mu_0 \epsilon_0
+        \frac{\del^2 E_1}{\del t^2}
+      </mrow>
+      <mrow>
+        \frac{\del^2 B_2}{\del z^2} \amp = \mu_0 \epsilon_0
+        \frac{\del^2 B_2}{\del t^2}
+      </mrow>
+    </md>
+    <p>
+      Now I've produced a wave equation in one spatial varaible and
+      time. This has a well known solution using trig functions. I'll
+      not repeat the steps of that solution here, but feel free to
+      verity that the following functions do, in fact, satisfy the
+      wave equations.
+    </p>
+    <md>
+      <mrow>
+        E_1 \amp = a_1 \cos \left( z + \frac{1}{\sqrt{\mu_0
+        \epsilon_0}}t \right) + b_1 \sin \left( z +
+        \frac{1}{\sqrt{\mu_0 \epsilon_0}}t \right)
+      </mrow>
+      <mrow>
+        B_2 \amp = a_2 \cos \left( z + \frac{1}{\sqrt{\mu_0
+        \epsilon_0}}t \right) + b_2 \sin \left( z +
+        \frac{1}{\sqrt{\mu_0 \epsilon_0}}t \right)
+      </mrow>
+    </md>
+    <p>
+      What have I done here? I've shown that starting in a vacuum and
+      making some geometric assumptions about the solutions, these
+      trig function waves are valid electric and magnetic fields that
+      can exist in a vacuum. These waves propogate in the <m>z</m>
+      direction at a certain rate. The coefficient of <m>t</m> gives
+      that rate. I can calculate the rough value of this coefficient
+      (which depends only on the two fundamental constants). 
+    </p>
+    <me>
+      \frac{1}{\sqrt{\mu_0 \epsilon_0}} = \frac{1}{\sqrt{8.86\times
+      10^{-12} \cdot 4\pi \times 10^{-9}}} = 2.997 \times 10^8
+      \frac{m}{s} 
+    </me>
+    <p>
+      The units also work out to recover a velocity. I'll put in the
+      SI units for the permittivity and permeability constants. 
+    </p>
+    <me>
+      \frac{1}{\sqrt{\frac{m \cdot kg}{s^2 \cdot A^2} \frac{s^4 \cdot
+      A^2}{m^3 \cdot kg}}} = \frac{1}{\sqrt{\frac{s^2}{m^2}}} =
+      \frac{m}{s} 
+    </me>
+    <p>
+      This is a familiar number: <m>c</m>, the speed of light. And
+      light is exactly what this wave is: propogation of
+      electromagnetic fields through a vacuum is light. At the time
+      of Maxwell, light was not understood as electromagnetic
+      radiation. Maxwell argued that his system predicted the
+      electromagnetic nature of light, which was eventually proved
+      correct. This is one of the major accomplishment of Maxwell's
+      equations: just by solving them in a vacuum, they reproduce
+      descriptions of light as an electromagnetic wave. 
+    </p>
+    <p>
+      Lastly, this also explains by one of the three constants (as it
+      was developed historically, this ended up being permeability) is
+      not independent. Once you know the permittivity of space and the
+      speed of light, the permeability can be calculated from those
+      two constants. Again, this explains the strange <m>4\pi</m> in
+      the definition of permeability: it is a derived constants, based
+      on knowing the permittivity of space, the speed of light, and
+      the SI unit conventions. 
+    </p>
+  </subsection>
+</section>

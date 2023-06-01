@@ -1,0 +1,9 @@
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="chapter-week11">
+  <title>Week 11</title>
+  <xi:include href="parametric-surfaces.ptx" />
+  <xi:include href="flux-integrals.ptx" />
+  <xi:include href="week11-activity.ptx" />
+</chapter>
+
+
+

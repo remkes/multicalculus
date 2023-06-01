@@ -1,0 +1,446 @@
+<section xml:id="section-iterated-integrals">
+  <title>Iterated Integrals</title>
+  <subsection xml:id="subsection-analysing-riemann-sum">
+    <title>Analyzing the Sums in the Riemann Integral</title>
+    <p>
+      I want to be able to calculate the multivariable Riemann
+      integral.
+    </p>
+    <me>
+      \int_{I} f(x_1, x_2, \ldots, x_n) dV = \lim_{k \rightarrow
+      \infty} \sum_{l=0}^{k^n} f(x_l^*) \Delta V
+    </me>
+    <p>
+      The original Riemann integral was already a very difficult
+      definition to actually work with. This multivariable version is
+      even worse, since I haven't specified how to actually do the sum
+      over all <m>k^n</m> subintervals. This is where I want to start:
+      with a better understanding of this sum.  However, working to
+      this understanding in full generality or <m>\RR^n</m> at the
+      start is very unwieldy, so I'll start with a function
+      <m>f(x,y)</m> defined on an interval in <m>\RR^2</m>. As noted
+      before, In <m>\RR^2</m>, I will write <m>\Delta A</m> and
+      <m>dA</m> instead of <m>\Delta V</m> and <m>dV</m>, since the
+      pieces of an interval in<m>\RR^2</m> are rectangles and have
+      area, not volume.
+    </p>
+    <p>
+      Consider an interval in <m>\RR^n</m>: <m>I = [a_1,b_1] \times
+      [a_2,b_2]</m>. If I divide the two single-variable intervals into
+      <m>k</m> pieces, I can choose <m>x_{i_1}^* \in [a_1,b_1]</m> and
+      <m>y_{i_2}^* \in [a_2,b_2]</m>. With these choices, the point
+      <m>(x_{i_1}^*, y_{i_2}^*)</m> is a point in one of the
+      subintervals of <m>I</m>. As both the indices <m>i_1</m> and
+      <m>i_2</m> count from <m>1</m> to <m>k</m>. I want to count the
+      two sums independently, so all count to <m>k_1</m> in <m>x</m>
+      and to <m>k_2</m> in <m>y</m>. This might mean that I have more
+      rectancles in a row than in a column, or vice-versa, but that's
+      fine; the rectangles are still subintervals making up the whole
+      interval. The sum can now be written as a double sum over these
+      two indices. The limit also needs to take both upper bounds to
+      infinity.
+    </p>
+    <me>
+      \int_{I} f(x,y) dA = \lim_{k_1 \rightarrow \infty} \lim_{k_2
+      \rightarrow \infty} \sum_{i_1=1}^{k_1} \sum_{i_2=1}^{k_2}
+      f(x_{i_1}^*,y_{i_2}^*) \Delta A 
+    </me>
+    <p>
+      Instead of writing <m>\Delta A</m> for the area of a subintervals,
+      I could write this as the product of the height and width of this
+      rectangle. The width, <m>\Delta x</m>, is
+      <m>\frac{b_1-a_1}{k_1}</m>, the length of the subdivision in the
+      <m>x</m> variable. The height, <m>\Delta y</m>, is likewise
+      <m>\frac{b_2-a_2}{k_2}</m>. 
+    </p>
+    <me>
+      \int_{I} f(x,y) dA = \lim_{k \rightarrow \infty}
+      \sum_{i_1=1}^{k_1} \sum_{i_2=1}^{k_2} f(x_{i_1}^*,y_{i_2}^*)
+      \Delta x \Delta y 
+    </me>
+    <p>
+      Now, let me group this using some brackets, moving some
+      terms in and out of sums (recall than anything that doesn't
+      involve the index of a particular sum and be moved out from the
+      sum.
+    </p>
+    <me>
+      \int_{I} f(x,y) dA = \lim_{k_1 \rightarrow \infty}
+      \sum_{i_1=1}^{k_1} \left[ \lim_{k_2 \rightarrow \infty} 
+      \sum_{i_2=1}^{k_2} f(x_{i_1}^*,y_{i_2}^*) \Delta y
+      \right] \Delta x
+    </me>
+    <p>
+      Now the term inside the brackets is just a single-variable Riemann
+      integral. As far as the sum inside the brackets is concerns,
+      <m>x</m> and <m>x_{i_1}^*</m> are constants. The sum only changes
+      the <m>y</m> coordinates. I can treat this as a single variable
+      integral in the variable <m>y</m>.
+    </p>
+    <me>
+      \int_{I} f(x,y) dA = \lim_{k_1 \rightarrow \infty}
+      \sum_{i_1}^{k_1} \left[ \int_c^d f(x_{i_1}^*,y) dy \right]
+      \Delta x
+    </me>
+    <p>
+      Now I can consider the outside sum and, again, this is just a
+      single-variable Riemann integral. It treats the variable <m>y</m>
+      as constant and integrate in <m>x</m>. Let me write this as an
+      integral as well. 
+    </p>
+    <me>
+      \int_{I} f(x,y) dA = \int_a^b \left[ \int_c^d f(x,y) dy \right]
+      dx
+    </me>
+    <p>
+      This is called an <term>iterated integral</term> and it will be
+      the calculation techinque for definite integrals. Every definite
+      integral of a multivariable function on an interval can be treated
+      as a iterated single-variable integral in each variable
+      independently. 
+    </p>
+    <p>
+      In an iterated integral, I must always from the inside out: the
+      infinitesimal piece <m>dx</m> or <m>dy</m> that is closest to the
+      function acts first. Its bounds are written on the right, closest
+      to the function. That integral is a single-variable integration,
+      pretending that the other variables are constant, as was the
+      case with partial derivatives. Then, once the firstintegration
+      is finished, I proceed outward to the next integral.
+    </p>
+    <p>
+      Iterated integrals also work in higher dimensions: I just iterate
+      through the variables. In <m>\RR^3</m>, over the interval <m>I =
+      [a_1,b_1] \times [a_2,b_2] \times [a_3,b_3]</m> with three
+      iterations, this is the setup. 
+    </p>
+    <me>
+      \int_{I} f(x,y,z) dV = \int_{a_1}^{b_1} \left[ \int_{a_2}^{b_2}
+      \left[ \int_{a_3}^{b_3} f(x,y,z) dz \right] dy \right] dx
+    </me>
+    <p>
+      Notice that the bounds of integration always match with
+      the correct infinitesimal piece, working from the inside out.
+      I won't write the full version in <m>\RR^n</m>, but it works same
+      way. It has <m>n</m> iterated pieces. 
+    </p>
+  </subsection>
+  <subsection xml:id="subsection-fubini">
+    <title>Fubini's Theorem</title>
+    <p>
+      You might ask, at this point, what happens if I change the
+      order? I have to choose an order for these iterated integrals.
+      Fubini's Theorem tells me that I am able to choose the order.
+      This is the counterpart to Clairaut's Theorem for partial
+      derivative, which told me that I could change the order of
+      iterated partial derivatives. 
+    </p>
+    <theorem xml:id="thm-fubini">
+      <statement>
+        <p>
+          (Fubini's Theorem) If <m>f: I \rightarrow \RR</m> is an
+          integrable function on an closed interval, then the iterated
+          integral is independent of the choice or order. Any ordering
+          of the variables will result in the same value.
+        </p>
+      </statement>
+    </theorem>
+  </subsection>
+  <subsection xml:id="subsection-iterated-integrals-examples">
+    <title>Examples</title>
+    <p>
+      I'm going to work through a few examples to demonstrate the
+      process. I should mention on caution as the start: like with
+      partial derivatives, I need to carefully keep track of which
+      variable I'm working with at any time.  It's easy to confuse the
+      variable of integration and substitue for the wrong variables
+      when you get to evaluating bounds. 
+    </p>
+    <example>
+      <statement>
+        <p>
+          Consider the interval <m>I = [0,1] \times[3,6]</m> and the
+          function <m>f(x,y) = e^x + e^y</m>. I'm going to do an
+          iterated integral to solve this, with the <m>y</m> variable
+          inside and the <m>x</m> variable outside. That means I'll
+          integrate in <m>y</m>, like a normal single variable
+          integral, and then evaluate on the bounds for <m>y</m>. Then
+          the <m>y</m> variable will be entirely gone and I will
+          proceed with the single-variable definite integral in
+          <m>x</m>.  In this example, I've carefully labelled the
+          bound to remind myself which variable to replace. This isn't
+          standard notation, but a nice reminder for the first
+          example.
+        </p>
+        <md>
+          <mrow>
+            \int_I f dA \amp = \int_0^1 \int_3^6 (e^x + e^y) dy dx
+          </mrow>
+          <mrow>
+            \amp = \int_0^1 \int_3^6 e^x dy dx + \int_0^1 \int_3^6 e^y
+            dy dx
+          </mrow>
+          <mrow>
+            \amp = \int_0^1 y e^x \bigg|_{y=3}^{y=6} dx + \int_0^1 e^y
+            \bigg|_{y=3}^{y=6} dx
+          </mrow>
+          <mrow>
+            \amp = \int_0^1 3e^x dx + \int_0^1 (e^6-e^3) dx
+          </mrow>
+          <mrow>
+            \amp = 3e^x \bigg|_{x=0}^{x=1} + x(e^6-e^3)
+            \bigg|_{x=0}^{x=1}
+          </mrow>
+          <mrow>
+            \amp = 3e - 3 + e^6 - e^3
+          </mrow>
+        </md>
+      </statement>
+    </example>
+    <example>
+      <statement>
+        <p>
+          Consider the interval <m>I = [-1,1] \times [-2,2]</m> and the
+          function <m>f(x,y) = x^2y^3</m>. I'll do an iterated
+          integral calculation with the <m>x</m> variable inside and
+          the <m>y</m> variable outside. 
+        </p>
+        <md>
+          <mrow>
+            \int_I f(x,y) dA \amp = \int_{-2}^2 \int_{-1}^1 x^2 y^3 dx
+            dy
+          </mrow>
+          <mrow>
+            \amp = \int_{-2}^2 \left. \frac{x^3y^3}{3} \right|_{-1}^1
+            dy
+          </mrow>
+          <mrow>
+            \amp = \int_{-2}^2 \left( \frac{y^3}{3} + \frac{y^3}{3}
+            \right) dy = \int_{-2}^2 \frac{2y^3}{3} dy
+          </mrow>
+          <mrow>
+            \amp = \left. \frac{y^4}{6} \right|_{-2}^{2} =
+            \frac{16}{6} - \frac{16}{6} = 0
+          </mrow>
+        </md>
+        <p>
+          Just to check, I could change the order of the iterated
+          integral and do the <m>y</m> variable inside and the
+          <m>x</m> variable outside. 
+        </p>
+        <md>
+          <mrow>
+            \int_I f(x,y) dA \amp = \int_{-1}^1 \int_{-2}^2 x^2 y^3 dy
+            dx
+          </mrow>
+          <mrow>
+            \amp = \int_{-1}^1 \left. \frac{x^2y^4}{4} \right|_{-2}^2
+            dx
+          </mrow>
+          <mrow>
+            \amp = \int_{-1}^1 (2x^2 - 2x^2) dx = \int_{-1}^1 0 dx =
+            0
+          </mrow>
+        </md>
+        <p>
+          I recover the same result, as Fubini's theorem told me to
+          expect. 
+        </p>
+      </statement>
+    </example>
+    <p>
+      In the second example, the second half involved a much easier
+      calculation. This is often true: the choice of order of
+      variables can lead to a much easier calculation. Fubini's
+      theorem lets me chose any order, so I will try to chose the
+      order that has the easiest calculations. Of course, the right
+      choice isn't always obvious before starting he calculations.
+    </p>
+    <example>
+      <statement>
+        <p>
+          Consider the function <m>f(x,y) = \sin (x+y)</m> on the
+          interval <m>I = [0, \pi] \times \left[0, \frac{\pi}{2}
+          \right]</m>. I do an interated integral calculation with
+          <m>x</m> inside and <m>y</m> outside.
+        </p>
+        <md>
+          <mrow>
+            \int_I f(x,y) dx dy \amp = \int_0^{\frac{\pi}{2}}
+            \int_0^{\pi} \sin (x+y) dx dy
+          </mrow>
+          <mrow>
+            \amp = \int_0^{\frac{\pi}{2}} (-\cos (x+y)) \bigg|_0^{\pi}
+            dy
+          </mrow>
+          <mrow>
+            \amp = \int_0^{\frac{\pi}{2}} (\cos y - \cos (y+\pi)) dy =
+            \int_0^{\frac{\pi}{2}} 2 \cos y dy
+          </mrow>
+          <mrow>
+            \amp = 2 \sin y \bigg|_0^{\frac{\pi}{2}} = 2-0 = 2
+          </mrow>
+        </md>
+      </statement>
+    </example>
+  </subsection>
+  <subsection xml:id="subsection-improper-iterated-integrals">
+    <title>Improper Integrals</title>
+    <p>
+      An function defined on a closed interval has to include values
+      on the boundary of the interval. Assuming the function is
+      piecewise continuous (as if the habit in this course), this
+      means that the function cannot diverge to infinity near the edge
+      of the interval. However, an function which is only defined on
+      an open interval can have any kind of behaviour near the
+      boundaries, including diverging to infinity. I would like to be
+      able to handle this kind of integral as well
+    </p>
+    <p>
+      In single variable calculus, we used improper integrals to deal
+      with functions with problematic behaviour near the boundary of
+      an interval. Thankfully, this translates nicely to iterated
+      integrals. If a function diverges to infinity near the edge of
+      an interval, then at least one piece of the iterated integral
+      (and perhaps more than one piece) will be a single-variable
+      improper integral. We approach these as we did in single
+      variable integration: with limits approaching the problematic
+      endpoint(s).
+    </p>
+    <p>
+      Consider a function <m>f: (0,1] \times (0,1] \rightarrow \RR</m>
+      that diverged to infinity when <m>x \rightarrow 0</m>. Here is
+      the iterated integral.
+    </p>
+    <me>
+      \int_I f(x,y) dA = \int_0^1 \int_0^1 f(x,y) dy dx 
+    </me>
+    <p>
+      Since the problems happen at the edge of the <m>x</m> interval,
+      the resulting improper integral uses a limit for the <m>x</m>
+      part of the iterated integral.
+    </p>
+    <me>
+      \int_I f(x,y) dA = \lim_{a \rightarrow 0^+} \int_a^1 \int_0^1
+      f(x,y) dy dx 
+    </me>
+    <p>
+      If, instead, the function diverged to infinity as <m>y
+      \rightarrow 0</m>, then the limit would be in the <m>y</m> part
+      of the iterated integral. 
+    </p>
+    <me>
+      \int_I f(x,y) dA = \int_0^1 \left[ \lim_{a \rightarrow 0^+}
+      \int_a^1 f(x,y) dy \right] dx 
+    </me>
+    <p>
+      Improper integrals also allow us to consider infinite domains of
+      integral. For example, if I want to integrate over all of
+      <m>\RR^2</m>, I set it us as follows.
+    </p>
+    <me>
+      \int_{\RR^2} f(x,y) dA = \lim_{a \rightarrow \infty} \lim_{b
+      \rightarrow \infty} \int_{[-a,a]\times[-b,b]} f(x,y) dA
+    </me>
+    <p>
+      Then I can write this as in iterated integral where both pieces
+      are improper integrals. 
+    </p>
+    <me>
+      \int_{\RR^2} f(x,y) dA = \lim_{a \rightarrow \infty}
+      \int_{-a}^a \left[ \lim_{b \rightarrow \infty} \int_{-b}^b
+      f(x,y) dy \right] dx 
+    </me>
+    <example>
+      <statement>
+        <p>
+          Consider the function <m>f(x,y) = \frac{1}{\sqrt{(x^2 +
+          y^2)^3}}</m> on the interval <m>I = (0,1] \times (0,1]</m>.
+          As I approach <m>(0,0)</m>, on the corner of the interval,
+          the function is diverges to infinity. I set this up as an
+          interated integral and, when necessary, I use a limit for
+          the single-variable improper integral. 
+        </p>
+        <md>
+          <mrow>
+            \int_I f(x,y) dA \amp = \int_0^1 \int_0^1
+            \frac{1}{\sqrt{(x^2 + y^2)^3}} dx dy
+          </mrow>
+          <mrow>
+            \amp = \int_0^1 \left. \frac{x}{y^2 \sqrt{x^2 + y^2}}
+            \right|_0^1 dy
+          </mrow>
+          <mrow>
+            \amp = \int_0^1 \frac{1}{y^2 \sqrt{1 + y^2}} dy
+          </mrow>
+          <mrow>
+            \amp = \lim_{a \rightarrow 0^+} \int_a^1 \frac{1}{y^2
+            \sqrt{1 + y^2}} dy
+          </mrow>
+          <mrow>
+            \amp = \lim_{a \rightarrow 0^+} \left.
+            \frac{-\sqrt{1+y^2}}{y} \right|_a^1 = \frac{-\sqrt{2}}{1}
+            + \lim_{a \rightarrow 0^+} \frac{\sqrt{1+a^2}}{a} =
+            \infty
+          </mrow>
+        </md>
+        <p>
+          This integral diverges; the volume under the curve grows to
+          infinity as the domain includes more and more of the interval
+          approaching the point <m>(0,0)</m>. Improper integrals, of
+          course, can diverge. 
+        </p>
+      </statement>
+    </example>
+  </subsection>
+  <subsection xml:id="subsection-separable-integrals">
+    <title>Separable Integrals</title>
+    <p>
+      I didn't explicitly do an example of this type, but it is useful
+      to mention that a particular class of integrable functions have
+      a very nice integration property. 
+    </p>
+    <definition xml:id="definition-separable-integral">
+      <statement>
+        <p>
+          If an integrable function on <m>I = [a,b] \times
+          [c,d]</m> has the form <m>f(x,y) = g(x) h(y)</m> for
+          some single variable functions <m>g</m> and <m>h</m>, then
+          it is called <term>separable</term>. (This use of the term
+          <sq>separable</sq> matches with the use of the term for
+          separable differential equations; a differential equation
+        <p>
+        <me>
+          \frac{dy}{dx} = f(x,y) 
+        </me>
+        </p>
+          is a separable equation if and onl if <m>f(x,y)</m> is a
+          separable function in the sens od this definition.)
+        </p>
+      </statement>
+    </definition>
+    <p>
+      Separable functions have nice behaviour for interated integrals.
+      If <m>f(x,y) = g(x)h(y)</m> is a separable function, then its
+      integral separates entirely into two single variable integrals.
+    </p>
+    <md>
+      <mrow>
+        \int_I f(x,y) dy dx \amp = \int_a^b \int_c^d g(x) h(y) dy dx
+      </mrow>
+      <mrow>
+        \amp = \int_a^b g(x) \left[ \int_c^d h(y) dy \right] dx
+      </mrow>
+      <mrow>
+        \amp = \left[ \int_c^d h(y) dy \right] \left[ \int_a^b
+        g(x) dx \right]
+      </mrow>
+    </md>
+    <p>
+      The operations in this calculation are justified because the
+      pieces which I move in and out of a integral do not involve
+      that variable of integration. In this way, I can separate the
+      integral into two single variable integrals. 
+    </p>
+  </subsection>
+</section>

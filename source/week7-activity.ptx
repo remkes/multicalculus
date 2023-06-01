@@ -1,0 +1,538 @@
+<section xml:id="week7-activity">
+  <title>Week 7 Activity</title>
+  <subsection xml:id="subsection-variable-bounds-activity">
+    <title>Activity</title>
+    <activity>
+      <statement>
+        <p>
+           Integrate the function <m>f(x,y) = \frac{xy}{5} +
+           \frac{y^2}{6} </m> on the triangle with vertices
+           <m>(0,0)</m>, <m>(4,0)</m> and <m>(4,3)</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          The line forming the longest side of the triangle is the
+          line <m>y = \frac{3}{4}x</m>. If I take <m>x \in [0,4]</m>
+          then <m>y</m> goes from the <m>x</m> axis (<m>y=0</m>) to
+          this line. I set up the integral with constant bounds in
+          <m>x</m> and variable bounds in <m>y</m>. 
+        </p>
+        <md>
+          <mrow>
+            \amp \int_0^4 \int_0^{\frac{3x}{4}} \frac{xy}{5} +
+            \frac{y^2}{6} dy dx
+          </mrow>
+          <mrow>
+            \amp = \int_0^4 \frac{xy^2}{10} + \frac{y^3}{18}
+            \bigg|_0^{\frac{3x}{4}} dx 
+          </mrow>
+          <mrow>
+            \amp = \int_0^4 \frac{x}{10} \left( \frac{9x^2}{16} - 0
+            \right) + \frac{1}{18} \left( \frac{27x^3}{64} - 0
+            \right) dx 
+          </mrow>
+          <mrow>
+            \amp = \int_0^4 \frac{9x^3}{160} +  \frac{27x^3}{1152}
+            dx
+          </mrow>
+          <mrow>
+            \amp = \frac{51}{640} \int_0^4 x^3 dx = \frac{51}{640}
+            \frac{x^4}{4} \bigg|_0^4 = \frac{51}{640} \frac{256}{4}
+            = \frac{51}{10}
+          </mrow>
+        </md>
+      </solution>
+    </activity>
+    <activity>
+      <statement>
+        <p>
+           Integrate the function <m>f(x,y) = x^2y^2 - x + y</m> on
+           the parallelogram with vertices <m>(0,0)</m>, <m>(0,2)</m>,
+           <m>(2,2)</m> and <m>(2,4)</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          The lower line of the parallelogram is <m>y=x</m>. The
+          higher line is <m>y = x + 2</m>. If I let <m>x \in
+          [0,2]</m>, then I can let <m>y</m> go between these two
+          lines. I set up an integral with constant bounds in <m>x</m>
+          and variable bound sin <m>y</m>. 
+        </p>
+        <md>
+          <mrow>
+            \amp \int_0^2 \int_{x}^{x+2} x^2y^2 - x + y dy dx =
+            \int_0^2 \frac{x^2y^3}{3} - xy + \frac{y^2}{2}
+            \bigg|_{x}^{x+2} dx 
+          </mrow>
+          <mrow>
+            \amp = \int_0^2 \frac{x^2}{3} \left( (x+2)^3 - (x)^3
+            \right) - x((x+2) - x) + \frac{1}{2} \left( (x+2)^2 -
+            (x)^2 \right) dx 
+          </mrow>
+          <mrow>
+            \amp = \int_0^2 \frac{x^2}{3} (x^3 + 6x^2 + 12x + 8 -
+            x^3) - 2x + \frac{1}{2} (x^2 + 4x + 4 - x^2) dx
+          </mrow>
+          <mrow>
+            \amp = \int_0^2 2x^4 + 4x^3 + \frac{8x^2}{3} - 2x + 2x +
+            2 dx = \int_0^2 2x^4 + 4x^3 + \frac{8x^2}{3} + 2 dx 
+          </mrow>
+          <mrow>
+            \amp = \frac{2x^5}{5} + x^4 + \frac{8x^3}{9} + 2x
+            \bigg|_0^2
+          </mrow>
+          <mrow>
+            \amp = \frac{64}{5} + 16 + \frac{64}{9} + 4 =
+            \frac{1796}{45}
+          </mrow>
+        </md>
+      </solution>
+    </activity>
+    <activity>
+      <statement>
+        <p>
+           Integrate the function <m>f(x,y) = xy</m> on the halfcircle
+           with radius <m>3</m> above the <m>x</m> axis. 
+        </p>
+      </statement>
+      <solution>
+        <p>
+          If I let <m>x \in [-3,3]</m>, then the halfcircle is bounded
+          between the <m>x</m> axis (<m>y=0</m>) and <m>y =
+          \sqrt{9-x^2}</m>. I have the positive square root, since
+          this is the half-circle above the <m>x</m> axis. I setup the
+          integral with constant bounds in <m>x</m> and variable bounds
+          in <m>y</m>.
+        </p>
+        <md>
+          <mrow>
+            \amp \int_{-3}^3 \int_0^{\sqrt{9-x^2}} xy dx     
+          </mrow>
+          <mrow>
+            \amp = \int_{-3}^3 \frac{xy^2}{2} \bigg|_{\sqrt{9-x^2}}
+            dx = \int_{-3}^3 \frac{x}{2} (\sqrt{9-x^2})^2 - 0 dx =
+            \int_{-3}^3 \frac{x}{2} (9-x^2) dx 
+          </mrow>
+          <mrow>
+            \amp = \frac{1}{2} \int_{-3}^3 9x - x^3 dx = \frac{1}{2}
+            \left( \frac{9x^2}{2} - \frac{x^4}{4} \bigg|_{-3}^3
+            \right) 
+          </mrow>
+          <mrow>
+            \amp = \frac{1}{2} \left( \frac{9}{2} (3^x - (-3)^2) -
+            \frac{1}{4} (3^4 - (-3)^4) \right) = 0
+          </mrow>
+        </md>
+      </solution>
+    </activity>
+    <activity>
+      <statement>
+        <p>
+           Integrate the function <m>f(x,y) = e^{x+y}</m> on the
+           region between <m>g(x) = \frac{x}{4}</m> and <m>h(x) =
+           \frac{x}{3}</m> for <m>x \in [0,4]</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          I am given a constnat range for <m>x</m> and curves for
+          <m>y</m> in terms of <m>x</m>, so I
+          can use those to set up the integral. Note that I can use
+          the laws of exponents to write this integrand in an easier
+          form. 
+        </p>
+        <md>
+          <mrow>
+            \amp \int_0^4 \int_{\frac{x}{4}}^{\frac{x}{3}} e^{x+y} dy dx
+          </mrow>
+          <mrow>
+            \amp = \int_0^4 \int_{\frac{x}{4}}^{\frac{x}{3}} e^x e^y
+            dy dx = \int_0^4 e^x dx \int_{\frac{x}{4}}^{\frac{x}{3}}
+            e^y dy = \int_0^4 e^x e^y
+            \bigg|_{\frac{x}{4}}^{\frac{x}{3}} dx
+          </mrow>
+          <mrow>
+            \amp = \int_0^4 e^x (e^\frac{x}{3} - e^{\frac{x}{4}} )
+            dx = \int_0^4 e^\frac{5x}{3} - e^{\frac{5x}{4}} ) dx =
+            \frac{3}{5} e^\frac{5x}{3} - \frac{4}{5}e^{5x}{4}
+            \bigg|_0^4
+          </mrow>
+          <mrow>
+            \amp = \frac{3}{5} (e^{\frac{20}{3}} - e^0) -
+            \frac{4}{5} (e^5 - e^0 ) = \frac{3}{5} (e^{\frac{20}{3}}
+            - 1) - \frac{4}{5} (e^5 - 1)
+          </mrow>
+        </md>
+      </solution>
+    </activity>
+    <activity>
+      <statement>
+        <p>
+           Integrate the function <m>f(x,y) = x+y</m> on the crescent
+           formed between <m>y^2 = 4-x</m> and <m>y^2 = 8-4x</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          To find the region of integration, I need to find the
+          intersections of the two parabolas. If I substitute for
+          <m>y^2</m>, I get <m>4-x = 8-4x</m>, which is solved by <m>x
+          = \frac{4}{3}</m>. The <m>y</m> coordinate, from either
+          equation, is <m>\pm \sqrt{\frac{8}{3}}</m>. This gives me
+          constant bounds for the <m>y</m> coordinate: <m>\left[
+          -\sqrt{\frac{8}{3}}, \sqrt{\frac{8}{3}} \right]</m>. If I 
+          use constant bounds for  <m>y</m> in the integral, I can
+          use <m>x = 4-y^2</m> and <m>x = 2 - \frac{y^2}{4}</m> as the
+          bounds on <m>x</m>. The second curve has the smaller
+          <m>x</m> valuse in this range, so it is the lower bound.
+        </p>
+        <md>
+          <mrow>
+            \amp \int_{-\sqrt{\frac{8}{3}}}^{\sqrt{\frac{8}{3}}}
+            \int_{2-\frac{y^2}{4}}^{4-y^2} x+y dx dy =
+            \int_{-\sqrt{\frac{8}{3}}}^{\sqrt{\frac{8}{3}}}
+            \frac{x^2}{2} + xy \bigg|_{2-\frac{y^2}{4}}^{4-y^2} dy
+          </mrow>
+          <mrow>
+            \amp = \int_{-\sqrt{\frac{8}{3}}}^{\sqrt{\frac{8}{3}}}
+            \frac{1}{2} \left( (4-y^2)^2 - \left(2 - \frac{y^2}{4}
+            \right) \right) + y \left( 4 - y^2 - \left( 2-
+            \frac{y^2}{4} \right) \right) dy
+          </mrow>
+          <mrow>
+            \amp = \int_{-\sqrt{\frac{8}{3}}}^{\sqrt{\frac{8}{3}}}
+            \frac{1}{2} \left( 16 - 8y^2 + y^4 - 4 + \frac{y^2}{4} -
+            \frac{y^4}{16} \right) + 4y - y^3 - 2y + \frac{y^3}{4}
+            dy
+          </mrow>
+          <mrow>
+            \amp = \int_{-\sqrt{\frac{8}{3}}}^{\sqrt{\frac{8}{3}}} 8
+            - 4y^2 + \frac{y^4}{2} - 2 + \frac{y^2}{8} -
+            \frac{y^4}{32} + 2y - \frac{3y^3}{4} dy
+          </mrow>
+          <mrow>
+            \amp = \int_{-\sqrt{\frac{8}{3}}}^{\sqrt{\frac{8}{3}}} 6
+            + 2y - \frac{31y^2}{8} - \frac{3y^3}{4} +
+            \frac{15y^4}{32} dy = 6y + y^2 - \frac{31y^3}{24} - 3y^4
+            + \frac{15y^5}{160}
+            \bigg|_{-\sqrt{\frac{8}{3}}}^{\sqrt{\frac{8}{3}}}
+          </mrow>
+          <mrow>
+            \amp = 12 \sqrt{\frac{8}{3}} + 0  - \frac{31}{24} 2
+            \frac{8}{3} \sqrt{\frac{8}{3}} - 0 + \frac{15}{160} 2
+            \frac{64}{9} \sqrt{\frac{8}{3}} = \frac{182}{9}
+            \sqrt{\frac{8}{3}}.
+          </mrow>
+        </md>
+      </solution>
+    </activity>
+    <activity>
+      <statement>
+        <p>
+           Integrate the function <m>f(x,y) = \sin (xy)</m> on the
+           annulus with inner radius <m>2</m> and outer radius
+           <m>4</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          I cannot approach the whole annulus as one regions with
+          fixed bounds in <m>x</m> or <m>y</m> and variable bounds in
+          the other.  However, I can make us of some symmetry. Sine is
+          an odd function, so the value on the second quadrant should
+          be the negative of the value on the first quadrant. The same
+          is true on the third and fourth quadrants. All in all, the
+          various pieces of the integral will cancel out and the
+          integral will evaluate to zero. I admit, this is a bit of a
+          tricky answer, since I'm getting out ot actually describing
+          the annulus with bounds. But it is worth remembering that
+          these integrals are (hyper)volumes and sometimes there are
+          good geometric arguments to be made that help to avoid
+          calculations. 
+        </p>
+      </solution>
+    </activity>
+    <activity>
+      <statement>
+        <p>
+           Integrate the function <m>f(x,y,z) = xy + z</m> on the
+           triangular pyramid with vertices <m>(0,0,0)</m>,
+           <m>(3,0,0)</m>, <m>(0,2,0)</m> and <m>(0,0,4)</m>. 
+        </p>
+      </statement>
+      <solution>
+        <p>
+          First consider the face of the pyramid in the <m>xy</m>
+          plane, which is a triangle. The longest edge of this face is
+          part of the line <m>y = 2-\frac{2}{3} x</m>.  I can start
+          with <m>x \in [0,3]</m> and then set <m>y</m> between
+          <m>x=0</m> and <m>2 - \frac{2}{3}</m> to describe bounds for
+          this triangle.
+          Then consider the tilted face of the pyramid -- I need the
+          equation for this plane, since <m>z</m> will start on at
+          <m>z=0</m> and go to this equation of this plane.
+        </p>
+        <p>
+          The vectors <m>(3,0,-4)</m> and <m>(0,2,-4)</m> are local
+          directions on the plane.  Their cross product is <m>(-8,
+          -12, -6)</m>, which I can scale to <m>(4,6,3)</m>.  Using
+          any point, I find the equation of the plane is <m>4x + 6y +
+          3z = 12</m>. If I solve for <m>z</m>, I get <m>z = 4 -
+          \frac{4x}{3} - 2y</m>. Therefore, I can take the bounds for
+          <m>z</m> to be from <m>z=0</m> to <m>z = 4 - \frac{4x}{3} -
+          2y</m>.
+        </p>
+        <md>
+          <mrow>
+            \amp \int_0^3 \int_0^{2 - \frac{2x}{3}} \int_0^{4 -
+            \frac{4x}{3} - 2y} xy + z dz dy dx  = \int_0^3 \int_0^{2
+            - \frac{2x}{3}} xyz + \frac{z^2}{2} \bigg|_0^{4 -
+            \frac{4x}{3} -2y} dy dx
+          </mrow>
+          <mrow>
+            \amp = \int_0^3 \int_0^{2 - \frac{2x}{3}} xy \left( 4 -
+            \frac{4x}{3} - 2y \right)  + \frac{1}{2} \left( 4 -
+            \frac{4x}{3} - 2y \right)^2 dy dx
+          </mrow>
+          <mrow>
+            \amp = \int_0^3 \int_0^{2 - \frac{2x}{3}} 4xy -
+            \frac{4x^2y}{3} - 2xy^2 + 8 - \frac{16x}{3} - 8y +
+            \frac{8yx}{3} + \frac{8x^2}{3} + 2y^2 dy dx
+          </mrow>
+          <mrow>
+            \amp = \int_0^3 \int_0^{2 - \frac{2x}{3}} 8 -
+            \frac{16x}{3} - 8y + \frac{20xy}{3} + \frac{8x^2}{3} +
+            2y^2 - \frac{4x^2y}{3} -2xy^2 dy dx
+          </mrow>
+          <mrow>
+            \amp = \int_0^3 8y - \frac{16xy}{3} - 4y^2 +
+            \frac{10xy^2}{3} + \frac{8x^2y}{3} + \frac{2y^3}{3} -
+            \frac{2x^2y^2}{3} - \frac{2xy^3}{3}
+            \bigg|_0^{2-\frac{2x}{3}} dx
+          </mrow>
+          <mrow>
+            \amp = \int_0^3 8  \left( 2 - \frac{2x}{3} \right) -
+            \frac{16x}{3} \left( 2 - \frac{2x}{3} \right) - 4 \left(
+            2 - \frac{2x}{3} \right)^2 + \frac{10x}{3} \left( 2 -
+            \frac{2x}{3} \right)^2 
+          </mrow>
+          <mrow>
+            \amp + \frac{8x^2}{3} \left( 2 - \frac{2x}{3} \right)^2
+            + \frac{2}{3} \left( 2 - \frac{2x}{3} \right)^3 -
+            \frac{2x^2}{3} \left( 2 - \frac{2x}{3} \right)^2 -
+            \frac{2x}{3} \left( 2 - \frac{2x}{3} \right)^3 dx
+          </mrow>
+          <mrow>
+            \amp = \int_0^3 8  \left( 2 - \frac{2x}{3} \right) -
+            \frac{16x}{3} \left( 2 - \frac{2x}{3} \right) - 4 \left(
+            4 - \frac{8x}{3} + \frac{4x^2}{9} \right)
+          </mrow>
+          <mrow>
+            \amp + \frac{10x}{3} \left( 4 - \frac{8x}{3} +
+            \frac{4x^2}{9} \right) + \frac{8x^2}{3} \left( 4 -
+            \frac{8x}{3} + \frac{4x^2}{9} \right) + \frac{2}{3}
+            \left( 8 - 12x + 12x^2 - \frac{8x^3}{27} \right) 
+          </mrow>
+          <mrow>
+            \amp - \frac{2x^2}{3} \left( 4 - \frac{8x}{3} +
+            \frac{4x^2}{9} \right) - \frac{2x}{3} \left( 8 - 12x +
+            12x^2 - \frac{8x^3}{27} \right) dx
+          </mrow>
+          <mrow>
+            \amp = \int_0^3  16 - \frac{16x}{3} - \frac{32}{3} +
+            \frac{32x}{9} - 16 + \frac{32x}{3} - \frac{16x^2}{9} +
+            \frac{40x}{3} - \frac{80x^2}{9} 
+          </mrow>
+          <mrow>
+            \amp + \frac{40x^3}{27} + \frac{32x^2}{3}
+            - \frac{64x^3}{9} + \frac{32x^4}{27} + \frac{16}{3}
+            - 6x + 6x^2 
+          </mrow>
+          <mrow>
+            \amp - \frac{16x^3}{81} \frac{-8x^2}{3} + \frac{16x^3}{9} -
+            \frac{8x^4}{27} \frac{-16x}{3} + 8x^2
+            - 8x^3 + \frac{16x^4}{81} dx 
+          </mrow>
+          <mrow>
+            \amp = \int_0^3 \frac{-16}{3} - \frac{194x}{9} -
+            \frac{16x^2}{9} - \frac{976x^3}{81} + \frac{88x^4}{81} 
+          </mrow>
+          <mrow>
+            \amp = \frac{-16x}{3} - \frac{97x^2}{9} -
+            \frac{16x^3}{27} - \frac{244x^4}{81} + \frac{88x^5}{405}
+            \bigg|_0^3 
+          </mrow>
+          <mrow>
+            \amp = -16 + 97 - 16 - 244 + \frac{264}{5} =
+            \frac{-631}{5}
+          </mrow>
+        </md>
+      </solution>
+    </activity>
+    <activity>
+      <statement>
+        <p>
+           Integrate the function <m>f(x,y,z) = x^2 + y^2 + z^2</m> on
+           the cone above the <m>xy</m> plane with radius <m>3</m> and
+           height <m>5</m>. 
+        </p>
+      </statement>
+      <solution>
+        <p>
+          I need a description of the cone to use for the domain of
+          the integral. In the <m>x-y</m> plane, the cone is a circle,
+          so I can take <m>x \in [-3,3]</m> and <m>y</m> between the
+          curves <m>-\sqrt{9-x^2}</m> and <m>\sqrt{9-x^2}</m>. For
+          <m>z</m>, I need to start at <m>z</m> and stop at the cone,
+          so I need the cone as the graph of a function of <m>x</m>
+          and <m>y</m>. The function <m>g(x,y) = 5 -
+          \frac{5}{3}\sqrt{x^2+y^2}</m> describes the cone.
+        </p>
+        <md>
+          <mrow>
+            \amp \int_{-3}^3 \int_{-\sqrt{9-x^2}}^{\sqrt{9-x^2}}
+            \int_0^{5 - \frac{5}{3} \sqrt{x^2 +y^2}} xy(z-5) dz dy
+            dx 
+          </mrow>
+          <mrow>
+            \amp = \int_{-3}^3 \int_{-\sqrt{9-x^2}}^{\sqrt{9-x^2}}
+            \frac{xy(z-5)^2}{2} \bigg|_0^{5 - \frac{5}{3} \sqrt{x^2
+            +y^2}} xy(z-5) dy dx
+          </mrow>
+          <mrow>
+            \amp = \int_{-3}^3 \int_{-\sqrt{9-x^2}}^{\sqrt{9-x^2}}
+            \frac{xy}{2} \left( \left(\frac{-5}{3} \sqrt{x^2 +y^2}
+            \right)^2 - (-5)2 \right) dy dx
+          </mrow>
+          <mrow>
+            \amp = \int_{-3}^3 \int_{-\sqrt{9-x^2}}^{\sqrt{9-x^2}}
+            \frac{xy}{2} \left( \frac{25(x^2+y^2)}{9} - 25 \right)
+            dy dx 
+          </mrow>
+          <mrow>
+            \amp = \frac{25}{18} \int_{-3}^3
+            \int_{-\sqrt{9-x^2}}^{\sqrt{9-x^2}} \left(x^3y + xy^3 -
+            xy \right) dy dx 
+          </mrow>
+        </md>
+        <p>
+          I can split this into three integral by linearity and deal
+          with each integral in turn. 
+        </p> 
+        <md>
+          <mrow>
+            \amp \frac{25}{18} \int_{-3}^3
+            \int_{-\sqrt{9-x^2}}^{\sqrt{9-x^2}} x^3y dy dx 
+            = \frac{25}{18} \int_{-3}^3 \frac{x^3y^2}{2}
+            \bigg|_{-\sqrt{9-x^2}}^{\sqrt{9-x^2}} dx + \frac{25}{18} =
+            0 
+          </mrow>
+          <mrow>
+            \amp \frac{25}{18} \int_{-3}^3
+            \int_{-\sqrt{9-x^2}}^{\sqrt{9-x^2}} xy^3 dy dx 
+            = \int_{-3}^3 \frac{xy^4}{4}
+            \bigg|_{-\sqrt{9-x^2}}^{\sqrt{9-x^2}} dx - \frac{25}{2} =
+            0 
+          </mrow>
+          <mrow>
+            \amp \frac{-25}{2} \int_{-3}^3
+            \int_{-\sqrt{9-x^2}}^{\sqrt{9-x^2}} xy dy dx
+            = \int_{-3}^3 \frac{xy^2}{2}
+            \bigg|_{-\sqrt{9-x^2}}^{\sqrt{9-x^2}} dx = 0
+          </mrow>
+        </md>
+        <p>
+          All of these integrals evaluate to zero. In the evaluate of
+          the bounds of the <m>y</m> integral, the <m>y</m> term is
+          either <m>y^2</m> or <m>y^4</m> and the bounds are
+          symmetric, positive and negative. When I put this into
+          <m>y^2</m> or <m>y^4</m>, the negatives become positive, and
+          the term becomes <m>(9-x^2) - (9-x^2)</m> or <m>(9-x^2)^2 -
+          (9-x^2)^2</m>. In either case, this evaluates to zero,
+          making the remaining integral in <m>x</m> just an integral
+          of zero. 
+        </p>
+      </solution>
+    </activity>
+    <activity>
+      <statement>
+        <p>
+           The function <m>f(x,y,z) = xyz</m> on the region between
+           <m>z=x^2+y^2</m> and <m>z = 2(x^2+y^2)-3</m>. 
+        </p>
+      </statement>
+      <solution>
+        <p>
+          I need to understand the intersection of these two surfaces.
+          I can substitute for <m>z</m>, since it is already isolated,
+          which lets me solve to find <m>x^2 + y^2 = 3</m>. In the
+          first equation, that also gives <m>z=3</m>. So the
+          intersection of the two surfaces is the circle of radius
+          <m>3</m> in the <m>z=3</m> plane. I want the region between
+          the two surfaces, which must be the region between the
+          surfaces inside the radius of this circle. Inside the
+          circle, <m>x^2 + y^2 > 2(x^2+y^2) - 3</m>, so <m>z</m>
+          ranges from <m>2(x^2+y^2)-3</m> to <m>x^2+y^2</m> I can
+          describe the region  as <m>x \in [-3,3]</m>, <m>y</m>
+          between <m>-\sqrt{9-x^2}</m> and <m>\sqrt{9-x^2}</m> and
+          then <m>z</m> varies betwen the two surfaces. I've used a
+          computer algebra system for expansions of some of the
+          polynomial terms. 
+        </p>
+        <md>
+          <mrow>
+            \amp \int_{-3}^3 \int_{-\sqrt{9-x^2}}^{\sqrt{9-x^2}}
+            \int_{2(x^2+y^2)-3}^{x^2+y^2} xyz dz dy dx
+          </mrow>
+          <mrow>
+            \amp = \int_{-3}^3 \int_{-\sqrt{9-x^2}}^{\sqrt{9-x^2}}
+            \frac{xyz^2}{2} \bigg|_{2(x^2+y^2)-3}^{x^2+y^2} dy dx 
+          </mrow>
+          <mrow>
+            \amp = \int_{-3}^3 \int_{-\sqrt{9-x^2}}^{\sqrt{9-x^2}}
+            \frac{xy}{2} \left( (x^2+y^2)^2 -  (2(x^2+y^2)-3)^2
+            \right) dy dz
+          </mrow>
+          <mrow>
+            \amp = \int_{-3}^3 \int_{-\sqrt{9-x^2}}^{\sqrt{9-x^2}}
+            \frac{-3x^5y}{2} - 3x^3y^3 + 6x^3y - \frac{3xy^5}{2} + 6
+            xy^3 - \frac{9xy}{2} dy dz 
+          </mrow>
+          <mrow>
+            \amp = \int_{-3}^3 \frac{-3x^5y^2}{4} -
+            \frac{3x^3y^4}{4} + 3x^3y^2 - \frac{xy^6}{4} +
+            \frac{3xy^4}{2} - \frac{9xy^2}{4}
+            \bigg|_{-\sqrt{9-x^2}}^{\sqrt{9-x^2}} dz = 0 
+          </mrow>
+        </md>
+        <p>
+          As with the previous question, I get all even powers of
+          <m>y</m> to evaluate on these bounds. Since the bound differ
+          by only a sign, the subtraction will cancel out and give
+          zero.
+        </p>
+      </solution>
+    </activity>
+  </subsection>
+  <subsection xml:id="subsection-week7-concepts">
+    <title>Conceptual Review Questions</title>
+    <p>
+      <ul>
+        <li>
+          How to variable bound describe different regions of
+          integration?
+        </li>
+        <li>
+          Why does a bound involving a variable need to be inside the
+          integral involving that variable?
+        </li>
+        <li>
+          How can we change order of integration with variable bounds?
+          Why might it be useful to do so?
+        </li>
+      </ul>
+    </p>
+  </subsection>
+</section>

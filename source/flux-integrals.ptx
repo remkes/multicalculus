@@ -1,0 +1,316 @@
+<section xml:id="section-flux-integrals">
+  <title>Flux Integrals</title>
+  <subsection xml:id="subsection-flux-definition">
+    <title>Fields and Surfaces</title>
+    <p>
+      Given a vector field and a parametric curve, the line integral
+      measured the interaction of the field and the curve. It told how
+      much the field helped or hindered movement along the curve. This
+      was measured by a dot product of the field with the tangent to
+      the curve, since the dot product nicely measures the interaction
+      of two vector. Now, instead of asking for the action of a field
+      along a curve, I'm interesting in the action of a field through
+      a surface.
+    </p>
+    <p>
+      The biggest difference here is that a surface doesn't have the
+      notion of movement. Instead, the surface is treated as a static
+      object; I'm interesting in how the field moves through the
+      surface. That said, parametrization still matters. A parametric
+      surface has a normal calculated in the two parameters. Again, I
+      look to the dot product. The dot product of the vector field
+      with the normal to the surface shows the interaction.
+    </p>
+    <p>
+      If the field and the normal point roughly in the same direction,
+      then the field is passing through the surfaces, transversely, at
+      that point. This is a strong positive reaction. If the field and
+      normal have nearly opposite direction, then there is a strong
+      negative reaction. The parametrization and the normal gives an
+      orientation to the surface: there is a differnce (in sign)
+      between moving through the surface with the normal or against
+      the normal. I can think of this of choosing sides of the
+      surface: say, moving from below to above is positive and moving
+      from above to below is negative. Unlike a locus, a parametric
+      surface has this orientation, this choice of above and below,
+      intrinsically built into the definition.
+    </p>
+    <p>
+      If the vector field and the normal to the surface are nearly
+      perpendicualr, then the field mostly flows along the surface,
+      tangentially. This is measured by a small dot prodcut. 
+    </p>
+    <p>
+      The unit tangent was useful in the definition of the line
+      integral. I'm going to need the equivalent definition here of
+      the unit normal. 
+    </p>
+    <definition>
+      <statement>
+        <p>
+          Let <m>\sigma(u,v)</m> be a parametric surface in
+          <m>\RR^3</m> defined over a simply-connected domain
+          <m>D</m>. The <term>unit normal</term> <m>N</m> of the
+          surface is the vector <m>\frac{\sigma_u \times
+          \sigma_v}{|\sigma_u \times \sigma_v|}</m>. (Note that in the
+          definition of a parmetric surface, the normal can never be
+          zero. Division by zero is avoided by this stipulation.)
+        </p>
+      </statement>
+    </definition>
+    <p>
+      For parametric curves, the parametrization by arclength is a
+      unique parametrization that can be assigned to any particular
+      curve shape. It has the property that its tangent is aways the
+      unit tangent. I can also define a special parametrization of a
+      surface, <m>\sigma(s,t)</m>, where the <m>\sigma_s(s,t) \times
+      \sigma_t(s,t) = N</m>. This is the unique parametrization where
+      the normal is always the unit normal. Just like I used the
+      parametrization by arclength to define line integrals, I use
+      this special parametrization to defined integrals over
+      parametric surfacees. 
+    </p>
+    <definition>
+      <statement>
+        <p>
+          Let <m>\sigma(s,t)</m> be a parametric surface in <m>\RR^3</m>
+          defined over a simply-connected domain <m>D</m>. Assume the
+          parametrization in parameters <m>(s,t)</m> is the unique
+          parametrization where <m>\sigma_s \times \sigma_t = N</m>.
+          Let <m>F</m> be a vector field defined on a neighbourhood of
+          the surface.  (A neighbourhood is any open set which
+          contains the entire surface.) The <term>flux integral</term>
+          is defined to be the following integral.
+        </p>
+        <me>
+          \int_{\sigma} F \cdot N dA = \int_{\sigma} F \cdot dA =
+          \int_D F(\sigma(s,t)) \cdot N(s,t) ds dt 
+        </me>
+        <p>
+          The first notation is more complete, but the second notation
+          is conventional.
+        </p>
+      </statement>
+    </definition>
+    <p>
+      As with curves, I don't want to calculate with the special
+      parametrizations, since it may be very difficult to actually
+      produce that parametrization.  I'd rather calculate with an
+      arbitrary parametrization. In an arbitrary parametrization, <m>dA =
+      |\sigma_u \times \sigma_v| du dv</m>. I can perform a change of
+      variables on the integral in the definition.
+    </p>
+    <md>
+      <mrow>
+        \int_{\sigma} F \cdot N dA \amp = \int_D F(\sigma(u,v)) \cdot
+        \frac{\sigma_u \times \sigma_v}{|\sigma_u \times \sigma_v|}
+        |\sigma_u \times \sigma_v| du dv
+      </mrow>
+      <mrow>
+        \amp = \int_D F(\sigma(u,v)) \cdot (\sigma_u \times \sigma_v)
+        du dv
+      </mrow>
+    </md>
+    <p>
+      The result of the change of variables is a flux integral
+      calcuted in any arbitrary parametrization. The length of the
+      norml has conveniently cancelled off (like the length of the
+      tangent cancelled off in the definition of a line integral.) The
+      result is a very reasonable way to calcualte flux integrals in
+      any arbitrary parametrizations with the knowledge that the
+      integral doesn't depend on the parametrizations. 
+    </p>
+  </subsection>
+  <subsection xml:id="subsection-flux-examples">
+    <example>
+      <statement>
+        <p>
+          <m>F(x,y,z) = (0,0,k)</m> is a constant vertical flow with the
+          same flow rate. I can imagine this flow through a 
+          vertical pipe with radius <m>a</m> around the <m>z</m> axis by
+          restricting the field to the domain where <m>x^2 + y^2 \leq
+          a</m>. At some point in the pipe (say <m>z=0</m>), I can ask
+          how much fluid is flowing through the pipe. The cross
+          section of the pipe is a circle of radius <m>a</m> at height
+          <m>z=0</m>. I can parametrize this circle as
+          <m>\sigma(r,\theta) = (r \cos \theta, r \sin \theta,0)</m>
+          for <m>(r,\theta) \in [0,a] \times [0,2\pi]</m>. Then I can
+          calculate the flux integral to determine how much water is
+          flowing through the pipe at this point. 
+        </p>
+        <md>
+          <mrow>
+            \sigma_r \amp = (\cos \theta, \sin \theta, 0)
+          </mrow>
+          <mrow>
+            \sigma_\theta \amp = (-r \sin \theta, r \cos \theta, 0)
+          </mrow>
+          <mrow>
+            \sigma_r \times \sigma_\theta \amp = (0, 0, r)
+          </mrow>
+          <mrow>
+            \int_\sigma F \cdot dA \amp = \int_0^a \int_0^{2\pi} k r
+            d\theta dr
+          </mrow>
+          <mrow>
+            \amp = \frac{2\pi a^2k}{2} = \pi a^2 k = (\pi a^2) k
+          </mrow>
+        </md>
+        <p>
+          This answer is unsurpring. <m>\pi a^2</m> is the
+          cross-sectional area and <m>k</m> is the
+          rate of flow. The rate of flow is constant everywhere, so it
+          makes sense that the result of the integral is just the
+          product of this cross sectional area <m>\pi a^2</m> and the
+          flow rate <m>k</m>. 
+        </p>
+      </statement>
+    </example>
+    <example>
+      <statement>
+        <p>
+          Let me introduce a small variation of the previous example.
+          I'll stick with the same pipe, but change the field so that
+          the flow through the pipe is not uniform. Consider this
+          field. 
+        </p>
+        <me>
+          F(x,y,z) = \left( 0, 0, \frac{k (a^2 - x^2 -
+          y^2)}{a^2} \right)
+        </me>
+        <p>
+          In the very middle of the pipe, this flow has the same flow
+          rate <m>k</m> as the previous example. However, the flow
+          gets slower closer to the edge of the pipe, becoming no flow
+          at all at the edge itself. I'll calculate the flux integral
+          to measure the total flow of this new field through a
+          cross-section of the pipe. 
+        </p>
+        <md>
+          <mrow>
+            \int_\sigma F \cdot dA \amp = \int_0^a \int_0^{2\pi}
+            \frac{k(a^2-r^2)}{a^2} r d\theta dr
+          </mrow>
+          <mrow>
+            \amp = \frac{2\pi k}{a^2} \int_0^a a^2r - r^3 dr
+          </mrow>
+          <mrow>
+            \amp = \frac{2\pi k}{a^2} \left. \left( \frac{a^2 r^2}{2}
+            - \frac{r^2}{4} \right) \right|_0^a
+          </mrow>
+          <mrow>
+            \amp = \frac{2\pi k}{a^2} \left(\frac{a^4}{2} -
+            \frac{a^4}{4} \right) = \frac{\pi k a^2}{2}
+          </mrow>
+        </md>
+        <p>
+          This is half the original flux. The lower rate of flow makes
+          sense; near the centre, the flow was similar to the previous
+          example, but near the edge, the flow is much slower. The
+          flux integral should produce a smaller result. 
+        </p>
+    </statement>
+    </example>
+    <example>
+      <statement>
+        <p>
+          Still sticking with this pipe and measuring the flux through
+          a cross-sectional circle, I'll complicate the field yet
+          more. The following is a turbulent flow, where other
+          directions are introduced as the flow may includes vortices. 
+        </p>
+        <md>
+          <mrow>
+          F(x,y,z) \amp = \left( \sin \left( \left( \frac{a-\sqrt{x^2
+          + y^2}}{a} \right) \pi \right), \sin \left( \left(
+          \frac{a-\sqrt{x^2 + y^2}}{a} \right) \pi \right), \right. 
+          </mrow>
+          <mrow>
+          \amp \left. \cos \left( \left( \frac{a-\sqrt{x^2 + y^2}}{a}
+          \right) \pi \right) \right)
+          </mrow>
+        </md>
+        <p>
+          Again, I'll calculate the flux integral to see what happens
+          with the net flow rate through a cross-section for this
+          turbulent flow. 
+        </p>
+        <md>
+          <mrow>
+            F \cdot \sigma_r \times \sigma_z \amp = k \cos \left(
+            \left( \frac{a-r}{a} \right) \pi \right) r
+          </mrow>
+          <mrow>
+            \int_\sigma F \cdot dA \amp = \int_0^a \int_0^{2\pi} k
+            \cos \left( \left( \frac{a-r}{a} \right) \pi \right) r 
+            d\theta dr
+          </mrow>
+          <mrow>
+            \amp = 2\pi k \int_0^a \cos \left( \pi - \frac{\pi r}{a}
+            \right) r dr
+          </mrow>
+          <mrow>
+            \amp = 2\pi k\int_0^a -r \cos \left( \frac{\pi r}{a}
+            \right) dr
+          </mrow>
+          <mrow>
+            \amp = -2\pi k \frac{a}{\pi} \int_0^a \frac{\pi r}{a} \cos
+            \left( \frac{\pi r}{a} \right) dr
+          </mrow>
+          <mrow>
+            u \amp = \frac{\pi r}{a}
+          </mrow>
+          <mrow>
+            \amp = -2\pi k \frac{a}{\pi} \int_0^{\pi} u \cos u \frac{a
+            du }{\pi}
+          </mrow>
+          <mrow>
+            \amp = \frac{-2\pi a^2}{\pi} \left( \cos u + u \sin u
+            \right) \bigg|_0^{\pi} = \frac{4k a^2}{\pi}
+          </mrow>
+        </md>
+      </statement>
+    </example>
+    <example>
+      <statement>
+        <p>
+          Consider a paddle with a roughly rectangular cross section
+          15cm wide and 30cm tall. Say it moves through the water in
+          the <m>z</m> direction with speed <m>v</m>. I can 
+          reinterpret the situation by letting the water move with field
+          <m>F = (0,0,v)</m> in which the paddle is stationary. I can
+          think of the force the paddle causes in terms of the flux of
+          this field through the paddle.
+        </p>
+        <p>
+          Now, I can perform a paddle stroke directly perpendicular to
+          the direction of movement or at an angle <m>\theta</m>. My 
+          question is: how does our forward force (hence flux) vary due
+          to <m>\theta</m>?
+        </p>
+        <p>
+          If the paddle is angled at angle <m>\theta</m>, then it is
+          represented as a surface with normal <m>(\sin \theta, 0, \cos
+          \theta)</m>. Therefore <m>F \cdot N = v \cos \theta</m>. (I
+          can make this calculation without even have to do all the
+          formal details of parametrization, since only the normal is
+          important. The paddle is a part of a plane, so it has a
+          constant normal.) Then I calculate the flux integral. 
+        </p>
+        <me>
+          \int_\sigma F \cdot N dA = \int_D V \cos \theta dA = v \cos
+          \theta \int_D 1 dA = 450 v \cos \theta
+        </me>
+        <p>
+         Compared to the perpendicular force or <m>450v</m>
+         the force due to a paddle stroke at an angle is this original
+         force multiplied by <m>\cos \theta</m>. Cosine is the
+         approprate result here: when there is no adjustment to the
+         angle (<m>\theta = 0</m>), cosine is <m>1</m> and the full
+         force is applied; when the paddle turned a full quarter turn,
+         cosine is <m>0</m> and there is no force at all. 
+       </p>
+      </statement>
+   </example>
+  </subsection>
+</section>

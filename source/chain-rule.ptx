@@ -1,0 +1,171 @@
+<section xml:id="section-chain-rule">
+  <title>The Chain Rule</title>
+  <subsection xml:id="subsection-multivariable-composition">
+    <title>Multivariable Composition</title>
+    <p>
+     I defined partial derivatives in <xref
+     ref="section-partial-derivatives" /> to measure rates of change
+     in a particular variable. I extended this in <xref
+     ref="section-directional-derivatives" /> to change in any unit
+     direction with directional derivatives. I can extend this even
+     further, but considering the change in a function which moves
+     along a <em>parametric curve</em> in the domain.
+    </p>
+    <p>
+      Let <m>f(x,y,z): \RR^3 \rightarrow\RR</m>, be a potential energy
+      function. Let <m>\gamma(t) = (x(t), y(t), z(t))</m> be a curve
+      moving through <m>\RR^3</m>. 
+      I want to know how quickly energy is gained or lost 
+      move along the path <m>\gamma</m>. The energy along
+      <m>\gamma</m> is <m>f(\gamma(t)) = f(x(t), y(t), z(t))</m>. The
+      rate of change is <m>\frac{df}{dt}</m>. But now <m>f</m> is a
+      composition, <m>f(\gamma(t))</m>, so this must be a chain rule
+      calculation. What is the chain rule when there are three (or
+      more) components?
+    </p>
+  </subsection>
+  <subsection xml:id="subsection-chain-rule-statement">
+  <title>The Chain Rule</title>
+    <proposition>
+      <statement>
+        <p>
+          (The Chain Rule) Let <m>f: \RR^n \rightarrow \RR</m> be a
+          scalar function and <m>\gamma(t)</m> a parametric curve in
+          <m>\RR^n</m> inside the domain of <m>f</m>. The derivative
+          of <m>f</m> along <m>\gamma</m> is
+          <me>
+            \frac{d}{dt} f(\gamma(t)) = \frac{\del f}{\del x_1}
+            \frac{dx_1}{dt} + \frac{\del f}{\del x_2} \frac{dx_2}{dt}
+            + \ldots + \frac{\del f}{\del x_n} \frac{dx_n}{dt}
+          </me>
+        </p>
+        <p>
+          The total rate of change is the sum of the rates of changes
+          in each of the variables.
+        </p>
+      </statement>
+    </proposition>
+    <p>
+      For reference, here is the chain rule in <m>\RR^3</m>.
+      <me>
+        \frac{d}{dt} f((x(t), y(t), z(t)) = \frac{\del f}{\del x}
+        \frac{dx}{dt} + \frac{\del f}{\del y} \frac{dy}{dt} +
+        \frac{\del f}{\del z} \frac{dz}{dt}
+      </me>
+    </p>
+    <p>
+      This is a slightly strange extension of the single-variable
+      chain rule. Originally, the chain rule was for any composition.
+      However, the chain rule is very specifically for the composition
+      of a scalar field with a parameteric curve. However, upon
+      reflection, you could realize that this is really the only
+      possibility. If <m>f</m> and <m>g</m> are both functions
+      <m>\RR^3 \rightarrow \RR</m>, then the composition <m>f \circ
+      g</m> or <m>g \circ f</m> isn't even defined. The output of the
+      first function is a scalar, but the input needs to be a vector.
+      The only reasonable composition with a scalar field is to
+      compose with a parametric curce, since a parametric curve
+      outputs a vector. In Calculus IV, I will introduce  vector
+      fields which could allow for other compositions, but for now,
+      this is the only possibility.
+    </p>
+  </subsection>
+  <subsection xml:i="subsection-chain-rule-examples">
+    <title>Chain Rule Examples</title>
+    <example>
+      <statement>
+        <p>
+          <md>
+            <mrow>
+              f(x,y) \amp = x^2y + 3xy 
+            </mrow>
+            <mrow>
+              \gamma(t) \amp = \left( \frac{t^2}{4}, 1-t^3 \right) 
+            </mrow>
+            <mrow>
+              \frac{d}{dt} f(\gamma(t)) \amp = \frac{\del f}{\del x}
+              \frac{dx}{dt} + \frac{\del f}{\del y} \frac{dy}{dt} 
+            </mrow>
+            <mrow>
+              \amp = (2xy + 3y) \frac{t}{2} + (x^2 + 3x) (-3t^2) 
+            </mrow>
+          </md>
+          The variables are now mixed, so I have to make replacements.
+          I replace  <m>x</m> and <m>y</m> with the matching
+          components of the parametric curve. This matches the single
+          variable chain rule: I differentiate then I replace the
+          variable. The single variable notation, with the evaluation
+          bar, is not typically used in multivariable situations.
+          <md>
+            <mrow>
+              \amp = \left( 2 \frac{t^2}{4} (1-t^3) + 3(1 - t^3) \right)
+              \frac{t}{2} + \left( \left( \frac{t^2}{4} \right)^2 + 3
+              \frac{t^2}{4} \right) (-3t^2) 
+            </mrow>
+            <mrow>
+              \amp = \frac{t^2 - t^5}{4} + \frac{3t}{2} - \frac{3t^4}{2}
+              + \frac{-3t^6 + -36t^4}{16} 
+            </mrow>
+            <mrow>
+              \amp = \frac{24t + 4t^2 - 60t^4 - 4t^5 - 3t^6}{16} 
+            </mrow>
+          </md>
+        </p>
+      </statement>
+    </example>
+    <example>
+      <statement>
+        <p>
+          Consider the potential gravitational energy function
+          <me>
+            P = - \frac{GmM}{r} = \frac{-GmM}{\sqrt{x^2 + y^2 + z^2}}
+          </me>
+        </p>
+        <p>
+          It would be  nice to know how the potential energy changes
+          while moving along a curve <m>\gamma</m>. For a particular
+          example, consider a helical path out of the
+          gravity well:  <m>\gamma(t) = (\sin t, \cos t,
+          t)</m>. I differentiate along this path using the chain
+          rule.
+          <md>
+            <mrow>
+              \frac{dP}{dt} \amp = \frac{\del P}{\del x}
+              \frac{dx}{dt} + \frac{\del P}{\del y} \frac{dy}{dt} +
+              \frac{\del P}{\del z} \frac{dz}{dt}
+            </mrow>
+            <mrow>
+              \amp = \frac{GmMx}{(x^2 + y^2 + z^2)^{\frac{3}{2}}}
+              \frac{dx}{dt} + \frac{GmMy}{(x^2 + y^2 +
+              z^2)^{\frac{3}{2}}} \frac{dy}{dt} + \frac{GmMz}{(x^2 +
+              y^2 + z^2)^{\frac{3}{2}}} \frac{dz}{dt}
+            </mrow>
+            <mrow>
+              \amp = \frac{GmM\sin t}{(1 + t^2)^{\frac{3}{2}}} \cos t
+              + \frac{GmM\cos t}{(1 + t^2)^{\frac{3}{2}}} (-\sin t) +
+              \frac{GmMt}{(1 + t^2)^{\frac{3}{2}}} 1
+            </mrow>
+            <mrow>
+              \amp = \frac{GmMt}{\sqrt{(1+t^2)^3}}
+           </mrow>
+          </md>
+        </p>
+        <p>
+          Along this helical path, the potential energy is increases.
+          The rate of increase, however, slows over time. This makes
+          sense for leaving a potential energy well: the first steps
+          are more difficult and later movement is not as difficult. 
+        </p>
+        <p>
+          Notice that if I let <m>|\gamma(t)| = \sqrt{1 + t^2}</m> at
+          the start, I could have written <m>P(t) =
+          \frac{-GmM}{|\gamma(t)|} = \frac{-GmM}{\sqrt{1+t^2}}</m> and
+          the <m>P^\prime(t) = \frac{GmMt}{\sqrt{(1+t^2)^3}}</m> could
+          have been calculated directly. That would have been easier,
+          but its nice to get confirmation that working with the chain
+          rule leads to the right result.
+        </p>
+      </statement>
+    </example>
+  </subsection>
+</section>

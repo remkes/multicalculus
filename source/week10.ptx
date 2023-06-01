@@ -1,0 +1,6 @@
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="chapter-week10">
+  <title>Week 10</title>
+  <xi:include href="conservative.ptx" />
+  <xi:include href="line-integrals.ptx" />
+  <xi:include href="week10-activity.ptx" />
+</chapter>

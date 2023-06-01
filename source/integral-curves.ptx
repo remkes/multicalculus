@@ -1,0 +1,323 @@
+<section xml:id="integral-curves">
+  <title>Integral Curves</title>
+  <subsection xml:id="subsection-integral-curves">
+    <title>Vector Fields and Parametric Curve</title>    
+    <p>
+      I said in the previous section that fields of force and fluid
+      flows would be my primary motivating examples. Let me start by
+      talking about these two fields.
+    </p>
+    <p>
+      If I have a field of force, it acts on object in it.
+      (Gravitation force acts on object with mass, electromagnetic
+      force acts on object with charge). A natural question is: if I
+      put an object in a field, what will it do? How will the force
+      act upon it? Presumably, the object will move due to the force.
+      How will it move? What path will it take?
+    </p>
+    <p>
+      I can ask a similar question about a fluid flow. If I put a
+      bouyant object (not affected by other forces such as gravity) in
+      a fluid, what will happen to it? Presumably, it will move with
+      the movement of the fluid. What path will it take?
+    </p>
+    <p>
+      In both the primary examples, I ended up asking about a path. A
+      path is a parametric curve. So, so answer this question, there
+      should be a connection between vector field and parametric
+      curves. Let me know define this connection.
+    </p>
+    <definition>
+      <statement>
+        <p>
+          Let <m>F: S \rightarrow \RR^n</m> be a vector field on a
+          region <m>S \subset \RR^n</m>. A parametric curve <m>\gamma:
+          [a,b] \rightarrow \RR^n </m> is called a <term>integral
+          curves</term> of the vector field if, at all points on
+          the curve, <m>\gamma^\prime(t) = F(\gamma(t))</m>.
+          That is, the <term>tangents</term> of the parametric curves
+          are the same as the vector field along the whole curve.
+        </p>
+      </statement>
+   </definition>
+   <p>
+    The parametric curves are the paths I wanted for my application.
+    If an boyant object starts <em>at rest</em> in a fluid, or a
+    charged object start <em>at rest</em> in an area with
+    electromagnetic force, the integral curve going through the
+    starting point will be the path the object will move along.
+   </p>
+  </subsection>
+  <subsection xml:id="subsection-integral-curves-examples">
+    <title>Examples of Integral Curves</title>
+    <example>
+      <statement>
+        <figure xml:id="figure-vector-field3">
+          <caption>The Vector Field <m>F(x,y) = (-y,x)</m></caption>
+          <image xml:id="figure65" width="80%">
+            <asymptote>
+              import graph;
+              size(7cm);
+              path vector(pair z) {return
+              (0,0)--(-z.y, z.x);}
+              add(vectorfield(vector,(-4,-4),(4,4)));
+            </asymptote>
+          </image>
+        </figure>
+        <figure xml:id="figure-vector-field3-curves">
+          <caption>The Integral Curves for <m>F(x,y) = (-y,x)</m></caption>
+          <image xml:id="figure66" width="80%">
+            <asymptote>
+              import graph;
+              size(7cm);
+              path vector(pair z) {return
+              (0,0)--(-z.y, z.x);}
+              add(vectorfield(vector,(-4,-4),(4,4)));
+              draw(scale(1/2)*unitcircle);
+              draw(scale(1/3)*unitcircle);
+              draw(scale(1/4)*unitcircle);
+              draw(unitcircle);
+              draw(scale(2)*unitcircle);
+              draw(scale(3)*unitcircle);
+              draw(scale(4)*unitcircle);
+            </asymptote>
+          </image>
+        </figure>
+        <p>
+          Consider the vector field <m>F(x,y) = (-y,x)</m>, as shown in
+          <xref ref="figure-vector-field3" />, with its
+          integral curves in <xref ref="figure-vector-field3-curves"
+          />. These integral curves of <m>F(x,y) =
+          (-y,x)</m> aren't surprising. Looking just at the vector
+          fields, I can clearly tell that the fluid is travelling in a
+          circular paths. Mathematically, the circles are curves
+          <m>\gamma(t) = (a \cos t, a \sin t)</m> for a parameter <m>a >
+          0</m>. I can calculate <m>\gamma^\prime(t) = (-a\sin t, a
+          \cos t)</m>. Now, I can notice that the first component of
+          the derivative, <m>-a \sin t</m>, is the negative of the
+          <m>y</m> component of the curve. Likewise, the second
+          component of the derivative is exactly the first component
+          of the curve. Therefore, I can write <m>\gamma^(t) =
+          (-y,x)</m>, where <m>x</m> and <m>y</m> are the component of
+          the curve. In this way, the derivative of the curve
+          (expressed in the original component of the curve) and the
+          vector field have the same expression. The tangents to the
+          curve are the vectors in the vector field. 
+        </p>
+      </statement>
+    </example>
+    <example>
+      <statement>
+        <figure xml:id="figure-vector-field4">
+          <caption>The Vector Field <m>F(x,y) = (x,y)</m></caption>
+          <image xml:id="figure67" width="80%">
+            <asymptote>
+              import graph;
+              size(13cm);
+              path vector(pair z) {return (0,0)--(z.x,z.y);}
+              add(vectorfield(vector,(-4,-4),(4,4)));
+            </asymptote>
+          </image>
+        </figure>
+       <figure xml:id="figure-vector-field4-curves">
+          <caption>Integral Curves for <m>F(x,y) = (x,y)</m></caption>
+          <image xml:id="figure68" width="80%">
+            <asymptote>
+              import graph;
+              size(13cm);
+              path vector(pair z) {return (0,0)--(z.x,z.y);}
+              add(vectorfield(vector,(-4,-4),(4,4)));
+              draw((0,0)--(0,4));
+              draw((0,0)--(1,4));
+              draw((0,0)--(2,4));
+              draw((0,0)--(3,4));
+              draw((0,0)--(4,4));
+              draw((0,0)--(4,3));
+              draw((0,0)--(4,2));
+              draw((0,0)--(4,1));
+              draw((0,0)--(4,0));
+              draw((0,0)--(4,-1));
+              draw((0,0)--(4,-2));
+              draw((0,0)--(4,-3));
+              draw((0,0)--(4,-4));
+              draw((0,0)--(3,-4));
+              draw((0,0)--(2,-4));
+              draw((0,0)--(1,-4));
+              draw((0,0)--(0,-4));
+              draw((0,0)--(-1,-4));
+              draw((0,0)--(-2,-4));
+              draw((0,0)--(-3,-4));
+              draw((0,0)--(-4,-4));
+              draw((0,0)--(-4,-3));
+              draw((0,0)--(-4,-2));
+              draw((0,0)--(-4,-1));
+              draw((0,0)--(-4,0));
+              draw((0,0)--(-4,1));
+              draw((0,0)--(-4,2));
+              draw((0,0)--(-4,3));
+              draw((0,0)--(-4,4));
+              draw((0,0)--(-3,4));
+              draw((0,0)--(-2,4));
+              draw((0,0)--(-1,4));
+           </asymptote>
+          </image>
+        </figure>
+        <p>
+          Let <m>F(x,y) = (x,y)</m>, as in <xref
+          ref="figure-vector-field4" />. The curves <m>\gamma(t) =
+          (ae^t,be^t)</m> where <m>a,b \in \RR</m> are integral
+          curves, shown in <xref ref="figure-vector-field4-curves" />.
+          They have <m>x = ae^t</m> and <m>y = be^t</m>, and I can
+          calculate tangents: <m>\gamma^\prime(t) = (ae^t, be^t)</m>.
+          If I compare with the component of the original curve, this
+          is exactly <m>(x,y)</m>. 
+        </p>
+      </statement>
+    </example>
+  </subsection>
+  <subsection xml:id="subsection-calculating-integral-curves">
+    <p>
+      Integral curves are a very powerful conceptual tool. However,
+      they are usually very hard to calculate and most examples are
+      beyond the scope of this course. However, there will be a few I
+      can attempt. I'll describe the general process in <m>\RR^3</m>.
+    </p>
+    <p>
+      If <m>F = (F_1,F_2,F_3)</m> is a vector field and <m>\gamma(t) =
+      (\gamma_1, \gamma_2,\gamma_3)</m> is a parametric curve, then
+      <m>\gamma</m> is an integral curve if it satisfies the following
+      system.
+      <md>
+        <mrow>
+          \gamma_1^\prime(t) \amp = F_1(\gamma_1, \gamma_2, \gamma_3)
+        </mrow>
+        <mrow>
+          \gamma_2^\prime(t) \amp = F_2(\gamma_1, \gamma_2, \gamma_3)
+        </mrow>
+        <mrow>
+          \gamma_3^\prime(t) \amp = F_3(\gamma_1, \gamma_2, \gamma_3)
+        </mrow>
+      </md>
+    </p>
+    <p>
+      This is a system (generally non-linear) of three differential
+      equations in three functions, the <m>\gamma_i</m>. Even if it is
+      linear, this is still a difficult system to solve, if not
+      impossible. Even a simple field such as <m>F(x,y,z) = (y,z,x)</m>
+      leads to a difficult system.
+      <md>
+        <mrow>
+          \gamma_1^\prime \amp = \gamma_2
+        </mrow>
+        <mrow>
+          \gamma_2^\prime \amp = \gamma_3
+        </mrow>
+        <mrow>
+          \gamma_3^\prime \amp = \gamma_1
+        </mrow>
+      </md>
+    </p>
+    <p>
+      Currently, I have no method for approaching this system. (For
+      those who have taken the differential equations course, you may
+      recognize that this is a linear system and that course did cover
+      solving linear systems of differential equation). However, there
+      are some examples with reasonable systems of equations which I
+      will be able to solve with integration.
+    </p>
+    <example>
+      <statement>
+        <p>
+          Let <m>F = (x,y,z)</m>. The system that defined the
+          integral curve here is pleasant since each component only
+          related to itself. Let me write the setup. 
+        </p>
+        <md>
+          <mrow>
+            \gamma_1^\prime \amp = \gamma_1 
+          </mrow>
+          <mrow>
+            \gamma_2^\prime \amp = \gamma_2 
+          </mrow>
+          <mrow>
+            \gamma_3^\prime \amp = \gamma_3 
+          </mrow>
+        </md>
+        <p>
+          Each differential equation can be solved directly. These are
+          seperable differential equation, but I can also simply
+          notice that these are the basic exponential equation.
+          Therefore, the solutions must be exponential function. Each
+          exponential function will have an unknown starting value.
+          Here are the solutions.
+        </p>
+        <md>
+          <mrow>
+            \gamma_1^\prime \amp = \gamma_1 \implies \gamma_1(t) =
+            ae^t
+          </mrow>
+          <mrow>
+            \gamma_2^\prime \amp = \gamma_2 \implies \gamma_2(t) =
+            be^t
+          </mrow>
+          <mrow>
+            \gamma_3^\prime \amp = \gamma_3 \implies \gamma_3(t) =
+            ce^t
+          </mrow>
+        </md>
+        <p>
+          The values of <m>a</m>, <m>b</m> and <m>c</m> will be
+          determined by the starting point of the parametric curve. As
+          with all differential equation, initial conditions determine
+          the unknown constant in the solution. This also gives the
+          entire family of integral curves by making all the possible
+          independent choices for these three constants. 
+        </p>
+      </statement>
+    </example>
+    <example>
+      <statement>
+        <p>
+          Let <m>F = (1,2x,3y)</m>. Here is the resulting system of
+          differential equation for the integral curves.
+        </p>
+        <md>
+          <mrow>
+            \gamma_1^\prime \amp = 1
+          </mrow>
+          <mrow>
+            \gamma_2^\prime \amp = 2\gamma_1
+          </mrow>
+          <mrow>
+            \gamma_3^\prime \amp = 3\gamma_2
+          </mrow>
+        </md>
+        <p>
+          This system can be solved by iteration. I can solve the
+          first equation by integration. Then the second equation
+          relies on the first component, so I can use the first
+          solution to solve the second by integration again. Finally,
+          the third relies on the second, so I can use the second
+          function and integration to calculate the third.
+        </p>
+        <md>
+          <mrow>
+            \gamma_1 \amp = \int 1 dt = t + a
+          </mrow>
+          <mrow>
+            \gamma_2 \amp = 2 \int \gamma_1 dt = \int 2t + 2a dt = t^2
+            + 2at + 2b
+          </mrow>
+          <mrow>
+            \gamma_3 \amp = 3 \int \gamma_2 dt = 3\int t^2 + 2at + 2b
+            dt = t^3 + 3at^2 + 6bt + 3c
+          </mrow>
+          <mrow>
+            \gamma(t) \amp = (t+a, t^2 + 2ta + b, t^3 + 3at^2 + 6bt +
+            3c)
+          </mrow>
+        </md>
+      </statement>
+    </example>
+  </subsection>
+</section>

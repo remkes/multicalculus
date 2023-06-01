@@ -1,0 +1,612 @@
+<section xml:id="week10-activity">
+  <title>Week 10 Activity</title>
+  <subsection xml:id="subsection-line-integrals">
+    <title>Activity</title>
+    <activity>
+      <statement>
+        <p>
+          Calculate the line integral of <m>F = (x^2 + y^2, 4xy) </m>
+          over the parametric curve <m>\gamma = (t^2, 1-t) </m> for
+          <m> t \in [0,2]</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          I need to evalute the field along the curve, by replacing
+          the variables defining the field with the matching
+          components of the curve.
+        </p>
+        <md>
+          <mrow>
+            F(\gamma(t)) \amp = ((t^2)^2 + (1-t)^2, 4t^2(1-t)) = (t^4
+            + t^2 - 2t + 1, -4t^3 + 4t^2) 
+          </mrow>
+        </md>
+        <p>
+          Next I need to calculate the tangent of the curve.
+        </p>
+        <md>
+          <mrow>
+            \gamma^\prime(t) \amp = (2t, -1) 
+          </mrow>
+        </md>
+        <p>
+          Then I need the dot product of the two previous
+          calculations.
+        </p>
+        <md>
+          <mrow>
+            F(\gamma(t)) \cdot \gamma^\prime(t) \amp =
+            2t(t^4+t^2-2t+1) - (-4t^3+4t^2) 
+          </mrow>
+          <mrow>
+            \amp = 2t^4 + 2t^3 - 4t^2 + 2t + 4t^3 - 4t^2 
+          </mrow>
+          <mrow>
+            \amp = 2t^5 + 6t^3 - 8t^2 + 2t 
+          </mrow>
+        </md>
+        <p>
+          Finally, I do the line integral by integrating this dot
+          product over the parameter domain. 
+        </p>
+        <md>
+          <mrow>
+            \int_0^{2} F(\gamma(t)) \cdot \gamma^\prime(t) dt \amp =
+            \int_0^2 2t^5 + 6t^3 - 8t^2 + 2t dt 
+          </mrow>
+          <mrow>
+            \amp = \left( \frac{2t^6}{6} + \frac{6t^4}{4} -
+            \frac{8t^3}{3} + t^2 \right) \Bigg|_0^2 .
+          </mrow>
+          <mrow>
+            \amp = \frac{64}{3} + 24 - \frac{64}{3} + 4 = 28 
+          </mrow>
+        </md>
+      </solution>
+    </activity>
+    <activity>
+      <statement>
+        <p>
+          Calculate the line integral of <m>F = (x^2-y^2,x+y)</m>
+          over the parametric curve <m>\gamma = (\cosh t, \sinh t)</m>
+          for <m>t \in [0,\ln 4]</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          I need to evalute the field along the curve, by replacing
+          the variables defining the field with the matching
+          components of the curve.
+        </p>
+        <md>
+          <mrow>
+            F(\gamma(t)) \amp = (\cosh^2 t - \sinh^2 t, \cosh t +
+            \sinh t) = (1, \cosh t + \sinh t)
+          </mrow>
+        </md>
+        <p>
+          Next I need to calculate the tangent of the curve.
+        </p>
+        <md>
+          <mrow>
+            \gamma^\prime(t) \amp = (\sinh t, \cosh t) 
+          </mrow>
+        </md>
+        <p>
+          Then I need the dot product of the two previous
+          calculations.
+        </p>
+        <md>
+          <mrow>
+            F(\gamma(t)) \cdot \gamma^\prime(t) \amp =  \sinh t +
+            \cosh^2 t + \sinh t \cosh t 
+          </mrow>
+        </md>
+        <p>
+          Finally, I do the line integral by integrating this dot
+          product over the parameter domain. 
+        </p>
+        <md>
+          <mrow>
+            \amp \int_0^{\ln 4} F(\gamma(t)) \cdot \gamma^\prime(t) dt 
+          </mrow>
+          <mrow>
+            \amp = \int_0^{\ln 4} \sinh t + \cosh^2 t + \sinh t \cosh
+            t
+          </mrow>
+          <mrow>
+            \amp = \left( \cosh t + \frac{t}{2} + \frac{\sinh 2t }{4}
+            + \frac{\cosh^2 t}{2} \right) \Bigg|_0^{\ln 4} 
+          </mrow>
+          <mrow>
+            \amp = \frac{4 + \frac{1}{4}}{2} + \frac{\ln 4}{2} +
+            \frac{16 - \frac{1}{16}}{4} + \frac{1}{2} \left(  \frac{4
+            + \frac{1}{4}}{2} \right)^2 - 1 - 0 - 0 - 1 
+          </mrow>
+          <mrow>
+            \amp = \frac{\ln 4}{2} + \frac{17}{8} + \frac{255}{64} +
+            \frac{289}{128} - 2 = \frac{128 \ln 2 + 1071}{128}
+          </mrow>
+        </md>
+      </solution>
+    </activity>
+    <activity>
+      <statement>
+        <p>
+          Calculate the line integral of <m>F = (y^2,x-z,x^2+yz)</m>
+          over the parametric curve <m>\gamma = (3t,t^2-1,-4t)</m> for
+          <m> t \in [0,5]</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          I need to evalute the field along the curve, by replacing
+          the variables defining the field with the matching
+          components of the curve.
+        </p>
+        <md>
+          <mrow>
+            F(\gamma(t)) \amp = ((t^2-1)^2, 3t - (-4t), (3t)^2 -
+            (t^2-1)(-4t)) 
+          </mrow>
+          <mrow>
+            \amp = (t^4 - 2t^2 + 1, 7t, 9t^4 - 4t^3 + 4t^2)
+          </mrow>
+        </md>
+        <p>
+          Next I need to calculate the tangent of the curve.
+        </p>
+        <md>
+          <mrow>
+            \gamma^\prime(t) \amp = (3, 2t, -4)
+          </mrow>
+        </md>
+        <p>
+          Then I need the dot product of the two previous
+          calculations.
+        </p>
+        <md>
+          <mrow>
+            F(\gamma(t)) \cdot \gamma^\prime(t) \amp = 3(t^4-2t^2+1)
+            + (2t)(7t) - 4(9t^4 - 4t^3 + 4t^2)
+          </mrow>
+          <mrow>
+            \amp = 3t^4 - 6t^2 + 3 + 14t - 36t^4 + 16t^3 - 16t^2
+          </mrow>
+          <mrow>
+            \amp = -33t^4 + 16t^3 - 22t^2+ 14t + 3 
+          </mrow>
+        </md>
+        <p>
+          Finally, I do the line integral by integrating this dot
+          product over the parameter domain. 
+        </p>
+        <md>
+          <mrow>
+            \int_0^{5} F(\gamma(t)) \cdot \gamma^\prime(t) dt \amp =
+            \int_0^5 -33t^4 + 16t^3 - 22t^2 + 14t + 3 dt
+          </mrow>
+          <mrow>
+            \amp = \left( \frac{-33t^5}{5} + 4t^4 - \frac{22t^3}{3} +
+            7t^2 + 3t \right) \Bigg|_0^5
+          </mrow>
+          <mrow>
+            \amp = -20625 + 2500 - \frac{2750}{3} + 175 + 15 =
+            \frac{-56555}{3}
+          </mrow>
+        </md>
+      </solution>
+    </activity>
+    <activity>
+      <statement>
+        <p>
+          Calculate the line integral of 
+          <m>F = (z + x, z + y, x^2 + y^2)</m> over the parametric
+          curve <m>\gamma = \left( \cos t, \sin t, \frac{t}{2\pi}
+          \right)</m> for <m> t \in [0,6\pi]</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          I need to evalute the field along the curve, by replacing
+          the variables defining the field with the matching
+          components of the curve.
+        </p>
+        <md>
+          <mrow>
+            F(\gamma(t)) \amp = \left( \frac{t}{2\pi} + \cos t,
+            \frac{t}{2\pi} + \sin t, 1 \right)
+          </mrow>
+        </md>
+        <p>
+          Next I need to calculate the tangent of the curve.
+        </p>
+        <md>
+          <mrow>
+            \gamma^\prime(t) \amp = \left( -\sin t, \cos t,
+            \frac{1}{2\pi} \right)
+          </mrow>
+        </md>
+        <p>
+          Then I need the dot product of the two previous
+          calculations.
+        </p>
+        <md>
+          <mrow>
+            F(\gamma(t)) \cdot \gamma^\prime(t) \amp = \frac{-t\sin
+            t}{2\pi} - \sin t \cos t + \frac{t\cos t}{2\pi} + \sin t
+            \cos t + \frac{1}{2\pi} 
+          </mrow>
+          <mrow>
+            \amp = \frac{1}{2\pi} ( t \cos t - t
+            \sin t + 1)
+          </mrow>
+        </md>
+        <p>
+          Finally, I do the line integral by integrating this dot
+          product over the parameter domain. 
+        </p>
+        <md>
+          <mrow>
+            \int_0^{6\pi} F(\gamma(t)) \cdot \gamma^\prime(t) dt \amp
+            = \int_0^{6\pi} \frac{1}{2\pi} (t \cos t - t \sin t + 1)
+            dt 
+          </mrow>
+          <mrow>
+            \amp = \frac{1}{2\pi} \left(t \sin t + \cos t - (\sin t -
+            t \cos t) - t \right) \Bigg|_0^{6\pi}
+          </mrow>
+          <mrow>
+            \amp = \frac{1}{2\pi} (0 + 1 - (0 - 6\pi) - 6\pi - (0 + 1
+            - (0 - 0))
+          </mrow>
+          <mrow>
+            \amp = \frac{1}{2\pi} (1 - 12 \pi- 1 ) = -12
+          </mrow>
+        </md>
+      </solution>
+    </activity>
+  </subsection>
+  <subsection xml:id="subsection-conservative-line-integrals">
+    <title>Activity</title>
+    <activity>
+      <statement>
+        <p>
+          Check that this vector field is conservative. (Make sure you
+          restrict to a simply connected domain). Calculate the line
+          integral over the given curve by finding a potential for the
+          field and then evaluating the potential at the endpoint of
+          the curve.
+        </p>
+        <md>
+          <mrow>
+            F \amp = (yz,xz,xy)
+          </mrow>
+          <mrow>
+            \gamma(t) \amp = (t,t^2,t^3) 
+            \amp \amp t \in [0,3] 
+          </mrow>
+        </md>
+      </statement>
+      <solution>
+        <p>
+          The domain is all of <m>\RR^3</m>, which is simply
+          connected. I check that the field is conservative on this
+          domain by calculating the curl.
+        </p>
+        <md>
+          <mrow>
+            \nabla \times F \amp = \left( \frac{d}{dy} xy -
+            \frac{d}{dz} xz, \frac{d}{dz} yz - \frac{d}{dx} xy,
+            \frac{d}{dx} xz - \frac{d}{dy} yz \right) 
+          </mrow>
+          <mrow>
+            \amp = (x-x, y-y, z-z) = (0,0,0)
+          </mrow>
+        </md>
+        <p>
+          The curl is zero, so the field is conservative. Now I need
+          to find a potential. I integrate each component of the field
+          in the matching variable. I put together these three pieces
+          to find a potential that matches all three. 
+        </p>
+        <md>
+          <mrow>
+            \int F_1 dx \amp = \int yz dz = xyz + c 
+          </mrow>
+          <mrow>
+            \int F_2 dy \amp = \int xz dz = xyz + c 
+          </mrow>
+          <mrow>
+            \int F_3 dz \amp = \int xy dz = xyz + c 
+          </mrow>
+          <mrow>
+            f \amp = xyz 
+          </mrow>
+        </md>
+        <p>
+          Next I find the endpoints of the curve and evaluate the
+          potential at the endpoints. The different of these two
+          values is the value of the line integral, by the fundamental
+          theorem. 
+        </p>
+        <md>
+          <mrow>
+            f(\gamma(0)) \amp = f((0,0,0)) = 0 
+          </mrow>
+          <mrow>
+            f(\gamma(3)) \amp = f((3,9,27)) = 729 
+          </mrow>
+          <mrow>
+            f(\gamma(3)) - f(\gamma(0)) \amp = 729 - 0 = 729 
+          </mrow>
+        </md>
+      </solution>
+    </activity>
+    <activity>
+      <statement>
+        <p>
+          Check that this vector field is conservative. (Make sure you
+          restrict to a simply connected domain). Calculate the line
+          integral by finding a potential for the field and then
+          evaluating the potential at the endpoint of the curve.
+        </p>
+        <md>
+          <mrow>
+            F \amp = (2,-3,-2)
+          </mrow>
+          <mrow>
+            \gamma(t) \amp = (4 \cos t, 4 \sin t, t^2) 
+            \amp \amp t \in [0,4\pi] 
+          </mrow>
+        </md>
+      </statement>
+      <solution>
+        <p>
+          The domain is all of <m>\RR^3</m>, which is simply connected. 
+          I check that the field is conservative on this domain by
+          calculating the curl.
+        </p>
+        <md>
+          <mrow>
+            \nabla \times F \amp = \left( \frac{d}{dy} -2 -
+            \frac{d}{dz} -3, \frac{d}{dz} 2 - \frac{d}{dx} -2,
+            \frac{d}{dx} -3 - \frac{d}{dy} 2 \right) 
+          </mrow>
+          <mrow>
+            \amp = (0,0,0)
+          </mrow>
+        </md>
+        <p>
+          The curl is zero, so the field is conservative. Now I need
+          to find a potential. I integrate each component of the field
+          in the matching variable. I put together these three pieces
+          to find a potential that matches all three. 
+        </p>
+        <md>
+          <mrow>
+            \int F_1 dx \amp = \int 2 dx = 2x + c
+          </mrow>
+          <mrow>
+            \int F_2 dy \amp = \int -3 dy = -3y + c
+          </mrow>
+          <mrow>
+            \int F_3 dz \amp = \int -2 dz = -2z + c
+          </mrow>
+          <mrow>
+            f \amp = 2x - 3y - 2z 
+          </mrow>
+        </md>
+        <p>
+          Next I find the endpoints of the curve and evaluate the
+          potential at the endpoints. The different of these two
+          values is the value of the line integral, by the fundamental
+          theorem. 
+        </p>
+        <md>
+          <mrow>
+            f(\gamma(0)) \amp = f((4,0,0)) = 8
+          </mrow>
+          <mrow>
+            f(\gamma(4\pi)) \amp = f((4,0,16\pi^2)) = 8 - 32\pi^2
+          </mrow>
+          <mrow>
+            f(\gamma(4\pi)) - f(\gamma(0)) \amp = -32\pi^2 
+          </mrow>
+        </md>
+      </solution>
+    </activity>
+    <activity>
+      <statement>
+        <p>
+          Check that this vector field is conservative. (Make sure you
+          restrict to a simply connected domain). Calculate the line
+          integral by finding a potential for the field and then
+          evaluating the potential at the endpoint of the curve.
+        </p>
+        <md>
+          <mrow>
+            F \amp = (\ln x, \ln z, \frac{y}{z}) 
+          </mrow>
+          <mrow>
+            \gamma(t) \amp = (4t,-t,t^2) 
+            \amp \amp t \in [1,5]
+          </mrow>
+        </md>
+      </statement>
+      <solution>
+        <p>
+          The domain is the portion of <m>\RR^3</m> where <m>x \gt
+          0</m>, <m> z \gt 0</m>. This is a simply connected domain.
+          Moreover, the output of the parametric curve always have
+          positive <m>x</m> and <m>z</m> coordinates, so it lies
+          entirely within this domain.  I check that the field is
+          conservative on this domain by calculating the curl.
+        </p>
+        <md>
+          <mrow>
+            \nabla \times F \amp = \left( \frac{d}{dy} \frac{y}{z} -
+            \frac{d}{dz} \ln z, \frac{d}{dz}\ln x - \frac{d}{dx}
+            \frac{y}{z}, \frac{d}{dx} \ln z - \frac{d}{dy} \ln x
+            \right)
+          </mrow>
+          <mrow>
+            \amp = \left( \frac{1}{z} - \frac{1}{z}, 0 - 0 , 0 - 0
+            \right) = (0,0,0)
+          </mrow>
+        </md>
+        <p>
+          The curl is zero, so the field is conservative. Now I need
+          to find a potential. I integrate each component of the field
+          in the matching variable. I put together these three pieces
+          to find a potential that matches all three. 
+        </p>
+        <md>
+          <mrow>
+            \int F_1 dx \amp = \int \ln x dx = x \ln x - x + c
+          </mrow>
+          <mrow>
+            \int F_2 dy \amp = \int \ln z dy = y \ln z + c
+          </mrow>
+          <mrow>
+            \int F_3 dz \amp = \int \frac{y}{z} dz = y \ln z + c
+          </mrow>
+          <mrow>
+            f \amp = x \ln x - x + y \ln z
+          </mrow>
+        </md>
+        <p>
+          Next I find the endpoints of the curve and evaluate the
+          potential at the endpoints. The different of these two
+          values is the value of the line integral, by the fundamental
+          theorem. 
+        </p>
+        <md>
+          <mrow>
+            f(\gamma(1)) \amp = f((4,-1,4)) = 20 \ln 20 - 20 - 5 \ln
+            25 
+          </mrow>
+          <mrow>
+            f(\gamma(5)) \amp = f((20, -5, 25)) = 4 \ln 4 - 4 - \ln 4 
+          </mrow>
+          <mrow>
+            f(\gamma(5)) - f(\gamma(1)) \amp = 20 \ln 20 - 5 \ln 25 -
+            3 \ln 4 - 16
+          </mrow>
+        </md>
+      </solution>
+    </activity>
+    <activity>
+      <statement>
+        <p>
+          Check that this vector field is conservative. (Make sure you
+          restrict to a simply connected domain). Calculate the line
+          integral by finding a potential for the field and then
+          evaluating the potential at the endpoint of the curve.
+        </p>
+        <md>
+          <mrow>
+            F \amp = \left( \sqrt{y^2-z^2}, \frac{yx}{\sqrt{y^2-z^2}},
+            \frac{-xz}{\sqrt{y^2-z^2}} \right)
+          </mrow>
+          <mrow>
+            \gamma(t) \amp = (t+1,-3t-4,-t-1) \amp \amp t \in [0,4] 
+          </mrow>
+        </md>
+      </statement>
+      <solution>
+        <p>
+          The domain restriction is <m>y^2 \gt z^2</m>. This can be
+          expanded into <m>y \gt |z|</m> or <m>y \lt -|z|</m>. This is
+          not a simply connected domain (not even connected at all). I
+          need to chose a region that satisfy these inequality and
+          also include the parametric curve. For the parametric curve,
+          both <m>y</m> and <m>z</m> are negative, so I can take the
+          region <m>y \lt z \lt 0</m>. This is a simply connected
+          domain.  I check that the field is conservative on this
+          domain by calculating the curl.
+        </p>
+        <md>
+          <mrow>
+            \nabla \times F \amp = \left( \frac{d}{dy}
+            \frac{-xz}{\sqrt{y^2-z^2}} - \frac{d}{dz}
+            \frac{yx}{\sqrt{y^2-z^2}}, \frac{d}{dz} \sqrt{y^2-z^2}
+            - \frac{d}{dx} \frac{-xz}{\sqrt{y^2-z^2}}, \right.
+          </mrow>
+          <mrow>
+            \amp \left. \frac{d}{dx} \frac{yx}{\sqrt{y^2-z^2}} -
+            \frac{d}{dy} \sqrt{y^2-z^2} \right)
+          </mrow>
+          <mrow>
+            \amp = \left( \frac{xyz}{\sqrt{(y^2-z^2)^3}} -
+            \frac{xyz}{\sqrt{(y^2-z^2)^3}}, \frac{z}{\sqrt{y^2-z^2}} -
+            \frac{z}{\sqrt{y^2-z^2}}, \right. 
+          </mrow>
+          <mrow>
+            \amp \left.  \frac{y}{\sqrt{y^2-z^2}} -
+            \frac{y}{\sqrt{y^2-z^2}} \right) = (0,0,0)
+          </mrow>
+        </md>
+        <p>
+          The curl is zero, so the field is conservative. Now I need
+          to find a potential. I integrate each component of the field
+          in the matching variable. I put together these three pieces
+          to find a potential that matches all three. 
+        </p>
+        <md>
+          <mrow>
+            \int F_1 dx \amp = \int \sqrt{y^2-z^2} dx =
+            x\sqrt{y^2-z^2} + c
+          </mrow>
+          <mrow>
+            \int F_2 dy \amp = \int \frac{yx}{\sqrt{y^2-z^2}} =
+            x\sqrt{y^2-z^2} + c
+          </mrow>
+          <mrow>
+            \int F_3 dz \amp = \int \frac{-xz}{\sqrt{y^2-z^2}} =
+            x\sqrt{y^2-z^2} + c
+          </mrow>
+          <mrow>
+            f \amp = x\sqrt{y^2-z^2}
+          </mrow>
+        </md>
+        <p>
+          Next I find the endpoints of the curve and evaluate the
+          potential at the endpoints. The different of these two
+          values is the value of the line integral, by the fundamental
+          theorem. 
+        </p>
+        <md>
+          <mrow>
+            f(\gamma(0)) \amp = f((1,-4,-1)) =  \sqrt{15} 
+          </mrow>
+          <mrow>
+            f(\gamma(4)) \amp = f((5, -16, -5)) = 5 \sqrt{231} 
+          </mrow>
+          <mrow>
+            f(\gamma(4)) - f(\gamma(0)) \amp = 5 \sqrt{231} - \sqrt{15} 
+          </mrow>
+        </md>
+      </solution>
+    </activity>
+  </subsection>
+  <subsection xml:id="subsection-week10-concepts">
+    <title>Conceptual Review Questions</title>
+    <p>
+      <ul>
+        <li>
+          What is a line integral and what does it measure?
+        </li>
+        <li>
+          What is a conservative vector field? 
+        </li>
+        <li>
+          What is the basic structure of the fundmanetal theorem of
+          calculus and how is that structure extended into
+          multivariable calculus?
+        </li>
+      </ul>
+    </p>
+  </subsection>
+</section>

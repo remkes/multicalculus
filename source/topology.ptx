@@ -1,0 +1,216 @@
+<section xml:id="section-topology">
+  <title>Topology of <m>\RR^n</m></title>
+  <subsection xml:id="subsection-what-is-topology">
+  <title>What Is Topology</title>
+    <p>
+      Change: abbreviate, just focus on intervals and open set in two
+      and three dimensions. Enough to do iterated integrals and
+      understand GGS statements. 
+      Topology is a branch of mathematics which studies concepts of
+      shape, near-ness and distance. You might think that such a
+      study woulds just be geometry, and you would be partially
+      correct. Topology is like a coarser version of geometry. It
+      cares about broad notions of near and far instead of precise
+      distances, and about types of shapes instead of precisely
+      defined specifics. Though it lacks the precision of other parts
+      of geometry, it is fundamental to modern mathematics.
+    </p>
+    <p>
+      I have already shown you topology of <m>\RR</m> in single
+      variable calculus, mostly notably in the definition of open and
+      closed intervals: <m>(a,b)</m> and <m>[a,b]</m>. Open intervals
+      did not include their endpoints but closed intervals did.
+      Openness and closedness are central to topolgoy. In this brief
+      chapter, I will extend the notions of opennes, closedness and
+      intervals to <m>\RR^n</m>. I will need these notions to
+      understand multivariable functions in the next section.
+    </p>
+  </subsection>>
+  <subsection xml:id="subsection-open-closed">
+    <title>Open and Closed Sets</title>
+    <definition>
+      <statement>
+        <p>
+          Let <m>S</m> be a set. A <term>topology</term> on <m>S</m>
+          is a choice of subsets which are open and which subsets are
+          closed.
+        </p>
+      </statement>
+    </definition>
+    <p>
+      I need two definitions which help to define open and clsoed
+      sets in <m>\RR^n</m>.
+    </p>
+    <definition>
+      <statement>
+        <p>
+          Let <m>A</m> be a subset of <m>\RR^n</m>. A point <m>a \in
+          A</m> is called an <term>interior point</term> if there
+          exists <m>\epsilon > 0</m> such that all points <m>b</m>
+          with <m>|a-b|\lt \epsilon</m> are also in <m>A</m>.
+        </p>
+      </statement>
+    </definition>
+    <p>
+      A point is an interior point if all nearby points are also in
+      the set. Around an interior point, small movements in 
+      any direction and remain inside the set. This <m>\epsilon</m>
+      measures exactly how small the small bit of movement is.
+    </p>
+    <definition>
+      <statement>
+        <p>
+          Let <m>A</m> be a subset of <m>\RR^n</m>. A point <m>a</m>
+          (not necessarily in the set) is called a <term>boundary
+          point</term> if for any <m>\epsilon > 0</m> there exists
+          points <m>b_1</m> and <m>b_2</m> such that both <m>|b_i -
+          a|\lt \epsilon</m>, <m>b_1</m> is in the set, but <m>b_2</m>
+          isn't. The <term>boundary</term> of a set is the set of all
+          its boundary point.
+        </p>
+      </statement>
+    </definition>
+    <p>
+      A point is a boundary point if there are nearby points in the
+      set and nearby points not in the set. Nearby means within some
+      small distance, measured by the small positive number
+      <m>\epsilon</m>. The two definitions are mutually exclusive: a
+      point cannot be both an interior and a boundary point for a set.
+      (It can, of course, be neither). These two definitions allow me
+      to define open and closed sets in <m>\RR^n</m>.
+    </p>
+    <definition>
+      <statement>
+        <p>
+          Let <m>A</m> be a subset of <m>\RR^n</m>. Then <m>A</m> is
+          called <term>open</term> is all of its points are interior
+          points. Equivalently, <m>A</m> does not contin any boundary
+          points. Alternatively, <m>A</m> is called
+          <term>closed</term> if it contains all of its boundary
+          points (or, equivalently, if it contains its boundary).
+        </p>
+      </statement>
+    </definition>
+    <p>
+      This definition properly extends the notions of open and closed
+      intervals in <m>\RR</m>. The boundary points of an interval are
+      the endpoints. The open intervals lacks their endpoints and the
+      closed intervals included their endpoints. In <m>\RR^n</m>, the
+      boundaries are much more complicated than endpoints: they can be
+      intricate geometric shapes.
+    </p>
+    <example>
+      <statement>
+        <p>
+          The sphere <m>S^{n-1}</m> in <m>\RR^n</m> is all vectors of
+          length one. The closed ball <m>B^{n}</m> in <m>\RR^n</m> is
+          all vectors of length one or less. The sphere
+          <m>S^{n-1}</m>is the boundary of the closed ball <m>B^n</m>,
+          and the closed ball is closed because all points of the
+          sphere are all contained in the closed ball. 
+        </p>
+      </statement>
+    </example>
+  </subsection>
+  <subsection xml:id="subsection-intervals">
+    <title>Important Open and Closed Sets</title>
+    <p>
+      Interval were important subsets of <m>\RR</m>. Here, I extend
+      the notion to <m>\RR^n</m>.
+    </p>
+    <definition>
+      <statement>
+        <p>
+          An <term>open interval</term> in <m>\RR^n</m> is a set of
+          points <m>(x_1, x_2, \ldots, x_n) \in \RR^n</m> such that
+          <md>
+            <mrow>
+              \amp a_1 \amp \lt \amp x_1 \lt  b_1 
+            </mrow>
+            <mrow>
+              \amp a_2 \amp \lt \amp x_2 \lt  b_2
+            </mrow>
+            <mrow>
+              \amp \amp \ldots 
+            </mrow>
+            <mrow>
+              \amp a_n \amp \lt \amp x_n \lt  b_n
+            </mrow>
+          </md>
+        </p>
+        <p>
+          The notation for this interval is 
+          <me>
+            I = (a_1,b_1)\times (a_2,b_2) \times \ldots \times (a_n,b_n)
+          </me>.
+        </p>
+      </statement>
+    </definition>
+    <definition>
+      <statement>
+        <p>
+          An <term>closed interval</term> in <m>\RR^n</m> is a set of
+          points <m>(x_1, x_2, \ldots, x_n) \in \RR^n</m> such that
+          <md>
+            <mrow>
+              \amp a_1 \amp \leq \amp x_1 \leq  b_1 
+            </mrow>
+            <mrow>
+              \amp a_2 \amp \leq \amp x_2 \leq  b_2
+            </mrow>
+            <mrow>
+              \amp \amp \ldots 
+            </mrow>
+            <mrow>
+              \amp a_n \amp \leq \amp x_n \leq  b_n
+            </mrow>
+          </md>
+        </p>
+        <p>
+          The notation for this interval is 
+          <me>
+            I = [a_1,b_1]\times [a_2,b_2] \times \ldots \times [a_n,b_n]
+          </me>.
+        </p>
+      </statement>
+    </definition>
+    <p>
+      Intervals are rectangular objects. In <m>\RR^2</m>, they are
+      filled-in rectangles, including the hollow bounding rectangle if
+      the interval is closed and excluding it if the interval is open.
+      In <m>\RR^3</m>, intervals are solid rectangular prisms whose
+      boundaries are rectangular boxes. In higher dimensions, I
+      think of intervals as higher-dimensional rectangular prisms.
+    </p>
+    <p>
+      Open and closed intervals are the basic open and closed sets in
+      <m>\RR^n</m>. I will also define another important pair of
+      useful open and closed sets.
+    </p>
+    <definition>
+      <statement>
+        The <term>open ball</term> centred at <m>v \in \RR^n</m> with
+        radius <m>r</m> is the set of points <m>u \in \RR^n</m> such
+        that <m>|u-v| \lt r</m>. In <m>\RR</m>, this is an open
+        interval (again, generalizing the interval). In <m>\RR^2</m>,
+        this is a disc not including the boundary. In <m>\RR^3</m>,
+        this is a solid sphere, again not including the boundary. In
+        higher dimensions, this defines the higher analogue of a
+        solid, round object without boundary. 
+      </statement>
+    </definition>
+    <definition>
+      <statement>
+        The <term>closed ball</term> centred at <m>v \in \RR^n</m> with
+        radius <m>r</m> is the set of points <m>u \in \RR^n</m> such
+        that <m>|u-v| \leq r</m>. In <m>\RR</m>, this is a closed
+        interval (again, generalizing the interval). In <m>\RR^2</m>,
+        this is a solid sphere including the boundary. In
+        <m>\RR^3</m>, this is a solid sphere, again including the
+        boundary. In higher dimensions, this defines the higher
+        analogue of a solid, round object with boundary. 
+      </statement>
+    </definition>
+  </subsection>
+</section>
+    

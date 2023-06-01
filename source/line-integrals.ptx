@@ -1,0 +1,593 @@
+<section xml:id="section-line-integrals">
+  <title>Line Integrals of Vector Fields</title>
+  <subsection xml:id="subsetion-line-integral-definition">
+    <title>Vectors Fields and Curves</title>
+    <p>
+      Let's start, again, with a vector field <m>F</m> on a set <m>U
+      \subset \RR^3</m>, represented fluid flow or force. Now I'm
+      going to consider a parametric curve <m>\gamma(y)</m> moving
+      through the region <m>U</m>. I'm going to think of this as the
+      path of an object moving through the situation caused by the
+      field. If this field is, say, wind, this is an object moving
+      through wind: perhaps with the wind, perhaps against it, perhaps
+      across it. If the field is force, then the path is an object
+      moving through the force; again, possibly along with the force
+      and possibly against the force. 
+    </p>
+    <p>
+      Note that this path doesn't need to be an integral curves, as
+      discussed at the end of the last section. These can be paths
+      influenced by the field or the can be paths of an object acting
+      against the force. This could be the path of a leave in the wind
+      (which, starting at rest, should be an integral curve). Or it
+      could be the path of a person struggling to move upwind, acting
+      against the force. 
+    </p>
+    <p>
+      In either case, there is an interaction of the field and the
+      path. In the case of the leaf in the wind, the fields and the
+      path work together. In the case of the person moving upwind, the
+      field and the path are opposed. I'd like to measure this
+      interaction. An integral curve was defined to be a curve where
+      the tangent vector and the vector field coincided. For another
+      curve, the tangetn vector and the vector field may not coincide,
+      but they exist and I can look at their interaction. I have a
+      tool for this: the dot product. The dot product measures the
+      similarity of two vector, being largest when they are in the
+      same direction, negative when the are in oppositve directions,
+      and zero when they are perpendicular. Given an field <m>F</m>
+      and a curve <m>\gamma</m>, the dot product <m>F \cdot
+      \gamma^\prime</m> will measure the interaction.
+    </p>
+    <p>
+      This interaction <m>F \cdot \gamma^\prime</m> tells us how the
+      field and the direction of the curve interact at a point.
+      However, I may want a more holistic understanding of what
+      happens along the whole curve. In the process of moving along
+      the curve, how does the field act? Does the field push the
+      object along the curve (a positive influence) or does movement
+      along the curve have to work hard to counteract the field? Or,
+      perhaps, does the curve move perpendicularly to the field and
+      there is no influence at all?
+    </p>
+    <p>
+      To answer this question, I define the integral of the field
+      along the parametric curve. 
+    </p>
+    <definition>
+      <statement>
+        <p>
+          Let <m>F</m> be a vector field and <m>\gamma(s): [0,L]</m>
+          be a parametric curve parametrized by arclength. The
+          <term>line integral</term> of a vector field <m>F</m> along
+          a path <m>\gamma(s): [0,L] \rightarrow \RR^n</m> is the
+          integral of the scalar <m>F(\gamma(s)) \cdot T(s)</m> along
+          the length of the curve.
+        </p>
+        <me>
+          \int_{\gamma} F \cdot T ds = \int_{\gamma} F \cdot ds
+          \defeq \int_0^L F(\gamma(s)) \cdot T(s) ds
+        </me>
+        <p>
+          Both these notations, integrating <m>F \cdot T</m> where
+          <m>T</m> is the unit tanget of the curve, and integrating
+          <m>F \cdot ds</m> are conventional notations for line
+          integrals. 
+        </p>
+      </statement>
+    </definition>
+    <p>
+      The term <em>line integral</em> is a bit annoying, since the
+      curve does not need to actually be a striaght line. The name
+      comes from historical usage, where <sq>line</sq> and
+      <sq>curve</sq> could be used interchangable for things like
+      parametric curves. 
+    </p>
+    <p>
+      The line integral is a measure of work or resitance of the field
+      along the path. If the integral is positive then, on average,
+      the field is working along with the curve. If the integral is
+      negative then, on average, the curve is moving against the
+      field. The integral curves of the field are the curves where the
+      tangents of the curve and the field coincide: these are the
+      curves that have the largest positive line integrals. As before,
+      I should repeat a caution about the interpretation. Sometimes,
+      curve are thought of as the paths objects take due to the action
+      of the field (such as the integral curve, for objects starting
+      at rest). However, sometimes curves are representing objects
+      under some other volition, which may act with or against the
+      fields; the line integral then measures the interaction. 
+    </p>
+  </subsection>
+  <subsection xml:id="subsection-line-integral-calculation">
+    <title>Calculating Line Integrals</title>
+    <p>
+      Using the arclength parameter for the definition is appropriate
+      for a strong definition. It is a unique parametrizion and gives
+      the line integral a single, clear definition. However, the
+      arclength parmaeter is inconvenient
+      for calculation. Instead, in this section, I'll explain how to
+      calculate line integrals for any parametrization. (Since I am
+      starting from the arclength parameterization and going to any
+      other parametrization, it will be automatically established that
+      the calculation of the line integral will be independent of
+      parametrization.)
+    </p>
+    <p>
+      Let <m>\gamma(t): [a,b] \rightarrow \RR^3</m> be an arbitrary
+      parametrization of a parametric curve. Then I can think of
+      <m>s(t)</m> (the arclenth of the curve in terms of <m>t</m>) as
+      a substitution for single variable integration. This
+      substitution has <m>ds = |\gamma^\prime(t)| dt</m> and <m>T(t) =
+      \gamma^\prime(t) / |\gamma^\prime(t)|</m>. I can apply this
+      substitution to the definition of the line integral.
+    </p>
+    <md>
+      <mrow>
+        \int_{\gamma} F \cdot T ds \amp = \int_0^L F(\gamma(s)) \cdot
+        T(s) ds 
+      </mrow>
+      <mrow>
+        \amp = \int_a^b F(\gamma(t)) \cdot
+        \frac{\gamma^\prime(t)}{|\gamma^\prime(t)|}
+        |\gamma^\prime(t)| dt 
+      </mrow>
+      <mrow>
+        \amp = \int_a^b F(\gamma(t)) \cdot \gamma^\prime(t) dt
+      </mrow>
+    </md>
+    <p>
+      Very conveniently, the length of the tangent
+      <m>|\gamma^\prime(t)|</m> cancels off, so the calculation of the
+      line integral is quite reasonable in any arbitrary
+      parametrization. Let me move on to some examples.
+    </p>
+    <example>
+      <statement>
+        <p>
+          For ar example, consider the rotational flow <m>F(x,y)
+          = (-y,x)</m> and <m>\gamma(t)</m> the counterclockwise
+          circle <m>(r \cos t, r \sin t)</m> for <m>t \in [0,
+          2\pi]</m>. I'll calculate the line integral.
+        </p>
+        <md>
+          <mrow>
+            \gamma^\prime(t) \amp = (-r \sin t, r \cos t)
+          </mrow>
+          <mrow>
+            F(\gamma(t)) \amp = (-r\sin t, r \cos t)
+          </mrow>
+          <mrow>
+            F(\gamma(t)) \cdot \gamma^\prime(t) \amp = r^2 \sin^2 t
+            + r^2 \cos^2 r = r^2
+          </mrow>
+          <mrow>
+            \int_{\gamma} F \cdot ds \amp = \int_0^{2\pi} r^2 dt =
+            2\pi r^2
+          </mrow>
+        </md>
+        <p>
+          The work to move around the circle (with the vector field)
+          of radius <m>r</m> is <m>2\pi r^2</m>. Since it is positive
+          and follows the integral curve, I could think of it as the
+          work the field accomplished to move the object along its
+          integral curve.
+        </p>
+      </statement>
+    </example>
+    <example>
+      <statement>
+        <p>
+          A very important example is gravity and potential energy.
+          Here is the field describing the force (per unit mass)
+          generated by a mass <m>M</m> at the origin.
+        </p>
+        <me>
+          F = \frac{GM}{\sqrt{(x^2+y^2+z^2)^3}} (-x, -y, -z)
+        </me>
+        <p>
+          Now consider an outward path <m>\gamma(t) = (t,t,t)</m> for
+          <m>t \in [a,b]</m> and <m>b>a>0</m>. I'll calculate the line
+          integral. 
+        </p>
+        <md>
+          <mrow>
+            \gamma^\prime \amp  = (1,1,1)
+          </mrow>
+          <mrow>
+            F(\gamma(t)) \amp = \frac{GM}{\sqrt{(3t^2)^3}} (-t,-t,-t)
+            = \frac{-GM}{t^2 3\sqrt{3}} (1,1,1)
+          </mrow>
+          <mrow>
+            F(\gamma(t)) \cdot \gamma^\prime(t) \amp = \frac{-3
+            GM}{t^2 3\sqrt{3}} = -\frac{GM}{t^2\sqrt{3}}
+          </mrow>
+          <mrow>
+            \int_{\gamma} F \cdot ds \amp = \int_b^a
+            -\frac{GM}{t^2\sqrt{3}} dt = -\frac{GM}{\sqrt{3}}
+            \int_a^b \frac{1}{t^2} dt
+          </mrow>
+          <mrow>
+            \amp = -\frac{GM}{\sqrt{3}} \left. \frac{-1}{t}
+            \right|_a^b = - \frac{GM}{\sqrt{3}} \left( \frac{1}{a} -
+            \frac{1}{b} \right)
+          </mrow>
+          <mrow>
+            \amp = \frac{GM(a-b)}{ab\sqrt{3}}
+          </mrow>
+        </md>
+        <p>
+          If the distances <m>a</m> and <m>b</m> are large, but
+          <m>a</m> and <m>b</m> are close to each other, then the
+          change <m>a-b</m> is much more significant than the change
+          in the term <m>ab</m> in the denominator. If I set <m>g =
+          \frac{GM}{\sqrt{3}ab}</m> and pretend this is locally
+          constant (which is reasonable given the assumptions about
+          the relative sizes of the distances), the line integral
+          (approximately) evaluates to <m>g(a-b)</m>. 
+        </p>
+        <p>
+          Now cecall that the field is defined as force per unit
+          mass, so if it acts on a mass <m>m</m>, the output of the
+          line integral will be potential of <m>mg(a-b)</m>. 
+          Finally, let me call the difference <m>b-a</m> by the letter
+          <m>h</m>, indicating the <sq>height</sq> gained in movement
+          along this curve. The result then is <m>-mgh</m>, which is
+          almost the high-school physics result of <m>-mgh</m>, the
+          increase in potential energy, where <m>h</m> is the change
+          in height and <m>g</m> the local acceleration due to gravity. 
+        </p>
+        <p>
+          The only remaining difference is the negative sign. This
+          relates to my previous discussion about directions of
+          gradients. The force of gravity is the <em>negative</em>
+          gradient of the potential energy, which introduces a sign
+          adjustment to all the interpretations for potential energy.
+          Mutliplying by <m>(-1)</m> to adjust for this sign
+          discrepancy gives the desired result: the line integral
+          represent the change in potential energey as the object
+          moves along the curve. This example is archetypical for
+          conservative force and will be expanded upon in the next
+          section. 
+        </p>
+      </statement>
+    </example>
+  </subsection>
+  <subsection xml:id="subsection-fundamental-theorems">
+    <title>Fundamental Theorems</title>
+    <p>
+      In the previous section, I showed how to calculate line integral
+      buy doing a single-variable integral where the variable of
+      integration was the curve parameter. The new kind of integral, a
+      line integral, was reduced to a single-variable integral which
+      we already understand from single-variable calculus. This
+      mirrors the approach from earlier sections in this course. For
+      integration over two, three and higher dimensional region, the
+      method of calculation was iterated integras, which reduce the
+      problem to a series of understood single-variable integrals.
+    </p>
+    <p>
+      Reduction to single variable integrals is an excellent strategy.
+      It means that I don't have to invent entirely new techniques and
+      methods for multiple integrals; I can, instead, rely on all the
+      previous knowledge I already have for integral. It is also very
+      typical for mathematics: many, many mathematical problems are
+      <sq>solved</sq> by simply reducing them to another type of
+      problem that is already considered solved. However, as good as
+      these reduction methods are, they miss something important. To
+      understand what they are missing, let me return to the
+      Fundamental Theorm of Calculus. To remind you of one of the
+      formulations of the fundamental theorem, let <m>f(x)</m> be a
+      differentiable function. 
+    </p>
+    <me>
+      \int_a^b \frac{df}{dx} dx = f(b) - f(a)
+    </me>
+    <p>
+      The fundamental theorem say that integrating a derivative 
+      Is the same as evaluating the original function on the boundary
+      (endpoints) of the interval. My question now is: are there
+      versions of this theorem for our new kinds of integrals? To
+      understand the question, let me talk about the main pieces of
+      the fundamental theorem. 
+    </p>
+    <p>
+      I want to make an archetype out of the fundamental theorem. To
+      that end, I'm going to boil down the idea to this basic: the
+      fundamental theorem relates integrals where there is a
+      derivative on the right and a boundary on the left. In this
+      context, I can ask for other similar results: what theorem
+      relate integrals where there is some kind of differential
+      operator on the left and some kind of set boundary on the right?
+      In symbols, if <m>Df</m> is some differential opreator and
+      <m>\del S</m> is the boundary of some set, I am looking for
+      theorems that fit this archetype:
+    </p>
+    <me>
+       \int_S Df = \int_{\del S} f
+    </me>
+    <p>
+      It turns out there are many such theorems. A major part of the
+      rest of this course will be understanding these theorems. What
+      kind of differential operators can show up on the left side, and
+      for what kinds of integrals? What kinds of set and boundary
+      match with the differential operators on the right? I can start
+      answering this question with line integrals.
+    </p>
+  </subsection>
+  <subsection xml:id="subsection-fundamental-theorem-line-integrals">
+    <title>The Fundamental Theorem of Line Integrals</title>
+    <p>
+      The first new <sq>fundamental theorem</sq> is about line
+      integrals. The differential operator on the leff will be the
+      gradient of a scalar field. The boundary operator on the right
+      will be the end poitn of a parametric curve.
+    </p>
+    <theorem>
+      <statement>
+        <p>
+          Let <m>F = \nabla f</m> be a conservative vector field with
+          potential <m>f</m> and let <m>\gamma(t): [a,b] \rightarrow
+          \RR^n</m> be a parametric curve. Then the following equation
+          is true.
+        </p>
+        <me>
+          \int_{\gamma} F \cdot ds = f(\gamma(b)) - f(\gamma(a))
+        </me>
+      </statement>
+    </theorem>
+    <proof>
+      <p>
+        I calculate the integral in steps, working in <m>\RR^3</m> to
+        demonstrate (though the proof works in any dimension). 
+      </p>
+        <md>
+          <mrow>
+            \int_{\gamma} F \cdot ds \amp = \int_a^b \nabla
+            f(\gamma(t)) \cdot \gamma^\prime(t) dt
+          </mrow>
+          <mrow>
+            \amp = \int_a^b \left( \frac{\del f}{\del x} (\gamma(t)),
+            \frac{\del f}{\del y} (\gamma(t)), \frac{\del f}{\del z}
+            (\gamma(t)) \right) \cdot \left( \gamma_1^\prime(t),
+            \gamma_2^\prime(t), \gamma_3^\prime(t) \right) dt
+          </mrow>
+          <mrow>
+            \amp = \int_a^b \frac{\del f}{\del x} (\gamma(t))
+            \gamma_1^\prime(t) + \frac{\del f}{\del y} (\gamma(t))
+            \gamma_2^\prime(t) + \frac{\del f}{\del z} (\gamma(t))
+            \gamma_3^\prime(t) dt
+          </mrow>
+        </md>
+        <p>
+          This is the most important step of the proof. So far, I've
+          just expanded the notation for calculating an arbitrary line
+          integral of a gradient in <m>\RR^3</m>, doing the dot
+          product and getting a general expression for the resulting
+          single variable integral. However, the expression I get is
+          precisely the definition of the chain rule for the
+          derivative of a scalar field evaluated along a parametric
+          curve. Therefore, I can write this single variable integral
+          as a derivative, going backwards with the chain rule. After
+          doing so, I use the ordinary single-variable fundamental
+          theorem applied to the function <m>f(\gamma(t))</m>. 
+        </p>
+        <md>
+          <mrow>
+            \amp = \int_a^b \frac{d}{dt} \left( f(\gamma(t)) \right)
+            dt
+          </mrow>
+          <mrow>
+            \amp = f(\gamma(b)) - f(\gamma(a))
+          </mrow>
+        </md>
+      </proof>
+    <p>
+      Side by side, let me clearly show the similarity of the theorem
+      with the original fundamental theorem: derivatives on one side
+      and (evaluation on) boundaries on the other side.
+    </p>
+    <md>
+      <mrow>
+        \int_a^b \frac{df}{dx} dx \amp = f(b) - f(a)
+      </mrow>
+      <mrow>
+        \int_{\gamma} \nabla f \cdot ds \amp = f(\gamma(b)) -
+        f(\gamma(a))
+      </mrow>
+    </md>
+    <p>
+      The result of the fundamental theorem of line integrals says
+      that only the endpoints determine the value of the line
+      integral.  There is a term for this fact. 
+    </p>
+    <definition>
+      <statement>
+        <p>
+          Let <m>F</m> be a vector field and <m>\gamma(t)</m> an
+          parametric curve. If the line integral <m>\int_{\gamma} F
+          \cdot dx</m> only depends on the endpoint of <m>\gamma</m>,
+          then the line integral is called
+          <term>path independent</term>. 
+        </p>
+      </statement>
+    </definition>
+    <p>
+      We can succincly rephrase the fundamental theorem of line
+      integrals by just saying that line integrals of conservative
+      fields are always path independent. 
+    </p>
+  </subsection>
+  <subsection xml:id="subsection-implications-conservative">
+    <title>Implications for Conservative Vector Fields</title>
+    <p>
+      The fundamental theorem for line integral applies to
+      conservative vector fields: it says that the integral of a
+      conservative vector field can be calculated simply by evaluation
+      on the end points. That means all the points on the path
+      inbetween are irrelevant!
+    </p>
+    <proposition>
+      <statement>
+        <p>
+          Let <m>F = \nabla f</m> be a conservative vector field.
+          Then line integrals of <m>F</m> are
+          <em>path-independent</em>. Their value only depends on the
+          endpoints.
+        </p>
+      </statement>
+    </proposition>
+    <p>
+      No matter how strange the path is, no matter how many times it
+      loops around and goes elsewhere, only the endpoints matter. Let
+      me go back to conservative fields as forces which come from a
+      potential energy scalar field. If <m>f</m> is this potential
+      energy, then <m>f(\gamma(b)) - f(\gamma(a))</m> is the potential
+      energy at the end less the potential energy at the start. This
+      difference is the change in potential energy. The work to move
+      through the force field is equal to the change in potential
+      energy. The work can be defined in terms of kinetic energy lost
+      or gained, so this says that the kinetic energy lost or gained
+      is equal to the change in potential energy. Therefore, energy is
+      conserved! This explains the term <sq>conservative vector
+      field</sq>: these are vector fields where conservation of energy
+      makes sense. (As before, there are sign issues for both gravity
+      and electromagnetic force, since the gradient point in
+      directions of increasing potential energy, but the model of
+      physics is based on the principle of decreasing potential
+      energy). 
+    </p>
+    <p>
+      I said that the change in potential energy (the result of the
+      line integral using the fundamental theorem) should be the
+      negative of the change in kinetic energy. I can actually be very
+      explicit with this calculation. 
+      Let <m>F = \nabla f</m> be a conservative
+      force. Then <m>F = ma</m>, where <m>a</m> is acceration. Also,
+      if <m>\gamma</m> is a curve representing movement, then
+      <m>\gamma^{\prime \prime}</m> is the acceleration. Then look
+      carefully at the change in energy using the fundamental theorem
+      of line integrals. I will replace the force <m>F</m> with <m>ma
+      = m \gamma^{\prime \prime}</m>. (The reult of the line integral
+      is the negative change in potential energy due to the
+      already-frequently-mention sign reversal in these physics
+      application.) 
+  </p>
+    <md>
+      <mrow>
+        -\Delta PE \amp = f(\gamma(b)) - f(\gamma(a))
+      </mrow>
+      <mrow>
+        \amp = \int_{\gamma} F \cdot ds
+      </mrow>
+      <mrow>
+        \amp = \int_a^b m \gamma^{\prime \prime}(t) \cdot
+        \gamma^\prime(t) dt
+      </mrow>
+    </md>
+    <p>
+      This dot product can be written as a derivative of a different
+      dot product (using the product rule). After doing so, I use
+      the vector identity that a dot product of a vector with itself
+      is its length squared. 
+    </p>
+    <md>
+      <mrow>
+        \amp = \frac{m}{2} \int_a^b \frac{d}{dt} (\gamma^\prime(t)
+        \cdot \gamma^\prime(t)) dt
+      </mrow>
+      <mrow>
+        \amp = \frac{m}{2} \int_a^b \frac{d}{dt}
+        |\gamma^\prime(t)|^2 dt
+      </mrow>
+      <mrow>
+        \amp = \frac{m}{2} |\gamma^\prime(t)|^2 \bigg|_a^b
+      </mrow>
+    </md>
+    <p>
+      The magnitude of <m>\gamma^\prime</m> is just the scalar
+      speed. Evaluated at the ends points gives the starting speed
+      and the ending speed. I'll write these as <m>v_a</m> and
+      <m>v_b</m>, respectively, 
+    </p>
+    <me>
+      = \frac{mv_b^2}{2} - \frac{mv_a^2}{2} = \Delta KE
+    </me>
+    <p>
+      The expression <m>\frac{1}{2} m v^2</m> is the definition of
+      kinetic energy. Therefore, the result of this calculation is
+      simply the ending kinetic energy minus the starting kinetic
+      energy: this is the change in kinetic energy. Therefore, the
+      calculation shows that the change in potential energey is the
+      negative of the change in potential energy. 
+    </p>
+  </subsection>
+  <subsection xml:id="subsection-conversative-fields-again">
+    <title>Properties of Conversative Vector Fields</title>
+    <p>
+      In <xref ref="section-conservative" /> I showed that conservative
+      vector fiels are irrotational and, 
+      conversely, an irrotation field <em>defined on
+      a simply connected set</em> was guaranteed to be conservative.
+      I now have a new characterization of conversative fields: their
+      line integrals are path independent. Again, I can ask if
+      the converse holds and again, there is a topological condition.
+    </p>
+    <proposition>
+      <statement>
+        <p>
+          Let <m>F</m> be a vector field on an open path-connected set
+          in <m>\RR^n</m>. If the line integral
+        </p>
+        <me>
+          \int_\gamma F \cdot ds = 0 
+        </me>
+        <p>
+          for all closed parametric curve <m>\gamma(t)</m>, then
+          <m>F</m> is a conservative field.
+        </p>
+      </statement>
+    </proposition>
+    <p>
+      Putting together the various statements on conservative vector
+      fields, I can summarize their definiting properties in the
+      following proposition.
+    </p>
+    <proposition>
+      <statement>
+        <p>
+          Let <m>F</m> be a vector field on <m>U</m> an open
+          simply-connected set in <m>\RR^n</m> and let <m>\gamma:
+          [a,b] \rightarrow U</m> be a parametric curve. The
+          following four conditions are equivalent.
+        </p>
+        <ol>
+          <li>
+            <p>
+              <m>F</m> is conservative on <m>U</m>. (By definition,
+              this means <m>F = \nabla f</m> for a scalar field
+              <m>f</m>).
+            </p>
+          </li>
+          <li>
+            <p>
+              The line integrals of <m>F</m> are path independent in
+              <m>U</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              The line integral of <m>F</m> is zero for any closed
+              path in <m>U</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\nabla \times F = 0</m>.
+            </p>
+          </li>
+        </ol>
+      </statement>
+    </proposition>
+  </subsection>
+</section>

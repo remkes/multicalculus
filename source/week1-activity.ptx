@@ -1,0 +1,28 @@
+<section xml:id="week1-activity">
+  <title>Week 1 Activity</title>
+  <subsection xml:id="problems-vectors">
+    <title>Title</title>
+    <activity>
+      <statement>
+        <p>
+          Problem
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Solution
+        </p>
+      </solution>
+    </activity>
+  </subsection>
+  <subsection xml:id="week1-concepts">
+    <title>Conceptual Review Questions</title>
+    <p>
+      <ul>
+        <li>
+          Question
+        </li>
+      </ul>
+    </p>
+  </subsection>
+</section>

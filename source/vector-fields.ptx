@@ -1,0 +1,256 @@
+<section xml:id="section-vector-fields">
+  <title>Vector Fields</title>
+  <subsection xml:id="subsection-vector-field-definition">
+    <title>Definition</title>
+    <p>
+      So far in this course and Calculus III, the multivariable
+      functions I've introduced were scalar fields <m>f: \RR^n
+      \rightarrow \RR</m> and parametric curves <m>\gamma: [a,b]
+      \rightarrow \RR^n</m>. Parametric curves have a single variable of
+      input and scalar fields have a single variable of output. Now I am
+      finally going to give a complete treatment of function which have
+      multiple variables for input and for output. 
+    </p>
+    <p>
+      That said, there are two examples of the functions with multiple
+      inputs and output that have already been consider: linear
+      transformation in linear algebra and change of coordiantes
+      functions. Both these examples treated function <m>\RR^m
+      \rightarrow \RR^m</m> as transformations of space. The analysis of
+      linear transformation in linear algebra implicit used this
+      interpretation throughout: what does the linear algebra do to
+      <m>\RR^n</m>?. The determinant calculate the change on size and
+      orientation. Invertibility wondered if the changes could be
+      undone. The classification of types was all about rotations,
+      projects and the like <emdash /> things that happen to the ambient
+      space. Change of variables functions were also about changing
+      space by changing the coordinate descriptions. The Jacobians even
+      used the same determinant idea to talk about the change in (local,
+      infinitesimal) size under a change in variables. 
+    </p>
+    <p>
+      Interpreting functions <m>F: \RR^n \rightarrow \RR^m</m> as
+      transformations of space is very useful and valuable. It connects
+      well with linear algebra, where matrices are thought of as
+      transformations. It serves multiple integration by allowing
+      coordinate transformations. However, it is not the only
+      conceptual way to understand such functions. I am now going to
+      introduce a new interpretation of these functions, and along with
+      the new interpretation, a new name for these functions. 
+    </p>
+    <definition>
+      <statement>
+        <p>
+          A function on a region of <m>S \subset \RR^n</m> which outputs
+          vectors is a <term>vector field</term>. If the output are
+          vectors with <m>m</m> components, I can write the function as
+          <m>F: S \rightarrow \RR^m</m>. By notational convention, I'll
+          use captial letters for vector fields and lower case letter
+          for scalar fields. 
+        </p>
+        <p>
+          If <m>F: S \rightarrow \RR^m</m> is a vector field, then
+          I can write <m>F = (F_1, F_2, \ldots, F_m)</m> in terms of
+          its <term>components</term>. Each component <m>F_i</m> is
+          itself a scalar field, has partial derivatives and gradients,
+          and is subject to all the tools already defined for scalar
+          fields. 
+        </p>
+      </statement>
+    </definition>
+    <p>
+      The use of the word <sq>field</sq> matched the scalar fields of
+      Calculus III. A scalar field assigned a scalar to every point in a
+      region <m>S \subset \RR^m</m>. In familiar <m>\RR^3</m>, scalar
+      fields could assign temperature, pressure, density, concentration
+      and similar scalars to point. Now, a vector field assigns a vector
+      to each point in a reagion <m>S \subset \RR^n</m>. This is the new
+      interpretation. The ambient space is unchange, but each point in
+      the ambient space is assigned a vector which has some meaning. 
+    </p>
+    <p>
+      What does it mean to assign a vector to each point of space? The
+      vector could represent a force (say a gravitational or
+      electromagnetic force) that
+      applies at any point in space. If could represented the local
+      movement or acceleration of a fluid (wind speed/direction and
+      ocean current speed/direction are a vector fields). It could
+      represent the rate and direction of heat flow or diffusion of
+      concentration. It could be the gradient of any scalar field
+      (temperature gradient, pressure gradient, concentration gradient,
+      etc.) The key thing, in all of these, is that the measurement
+      assigns a vector fo each point: something with a direction and a
+      magnitude. 
+    </p>
+    <p>
+      The vector of a vector field is always a local direction vector.
+      It is a vector as if the point in question is the origin, pointing
+      out in some direction with some magniture from the current point
+      in space. 
+    </p>
+  </subsection>
+  <subsection xml:id="subsection-vector-fields-examples">
+    <title>Examples</title>
+    <p>
+      To visualize vector fields, I can draw arrows on a region in
+      <m>\RR^2</m>. I'll do this with two examples.
+    </p>
+    <example>
+      <statement>
+      <figure xml:id="figure-vector-field1">
+        <caption>The Vector Field <m>F(x,y) = (0,1)</m></caption>
+        <image xml:id="figure63" width="80%">
+          <asymptote>
+            import graph;
+            size(8cm);
+            path vector(pair z) {return
+            (0,0)--(0,1);}
+            add(vectorfield(vector,(-4,-4),(4,4)));
+          </asymptote>
+        </image>
+      </figure>
+        <p>
+          Consider the constant vector field <m>F(x,y) = (0,1)</m> on
+          <m>\RR^3</m>, as seen in <xref ref="figure-vector-field1" />.
+          The vector <m>(0,1)</m> is a unit vector in the vertical
+          y-axis direction in <m>\RR^2</m>. This vector fields
+          associates that unit vertical vector to each point in
+          <m>\RR^2</m> (as a local direction). At each point, the vector
+          points vertically upward from that point. If this field
+          represented a fluid flow, the fluid would be flowing upwards
+          (in <m>y</m>) at a uniform pace everywhere, following these
+          local direction vectors.
+        </p>
+      </statement>
+    </example>
+    <example>
+      <statement>
+        <figure xml:id="figure-vector-field2">
+          <caption>The Vector Field Describing Gravitational Force</caption>
+          <image xml:id="figure64" width="80%">
+            <asymptote>
+              import graph;
+              size(10cm);
+              path vector(pair z) {return
+              (0,0)--(-z.x/(1+(z.x)^2+(z.y)^2), -z.y/(1+(z.x)^2+(z.y)^2));}
+              add(vectorfield(vector,(-4,-4),(4,4)));
+            </asymptote>
+          </image>
+        </figure>
+        <p>
+          An excellent example of a vectors field is the force of
+          gravity, shown in <xref ref="figure-vector-field2" />. The
+          magnitude of the force of gravity per unit mass due to a mass
+          <m>M</m> at the origin is a scalar field. <m>(x,y,z)</m> is:
+        </p>
+        <me>
+          f = \frac{MG}{x^2+y^2+z^2}
+        </me>
+        <p>
+          However, the force itself also includes direction, so it is a
+          vector field.
+        </p>
+        <me>
+          F = \frac{MG}{(x^2+y^2+z^2)^{\frac{3}{2}}} (-x,-y,-z)
+        </me>
+        <p>
+          The direction <m>(-x,-y,-z)</m> is back towards the origin.
+          I can recover the magnitude by taking the length of the
+          vector.
+        </p>
+        <me>
+           |F| = \frac{MG}{(x^2 + y^2 + z^2)^\frac{3}{2}} \sqrt{x^2
+           +y^2+z^2} = \frac{MG}{x^2 +y^2+z^2} = \frac{MG}{r^2}
+        </me>
+      </statement>
+    </example>
+    <p>
+      Through the discussion of vector fields, which last for most of
+      the remainder of the course, I will rely heavily on two
+      applications: fields of force and fields describing fluid flow.
+      These two applications are fundamental to the theory. Between
+      them, they can help ground the difficult abstration of the
+      discipline. For fields of force, gravity is often the first
+      example <emdash /> indeed, I used it above. However,
+      electromagnetic force will end up being the more important
+      example. Historically, the development of the theory of vector
+      fields was driven by 19th century attempts to understand
+      electricity and magnestism. Many of the basics of gravitational
+      action can be understood with scalar calculus, as Newton did in
+      his physics. However, eletricity and magnetism are difficult to
+      even start describing without vector fields. 
+    </p>
+  </subsection>
+  <subsection xml:id="subsection-vector-fields-operations">
+    <title>Basic Operations on Vector Fields</title>
+    <p>
+      Vector fields produce vectors, one for each point in the domain.
+      Since the output of the field is a vector, all the operations of
+      vectors apply. Let me review these operations. 
+    </p>
+    <p>
+      Assume that <m>F</m> and <m>G</m> are two vector fields on some
+      region <m>S \subset \RR^n</m>. Assume that <m>f</m> is a scalar
+      field on the same region. All these operations are the ordinary
+      vector operations done individually at every point in the domain
+      <m>S</m>. 
+    </p>
+    <ul>
+      <li>
+        <p>
+          The length of a vector field, which is the length of each
+          output vector, is a scalar field. 
+        </p>
+        <me>
+          |F|
+        </me>
+      </li>
+      <li>
+        <p>
+          If a vector field never has length zero, then I can define
+          the field of unit direction of the vector field. This new
+          field gives the direction of movement at each point in the
+          vector field, but erases the maagnitude. 
+        </p>
+        <me>
+          \frac{F}{|F|}
+        </me>
+      </li>
+      <li>
+        <p>
+          The sum or different of two vectors fields is another vector
+          field.
+        </p>
+        <me>
+          F \pm  G 
+        </me>
+      </li>
+      <li>
+        <p>
+          The dot product of two vector fields is a scalar field. 
+        </p>
+        <me>
+          F \cdot G 
+        </me>
+      </li>
+      <li>
+        <p>
+          The scalar product of a scalar field with a vector field is
+          another vector field. 
+        </p>
+        <me>
+          fF
+        </me>
+      </li>
+      <li>
+        <p>
+          If <m>S \subset \RR^3</m>, then the cross product of two
+          vectors fields is another vector field. 
+        </p>
+        <me>
+          F \times G 
+        </me>
+      </li>
+    </ul>
+  </subsection>
+</section>

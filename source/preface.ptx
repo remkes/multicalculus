@@ -1,0 +1,38 @@
+<section xml:id="section-preface">
+  <title>Preface</title>
+  <p>
+    Calculus III was primarily devoted to extending the derivative to
+    multivariable scalar functions. This course starts with the
+    parallel program of extending the integral to multivariable scalar
+    functions. Unlike the derivative, the definition of the
+    multivariable (definite) integral is relativley similar to the
+    single variable case. The challenge of integration is in the
+    geometry of the subsets of <m>\RR^n</m> involved in the
+    integration. The course proceeds to a number of applications of
+    multivariable integration.
+  </p>
+  <p>
+    The second half of the course covers the material known as cector
+    calculus. This is the calculus of multivariable vector functions:
+    functions with multivariable outputs as well as inputs. We
+    investigate several derivative and integral extensions for these
+    functions.
+  </p>
+  <p>
+    Since the extension of the derivative to multivariable functions
+    is multi-faceted, we loose the simple idea of an antiderivative.
+    However, in the context of vector calculus, we can produce several
+    new theorems which resemble the fundamental theorem of calculus,
+    even without a simple anti-derivative. The fruit of this labour
+    are the famous Gauss, Green and Stokes theorems.
+  </p>
+  <p>
+    The final section of the course is a brief introduction to
+    differential geometry. We introduce the ideas of manifolds and
+    differential forms (and we finally get a reasonable definition of
+    the differential <sq>dx</sq> used in integrals). We develop this
+    material far enough to show the deep connections underlying the
+    fundamental theorem of calculus and the Gauss, Green and Stokes
+    theorems.
+  </p>
+</section>

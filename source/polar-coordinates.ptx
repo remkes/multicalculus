@@ -1,0 +1,679 @@
+<section xml:id="section-polar-coordinates">
+  <title>Polar Coordinates</title>
+  <subsection xml:id="subsection-defining-polar-coordinates">
+    <title>Definition of Polar Coordinates</title>
+    <p>
+      I have already introduce the polar coordinate transformation in
+      <xref ref="example-polar-coordinates-jacobian" />. In this
+      section, I want to further investigate this transformation and do
+      a number of examples with it. 
+   </p>
+   <p>
+      First, though, I'll start with some motivation. Polar coordinates
+      (and the other two important coordinate systems in <xref
+      ref="section-cylindrical-and-spherical" />) are useful because 
+      they describe circles and, therefore, anything with circular
+      construction or symmetry of any type. Circles are common and
+      natural shapes and many applications of mathematics deal with
+      circls, circular motion, object with circular symmetry, etc. When
+      a situation has some kind of symmetry to it, it's often best to
+      choose a coordinate system that suits the symmetry. 
+    </p>
+    <p>
+      This can be demontrated by talking about motion that is confined
+      to circles. Say there is an object in <m>\RR^2</m> that is
+      restricted to a circe of a particular radius <m>R</m>. It lives on
+      the locus which is that circle. Applications will often want a
+      description of this locus, to solve problems of movement,
+      intersection, force, etc. To describe the circle in normal
+      cartesian coordinates, I use the equation <m>x^2 + y^2 = R^2</m>.
+      This isn't a terrible description, but it's also not the easier
+      description; we may need square roots to solve for individual
+      variables when we use this locus, for example. However, in polar
+      coordinates, the locus of the circle is just <m>r=R</m>. This is
+      as simple as it gets. The coordinate system suits the task. 
+    </p>
+    <p>
+      Let me recap the details of the polar coordinate system, though
+      they should be familiar from previous courses. In polar
+      coordinates, a point in <m>\RR^2</m> is described by a radius
+      <m>r</m> (which is the distant from the point to the origin) and
+      an angle <m>\theta</m> (which is the angle between the
+      <m>x</m>-axis and the line from the origin to the point, measure
+      counterclockwise). This is show in <xref
+      ref="figure-polar-coordinates" />.
+    </p>
+    <figure xml:id="figure-polar-coordinates">
+      <caption>Polar Coordinates</caption>
+      <image xml:id="figure55" width="60%">
+        <asymptote>
+          size(10cm);
+  
+          import graph;
+          xaxis(Ticks);
+          yaxis(Ticks);
+  
+          dot((4,4));
+          
+          draw((0,0)--(4,4));
+          draw((4,4){SE}..{S}(5.657,0));
+          draw((1,1){SE}..{S}(1.414,0));
+          draw((-0.1,0.1)--(-0.3,0.3)--(3.7,4.3)--(3.9,4.1));
+  
+          label("$r$",(2,2.6),NW);
+          label("$\theta$",(1.3,0.5),NE);
+          label("$(r,\theta)$",(4,4),NE);
+        </asymptote>
+      </image>
+    </figure>
+    <p>
+      Let me also recall the change of coordinates. Here is the change
+      where <m>r</m> and <m>\theta</m> are the independent variables
+      (which, in multiple integration, is used for changing from
+      cartesian to polar coordinates). 
+    </p>
+    <md>
+      <mrow>
+        x \amp = r \cos \theta
+      </mrow>
+      <mrow>
+        y \amp = r \sin \theta
+      </mrow>
+      <mrow>
+        \det J \amp = r 
+      </mrow>
+      <mrow>
+        dx dy \amp = r dr d\theta
+      </mrow>
+    </md>
+    <p>
+      The reverse change of variables is also useful, though less often
+      for integration, so I won't calculate the Jacobian determinant
+      here. 
+    </p>
+    <md>
+      <mrow>
+        r = \sqrt{x^2 + y^2} 
+      </mrow>
+      <mrow>
+        \theta = \arctan \left( \frac{y}{x} \right)
+      </mrow>
+    </md>
+  </subsection>
+  <subsection xml:id="subsection-polar-coordinates-properties">
+    <title>Properties of Polar Coordinates</title>
+    <p>
+      I want to start with one notable weakness of polar coordinates.
+      Unlike cartesian coordinates, which are defined and work well
+      everywhere in <m>\RR^2</m>, polar coordaintes are not defined at
+      the origin. The radius. <m>r=0</m>, is fine, but how would
+      angle be defined at the origin? There is no arc to measure here,
+      no line from the origin to a point to determine an angle. Angle
+      simply can't be determined. This fact breaks the coordinate
+      system at the origin. This isn't too much of a problem, but it
+      is something that I always need to keep in mind when using polar
+      coordinates. 
+    </p>
+    <p>
+      One way to understand a coordinate system is to understand the
+      paths in <m>\RR^2</m> where one of the coordinates is constant.
+      In cartesian coordinates, this gives the horizontal lines
+      <m>y=c</m> and the vertical lines <m>x=c</m> for the
+      conventional square grid pattern of coordinate lines. 
+    </p>
+    <p>
+      For polar coordinates, the loci <m>r = c</m> are circle, as I
+      remarked earlier. The loci <m>\theta = c</m> are rays out from
+      the original. This gives a spider-web pattern of coordinate
+      lines, as shown in <xref ref="figure-polar-coordinates-lines"
+      />. When I think of polar coordinates visually, this spider-web
+      pattern is what I see.
+    </p>
+    <figure xml:id="figure-polar-coordinates-lines">
+      <caption>
+        The Polar Coordinate Grid
+      </caption>
+      <image xml:id="figure56" width="60%">
+        <asymptote>
+          size(10cm);
+
+          draw(circle(0,0.1));
+          draw(circle(0,0.2));
+          draw(circle(0,0.3));
+          draw(circle(0,0.4));
+          draw(circle(0,0.5));
+          draw(circle(0,0.6));
+          draw(circle(0,0.7));
+          draw(circle(0,0.8));
+          draw(circle(0,0.9));
+
+          draw((0,0)--(1,0));
+          draw((0,0)--(0.924,0.382));
+          draw((0,0)--(0.707,0.7070));
+          draw((0,0)--(0.382,0.924));
+          draw((0,0)--(0,1));
+          draw((0,0)--(-0.382,0.924));
+          draw((0,0)--(-0.707,0.7070));
+          draw((0,0)--(-0.924,0.382));
+          draw((0,0)--(-1,0));
+          draw((0,0)--(-0.924,-0.382));
+          draw((0,0)--(-0.707,-0.7070));
+          draw((0,0)--(-0.382,-0.924));
+          draw((0,0)--(0,-1));
+          draw((0,0)--(0.382,-0.924));
+          draw((0,0)--(0.707,-0.7070));
+          draw((0,0)--(0.924,-0.382));
+        </asymptote>
+      </image>
+    </figure>
+    <p>
+      I want to make on final comments about the <m>r</m> Jacobian for
+      polar coordinates. In cartesian coordinates, both <m>x</m> and
+      <m>y</m> have unit of length. Therefore, the differential <m>dx
+      dy</m> has units of (infinitesimal) area, as it should for
+      integration. (Recall we wrote this as <m>dA</m> when we were
+      working in general, without specific coordinates). However, in
+      polar coordinates, <m>r</m> has units of distance, but
+      <m>\theta</m> has no units. (Radian angles can naturally be
+      define as ratio of distances; the units cancel in the fraction
+      and an angle has no natural unit.). Therefore, the differential
+      <m>dr d\theta</m> has units only of distance. This doesn't make
+      sense for integration, since this should be an infinitesimal
+      area. The term with the Jacobian determinant is <m>r dr
+      d\theta</m>; the additional <m>r</m> gives this units of area. 
+    </p>
+  </subsection>
+  <subsection xml:id="subsection-polar-coordinates-integration">
+    <title>
+      Common Regions of Integration in Polar Coordinates
+    </title>
+    <p>
+      I said ealier that polar coordinates are good for situations
+      with some kind of circular symmetry or description. I want to
+      go over some of these regions. First, I can integrate over a
+      circle, obviously. To integrate over a circle of radius
+      <m>R</m>, the bounds are <m>r \in [0,R]</m> and <m>\theta \in
+      [0,2\pi]</m>.
+    </p>
+    <me>
+      \int_0^R \int_0^{2\pi} f(r,\theta) r dr d \theta.
+    </me>
+    <p>
+      I can integrate over various subsets of circles. A wedge is a
+      portion of a circle like a pizza slice. The radius is not limit,
+      but the angle is. The bounds are <m>r \in [0,R]</m> and <m>\theta \in
+      [\theta_1, \theta]</m>, for some range of angles. 
+    </p>
+    <me>
+      \int_0^R \int_{\theta_1}^{\theta_2} f(r,\theta) r dr d \theta.
+    </me>
+    <p>
+      A region formed of a larger circle with a smaller circle (with
+      the same centre) removed is called an annulus. In an annulus,
+      the angle is unchanges, but the radius has limit. The region
+      doesn't start at <m>r=0</m>, but rather starts as the inner
+      radius <m>r = R_1</m> and ends at a larger radius <m>r =
+      R_2</m>, with <m>R_1 \lt R_2</m>.  The bounds are <m>r \in
+      [R_1,R_2]</m> and <m>\theta \in [0,2\pi]</m>.
+    </p>
+    <me>
+      \int_{R_1}^{R_2} \int_0^{2\pi} f(r,\theta) r dr d \theta.
+    </me>
+    <p>
+      Finally, I could have a wedge-section of an annulus if I
+      restrict both the radius and the angle. I might call this an
+      arc. The bounds for this arc <m>r \in [R_1,R_2]</m> and
+      <m>\theta \in [\theta_1,\theta_2]</m>.
+    </p>
+    <me>
+      \int_{R_1}^{R_2} \int_{\theta_1}^{\theta_2} f(r,\theta) r dr d
+      \theta.
+    </me>
+    <p>
+      <xref ref="figure-polar-regions" /> shows these four types of
+      region for integration with polar coordinates. 
+    </p>
+    <figure xml:id="figure-polar-regions">
+      <caption>
+        Some Regions of Integration for Polar Coordinates
+      </caption>
+      <image xml:id="figure57" width="60%">
+        <asymptote>
+          size(10cm);
+
+          fill(circle((0,0),1),gray);
+          label("Circle",(0,-1),S);
+
+          path p1=(3,0)--(3.924,0.382);
+          path p2=(3,0)--(3.382,0.924);
+          path p3=(3.924,0.382){-0.382,0.924}::(3.382,0.924){-0.924,0.382};
+
+          draw(circle((3,0),1),dotted);
+          draw(p1);
+          draw(p2);
+          draw(p3);
+
+          path c1=buildcycle(p1,p3,p2);
+          fill(c1,gray);
+          label("Wedge",(3,-1),S);
+
+          fill(circle((0,3),1),gray);
+          fill(circle((0,3),0.4),white);
+          label("Annulus",(0,2),S);
+
+          path p4=(3.462,3.191)--(3.924,3.382);
+          path p5=(3.191,3.462)--(3.382,3.924);
+          path p6=(3.924,3.382){-0.382,0.924}::(3.382,3.924){-0.924,0.382};
+          path p7=(3.462,3.191){-0.191,0.462}::(3.191,3.462){-0.462,0.191};
+
+          draw(circle((3,3),1),dotted);
+          draw((3,3)--(3.924,3.382),dotted);
+          draw((3,3)--(3.382,3.924),dotted);
+          draw(p4);
+          draw(p5);
+          draw(p6);
+          draw(p7);
+
+          path c1=buildcycle(p4,p6,p5,p7);
+          fill(c1,gray);
+          label("Arc",(3,2),S);
+        </asymptote>
+      </image>
+    </figure>
+  </subsection>
+  <subsection xml:id="subsection-polar-examples">
+    <p> 
+      In many of these examples, particular when the bound become
+      constant in polar constants, are seperable integrals. (Recall
+      the definition from <xref ref="definition-separable-integral"
+      />.) For these integral, I'll often split up integral into two
+      separate single-variable integrals. I won't always make not of
+      this, but when the <m>dr d\theta</m> suddenly splits up, look to
+      see if this is what I've done. 
+    </p>
+    <example>
+      <statement>
+        <p>
+          Consider the function <m>f(x,y) = x + y</m> on the arc in the
+          first quadrant between radii <m>2</m> and <m>4</m>. I set up
+          the integral over the arc with <m>r \in [2,4]</m> and
+          <m>\theta \in \left[ 0, \frac{\pi}{2} \right]</m>. Then I
+          proceed to setup an calculate the iterated integral. Note
+          that I must remember to include the Jacobian <m>r</m> in <m>r
+          dr d \theta</m> in the setup of the integral. 
+        </p>
+        <md>
+          <mrow>
+            \int_D x + y dA \amp = \int_0^{\pi/2} \int_2^4 r (\cos
+            \theta + \sin \theta) r dr d\theta
+          </mrow>
+          <mrow>
+            \amp = \int_0^{\pi/2} \left. \frac{r^3}{r} (\cos \theta +
+            \sin \theta) \right|_2^4 d\theta
+          </mrow>
+          <mrow>
+            \amp = \frac{56}{3} \int_0^{\pi/2} (\cos \theta + \sin
+            \theta) d \theta
+          </mrow>
+          <mrow>
+            \amp = \left. \frac{56}{3} (\sin \theta - \cos \theta)
+            \right|_0^{\pi/2}
+          </mrow>
+          <mrow>
+            \amp = \frac{56}{3} (1 - 0 - 0 + 1) = \frac{112}{3}
+          </mrow>
+        </md>
+      </statement>
+    </example>
+    <example>
+      <statement>
+        <p>
+          Now consider the function <m>e^{x^2 + y^2}</m> on the circle
+          of radius <m>R</m> centered at the origin. Notice here that
+          the integrand also has circular symmetry <mdash/> changing to
+          polar coordinates will help the integrand as well as the
+          domain.
+        </p>
+        <p>
+          The integral is annoying in conventional Cartesian
+          coordinates.
+        </p>
+        <me>
+          \int_D f(x,y) dA = \int_{-R}^R \int_{-\sqrt{R^2 -
+          x^2}}^{\sqrt{R^2 - x^2}} e^{x^2 + y^2} dy dx
+        </me>
+        <p>
+          This is essentially impossible. However, in polar coordinates
+          it improves greatly.
+        </p>
+        <md>
+          <mrow>
+            \int_D f(x,y) dA \amp = \int_0^{2\pi} \int_0^R e^{r^2} r
+            dr d\theta
+          </mrow>
+          <mrow>
+            \amp = \int_0^{2\pi} d\theta \int_0^R e^{r^2} r dr
+          </mrow>
+          <mrow>
+            \amp = 2\pi \left. \frac{e^{r^2}}{2} \right|_0^R =
+            \frac{2\pi}{2} (e^{R^2} - 1) = \pi (e^{R^2} - 1)
+          </mrow>
+        </md>
+      </statement>
+    </example>
+    <example>
+      <statement>
+        <p>
+          Now recall the integral I did to calcluate the volume of a
+          sphere of radius <m>R</m> in <xref
+          ref="example-sphere-volume" />. 
+        </p>
+        <me>
+          8 \int_0^{R} \int_0^{\sqrt{R^2 - x^2}} \sqrt{R^2 - x^2 -
+          y^2} dy dx </me>
+        <p>
+          This was a trickly integral. However, if I change to polar
+          coordinates and integrate over the whole circle instead of
+          just a quarter, the integral improves a great deal. The
+          <m>r</m> from the Jacobian, which sits outside the
+          <m>\sqrt{R^2 - r^2}</m>, is extremely convenient, allowing a
+          substitution <m>u = R^2 - r^2</m> to work for the <m>r</m>
+          integral. (In the previous approach, trig substitutions were
+          the only approach. In a sense, changing to polar coordinates
+          is sort-of doing the trig substitution in a more holistic
+          way.)
+        </p>
+        <md>
+          <mrow>
+            \amp = 2 \int_0^{2\pi} \int_0^R \sqrt{R^2 - r^2} r dr
+            d\theta
+          </mrow>
+          <mrow>
+            \amp = 2 \int_0^{2\pi} d\theta \int_0^R \sqrt{R^2 - r^2} r
+            dr d\theta
+          </mrow>
+          <mrow>
+            \amp = 4\pi \left. (R^2 - r^2)^{\frac{3}{2}} \frac{2}{3}
+            \frac{-1}{2} \right|_0^R
+          </mrow>
+          <mrow>
+            \amp = \frac{4\pi}{3} (R^2)^{\frac{3}{2}} = \frac{4\pi
+            R^3}{3}
+          </mrow>
+        </md>
+      </statement>
+    </example>
+    <example>
+      <statement>
+        <p>
+          Recall the integral for the volume of a cone of height
+          <m>h</m> and radius <m>R</m> from <xref
+          ref="example-cone-volume" />. I didn't even do the integral,
+          since I didn't want to deal with the complicated trig
+          substitution which would have been required. 
+        </p>
+        <me>
+          \int_D f(x,y) dA = 4 \int_0^R \int_0^{\sqrt{R^2 - x^2}}
+          \left( h - \frac{h}{r} \sqrt{x^2 + y^2} \right) dy dx
+        </me>
+        <p>
+          Now I can use polar coordinates to make the integral much
+          more accessible. I'm integrating over a circle the base of
+          the cone.
+        </p>
+        <md>
+          <mrow>
+            \amp = \int_0^{2\pi} \int_0^R \left( h - \frac{hr}{R}
+            \right) r dr d\theta
+          </mrow>
+          <mrow>
+            \amp = 2\pi \left. \left( \frac{hr^2}{2} - \frac{hr^3}{3R}
+            \right) \right|_0^R
+          </mrow>
+          <mrow>
+            \amp = 2\pi \left( \frac{hR^2}{2} - \frac{hR^2}{3} \right)
+            = \frac{\pi R^2 h}{3}
+          </mrow>
+        </md>
+      </statement>
+    </example>
+    <example>
+      <statement>
+        <p>
+          To show how some of these techniques work together, consider
+          integrating the function <m>f(x,y) = x^2</m> over the ellipse
+          <m>D = \frac{x^2}{4} + \frac{y^2}{9} = 1</m>.
+        </p>
+        <me>
+          \int_D x^2 dA
+        </me>
+        <p>
+          I'm  going to do two changes of variables. First, I make the
+          change of variables give by <m>x=2u</m> and <m>y=3v</m>.
+          This change of variables has Jacobian <m>|J| = 6</m>
+          so that <m>dx dy = 6 du dv</m>. The ellipse <m>D</m> becomes
+          the unit circle <m>C</m>.
+        </p>
+        <me>
+          \int_C (2u)^2 6 du dv = 24 \int_C u^2 du dv
+        </me>
+        <p>
+          Now, since I am integrating over the unit circle, I can
+          change to polar coordinates. 
+        </p>
+        <md>
+          <mrow>
+            24 \int_C u^2 du dv \amp = 24 \int_0^{2\pi} \int_0^1 r^2
+            \cos^2 \theta r dr d\theta
+          </mrow>
+          <mrow>
+            \amp = 24 \int_0^{2\pi} \cos^2 \theta d \theta \int_0^1
+            r^3 dr
+          </mrow>
+          <mrow>
+            \amp = 24 \left. \left( \frac{\theta}{2} + \frac{\sin
+            2\theta}{4} \right) \right|_0^{2\pi} \left. \left(
+            \frac{r^4}{4} \right) \right|_0^1
+          </mrow>
+          <mrow>
+            \amp = 24 \pi \frac{1}{4} = 6 \pi
+          </mrow>
+        </md>
+      </statement>
+    </example>
+    <example>
+      <statement>
+        <figure xml:id="figure-offset-circle">
+          <caption>
+            An Offset Circle in Polar Coordinates
+          </caption>
+          <image xml:id="figure58" witdh="80%">
+            <asymptote>
+              size(10cm);
+
+              import graph;
+              xaxis();
+              yaxis();
+
+              draw(circle((1,0),1));
+              fill(circle((1,0),1),gray);
+              label("$r = 2 \cos \theta$",(1.981,0.195),E);
+
+              draw((0,0)--(0.628,-0.924));
+              draw((0,0)--(1,-1));
+              draw((0,0)--(1.382,-0.924));
+              draw((0,0)--(1.707,-0.707));
+              draw((0,0)--(1.924,-0.382));
+              draw((0,0)--(2,0));
+              draw((0,0)--(1.924,0.382));
+              draw((0,0)--(1.707,0.707));
+              draw((0,0)--(1.382,0.924));
+              draw((0,0)--(1,1));
+              draw((0,0)--(0.628,0.924));
+
+              dot((0.628,-0.924));
+              dot((1,-1));
+              dot((1.382,-0.924));
+              dot((1.707,-0.707));
+              dot((1.924,-0.382));
+              dot((2,0));
+              dot((1.924,0.382));
+              dot((1.707,0.707));
+              dot((1.382,0.924));
+              dot((1,1));
+              dot((0.628,0.924));
+
+              label("$\theta = -\frac{5\pi}{16}$",(0.628,-0.924),SW);
+              label("$\theta = -\frac{\pi}{4}$",(1,-1),S);
+              label("$\theta = -\frac{3\pi}{16}$",(1.382,-0.924),SE);
+              label("$\theta = -\frac{\pi}{8}$",(1.707,-0.707),SE);
+              label("$\theta = -\frac{\pi}{16}$",(1.924,-0.382),SE);
+              label("$\theta = 0$",(2,0),SE);
+              label("$\theta = \frac{\pi}{16}$",(1.924,0.382),NE);
+              label("$\theta = \frac{\pi}{8}$",(1.707,0.707),NE);
+              label("$\theta = \frac{3\pi}{16}$",(1.382,0.924),NE);
+              label("$\theta = \frac{\pi}{4}$",(1,1),N);
+              label("$\theta = \frac{5\pi}{16}$",(0.628,0.924),NW);
+            </asymptote>
+          </image>
+        </figure>
+        <p>
+          Say I wanted to integrate the function <m>x^2 + y^2</m> over
+          the circle of radius 1 centered at <m>(1,0)</m>. The
+          integrand obviously lends itself to polar coordinates. There
+          is circular symmetry in the domain, but the offset is a
+          little confusing.
+        </p>
+        <p>
+          The equation of this circle is <m>(x-1)^2 + y^2 = 1</m>. I
+          can make this a polar locus by replacing <m>x</m> and
+          <m>y</m> with their polar equivalent. Doing so produces
+          <m>r^2 \cos^2 \theta - 2 r \cos \theta + 1 + r^2 \sin^2
+          \theta =1</m>, which simplifies into <m>r^2 - 2r \cos \theta
+          = 0</m> or <m>r = 2 \cos \theta</m> for <m>\theta \in \left[
+          -\frac{\pi}{2}, \frac{\pi}{2} \right]</m>. I can actually
+          describe this in terms of polar coordinates; I just have to
+          allow one of the bounds to be variable (like I did with
+          variable bounds for cartesian coordinates). I will let the
+          bound for <m>\theta</m> be constant, so that <m>\theta</m>
+          will be the outside variable. Then I can use the expression
+          <m>r = 2 \cos \theta</m> as an higher bound for <m>r</m> in
+          terms of <m>\theta</m>. The lower bound for <m>r</m> will
+          stil be <m>0</m>. <xref ref="figure-offset-circle" /> shows, in
+          the straight lines, the range of the radius from <m>0</m> to
+          <m>2 \cos \theta</m> as <m>\theta</m> ranges from
+          <m>-\frac{\pi}{2}</m> to <m>\frac{\pi}{2}</m>. 
+        </p>
+        <md>
+          <mrow>
+            \int_D f(x,y) dA \amp = \int_{-\pi/2}^{\pi/2}
+            \int_0^{2\cos \theta} r^2 r dr d\theta
+          </mrow>
+          <mrow>
+            \amp = \int_{-\pi/2}^{\pi/2} \left. \frac{r^4}{4}
+            \right|_0^{2 \cos \theta} d \theta
+          </mrow>
+          <mrow>
+            \amp = 4 \int_{-\pi/2}^{\pi/2} \cos^4 \theta d \theta
+          </mrow>
+          <mrow>
+            \amp = 4 \left. \frac{1}{32} \left( 12 \theta + 8 \sin
+            (2\theta) + \sin (4\theta) \right)
+            \right|_{-\pi/2}^{\pi/2}
+          </mrow>
+          <mrow>
+            \amp = \frac{1}{8} \left(12 \left( \frac{\pi}{2} -
+            \frac{-\pi}{2} \right) \right) + 0 + 0 = \frac{3\pi}{2}
+          </mrow>
+        </md>
+      </statement>
+    </example>
+    <example>
+      <statement>
+        <figure xml:id="figure-circle-without-circle">
+          <caption>
+            Circle of Radius 2 with Offset Circle of Radus 1 Removed
+          </caption>
+          <image xml:id="figure59" with="80%">
+            <asymptote>
+              size(10cm);
+
+              fill(circle((0,0),2),gray);
+              fill(circle((1,0),1),white);
+
+              dot((0,0));
+              dot((1,0));
+
+              draw((0,0)--(-1.414,1.414));
+              label("$R=2$",(-0.707,0.707),SW);
+
+              draw((1,0)--(1.707,0.707));
+              label("$R=1$",(1.353,0.353),SE);
+
+              draw((-2.3,0)--(2.3,0));
+              draw((0,-2.3)--(0,2.3));
+            </asymptote>
+          </image>
+        </figure>
+        <p>
+          What if <m>D</m> is the circle of radius <m>2</m> excluding
+          the circle of radius <m>1</m> centered at <m>(1,0)</m> and we
+          want to integrate <m>\sqrt{x^2 + y^2}</m> over this region?
+          (This region is show in <xref
+          ref="figure-circle-without-circle" />
+          Here, we can think of the entire circle of radius 2 as
+          <m>D_1</m> and the removed circle as <m>D_2</m>; then the
+          integral will be the integral over <m>D_1</m> subtracting the
+          integral over <m>D_2</m>. To describe <m>D_2</m>, I'll use
+          the smae bounds as the previous example. 
+        </p>
+        <p>
+          The first part is an integral over <m>D_1</m>.
+        </p>
+        <md>
+          <mrow>
+            \int_{D_1} \sqrt{x^2 + y^2} dA \amp = \int_0^{2\pi}
+            \int_0^2 r r dr d\theta
+          </mrow>
+          <mrow>
+            \amp = \left. 2\pi \frac{r^3}{3} \right|_0^2 =
+            \frac{16\pi}{3}
+          </mrow>
+        </md>
+        <p>
+          The second part is an integral over <m>D_2</m>.
+        </p>
+        <md>
+          <mrow>
+            \int_{D_2} \sqrt{x^2 + y^2} dA \amp =
+            \int_{\frac{-\pi}{2}}^{\frac{\pi}{2}} \int_0^{2 \cos
+            \theta} r^2 dr d\theta
+          </mrow>
+          <mrow>
+            \amp = \int_{\frac{-\pi}{2}}^{\frac{\pi}{2}} \left.
+            \frac{r^3}{3} \right|_0^{2 \cos \theta} d\theta
+          </mrow>
+          <mrow>
+            \amp = \int_{\frac{-\pi}{2}}^{\frac{\pi}{2}} \left(
+            \frac{8 \cos^3 \theta}{3} \right) = \frac{8}{3}
+            \int_{\frac{-\pi}{2}}^{\frac{\pi}{2}} \cos^3 \theta d
+            \theta
+          </mrow>
+          <mrow>
+            \amp = \frac{8}{3} \left. \left( \frac{1}{3} (2 + \cos^2 +
+            \theta) \sin \theta \right)
+            \right|_{\frac{-\pi}{2}}^{\frac{\pi}{2}} = \frac{32}{9}
+          </mrow>
+        </md>
+        <p>
+          The result of the original integral is the difference of the
+          two parts.
+        </p>
+        <me>
+          \int_{D_1 \backslash D_2} \sqrt{x^2 + y^2} dA =
+          \frac{16\pi}{3} - \frac{32}{9} = \frac{48\pi - 32}{9}
+        </me>
+      </statement>
+    </example>
+  </subsection>
+</section>

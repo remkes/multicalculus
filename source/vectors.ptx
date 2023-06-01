@@ -1,0 +1,12 @@
+<section xml:id="section-vectors">
+  <title>Vectors in <m>\RR^2</m> and <m>\RR^3</m></title>
+  <subsection xml:id="subsection-describing-space">
+  <title>Describing Space</title>
+    <p>
+      Add: definitions of vectors, description of space, idea of
+      cartesian coordinates, importance of <m>\RR^3</m> to this
+      particular course, idea of extension to higher dimensional
+      spaces.
+    </p>
+  </subsection>
+</section>

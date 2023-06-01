@@ -1,0 +1,657 @@
+<section xml:id="section-change-of-variables">
+  <title>Change of Variables</title>
+  <p>
+    Among the single variable integration techniques, substitution was
+    the most useful and most important of them. In this section, I
+    want to extend the notation of substitution to multiple
+    integration. Now, since calculation of multiple integrals is by
+    interated integrals, I could do substitutions individual in each
+    variable, since I do the single-variable integrations one-by-one.
+    That's not what I want to do here: I want to introduce
+    substitution of all the variables at once. 
+  </p>
+  <p>
+    Let me review single variable substitution, formalizing the
+    language and showing the way forward for higher dimensions.
+    Consider a single variable integral.
+  </p>
+  <me>
+    \int_a^b f(x) dx
+  </me>
+  <p>
+    Typically, I substitute <m>u = g(x)</m> using some
+    <em>invertible</em> function <m>g</m>. Then I calculate <m>du =
+    g^\prime(x) dx</m>. With these two pieces, I try to change all the
+    <m>x</m> variables to <m>u</m> variables in the integral.  I also
+    change the bounds, starting from <m>u = g(a)</m> to <m>u =
+    g(b)</m>. There is an invertible function, <m>u = g(x)</m>, which
+    defined the substitition; in the process, the old variable is the
+    <em>independent variable</em> of the transformation and the new
+    variable is the <em>dependent variable</em>.
+  </p>
+  <p>
+    However, I could have setup the relationship differently, by
+    having <m>x = h(u)</m> and <m>dx = h^\prime(u) du</m>, making old
+    variable the <em>dependent variable</em> and the new variable the
+    <em>independent variable</em>. There is an example of this in the
+    integration techinques from Calculus II: trigonometric
+    substitution.  Consider a trig substitution:  <m>x = \tan
+    \theta</m>. the function acts on the new variable and the old
+    variable is the dependent variable. 
+  </p>
+  <p>
+    The standard single-variable process, where the old variable is
+    the dependent variable, substitution was mostly about doing the
+    chain rule in reverse. I would try to look for a form that
+    resembled the chain rule, with the derivative of an inside
+    function in the integrand. This isn't a fruitful way to extend the
+    idea to multiple integration, since the chain rule doesn't extend
+    in a way that applies to these integrals. In the process for
+    trigonometric substitution, the substitution was more about
+    changing the situation, turing other functions into trigonometric
+    functions to use trig identities to solve integrals. This is a
+    much more productive direction: substitution is a thing that
+    changes the situation or functions involved to make a more
+    reasonable integral. 
+  </p>
+  <p>
+    Therefore, let me clarify the setps in the single variable case
+    for this second setup. I introduce a new variable
+    <m>u</m> by <m>x = h(u)</m> for some <em>invertible</em> function
+    <m>h</m>. Then <m>dx = h^\prime(u) du</m> and the bounds become
+    <m>h^{-1}(a)</m> and <m>h^{-1}(b)</m>. We get a new integral in
+    the variable <m>u</m>.
+  </p>
+  <me>
+    \int_{u=h^{-1}(a)}^{u=h^{-1}(b)} f(h(u)) h^\prime(u) du
+  </me>
+  <p>
+    The key relationship here is <m>dx = h^\prime(u) du</m>: the
+    derivative tells us the relationships between the differential
+    terms. In Calculus III, I did all that work on extending the
+    notion of the derivative. I came to the conclusion that the
+    derivative measures (in local coordinates) the best linear
+    approximation to the function. In one variable, that was just
+    multiplication by a number. In several variables, though, that
+    linear approximation was a matrix, called the Jacobian matrix.
+    Let me recall the definition. (I'll only state it for an equal
+    number of input and output variables, since that is the case that
+    I will use for extending substitution). 
+  </p>
+  <definition>
+    <statement>
+      <p>
+        Let <m>F: \RR^n \rightarrow \RR^n</m> be a function on
+        <m>n</m> variables, <m>u_1, \ldots, u_n</m>. We can write
+        <m>F</m> as its component functions <m>F_1, \ldots, F_n</m>.
+        Then the <term>Jacobian matrix</term> of <m>F</m> is the
+        matrix of all partial derivatives.
+      </p>
+      <me>
+        J(F) = \begin{pmatrix} 
+          \dfrac{\del F_1}{\del u_1} \amp \dfrac{\del F_1}{\del u_2}
+            \amp \ldots \amp \dfrac{\del F_1}{\del u_n} \\ 
+          \dfrac{\del F_2}{\del u_1} \amp \dfrac{\del F_2}{\del u_2}
+            \amp \ldots \amp \dfrac{\del F_2}{\del u_n} \\
+          \vdots \amp \vdots \amp \vdots \amp \vdots \\ 
+          \dfrac{\del F_n}{\del u_1} \amp \dfrac{\del F_n}{\del u_2}
+            \amp \ldots \amp \dfrac{\del F_n}{\del u_n} 
+          \end{pmatrix} 
+      </me>
+      <p>
+        The determinant <m>\det J(F)</m> is called the Jacobian
+        determinaint. Often, this determinant is just called the
+        <term>Jacobian</term> of the function. 
+      </p>
+    </statement>
+  </definition>
+  <p>
+    From the single variable case <m>dx = h^\prime(u) du</m>, the
+    Jacobian is part of the new differential <m>du</m>. If I start
+    with variables <m>x_1, x_2, \ldots, x_n</m> and we have a function
+    <m>F: \RR^n \rightarrow \RR^n</m> that has <m>x_i</m> as its output
+    (the original variables are the range of the transformation), I
+    can write <m>x_1 = F_1(u_1, \ldots, u_n)</m>, <m>x_2 = F_2(u_1,
+    \ldots, u_n)</m> up to <m>x_n = F_n(u_1, \ldots, u_n)</m>. The
+    Jacobian determines the relationship between the differential in
+    these variables.
+  </p>
+  <me>
+    dx_1 dx_2 \ldots dx_n = (\det J(F)) du_1 du_2 \ldots du_n
+  </me>
+  <p>
+    I can interpret the Jacobian as the change in
+    area/volume/hyper-volume due to the change in variables. Its
+    appearance in the integral makes sense with this interpretation:
+    the integral is measureing area/volume/hyper-volume, so when I
+    change variables, I need a term that keeps track of the relative
+    change in area/volume/hypervolume.
+  </p>
+  <example>
+    <statement>
+      <p>
+        Let <m>(x,y) = F(u,v) = (3u, 4v)</m>. Here are the partial
+        derivatives, the Jacobian matrix, and the Jacobian
+        determinant.
+      </p>
+      <md>
+        <mrow>
+          \frac{\del F_1}{\del u} \amp = 3
+        </mrow>
+        <mrow>
+          \frac{\del F_1}{\del v} \amp = 0
+        </mrow>
+        <mrow>
+          \frac{\del F_2}{\del u} \amp = 0
+        </mrow>
+        <mrow>
+          \frac{\del F_2}{\del v} \amp = 4
+        </mrow>
+        <mrow>
+          J(F) \amp = \begin{pmatrix} 
+            3 \amp 0 \\
+            0 \amp 4 
+          \end{pmatrix}
+        </mrow>
+        <mrow>
+          \det J(F) \amp = (3)(4) - (0)(0) = 12
+        </mrow>
+        <mrow>
+          dx dy \amp = 12 du dv
+        </mrow>
+      </md>
+      <p>
+        The function is a dialation by <m>3</m> in <m>u</m> and by
+        <m>4</m> in <m>v</m>, so the effect on area is multiplication
+        by <m>12</m>, which makes sense. The function is linear
+        already, so the linear approximation is constant: it is
+        exactly the function itself.
+      </p>
+    </statement>
+  </example>
+  <example>
+    <statement>
+      <p>
+        Let <m>(x,y) = F(u,v) = (u^2, v)</m>. Here are the partial
+        derivatives, the Jacoabian matrix, and the Jacobian
+        determinant.
+      </p>
+      <md>
+        <mrow>
+          \frac{\del F_1}{\del u} \amp = 2u
+        </mrow>
+        <mrow>
+          \frac{\del F_1}{\del v} \amp = 0
+        </mrow>
+        <mrow>
+          \frac{\del F_2}{\del u} \amp = 0
+        </mrow>
+        <mrow>
+          \frac{\del F_2}{\del v} \amp = 1
+        </mrow>
+        <mrow>
+          J(F) \amp = \begin{pmatrix} 
+            2u \amp 0 \\
+            0 \amp 1 
+          \end{pmatrix} 
+        </mrow>
+        <mrow>
+          \det J(F) \amp = 2u
+        </mrow>
+        <mrow>
+          dx dy \amp = 2u du dv
+        </mrow>
+      </md>
+      <p>
+        This Jacobian isn't constant. This is a stretch in <m>u</m>,
+        the but effect is exagerated away from the origin due to the
+        square term. Therefore, as <m>u</m> get larger, the stretch
+        effect is greater. The Jacobian reflects that.
+      </p>
+    </statement>
+  </example>
+  <example xml:id="example-polar-coordinates-jacobian">
+    <statement>
+      <p>
+        Let <m>(x,y) = F(r,\theta) = (r \cos \theta, r \sin
+        \theta)</m>. (There are the polar cooredinates, which I will
+        discuss at length in <xref ref="section-polar-coordinates"
+        />.) Here are the partial derivatives, the Jacobian matrix and
+        the Jacobian determinant.
+      </p>
+      <md>
+        <mrow>
+          \frac{\del F_1}{\del r} \amp = \cos \theta
+        </mrow>
+        <mrow>
+          \frac{\del F_1}{\del \theta} \amp = -r\sin \theta
+        </mrow>
+        <mrow>
+          \frac{\del F_2}{\del r} \amp = \sin \theta
+        </mrow>
+        <mrow>
+          \frac{\del F_2}{\del \theta} \amp = r \cos \theta
+        </mrow>
+        <mrow>
+          J(F) \amp = \begin{pmatrix} 
+            \cos \theta \amp - r \sin \theta \\
+            \sin \theta \amp r \cos \theta 
+          \end{pmatrix} 
+        </mrow>
+        <mrow>
+          \det J(F) \amp = r
+        </mrow>
+        <mrow>
+          dx dy \amp = r dr d\theta
+        </mrow>
+      </md>
+      <p>
+        This Jacobian shows that the radius term gives the effect on
+        area. This make sense: for larger circles, the differential
+        area is part of a larger arc. <xref
+        ref="figure-polar-jacobian" /> illustrates this. There are two
+        regions; each region has the same increase in radii between
+        the inside and outside of the region, and each region has the same
+        inscribed angle. However, the two regions clearly have a
+        different area: a region with the same <sq>width</sq>
+        (different in radius) and the same <sq>height</sq> (difference
+        in angle) is a larger region the further out it is on the
+        circle.  Ths figure shows this at a marcoscopic level; the
+        Jacobian is essentially measuring the same reality at an
+        infinitesimal level. The Jacobian multiplies by the radius term
+        <m>r</m> to indicate this scaling of area as the radius
+        increases. 
+      </p>
+      <figure xml:id="figure-polar-jacobian">
+        <caption>
+          Similar Regions with Different Areas
+        </caption>
+        <image xml:id="figure52" width="80%">
+          <asymptote>
+            size(10cm);
+
+            import graph;
+            xaxis(Ticks);
+            yaxis(Ticks);
+
+            draw((0,0)--(4.388,2.397));
+            draw((0,0)--(4.127,2.823));
+
+            draw((0,1){E}..{S}(1,0));
+            draw((0,1.4){E}..{S}(1.4,0));
+
+            draw((0,4){E}..{S}(4,0));
+            draw((0,4.4){E}..{S}(4.4,0));
+
+            path p1=(0.878,0.478)--(1.229,0.671);
+            path p2=(0.825,0.565)--(1.155,0.790);
+            path p3=
+              (0.878,0.478){-0.478,0.878}::(0.825,0.565){-0.565,0.825};
+            path p4=
+              (1.229,0.671){-0.671,1.229}::(1.155,0.790){-0.790,1.115};
+
+            draw(p1);
+            draw(p2);
+            draw(p3);
+            draw(p4);
+
+            path c1=buildcycle(p1,p4,p2,p3);
+            fill(c1,gray);
+
+            path p5=(3.510,1.917)--(3.861,2.109);
+            path p6=(3.301,2.259)--(3.631,2.484);
+            path p7=
+              (3.510,1.917){-1.917,3.510}::(3.301,2.259){-2.259,3.301};
+            path p8=
+              (3.861,2.109){-2.109,3.861}::(3.631,2.484){-2.484,3.631};
+
+            draw(p5);
+            draw(p6);
+            draw(p7);
+            draw(p8);
+
+            path c2=buildcycle(p5,p8,p6,p7);
+            fill(c2,gray);
+          </asymptote>
+        </image>
+      </figure>
+    </statement>
+  </example>
+  <example>
+    <statement>
+      <p>
+        Let <m>(x,y) = F(u,v) = (u, uv)</m>. This is the change in
+        variables we used in <xref ref="example-area-bell-curve" />,
+        just now treated as a two-variable changes of variables
+        instead of a one variable substitution. Here are the partial
+        derivatives, the Jacobian matrix, and the Jacobian
+        determinant.
+      </p>
+      <md>
+        <mrow>
+          \frac{\del F_1}{\del u} \amp = 1
+        </mrow>
+        <mrow>
+          \frac{\del F_1}{\del v} \amp = 0
+        </mrow>
+        <mrow>
+          \frac{\del F_2}{\del u} \amp = v
+        </mrow>
+        <mrow>
+          \frac{\del F_2}{\del v} \amp = u
+        </mrow>
+        <mrow>
+          J(F) \amp = \begin{pmatrix} 
+            1 \amp 0 \\
+            v \amp u 
+          \end{pmatrix} 
+        </mrow>
+        <mrow>
+          \det J(F) \amp = u
+        </mrow>
+        <mrow>
+          dx dy \amp = u du dv
+        </mrow>
+      </md>
+    </statement>
+  </example>
+  <p>
+    For single variable integrals, substitution was used to change the
+    integrand to make it more reasonable. For multiple integration,
+    there is difficult both in the integrand and in the region of
+    integration. I can use a change of variables to help us with
+    either problem. Sometime, as in the
+    following examples, the same transformation helps both. When I
+    are choosing a change of variables to simplify the region of
+    integration, I am looking for a change of variables where some of the
+    non-constant bounding curves of the region become <m>u=c</m> or
+    <m>v=c</m>. This can let me setup reasonable bounds of integration
+    for an integral over a complicated region. 
+  </p>
+  <example>
+    <statement>
+      <figure xml:id="figure-cov1">
+        <caption>
+          The region in the first quadrant betwee <m>x+y=1</m> and
+          <m>x+y=2</m>.
+        </caption>
+        <image xml:id="figure53" width="80%">
+          <asymptote>
+            size(10cm);
+
+            import graph;
+            xaxis(Ticks);
+            yaxis(Ticks);
+
+            draw((-1,2)--(2,-1));
+            draw((-1,3)--(3,-1));
+
+            filldraw((0,1)--(0,2)--(2,0)--(1,0)--cycle,gray);
+
+            label("$x+y=1$",(1.5,-0.5),SW);
+            label("$x+y=2$",(2.7,-0.7),NE);
+          </asymptote>
+        </image>
+      </figure>
+      <p>
+        Let <m>D</m> be the region in the first quadrant between the
+        lines <m>x+y = 1</m> and the line <m>x+y =2</m>, shown in
+        <xref ref="figure-cov1" />. In the following integral, I want
+        to simply the integrand and integrate over a simpler region if
+        possible.
+      </p>
+      <me>
+        \int_D \cos \left( \frac{y-x}{y+x} \right) dA
+      </me>
+      <p>
+        To simplify the integrand, I can look for transformations
+        where <m>u = x+y</m> and <m>v = x-y</m>. Inverting these
+        (either by linear algebra, since the transformation is linear,
+        or just by solving with conventional algebra), I get <m>x =
+        \frac{u+v}{2}</m> and <m>y = \frac{u-v}{2}</m>.
+      </p>
+      <p>
+        Then I look at the bounds. If I take <m>x+y=1</m> and
+        replace <m>x</m> and <m>y</m>, I get <m>u=1</m>. Likewise,
+        <m>x+y=2</m> is <m>u=2</m>. This is excellent, since I need
+        at least one variable with constant bounds; I'll take
+        <m>u</m> to be the variable of the outside integral. The
+        other bounds are the axes, which I can express by the
+        equations <m>y=0</m> and <m>x=0</m>. These turn into
+        <m>u=v</m> and <m>u=-v</m>, respective. Therefore, the bounds
+        of <m>v</m> will be these two lines: <m>v \in [u, -u]</m>.
+      </p>
+      <p>
+        Finally, we calculate the Jacobian.
+      </p>
+      <md>
+        <mrow>
+          x_u \amp = \frac{1}{2}
+        </mrow>
+        <mrow>
+          x_v \amp = \frac{1}{2}
+        </mrow>
+        <mrow>
+          y_u \amp = \frac{1}{2}
+        </mrow>
+        <mrow>
+          y_v \amp = -\frac{1}{2}
+        </mrow>
+        <mrow>
+          \det J \amp = -\frac{1}{2}
+        </mrow>
+        <mrow>
+          dx dy \amp = \frac{1}{-2} du dv
+        </mrow>
+      </md>
+      <p>
+        We have the new integrand, the new bounds and the Jacobian.
+        We can proceed to the new integral.
+      </p>
+      <md>
+        <mrow>
+          \int_D \cos \left( \frac{y-x}{y+x} \right) dA \amp =
+          \int_1^2 \int_{-u}^u \cos \left( \frac{-v}{u} \right)
+          \frac{-1}{2} dv du
+        </mrow>
+        <mrow>
+          \amp = \frac{-1}{2} \int_1^2 \left. -\sin \left(
+          \frac{-v}{u} \right) (-u) \right|_{-u}^{u} du
+        </mrow>
+        <mrow>
+          \amp = \frac{-1}{2} \int_1^2 u (\sin (-1) - \sin(1)) du
+        </mrow>
+        <mrow>
+          \amp = \sin (1) \left. \frac{u^2}{2} \right|_1^2
+        </mrow>
+        <mrow>
+          \amp = \sin (1) (2 - \frac{1}{2}) = \frac{3\sin(1)}{2}
+        </mrow>
+      </md>
+    </statement>
+  </example>
+  <example>
+    <statement>
+      <figure xml:id="figure-cov2">
+        <caption>
+          A region of integration.
+        </caption>
+        <image xml:id="figure54" width="80%">
+          <asymptote>
+            size(10cm);
+
+            import graph;
+            xaxis(Ticks);
+            yaxis(Ticks);
+
+            draw((0,0)--(4,4));
+            draw((0,0)--(1.33,4));
+
+            path p1=(1,1)--(1.732,1.732);
+            path p2=(0.577,1.732)--(1,3);
+            path p3=(0.25,4){1,-16}::(1,1)::(4,0.25){1,-1/16};
+            path p4=(0.75,4){1,-48}::(1.732,1.732)::(4,0.75){1,-3/16};
+
+            draw(p1);
+            draw(p2);
+            draw(p3);
+            draw(p4);
+
+            path c=buildcycle(p1,p4,p2,p3);
+            fill(c,gray);
+
+            label("$y = \frac{1}{x}$",(1.5,0.66),SW);
+            label("$y = \frac{3}{x}$",(2.5,1.2),NE);
+            label("$y = x$",(3,3),SE);
+            label("$y = 3x$",(1.25,3.75),SE);
+          </asymptote>
+        </image>
+      </figure>
+      <p>
+        Consider <m>D</m> be the region in the plane bounded by the
+        curves <m>y = \frac{1}{x}</m>, <m>y = \frac{3}{x}</m>, <m>y =
+        3x</m> and <m>y = x</m>, as shown in <xref
+        ref="figure-cov2" />. Consider the following integral.  
+      </p>
+      <me>
+        \int_D xy dA
+      </me>
+      <p>
+        The integrand is reasonable, so I will look for a substitution
+        to changes the bounds. I would like to produce  constant
+        bounds in at least one variable. To do that, I'll use this
+        change of variables.
+      </p>
+      <me>
+        (x,y) = F(u,v) = (uv,v)
+      </me> 
+      <p>
+        The lines <m>y=3x</m> and <m>y=x</m> become <m>v=3uv</m> and
+        <m>v=uv</m>. Away from <m>v=0</m>, these lines are
+        <m>u=\frac{1}{3}</m> and <m>u=1</m>, so there are constant
+        bounds in <m>u</m> and I will treat <m>u</m> as the outside
+        variable. (I am safe with the assumption <m>v=0</m> since
+        <m>v=y</m> and the region is disjoint from the <m>x</m>-axis,
+        where <m>y=0</m>). The curves <m>y = \frac{1}{x}</m> and <m>y
+        = \frac{3}{x}</m> become <m>v = \frac{1}{uv}</m> and <m>v =
+        \frac{3}{uv}</m>, which simplify into <m>uv^2 =1</m> and
+        <m>uv^2=3</m>. If I solve for <m>v</m> in each, I get <m>v =
+        \sqrt{\frac{1}{u}}</m> and <m>v = \sqrt{\frac{3}{u}}</m>.
+        That means I can take <m>u \in [\frac{1}{3}, 3]</m> and <m>v
+        \in \left[\sqrt{\frac{1}{u}}, \sqrt{\frac{3}{u}} \right]</m>.
+        The integrand <m>xy</m> becomes <m>uv^2</m>. Now I need to
+        calculate the partial derivatives and the Jacobian to complete
+        the change of variables.
+      </p>
+      <md>
+        <mrow>
+          x_u \amp = v
+        </mrow>
+        <mrow>
+          x_v \amp = u
+        </mrow>
+        <mrow>
+          y_u \amp = 0
+        </mrow>
+        <mrow>
+          y_v \amp = 1
+        </mrow>
+        <mrow>
+          \det J \amp = (v)(1) - (u)(0) = v
+        </mrow>
+        <mrow>
+          dx dy \amp = v du dv
+        </mrow>
+      </md>
+      <p>
+        Now that I have all the pieces, I go ahead and do the change
+        of variables: inputing the new bounds for the region, changing
+        the variables in the integrand, and using the Jacobian to
+        change the differential. After the change of variables, I
+        calculate the iterated integral as usual. 
+      </p>
+      <md>
+        <mrow>
+          \int_D xy dA \amp = \int_{\frac{1}{3}}^1
+          \int_{\sqrt{\frac{1}{u}}}^{\sqrt{\frac{3}{u}}} uv^2 v dv
+          du
+        </mrow>
+        <mrow>
+          \amp = \int_{\frac{1}{3}}^1 \left. u\frac{v^4}{4}
+          \right|_{\sqrt{\frac{1}{u}}}^{\sqrt{\frac{3}{u}}} du
+        </mrow>
+        <mrow>
+          \amp = \int_{\frac{1}{3}}^1 \frac{u}{4} \left( \frac{9}{u^2}
+          - \frac{1}{u^2} \right) du
+        </mrow>
+        <mrow>
+          \amp = \int_{\frac{1}{3}}^1 \frac{2}{u} du
+        </mrow>
+        <mrow>
+          \amp = 2 \ln |u| \bigg|_{\frac{1}{3}}^1
+        </mrow>
+        <mrow>
+          \amp = 2 \ln 1 - 2 \ln \frac{1}{3} = -2 \ln \frac{1}{3} =
+          2 \ln 3
+        </mrow>
+      </md>
+      <p>
+        For the same integral, I could have use the change of
+        variables  <m>y=v</m> and <m>x= \frac{u}{v}</m>. Under this
+        transformation, the bounds become <m>u \in [1,3]</m> and <m>v
+        \in [\sqrt{u}, \sqrt{3u}]</m>. The Jacobian is now
+        <m>\frac{1}{v}</m> and the integrand is <m>u</m>. Here is the
+        calculate with this alternative change of variables. 
+      </p>
+      <md>
+        <mrow>
+          \int_D xy dA \amp = \int_1^3 \int_{\sqrt{u}}^{\sqrt{3u}}
+          \frac{1}{v} u dv du
+        </mrow>
+        <mrow>
+          \amp = \int_1^3 u \ln |v| \bigg|_{\sqrt{u}}^{\sqrt{3u}} du
+        </mrow>
+        <mrow>
+          \amp = \int_1^3 u (\ln |\sqrt{3u}| - \ln |\sqrt{u}|du
+        </mrow>
+        <mrow>
+          \amp = \int_1^3 \frac{1}{2} (u \ln 3u - u \ln u) du
+        </mrow>
+        <mrow>
+          \amp = \left. \frac{1}{2} \left(\frac{1}{4} u^2 (2 \ln 3u
+          - 1) \frac{1}{3} - \frac{1}{4} u^2 (2 \ln u - 1) \right)
+          \right|_1^3
+        </mrow>
+      </md>
+      <p>
+        If I evaluate this, it will evaluate, eventually, to <m>2 \ln
+        3</m>. However, the expression that results from this change
+        of variable  is obviously more complicated than the first
+        change of variables.  Different changes of variables can have
+        very different effects on the integral; some will make it
+        easier, some more difficult. Also, the answers from different
+        changes of variables can look quite differet, such as the
+        expression above, while actually being the same value.
+      </p>
+      <p>
+        As an aside, there is a simplification in the second version
+        of this example that removes the complication. In the second
+        last step, I could write <m>\ln 3u</m> as <m>\ln 3 + \ln
+        u</m>. If I do that, the calculation proceeds as follows.
+      </p>
+      <md>
+        <mrow>
+          \amp = \int_1^3 \frac{1}{2} (u \ln 3u - u \ln u) du
+        </mrow>
+        <mrow>
+          \amp = \frac{1}{2} \int_1^3 u (\ln 3 + \ln u - \ln u) du =
+          \frac{1}{2} \int_1^3 u \ln 3 du
+        </mrow>
+        <mrow>
+          \amp = \left. \frac{\ln 3}{2} \frac{u^2}{2} \right|_1^3 =
+          \frac{\ln 3}{4} (9-1) = \frac{8 \ln 3}{4} = 2 \ln 3
+        </mrow>
+      </md>
+    </statement>
+  </example>
+</section>

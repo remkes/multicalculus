@@ -1,0 +1,10 @@
+<section xml:id="section-vector-operations">
+  <title>Vector Operations</title>
+  <subsection xml:id="subsection-dot-product">
+  <title>Dot Product</title>
+    <p>
+      Add: Addition, scalar multiplication, dot product, cross
+      product, interpretations.
+    </p>
+  </subsection>
+</section>

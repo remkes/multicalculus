@@ -1,0 +1,544 @@
+<section xml:id="week6-activity">
+  <title>Week 6 Activity</title>
+  <subsection xml:id="problems-topology">
+    <title>Topology</title>
+    <activity>
+      <statement>
+        <p>
+          Consider the set <m>[0,5] \times [0,5] \times [0,5]</m> in
+          <m>\RR^3</m>. For each of the following points, determine if
+          the point is a boundary point, an interior point, or
+          neither.
+          <ol>
+            <li>
+              <m>(3,3,3)</m>
+            </li>
+            <li>
+              <m>(0,0,0)</m>
+            </li>
+            <li>
+              <m>(0,5,0)</m>
+            </li>
+            <li>
+              <m>(5,4,-1)</m>
+            </li>
+            <li>
+              <m>(3,2,5)</m>
+            </li>
+          </ol>
+          Is the interval open, closed, or neither?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <m>(3,3,3)</m> is an interior point.
+            </li>
+            <li>
+              <m>(0,0,0)</m> is a boundary point.
+            </li>
+            <li>
+              <m>(0,5,0)</m> is a bounardy point.
+            </li>
+            <li>
+              <m>(5,4,-1)</m> is a neither.
+            </li>
+            <li>
+              <m>(3,2,5)</m> is a boundary point. 
+            </li>
+          </ol>
+          The interval is closed, since it is formed from three closed
+          intervals in <m>\RR</m>.
+        </p>
+      </solution>
+    </activity>
+    <activity>
+      <statement>
+        <p>
+          Consider the set <m>(0,4) \times (2,4) \times (0,4)</m> in
+          <m>\RR^3</m>. For each of the following points, determine if
+          the point is a boundary point, an interior point, or
+          neither.
+          <ol>
+            <li>
+              <m>(0,0,0)</m>
+            </li>
+            <li>
+              <m>(4,4,4)</m>
+            </li>
+            <li>
+              <m>(2,1,3)</m>
+            </li>
+            <li>
+              <m>(0,2,3)</m>
+            </li>
+            <li>
+              <m>(3,3,3)</m>
+            </li>
+          </ol>
+          Is the interval open, closed, or neither?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <m>(0,0,0)</m> is neither. (It is outside the set, since
+              it is well away from the <m>y</m> range.)
+            </li>
+            <li>
+              <m>(4,4,4)</m> is a boundary point.
+            </li>
+            <li>
+              <m>(2,1,3)</m> is neither (It is outside the set, since
+              it is well away from the <m>y</m> range.
+            </li>
+            <li>
+              <m>(0,2,3)</m> is a boundary point.
+            </li>
+            <li>
+              <m>(3,3,3)</m> is an interior point.
+            </li>
+          </ol>
+          The interval is open, since it is fromed from three open
+          intervals in <m>\RR</m>. 
+        </p>
+      </solution>
+    </activity>
+    <activity>
+      <statement>
+        <p>
+          Consider the set <m>[1,3] \times (1,4) \times (0,4]</m> in
+          <m>\RR^3</m>. For each of the following points, determine if
+          the point is a boundary point, an interior point, or
+          neither.
+          <ol>
+            <li>
+              <m>(2,2,2)</m>
+            </li>
+            <li>
+              <m>(1,1,0)</m>
+            </li>
+            <li>
+              <m>(3,2,2)</m>
+            </li>
+            <li>
+              <m>(0,0,0)</m>
+            </li>
+            <li>
+              <m>(2,1,0)</m>
+            </li>
+          </ol>
+          Is the interval open, closed, or neither?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <m>(2,2,2)</m> is an interior point.
+            </li>
+            <li>
+              <m>(1,1,0)</m> is a boundary point.
+            </li>
+            <li>
+              <m>(3,2,2)</m> is a boundary point.
+            </li>
+            <li>
+              <m>(0,0,0)</m> is neither. 
+            </li>
+            <li>
+              <m>(2,1,0)</m> is a boundary point. 
+            </li>
+          </ol>
+          The interval is neither open or closed. It includes is
+          boundary planes in <m>x</m>, but not in <m>y</m> and only
+          partially in <m>z</m>.
+        </p>
+      </solution>
+    </activity>
+  </subsection>
+  <subsection xml:id="subsection-iterated-integrals-activity">
+    <title>Iterated Integrals</title>
+    <activity>
+      <statement>
+        <p>
+          Integrate the function <m>f(x,y) = xy^4 </m> on the interval
+          <m>[-1,2] \times [-3,0]</m>. 
+        </p>
+      </statement>
+      <solution>
+        <p>
+          This is an interated integral. I choose to integrate with
+          <m>x</m> in the inside and <m>y</m> on the outside. Then the
+          integral proceeds as two consecutive single-variable
+          integrals. 
+        </p>
+        <md>
+          <mrow>
+            \int_{-3}^0 \int_{-1}^2 xy^4 dx dy \amp = \int_{-3}^0
+            \frac{x^2 y^4}{2} \bigg|_{-1}^{2} dy 
+          </mrow>
+          <mrow>
+            \amp = \int_{-3}^0 \frac{y^4}{2} (2^2 - (-1)^2) dy 
+          </mrow>
+          <mrow>
+            \amp = \int_{-3}^0 \frac{3y^4}{2} dy = 3 \frac{y^5}{10}
+            \bigg|_{0}^3 = \frac{729}{10}
+          </mrow>
+        </md>
+      </solution>
+    </activity>
+    <activity>
+      <statement>
+        <p>
+          Integrate the function <m>f(x,y) = xy \cos (xy^2) </m> on
+          the interval <m>[0,\pi] \times [0,1]</m>. 
+        </p>
+      </statement>
+      <solution>
+        <p>
+          This is an interated integral. I choose to integrate with
+          <m>y</m> in the inside and <m>x</m> on the outside. Then the
+          integral proceeds as two consecutive single-variable
+          integrals.  The first step uses the substitution <m>u =
+          xy^2</m> with <m>du = 2xydy</m>. (Not that for this
+          substitution, since it is part of the <m>y</m> integral,
+          <m>x</m> is treate as a constant. The substitution uses
+          <m>u</m> to replace the variable <m>y</m>.) 
+        </p>
+        <md>
+          <mrow>
+            \int_{0}^{\pi} \int_0^1 xy \cos (xy^2) dx dy \amp =
+            \int_0^{\pi} \int_{y=0}^{y=1} \frac{1}{2} \cos u du dx 
+          </mrow>
+          <mrow>
+            \amp = \int_0^{\pi} \frac{- \sin u}{2} \bigg|_{y=0}^{y=1}
+            = \int_0^{\pi} \frac{ -\sin (xy^2)}{2} \bigg|_0^1
+          </mrow>
+          <mrow>
+            \amp = \frac{1}{2} \int_0^{\pi} -\sin (x) + (\sin 0) dx =
+            \frac{-1}{2} \int_0^{\pi} \sin (x) dx 
+          </mrow>
+          <mrow>
+            \amp = \frac{-1}{2} \cos x \bigg|_0^{\pi} = \frac{-1}{2} 2
+            = -1 
+          </mrow>
+        </md>
+      </solution>
+    </activity>
+    <activity>
+      <statement>
+        <p>
+          Integrate the function <m>f(x,y) = xy \ln (xy)</m> on the
+          interval <m>[1,4] \times [1,4]</m>. 
+        </p>
+      </statement>
+      <solution>
+        <p>
+          This is an interated integral. I choose to integrate with
+          <m>x</m> in the inside and <m>y</m> on the outside. Then the
+          integral proceeds as two consecutive single-variable
+          integrals.  In the first step, I use integration by parts.
+          In two of the three terms in the final step, I also use
+          integration by parts. 
+        </p>
+        <md>
+          <mrow>
+            \amp \int_1^4 \int_1^4 xy \ln (xy) 
+          </mrow>
+          <mrow>
+            \amp = \int_1^4 \left( \frac{x^2y}{2} \ln(xy) \bigg|_1^4 -
+            \int_1^4 \frac{1}{x} \frac{x^2y}{2} dx \right) dy 
+          </mrow>
+          <mrow>
+            \amp = \int_1^4 \left( 8y \ln (4y) - \frac{y}{2} \ln y -
+            \int_1^4 \frac{xy}{2} dx \right) dy 
+          </mrow>
+          <mrow>
+            \amp = \int_1^4 \left( 8y\ln (4y) - \frac{y}{2} \ln y -
+            \frac{x^2y}{4} \bigg|_1^4 \right) dy 
+          </mrow>
+          <mrow>
+            \amp = \int_1^4 8y\ln (4y) - \frac{y}{2} \ln y -
+            \frac{15y}{4} dy 
+          </mrow>
+          <mrow> \amp = \frac{8y^2}{2} \ln 4y \bigg|_1^4 - \int_1^4
+          \frac{8y^2}{2} \frac{1}{y} dy  - \left( \frac{y^2}{4} \ln y
+          \bigg|_1^4 - \int_1^4 \frac{y^2}{4} \frac{1}{y} dy \right) -
+          \frac{15y^2}{8} \bigg|_1^4
+          </mrow>
+          <mrow>
+            \amp = 64 \ln (16) - 4 \ln 4 - \int_1^4 4y dy - 1 \ln 4 + 0 +
+            \int_1^4 \frac{y}{4} dy - \frac{225}{8}
+          </mrow>
+          <mrow>
+            \amp = 128 \ln 4 - 4 \ln 4 - 2(15) - \ln 4 + \frac{15}{8}
+            - \frac{225}{8} = 123 \ln 4 - \frac{15}{4}
+          </mrow>
+        </md>
+      </solution>
+    </activity>
+    <activity>
+      <statement>
+        <p>
+          Integrate the function <m>f(x,y) = \frac{1}{x^2y^2}</m> on
+          the interval <m>[0,4] \times [1,4]</m>. 
+        </p>
+      </statement>
+      <solution>
+        <p>
+          This is an interated integral. I choose to integrate with
+          <m>y</m> in the inside and <m>x</m> on the outside. Then the
+          integral proceeds as two consecutive single-variable
+          integrals. The integral is improper in <m>x</m>, so I will
+          have to use limits when I finish the <m>x</m> integration.
+        </p>
+        <md>
+          <mrow>
+            \int_0^4 \int_1^4 \frac{1}{x^2y^2} dy dx \amp = \int_0^4
+            \frac{-1}{x^2y} \bigg|_1^4 dx 
+          </mrow>
+          <mrow>
+            \amp = \int_0^4 \frac{-1}{4x^2} - \frac{-1}{x^2} dx =
+            \int_0^4 \frac{-1 + 4}{4x^2} dx = \int_0^4 \frac{3}{4x^2}
+          </mrow>
+          <mrow>
+            \amp = \frac{3}{4} \frac{-1}{x} \bigg|_0^4 = \frac{3}{4} \left(
+            \frac{-1}{4} - \lim_{a \rightarrow 0} \frac{-1}{a} \right)
+          </mrow>
+        </md>
+        <p>
+          The limit does not converge, so the integral is not defined.
+        </p>
+      </solution>
+    </activity>
+    <activity>
+      <statement>
+        <p>
+          Integrate the function <m>f(x,y,z) = 3x^2 + yz^2 + x^3z</m> on
+          the interval <m>[0,2] \times [-3,3] \times [-1,1]</m>. 
+        </p>
+      </statement>
+      <solution>
+        <p>
+          This is a triple  interated integral. I choose to integrate with
+          <m>x</m> in the inside, then <m>y</m> moving outward, and
+          finally <m>z</m> on the outside. Then the
+          integral proceeds as two consecutive single-variable
+          integrals. 
+        </p>
+        <md>
+          <mrow>
+            \amp \int_{-1}^1 \int_{-3}^3 \int_0^2 3x^2 + 3yz^2 +x^3z dx dy
+            dz 
+          </mrow>
+          <mrow>
+            \amp = \int_{-1}^1 \int_{-3}^3 \left( x^3 + 3xyz^2
+            +\frac{x^4}{4}z \right) \bigg|_0^2 dy dz 
+          </mrow>
+          <mrow>
+            \amp = \int_{-1}^1 \int_{-3}^3 \left( 8 + 6yz^2 +4z
+            \right) dy dz = \int_{-1}^1 \left( 8y + 6\frac{y^3}{3}z^2
+            +4yz \right) \bigg|_{-3}^{3} dz 
+          </mrow>
+          <mrow>
+            \amp = \int_{-1}^1 \left( 8(3-(-3)) + 2(27-(-3))z^2
+            +4(3-(-3))z \right) dz 
+          </mrow>
+          <mrow>
+            \amp = \int_{-1}^1 \left( 48 + 60z^2 +24z
+            \right) dz 
+          </mrow>
+          <mrow>
+            \amp = 48z + 20z^3 +12z^2 \bigg|_{-1}^1 = 48(1-(-1)) +
+            20(1 - (-1)) + 12 (1-1) = 136
+          </mrow>
+        </md>
+      </solution>
+    </activity>
+    <activity>
+      <statement>
+        <p>
+          Integrate the function <m>f(x,y) = \frac{1}{x-y}</m> on the
+          interval <m>[0,2] \times [1,3]</m>. 
+        </p>
+      </statement>
+      <solution>
+        <p>
+          The function is undefined on the line <m>y=x</m>.
+          That line passes through this interval, from <m>(1,1)</m> to
+          <m>(2,2)</m>. Therefore, the integral of this function
+          cannot be defined on this interval.
+        </p>
+      </solution>
+    </activity>
+    <activity>
+      <statement>
+        <p>
+          Integrate the function <m>f(x,y) = \sqrt{x^2 - y^2}</m> on
+          the interval <m>[0,1] \times [0,1]</m>. 
+        </p>
+      </statement>
+      <solution>
+        <p>
+          The square root needs to be positive for this function to be
+          defined. This happens when <m>x^2 \geq y^2</m>, which is two
+          regions: <m>x \geq y</m> and <m>-x \leq -y</m> for positive
+          <m>x</m> and <m>y</m>.  On half of this region, <m>x</m> and
+          <m>y</m> are both positive, but <m>y > x</m>, so the function
+          is undefined and the integral is meaningless. 
+        </p>
+      </solution>
+    </activity>
+    <activity>
+      <statement>
+        <p>
+          Integrate the function <m>f(x,y) = \frac{x^2y^2}{\sqrt{4 -
+          x^2}}</m> on the interval <m>[0,1] \times [-1,0]</m>. 
+        </p>
+      </statement>
+      <solution>
+        <p>
+          This is an interated integral. I choose to integrate with
+          <m>x</m> in the inside and <m>y</m> on the outside. Then the
+          integral proceeds as two consecutive single-variable
+          integrals. The antiderivative for the <m>x</m> integral is
+          unweildy -- I asked a computer for the solution. 
+        </p>
+        <md>
+          <mrow>
+            \amp \int_0^1 \int_{-1}^0 \frac{x^2y^2}{\sqrt{4-x^2}} dx dy
+          </mrow>
+          <mrow>
+            \amp = \int_0^1 \frac{x^2}{\sqrt{4-x^2}} dx \int_{-1}^0
+            y^2 dy
+          </mrow>
+          <mrow>
+            \amp = \left[ 2 \arcsin \left( \frac{x}{2} \right) -
+            \frac{1}{2} x \sqrt{4-x^2} \bigg|_0^1 \right] \left[
+            \frac{y^3}{3} \bigg|_{-1}^0 \right] 
+          </mrow>
+          <mrow>
+            \amp = \left[ 2 \arcsin \frac{1}{2} - \frac{1}{2} \sqrt{3}
+            - 2 \arcsin 0) + \frac{1}{2} (0) \sqrt{4} \right] \left[ 0
+            - \frac{-1}{3} \right] 
+          </mrow>
+          <mrow>
+            \amp = \left[ 2 \frac{\pi}{6} \frac{1}{2} -
+            \frac{\sqrt{3}}{2} - 0 + 0 \right] \left[ \frac{1}{3}
+            \right] = \frac{\pi}{18} - \frac{\sqrt{3}}{6} 
+          </mrow>
+        </md>
+      </solution>
+    </activity>
+    <activity>
+      <statement>
+        <p>
+          Integrate the function <m>f(x,y) = \frac{1}{(x + y)(x +
+          2y)(x + 3y)}</m> on the interval <m>[-1,1] \times [2,4]</m>. 
+        </p>
+      </statement>
+      <solution>
+        <p>
+          This is an interated integral. I choose to integrate with
+          <m>x</m> in the inside and <m>y</m> on the outside. Then the
+          integral proceeds as two consecutive single-variable
+          integrals.  The integral is well defined, since none of the
+          line that solve either of the three factors in the
+          denominator pass through the interval in question. In the
+          first step for <m>x</m>, I need to use partial fractions to
+          break up the integrand.
+        </p>
+        <md>
+          <mrow>
+            \amp \int_2^4 \int_{-1}^1 \frac{1}{(x+y)(x+2y)(x+3y)} dx dy
+          </mrow>
+          <mrow>
+            \amp = \int_2^4 \int_{-1}^1 \frac{\frac{1}{2y^2}}{x+y} +
+            \frac{\frac{-1}{y^2}}{x + 2y} + \frac{\frac{1}{2y^2}}{x +
+            3y} dx dy
+          </mrow>
+          <mrow>
+            \amp = \int_2^4 \frac{1}{2y^2} \ln |x+y| - \frac{-}{y^2}
+            \ln |x+2y| + \frac{1}{2y^2} \ln |x+3y| \bigg|_{-1}{1} dy
+          </mrow>
+          <mrow>
+            \amp = \int_2^4 \frac{1}{2y^2} (\ln |1+y| - \ln |-1+y|) -
+            \frac{1}{y^2} (\ln |1+2y| - \ln |-1+2y|) 
+          </mrow>
+          <mrow>
+            \amp + \frac{1}{2y^2}
+            (\ln |1+3y| - \ln |-1+3y|) dy 
+          </mrow>
+        </md>
+        <p>
+          I can split this up into six different integrals, all of
+          which are annoying to do. Integration by parts in each
+          integral can remove the logarithmic part, leaving a rational
+          function. Partial fractions can then deal with the rational
+          functions. I skipped the details here, giving just the six
+          integrals and their values calculated by a computer algebra
+          system. Turns out it was a reasonable thing that I did so,
+          since the numbers get quite miserable. 
+        </p>
+        <md>
+          <mrow>
+            \amp = \int_2^4 \frac{1}{2y^2} \ln |1+y|
+            - \int_2^4 \frac{1}{2y^2} \ln |-1+y|
+            - \int_2^4 \frac{1}{y^2} \ln |1+2y| 
+          </mrow>
+          <mrow>
+            \amp + \int_2^4 \frac{1}{y^2} \ln |-1+2y|
+            + \int_2^4 \frac{1}{2y^2} \ln |1+3y|
+            - \int_2^4 \frac{1}{2y^2} \ln |-1+3y| 
+          </mrow>
+          <mrow>
+            \amp = \frac{1}{8} \ln \frac{256}{3125} 
+            - \frac{1}{4} \ln \frac{4}{27} 
+            + \frac{1}{8} \ln \frac{27}{256} 
+            + \frac{\ln 2}{2} 
+            + \ln \frac{100}{81} 
+          </mrow>
+          <mrow>
+            \amp + \frac{1}{2} \ln \frac{5}{3} 
+            + \frac{1}{2} \ln 3 
+            + \ln \frac{49}{36} 
+            - \frac{1}{4} \ln 7 
+            + \frac{1}{8} \ln \frac{1677216}{13^{13}} 
+            - \frac{1}{4} \ln \frac{64}{823543}
+          </mrow>
+        </md>
+      </solution>
+    </activity>
+  </subsection>
+  <subsection xml:id="subsection-week6-concepts">
+    <title>Conceptual Review Questions</title>
+    <p>
+      <ul>
+        <li>
+          What is topology and why does it matter?
+        </li>
+        <li>
+          What are open and closed intervals in higher dimensions?
+        </li>
+        <li>
+          Why doesn't the indefinite integral extend to higher
+          dimensions?
+        </li>
+        <li>
+          What does it mean to measure the (hyper)volume under the
+          graph of a scalar field?
+        </li>
+        <li>
+          What is an iterated integral? 
+        </li>
+        <li>
+          Why can multivariable integral be split into single variable
+          pieces?
+        </li>
+      </ul>
+    </p>
+  </subsection>
+</section>

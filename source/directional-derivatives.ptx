@@ -1,0 +1,239 @@
+<section xml:id="section-directional-derivatives">
+  <title>Directional Derivatives</title>
+  <subsection xml:id="subsection-direction-derivatives-definition">
+    <title>Definition of Directional Derivatives</title>
+    <p>
+      Partial derivatives took one variable and pretended that all
+      other variables were constant. In that way, they calculated the
+      rate of change in that variable. I could consider <m>\frac{\del
+      f}{\del x}</m> the derivative of <m>f</m> when moving in the
+      <m>x</m> axis direction. But why do I only consider movement in
+      the axis directions? Why can't I consider movement in all
+      directions and ask about the rate of change?
+    </p>
+    <definition>
+      <statement>
+        <p>
+          Let <m>f: \RR^n \rightarrow \RR</m> be a differentiable
+          function and <m>u</m> a <em>unit</em> vector in
+          <m>\RR^n</m>. The directional derivative of <m>f</m> in the
+          direction <m>u</m> is written <m>D_u f</m> and given by a
+          limit definition. Let <m>v</m> be a point in the domain of
+          <m>f</m>.
+          <me>
+            D_u f(v) = \lim_{h \rightarrow 0} \frac{ f(v + hu) - f(v)}{h}
+          </me>
+        </p>
+      </statement>
+    </definition>
+    <p>
+      The directional derivative, like the partial derivative, uses a
+      single variable limit: I use the line in the direction <m>u</m>
+      (as a local direction vector form the point <m>v</m>) to give a
+      one-dimensional domain <mdash/> a copy of <m>\RR^1</m>. Then I
+      just differentiate along the line. In <m>\RR^3</m>, if <m>u =
+      e_1</m>, the directional derivative is <m>D_{e_1} f =
+      \frac{\del f}{\del x}</m>; if <m>u = e_2</m>, the directional
+      derivative is <m>D_{e_2} f = \frac{\del f}{\del y}</m>; and if
+      <m>u = e_3</m>, the directional derivative is <m>D_{e_3} f =
+      \frac{\del f}{\del z}</m>. 
+    </p>
+  </subsection>
+  <subsection xml:id="subsection-calculating-directional-derivatives">
+    <title>Calculating Directional Derivatives</title>
+    <p>
+      Instead of calculating this limit every time, there is a nice
+      tool for calculating directional derivatives.
+    </p>
+    <proposition>
+      <statement>
+        <p>
+          Let <m>f: \RR^n \rightarrow \RR</m> be a differentiable
+          function and <m>u</m> a <em>unit</em> vector in
+          <m>\RR^n</m>. The directional derivatives <m>D_u f</m> is
+          the dot product of <m>u</m> with <m>\nabla f</m>.
+          <me>
+            D_u f = u \cdot \nabla f
+          </me>
+        </p>
+      </statement>
+    </proposition>
+    <p>
+      If <m>(a,b)</m> or <m>(a,b,c)</m> are unit vectors in
+      <m>\RR^2</m> and <m>\RR^3</m>, respectively, I can write the
+      specific form of the proposition for low dimensions.
+      <md>
+        <mrow>
+          D_{(a,b)} f(x,y) \amp = \frac{\del f}{\del x} a +
+          \frac{\del f}{\del y} b
+        </mrow>
+        <mrow>
+          D_{(a,b,c)} f(x,y,z) \amp = \frac{\del f}{\del x} a +
+          \frac{\del f}{\del y} b + \frac{\del f}{\del z} c
+        </mrow>
+      </md>
+    </p>
+    <p>
+      As I noted at the start of this section, the directional
+      derivatives in the axis directions give the partial derivatives,
+      so this is an extension of the idea of partial derivatives.
+      <md>
+        <mrow>
+          D_{(1,0)} f(x,y) \amp = \frac{\del f}{\del x}
+        </mrow>
+        <mrow>
+          D_{(0,1)} f(x,y) \amp = \frac{\del f}{\del y}
+        </mrow>
+        <mrow>
+          D_{(1,0,0)} f(x,y,z) \amp = \frac{\del f}{\del x}
+        </mrow>
+        <mrow>
+          D_{(0,1,0)} f(x,y,z) \amp = \frac{\del f}{\del y}
+        </mrow>
+        <mrow>
+          D_{(0,0,1)} f(x,y,z) \amp = \frac{\del f}{\del z}
+        </mrow>
+      </md>
+    </p>
+  </subsection>
+  <subsection xml:id="subsection-directional-examples">
+    <title>Examples of Directional Derivatives</title>
+    <figure xml:id="figure-3d-graph3">
+      <caption>
+        The function <m>f(x,y) = \sin (x^2 + y^2)</m>.
+      </caption>
+      <image xml:id="figure69" width="90%">
+        <asymptote>
+          import graph3;
+          import palette;
+          size(12cm,4cm,IgnoreAspect);
+          currentprojection=orthographic(1,-1,0.4);
+
+          real f(pair z) { return sin((z.x)^2 + (z.y)^2)+1;}
+
+          limits((-3.7,-3.7,-1.2),(3.7,3.7,1.2));
+
+          xaxis3("$x$",Bounds(Both,Value),OutTicks(Step=1));
+          yaxis3("$y$",Bounds(Both,Value),OutTicks(Step=1));
+
+          surface s=surface(f,(-3.7,-3.7),(3.7,3.7),100,Spline);
+
+          pen[] pens=mean(palette(s.map(zpart),Gradient(green,blue)));
+
+          draw(s,pens);
+        </asymptote>
+      </image>
+    </figure>
+    <example>
+      <statement>
+        <p>
+          Consider this function: <m>f(x,y) = \sin (x^2 + y^2)</m>,
+          shown in <xref ref="figure-3d-graph3" />. These
+          are circular sine waves, like riples on a pond which never
+          decrease in amplitude. Here are some direction derivatives
+          for this function. 
+          <md>
+            <mrow>
+              D_{(1,0)} f(x,y) \amp = 2x \cos (x^2 + y^2)
+            </mrow>
+            <mrow>
+              D_{(0,1)} f(x,y) \amp = 2y \cos (x^2 + y^2)
+            </mrow>
+            <mrow>
+              D_{ \left( \frac{1}{\sqrt{5}} , \frac{2}{\sqrt{5}}
+              \right) } f(x,y) \amp = \frac{2}{\sqrt{5}} x \cos (x^2
+              + y^2) + \frac{4}{\sqrt{5}}y \cos (x^2 + y^2)
+            </mrow>
+            <mrow>
+              D_{ \left( \frac{1}{\sqrt{5}} , \frac{2}{\sqrt{5}}
+              \right) } f(\sqrt{\pi},\sqrt{\pi}) \amp =
+              \frac{2}{\sqrt{5}} \sqrt{\pi} \cos (\pi + \pi) +
+              \frac{4}{\sqrt{5}} \sqrt{\pi} \cos (\pi + \pi) = 6
+              \sqrt{ \frac{\pi}{5}}
+            </mrow>
+          </md>
+        </p>
+      </statement>
+    </example>
+    <figure xml:id="figure-3d-graph4">
+      <caption>
+        The function <m>f(x,y) = e^{-(x^2+y^2)}\sin (x^2 + y^2)</m>.
+      </caption>
+      <image xml:id="figure70" width="90%">
+        <asymptote>
+          import graph3;
+          import palette;
+          size(12cm,4cm,IgnoreAspect);
+          currentprojection=orthographic(1,-1,0.3);
+
+          real f(pair z) { return
+          exp((-1/6)*((z.x)^2+(z.y)^2))*sin((z.x)^2 + (z.y)^2) + 1/5;}
+
+          limits((-3.7,-3.7,-1.2),(3.7,3.7,1.2));
+
+          xaxis3("$x$",Bounds(Both,Value),OutTicks(Step=1));
+          yaxis3("$y$",Bounds(Both,Value),OutTicks(Step=1));
+
+          surface s=surface(f,(-3.7,-3.7),(3.7,3.7),100,Spline);
+
+          pen[] pens=mean(palette(s.map(zpart),Gradient(green,blue)));
+
+          draw(s,pens);
+        </asymptote>
+      </image>
+    </figure>
+    <example>
+      <statement>
+        <p>
+          If I  wanted damped ripples instead, as in <xref
+          ref="figure-3d-graph4">Figure</xref>, I would take
+          <m>f(x,y) = e^{-(x^2 + y^2)} \sin(x^2 + y^2)</m>. Here are
+          some direction derivatives for this function. 
+          <md>
+            <mrow>
+              D_{(a,b)} f(x,y) \amp = \left[ -2xe^{-(x^2+y^2)} \sin
+              (x^2 + y^2) + 2xe^{-(x^2+y^2)} \cos (x^2 + y^2) \right]
+              a
+            </mrow>
+            <mrow>
+              \amp \hspace{1cm} + \left[ -2ye^{-(x^2+y^2)} \sin (x^2
+              + y^2) + 2ye^{-(x^2+y^2)} \cos (x^2 + y^2) \right] b
+            </mrow>
+            <mrow>
+              D_{(a,b)} f(\sqrt{\pi},\sqrt{\pi}) \amp = \left[
+              -2\sqrt{\pi}e^{-(\pi+\pi)} \sin (\pi + \pi) +
+              2\sqrt{\pi}e^{-(\pi+\pi)} \cos (\pi + \pi) \right] a
+            </mrow>
+            <mrow>
+              \amp \hspace{1cm} + \left[ -2\sqrt{\pi}e^{-(\pi + \pi
+              )} \sin (\pi + \pi ) + 2\sqrt{\pi}e^{-(\pi + \pi )} \cos
+              (\pi + \pi) \right] b
+            </mrow>
+            <mrow>
+              \amp = \frac{2\sqrt{\pi}}{e^{2\pi}} \left[ \cos (2\pi)
+              a + \cos (2\pi) b \right] = \frac{2 \sqrt{\pi}
+              (a+b)}{e^{2\pi}}
+            </mrow>
+          </md>
+        </p>
+      </statement>
+    </example>
+    <p>
+      Finally, look at what happens when I apply the length of a dot
+      product to the directional derivative.
+      <me>
+        |D_u f| = |\nabla f \cdot u| = |\nabla f||u| \cos \theta
+      </me>
+    </p>
+    <p>
+      The cosine term is maximized when the angle <m>\theta =0</m>,
+      that is, when <m>u</m> is the unit vector in the same direction
+      as <m>\nabla f</m>. That is, the greatest directional
+      derivative, representing the direction of fastest change, is
+      found in the direction of the gradient. This established the
+      fact, which I claimed in <xref
+      ref="subsection-gradient-interpretation" />, that the gradient
+      points in the direction of greatest change.
+    </p>
+  </subsection>
+</section>
