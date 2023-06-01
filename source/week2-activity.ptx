@@ -34,7 +34,7 @@
             <image xml:id="figure11" width="90%">
               <asymptote>
                 import graph;
-                size(10cm,10cm);
+                size(12cm,12cm,IgnoreAspect);
 
                 xaxis("$x$");
                 yaxis("$y$");
@@ -1226,7 +1226,7 @@
             <image xml:id="figure25" width="90%">
               <asymptote>
                 import graph;
-                size(12cm)
+                size(12cm);
 
                 xaxis("$x$");
                 yaxis("$y$");

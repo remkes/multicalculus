@@ -38,7 +38,6 @@
     </frontmatter>
     
     <xi:include href="./week1.ptx" />
-    <!--
     <xi:include href="./week2.ptx" />
     <xi:include href="./week3.ptx" />
     <xi:include href="./week4.ptx" />
@@ -50,7 +49,6 @@
     <xi:include href="./week10.ptx" />
     <xi:include href="./week11.ptx" />
     <xi:include href="./week12.ptx" />
-    -->
 
     <backmatter xml:id="backmatter">
       <title>Backmatter</title>
