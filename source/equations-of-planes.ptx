@@ -1,132 +1,57 @@
 <section xml:id="section-equations-planes">
   <title>Equations of Planes</title>
- 
-<section xml:id="section-loci">
-  <title>Loci</title>
   <subsection xml:id="subsection-loci-definition">
     <title>Definition of a Locus</title>
-    <p>
-      Spans were the first way to define linear and affine subspaces.
-      There is another approach to describe these object, which I
-      describe in this section. I'll start with the main definition.
-    </p>
+      <p>
+        There are many ways to mathematically describe an geometric
+        object. Cartesian geometry allows for perhaps the most
+        powerful idea: the locus. I'll define this in <m>\RR^3</m>,
+        but the definition is general to any Euclidean space. 
+      </p>
     <definition>
       <statement>
         <p>
-          Consider any set of equations in the variables
-          <m>x_1, x_2, \ldots, x_n</m>. The <term>locus</term> in
-          <m>\RR^n</m> of this set of equations is the set of vectors
-          that satisfy <em>all</em> of the equations. The plural
-          of a locus is <term>loci</term>.
+          Consider an equation in the variables <m>x,y,z</m>. The
+          <term>locus</term> in <m>\RR^3</m> of this equation is the
+          set of vectors that satisfy the equation. The plural of a
+          locus is <term>loci</term>.
         </p>
       </statement>
     </definition>
     <p>
-      In general, the equations can be of any sort. The unit circle
-      in <m>\RR^2</m> is most commonly defined as the locus of the
-      equation <m>x^2 + y^2 = 1</m>. The graph of a function is the
-      locus of the equation <m>y = f(x)</m>. However, linear
-      algebra excludes curved objects. The subset is concerned with 
-      linear/affine objects: things that are straight and flat. So, I
-      don't want loci of just any kind of equation: I want loci of
-      linear equations. The idea is likely familiar, but let me
-      formally define it anyway. 
+      In general, the equation can be of any sort. The unit circle in
+      <m>\RR^2</m> is most commonly defined as the locus of the
+      equation <m>x^2 + y^2 = 1</m>. The graph of a single-variable
+      function is the locus (also in <m>\RR^2</m>) of the equation
+      <m>y = f(x)</m>. My goal in this section is equation of places,
+      which are flat. Flat objects arise as loci of linear equations.
+      Let me remind you of that definition.
     </p>
     <definition xml:id="definition-linear-equation">
       <statement>
         <p>
-          Let <m>a_i</m> and <m>c</m> be real numbers. A <term>linear
-          equation</term> in the variables <m>x_1, x_2, \ldots x_n</m>
-          is an equation of the following form.
+          Let <m>a</m>, <m>b</m>, <m>c</m> and <m>d</m> be real
+          numbers. A <term>linear equation</term> in the variables
+          <m>x,y,z</m> is an equation of the following form.
           <me>
-            a_1 x_1 + a_2 x_2 + \ldots + a_n x_n = c
+            a x + b y + c z = d 
           </me>
         </p>
       </statement>
     </definition>
     <p>
-      <xref ref="proposition-spans-subspaces" /> claimed that all
-      linear subspaces were described by spans. Shortly afterward, I
-      showed that all affine subspaces were described by offset spans.
-      In addition to spans, I can also use loci to describe any affine
-      or linear subspace. 
-    </p>
-    <proposition>
-      <statement>
-        <p>
-          Any linear or affine subspace of <m>\RR^n</m> can be
-          described as the locus of finitely many linear equations.
-          Likewise, the locus of any number of linear equations is
-          either an affine subspace of <m>\RR^n</m> or the empty set.
-        </p>
-      </statement>
-    </proposition>
-    <p>
-      It is quite valuable to have these two different descriptions of
-      linear and affine subspaces. Each description (spans or loci)
-      has strengths and weaknesses. Depending on what calculations I
-      want to do, using either a span or a locus description may help
-      a great deal.
-    </p>
-    <p>
-      There is also a nice contrast in the constructions of spans and
-      loci. Spans are essentially built up by adding more and more
-      vectors, more and more directions. The span of no vectors is the
-      origin. The span of one vector is a line. The span of two
-      linearly independent vectors is a plane. This process continues
-      (if the ambient dimension is large enough) to make object of
-      higher and higher dimensions as more linearly independent
-      vectors are added to the span. 
-    </p>
-      In contrast, loci are built top-down, by starting with the
-      ambient space and reducing the number of points by imposing
-      restrictions in the form of linear equations. The locus of no
-      equations is the entire space, since all points trivially
-      satisfy no equations. The locus of one equation should be
-      something of one dimension less that the ambient space, as one
-      restriction is imposed. The locus of two equations should be
-      something of two dimensions less than the ambient space, as two
-      restrictions are imposed. This continues: the dimension of a
-      locus, at least ideally, is the dimensions of the ambient space
-      minus the number of equations or restrictions. 
-    <p>
-      To be more specific, in <m>\RR^2</m>, adding the equation
-      <m>x=3</m> restricts to a vertical line passing through the
-      <m>x</m>-axis at <m>\begin{pmatrix} 3 \\ 0 \end{pmatrix}</m>.
-      Likewise, the equation <m>y=4</m> restricts to a horizontal line
-      passing through the <m>y</m>-axis at <m>\begin{pmatrix} 0 \\ 4
-      \end{pmatrix}</m>.  If I consider the locus of <em>both</em>
-      equations, there is only one point remaining: <m>\begin{pmatrix}
-      3 \\ 4 \end{pmatrix}</m> is the only point that satisfies both
-      equations. In this way, each additional equation potentially
-      adds an additional restriction and leads to a smaller linear or
-      affine subspaces.
-    </p>
-    <p>
-      As with spans, there can be the problem of redundant
-      information. In <m>\RR^3</m>, the locus of the equation <m>x + y
-      + z = 1</m> is a plane. If I also add the equation <m>2x + 2y +
-      2z = 2</m>, however, I don't get a line. The second equation is
-      a multiple of the first, and any points that satisfy the first
-      equation also satisfy the second. The second equation is
-      redundant and unnecessary. Determining what is redundant (and
-      determining the dimension of a locus) will rely on calculation
-      tools introduced in <xref ref="section-dimensions-loci" />.
-    </p>
-  </subsection>
-  <subsection xml:id="subsection-familiar-loci">
-    <title>Familiar Loci</title>
-    <p>
-      I can define some familiar objects which are presented as the
-      locus of one linear equation. 
+      The most familiar linear loci are lines. Very briefly, let me
+      redefined a line in <m>\RR^2</m>. (A line in <m>\RR^3</m> needs
+      a different definition; in this course, one way to describe
+      lines is as parametric curves, as in <xref
+      ref="section-parametric-curves" />.)
     </p>
     <definition>
       <statement>
         <p>
           A <term>line</term> in <m>\RR^2</m> is the locus of the
-          equation <m>ax + by = c</m> for <m>a,b,c \in \RR</m>. In
-          general, the line is affine. The line is linear if
-          <m>c=0</m>.
+          equation <m>ax + by = c</m> for <m>a,b,c \in \RR</m>. 
+          The line goes through the origin if <m>c=0</m>.
         </p>
       </statement>
     </definition>
@@ -134,113 +59,90 @@
       <statement>
         <p>
           A <term>plane</term> in <m>\RR^3</m> is the locus of the
-          linear equation <m>ax + by + cz = d</m>. In general, the
-          plane is affine. The plane is linear if <m>d=0</m>.
+          linear equation <m>ax + by + cz = d</m>.  The plane goes
+          through the origin if <m>d=0</m>.
         </p>
       </statement>
     </definition>
     <p>
-      If we think of a plane in <m>\RR^3</m> as the locus of one
-      linear equation, the important dimensional fact about a plane is
-      not that it has dimension two but that it has dimension one less
-      than its ambient space <m>\RR^3</m>.
+      Notes that the equation for a locus is not unique; many
+      equations may describe the same locus. Since they are equations,
+      I can change them by doing the same thing to both sides (hence
+      preserving the equality). Consider the plane given by this
+      equation.
+      <me>
+        3x - y + 5z = 12
+      </me>
+      I can multiply both sides by <m>-1</m> and still describe the
+      same plane. 
+      <me>
+        -3x + y - 5z = -12
+      </me>
+      I could also multiply the original equation by any constant, say
+      <m>100</m>, and still describe the same plane. 
+      <me>
+        300x - 100y + 500z = 1200
+      </me>
+      Finally, I must be careful multiplying by zero (or any
+      expressing that might evaluate to zero). If I multiply both
+      sides of the equation by zero, I get a trivial equation.
+      <me>
+        (0)(3x - y + 5z) = (0)(12) \implies 0 = 0 
+      </me>
+      The equation <m>0=0</m> describes all points, not just the
+      plane, so I have destroyed the locus. As with many other places
+      in mathematics, multiplying or dividing by zero always needs to
+      be the back of you mind as something to be careful about. 
     </p>
-    <definition>
-      <statement>
-        <p>
-          A <term>hyperplane</term> in <m>\RR^n</m> is the locus of
-          one linear equation: <m>a_1 x_1 + a_2 x_2 + \ldots + a_n x_n
-          = c</m>. It has dimension <m>n-1</m>. It is, in general,
-          affine. The hyperplane is linear if <m>c=0</m>.
-        </p>
-      </statement>
-    </definition>
   </subsection>
-  <subsection xml:id="subsection-intersection">
-    <title>Intersection</title>
-    <definition>
-      <statement>
-        <p>
-          If <m>A</m> and <m>B</m> are sets, their intersection <m>A
-          \cap B</m> is the set of all points they have in common.
-          The intersection of affine subspaces is also an affine
-          subspace. If <m>A</m> and <m>B</m> are both linear, the
-          intersection is also linear.
-        </p>
-      </statement>
-    </definition>
-    <example>
-      <statement>
-        <p>
-          Loci of more than one equation can be understood as
-          intersections. Consider
-          the locus of two equations, say the example I used from
-          <m>\RR^2</m> before: the locus of <m>x=3</m> and <m>y=4</m>.
-          I defined this directly as a single locus. However, I
-          could just as easily think of this as the intersection of
-          the two lines given by <m>x=3</m> and <m>y=4</m> separately.
-          In this way, it is the intersection of two loci. Similarly,
-          all loci are the intersection of the planes or hyperplanes
-          defined by each individual linear equation.
-        </p>
-      </statement>
-    </example>
-  </subsection>
-</section>
-
-
-<section xml:id="section-equations-of-planes">
-  <title>Equations of Planes</title>
   <subsection xml:id="subsection-dot-product-and-loci">
     <title>Dot Products and Loci</title>
     <p>
       Loci are the solutions to one of more linear equations. These
       linear equation can be re-interpreted and expressed via via dot
-      products. Consider, again, the general linear equation in
-      <m>\RR^n</m>.
+      products. Consider, again, the  linear equation in
+      <m>\RR^3</m>.
       <me>
-        a_1 u_1 + a_2 u_2 + \ldots + a_n u_n = c
+        ax + by + cz = d 
       </me>
     </p>
     <p>
-      Think of the variables <m>u_i</m> as the components of a vector
-      <m>u \in \RR^n</m>. There also are <m>n</m> scalars <m>a_i</m>,
-      which I can likewise treat as components of the vector <m>a \in
-      \RR^n</m>. The vector <m>u</m> is variable; the vector <m>a</m>
-      is constant. Then I can re-write the linear equation using these
+      I can think  of the variables <m>a,b,c</m> as the components of
+      a vector <m>u = (a,b,c) \in \RR^3</m>. Let me use <m>v</m> to
+      also label the vector of variables: <m>v = (x,y,z)</m>.
+      I can re-write the linear equation using these
       two vectors.
-      <me>
-        a_1 u_1 + a_2 u_2 + \ldots + a_n u_n = \begin{pmatrix} a_1 \\
-        a_2 \\ \vdots \\ a_n \end{pmatrix} \cdot \begin{pmatrix} u_1
-        \\ u_2 \\ \vdots \\ u_n \end{pmatrix} = a \cdot u = c
-      </me>
+      <md>
+        <mrow>
+          ax + by + cd \amp = d
+        </mrow>
+        <mrow>
+          (a,b,c) \cdot (x,y,z) \amp = d 
+        </mrow>
+        <mrow>
+          u \cdot v \amp = d 
+        </mrow>
+      </md>
     </p>
     <p>
       In this way, a linear equation specifies that the dot product
-      result of a variable vector <m>u</m> with a fixed vector
-      <m>a</m> must have the result <m>c</m>. In this light, an
-      affine plane in <m>\RR^3</m> is given by the equation
+      result of a variable vector <m>v</m> with a fixed vector
+      <m>u</m> must have the result <m>d</m>. In this light, a
+      plane in <m>\RR^3</m> is given by the equation
       <me>
-        \begin{pmatrix} 
-          x \\ y \\ z 
-        \end{pmatrix} \cdot \begin{pmatrix} 
-          a_1 \\ a_2 \\ a_3 
-        \end{pmatrix} = c
+        (a,b,c) \cdot (x,y,z) = d
       </me>. 
       This plane is precisely all vectors whose dot product with the
-      vector <m>\begin{pmatrix} a_1 \\ a_2 \\ a_3 \end{pmatrix}</m> is
-      the fixed number <m>c</m>. If <m>c=0</m>, the equation become 
+      vector <m>(a,b,c)</m> produces 
+      the fixed number <m>d</m>. If <m>d=0</m> (i.e., if the plane
+      goes through the origin), the equation become 
       <me>
-        \begin{pmatrix} 
-          x \\ y \\ z 
-        \end{pmatrix} \cdot \begin{pmatrix} 
-          a_1 \\ a_2 \\ a_3 
-        \end{pmatrix} = 0
+        (a,b,c) \cdot (x,y,z) = d
       </me>. 
       A dot product of zero indicates that the two inputs to the dot
       product are perpendicular. Therefore, a plane through the origin
       is the set of all vectors which are perpendicular to a fixed
-      vector <m>\begin{pmatrix} a_1 \\ a_2 \\ a_3 \end{pmatrix}</m>.
+      vector <m>(a,b,c)</m>. This leads to an important definition. 
     </p>
     <definition>
       <statement>
@@ -248,62 +150,264 @@
           Let <m>P</m> be a plane in <m>\RR^3</m> determined by the
           equation 
           <me>
-            \begin{pmatrix} 
-              x \\ y \\ z 
-            \end{pmatrix} \cdot \begin{pmatrix} 
-              a_1 \\ a_2 \\ a_3 
-            \end{pmatrix} = c
+            (a,b,c) \cdot (x,y,z) = d 
           </me>.
-          The vector <m>\begin{pmatrix} a_1 \\ a_2 \\ a_3
-          \end{pmatrix}</m> is called the <term>normal to the
-          plane</term>. Let <m>H</m> be a hyperplane in <m>\RR^n</m>
-          determined by the equivalent equation in <m>\RR^n</m>.
-          <me>
-            u \cdot a = \begin{pmatrix} 
-              u_1 \\ u_2 \\ \vdots \\ u_n
-            \end{pmatrix} \cdot \begin{pmatrix} 
-              a_1 \\ a_2 \\ \vdots \\ a_n 
-            \end{pmatrix} = c
-          </me>
-        </p>
-        <p>
-          The vector <m>a</m> is called the <term>normal to the
-          hyperplane</term>.
+          The vector <m>(a,b,c)</m> is called the <term>normal to the
+          plane</term>. 
         </p>
       </statement>
     </definition>
     <p>
-      If <m>c=0</m>, the plane or hyperplane is perpendicular to its
-      normal. This notion of orthogonality still works when <m>c \neq
-      0</m>. In this case, the normal is a <em>local</em>
-      perpendicular direction from any point on the affine plane.
-      Treating any such point as a local origin, the normal points in
-      a direction perpendicular to all the <em>local direction</em>
-      vectors which lie on the plane.
+      If <m>d=0</m>, the plane or hyperplane is perpendicular to its
+      normal. The remark thing is this: the notion of orthogonality of
+      the normal still works when <m>d \neq 0</m>. In this case, the
+      normal is a <em>local</em> perpendicular direction from any
+      point on the  plane.  Treating any such point as a local origin,
+      the normal points in a direction perpendicular to all the
+      <em>local direction</em> vectors which lie on the plane. This is
+      the key of understanding and describing planes in <m>\RR^3</m>.
     </p>
   </subsection>
   <subsection xml:id="subsection-planes-algorithm">
     <title>An Algorithm for Equations of Planes</title>
     <p>
       Now I can build a general process for finding the equation of a
-      plane in <m>\RR^3</m>. Any time I have a point <m>p</m> on the
-      plane and two <em>local direction vectors</em> <m>u</m> and
-      <m>v</m> which remain on the plane, I can find a normal to the
-      plane by calculating <m>u \times v</m>. Then I can find the
-      equation of the plane by calculating the dot product <m>p \cdot
-      (u \times v)</m> to find the constant <m>c</m>.
-      <me>
-        \begin{pmatrix} x \\ y \\ z \end{pmatrix} \cdot (u \times v) =
-        c
-      </me>
+      plane in <m>\RR^3</m>. Using the equations above, I need two
+      pieces of information: the (local direction) normal
+      <m>(a,b,c)</m> and the constant <m>d</m>.
     </p>
     <p>
-      If I am given three points on a plane (<m>p</m>, <m>q</m> and
+      I'm going to describe three ways of calcualting the equation of
+      a plane in <m>\RR^3</m>, each starting from different initial
+      information. All three of these collections of data uniquely
+      determine a plane.
+      <ul>
+        <li>
+          A point and the normal.
+        </li>
+        <li>
+          A point and two local directions. 
+        </li>
+        <li>
+          Three points.
+        </li>
+      </ul>
+      I'll describe the algorithm for all three of these in order,
+      since the calculations get longer in each step of this list. 
+    </p>
+    <p>
+      In the first description, I am actually given the normal
+      <m>(a,b,c)</m> and some point <m>(x_0, y_0, z_0)</m> on the
+      plane, I only need to calculate <m>d</m>. To do so, I just
+      evaluate the left side of the equation of the plane: doing so is
+      equal to the right side, which is just <m>d</m>. Let me show
+      some examples. 
+    </p>
+    <example>
+      <statement>
+        <p>
+          Say that I am given the normal <m>(0, -2, -3)</m> and the
+          point <m>(1,-7,5)</m>. What is the unique plane described by
+          this data?
+        </p>
+        <p>
+          I calculate the left side of the equation of the plane,
+          which is the dot product of the point and the normal. This
+          will result in the constant <m>d</m>. 
+          <me>
+            (0,-2,-3) \cdot (1, -7, 5) = 0 + 14 - 15 = -1 = d
+          </me>
+          So <m>d = -1</m>, which means I can write the equation of
+          the plane. The coefficients of the variables are the
+          coordinates of the normal.
+          <me>
+            0x - 2y - 3z = -1 
+          </me>
+          There is always some variability in how to write these
+          equations. Since the <m>x</m> variable is multiplied by
+          zero, I can remove it. I can also multiply both sides by
+          <m>-1</m> if I wanted to.
+          <me>
+            2y + 3z = 1 
+          </me>
+          This equation also describes the same plane. 
+        </p>
+      </statement>
+    </example>
+    <example>
+      <statement>
+        <p>
+          Say that I am given the normal <m>(-5, 1, 4)</m> and the
+          point <m>(0,3,11)</m>. What is the unique plane described by
+          this data?
+        </p>
+        <p>
+          I calculate the left side of the equation of the plane,
+          which is the dot product of the point and the normal. This
+          will result in the constant <m>d</m>. 
+          <me>
+            (-5,1,4) \cdot (0,3,11) = 0 + 3 + 44 = 47 
+          </me>
+          So <m>d = 47</m>, which means I can write the equation of
+          the plane. The coefficients of the variables are the
+          coordinates of the normal.
+          <me>
+            -5x + y + 4z = 47
+          </me>
+        </p>
+      </statement>
+    </example>
+    <example>
+      <statement>
+        <p>
+          Say that I am given the normal <m>\left( \frac{-4}{7},
+          \frac{-11}{13}, \frac{5}{2} \right)</m> and the
+          point <m>\left( \frac{1}{4}, \frac{-1}{2}, \frac{-4}{13}
+          \right)</m>. What is the unique plane described by
+          this data?
+        </p>
+        <p>
+          I calculate the left side of the equation of the plane,
+          which is the dot product of the point and the normal. This
+          will result in the constant <m>d</m>. 
+          <me>
+            \left( \frac{-4}{7},\frac{-11}{13}, \frac{5}{2} \right)
+            \cdot \left( \frac{1}{4}, \frac{-1}{2}, \frac{-4}{13}
+            \right) = \frac{-4}{28} + \frac{11}{26} - \frac{20}{26} =
+            \frac{-89}{182} 
+          </me>
+          So <m>d = -\frac{89}{182}</m>, which means I can write the
+          equation of the plane. The coefficients of the variables are
+          the coordinates of the normal.
+          <me>
+            \frac{-4}{7} x - \frac{11}{13} y + \frac{5}{2} z =
+            \frac{-89}{182} 
+          </me>
+          Again, there is variability in how to write the equation. If
+          I wanted to clear denominators, I could multiply through by
+          <m>182</m>. 
+          <me>
+            -104x - 154y + 455 z = -89 
+          </me>
+          This equation also describes the same plane. 
+        </p>
+      </statement>
+    </example>
+    <p>
+      If I am given a point on a plane and two local direction on the
+      plane, then I need to construct the normal first. The normal is
+      perpendicular to any local direction on the plane. This is where
+      the cross product comes is: the cross product is a operation
+      which takes two vectors and produces a third vector
+      perpendicular to the first two. Therefore, the cross product of
+      the two local directions is the normal. After I have the normal,
+      I can proceed as before, using the equation and the point to
+      calculate the constant <m>d</m>. Let me do one example.
+    </p>
+    <example>
+      <statement>
+        <p>
+          Say that I am given the point <m>(0, 3, 7)</m> and the local
+          directions <m>(-1, -5, 3)</m> and <m>(-5, 0, 1)</m>. What is
+          the equation of the plane described by this data? 
+        </p>
+        <p>
+          I take the cross product of the two local directions to ge
+          the normal to the plane.
+          <me>
+            (-1,-5,3) \times (-5,0,1) = (-5 - 0, -15 - (-1), 0 - 25) =
+            (-5, -14, -25) 
+          </me>
+          Then I proceed as before. 
+          I calculate the left side of the equation of the plane,
+          which is the dot product of the point and the normal. This
+          will result in the constant <m>d</m>. 
+          <me>
+            (-5, -14, -25) \cdot (0,3,7) = -42 - 175 = -217 
+          </me>
+          So <m>d = -217</m>, which means I can write the
+          equation of the plane. The coefficients of the variables are
+          the coordinates of the normal.
+          <me>
+            -5x - 14y - 25 z = -217
+          </me>
+          I could multiply through by <m>-1</m> to make everything
+          positive, if I wanted.
+          <me>
+            5x + 14y + 25 z = 217
+          </me>
+          This equation also describes the same plane. 
+        </p>
+      </statement>
+    </example>
+    <p>
+      Finally, a plane can be determined by three points (as long as
+      the three points do not all lie on the same line). If I am given
+      three points (<m>p</m>, <m>q</m> and
       <m>r</m>), then I can use <m>p</m> as the local origin and
       construct the local direction vectors as <m>q-p</m> and
-      <m>r-p</m>. The normal is <m>(q-p) \times (r-p)</m>. In this
-      way, I can construct the equation of a plane given three points
-      or a single point and two local directions.
+      <m>r-p</m>. Then I can proceed as in the previous step: the
+      normal is the cross product of the two local direction, <m>(q-p)
+      \times (r-p)</m>. Finally, I finish with the first step, using
+      the normal and a point to find the constant <m>d</m>. Note, with
+      this data, I have three points to chose from for this final
+      step. All three should work and produce the same constant. If
+      they fail to do so, that means there is an error earlier in the
+      work somewhere. I'll do an example to show all the steps. 
     </p>
+    <example>
+      <statement>
+        <p>
+          What is the equation of the plane determined by the three
+          points <m>(0,4,0)</m>, <m>(-3, -6, 2)</m> and <m>(-7, 0,
+          1)</m>.
+        </p>
+        <p>
+          First I need to calculate the local direction. I'll set
+          <m>(0,4,0)</m> as my local origin. Then I calculate the
+          differences of the two other points from this point.
+          <md>
+            <mrow>
+              (-3, -6. 2) = (0,4,0) = (-3, -10, 2) 
+            </mrow>
+            <mrow>
+              (-7, 0. 1) = (0,4,0) = (-7, -4, 1) 
+            </mrow>
+          </md>
+          These are the two local direction. Then I proceed as with
+          the previous case. I start by taking the cross product of
+          the two local directions to ge the normal to the plane.
+          <md>
+            <mrow>
+              (-3, -10, 2) \times (-7, -4, 1) \amp = (-10 - (-8),
+              (-14, - (-3), 12 - 70))
+            </mrow>
+            <mrow>
+              \amp = (-2, -11, -58)
+            </mrow>
+          </md>
+          Then I again proceed as before, going back to the very first
+          case.  I calculate the left side of the equation of the
+          plane, which is the dot product of the point and the normal.
+          This will result in the constant <m>d</m>. I use the first
+          point, but I could use any of the three points. 
+          <me>
+            (-2, -11, -58) \cdot (0,4,) = 0 - 44 + 0 = -44 
+          </me>
+          So <m>d = -44</m>, which means I can write the
+          equation of the plane. The coefficients of the variables are
+          the coordinates of the normal.
+          <me>
+            -2x - 11y - 58 z = -44
+          </me>
+          I could multiply through by <m>-1</m> to make everything
+          positive, if I wanted.
+          <me>
+            2x + 11y + 58z = 44
+          </me>
+          This equation also describes the same plane. 
+        </p>
+      </statement>
+    </example>
   </subsection>
 </section>

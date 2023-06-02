@@ -107,7 +107,6 @@
     </p>
     <figure xml:id="figure-points-in-the-cartesian-plane">
       <caption>Points in <m>\RR^2</m></caption>
-      <description>Points in <m>\RR^2</m></description>
       <image xml:id="image-points-in-the-cartesian-plane" width="90%">
         <asymptote>
           size(12cm);
@@ -147,7 +146,6 @@
     </p>
     <figure xml:id="figure-points-in-three-space">
       <caption>Points in <m>\RR^3</m></caption>
-      <description>Points in <m>\RR^3</m></description>
       <image xml:id="image-points-in-three-space" width="80%">
         <asymptote> 
           import graph3;
@@ -178,7 +176,6 @@
     </p>
     <figure xml:id="figure-points-and-directions">
       <caption>Vectors as Points and Directions</caption>
-      <description>Vectors as Points and Directions</description>
       <image xml:id="image-points-and-directions" width="80%"> 
         <asymptote>
           size(10cm);
@@ -214,7 +211,6 @@
       <m>\RR^n</m>. I call these <term>local direction vectors</term>.
     </p>
     <figure xml:id="figure-local-direction-vectors">
-      <description>Local Direction Vectors</description>
       <caption>Local Direction Vectors</caption>
       <image xml:id="image-local-direction-vectors" width="80%">
         <asymptote>
