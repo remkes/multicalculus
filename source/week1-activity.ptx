@@ -48,7 +48,389 @@
       </statement>
       <solution>
         <p>
-          Solution
+          <ol>
+            <ll>
+              <me>
+                u + v 
+              </me>
+            </li>
+            <ll>
+              <me>
+                u - v 
+              </me>
+            </li>
+            <ll>
+              <me>
+                \frac{1}{4} u - \frac{3}{5} v 
+              </me>
+            </li>
+            <ll>
+              <me>  
+                |u|
+              </me>
+            </li>
+            <ll>
+              <me>
+                |u - v| 
+              </me>
+            </li>
+            <ll>
+              <me>  
+                u \cdot v 
+              </me>
+            </li>
+            <ll>
+              The angle between <m>u</m> and <m>v</m> is calculated
+              via the dot product
+              <me>
+                \theta = \arccos \left( \frac{u \cdot v}{|u||v|} 
+              </me>
+            </li>
+          </ol>
+          Here is the diagram of the first three calculations.
+          <figure xml:id="figure-vector-activities1">
+            <caption>Vector Operatiors Activity 1</caption>
+            <image xml:id="image-vector-activities1">
+              <asymptote>
+                size(10cm);
+                import graph;
+
+                xlimits(0,5);
+                ylimits(0,5);
+
+                xaxis("$x$",Ticks("%"));
+                yaxis("$y$",Ticks("%"));
+
+                draw((0,0)--(1,2),Arrow); 
+
+                label("$u = (1,2)$, (1,2),E);
+              </asyptote>
+            </image>
+          </figure>
+        </p>
+      </solution>
+    </activity>
+    <activity>
+      <statement>
+        <p>
+          For the vectors <m>u = (4,5)</m> and <m>v = (-1, -3)</m>,
+          calculate operations. Draw the first three.
+        </p>
+        <p>
+          <ol>
+            <ll>
+              <me>
+                u + v 
+              </me>
+            </li>
+            <ll>
+              <me>
+                u - v 
+              </me>
+            </li>
+            <ll>
+              <me>
+                \frac{1}{4} u - \frac{3}{5} v 
+              </me>
+            </li>
+            <ll>
+              <me>  
+                |u|
+              </me>
+            </li>
+            <ll>
+              <me>
+                |u - v| 
+              </me>
+            </li>
+            <ll>
+              <me>  
+                u \cdot v 
+              </me>
+            </li>
+            <ll>
+              The angle between <m>u</m> and <m>v</m>. 
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <ll>
+              <me>
+                u + v 
+              </me>
+            </li>
+            <ll>
+              <me>
+                u - v 
+              </me>
+            </li>
+            <ll>
+              <me>
+                \frac{1}{4} u - \frac{3}{5} v 
+              </me>
+            </li>
+            <ll>
+              <me>  
+                |u|
+              </me>
+            </li>
+            <ll>
+              <me>
+                |u - v| 
+              </me>
+            </li>
+            <ll>
+              <me>  
+                u \cdot v 
+              </me>
+            </li>
+            <ll>
+              The angle between <m>u</m> and <m>v</m> is calculated
+              via the dot product
+              <me>
+                \theta = \arccos \left( \frac{u \cdot v}{|u||v|} 
+              </me>
+            </li>
+          </ol>
+          Here is the diagram of the first three calculations.
+          <figure xml:id="figure-vector-activities1">
+            <caption>Vector Operatiors Activity 1</caption>
+            <image xml:id="image-vector-activities1">
+              <asymptote>
+                size(10cm);
+                import graph;
+
+                xlimits(0,5);
+                ylimits(0,5);
+
+                xaxis("$x$",Ticks("%"));
+                yaxis("$y$",Ticks("%"));
+
+                draw((0,0)--(1,2),Arrow); 
+
+                label("$u = (1,2)$, (1,2),E);
+              </asyptote>
+            </image>
+          </figure>
+        </p>
+      </solution>
+    </activity>
+    <activity>
+      <statement>
+        <p>
+          For the vectors <m>u = (4,5)</m> and <m>v = (-1, -3)</m>,
+          calculate operations. Draw the first three.
+        </p>
+        <p>
+          <ol>
+            <ll>
+              <me>
+                u + v 
+              </me>
+            </li>
+            <ll>
+              <me>
+                u - v 
+              </me>
+            </li>
+            <ll>
+              <me>
+                \frac{1}{4} u - \frac{3}{5} v 
+              </me>
+            </li>
+            <ll>
+              <me>  
+                |u|
+              </me>
+            </li>
+            <ll>
+              <me>
+                |u - v| 
+              </me>
+            </li>
+            <ll>
+              <me>  
+                u \cdot v 
+              </me>
+            </li>
+            <ll>
+              The angle between <m>u</m> and <m>v</m>. 
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <ll>
+              <me>
+                u + v 
+              </me>
+            </li>
+            <ll>
+              <me>
+                u - v 
+              </me>
+            </li>
+            <ll>
+              <me>
+                \frac{1}{4} u - \frac{3}{5} v 
+              </me>
+            </li>
+            <ll>
+              <me>  
+                |u|
+              </me>
+            </li>
+            <ll>
+              <me>
+                |u - v| 
+              </me>
+            </li>
+            <ll>
+              <me>  
+                u \cdot v 
+              </me>
+            </li>
+            <ll>
+              The angle between <m>u</m> and <m>v</m> is calculated
+              via the dot product
+              <me>
+                \theta = \arccos \left( \frac{u \cdot v}{|u||v|} 
+              </me>
+            </li>
+          </ol>
+          Here is the diagram of the first three calculations.
+          <figure xml:id="figure-vector-activities1">
+            <caption>Vector Operatiors Activity 1</caption>
+            <image xml:id="image-vector-activities1">
+              <asymptote>
+                size(10cm);
+                import graph;
+
+                xlimits(0,5);
+                ylimits(0,5);
+
+                xaxis("$x$",Ticks("%"));
+                yaxis("$y$",Ticks("%"));
+
+                draw((0,0)--(1,2),Arrow); 
+
+                label("$u = (1,2)$, (1,2),E);
+              </asyptote>
+            </image>
+          </figure>
+        </p>
+      </solution>
+    </activity>
+    <activity>
+      <statement>
+        <p>
+          For the vectors <m>u = (4,5)</m> and <m>v = (-1, -3)</m>,
+          calculate operations. Draw the first three.
+        </p>
+        <p>
+          <ol>
+            <ll>
+              <me>
+                u + v 
+              </me>
+            </li>
+            <ll>
+              <me>
+                u - v 
+              </me>
+            </li>
+            <ll>
+              <me>
+                \frac{1}{4} u - \frac{3}{5} v 
+              </me>
+            </li>
+            <ll>
+              <me>  
+                |u|
+              </me>
+            </li>
+            <ll>
+              <me>
+                |u - v| 
+              </me>
+            </li>
+            <ll>
+              <me>  
+                u \cdot v 
+              </me>
+            </li>
+            <ll>
+              The angle between <m>u</m> and <m>v</m>. 
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <ll>
+              <me>
+                u + v 
+              </me>
+            </li>
+            <ll>
+              <me>
+                u - v 
+              </me>
+            </li>
+            <ll>
+              <me>
+                \frac{1}{4} u - \frac{3}{5} v 
+              </me>
+            </li>
+            <ll>
+              <me>  
+                |u|
+              </me>
+            </li>
+            <ll>
+              <me>
+                |u - v| 
+              </me>
+            </li>
+            <ll>
+              <me>  
+                u \cdot v 
+              </me>
+            </li>
+            <ll>
+              The angle between <m>u</m> and <m>v</m> is calculated
+              via the dot product
+              <me>
+                \theta = \arccos \left( \frac{u \cdot v}{|u||v|} 
+              </me>
+            </li>
+          </ol>
+          Here is the diagram of the first three calculations.
+          <figure xml:id="figure-vector-activities1">
+            <caption>Vector Operatiors Activity 1</caption>
+            <image xml:id="image-vector-activities1">
+              <asymptote>
+                size(10cm);
+                import graph;
+
+                xlimits(0,5);
+                ylimits(0,5);
+
+                xaxis("$x$",Ticks("%"));
+                yaxis("$y$",Ticks("%"));
+
+                draw((0,0)--(1,2),Arrow); 
+
+                label("$u = (1,2)$, (1,2),E);
+              </asyptote>
+            </image>
+          </figure>
         </p>
       </solution>
     </activity>
