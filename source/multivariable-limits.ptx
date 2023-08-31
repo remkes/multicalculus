@@ -5,7 +5,9 @@
     <p>
       I want to re-establish the tools of calculus for multi-variable
       functions. As with single-variable functions, the starting
-      point is limits. I'll start with the full, formal,
+      point is limits. Again, as with single-variable functions, limit
+      are required for the definition of both the deriavtive and the
+      integral. I'll start with the full, formal,
       <m>\epsilon-\delta</m> definition.
     </p>
     <definition>

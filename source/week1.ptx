@@ -1,7 +1,9 @@
 <chapter xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="chapter-week1">
   <title>Week 1</title>
+  <!--
   <xi:include href="vectors.ptx" />
   <xi:include href="operations.ptx" />
+  -->
   <xi:include href="equations-of-planes.ptx" />
   <!--
   <xi:include href="week1-activity.ptx" />

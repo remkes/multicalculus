@@ -3,19 +3,36 @@
   <subsection xml:id="subsection-curve-tangents">
     <title>Tangents</title>
     <p>
-      REWORK THIS SECTION TO TIE TOGETHER TANGENTS AND LENGTHS 
-      Parametric curves are vector-valued functions, so they have
-      derivatives as defined earlier. Since parametric curves are
-      interpreted as  motion through <m>\RR^n</m>, the derivative has
-      a related interpretation.
+      Parametric curves are functions, but functions with several
+      variables of output. What can calculus say about this kind of
+      function? How can I use the tool of single variable calculus to
+      analyze the movement of parametric curve? Since there is still
+      only a single input, I can actually apply the tools of
+      single-variable calculus quite directly by taking the ordinary,
+      single variable derivative of each component of the parametric
+      curve. This leads to the first key definition.
     </p>
     <definition xml:id="definition-pc-tangent">
       <statement>
         <p>
           Let <m>\gamma(t): [a,b] \rightarrow \RR^n</m> be a
-          parametric curve. Its derivative <m>\gamma^\prime(t)</m> is
-          called the <term>tangent vector</term> to the parametric
-          curve.
+          parametric curve. I can write <m>\gamma(t)</m> in it
+          components. (For the sake of clear demonstration, I'll do
+          this in <m>\RR^3</m>, but the rule applied in any
+          dimension.) 
+          <me>
+            \gamma(t) = (x(t), y(t), z(t))
+          </me>
+          The derivative of the parametric curve,
+          <m>\gamma^\prime(t)</m>, is calculated by taking the
+          ordinary single-variable derivative of each component. 
+          <me>
+            \gamma^\prime(t) = (x^\prime(t), y^\prime(t),
+            z^\prime(t))
+          </me>
+          This derivative, <m>\gamma^\prime(t)</m>, produced a vector
+          for each value of <m>t</m>. This vector is called the
+          <term>tangent vector</term> to the parametric curve.
         </p>
       </statement>
     </definition>
@@ -405,10 +422,59 @@
       information about the whole curve. 
     </p>
   </subsection>
+  <subsection xml:id="subsection-arclength-and-tangents">
+    <title>Arclength and Tangents</title>
+    <p>
+      There are some very natural connections between tangents and
+      arclength which relate to the intepretation of parametric curves
+      as movement through space. I'll return to the arc length
+      formula (in <m>\RR^2</m>, for simplicity).
+      <me>
+        L = \int_a^b \sqrt{x^\prime(t)^2 + y^\prime(t)^2} dt
+      </me>
+    </p>
+    <p>
+      The tangent vector is <m>\gamma^\prime(t) = (x^\prime(t),
+      y^\prime(t))</m>, so this integrand in the arclength formula is
+      nothing more than the length of the tangent vector. This lets
+      me rewrite the arclength formula.
+      <me>
+        L = \int_a^b |\gamma^\prime(t)| dt
+      </me>
+    </p>
+    <p>
+      This hopefully makes intuitive sense <mdash/> the length of the
+      tangent vector measures the speed of the curve. To get length
+      (the distance travelled), I integrate the speed of movement.
+    </p>
+    <p>
+      An nice event occurs when I differentiate the arclength
+      function <m>s(t)</m>. The fundamental theorem of calculus
+      lets me differentiate an integral.
+      <me>
+        \frac{d}{dt} s(t) = \frac{d}{dt} \int_a^t |\gamma^\prime(u)|
+        du = |\gamma^\prime (t)|
+      </me>
+    </p>
+    <p>
+      The derivative of the arclength function is the length of the
+      tangent vector, which represents the speed of movement along the
+      curve. To get speed, I differentiate length.
+    </p>
+    <p>
+      Both of these observations generalize the relationship between
+      distance and speed from single variable calculus. In that
+      setting, the relationship was relatively direct: if <m>d(t)</m>
+      was distance, then <m>d^\prime(t)</m> was speed and if
+      <m>v(t)</m> was speed then <m>\int v(t) dt</m> was distance.
+      The idea here is exactly the same, but since the movement is
+      much more complicated, going through multi-dimensional space, I
+      need more complicated definitions and notations to access the
+      idea.
+    </p>
   <subsection xml:id="subsection-parametrization-by-arclength">
     <title>Parametrization by Arclength</title>
     <p>
-      MAYBE TAKE THIS OUT?
       The arclength calculation determins the length of the whole
       curve. However, I can also ask for the length of sections of the
       curve.
@@ -540,61 +606,9 @@
         </p>
       </statement>
     </example>
-  </subsection>
-  <subsection xml:id="subsection-arclength-and-tangents">
-    <title>Arclength and Tangents</title>
-    <p>
-      There are some very natural connections between tangents and
-      arclength which relate to the intepretation of parametric curves
-      as movement through space. I'll return to the arc length
-      formula (in <m>\RR^2</m>, for simplicity).
-      <me>
-        L = \int_a^b \sqrt{x^\prime(t)^2 + y^\prime(t)^2} dt
-      </me>
-    </p>
-    <p>
-      The tangent vector is <m>\gamma^\prime(t) = (x^\prime(t),
-      y^\prime(t))</m>, so this integrand in the arclength formula is
-      nothing more than the length of the tangent vector. This lets
-      me rewrite the arclength formula.
-      <me>
-        L = \int_a^b |\gamma^\prime(t)| dt
-      </me>
-    </p>
-    <p>
-      This hopefully makes intuitive sense <mdash/> the length of the
-      tangent vector measures the speed of the curve. To get length
-      (the distance travelled), I integrate the speed of movement.
-    </p>
-    <p>
-      An nice event occurs when I differentiate the arclength
-      function <m>s(t)</m>. The fundamental theorem of calculus
-      lets me differentiate an integral.
-      <me>
-        \frac{d}{dt} s(t) = \frac{d}{dt} \int_a^t |\gamma^\prime(u)|
-        du = |\gamma^\prime (t)|
-      </me>
-    </p>
-    <p>
-      The derivative of the arclength function is the length of the
-      tangent vector, which represents the speed of movement along the
-      curve. To get speed, I differentiate length.
-    </p>
-    <p>
-      Both of these observations generalize the relationship between
-      distance and speed from single variable calculus. In that
-      setting, the relationship was relatively direct: if <m>d(t)</m>
-      was distance, then <m>d^\prime(t)</m> was speed and if
-      <m>v(t)</m> was speed then <m>\int v(t) dt</m> was distance.
-      The idea here is exactly the same, but since the movement is
-      much more complicated, going through multi-dimensional space, I
-      need more complicated definitions and notations to access the
-      idea.
-    </p>
     <example>
       <statement>
         <p>
-          (REWRITE)
           <me>
             \gamma(s) = \left( 2 \cos \left( \frac{s}{\sqrt{20}}
             \right), 2 \sin \left( \frac{s}{\sqrt{20}} \right),
@@ -625,11 +639,16 @@
           </md>
         </p>
         <p>
-          I find that the speed is constantly one. This turns out to
-          be generally true.
+          I find that the speed is constantly one. 
         </p>
       </statement>
     </example>
+    <p>
+      The process of parametrization by arclenth is a lot of work.
+      What is the point? THe point is that the parametrization by
+      arclength has several very pleasant properties, properties which
+      will be useful in later constructions.
+    </p>
     <proposition>
       <statement>
         <p>
@@ -690,6 +709,7 @@
       mathematicians always have to struggle with the tension between 
       pattern itself and how the pattern is presented. 
     </p>
+  </subsection>
   </subsection>
   <subsection xml:id="subsection-curvature">
     <title>Curvature</title>
