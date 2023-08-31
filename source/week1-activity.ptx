@@ -10,37 +10,37 @@
         </p>
         <p>
           <ol>
-            <ll>
+            <li>
               <me>
-                u + v 
+                u + v = (4+(-1)1, 5+(-3)) = (3,2) 
               </me>
             </li>
-            <ll>
+            <li>
               <me>
                 u - v 
               </me>
             </li>
-            <ll>
+            <li>
               <me>
                 \frac{1}{4} u - \frac{3}{5} v 
               </me>
             </li>
-            <ll>
+            <li>
               <me>  
                 |u|
               </me>
             </li>
-            <ll>
+            <li>
               <me>
                 |u - v| 
               </me>
             </li>
-            <ll>
+            <li>
               <me>  
                 u \cdot v 
               </me>
             </li>
-            <ll>
+            <li>
               The angle between <m>u</m> and <m>v</m>. 
             </li>
           </ol>
@@ -49,37 +49,37 @@
       <solution>
         <p>
           <ol>
-            <ll>
+            <li>
               <me>
                 u + v 
               </me>
             </li>
-            <ll>
+            <li>
               <me>
                 u - v 
               </me>
             </li>
-            <ll>
+            <li>
               <me>
                 \frac{1}{4} u - \frac{3}{5} v 
               </me>
             </li>
-            <ll>
+            <li>
               <me>  
                 |u|
               </me>
             </li>
-            <ll>
+            <li>
               <me>
                 |u - v| 
               </me>
             </li>
-            <ll>
+            <li>
               <me>  
                 u \cdot v 
               </me>
             </li>
-            <ll>
+            <li>
               The angle between <m>u</m> and <m>v</m> is calculated
               via the dot product
               <me>
@@ -104,7 +104,7 @@
                 draw((0,0)--(1,2),Arrow); 
 
                 label("$u = (1,2)$, (1,2),E);
-              </asyptote>
+              </asymptote>
             </image>
           </figure>
         </p>
@@ -118,37 +118,37 @@
         </p>
         <p>
           <ol>
-            <ll>
+            <li>
               <me>
                 u + v 
               </me>
             </li>
-            <ll>
+            <li>
               <me>
                 u - v 
               </me>
             </li>
-            <ll>
+            <li>
               <me>
                 \frac{1}{4} u - \frac{3}{5} v 
               </me>
             </li>
-            <ll>
+            <li>
               <me>  
                 |u|
               </me>
             </li>
-            <ll>
+            <li>
               <me>
                 |u - v| 
               </me>
             </li>
-            <ll>
+            <li>
               <me>  
                 u \cdot v 
               </me>
             </li>
-            <ll>
+            <li>
               The angle between <m>u</m> and <m>v</m>. 
             </li>
           </ol>
@@ -157,37 +157,37 @@
       <solution>
         <p>
           <ol>
-            <ll>
+            <li>
               <me>
                 u + v 
               </me>
             </li>
-            <ll>
+            <li>
               <me>
                 u - v 
               </me>
             </li>
-            <ll>
+            <li>
               <me>
                 \frac{1}{4} u - \frac{3}{5} v 
               </me>
             </li>
-            <ll>
+            <li>
               <me>  
                 |u|
               </me>
             </li>
-            <ll>
+            <li>
               <me>
                 |u - v| 
               </me>
             </li>
-            <ll>
+            <li>
               <me>  
                 u \cdot v 
               </me>
             </li>
-            <ll>
+            <li>
               The angle between <m>u</m> and <m>v</m> is calculated
               via the dot product
               <me>
@@ -196,9 +196,9 @@
             </li>
           </ol>
           Here is the diagram of the first three calculations.
-          <figure xml:id="figure-vector-activities1">
+          <figure xml:id="figure-vector-activities2">
             <caption>Vector Operatiors Activity 1</caption>
-            <image xml:id="image-vector-activities1">
+            <image xml:id="image-vector-activities2">
               <asymptote>
                 size(10cm);
                 import graph;
@@ -212,7 +212,7 @@
                 draw((0,0)--(1,2),Arrow); 
 
                 label("$u = (1,2)$, (1,2),E);
-              </asyptote>
+              </asymptote>
             </image>
           </figure>
         </p>
@@ -226,37 +226,37 @@
         </p>
         <p>
           <ol>
-            <ll>
+            <li>
               <me>
                 u + v 
               </me>
             </li>
-            <ll>
+            <li>
               <me>
                 u - v 
               </me>
             </li>
-            <ll>
+            <li>
               <me>
                 \frac{1}{4} u - \frac{3}{5} v 
               </me>
             </li>
-            <ll>
+            <li>
               <me>  
                 |u|
               </me>
             </li>
-            <ll>
+            <li>
               <me>
                 |u - v| 
               </me>
             </li>
-            <ll>
+            <li>
               <me>  
                 u \cdot v 
               </me>
             </li>
-            <ll>
+            <li>
               The angle between <m>u</m> and <m>v</m>. 
             </li>
           </ol>
@@ -265,37 +265,37 @@
       <solution>
         <p>
           <ol>
-            <ll>
+            <li>
               <me>
                 u + v 
               </me>
             </li>
-            <ll>
+            <li>
               <me>
                 u - v 
               </me>
             </li>
-            <ll>
+            <li>
               <me>
                 \frac{1}{4} u - \frac{3}{5} v 
               </me>
             </li>
-            <ll>
+            <li>
               <me>  
                 |u|
               </me>
             </li>
-            <ll>
+            <li>
               <me>
                 |u - v| 
               </me>
             </li>
-            <ll>
+            <li>
               <me>  
                 u \cdot v 
               </me>
             </li>
-            <ll>
+            <li>
               The angle between <m>u</m> and <m>v</m> is calculated
               via the dot product
               <me>
@@ -304,9 +304,9 @@
             </li>
           </ol>
           Here is the diagram of the first three calculations.
-          <figure xml:id="figure-vector-activities1">
+          <figure xml:id="figure-vector-activities3">
             <caption>Vector Operatiors Activity 1</caption>
-            <image xml:id="image-vector-activities1">
+            <image xml:id="image-vector-activities3">
               <asymptote>
                 size(10cm);
                 import graph;
@@ -320,7 +320,7 @@
                 draw((0,0)--(1,2),Arrow); 
 
                 label("$u = (1,2)$, (1,2),E);
-              </asyptote>
+              </asymptote>
             </image>
           </figure>
         </p>
@@ -334,37 +334,37 @@
         </p>
         <p>
           <ol>
-            <ll>
+            <li>
               <me>
                 u + v 
               </me>
             </li>
-            <ll>
+            <li>
               <me>
                 u - v 
               </me>
             </li>
-            <ll>
+            <li>
               <me>
                 \frac{1}{4} u - \frac{3}{5} v 
               </me>
             </li>
-            <ll>
+            <li>
               <me>  
                 |u|
               </me>
             </li>
-            <ll>
+            <li>
               <me>
                 |u - v| 
               </me>
             </li>
-            <ll>
+            <li>
               <me>  
                 u \cdot v 
               </me>
             </li>
-            <ll>
+            <li>
               The angle between <m>u</m> and <m>v</m>. 
             </li>
           </ol>
@@ -373,37 +373,37 @@
       <solution>
         <p>
           <ol>
-            <ll>
+            <li>
               <me>
                 u + v 
               </me>
             </li>
-            <ll>
+            <li>
               <me>
                 u - v 
               </me>
             </li>
-            <ll>
+            <li>
               <me>
                 \frac{1}{4} u - \frac{3}{5} v 
               </me>
             </li>
-            <ll>
+            <li>
               <me>  
                 |u|
               </me>
             </li>
-            <ll>
+            <li>
               <me>
                 |u - v| 
               </me>
             </li>
-            <ll>
+            <li>
               <me>  
                 u \cdot v 
               </me>
             </li>
-            <ll>
+            <li>
               The angle between <m>u</m> and <m>v</m> is calculated
               via the dot product
               <me>
@@ -412,9 +412,9 @@
             </li>
           </ol>
           Here is the diagram of the first three calculations.
-          <figure xml:id="figure-vector-activities1">
+          <figure xml:id="figure-vector-activities4">
             <caption>Vector Operatiors Activity 1</caption>
-            <image xml:id="image-vector-activities1">
+            <image xml:id="image-vector-activities4">
               <asymptote>
                 size(10cm);
                 import graph;
@@ -427,8 +427,8 @@
 
                 draw((0,0)--(1,2),Arrow); 
 
-                label("$u = (1,2)$, (1,2),E);
-              </asyptote>
+                label("$u = (1,2)$", (1,2),E);
+              </asymptote>
             </image>
           </figure>
         </p>

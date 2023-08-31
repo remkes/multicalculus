@@ -38,9 +38,9 @@
     </frontmatter>
     
     <xi:include href="./week1.ptx" />
-    <!--
     <xi:include href="./week2.ptx" />
     <xi:include href="./week3.ptx" />
+    <!--
     <xi:include href="./week4.ptx" />
     <xi:include href="./week5.ptx" />
     <xi:include href="./week6.ptx" />
