@@ -12,7 +12,7 @@
           <ol>
             <li>
               <me>
-                u + v = (4+(-1)1, 5+(-3)) = (3,2) 
+                u + v 
               </me>
             </li>
             <li>
@@ -47,44 +47,44 @@
         </p>
       </statement>
       <solution>
-        <p>
           <ol>
             <li>
               <me>
-                u + v 
+                u + v = (4 + (-1)1, 5 + (-3)) = (3,2) 
               </me>
             </li>
             <li>
               <me>
-                u - v 
+                u - v = (4 - (-1), 5 - (-3)) = (5, 8)
               </me>
             </li>
             <li>
               <me>
-                \frac{1}{4} u - \frac{3}{5} v 
+                \frac{1}{4} u - \frac{3}{5} v = \left(1, \frac{5}{4}
+                \right) - \left( \frac{-3}{5}, \frac{-9}{5} \right) =
+                \left( \frac{8}{5}, \frac{61}{20} \right) 
               </me>
             </li>
             <li>
               <me>  
-                |u|
+                |u| = \sqrt{4^4 + 5^4} = \sqrt{41}
               </me>
             </li>
             <li>
               <me>
-                |u - v| 
+                |u - v| \sqrt{5^2 + 8^2} = \sqrt{89}
               </me>
             </li>
             <li>
               <me>  
-                u \cdot v 
+                u \cdot v = (4)(-1) + (5)(-3) = -19
               </me>
             </li>
             <li>
-              The angle between <m>u</m> and <m>v</m> is calculated
-              via the dot product
-              <me>
-                \theta = \arccos \left( \frac{u \cdot v}{|u||v|} 
-              </me>
+              The angle between <m>u</m> and <m>v</m>. <m>\cos \theta
+              = \frac{u \cdot v}{|u||v|} =
+              \frac{-19}{\sqrt{41}{\sqrt{13}}</m>. Inverse cosine
+              gives <m> \theta \doteq 2.54</m>.
             </li>
           </ol>
           Here is the diagram of the first three calculations.
@@ -92,18 +92,24 @@
             <caption>Vector Operatiors Activity 1</caption>
             <image xml:id="image-vector-activities1">
               <asymptote>
+                u + v = (4 + (-1)1, 5 + (-3)) = (3,2) 
+              </me>
+            </li>
+            <li>
+              <me>
                 size(10cm);
                 import graph;
-
-                xlimits(0,5);
-                ylimits(0,5);
 
                 xaxis("$x$",Ticks("%"));
                 yaxis("$y$",Ticks("%"));
 
-                draw((0,0)--(1,2),Arrow); 
+                draw((0,0)--(3,2),Arrow); 
+                draw((0,0)--(5,8),Arrow); 
 
-                label("$u = (1,2)$, (1,2),E);
+                label("$u = (4,5)$, (4,5),E);
+                label("$v = (-1,-3)$, (-1,-3),E);
+                label("$u + v = (3,2)$, (3,52,E);
+                label("$u - v = (5,8)$, (5,8),E);
               </asymptote>
             </image>
           </figure>
@@ -113,334 +119,260 @@
     <activity>
       <statement>
         <p>
-          For the vectors <m>u = (4,5)</m> and <m>v = (-1, -3)</m>,
-          calculate operations. Draw the first three.
-        </p>
-        <p>
-          <ol>
-            <li>
-              <me>
-                u + v 
-              </me>
-            </li>
-            <li>
-              <me>
-                u - v 
-              </me>
-            </li>
-            <li>
-              <me>
-                \frac{1}{4} u - \frac{3}{5} v 
-              </me>
-            </li>
-            <li>
-              <me>  
-                |u|
-              </me>
-            </li>
-            <li>
-              <me>
-                |u - v| 
-              </me>
-            </li>
-            <li>
-              <me>  
-                u \cdot v 
-              </me>
-            </li>
-            <li>
-              The angle between <m>u</m> and <m>v</m>. 
-            </li>
-          </ol>
+        
         </p>
       </statement>
       <solution>
         <p>
-          <ol>
-            <li>
-              <me>
-                u + v 
-              </me>
-            </li>
-            <li>
-              <me>
-                u - v 
-              </me>
-            </li>
-            <li>
-              <me>
-                \frac{1}{4} u - \frac{3}{5} v 
-              </me>
-            </li>
-            <li>
-              <me>  
-                |u|
-              </me>
-            </li>
-            <li>
-              <me>
-                |u - v| 
-              </me>
-            </li>
-            <li>
-              <me>  
-                u \cdot v 
-              </me>
-            </li>
-            <li>
-              The angle between <m>u</m> and <m>v</m> is calculated
-              via the dot product
-              <me>
-                \theta = \arccos \left( \frac{u \cdot v}{|u||v|} 
-              </me>
-            </li>
-          </ol>
-          Here is the diagram of the first three calculations.
-          <figure xml:id="figure-vector-activities2">
-            <caption>Vector Operatiors Activity 1</caption>
-            <image xml:id="image-vector-activities2">
-              <asymptote>
-                size(10cm);
-                import graph;
-
-                xlimits(0,5);
-                ylimits(0,5);
-
-                xaxis("$x$",Ticks("%"));
-                yaxis("$y$",Ticks("%"));
-
-                draw((0,0)--(1,2),Arrow); 
-
-                label("$u = (1,2)$, (1,2),E);
-              </asymptote>
-            </image>
-          </figure>
-        </p>
-      </solution>
-    </activity>
-    <activity>
-      <statement>
-        <p>
-          For the vectors <m>u = (4,5)</m> and <m>v = (-1, -3)</m>,
-          calculate operations. Draw the first three.
-        </p>
-        <p>
-          <ol>
-            <li>
-              <me>
-                u + v 
-              </me>
-            </li>
-            <li>
-              <me>
-                u - v 
-              </me>
-            </li>
-            <li>
-              <me>
-                \frac{1}{4} u - \frac{3}{5} v 
-              </me>
-            </li>
-            <li>
-              <me>  
-                |u|
-              </me>
-            </li>
-            <li>
-              <me>
-                |u - v| 
-              </me>
-            </li>
-            <li>
-              <me>  
-                u \cdot v 
-              </me>
-            </li>
-            <li>
-              The angle between <m>u</m> and <m>v</m>. 
-            </li>
-          </ol>
-        </p>
-      </statement>
-      <solution>
-        <p>
-          <ol>
-            <li>
-              <me>
-                u + v 
-              </me>
-            </li>
-            <li>
-              <me>
-                u - v 
-              </me>
-            </li>
-            <li>
-              <me>
-                \frac{1}{4} u - \frac{3}{5} v 
-              </me>
-            </li>
-            <li>
-              <me>  
-                |u|
-              </me>
-            </li>
-            <li>
-              <me>
-                |u - v| 
-              </me>
-            </li>
-            <li>
-              <me>  
-                u \cdot v 
-              </me>
-            </li>
-            <li>
-              The angle between <m>u</m> and <m>v</m> is calculated
-              via the dot product
-              <me>
-                \theta = \arccos \left( \frac{u \cdot v}{|u||v|} 
-              </me>
-            </li>
-          </ol>
-          Here is the diagram of the first three calculations.
-          <figure xml:id="figure-vector-activities3">
-            <caption>Vector Operatiors Activity 1</caption>
-            <image xml:id="image-vector-activities3">
-              <asymptote>
-                size(10cm);
-                import graph;
-
-                xlimits(0,5);
-                ylimits(0,5);
-
-                xaxis("$x$",Ticks("%"));
-                yaxis("$y$",Ticks("%"));
-
-                draw((0,0)--(1,2),Arrow); 
-
-                label("$u = (1,2)$, (1,2),E);
-              </asymptote>
-            </image>
-          </figure>
-        </p>
-      </solution>
-    </activity>
-    <activity>
-      <statement>
-        <p>
-          For the vectors <m>u = (4,5)</m> and <m>v = (-1, -3)</m>,
-          calculate operations. Draw the first three.
-        </p>
-        <p>
-          <ol>
-            <li>
-              <me>
-                u + v 
-              </me>
-            </li>
-            <li>
-              <me>
-                u - v 
-              </me>
-            </li>
-            <li>
-              <me>
-                \frac{1}{4} u - \frac{3}{5} v 
-              </me>
-            </li>
-            <li>
-              <me>  
-                |u|
-              </me>
-            </li>
-            <li>
-              <me>
-                |u - v| 
-              </me>
-            </li>
-            <li>
-              <me>  
-                u \cdot v 
-              </me>
-            </li>
-            <li>
-              The angle between <m>u</m> and <m>v</m>. 
-            </li>
-          </ol>
-        </p>
-      </statement>
-      <solution>
-        <p>
-          <ol>
-            <li>
-              <me>
-                u + v 
-              </me>
-            </li>
-            <li>
-              <me>
-                u - v 
-              </me>
-            </li>
-            <li>
-              <me>
-                \frac{1}{4} u - \frac{3}{5} v 
-              </me>
-            </li>
-            <li>
-              <me>  
-                |u|
-              </me>
-            </li>
-            <li>
-              <me>
-                |u - v| 
-              </me>
-            </li>
-            <li>
-              <me>  
-                u \cdot v 
-              </me>
-            </li>
-            <li>
-              The angle between <m>u</m> and <m>v</m> is calculated
-              via the dot product
-              <me>
-                \theta = \arccos \left( \frac{u \cdot v}{|u||v|} 
-              </me>
-            </li>
-          </ol>
-          Here is the diagram of the first three calculations.
-          <figure xml:id="figure-vector-activities4">
-            <caption>Vector Operatiors Activity 1</caption>
-            <image xml:id="image-vector-activities4">
-              <asymptote>
-                size(10cm);
-                import graph;
-
-                xlimits(0,5);
-                ylimits(0,5);
-
-                xaxis("$x$",Ticks("%"));
-                yaxis("$y$",Ticks("%"));
-
-                draw((0,0)--(1,2),Arrow); 
-
-                label("$u = (1,2)$", (1,2),E);
-              </asymptote>
-            </image>
-          </figure>
         </p>
       </solution>
     </activity>
   </subsection>
-  <subsection xml:id="week1-concepts">
+  <subsection xml:id="subsection-activity-equations-of-planes">
+    <title>Equations of Planes and Hyperplanes</title>
+    <activity>
+      <statement>
+        <p>
+          Write the equation of the plane with normal <m>(-1,-1,0)</m>
+          if <m>(0,1,3)</m> is a point on the plane. 
+        </p>
+      </statement>
+      <solution>
+        <p>
+          The normal determines the coefficients of the equation of
+          the plane. I put those coefficients into the general form,
+          with the constant <m>d</m> undetermined.
+          <me>
+            (-1)x + (-1)y + 0 z = d 
+          </me>
+          I can calculate the constant using the point. Put the
+          coordinates of the point into the left side of the equation
+          and calculate <m>d</m>.
+          <me>
+            d = (-1)(0) + (-1)(1) + (0)(3) = -1 
+          </me>
+          Therefore, the equation of the plane is 
+          <me>
+            - x - y = -1 
+          </me>.
+        </p>
+      </solution>
+    </activity>
+    <activity>
+      <statement>
+        <p>
+          Write the equation of the plane with normal
+          <m>(2,0,3)</m> if <m>(-4,-1,2)</m> is a point on the plane.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          The normal determines the coefficients of the equation of
+          the plane. I put those coefficients into the general form,
+          with the constant <m>d</m> undetermined.
+          <me>
+            2x + 0y + 3z = d 
+          </me>
+          I can calculate the constant using the point. Put the
+          coordinates of the point into the left side of the equation
+          and calculate <m>d</m>.
+          <me>
+            d = 2(-4) + 0(-1) + 3(2) = -2 
+          </me>
+          Therefore, the equation of the plane is 
+          <me>
+            2x + 3z = -2 
+          </me>.
+        </p>
+      </solution>
+    </activity>
+    <activity>
+      <statement>
+        <p>
+          Write the equation of the plane with local directions
+          <m>(-1,-1,1)</m> and <m>(-2,1,0)</m> if <m>(2,1,1)</m> is a
+          point on the plane. 
+        </p>
+      </statement>
+      <solution>
+        <p>
+          The cross product of the local directions gives the normal
+          to the plane. 
+          <me>
+            (-1,-1,1) \times (-2,1,0) = \left( (-1)(0) - (1)(1),
+            (1)(-2) - (-1)(0), (-1)(1) - (-1)(-2) \right) = (-1, -2,
+            -1)
+          </me>
+          This is the normal. The normal determines the coefficients
+          of the equation of the plane. I put those coefficients into
+          the general form, with the constant <m>d</m> undetermined.
+          <me>
+            -x - 2y - z = d 
+          </me>
+          I can calculate the constant using the point. Put the
+          coordinates of the point into the left side of the equation
+          and calculate <m>d</m>.
+          <me>
+            d = -(1)(2) - (2)(1) - (1) = -5
+          </me>
+          Therefore, the equation of the plane is 
+          <me>
+            -x - 2y - z = -5 
+          </me>.
+        </p>
+      </solution>
+    </activity>
+    <activity>
+      <statement>
+        <p>
+          Write the equation of the plane with local directions
+          <m>(0,1,1)</m> and <m>(-2,1,1)</m> if <m>(-1,0,3)</m> is a
+          point on the plane. 
+        </p>
+      </statement>
+      <solution>
+        <p>
+          The cross product of the local directions gives the normal
+          to the plane. 
+          <me>
+            (0,1,1) \times (-2,1,1) = \left( (1)(1) - (1)(1), (1)(-2)
+            - (0)(1), (0)(1) - (1)(-2) \right) = (0,-2,2)
+          </me>
+          This is the normal. The normal determines the coefficients
+          of the equation of the plane. I put those coefficients into
+          the general form, with the constant <m>d</m> undetermined.
+          <me>
+            0x - 2y + 2z = d 
+          </me>
+          I can calculate the constant using the point. Put the 
+          coordinates of the point into the left side of the equation
+          and calculate <m>d</m>.
+          <me>
+            d = 0(-1) - 2(0) + 2(-3) = -6 
+          </me>
+          Therefore, the equation of the plane is 
+          <me>
+            -2y + 2z = -6 
+          </me>.
+        </p>
+      </solution>
+    </activity>
+    <activity>
+      <statement>
+        <p>
+          Write the equation of the plane with points
+          <m>p = (0,1,1)</m>, <m>q = (1,0,0)</m> and <m>r =
+          (-2,1,1)</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          The local directions are given by the differences of the
+          point: <m>(q-p)</m> and <m>(r-p)</m>. I calculate those two
+          local directions.
+          <md>
+            <mrow>
+              q-p = (1,0,0) - (0,1,1) = (1,-1,1)
+            </mrow>
+            <mrow>
+              r-p = (-2,1,1) - (0,1,1) - (-2,0,0)
+            </mrow>
+          </md>
+          These are the two local directions. The cross product of the
+          local directions gives the normal to the plane. 
+          <me>
+            (1,-1,1) \times (-2,0,0) = \left( (-1)(0) - (-1)(0),
+            (-1)(-2) - (1)(0), (1)(0) - (-1)(-2) \right) = (0,2,2) 
+          </me>
+          This is the normal. The normal determines the coefficients
+          of the equation of the plane. I put those coefficients into
+          the general form, with the constant <m>d</m> undetermined.
+          <me>
+            0x + 2y - 2z = d 
+          </me>
+          I can calculate the constant using the point (I can use
+          any of the three points <mdash /> all will determine the same
+          constant). Put the coordinates of the point into the left
+          side of the equation and calculate <m>d</m>.
+          <me>
+            d = (0)(0) + 2 (1) - 2(1) = 0 
+          </me>
+          Therefore, the equation of the plane is 
+          <me>
+            2y - 2z = 0 
+          </me>.
+        </p>
+      </solution>
+    </activity>
+    <activity>
+      <statement>
+        <p>
+          Write the equation of the plane with points
+          <m>p = (-3,-1,0)</m>, <m>q = (-2,1,4)</m> and <m>r =
+          (0,5,0)</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          The local directions are given by the difference of the
+          points: <m>(q-p)</m> and <m>(r-p)</m>. I calculate those two
+          local directions.
+          <md>
+            <mrow>
+              q-p = (-2,1,4) - (-3, -1, 0) = (1,2,-4)
+            </mrow>
+            <mrow>
+              r-p = (0,5,0) - (-3,-1,0) = (3,6,0)
+            </mrow>
+          </md>
+          These are the two local directions. The cross product of the
+          local directions gives the normal to the plane. 
+          <me>
+            (1,2,-4) \times (3,6,0) = \left( (2)(0) - (-4)(6), (-4)(3)
+            - (1)(0), (1)(6) - (2)(3) \right) = (24,-12,0)
+          </me>
+          This is the normal. The normal determines the coefficients
+          of the equation of the plane. I put those coefficients into
+          the general form, with the constant <m>d</m> undetermined.
+          <me>
+            24 x - 12 y + 0z = d 
+          </me>
+          I can calculate the constant using the point (I can use
+          any of the three points <mdash /> all will determine the same
+          constant). Put the coordinates of the point into the left
+          side of the equation and calculate <m>d</m>.
+          <me>
+            d =  24(0) - 12(5) + 0 z = -60 
+          </me>
+          Therefore, the equation of the plane is 
+          <me>
+            24 x - 12 y = -60 
+          </me>.
+        </p>
+      </solution>
+    </activity>
+  </subsection>
+  <subsection xml:id="subsection-week1-concepts">
     <title>Conceptual Review Questions</title>
     <p>
       <ul>
         <li>
-          Question
+          How does vector arithmetic differ from number arithmetic?
+        </li>
+        <li>
+          What is a cross product and what does it mean?
+        </li>
+        <li>
+          What is a dot product and what does it mean?
+        </li>
+        <li>
+        <li>
+          What is a normal vector to a plane? Why are 
+          planes determined by normals?
+        </li>
+        <li>
+          Why do cross products help calculate normals to planes in 
+          three dimensions?
         </li>
       </ul>
     </p>
