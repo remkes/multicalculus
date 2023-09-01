@@ -47,6 +47,7 @@
         </p>
       </statement>
       <solution>
+        <p>
           <ol>
             <li>
               <me>
@@ -81,22 +82,21 @@
               </me>
             </li>
             <li>
-              The angle between <m>u</m> and <m>v</m>. <m>\cos \theta
-              = \frac{u \cdot v}{|u||v|} =
-              \frac{-19}{\sqrt{41}{\sqrt{13}}</m>. Inverse cosine
-              gives <m> \theta \doteq 2.54</m>.
+              The angle between <m>u</m> and <m>v</m>. 
+              <me>
+                \cos \theta = \frac{u \cdot v}{|u||v|} =
+                \frac{-19}{\sqrt{41}\sqrt{13}}
+              </me>. 
+              Inverse cosine gives <m> \theta \doteq 2.54</m>.
             </li>
           </ol>
-          Here is the diagram of the first three calculations.
+          <p>
+            Here is the diagram of the first three calculations.
+          </p>
           <figure xml:id="figure-vector-activities1">
             <caption>Vector Operatiors Activity 1</caption>
             <image xml:id="image-vector-activities1">
               <asymptote>
-                u + v = (4 + (-1)1, 5 + (-3)) = (3,2) 
-              </me>
-            </li>
-            <li>
-              <me>
                 size(10cm);
                 import graph;
 
@@ -105,25 +105,16 @@
 
                 draw((0,0)--(3,2),Arrow); 
                 draw((0,0)--(5,8),Arrow); 
+                draw((0,0)--(4,5),Arrow); 
+                draw((0,0)--(-1,-3),Arrow); 
 
-                label("$u = (4,5)$, (4,5),E);
-                label("$v = (-1,-3)$, (-1,-3),E);
-                label("$u + v = (3,2)$, (3,52,E);
-                label("$u - v = (5,8)$, (5,8),E);
+                label("$u = (4,5)$", (4,5),E);
+                label("$v = (-1,-3)$", (-1,-3),W);
+                label("$u + v = (3,2)$", (3,2),E);
+                label("$u - v = (5,8)$", (5,8),E);
               </asymptote>
             </image>
           </figure>
-        </p>
-      </solution>
-    </activity>
-    <activity>
-      <statement>
-        <p>
-        
-        </p>
-      </statement>
-      <solution>
-        <p>
         </p>
       </solution>
     </activity>
@@ -365,7 +356,6 @@
         <li>
           What is a dot product and what does it mean?
         </li>
-        <li>
         <li>
           What is a normal vector to a plane? Why are 
           planes determined by normals?
