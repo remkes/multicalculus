@@ -167,7 +167,7 @@
           The form of this curve is similar to the circle, but the
           first component has a <m>2</m>, which doubles the period of
           the cosine function. The curve <m>\gamma(t) = (\cos 2t, \sin
-          t)</m> on the domain <m>t \in [0, 2\pi]</m> oscilates faster
+          t)</m> on the domain <m>t \in [0, 2\pi]</m> oscillates faster
           in the <m>x</m> direction than in the <m>y</m> direction, as
           in <xref ref="figure-parametric-curve3" />. So, instead of a
           circle, I get a different kind of rotational movement, where
@@ -311,7 +311,7 @@
       movement along that shape. Therefore, given a fixed shape of a
       curve, there are many (infinitely many!) parametric curves that
       trace the same shape. I can say that the same curve has many
-      <term>parametrization</term> 
+      <term>parametrizations</term>.
     </p>
     <example xml:id="example-four-parametrizations">
       <statement>
@@ -320,19 +320,19 @@
           <md>
             <mrow>
               \gamma_1(t) \amp = \left( t, t^2 \right) \amp \amp
-              t \in [0, 16]
-            </mrow>
-            <mrow>
-              \gamma_2(t) \amp = \left( t^2, t^4 \right) \amp \amp
               t \in [0, 4]
             </mrow>
             <mrow>
+              \gamma_2(t) \amp = \left( t^2, t^4 \right) \amp \amp
+              t \in [0, 2]
+            </mrow>
+            <mrow>
               \gamma_3(t) \amp = \left( \sqrt{t}, t \right) \amp \amp
-              t \in [0, 256]
+              t \in [0, 16]
             </mrow>
             <mrow>
               \gamma_4(t) \amp = \left( 5t, 25t^2 \right) \amp \amp
-              t \in \left[0, \frac{16}{5} \right]
+              t \in \left[0, \frac{4}{5} \right]
             </mrow>
           </md>
         </p>
@@ -349,22 +349,25 @@
     <p>
       Since the same shape can have many different parametrizations,
       I want a process to switch between them. This process is
-      called reparametrization.
+      called reparametrization. I'll state the definition in
+      <m>\RR^3</m>, but dropping the third coordinate will give the
+      same idea in <m>\RR62</m> and, of course, there a generalization
+      to <m>\RR^n</m>. 
     </p>
     <definition>
       <statement>
         <p>
-          Let <m>\gamma(t): [a,b] \rightarrow \RR^n</m> be a
-          parametric curve with coordinates <m>(\gamma_1(t), \ldots,
-          \gamma_n(t))</m>. A <term>reparametrization</term> of
-          <m>\gamma</m> is the replacement of the variable <m>t</m> by
-          a new variable <m>u</m>. The two variables are related by a
-          monotonic increasing function <m>t = t(u)</m> expressing the
-          parameter <m>t</m> in terms of a new parameter <m>u</m>. I
-          replace <m>t</m> by the function <m>t(u)</m> to give a
-          parametric curve in terms of <m>u</m>: <m>\gamma(u) =
-          (\gamma_1(t(u)), \gamma_2(t(u)), \ldots,
-          \gamma_n(t(u)))</m>.
+          Let <m>\gamma(t): [a,b] \rightarrow \RR^3</m> be a
+          parametric curve with coordinates <m>(\gamma_1(t),
+          \gamma_2(t), \gamma_3(t))</m>. A
+          <term>reparametrization</term> of <m>\gamma</m> is the
+          replacement of the variable <m>t</m> by a new variable
+          <m>u</m>. The two variables are related by a monotonic
+          increasing function <m>t = t(u)</m> expressing the parameter
+          <m>t</m> in terms of a new parameter <m>u</m>. I replace
+          <m>t</m> by the function <m>t(u)</m> to give a parametric
+          curve in terms of <m>u</m>: <m>\gamma(u) = (\gamma_1(t(u)),
+          \gamma_2(t(u)), \gamma_3(t(u)))</m>.
         </p>
       </statement>
     </definition>

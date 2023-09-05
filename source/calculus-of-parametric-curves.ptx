@@ -10,16 +10,15 @@
       only a single input, I can actually apply the tools of
       single-variable calculus quite directly by taking the ordinary,
       single variable derivative of each component of the parametric
-      curve. This leads to the first key definition.
+      curve. This leads to the first key definition (stated in
+      <m>\RR^3</m> as usual, but can be generalized). 
     </p>
     <definition xml:id="definition-pc-tangent">
       <statement>
         <p>
-          Let <m>\gamma(t): [a,b] \rightarrow \RR^n</m> be a
+          Let <m>\gamma(t): [a,b] \rightarrow \RR^3</m> be a
           parametric curve. I can write <m>\gamma(t)</m> in it
-          components. (For the sake of clear demonstration, I'll do
-          this in <m>\RR^3</m>, but the rule applied in any
-          dimension.) 
+          components. 
           <me>
             \gamma(t) = (x(t), y(t), z(t))
           </me>
