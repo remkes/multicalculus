@@ -294,20 +294,23 @@
       </me>
     </p>
     <p>
-      If I take the limit of this process, breaking the curve into
-      smaller and smaller pieces, I produce a Riemann sum which
-      defines a definite integral. In the limit, the <m>\Delta</m>
-      terms become the infinitesimals <m>dy</m> and <m>dx</m>.
+      In a parametric curve, everything changes in time. I can adjust
+      this approximation by considering that <m>x</m> and <m>y</m>
+      change over time. If <m>\Delta t</m> is the change in time over
+      one of these segments, then by multiplying and dividing by
+      <m>\Delta t</m>, and taking the division into the square root, I
+      get the following expression.
       <me>
-        L = \int_a^b \sqrt{dx^2 + dy^2}
+        L \cong \sum \sqrt{ \frac{\Delta x^2}{\Delta t^2} +
+        \frac{\Delta y^2}{\Delta t^2}} \Delta t 
       </me>
     </p>
     <p>
-      Both <m>x</m> and <m>y</m> depend on <m>t</m>, so I can change
-      this to a integral in <m>t</m>. (This is is poor notation, I
-      admit, confusiong fractions and derivatives. The deeper
-      situation here is a chain rule replacement, but I don't want to
-      belabour the technical details.) 
+      If I take the limit of this process, breaking the curve into
+      smaller and smaller pieces, I produce a Riemann sum which
+      defines a definite integral. In the limit, the <m>\Delta</m>
+      terms become the infinitesimals <m>dy</m>, <m>dx</m> and
+      <m>\dt</m>. 
       <me>
         L = \int_a^b \sqrt{ \left( \frac{dx}{dt} \right)^2 + \left(
         \frac{dy}{dt} \right)^2 } dt
@@ -315,20 +318,21 @@
     </p>
     <p>
       The same arguments work in any <m>\RR^n</m>, leading to the
-      general result.
+      general result. However, as has been my practice, I'll state the
+      general result in <m>\RR^3</m>. 
     </p>
     <proposition>
       <statement>
         <p>
-          Let <m>\gamma(t): [a,b] \rightarrow \RR^n</m> be a
+          Let <m>\gamma(t): [a,b] \rightarrow \RR3n</m> be a
           parametric curve. I'll explicitly write the components of
-          the curve as <m>\gamma_1(t), \gamma_2(t), \ldots,
-          \gamma_n(t)</m>. Then the length of the parametric curve is
-          calculated by this integral.
+          the curve as <m>\gamma_1(t), \gamma_2(t), \gamma_3(t)</m>.
+          Then the length of the parametric curve is calculated by
+          this integral.
           <me>
             L = \int_a^b \sqrt{ \left( \frac{d\gamma_1}{dt} \right)^2
-            + \left( \frac{d\gamma_2}{dt} \right)^2 + \ldots + +
-            \left( \frac{d\gamma_n}{dt} \right)^2 } dt
+            + \left( \frac{d\gamma_2}{dt} \right)^2 + \left(
+            \frac{d\gamma_n}{dt} \right)^2 } dt.
           </me>
         </p>
       </statement>
@@ -336,9 +340,10 @@
     <example>
       <statement>
         <p>
-          In <m>\RR^3</m>, consider the helix <m>\gamma(t) = (\cos t,
-          \sin t, t)</m>. On the domain <m>t \in [0, 8\pi]</m>, the
-          helix makes four revolutions. I calculate its arclength.
+          In <m>\RR^3</m>, consider the three-dimensional spiral
+          <m>\gamma(t) = (\cos t, \sin t, t)</m>. On the domain <m>t
+          \in [0, 8\pi]</m>, the spiral makes four revolutions. I
+          calculate its arclength.
           <me>
             L = \int_0^{8\pi} \sqrt{ \sin^2 t + \cos^2 t + 1} dt =
             \int_0^{8\pi} \sqrt{2} dt = 8 \sqrt{2} \pi
@@ -421,75 +426,25 @@
       information about the whole curve. 
     </p>
   </subsection>
-  <subsection xml:id="subsection-arclength-and-tangents">
-    <title>Arclength and Tangents</title>
-    <p>
-      There are some very natural connections between tangents and
-      arclength which relate to the intepretation of parametric curves
-      as movement through space. I'll return to the arc length
-      formula (in <m>\RR^2</m>, for simplicity).
-      <me>
-        L = \int_a^b \sqrt{x^\prime(t)^2 + y^\prime(t)^2} dt
-      </me>
-    </p>
-    <p>
-      The tangent vector is <m>\gamma^\prime(t) = (x^\prime(t),
-      y^\prime(t))</m>, so this integrand in the arclength formula is
-      nothing more than the length of the tangent vector. This lets
-      me rewrite the arclength formula.
-      <me>
-        L = \int_a^b |\gamma^\prime(t)| dt
-      </me>
-    </p>
-    <p>
-      This hopefully makes intuitive sense <mdash/> the length of the
-      tangent vector measures the speed of the curve. To get length
-      (the distance travelled), I integrate the speed of movement.
-    </p>
-    <p>
-      An nice event occurs when I differentiate the arclength
-      function <m>s(t)</m>. The fundamental theorem of calculus
-      lets me differentiate an integral.
-      <me>
-        \frac{d}{dt} s(t) = \frac{d}{dt} \int_a^t |\gamma^\prime(u)|
-        du = |\gamma^\prime (t)|
-      </me>
-    </p>
-    <p>
-      The derivative of the arclength function is the length of the
-      tangent vector, which represents the speed of movement along the
-      curve. To get speed, I differentiate length.
-    </p>
-    <p>
-      Both of these observations generalize the relationship between
-      distance and speed from single variable calculus. In that
-      setting, the relationship was relatively direct: if <m>d(t)</m>
-      was distance, then <m>d^\prime(t)</m> was speed and if
-      <m>v(t)</m> was speed then <m>\int v(t) dt</m> was distance.
-      The idea here is exactly the same, but since the movement is
-      much more complicated, going through multi-dimensional space, I
-      need more complicated definitions and notations to access the
-      idea.
-    </p>
   <subsection xml:id="subsection-parametrization-by-arclength">
     <title>Parametrization by Arclength</title>
     <p>
       The arclength calculation determins the length of the whole
       curve. However, I can also ask for the length of sections of the
-      curve.
+      curve. I'll state the definition in <m>\RR^3</m>.
     </p>
     <definition>
       <statement>
         <p>
-          Let <m>\gamma(t): [a,b] \rightarrow \RR^n</m> be a
-          parametric curve with components <m>(\gamma_1(t), \ldots,
-          \gamma_n(t))</m>. The <term>arclength function</term>
-          <m>s(t): [a,b] \rightarrow [0, \infty)</m> is defined by
-          this integral.
+          Let <m>\gamma(t): [a,b] \rightarrow \RR^3</m> be a
+          parametric curve with components <m>(\gamma_1(t),
+          \gamma_2(t), \gamma_3(t))</m>. The <term>arclength
+          function</term> <m>s(t): [a,b] \rightarrow [0, \infty)</m>
+          is defined by this integral.
           <me>
             s(t) = \int_a^t \sqrt{ \left( \frac{d\gamma_1(u)}{du}
             \right)^2 + \left( \frac{d\gamma_2(u)}{du} \right)^2 +
-            \ldots + + \left( \frac{d\gamma_n(u)}{du} \right)^2 } du
+            \left( \frac{d\gamma_3(u)}{du} \right)^2 } du
           </me>
         </p>
         <p>
@@ -709,6 +664,56 @@
       pattern itself and how the pattern is presented. 
     </p>
   </subsection>
+  <subsection xml:id="subsection-arclength-and-tangents">
+    <title>Arclength and Tangents</title>
+    <p>
+      There are some very natural connections between tangents and
+      arclength which relate to the intepretation of parametric curves
+      as movement through space. I'll return to the arc length
+      formula (in <m>\RR^2</m>, for simplicity).
+      <me>
+        L = \int_a^b \sqrt{x^\prime(t)^2 + y^\prime(t)^2} dt
+      </me>
+    </p>
+    <p>
+      The tangent vector is <m>\gamma^\prime(t) = (x^\prime(t),
+      y^\prime(t))</m>, so this integrand in the arclength formula is
+      nothing more than the length of the tangent vector. This lets
+      me rewrite the arclength formula.
+      <me>
+        L = \int_a^b |\gamma^\prime(t)| dt
+      </me>
+    </p>
+    <p>
+      This hopefully makes intuitive sense <mdash/> the length of the
+      tangent vector measures the speed of the curve. To get length
+      (the distance travelled), I integrate the speed of movement.
+    </p>
+    <p>
+      An nice event occurs when I differentiate the arclength
+      function <m>s(t)</m>. The fundamental theorem of calculus
+      lets me differentiate an integral.
+      <me>
+        \frac{d}{dt} s(t) = \frac{d}{dt} \int_a^t |\gamma^\prime(u)|
+        du = |\gamma^\prime (t)|
+      </me>
+    </p>
+    <p>
+      The derivative of the arclength function is the length of the
+      tangent vector, which represents the speed of movement along the
+      curve. To get speed, I differentiate length.
+    </p>
+    <p>
+      Both of these observations generalize the relationship between
+      distance and speed from single variable calculus. In that
+      setting, the relationship was relatively direct: if <m>d(t)</m>
+      was distance, then <m>d^\prime(t)</m> was speed and if
+      <m>v(t)</m> was speed then <m>\int v(t) dt</m> was distance.
+      The idea here is exactly the same, but since the movement is
+      much more complicated, going through multi-dimensional space, I
+      need more complicated definitions and notations to access the
+      idea.
+    </p>
   </subsection>
   <subsection xml:id="subsection-curvature">
     <title>Curvature</title>
