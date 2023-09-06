@@ -1278,78 +1278,82 @@
         </p>
         <p>
           All three, speed, curvature and torsion, are constant here.
-          I can summarize what kind of shapes of curves we get for
-          constant and zero values of the three scalars describing the
-          motion of parametric curves.
-        </p>
-        <tabular>
-          <row>
-            <cell>
-              <m>v = 0</m>
-            </cell>
-            <cell>
-              <m>\kappa = 0</m>
-            </cell>
-            <cell>
-              <m>\tau = 0</m>
-            </cell>
-            <cell>
-              <m>\implies</m> no movement
-              at all
-            </cell>
-          </row>
-          <row>
-            <cell>
-              <m>v = c</m>
-            </cell>
-            <cell>
-              <m>\kappa = 0</m>
-            </cell>
-            <cell>
-              <m>\tau = 0</m>
-            </cell>
-            <cell>
-              <m>\implies</m> straight line, no curving or twisting
-            </cell>
-          </row>
-          <row>
-            <cell>
-              <m>v = c_1</m>
-            </cell>
-            <cell>
-              <m>\kappa = c_2</m>
-            </cell>
-            <cell>
-              <m>\tau = 0</m>
-            </cell>
-            <cell>
-              <m>\implies</m> circle, constant speed and curvature, no
-              twisting
-            </cell>
-          </row>
-          <row>
-            <cell>
-              <m>v = c_1</m>
-            </cell>
-            <cell>
-              <m>\kappa = c_2</m>
-            </cell>
-            <cell>
-              <m>\tau = c_3</m>
-            </cell>
-            <cell>
-              <m>\implies</m> helix, constantly moving, curving and
-              twisting
-            </cell>
-          </row>
-        </tabular>
-        <p>
-          Like the straight line and the circle, the helix is the
-          unique curve which has constant non-zero speed, torsion and
-          curvature..
+          This helix has constant motion, curvature and torsion
         </p>
       </statement>
     </example>
+    <p>
+      Following the observation at the end of the previous example,
+      I can summarize what kind of shapes of curves exist for
+      constant and zero values of the three scalars describing the
+      motion of parametric curves.
+    </p>
+    <tabular>
+      <row>
+        <cell>
+          <m>v = 0</m>
+        </cell>
+        <cell>
+          <m>\kappa = 0</m>
+        </cell>
+        <cell>
+          <m>\tau = 0</m>
+        </cell>
+        <cell>
+          <m>\implies</m> no movement
+          at all
+        </cell>
+      </row>
+      <row>
+        <cell>
+          <m>v = c</m>
+        </cell>
+        <cell>
+          <m>\kappa = 0</m>
+        </cell>
+        <cell>
+          <m>\tau = 0</m>
+        </cell>
+        <cell>
+          <m>\implies</m> straight line, no curving or twisting
+        </cell>
+      </row>
+      <row>
+        <cell>
+          <m>v = c_1</m>
+        </cell>
+        <cell>
+          <m>\kappa = c_2</m>
+        </cell>
+        <cell>
+          <m>\tau = 0</m>
+        </cell>
+        <cell>
+          <m>\implies</m> circle, constant speed and curvature, no
+          twisting
+        </cell>
+      </row>
+      <row>
+        <cell>
+          <m>v = c_1</m>
+        </cell>
+        <cell>
+          <m>\kappa = c_2</m>
+        </cell>
+        <cell>
+          <m>\tau = c_3</m>
+        </cell>
+        <cell>
+          <m>\implies</m> helix, constantly moving, curving and
+          twisting
+        </cell>
+      </row>
+    </tabular>
+    <p>
+      Like the straight line and the circle, the helix is the
+      unique curve which has constant non-zero speed, torsion and
+      curvature.
+    </p>
   </subsection>
   <subsection xml:id="subsection-acceleration">
     <title>Acceleration and Movement in Space</title>
