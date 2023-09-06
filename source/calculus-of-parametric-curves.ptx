@@ -243,7 +243,7 @@
     <title>Arc Length</title>
     <figure xml:id="figure-arclength-approximation">
       <caption>Arclength setup by approximation</caption>
-      <image xml:id="figure08" width="90%"> 
+      <image xml:id="image-arclength-approximation" width="90%"> 
         <asymptote>
           size(12cm,7cm,IgnoreAspect);
           import graph;
@@ -310,7 +310,7 @@
       smaller and smaller pieces, I produce a Riemann sum which
       defines a definite integral. In the limit, the <m>\Delta</m>
       terms become the infinitesimals <m>dy</m>, <m>dx</m> and
-      <m>\dt</m>. 
+      <m>dt</m>. 
       <me>
         L = \int_a^b \sqrt{ \left( \frac{dx}{dt} \right)^2 + \left(
         \frac{dy}{dt} \right)^2 } dt
