@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">8.2.8</span><span class="period">.</span>
+</h4>
+<div class="para">To show how some of these techniques work together, consider integrating the function <span class="process-math">\(f(x,y) = x^2\)</span> over the ellipse <span class="process-math">\(D = \frac{x^2}{4} + \frac{y^2}{9} = 1\text{.}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int_D x^2 dA
+\end{equation*}
+</div>
+<div class="para">I’m  going to do two changes of variables. First, I make the change of variables give by <span class="process-math">\(x=2u\)</span> and <span class="process-math">\(y=3v\text{.}\)</span> This change of variables has Jacobian <span class="process-math">\(|J| = 6\)</span> so that <span class="process-math">\(dx dy = 6 du dv\text{.}\)</span> The ellipse <span class="process-math">\(D\)</span> becomes the unit circle <span class="process-math">\(C\text{.}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int_C (2u)^2 6 du dv = 24 \int_C u^2 du dv
+\end{equation*}
+</div>
+<div class="para">Now, since I am integrating over the unit circle, I can change to polar coordinates.</div>
+<div class="displaymath process-math">
+\begin{align*}
+24 \int_C u^2 du dv \amp = 24 \int_0^{2\pi} \int_0^1 r^2
+\cos^2 \theta r dr d\theta\\
+\amp = 24 \int_0^{2\pi} \cos^2 \theta d \theta \int_0^1
+r^3 dr\\
+\amp = 24 \left. \left( \frac{\theta}{2} + \frac{\sin
+2\theta}{4} \right) \right|_0^{2\pi} \left. \left(
+\frac{r^4}{4} \right) \right|_0^1\\
+\amp = 24 \pi \frac{1}{4} = 6 \pi
+\end{align*}
+</div></article><span class="incontext"><a href="section-polar-coordinates.html#example-79" class="internal">in-context</a></span>
+</body>
+</html>

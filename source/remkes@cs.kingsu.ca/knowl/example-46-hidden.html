@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math"><article class="example example-like"><div class="para logical">
+<div class="para">Consider the potential gravitational energy function</div>
+<div class="displaymath process-math">
+\begin{equation*}
+P = - \frac{GmM}{r} = \frac{-GmM}{\sqrt{x^2 + y^2 + z^2}}
+\end{equation*}
+</div>
+</div> <div class="para logical">
+<div class="para">It would be  nice to know how the potential energy changes while moving along a curve <span class="process-math">\(\gamma\text{.}\)</span> For a particular example, consider a helical path out of the gravity well:  <span class="process-math">\(\gamma(t) = (\sin t, \cos t,
+t)\text{.}\)</span> I differentiate along this path using the chain rule.</div>
+<div class="displaymath process-math">
+\begin{align*}
+\frac{dP}{dt} \amp = \frac{\del P}{\del x}
+\frac{dx}{dt} + \frac{\del P}{\del y} \frac{dy}{dt} +
+\frac{\del P}{\del z} \frac{dz}{dt}\\
+\amp = \frac{GmMx}{(x^2 + y^2 + z^2)^{\frac{3}{2}}}
+\frac{dx}{dt} + \frac{GmMy}{(x^2 + y^2 +
+z^2)^{\frac{3}{2}}} \frac{dy}{dt} + \frac{GmMz}{(x^2 +
+y^2 + z^2)^{\frac{3}{2}}} \frac{dz}{dt}\\
+\amp = \frac{GmM\sin t}{(1 + t^2)^{\frac{3}{2}}} \cos t
++ \frac{GmM\cos t}{(1 + t^2)^{\frac{3}{2}}} (-\sin t) +
+\frac{GmMt}{(1 + t^2)^{\frac{3}{2}}} 1\\
+\amp = \frac{GmMt}{\sqrt{(1+t^2)^3}}
+\end{align*}
+</div>
+</div> <div class="para">Along this helical path, the potential energy is increases. The rate of increase, however, slows over time. This makes sense for leaving a potential energy well: the first steps are more difficult and later movement is not as difficult.</div> <div class="para">Notice that if I let <span class="process-math">\(|\gamma(t)| = \sqrt{1 + t^2}\)</span> at the start, I could have written <span class="process-math">\(P(t) =
+\frac{-GmM}{|\gamma(t)|} = \frac{-GmM}{\sqrt{1+t^2}}\)</span> and the <span class="process-math">\(P^\prime(t) = \frac{GmMt}{\sqrt{(1+t^2)^3}}\)</span> could have been calculated directly. That would have been easier, but its nice to get confirmation that working with the chain rule leads to the right result.</div></article></body>
+</html>

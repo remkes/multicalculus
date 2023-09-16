@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<div class="displaymath process-math">
+\begin{align*}
+\int_D f(x,y) dA \amp = \int_0^r \int_0^{\sqrt{r^2-x^2}}
+\sqrt{r^2 - x^2 - y^2} dy dx\\
+\amp = \int_0^r \left( \frac{y}{2} \sqrt{r^2 - x^2 - y^2}
++ \left. \frac{(r^2 - x^2)}{2} \arcsin \left(
+\frac{y}{\sqrt{r^2 - x^2}} \right) \right|_0^{\sqrt{r^2 -
+x^2}} \right) dx\\
+\amp = \int_0^r \frac{\sqrt{r^2 - x^2}}{2} \sqrt{ r^2 -
+x^2 - (r^2 - x^2)} + \frac{(r^2-x^2)}{2} \arcsin \left(
+\frac{ \sqrt{r^2 - x^2}}{\sqrt{r^2 - x^2}} \right) dx\\
+\amp = \int_0^r \frac{r^2 - x^2}{2} \frac{\pi}{2} dx =
+\int_0^r \frac{\pi (r^2-x^2)}{4} dx\\
+\amp = \left. \frac{\pi r^2x}{4} - \frac{\pi x^3}{12}
+\right|_0^r = \frac{\pi r^3}{4} - \frac{\pi r^3}{12} =
+\frac{\pi r^3}{6}
+\end{align*}
+</div>
+<span class="incontext"><a href="section-variable-bounds.html#md-147" class="internal">in-context</a></span>
+</body>
+</html>

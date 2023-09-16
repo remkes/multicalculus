@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math"><div class="solution solution-like">
+<div class="para">The approach is like previous examples for ellipses and ellipsoids. I use a version of spherical coordinates where I adjust the coordinates of <span class="process-math">\(x\text{,}\)</span> <span class="process-math">\(y\)</span> and <span class="process-math">\(z\)</span> by a scaling factor.</div>
+<div class="displaymath process-math">
+\begin{align*}
+\sigma(\phi,\theta) \amp = (3 \sin \phi \cos \theta, \sin
+\phi \sin \theta, 5 \cos \phi) \\
+D \amp = (\phi,\theta) \in [0,\pi] \times [0, 2\pi] 
+\end{align*}
+</div>
+<div class="para">To calculate the surface area, I’ll need the partial deri\theta, the normal, and the length of the normal.</div>
+<div class="displaymath process-math">
+\begin{align*}
+\sigma_\phi \amp = (3 \cos \phi \cos \theta, \cos \phi
+\sin \theta, -5 \sin \phi)\\
+\sigma_\theta \amp = (-3 \sin \phi \sin \theta, \sin \phi
+\cos \theta, 0) \\
+\sigma_\phi \times \sigma_\theta \amp = (5\sin^2 \phi \cos
+\theta, 15 \sin^2 \phi \sin \theta, 3\cos \phi \sin \phi)\\
+|\sigma_\phi \times \sigma_\theta| \amp = \sqrt{25 \sin^4
+\phi \cos^2 \theta+ 225 \sin^4 \phi \sin^2 \theta + 9
+\cos^2 \phi \sin^2 \phi} 
+\end{align*}
+</div>
+<div class="para">I can already see a problem arising here. The scalaing factors mess with the lovely trig identities that simplify this square root in the spherical case. I can’t get rid of this square root. The integral is, like other elliptic integrals, impossibly by elementary functions.</div>
+<div class="displaymath process-math">
+\begin{align*}
+A \amp = \int_0^{2\pi} \int_0^{\pi}  \sqrt{25 \sin^4 \phi
+\cos^2 \theta + 225 \sin^4 \phi \sin^2 \theta + 9 \cos^2
+\phi \sin^2 \phi} d\phi d\theta 
+\end{align*}
+</div>
+<div class="para">This is as far as I can go with elementary functions. Notice the parallel with the circle/ellipse perimeter problem. The circumference of the circle is easy to calculate with parametric curves, but the circumference of the ellipse leads to impossible elliptic integrals. The same is true here for parametric surfaces, spheres and ellipsoids.</div>
+</div></body>
+</html>

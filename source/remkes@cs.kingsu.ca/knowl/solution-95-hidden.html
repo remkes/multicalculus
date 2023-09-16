@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math"><div class="solution solution-like">
+<div class="para">Cylindrical coordiantes are the best system to describe this cone, since it is about the <span class="process-math">\(z\)</span> axis. I can set constant bounds <span class="process-math">\(\theta \in [0,2\pi]\)</span> and <span class="process-math">\(r \in
+[0,1]\text{.}\)</span> Then the boundary of the cone can be described as <span class="process-math">\(z \in \left[ 5r,5 \right]\text{.}\)</span> With these bounds, I can move on to do the many integrals to calculate mass, first moments, centre of mass, and second moments.</div>
+<div class="displaymath process-math">
+\begin{align*}
+m \amp = \int_S \rho dV = \int_0^1 \int_0^{2\pi}
+\int_{5r}^5 \frac{z^2}{10} rdz d\theta dr \\
+\amp = 2\pi \int_0^1 r\frac{z^3}{30} \Bigg|_{5r}^5 dr =
+\frac{\pi}{15} \int_0^1 r (125 - 125 r^3) dr \\
+\amp = \frac{125\pi}{15} \int_0^1 r - r^4 dr =
+\frac{25\pi}{3} \left( \frac{r^2}{2} - \frac{r^5}{5}
+\right) \Bigg|_0^1 = \frac{25\pi}{3} \left( \frac{1}{2} -
+\frac{1}{5} \right) = \frac{25\pi}{3} \frac{3}{10} =
+\frac{5\pi}{2} 
+\end{align*}
+</div>
+<div class="para">I do not need to calculate the first moments <span class="process-math">\(M_{yz}\)</span> and <span class="process-math">\(M_{xz}\text{.}\)</span> These moments measure the balance of the object in the <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> axes. The cone is completely symmetric in these axes, and the density function is also symmetric. Therefore, the mass is perfectly balances in the <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> axes and the moments must be zero. I only need to calculate the moment <span class="process-math">\(M_{xy}\text{.}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{align*}
+M_{xy} \amp = \int_S z\rho dV  = \int_0^1 \int_0^{2\pi}
+\int_{5r}^5 z\frac{z^2}{10} r dz d\theta dr = \frac{1}{10}
+2\pi \int_0^1 \frac{z^4}{4} \Bigg|_{5r}^5 rdr \\
+\amp = \frac{\pi}{5} \frac{1}{4} \int_0^1 (625r - 625r^5)
+rdr = \frac{625\pi}{20} \left( \frac{r^2}{2} -
+\frac{r^6}{6} \right) \Bigg|_0^1 \\
+\amp = \frac{125\pi}{4} \left( \frac{1}{2} - \frac{1}{6}
+\right) = \frac{125\pi}{4} \frac{1}{3} = \frac{125\pi}{12} 
+\end{align*}
+</div>
+<div class="para">With the mass and first momemnts calculated, I can calculate the coordinates of the centre of mass.</div>
+<div class="displaymath process-math">
+\begin{align*}
+\bar{x} \amp = \frac{M_{yz}}{m} = 0 \\
+\bar{y} \amp = \frac{M_{xz}}{m} = 0 \\
+\bar{z} \amp = \frac{M_{xy}}{m} =
+\frac{\frac{125\pi}{12}}{\frac{5\pi}{2}} = \frac{25}{6}
+\end{align*}
+</div>
+<div class="para">Note that this is a reasonable answer. The cone is located in the range <span class="process-math">\(z \in [0,5]\text{.}\)</span> This <span class="process-math">\(z\)</span> coordinate for the centre of mass is in that range, as should be expected. Now I continue with the moments of intertia.</div>
+<div class="displaymath process-math">
+\begin{align*}
+I_x \amp = \int_S (y^2 + z^2) \rho dV  = \int_0^1
+\int_0^{2\pi} \int_{5r}^5 (r^2 \sin^2 \theta + z^2)
+\frac{z^2}{10} dz rd\theta dr = \\
+\amp = \frac{1}{10} \int_0^1 \int_0^{2\pi} \int_{5r}^5 r^3
+\sin^2 \theta z^2dz d\theta dr + \frac{1}{10} \int_0^1
+\int_0^{2\pi} \int_{5r}^5 z^4 rdz d\theta dr\\
+\amp = \frac{1}{10} \int_0^{2\pi} \sin^2 \theta d\theta
+\int_0^1 r^3 \frac{z^3}{3} \Bigg|_{5r}^5 dr + \frac{1}{10}
+2\pi \int_0^1 \frac{z^5}{5} \Bigg|_{5r}^5 rdr\\
+\amp = \frac{1}{30} \pi \int_0^1 (125) (r^3 -  r^6) dr +
+\frac{\pi}{25} \int_0^1 (3125) (r-r^6) dr\\
+\amp = \frac{25\pi}{6} \left( \frac{r^4}{4} -
+\frac{r^7}{7} \right)  \Bigg|_0^1 + 125\pi \left(
+\frac{r^2}{2} -  \frac{r^7}{7} \right) \Bigg|_0^1 \\
+\amp = \frac{25\pi}{6} \left( \frac{1}{4} - \frac{1}{7}
+\right) + 125\pi \left( \frac{1}{2} - \frac{1}{7} \right)\\
+\amp = \frac{25\pi}{6} \frac{3}{14} + 125\pi \frac{5}{14}
+= \frac{2875\pi}{84}
+\end{align*}
+</div>
+<div class="para">By symmetry, the moments about the <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> axis are the same.</div>
+<div class="displaymath process-math">
+\begin{align*}
+I_y \amp = I_x = \frac{2875\pi}{84} \\
+I_z \amp = \int_S (x^2 + y^2) \rho dV  = \int_0^1
+\int_0^{2\pi} \int_{5r}^5 r^2 \frac{z^2}{10} rdz d\theta
+dr\\
+\amp = \frac{1}{10} 2\pi \int_0^1 r^3 \frac{z^3}{3}
+\Bigg|_{5r}^5 dr = \frac{\pi}{15} \int_0^1 125(r^3-r^6) dr
+= \frac{25\pi}{3} \left( \frac{r^4}{4} - \frac{r^7}{7}
+\right) \Bigg|_0^1\\
+\amp = \frac{25\pi}{3} \left (\frac{1}{4} - \frac{1}{7}
+\right) = \frac{25\pi}{28}\\
+\bar{\bar{x}}^2 \amp = \frac{I_{x}}{m} =
+\frac{\frac{2875\pi}{84}}{\frac{5\pi}{2}} =
+\frac{(2875)(2)}{(84)(5)} = \frac{575}{42} \implies
+\bar{\bar{x}} = \sqrt{\frac{575}{42}}\\
+\bar{\bar{y}} \amp = \bar{\bar{x}} = \sqrt{\frac{575}{42}} \\
+\bar{\bar{z}}^2 \amp = \frac{I_{z}}{m} =
+\frac{\frac{25\pi}{28}}{\frac{5\pi}{2}} = \frac{50}{140} =
+\frac{5}{14} \implies \bar{\bar{z}} = \sqrt{\frac{5}{14}}
+\end{align*}
+</div>
+</div></body>
+</html>

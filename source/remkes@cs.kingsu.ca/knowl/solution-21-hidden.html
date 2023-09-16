@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math"><div class="solution solution-like"><div class="para logical"><ol class="decimal">
+<li>
+<div class="para">Find a parametric curve which descrives an ellipse with semimajor axis <span class="process-math">\(a\)</span> and semiminor axis <span class="process-math">\(b\text{.}\)</span>
+</div>
+<div class="para logical">
+<div class="para">I can take the standard curve for the circle and just scale the amplitude of the two coordinate functions.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\gamma(t) = (a \cos t, b \sin t) 
+\end{equation*}
+</div>
+<div class="para">The shape is given by one period of the sine and cosine functions, so <span class="process-math">\(t \in [0,2\pi]\text{.}\)</span>
+</div>
+</div>
+</li>
+<li>
+<div class="para">Set up the arclength calculation to find the circumference of the ellipse.</div>
+<div class="para logical">
+<div class="para">The derivatives are <span class="process-math">\(x^\prime = -a \sin t\)</span> and <span class="process-math">\(y^\prime = b \cos t\text{.}\)</span> I put these in a pythagorian combination and integrate to find the arclength.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int_0^{2\pi} \sqrt{a^2 \sin^2 (t) + b^2 \cos^2
+(t)} dt
+\end{equation*}
+</div>
+</div>
+</li>
+<li>
+<div class="para">Factor <span class="process-math">\(a\)</span> out of the square root and subtract a cosine term to that you can simplify using <span class="process-math">\((\sin^2 t
++ \cos^2 t = 1)\text{.}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{align*}
+\amp \int_0^{2\pi} \sqrt{a^2 \sin^2 (t) + b^2
+\cos^2 (t)} dt\\
+\amp = \int_0^{2\pi} \sqrt{a^2 \left( \sin^2 (t) +
+\frac{b^2}{a^2} \cos^2 (t)\right)} dt\\
+\amp = \int_0^{2\pi} a \sqrt{ \sin^2 (t) +
+\frac{b^2}{a^2} \cos^2 (t)} dt\\
+\amp = \int_0^{2\pi} a \sqrt{ \sin^2 (t) +
+\cos^2 t + \left( \frac{b^2}{a^2} - 1 \right) \cos^2
+(t)} dt\\
+\amp = \int_0^{2\pi} a \sqrt{ 1 + \left(
+\frac{b^2}{a^2} - 1 \right) \cos^2 (t)} dt
+\end{align*}
+</div>
+</li>
+<li>
+<div class="para">The eccentricity of the ellipse is defined to be the number <span class="process-math">\(e = \sqrt{1 - \frac{b^2}{a^2}}\text{.}\)</span> Manipulate the integral so that <span class="process-math">\(e\)</span> shows up under the square root, but <span class="process-math">\(a\)</span> amd <span class="process-math">\(b\)</span> are no longer under the square root.</div>
+<div class="displaymath process-math">
+\begin{gather*}
+\int_0^{2\pi} a \sqrt{ 1 + \left(
+\frac{b^2}{a^2} - 1 \right) \cos^2 (t)} dt\\
+\int_0^{2\pi} a \sqrt{ 1 - \left(
+1 - \frac{b^2}{a^2} \right) \cos^2 (t)} dt\\
+= \int_0^{2\pi} a \sqrt{ 1 - e \cos^2 (t)} dt
+\end{gather*}
+</div>
+</li>
+<li>
+<div class="para">Calculate the integral in the special case <span class="process-math">\(e=0\text{.}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+= \int_0^{2\pi} a \sqrt{ 1 - 0 \cos^2 (t)} dt = 
+\int_0^{2\pi} a dt = 2\pi a
+\end{equation*}
+</div>
+</li>
+<li>
+<div class="para">Try to solve the integral for general eccentricity <span class="process-math">\(0
+\lt e \lt 1\text{.}\)</span> Comment on the problems and barriers to integration.</div>
+<div class="para">This is an impossible integral to solve with the methods in this course, or even with more advanced method. Without <span class="process-math">\(e=0\text{,}\)</span> I can’t make use of a trig identity to remove all the trig functions. I am left with this annoying <span class="process-math">\(\cos^2 t\)</span> function inside the integral.  No substitution works, since there are no trig functions outside the integral.</div>
+<div class="para">This is called an elliptic integral (of the second kind, technically). It was a major motivator in 19th century mathematics, since the circumference of the ellipse was considered an important geometric problem. It led, indirectly, to the objects known as elliptic curves. These are very important geometric object which seem strangely named, since they don’t look like they have anything to do with ellipses. The connection is these integrals. Elliptic curves were invented as part of some clever and complicated new methods to approach ellitpic integrals. In this sense, elliptic curves are not curves which are like ellipses, but rather, curves that solve some elliptic integrals.</div>
+</li>
+</ol></div></div></body>
+</html>

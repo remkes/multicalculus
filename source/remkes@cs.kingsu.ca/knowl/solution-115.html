@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<div class="solution solution-like">
+<h4 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">10.3.7.1</span><span class="period">.</span>
+</h4>
+<div class="para">The domain is the portion of <span class="process-math">\(\RR^3\)</span> where <span class="process-math">\(x \gt
+0\text{,}\)</span> <span class="process-math">\(z \gt 0\text{.}\)</span> This is a simply connected domain. Moreover, the output of the parametric curve always have positive <span class="process-math">\(x\)</span> and <span class="process-math">\(z\)</span> coordinates, so it lies entirely within this domain.  I check that the field is conservative on this domain by calculating the curl.</div>
+<div class="displaymath process-math">
+\begin{align*}
+\nabla \times F \amp = \left( \frac{d}{dy} \frac{y}{z} -
+\frac{d}{dz} \ln z, \frac{d}{dz}\ln x - \frac{d}{dx}
+\frac{y}{z}, \frac{d}{dx} \ln z - \frac{d}{dy} \ln x
+\right)\\
+\amp = \left( \frac{1}{z} - \frac{1}{z}, 0 - 0 , 0 - 0
+\right) = (0,0,0)
+\end{align*}
+</div>
+<div class="para">The curl is zero, so the field is conservative. Now I need to find a potential. I integrate each component of the field in the matching variable. I put together these three pieces to find a potential that matches all three.</div>
+<div class="displaymath process-math">
+\begin{align*}
+\int F_1 dx \amp = \int \ln x dx = x \ln x - x + c\\
+\int F_2 dy \amp = \int \ln z dy = y \ln z + c\\
+\int F_3 dz \amp = \int \frac{y}{z} dz = y \ln z + c\\
+f \amp = x \ln x - x + y \ln z
+\end{align*}
+</div>
+<div class="para">Next I find the endpoints of the curve and evaluate the potential at the endpoints. The different of these two values is the value of the line integral, by the fundamental theorem.</div>
+<div class="displaymath process-math">
+\begin{align*}
+f(\gamma(1)) \amp = f((4,-1,4)) = 20 \ln 20 - 20 - 5 \ln
+25 \\
+f(\gamma(5)) \amp = f((20, -5, 25)) = 4 \ln 4 - 4 - \ln 4 \\
+f(\gamma(5)) - f(\gamma(1)) \amp = 20 \ln 20 - 5 \ln 25 -
+3 \ln 4 - 16
+\end{align*}
+</div>
+</div>
+<span class="incontext"><a href="week10-activity.html#solution-115" class="internal">in-context</a></span>
+</body>
+</html>

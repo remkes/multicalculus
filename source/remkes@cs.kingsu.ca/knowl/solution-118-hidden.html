@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math"><div class="solution solution-like">
+<div class="para">From <a href="" class="xref" data-knowl="./knowl/example-sphere-parametrization.html" title="Example 11.1.4">Example 11.1.4</a>, I already have the parametrization of the sphere. However, now I have shifted the centre. How to I adjust the parametrization in the example? I can simply at the offset to each coordinate, which moves each coordinate to give the correct centre point.</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/example-sphere-parametrization.html">
+\begin{align*}
+\sigma(\phi,v) \amp = (4 \sin \phi \cos v - 1, 4 \sin
+\phi \sin v -
+2, 4 \cos \phi + 3) \\
+D \amp = (\phi,\theta) \in [0,\pi] \times [0, 2\pi] \\
+\sigma_\phi \amp = (4 \cos \phi \cos \theta, 4 \cos \phi
+\sin \theta, -4 \sin \phi)\\
+\sigma_\theta \amp = (-4 \sin \phi \sin \theta, 4 \sin
+\phi \cos \theta, 0)\\
+\sigma_\phi \times \sigma_\theta \amp = (16 \sin^2 \phi
+\cos \theta, 16 \sin^2 \phi \sin \theta, 16 \cos \phi \sin
+\phi )\\
+|\sigma_\phi \times \sigma_\theta| \amp = 16 \sqrt{\sin^4
+\phi \cos^2 \theta+ \sin^4 \phi \sin^2 \theta + \cos^2
+\phi \sin^2\phi}\\
+\amp = 16 \sqrt{\sin^4 \phi + \cos^2 \phi \sin^2 \phi } =
+16 \sqrt{\sin^2 \phi} = 16 \sin \phi
+\end{align*}
+</div>
+<div class="para">Then I can calculate the surface area by integrating the length of the normal over the parameter domain.</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/example-sphere-parametrization.html">
+\begin{align*}
+A = \amp = \int_0^{2\pi} \int_0^{\pi} 16 \sin \phi d\phi
+d\theta = (16) 2\pi (-\cos \phi) \bigg|_0^\pi =  64 \pi \\
+\int_\sigma f dA \amp = \int_0^{2\pi} \int_0^\pi (4\sin
+\phi \cos \theta - 1)(4 \sin \phi \sin \theta - 2) (4 \cos
+\phi + 3)(16 \sin \phi) d\phi d\theta 
+\end{align*}
+</div>
+<div class="para">This gets very intense. I asekd a computer algebra system for the expanded form.</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/example-sphere-parametrization.html">
+\begin{align*}
+\amp = \int_0^{2\pi} \int_0^\pi -199 \sin^2 \phi \sin
+\theta + 1024 \sin^3\phi \cos \phi \sin \theta \cos \theta
++ 768 \sin^3 \phi \sin \theta \cos \theta \\
+\amp - 512 \sin^2 \phi \cos \phi \cos \theta - 384 \sin^2
+\phi \cos \theta - 256 \sin^2\phi \cos \phi \sin
+\theta\\
+\amp + 96 \sin \phi + 128 \sin \phi \cos \phi d\phi d\theta 
+\end{align*}
+</div>
+<div class="para">This is a bit ridiculous, but the bounds of <span class="process-math">\(\theta\)</span> are <span class="process-math">\([0,2\pi]\text{.}\)</span> Therefore, any integral involving <span class="process-math">\(\sin \theta\text{,}\)</span> <span class="process-math">\(\cos \theta\text{,}\)</span> or <span class="process-math">\(\sin \theta
+\cos \theta\)</span> is zero by symmetry. That (thankfully) removes all the but last two integrals.</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/example-sphere-parametrization.html">
+\begin{align*}
+\amp = \int_0^{2\pi} \int_0^\pi 96 \sin \phi + 128 \sin
+\phi \cos \phi d\phi d\theta \\
+\amp = 96 \int_0^{2\pi} d\theta \int_0^\pi \sin d\phi +
+128 \int_0^{2\pi} d\theta \int_0^\pi \sin \phi \cos \phi
+d\phi d\theta = 192 
+\end{align*}
+</div>
+</div></body>
+</html>

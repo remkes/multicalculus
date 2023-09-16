@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math"><article class="example example-like"><div class="para">The easiest example is calculating volume of a sphere of radius <span class="process-math">\(R\text{.}\)</span> The bounds are all constant: <span class="process-math">\(r \in
+[0,R\text{,}\)</span> <span class="process-math">\(\theta \in [0,2\pi]\)</span> and <span class="process-math">\(\phi \in
+[0,\pi]\text{.}\)</span> This describes any longitude, an colatitude, and all radii up to <span class="process-math">\(R\text{,}\)</span> thus giving the solid sphere. Since this is volume, the integrand is <span class="process-math">\(1\text{.}\)</span> I must also remember the Jacobian.</div>
+<div class="displaymath process-math">
+\begin{align*}
+\int_S 1 dV \amp = \int_0^{2\pi} \int_0^{\pi} \int_0^R
+r^2 \sin \phi dr d\phi d\theta\\
+\amp = \int_0^{2\pi} d\theta \int_0^{\pi} \sin \phi d
+\phi \int_0^R r^2 dr\\
+\amp = 2\pi \left( -\cos \phi \right)
+\Bigg|_0^{\pi} \frac{r^3}{3} \Bigg|_0^R\\
+\amp = 2\pi ( 1+1) \frac{R^3}{3} = \frac{4\pi R^3}{3}
+\end{align*}
+</div></article></body>
+</html>

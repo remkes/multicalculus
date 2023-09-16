@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math"><div class="solution solution-like">
+<div class="para">First, I need to calculate the partial derivatives.</div>
+<div class="displaymath process-math">
+\begin{align*}
+\frac{\del F_1}{\del u} \amp = \ln v \\
+\frac{\del F_1}{\del v} \amp = \frac{u}{v} \\
+\frac{\del F_2}{\del u} \amp = 2uv^2 \\
+\frac{\del F_2}{\del v} \amp = 2u^2v 
+\end{align*}
+</div>
+<div class="para">Then I put the partial derivative into the Jacobian matrix and take the determinant to calculate the Jacobian.</div>
+<div class="displaymath process-math">
+\begin{align*}
+J(f) \amp = \begin{pmatrix} 
+\ln v \amp  \frac{u}{v} \\
+2uv^2 \amp  2u^2 v
+\end{pmatrix} \\
+|J(f)| \amp = |\ln v (2u^2 v) - \frac{u}{v} 2uv^2 = 2u^2
+v\ln v - 2u^2 v| = |2u^2 v(\ln v - 1)|
+\end{align*}
+</div>
+</div></body>
+</html>

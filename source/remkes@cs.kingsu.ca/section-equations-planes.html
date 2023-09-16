@@ -1,0 +1,1164 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Equations of Planes</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Course Notes for Multivariable Calculus">
+<meta property="book:author" content="Remkes Kooistra">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "https://pretextbook.org/js/lib"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="https://pretextbook.org/js/0.3/pretext_search.js"></script><link href="https://pretextbook.org/css/0.7/pretext_search.css" rel="stylesheet" type="text/css">
+<script>js_version = 0.3</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.3/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.3/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.3/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link href="https://pretextbook.org/css/0.7/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.7/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.7/shell_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.7/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.7/navbar_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.7/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.7/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.7/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.7/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.7/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
+<a id="logo-link" class="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="book-calculus1.html"><span class="title">Course Notes for Multivariable Calculus</span></a></h1>
+<p class="byline">Remkes Kooistra</p>
+</div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<button id="closesearchresults" class="closesearchresults" onclick="document.getElementById('searchresultsplaceholder').style.display = 'none'; return false;">x</button><h2>Search Results: <span id="searchterms" class="searchterms"></span>
+</h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" aria-label="Show or hide table of contents"><span class="icon">☰</span><span class="name">Contents</span></button><button id="user-preferences-button" class="user-preferences-button button" title="Modify user preferences"><span id="avatarbutton" class="avatarbutton name">You!</span><div id="preferences_menu_holder" class="preferences_menu_holder hidden"><ol id="preferences_menu" class="preferences_menu" style="font-family: 'Roboto Serif', serif;">
+<li data-env="avatar" tabindex="-1">Choose avatar<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden avatar">
+<li data-val="You!" tabindex="-1">
+<span id="theYou!" class="avatarcheck">✔️</span>You!</li>
+<li data-val="😺" tabindex="-1">
+<span id="the😺" class="avatarcheck"></span>😺</li>
+<li data-val="👤" tabindex="-1">
+<span id="the👤" class="avatarcheck"></span>👤</li>
+<li data-val="👽" tabindex="-1">
+<span id="the👽" class="avatarcheck"></span>👽</li>
+<li data-val="🐶" tabindex="-1">
+<span id="the🐶" class="avatarcheck"></span>🐶</li>
+<li data-val="🐼" tabindex="-1">
+<span id="the🐼" class="avatarcheck"></span>🐼</li>
+<li data-val="🌈" tabindex="-1">
+<span id="the🌈" class="avatarcheck"></span>🌈</li>
+</ol>
+</li>
+<li data-env="fontfamily" tabindex="-1">Font family<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden fontfamily">
+<li data-val="face" data-change="OS" tabindex="-1" style="font-family: 'Open Sans'">
+<span id="theOS" class="ffcheck">✔️</span><span class="name">Open Sans</span><span class="sample">AaBbCc 123 PreTeXt</span>
+</li>
+<li data-val="face" data-change="RS" tabindex="-1" style="font-family: 'Roboto Serif'">
+<span id="theRS" class="ffcheck"></span><span class="name">Roboto Serif</span><span class="sample">AaBbCc 123 PreTeXt</span>
+</li>
+</ol>
+</li>
+<li data-env="font" tabindex="-1">Adjust font<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden fonts">
+<li>Size</li>
+<li><span id="thesize">12</span></li>
+<li data-val="size" data-change="-1" tabindex="-1" style="font-size: 80%">Smaller</li>
+<li data-val="size" data-change="1" tabindex="-1" style="font-size: 110%">Larger</li>
+<li>Width</li>
+<li><span id="thewdth">100</span></li>
+<li data-val="wdth" data-change="-5" tabindex="-1" style="font-variation-settings: 'wdth' 60">narrower</li>
+<li data-val="wdth" data-change="5" tabindex="-1" style="font-variation-settings: 'wdth' 150">wider</li>
+<li>Weight</li>
+<li><span id="thewght">400</span></li>
+<li data-val="wght" data-change="-50" tabindex="-1" style="font-weight: 200">thinner</li>
+<li data-val="wght" data-change="50" tabindex="-1" style="font-weight: 700">heavier</li>
+<li>Letter spacing</li>
+<li>
+<span id="thelspace">0</span><span class="byunits">/200</span>
+</li>
+<li data-val="lspace" data-change="-1" tabindex="-1">closer</li>
+<li data-val="lspace" data-change="1" tabindex="-1">f a r t h e r</li>
+<li>Word spacing</li>
+<li>
+<span id="thewspace">0</span><span class="byunits">/50</span>
+</li>
+<li data-val="wspace" data-change="-1" tabindex="-1">smaller gap </li>
+<li data-val="wspace" data-change="1" tabindex="-1">larger gap</li>
+<li>Line Spacing</li>
+<li>
+<span id="theheight">135</span><span class="byunits">/100</span>
+</li>
+<li data-val="height" data-change="-5" tabindex="-1" style="line-height: 1">closer<br>together</li>
+<li data-val="height" data-change="5" tabindex="-1" style="line-height: 1.75">further<br>apart</li>
+</ol>
+</li>
+<li data-env="atmosphere" tabindex="-1">Light/dark mode<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden atmosphere">
+<li data-val="default" tabindex="-1">
+<span id="thedefault" class="atmospherecheck">✔️</span>default</li>
+<li data-val="pastel" tabindex="-1">
+<span id="thepastel" class="atmospherecheck"></span>pastel</li>
+<li data-val="darktwilight" tabindex="-1">
+<span id="thedarktwilight" class="atmospherecheck"></span>twilight</li>
+<li data-val="dark" tabindex="-1">
+<span id="thedark" class="atmospherecheck"></span>dark</li>
+<li data-val="darkmidnight" tabindex="-1">
+<span id="thedarkmidnight" class="atmospherecheck"></span>midnight</li>
+</ol>
+</li>
+<li data-env="ruler" tabindex="-1">Reading ruler<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden ruler">
+<li data-val="none" tabindex="-1">
+<span id="thenone" class="rulercheck">✔️</span>none</li>
+<li data-val="underline" tabindex="-1">
+<span id="theunderline" class="rulercheck"></span>underline</li>
+<li data-val="lunderline" tabindex="-1">
+<span id="thelunderline" class="rulercheck"></span>L-underline</li>
+<li data-val="greybar" tabindex="-1">
+<span id="thegreybar" class="rulercheck"></span>grey bar</li>
+<li data-val="lightbox" tabindex="-1">
+<span id="thelightbox" class="rulercheck"></span>light box</li>
+<li data-val="sunrise" tabindex="-1">
+<span id="thesunrise" class="rulercheck"></span>sunrise</li>
+<li data-val="sunriseunderline" tabindex="-1">
+<span id="thesunriseunderline" class="rulercheck"></span>sunrise underline</li>
+<li class="moveQ">Motion by:</li>
+<li data-val="mouse" tabindex="-1">
+<span id="themouse" class="motioncheck">✔️</span>follow the mouse</li>
+<li data-val="arrow" tabindex="-1">
+<span id="thearrow" class="motioncheck"></span>up/down arrows - not yet</li>
+<li data-val="eye" tabindex="-1">
+<span id="theeye" class="motioncheck"></span>eye tracking - not yet</li>
+</ol>
+</li>
+</ol></div></button><span class="treebuttons"><a class="previous-button button" href="section-vector-operations.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="up-button button" href="chapter-week1.html" title="Up"><span class="icon">^</span><span class="name">Up</span></a><a class="next-button button" href="week1-activity.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a></span><div class="searchbox"><div class="searchwidget">
+<input id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search" onchange="doSearch()"><button id="searchbutton" class="searchbutton" type="button" onclick="doSearch()">🔍</button>
+</div></div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\def\vs{{\it vs. }}
+\def\cf{{\it cf. }}
+\def\viz{{\it viz. }}
+\def\ie{{\it i.e. }}
+\def\etc{{\it etc. }}
+\def\eg{{\it e.g. }}
+\def\etal{{\it et al .}}
+\def\via{{\it via }}
+\def\adhoc{{\it ad hoc }}
+\def\apriori{{\it apriori }}
+\def\Afrak{\mathfrak{A}}
+\def\Bfrak{\mathfrak{B}}
+\def\Cfrak{\mathfrak{C}}
+\def\Dfrak{\mathfrak{D}}
+\def\Efrak{\mathfrak{E}}
+\def\Ffrak{\mathfrak{F}}
+\def\Gfrak{\mathfrak{G}}
+\def\Hfrak{\mathfrak{H}}
+\def\Ifrak{\mathfrak{I}}
+\def\Jfrak{\mathfrak{J}}
+\def\Kfrak{\mathfrak{K}}
+\def\Lfrak{\mathfrak{L}}
+\def\Mfrak{\mathfrak{M}}
+\def\Nfrak{\mathfrak{N}}
+\def\Ofrak{\mathfrak{O}}
+\def\Pfrak{\mathfrak{P}}
+\def\Qfrak{\mathfrak{Q}}
+\def\Rfrak{\mathfrak{R}}
+\def\Sfrak{\mathfrak{S}}
+\def\Tfrak{\mathfrak{T}}
+\def\Ufrak{\mathfrak{U}}
+\def\Vfrak{\mathfrak{V}}
+\def\Wfrak{\mathfrak{W}}
+\def\Xfrak{\mathfrak{X}}
+\def\Yfrak{\mathfrak{Y}}
+\def\Zfrak{\mathfrak{Z}}
+\def\afrak{\mathfrak{a}}
+\def\bfrak{\mathfrak{b}}
+\def\cfrak{\mathfrak{c}}
+\def\dfrak{\mathfrak{d}}
+\def\efrak{\mathfrak{e}}
+\def\ffrak{\mathfrak{f}}
+\def\gfrak{\mathfrak{g}}
+\def\hfrak{\mathfrak{h}}
+\def\ifrak{\mathfrak{i}}
+\def\jfrak{\mathfrak{j}}
+\def\kfrak{\mathfrak{k}}
+\def\lfrak{\mathfrak{l}}
+\def\mfrak{\mathfrak{m}}
+\def\nfrak{\mathfrak{n}}
+\def\ofrak{\mathfrak{o}}
+\def\pfrak{\mathfrak{p}}
+\def\qfrak{\mathfrak{q}}
+\def\rfrak{\mathfrak{r}}
+\def\sfrak{\mathfrak{s}}
+\def\tfrak{\mathfrak{t}}
+\def\ufrak{\mathfrak{u}}
+\def\vfrak{\mathfrak{v}}
+\def\wfrak{\mathfrak{w}}
+\def\xfrak{\mathfrak{x}}
+\def\yfrak{\mathfrak{y}}
+\def\zfrak{\mathfrak{z}}
+\def\AA{\mathbb{A}}
+\def\BB{\mathbb{B}}
+\def\CC{\mathbb{C}}
+\def\DD{\mathbb{D}}
+\def\EE{\mathbb{E}}
+\def\FF{\mathbb{F}}
+\def\GG{\mathbb{G}}
+\def\HH{\mathbb{H}}
+\def\II{\mathbb{I}}
+\def\JJ{\mathbb{J}}
+\def\KK{\mathbb{K}}
+\def\LL{\mathbb{L}}
+\def\MM{\mathbb{M}}
+\def\NN{\mathbb{N}}
+\def\OO{\mathbb{O}}
+\def\PP{\mathbb{P}}
+\def\QQ{\mathbb{Q}}
+\def\RR{\mathbb{R}}
+\def\SS{\mathbb{S}}
+\def\TT{\mathbb{T}}
+\def\UU{\mathbb{U}}
+\def\VV{\mathbb{V}}
+\def\WW{\mathbb{W}}
+\def\XX{\mathbb{X}}
+\def\YY{\mathbb{Y}}
+\def\ZZ{\mathbb{Z}}
+\def\calA{\mathcal{A}}
+\def\calB{\mathcal{B}}
+\def\calC{\mathcal{C}}
+\def\calD{\mathcal{D}}
+\def\calE{\mathcal{E}}
+\def\calF{\mathcal{F}}
+\def\calG{\mathcal{G}}
+\def\calH{\mathcal{H}}
+\def\calI{\mathcal{I}}
+\def\calJ{\mathcal{J}}
+\def\calK{\mathcal{K}}
+\def\calL{\mathcal{L}}
+\def\calM{\mathcal{M}}
+\def\calN{\mathcal{N}}
+\def\calO{\mathcal{O}}
+\def\calP{\mathcal{P}}
+\def\calQ{\mathcal{Q}}
+\def\calR{\mathcal{R}}
+\def\calS{\mathcal{S}}
+\def\calT{\mathcal{T}}
+\def\calU{\mathcal{U}}
+\def\calV{\mathcal{V}}
+\def\calW{\mathcal{W}}
+\def\calX{\mathcal{X}}
+\def\calY{\mathcal{Y}}
+\def\calZ{\mathcal{Z}}
+\def\Ap{A^\prime}
+\def\Bp{B^\prime}
+\def\Cp{C^\prime}
+\def\Dp{D^\prime}
+\def\Ep{E^\prime}
+\def\Fp{F^\prime}
+\def\Gp{G^\prime}
+\def\Hp{H^\prime}
+\def\Ip{I^\prime}
+\def\Jp{J^\prime}
+\def\Kp{K^\prime}
+\def\Lp{L^\prime}
+\def\Mp{M^\prime}
+\def\Mp{N^\prime}
+\def\Op{O^\prime}
+\def\Pp{P^\prime}
+\def\Qp{Q^\prime}
+\def\Rp{R^\prime}
+\def\Sp{S^\prime}
+\def\Tp{T^\prime}
+\def\Up{U^\prime}
+\def\Vp{V^\prime}
+\def\Wp{W^\prime}
+\def\Xp{X^\prime}
+\def\Yp{Y^\prime}
+\def\Zp{Z^\prime}
+\def\ap{a^\prime}
+\def\bp{b^\prime}
+\def\cp{c^\prime}
+\def\dprime{d^\prime}
+\def\ep{e^\prime}
+\def\fp{f^\prime}
+\def\gp{g^\prime}
+\def\hp{h^\prime}
+\def\ip{i^\prime}
+\def\jp{j^\prime}
+\def\kp{k^\prime}
+\def\lp{l^\prime}
+\def\mp{m^\prime}
+\def\np{n^\prime}
+\def\op{o^\prime}
+\def\pp{p^\prime}
+\def\qp{q^\prime}
+\def\rp{r^\prime}
+\def\sp{s^\prime}
+\def\tp{t^\prime}
+\def\up{u^\prime}
+\def\vp{v^\prime}
+\def\wp{w^\prime}
+\def\xp{x^\prime}
+\def\yp{y^\prime}
+\def\zp{z^\prime}
+\def\App{A^{\prime\prime}}
+\def\Bpp{B^{\prime\prime}}
+\def\Cpp{C^{\prime\prime}}
+\def\Dpp{D^{\prime\prime}}
+\def\Epp{E^{\prime\prime}}
+\def\Fpp{F^{\prime\prime}}
+\def\Gpp{G^{\prime\prime}}
+\def\Hpp{H^{\prime\prime}}
+\def\Ipp{I^{\prime\prime}}
+\def\Jpp{J^{\prime\prime}}
+\def\Kpp{K^{\prime\prime}}
+\def\Lpp{L^{\prime\prime}}
+\def\Mpp{M^{\prime\prime}}
+\def\Mpp{N^{\prime\prime}}
+\def\Opp{O^{\prime\prime}}
+\def\Ppp{P^{\prime\prime}}
+\def\Qpp{Q^{\prime\prime}}
+\def\Rpp{R^{\prime\prime}}
+\def\Spp{S^{\prime\prime}}
+\def\Tpp{T^{\prime\prime}}
+\def\Upp{U^{\prime\prime}}
+\def\Vpp{V^{\prime\prime}}
+\def\Wpp{W^{\prime\prime}}
+\def\Xpp{X^{\prime\prime}}
+\def\Ypp{Y^{\prime\prime}}
+\def\Zpp{Z^{\prime\prime}}
+\def\app{a^{\prime\prime}}
+\def\bpp{b^{\prime\prime}}
+\def\cpp{c^{\prime\prime}}
+\def\dpp{d^{\prime\prime}}
+\def\epp{e^{\prime\prime}}
+\def\fpp{f^{\prime\prime}}
+\def\gpp{g^{\prime\prime}}
+\def\hpp{h^{\prime\prime}}
+\def\ipp{i^{\prime\prime}}
+\def\jpp{j^{\prime\prime}}
+\def\kpp{k^{\prime\prime}}
+\def\lpp{l^{\prime\prime}}
+\def\mpp{m^{\prime\prime}}
+\def\npp{n^{\prime\prime}}
+\def\opp{o^{\prime\prime}}
+\def\ppp{p^{\prime\prime}}
+\def\qpp{q^{\prime\prime}}
+\def\rpp{r^{\prime\prime}}
+\def\spp{s^{\prime\prime}}
+\def\tpp{t^{\prime\prime}}
+\def\upp{u^{\prime\prime}}
+\def\vpp{v^{\prime\prime}}
+\def\wpp{w^{\prime\prime}}
+\def\xpp{x^{\prime\prime}}
+\def\ypp{y^{\prime\prime}}
+\def\zpp{z^{\prime\prime}}
+\def\abar{\overline{a}}
+\def\bbar{\overline{b}}
+\def\cbar{\overline{c}}
+\def\dbar{\overline{d}}
+\def\ebar{\overline{e}}
+\def\fbar{\overline{f}}
+\def\gbar{\overline{g}}
+\def\ibar{\overline{i}}
+\def\jbar{\overline{j}}
+\def\kbar{\overline{k}}
+\def\lbar{\overline{l}}
+\def\mbar{\overline{m}}
+\def\nbar{\overline{n}}
+\def\obar{\overline{o}}
+\def\pbar{\overline{p}}
+\def\qbar{\overline{q}}
+\def\rbar{\overline{r}}
+\def\sbar{\overline{s}}
+\def\tbar{\overline{t}}
+\def\ubar{\overline{u}}
+\def\vbar{\overline{v}}
+\def\wbar{\overline{w}}
+\def\xbar{\overline{x}}
+\def\ybar{\overline{y}}
+\def\zbar{\overline{z}}
+\def\Abar{\overline{A}}
+\def\Bbar{\overline{B}}
+\def\Cbar{\overline{C}}
+\def\Dbar{\overline{D}}
+\def\Ebar{\overline{E}}
+\def\Fbar{\overline{F}}
+\def\Gbar{\overline{G}}
+\def\Hbar{\overline{H}}
+\def\Ibar{\overline{I}}
+\def\Jbar{\overline{J}}
+\def\Kbar{\overline{K}}
+\def\Lbar{\overline{L}}
+\def\Mbar{\overline{M}}
+\def\Nbar{\overline{N}}
+\def\Obar{\overline{O}}
+\def\Pbar{\overline{P}}
+\def\Qbar{\overline{Q}}
+\def\Rbar{\overline{R}}
+\def\Sbar{\overline{S}}
+\def\Tbar{\overline{T}}
+\def\Ubar{\overline{U}}
+\def\Vbar{\overline{V}}
+\def\Wbar{\overline{W}}
+\def\Xbar{\overline{X}}
+\def\Ybar{\overline{Y}}
+\def\Zbar{\overline{Z}}
+\def\aunder{\underline{a}}
+\def\bunder{\underline{b}}
+\def\cunder{\underline{c}}
+\def\dunder{\underline{d}}
+\def\eunder{\underline{e}}
+\def\funder{\underline{f}}
+\def\gunder{\underline{g}}
+\def\hunder{\underline{h}}
+\def\iunder{\underline{i}}
+\def\junder{\underline{j}}
+\def\kunder{\underline{k}}
+\def\lunder{\underline{l}}
+\def\munder{\underline{m}}
+\def\nunder{\underline{n}}
+\def\ounder{\underline{o}}
+\def\punder{\underline{p}}
+\def\qunder{\underline{q}}
+\def\runder{\underline{r}}
+\def\sunder{\underline{s}}
+\def\tunder{\underline{t}}
+\def\uunder{\underline{u}}
+\def\vunder{\underline{v}}
+\def\wunder{\underline{w}}
+\def\xunder{\underline{x}}
+\def\yunder{\underline{y}}
+\def\zunder{\underline{z}}
+\def\Aunder{\underline{A}}
+\def\atilde{\widetilde{a}}
+\def\btilde{\widetilde{b}}
+\def\ctilde{\widetilde{c}}
+\def\dtilde{\widetilde{d}}
+\def\etilde{\widetilde{e}}
+\def\ftilde{\widetilde{f}}
+\def\gtilde{\widetilde{g}}
+\def\htilde{\widetilde{h}}
+\def\itilde{\widetilde{i}}
+\def\jtilde{\widetilde{j}}
+\def\ktilde{\widetilde{k}}
+\def\ltilde{\widetilde{l}}
+\def\mtilde{\widetilde{m}}
+\def\ntilde{\widetilde{n}}
+\def\otilde{\widetilde{o}}
+\def\ptilde{\widetilde{p}}
+\def\qtilde{\widetilde{q}}
+\def\rtilde{\widetilde{r}}
+\def\stilde{\widetilde{s}}
+\def\ttilde{\widetilde{t}}
+\def\utilde{\widetilde{u}}
+\def\vtilde{\widetilde{v}}
+\def\wtilde{\widetilde{w}}
+\def\xtilde{\widetilde{x}}
+\def\ytilde{\widetilde{y}}
+\def\ztilde{\widetilde{z}}
+\def\Atilde{\widetilde{A}}
+\def\Btilde{\widetilde{B}}
+\def\Ctilde{\widetilde{C}}
+\def\Dtilde{\widetilde{D}}
+\def\Etilde{\widetilde{E}}
+\def\Ftilde{\widetilde{F}}
+\def\Gtilde{\widetilde{G}}
+\def\Htilde{\widetilde{H}}
+\def\Itilde{\widetilde{I}}
+\def\Jtilde{\widetilde{J}}
+\def\Ktilde{\widetilde{K}}
+\def\Ltilde{\widetilde{L}}
+\def\Mtilde{\widetilde{M}}
+\def\Ntilde{\widetilde{N}}
+\def\Otilde{\widetilde{O}}
+\def\Ptilde{\widetilde{P}}
+\def\Qtilde{\widetilde{Q}}
+\def\Rtilde{\widetilde{R}}
+\def\Stilde{\widetilde{S}}
+\def\Ttilde{\widetilde{T}}
+\def\Utilde{\widetilde{U}}
+\def\Vtilde{\widetilde{V}}
+\def\Wtilde{\widetilde{W}}
+\def\Xtilde{\widetilde{X}}
+\def\Ytilde{\widetilde{Y}}
+\def\Ztilde{\widetilde{Z}}
+\def\Alphatilde{\widetilde{\Alpha}}
+\def\Betatilde{\widetilde{\Beta}}
+\def\Gammatilde{\widetilde{\Gamma}}
+\def\Deltatilde{\widetilde{\Delta}}
+\def\Epsilontilde{\widetilde{\Epsilon}}
+\def\Zetatilde{\widetilde{\Zeta}}
+\def\Etatilde{\widetilde{\Eta}}
+\def\Thetatilde{\widetilde{\Theta}}
+\def\Iotatilde{\widetilde{\Iota}}
+\def\Kappatilde{\widetilde{\Kappa}}
+\def\Lambdatilde{\widetilde{\Lamdba}}
+\def\Mutilde{\widetilde{\Mu}}
+\def\Nutilde{\widetilde{\Nu}}
+\def\Xitilde{\widetilde{\Xi}}
+\def\Omicrontilde{\widetilde{\Omicron}}
+\def\Pitilde{\widetilde{\Pi}}
+\def\Rhotilde{\widetilde{\Rho}}
+\def\Sigmatilde{\widetilde{\Sigma}}
+\def\Tautilde{\widetilde{\Tau}}
+\def\Upsilontilde{\widetilde{\Upsilon}}
+\def\Phitilde{\widetilde{\Phi}}
+\def\Chitilde{\widetilde{\Chi}}
+\def\Psitilde{\widetilde{\Psi}}
+\def\Omegatilde{\widetilde{\Omega}}
+\def\alphatilde{\widetilde{\alpha}}
+\def\betatilde{\widetilde{\beta}}
+\def\gammatilde{\widetilde{\gamma}}
+\def\deltatilde{\widetilde{\delta}}
+\def\epsilontilde{\widetilde{\epsilon}}
+\def\zetatilde{\widetilde{\zeta}}
+\def\etatilde{\widetilde{\eta}}
+\def\thetatilde{\widetilde{\theta}}
+\def\iotatilde{\widetilde{\iota}}
+\def\kappatilde{\widetilde{\kappa}}
+\def\lambdatilde{\widetilde{\lamdba}}
+\def\mutilde{\widetilde{\mu}}
+\def\nutilde{\widetilde{\nu}}
+\def\xitilde{\widetilde{\xi}}
+\def\omicrontilde{\widetilde{\omicron}}
+\def\pitilde{\widetilde{\pi}}
+\def\rhotilde{\widetilde{\rho}}
+\def\sigmatilde{\widetilde{\sigma}}
+\def\tautilde{\widetilde{\tau}}
+\def\upsilontilde{\widetilde{\upsilon}}
+\def\phitilde{\widetilde{\phi}}
+\def\chitilde{\widetilde{\chi}}
+\def\psitilde{\widetilde{\psi}}
+\def\omegatilde{\widetilde{\omega}}
+\def\Alphabar{\bar{\Alpha}}
+\def\Betabar{\bar{\Beta}}
+\def\Gammabar{\bar{\Gamma}}
+\def\Deltabar{\bar{\Delta}}
+\def\Epsilonbar{\bar{\Epsilon}}
+\def\Zetabar{\bar{\Zeta}}
+\def\Etabar{\bar{\Eta}}
+\def\Thetabar{\bar{\Theta}}
+\def\Iotabar{\bar{\Iota}}
+\def\Kappabar{\bar{\Kappa}}
+\def\Lambdabar{\bar{\Lamdba}}
+\def\Mubar{\bar{\Mu}}
+\def\Nubar{\bar{\Nu}}
+\def\Xibar{\bar{\Xi}}
+\def\Omicronbar{\bar{\Omicron}}
+\def\Pibar{\bar{\Pi}}
+\def\Rhobar{\bar{\Rho}}
+\def\Sigmabar{\bar{\Sigma}}
+\def\Taubar{\bar{\Tau}}
+\def\Upsilonbar{\bar{\Upsilon}}
+\def\Phibar{\bar{\Phi}}
+\def\Chibar{\bar{\Chi}}
+\def\Psibar{\bar{\Psi}}
+\def\Omegabar{\bar{\Omega}}
+\def\alphabar{\bar{\alpha}}
+\def\betabar{\bar{\beta}}
+\def\gammabar{\bar{\gamma}}
+\def\deltabar{\bar{\delta}}
+\def\epsilonbar{\bar{\epsilon}}
+\def\zetabar{\bar{\zeta}}
+\def\etabar{\bar{\eta}}
+\def\thetabar{\bar{\theta}}
+\def\iotabar{\bar{\iota}}
+\def\kappabar{\bar{\kappa}}
+\def\lambdabar{\bar{\lamdba}}
+\def\mubar{\bar{\mu}}
+\def\nubar{\bar{\nu}}
+\def\xibar{\bar{\xi}}
+\def\omicronbar{\bar{\omicron}}
+\def\pibar{\bar{\pi}}
+\def\rhobar{\bar{\rho}}
+\def\sigmabar{\bar{\sigma}}
+\def\taubar{\bar{\tau}}
+\def\upsilonbar{\bar{\upsilon}}
+\def\phibar{\bar{\phi}}
+\def\chibar{\bar{\chi}}
+\def\psibar{\bar{\psi}}
+\def\omegabar{\bar{\omega}}
+\def\del{\partial}
+\def\delbar{\overline{\partial}}
+\def\Cech{\check{C}}
+\def\half{\frac{1}{2}}
+\def\defeq{\mathrel{\mathop:}=}
+\def\alg{\mathrm{alg}}
+\def\Alt{\mathrm{Alt}}
+\def\Amp{\mathrm{Amp}}
+\def\Arg{\mathrm{Arg}}
+\def\an{\mathrm{an}}
+\def\anti{\mathrm{anti}}
+\def\Ap{\mathrm{Ap}}
+\def\arcsinh{\mathrm{arcsinh\hspace{0.07cm}}}
+\def\arccosh{\mathrm{arccosh\hspace{0.07cm}}}
+\def\arctanh{\mathrm{arctanh\hspace{0.07cm}}}
+\def\arccsch{\mathrm{arccsch\hspace{0.07cm}}}
+\def\arcsech{\mathrm{arcsech\hspace{0.07cm}}}
+\def\arccoth{\mathrm{arccoth\hspace{0.07cm}}}
+\def\arccsc{\mathrm{arccsc\hspace{0.07cm}}}
+\def\arcsec{\mathrm{arcsec\hspace{0.07cm}}}
+\def\arccot{\mathrm{arccot\hspace{0.07cm}}}
+\def\arg{\mathrm{arg}}
+\def\BC{\mathrm{BC}}
+\def\Bel{\mathrm{Bel}}
+\def\calCH{\mathcal{CH}}
+\def\csch{\mathrm{csch}\hspace{0.07cm}}
+\def\CH{\mathrm{CH}}
+\def\ch{\mathrm{ch}}
+\def\closed{\mathrm{closed}}
+\def\codim{\mathrm{codim}}
+\def\coth{\mathrm{coth}\hspace{0.07cm}}
+\def\Coh{\mathfrak{Coh}}
+\def\Coker{\mathrm{Coker}}
+\def\Cone{\mathrm{Cone}}
+\def\darg{d\mathrm{arg}}
+\def\Db{\mathrm{Db}}
+\def\dclosed{\mathrm{d-closed}}
+\def\deg{\mathrm{deg}}
+\def\dim{\mathrm{dim}}
+\def\divisor{\mathrm{div}}
+\def\dlog{d\mathrm{log}}
+\def\DNE{\mathrm{DNE}}
+\def\DR{\mathrm{DR}}
+\def\DST{\mathrm{DST}}
+\def\exp{\mathrm{exp}}
+\def\FLB{\mathrm{FLB}}
+\def\FLS{\mathrm{FLS}}
+\def\Gr{\mathrm{Gr}}
+\def\Hzar{H_{\mathrm{Zar}}}
+\def\Hol{\mathrm{Hol}}
+\def\Id{\mathrm{Id}}
+\def\Image{\mathrm{Im}}
+\def\Ka{\mathcal{K}_A}
+\def\Ker{\mathrm{Ker}}
+\def\kod{\mathrm{kod}}
+\def\Kx{\mathcal{K}_X}
+\def\Kz{\mathcal{K}_Z}
+\def\log{\mathrm{log}}
+\def\Log{\mathrm{Log}}
+\def\Li{\mathrm{Li}}
+\def\min{\mathrm{min}}
+\def\Mon{\mathrm{Mon}}
+\def\Nef{\mathrm{Nef}}
+\def\NS{\mathrm{NS}}
+\def\Oa{\mathcal{O}_A}
+\def\Ox{\mathcal{O}_X}
+\def\Oz{\mathcal{O}_Z}
+\def\Perp{\mathrm{Perp}}
+\def\Pic{\mathrm{Pic}}
+\def\Proj{\mathrm{Proj}}
+\def\rank{\mathrm{rank}}
+\def\Rat{\mathrm{Rat}}
+\def\Real{\mathrm{Re}}
+\def\reg{\mathrm{reg}}
+\def\Res{\mathrm{Res}}
+\def\res{\mathrm{res}}
+\def\Ric{\mathrm{Ric}}
+\def\sech{\mathrm{sech}\hspace{0.07cm}}
+\def\Span{\mathrm{Span}}
+\def\Spec{\mathrm{Spec}}
+\def\sing{\mathrm{sing}}
+\def\Singx{\mathrm{Sing}(X)}
+\def\sheafKer{\mathcal{\Ker}}
+\def\sheafIm{\mathcal{\Im}}
+\def\Span{\mathrm{Span}}
+\def\Spin{\mathrm{Spin}}
+\def\Str{\mathrm{Str}}
+\def\td{\mathrm{td}}
+\def\tr{\mathrm{tr}}
+\def\Todd{\mathrm{Todd}}
+\def\tor{\mathrm{tor}}
+\def\trdeg{\mathrm{trdeg}}
+\def\Zar{\mathrm{Zar}}
+\def\ZFLS{\mathrm{ZFLS}}
+
+  \usepackage{tikz}
+  \usepackage{tkz-graph}
+  \usepackage{tkz-euclide}
+  \usetikzlibrary{patterns}
+  \usetikzlibrary{positioning}
+  \usetikzlibrary{matrix,arrows}
+  \usetikzlibrary{calc}
+  \usetikzlibrary{shapes}
+  \usetikzlibrary{through,intersections,decorations,shadows,fadings}
+  \usepackage{pgfplots}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural">
+<li><div class="toc-item"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
+<li>
+<div class="toc-item"><a href="chapter-week1.html" class="internal"><span class="codenumber">1</span> <span class="title">Week 1</span></a></div>
+<ul class="structural">
+<li>
+<div class="toc-item"><a href="section-vectors.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Vectors in <span class="process-math">\(\RR^2\)</span> and <span class="process-math">\(\RR^3\)</span></span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-vectors.html#subsection-describing-space" class="internal"><span class="codenumber">1.1.1</span> <span class="title">Describing Space</span></a></div></li>
+<li><div class="toc-item"><a href="section-vectors.html#subsection-point-or-directions" class="internal"><span class="codenumber">1.1.2</span> <span class="title">Points or Directions?</span></a></div></li>
+<li><div class="toc-item"><a href="section-vectors.html#subsection-local-direction-vectors" class="internal"><span class="codenumber">1.1.3</span> <span class="title">Local Direction Vectors</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section-vector-operations.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Vector Operations</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-vector-operations.html#subsection-linear-operations" class="internal"><span class="codenumber">1.2.1</span> <span class="title">Vector Arithmetic</span></a></div></li>
+<li><div class="toc-item"><a href="section-vector-operations.html#subsection-dot-product" class="internal"><span class="codenumber">1.2.2</span> <span class="title">The Dot Product</span></a></div></li>
+<li><div class="toc-item"><a href="section-vector-operations.html#subsection-cross-product" class="internal"><span class="codenumber">1.2.3</span> <span class="title">The Cross Product</span></a></div></li>
+<li><div class="toc-item"><a href="section-vector-operations.html#subsection-angular-motion" class="internal"><span class="codenumber">1.2.4</span> <span class="title">Angular Motion</span></a></div></li>
+</ul>
+</li>
+<li class="active">
+<div class="toc-item"><a href="section-equations-planes.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Equations of Planes</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-equations-planes.html#subsection-loci-definition" class="internal"><span class="codenumber">1.3.1</span> <span class="title">Definition of a Locus</span></a></div></li>
+<li><div class="toc-item"><a href="section-equations-planes.html#subsection-dot-product-and-loci" class="internal"><span class="codenumber">1.3.2</span> <span class="title">Dot Products and Loci</span></a></div></li>
+<li><div class="toc-item"><a href="section-equations-planes.html#subsection-planes-algorithm" class="internal"><span class="codenumber">1.3.3</span> <span class="title">An Algorithm for Equations of Planes</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="week1-activity.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Week 1 Activity</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="week1-activity.html#problems-vectors" class="internal"><span class="codenumber">1.4.1</span> <span class="title">Vector Arithmetic</span></a></div></li>
+<li><div class="toc-item"><a href="week1-activity.html#subsection-activity-equations-of-planes" class="internal"><span class="codenumber">1.4.2</span> <span class="title">Equations of Planes and Hyperplanes</span></a></div></li>
+<li><div class="toc-item"><a href="week1-activity.html#subsection-week1-concepts" class="internal"><span class="codenumber">1.4.3</span> <span class="title">Conceptual Review Questions</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="chapter-week2.html" class="internal"><span class="codenumber">2</span> <span class="title">Week 2</span></a></div>
+<ul class="structural">
+<li>
+<div class="toc-item"><a href="section-parametric-curves.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Parametric Curves</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-parametric-curves.html#subsection-parametric-curves-definition" class="internal"><span class="codenumber">2.1.1</span> <span class="title">Definition of Parametric Cuves</span></a></div></li>
+<li><div class="toc-item"><a href="section-parametric-curves.html#subsection-parametric-curves-examples" class="internal"><span class="codenumber">2.1.2</span> <span class="title">Parametric Curves</span></a></div></li>
+<li><div class="toc-item"><a href="section-parametric-curves.html#subsection-varied-parametrization" class="internal"><span class="codenumber">2.1.3</span> <span class="title">Varied Parametrizations</span></a></div></li>
+<li><div class="toc-item"><a href="section-parametric-curves.html#subsection-reparametrization" class="internal"><span class="codenumber">2.1.4</span> <span class="title">Reparametrization</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section-calculus-of-parametric-curves.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Calculus of Parametric Curves</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-calculus-of-parametric-curves.html#subsection-curve-tangents" class="internal"><span class="codenumber">2.2.1</span> <span class="title">Tangents</span></a></div></li>
+<li><div class="toc-item"><a href="section-calculus-of-parametric-curves.html#subsection-arc-length" class="internal"><span class="codenumber">2.2.2</span> <span class="title">Arc Length</span></a></div></li>
+<li><div class="toc-item"><a href="section-calculus-of-parametric-curves.html#subsection-parametrization-by-arclength" class="internal"><span class="codenumber">2.2.3</span> <span class="title">Parametrization by Arclength</span></a></div></li>
+<li><div class="toc-item"><a href="section-calculus-of-parametric-curves.html#subsection-arclength-and-tangents" class="internal"><span class="codenumber">2.2.4</span> <span class="title">Arclength and Tangents</span></a></div></li>
+<li><div class="toc-item"><a href="section-calculus-of-parametric-curves.html#subsection-curvature" class="internal"><span class="codenumber">2.2.5</span> <span class="title">Curvature</span></a></div></li>
+<li><div class="toc-item"><a href="section-calculus-of-parametric-curves.html#subsection-normals" class="internal"><span class="codenumber">2.2.6</span> <span class="title">Normals</span></a></div></li>
+<li><div class="toc-item"><a href="section-calculus-of-parametric-curves.html#subsection-torsion" class="internal"><span class="codenumber">2.2.7</span> <span class="title">Torsion</span></a></div></li>
+<li><div class="toc-item"><a href="section-calculus-of-parametric-curves.html#subsection-acceleration" class="internal"><span class="codenumber">2.2.8</span> <span class="title">Acceleration and Movement in Space</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="week2-activity.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Week 2 Activity</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="week2-activity.html#problems-sketching-parametric-curves" class="internal"><span class="codenumber">2.3.1</span> <span class="title">Examples Parametric Curves</span></a></div></li>
+<li><div class="toc-item"><a href="week2-activity.html#problems-reparametrization" class="internal"><span class="codenumber">2.3.2</span> <span class="title">Reparametrization</span></a></div></li>
+<li><div class="toc-item"><a href="week2-activity.html#problems-arclength" class="internal"><span class="codenumber">2.3.3</span> <span class="title">Arclength</span></a></div></li>
+<li><div class="toc-item"><a href="week2-activity.html#problems-parametrization-by-arclength" class="internal"><span class="codenumber">2.3.4</span> <span class="title">Parametrization by Arclength</span></a></div></li>
+<li><div class="toc-item"><a href="week2-activity.html#problems-tangents-parametric-curves" class="internal"><span class="codenumber">2.3.5</span> <span class="title">Tangents to Parametric Curves</span></a></div></li>
+<li><div class="toc-item"><a href="week2-activity.html#problems-curvature-torsion" class="internal"><span class="codenumber">2.3.6</span> <span class="title">Full Descriptions of Curves in <span class="process-math">\(\RR^3\)</span></span></a></div></li>
+<li><div class="toc-item"><a href="week2-activity.html#week2-concepts" class="internal"><span class="codenumber">2.3.7</span> <span class="title">Conceptual Review Questions</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="chapter-week3.html" class="internal"><span class="codenumber">3</span> <span class="title">Week 3</span></a></div>
+<ul class="structural">
+<li>
+<div class="toc-item"><a href="section-scalar-fields.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Scalar Fields</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-scalar-fields.html#section-scalar-field-definitions" class="internal"><span class="codenumber">3.1.1</span> <span class="title">Definitions</span></a></div></li>
+<li><div class="toc-item"><a href="section-scalar-fields.html#section-graphs" class="internal"><span class="codenumber">3.1.2</span> <span class="title">Geometry and Graphs of Functions</span></a></div></li>
+<li><div class="toc-item"><a href="section-scalar-fields.html#section-contour-plots" class="internal"><span class="codenumber">3.1.3</span> <span class="title">Contour Plots</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section-scalar-field-limits.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Multivariable Limits</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-scalar-field-limits.html#subsection-scalar-field-limits-definitions" class="internal"><span class="codenumber">3.2.1</span> <span class="title">Definition of Limits of Multivariable Functions</span></a></div></li>
+<li><div class="toc-item"><a href="section-scalar-field-limits.html#subsection-evaluating-multivariable-limits" class="internal"><span class="codenumber">3.2.2</span> <span class="title">Evaluating Multivariable Limits</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section-partial-derivatives.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Partial Derivatives</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-partial-derivatives.html#subsection-partial-deriavties-definition" class="internal"><span class="codenumber">3.3.1</span> <span class="title">Definition</span></a></div></li>
+<li><div class="toc-item"><a href="section-partial-derivatives.html#subsection-differentiability" class="internal"><span class="codenumber">3.3.2</span> <span class="title">Differentiability</span></a></div></li>
+<li><div class="toc-item"><a href="section-partial-derivatives.html#subsection-clairaut" class="internal"><span class="codenumber">3.3.3</span> <span class="title">Higher Partial Derivatives and Clairaut’s Theorem</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="section-gradients.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Gradients</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-gradients.html#subsection-gradient-definition" class="internal"><span class="codenumber">3.4.1</span> <span class="title">Definition of the Gradient</span></a></div></li>
+<li><div class="toc-item"><a href="section-gradients.html#subsection-gradient-interpretation" class="internal"><span class="codenumber">3.4.2</span> <span class="title">Interpretation of the Gradient</span></a></div></li>
+<li><div class="toc-item"><a href="section-gradients.html#subsection-gradient-examples" class="internal"><span class="codenumber">3.4.3</span> <span class="title">Gradient Examples</span></a></div></li>
+<li><div class="toc-item"><a href="section-gradients.html#subsection-gradient-extensions" class="internal"><span class="codenumber">3.4.4</span> <span class="title">Extensions of the Gradient</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="week3-activity.html" class="internal"><span class="codenumber">3.5</span> <span class="title">Week 3 Activity</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="week3-activity.html#problems-contour-plots" class="internal"><span class="codenumber">3.5.1</span> <span class="title">Contour Plots</span></a></div></li>
+<li><div class="toc-item"><a href="week3-activity.html#activity-partial-derivatives" class="internal"><span class="codenumber">3.5.2</span> <span class="title">Partial Derivatives</span></a></div></li>
+<li><div class="toc-item"><a href="week3-activity.html#activity-gradients" class="internal"><span class="codenumber">3.5.3</span> <span class="title">Gradients</span></a></div></li>
+<li><div class="toc-item"><a href="week3-activity.html#week3-concepts" class="internal"><span class="codenumber">3.5.4</span> <span class="title">Conceptual Review Questions</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><div class="toc-item"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="section-equations-planes"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">1.3</span> <span class="title">Equations of Planes</span>
+</h2>
+<section class="subsection" id="subsection-loci-definition"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.3.1</span> <span class="title">Definition of a Locus</span>
+</h3>
+<div class="para" id="p-48">There are many ways to mathematically describe an geometric object. Cartesian geometry allows for perhaps the most powerful idea: the locus. I’ll define this in <span class="process-math">\(\RR^3\text{,}\)</span> but the definition is general to any Euclidean space.</div>
+<article class="definition definition-like" id="definition-14"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.3.1</span><span class="period">.</span>
+</h4>
+<div class="para" id="p-49">Consider an equation in the variables <span class="process-math">\(x,y,z\text{.}\)</span> The <dfn class="terminology">locus</dfn> in <span class="process-math">\(\RR^3\)</span> of this equation is the set of vectors that satisfy the equation. The plural of a locus is <dfn class="terminology">loci</dfn>.</div></article><div class="para" id="p-50">In general, the equation can be of any sort. The unit circle in <span class="process-math">\(\RR^2\)</span> is most commonly defined as the locus of the equation <span class="process-math">\(x^2 + y^2 = 1\text{.}\)</span> The graph of a single-variable function is the locus (also in <span class="process-math">\(\RR^2\)</span>) of the equation <span class="process-math">\(y = f(x)\text{.}\)</span> My goal in this section is equation of places, which are flat. Flat objects arise as loci of linear equations. Let me remind you of that definition.</div>
+<article class="definition definition-like" id="definition-linear-equation"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.3.2</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="p-51">
+<div class="para">Let <span class="process-math">\(a\text{,}\)</span> <span class="process-math">\(b\text{,}\)</span> <span class="process-math">\(c\)</span> and <span class="process-math">\(d\)</span> be real numbers. A <dfn class="terminology">linear equation</dfn> in the variables <span class="process-math">\(x,y,z\)</span> is an equation of the following form.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+a x + b y + c z = d 
+\end{equation*}
+</div>
+</div></article><div class="para" id="p-52">The most familiar linear loci are lines. Very briefly, let me redefined a line in <span class="process-math">\(\RR^2\text{.}\)</span> (A line in <span class="process-math">\(\RR^3\)</span> needs a different definition; in this course, one way to describe lines is as parametric curves, as in <a href="section-parametric-curves.html" class="internal" title="Section 2.1: Parametric Curves">Section 2.1</a>.)</div>
+<article class="definition definition-like" id="definition-16"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.3.3</span><span class="period">.</span>
+</h4>
+<div class="para" id="p-53">A <dfn class="terminology">line</dfn> in <span class="process-math">\(\RR^2\)</span> is the locus of the equation <span class="process-math">\(ax + by = c\)</span> for <span class="process-math">\(a,b,c \in \RR\text{.}\)</span> The line goes through the origin if <span class="process-math">\(c=0\text{.}\)</span>
+</div></article><article class="definition definition-like" id="definition-17"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.3.4</span><span class="period">.</span>
+</h4>
+<div class="para" id="p-54">A <dfn class="terminology">plane</dfn> in <span class="process-math">\(\RR^3\)</span> is the locus of the linear equation <span class="process-math">\(ax + by + cz = d\text{.}\)</span>  The plane goes through the origin if <span class="process-math">\(d=0\text{.}\)</span>
+</div></article><div class="para logical" id="p-55">
+<div class="para">Notes that the equation for a locus is not unique; many equations may describe the same locus. Since they are equations, I can change them by doing the same thing to both sides (hence preserving the equality). Consider the plane given by this equation.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+3x - y + 5z = 12
+\end{equation*}
+</div>
+<div class="para">I can multiply both sides by <span class="process-math">\(-1\)</span> and still describe the same plane.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+-3x + y - 5z = -12
+\end{equation*}
+</div>
+<div class="para">I could also multiply the original equation by any constant, say <span class="process-math">\(100\text{,}\)</span> and still describe the same plane.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+300x - 100y + 500z = 1200
+\end{equation*}
+</div>
+<div class="para">Finally, I must be careful multiplying by zero (or any expressing that might evaluate to zero). If I multiply both sides of the equation by zero, I get a trivial equation.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+(0)(3x - y + 5z) = (0)(12) \implies 0 = 0 
+\end{equation*}
+</div>
+<div class="para">The equation <span class="process-math">\(0=0\)</span> describes all points, not just the plane, so I have destroyed the locus. As with many other places in mathematics, multiplying or dividing by zero always needs to be the back of you mind as something to be careful about.</div>
+</div></section><section class="subsection" id="subsection-dot-product-and-loci"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.3.2</span> <span class="title">Dot Products and Loci</span>
+</h3>
+<div class="para logical" id="p-56">
+<div class="para">Loci are the solutions to one of more linear equations. These linear equation can be re-interpreted and expressed via via dot products. Consider, again, the  linear equation in <span class="process-math">\(\RR^3\text{.}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+ax + by + cz = d 
+\end{equation*}
+</div>
+</div>
+<div class="para logical" id="p-57">
+<div class="para">I can think  of the variables <span class="process-math">\(a,b,c\)</span> as the components of a vector <span class="process-math">\(u = (a,b,c) \in \RR^3\text{.}\)</span> Let me use <span class="process-math">\(v\)</span> to also label the vector of variables: <span class="process-math">\(v = (x,y,z)\text{.}\)</span> I can re-write the linear equation using these two vectors.</div>
+<div class="displaymath process-math" id="md-3">
+\begin{align*}
+ax + by + cd \amp = d\\
+(a,b,c) \cdot (x,y,z) \amp = d \\
+u \cdot v \amp = d 
+\end{align*}
+</div>
+</div>
+<div class="para logical" id="p-58">
+<div class="para">In this way, a linear equation specifies that the dot product result of a variable vector <span class="process-math">\(v\)</span> with a fixed vector <span class="process-math">\(u\)</span> must have the result <span class="process-math">\(d\text{.}\)</span> In this light, a plane in <span class="process-math">\(\RR^3\)</span> is given by the equation</div>
+<div class="displaymath process-math">
+\begin{equation*}
+(a,b,c) \cdot (x,y,z) = d\text{.}
+\end{equation*}
+</div>
+<div class="para">This plane is precisely all vectors whose dot product with the vector <span class="process-math">\((a,b,c)\)</span> produces the fixed number <span class="process-math">\(d\text{.}\)</span> If <span class="process-math">\(d=0\)</span> (i.e., if the plane goes through the origin), the equation become</div>
+<div class="displaymath process-math">
+\begin{equation*}
+(a,b,c) \cdot (x,y,z) = d\text{.}
+\end{equation*}
+</div>
+<div class="para">A dot product of zero indicates that the two inputs to the dot product are perpendicular. Therefore, a plane through the origin is the set of all vectors which are perpendicular to a fixed vector <span class="process-math">\((a,b,c)\text{.}\)</span> This leads to an important definition.</div>
+</div>
+<article class="definition definition-like" id="definition-18"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.3.5</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="p-59">
+<div class="para">Let <span class="process-math">\(P\)</span> be a plane in <span class="process-math">\(\RR^3\)</span> determined by the equation</div>
+<div class="displaymath process-math">
+\begin{equation*}
+(a,b,c) \cdot (x,y,z) = d \text{.}
+\end{equation*}
+</div>
+<div class="para">The vector <span class="process-math">\((a,b,c)\)</span> is called the <dfn class="terminology">normal to the plane</dfn>.</div>
+</div></article><div class="para" id="p-60">If <span class="process-math">\(d=0\text{,}\)</span> the plane or hyperplane is perpendicular to its normal. The remark thing is this: the notion of orthogonality of the normal still works when <span class="process-math">\(d \neq 0\text{.}\)</span> In this case, the normal is a <em class="emphasis">local</em> perpendicular direction from any point on the  plane.  Treating any such point as a local origin, the normal points in a direction perpendicular to all the <em class="emphasis">local direction</em> vectors which lie on the plane. This is the key of understanding and describing planes in <span class="process-math">\(\RR^3\text{.}\)</span>
+</div></section><section class="subsection" id="subsection-planes-algorithm"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.3.3</span> <span class="title">An Algorithm for Equations of Planes</span>
+</h3>
+<div class="para" id="p-61">Now I can build a general process for finding the equation of a plane in <span class="process-math">\(\RR^3\text{.}\)</span> Using the equations above, I need two pieces of information: the (local direction) normal <span class="process-math">\((a,b,c)\)</span> and the constant <span class="process-math">\(d\text{.}\)</span>
+</div>
+<div class="para logical" id="p-62">
+<div class="para">I’m going to describe three ways of calcualting the equation of a plane in <span class="process-math">\(\RR^3\text{,}\)</span> each starting from different initial information. All three of these collections of data uniquely determine a plane.</div>
+<ul class="disc">
+<li id="li-1"><div class="para" id="p-derived-li-1">A point and the normal.</div></li>
+<li id="li-2"><div class="para" id="p-derived-li-2">A point and two local directions.</div></li>
+<li id="li-3"><div class="para" id="p-derived-li-3">Three points.</div></li>
+</ul>
+<div class="para">I’ll describe the algorithm for all three of these in order, since the calculations get longer in each step of this list.</div>
+</div>
+<div class="para" id="p-63">In the first description, I am actually given the normal <span class="process-math">\((a,b,c)\)</span> and some point <span class="process-math">\((x_0, y_0, z_0)\)</span> on the plane, I only need to calculate <span class="process-math">\(d\text{.}\)</span> To do so, I just evaluate the left side of the equation of the plane: doing so is equal to the right side, which is just <span class="process-math">\(d\text{.}\)</span> Let me show some examples.</div>
+<article class="example example-like" id="example-1"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-1"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.3.6</span><span class="period">.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-1"><article class="example example-like"><div class="para" id="p-64">Say that I am given the normal <span class="process-math">\((0, -2, -3)\)</span> and the point <span class="process-math">\((1,-7,5)\text{.}\)</span> What is the unique plane described by this data?</div> <div class="para logical" id="p-65">
+<div class="para">I calculate the left side of the equation of the plane, which is the dot product of the point and the normal. This will result in the constant <span class="process-math">\(d\text{.}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+(0,-2,-3) \cdot (1, -7, 5) = 0 + 14 - 15 = -1 = d
+\end{equation*}
+</div>
+<div class="para">So <span class="process-math">\(d = -1\text{,}\)</span> which means I can write the equation of the plane. The coefficients of the variables are the coordinates of the normal.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+0x - 2y - 3z = -1 
+\end{equation*}
+</div>
+<div class="para">There is always some variability in how to write these equations. Since the <span class="process-math">\(x\)</span> variable is multiplied by zero, I can remove it. I can also multiply both sides by <span class="process-math">\(-1\)</span> if I wanted to.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+2y + 3z = 1 
+\end{equation*}
+</div>
+<div class="para">This equation also describes the same plane.</div>
+</div></article></div>
+<article class="example example-like" id="example-2"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-2"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.3.7</span><span class="period">.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-2"><article class="example example-like"><div class="para" id="p-66">Say that I am given the normal <span class="process-math">\((-5, 1, 4)\)</span> and the point <span class="process-math">\((0,3,11)\text{.}\)</span> What is the unique plane described by this data?</div> <div class="para logical" id="p-67">
+<div class="para">I calculate the left side of the equation of the plane, which is the dot product of the point and the normal. This will result in the constant <span class="process-math">\(d\text{.}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+(-5,1,4) \cdot (0,3,11) = 0 + 3 + 44 = 47 
+\end{equation*}
+</div>
+<div class="para">So <span class="process-math">\(d = 47\text{,}\)</span> which means I can write the equation of the plane. The coefficients of the variables are the coordinates of the normal.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+-5x + y + 4z = 47
+\end{equation*}
+</div>
+</div></article></div>
+<article class="example example-like" id="example-3"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-3"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.3.8</span><span class="period">.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-3"><article class="example example-like"><div class="para" id="p-68">Say that I am given the normal <span class="process-math">\(\left( \frac{-4}{7},
+\frac{-11}{13}, \frac{5}{2} \right)\)</span> and the point <span class="process-math">\(\left( \frac{1}{4}, \frac{-1}{2}, \frac{-4}{13}
+\right)\text{.}\)</span> What is the unique plane described by this data?</div> <div class="para logical" id="p-69">
+<div class="para">I calculate the left side of the equation of the plane, which is the dot product of the point and the normal. This will result in the constant <span class="process-math">\(d\text{.}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left( \frac{-4}{7},\frac{-11}{13}, \frac{5}{2} \right)
+\cdot \left( \frac{1}{4}, \frac{-1}{2}, \frac{-4}{13}
+\right) = \frac{-4}{28} + \frac{11}{26} - \frac{20}{26} =
+\frac{-89}{182} 
+\end{equation*}
+</div>
+<div class="para">So <span class="process-math">\(d = -\frac{89}{182}\text{,}\)</span> which means I can write the equation of the plane. The coefficients of the variables are the coordinates of the normal.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{-4}{7} x - \frac{11}{13} y + \frac{5}{2} z =
+\frac{-89}{182} 
+\end{equation*}
+</div>
+<div class="para">Again, there is variability in how to write the equation. If I wanted to clear denominators, I could multiply through by <span class="process-math">\(182\text{.}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+-104x - 154y + 455 z = -89 
+\end{equation*}
+</div>
+<div class="para">This equation also describes the same plane.</div>
+</div></article></div>
+<div class="para" id="p-70">If I am given a point on a plane and two local direction on the plane, then I need to construct the normal first. The normal is perpendicular to any local direction on the plane. This is where the cross product comes is: the cross product is a operation which takes two vectors and produces a third vector perpendicular to the first two. Therefore, the cross product of the two local directions is the normal. After I have the normal, I can proceed as before, using the equation and the point to calculate the constant <span class="process-math">\(d\text{.}\)</span> Let me do one example.</div>
+<article class="example example-like" id="example-4"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-4"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.3.9</span><span class="period">.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-4"><article class="example example-like"><div class="para" id="p-71">Say that I am given the point <span class="process-math">\((0, 3, 7)\)</span> and the local directions <span class="process-math">\((-1, -5, 3)\)</span> and <span class="process-math">\((-5, 0, 1)\text{.}\)</span> What is the equation of the plane described by this data?</div> <div class="para logical" id="p-72">
+<div class="para">I take the cross product of the two local directions to ge the normal to the plane.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+(-1,-5,3) \times (-5,0,1) = (-5 - 0, -15 - (-1), 0 - 25) =
+(-5, -14, -25) 
+\end{equation*}
+</div>
+<div class="para">Then I proceed as before. I calculate the left side of the equation of the plane, which is the dot product of the point and the normal. This will result in the constant <span class="process-math">\(d\text{.}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+(-5, -14, -25) \cdot (0,3,7) = -42 - 175 = -217 
+\end{equation*}
+</div>
+<div class="para">So <span class="process-math">\(d = -217\text{,}\)</span> which means I can write the equation of the plane. The coefficients of the variables are the coordinates of the normal.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+-5x - 14y - 25 z = -217
+\end{equation*}
+</div>
+<div class="para">I could multiply through by <span class="process-math">\(-1\)</span> to make everything positive, if I wanted.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+5x + 14y + 25 z = 217
+\end{equation*}
+</div>
+<div class="para">This equation also describes the same plane.</div>
+</div></article></div>
+<div class="para" id="p-73">Finally, a plane can be determined by three points (as long as the three points do not all lie on the same line). If I am given three points (<span class="process-math">\(p\text{,}\)</span> <span class="process-math">\(q\)</span> and <span class="process-math">\(r\)</span>), then I can use <span class="process-math">\(p\)</span> as the local origin and construct the local direction vectors as <span class="process-math">\(q-p\)</span> and <span class="process-math">\(r-p\text{.}\)</span> Then I can proceed as in the previous step: the normal is the cross product of the two local direction, <span class="process-math">\((q-p)
+\times (r-p)\text{.}\)</span> Finally, I finish with the first step, using the normal and a point to find the constant <span class="process-math">\(d\text{.}\)</span> Note, with this data, I have three points to chose from for this final step. All three should work and produce the same constant. If they fail to do so, that means there is an error earlier in the work somewhere. I’ll do an example to show all the steps.</div>
+<article class="example example-like" id="example-5"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-5"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.3.10</span><span class="period">.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-5"><article class="example example-like"><div class="para" id="p-74">What is the equation of the plane determined by the three points <span class="process-math">\((0,4,0)\text{,}\)</span> <span class="process-math">\((-3, -6, 2)\)</span> and <span class="process-math">\((-7, 0,
+1)\text{.}\)</span>
+</div> <div class="para logical" id="p-75">
+<div class="para">First I need to calculate the local direction. I’ll set <span class="process-math">\((0,4,0)\)</span> as my local origin. Then I calculate the differences of the two other points from this point.</div>
+<div class="displaymath process-math" id="md-4">
+\begin{gather*}
+(-3, -6. 2) = (0,4,0) = (-3, -10, 2) \\
+(-7, 0. 1) = (0,4,0) = (-7, -4, 1) 
+\end{gather*}
+</div>
+<div class="para">These are the two local direction. Then I proceed as with the previous case. I start by taking the cross product of the two local directions to ge the normal to the plane.</div>
+<div class="displaymath process-math" id="md-5">
+\begin{align*}
+(-3, -10, 2) \times (-7, -4, 1) \amp = (-10 - (-8),
+(-14, - (-3), 12 - 70))\\
+\amp = (-2, -11, -58)
+\end{align*}
+</div>
+<div class="para">Then I again proceed as before, going back to the very first case.  I calculate the left side of the equation of the plane, which is the dot product of the point and the normal. This will result in the constant <span class="process-math">\(d\text{.}\)</span> I use the first point, but I could use any of the three points.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+(-2, -11, -58) \cdot (0,4,) = 0 - 44 + 0 = -44 
+\end{equation*}
+</div>
+<div class="para">So <span class="process-math">\(d = -44\text{,}\)</span> which means I can write the equation of the plane. The coefficients of the variables are the coordinates of the normal.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+-2x - 11y - 58 z = -44
+\end{equation*}
+</div>
+<div class="para">I could multiply through by <span class="process-math">\(-1\)</span> to make everything positive, if I wanted.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+2x + 11y + 58z = 44
+\end{equation*}
+</div>
+<div class="para">This equation also describes the same plane.</div>
+</div></article></div></section></section></div>
+<div class="ptx-content-footer">
+<a class="previous-button button" href="section-vector-operations.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="week1-activity.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"></a>
+</div>
+</body>
+</html>

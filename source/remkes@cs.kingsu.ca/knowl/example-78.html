@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">8.2.7</span><span class="period">.</span>
+</h4>
+<div class="para">Recall the integral for the volume of a cone of height <span class="process-math">\(h\)</span> and radius <span class="process-math">\(R\)</span> from <a href="" class="xref" data-knowl="./knowl/example-cone-volume.html" title="Example 7.2.4">Example 7.2.4</a>. I didn’t even do the integral, since I didn’t want to deal with the complicated trig substitution which would have been required.</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/example-cone-volume.html">
+\begin{equation*}
+\int_D f(x,y) dA = 4 \int_0^R \int_0^{\sqrt{R^2 - x^2}}
+\left( h - \frac{h}{r} \sqrt{x^2 + y^2} \right) dy dx
+\end{equation*}
+</div>
+<div class="para">Now I can use polar coordinates to make the integral much more accessible. I’m integrating over a circle the base of the cone.</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/example-cone-volume.html">
+\begin{align*}
+\amp = \int_0^{2\pi} \int_0^R \left( h - \frac{hr}{R}
+\right) r dr d\theta\\
+\amp = 2\pi \left. \left( \frac{hr^2}{2} - \frac{hr^3}{3R}
+\right) \right|_0^R\\
+\amp = 2\pi \left( \frac{hR^2}{2} - \frac{hR^2}{3} \right)
+= \frac{\pi R^2 h}{3}
+\end{align*}
+</div></article><span class="incontext"><a href="section-polar-coordinates.html#example-78" class="internal">in-context</a></span>
+</body>
+</html>

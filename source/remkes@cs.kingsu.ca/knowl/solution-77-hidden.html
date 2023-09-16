@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math"><div class="solution solution-like">
+<div class="para">I need a description of the cone to use for the domain of the integral. In the <span class="process-math">\(x-y\)</span> plane, the cone is a circle, so I can take <span class="process-math">\(x \in [-3,3]\)</span> and <span class="process-math">\(y\)</span> between the curves <span class="process-math">\(-\sqrt{9-x^2}\)</span> and <span class="process-math">\(\sqrt{9-x^2}\text{.}\)</span> For <span class="process-math">\(z\text{,}\)</span> I need to start at <span class="process-math">\(z\)</span> and stop at the cone, so I need the cone as the graph of a function of <span class="process-math">\(x\)</span> and <span class="process-math">\(y\text{.}\)</span> The function <span class="process-math">\(g(x,y) = 5 -
+\frac{5}{3}\sqrt{x^2+y^2}\)</span> describes the cone.</div>
+<div class="displaymath process-math">
+\begin{align*}
+\amp \int_{-3}^3 \int_{-\sqrt{9-x^2}}^{\sqrt{9-x^2}}
+\int_0^{5 - \frac{5}{3} \sqrt{x^2 +y^2}} xy(z-5) dz dy
+dx \\
+\amp = \int_{-3}^3 \int_{-\sqrt{9-x^2}}^{\sqrt{9-x^2}}
+\frac{xy(z-5)^2}{2} \bigg|_0^{5 - \frac{5}{3} \sqrt{x^2
++y^2}} xy(z-5) dy dx\\
+\amp = \int_{-3}^3 \int_{-\sqrt{9-x^2}}^{\sqrt{9-x^2}}
+\frac{xy}{2} \left( \left(\frac{-5}{3} \sqrt{x^2 +y^2}
+\right)^2 - (-5)2 \right) dy dx\\
+\amp = \int_{-3}^3 \int_{-\sqrt{9-x^2}}^{\sqrt{9-x^2}}
+\frac{xy}{2} \left( \frac{25(x^2+y^2)}{9} - 25 \right)
+dy dx \\
+\amp = \frac{25}{18} \int_{-3}^3
+\int_{-\sqrt{9-x^2}}^{\sqrt{9-x^2}} \left(x^3y + xy^3 -
+xy \right) dy dx 
+\end{align*}
+</div>
+<div class="para">I can split this into three integral by linearity and deal with each integral in turn.</div>
+<div class="displaymath process-math">
+\begin{align*}
+\amp \frac{25}{18} \int_{-3}^3
+\int_{-\sqrt{9-x^2}}^{\sqrt{9-x^2}} x^3y dy dx 
+= \frac{25}{18} \int_{-3}^3 \frac{x^3y^2}{2}
+\bigg|_{-\sqrt{9-x^2}}^{\sqrt{9-x^2}} dx + \frac{25}{18} =
+0 \\
+\amp \frac{25}{18} \int_{-3}^3
+\int_{-\sqrt{9-x^2}}^{\sqrt{9-x^2}} xy^3 dy dx 
+= \int_{-3}^3 \frac{xy^4}{4}
+\bigg|_{-\sqrt{9-x^2}}^{\sqrt{9-x^2}} dx - \frac{25}{2} =
+0 \\
+\amp \frac{-25}{2} \int_{-3}^3
+\int_{-\sqrt{9-x^2}}^{\sqrt{9-x^2}} xy dy dx
+= \int_{-3}^3 \frac{xy^2}{2}
+\bigg|_{-\sqrt{9-x^2}}^{\sqrt{9-x^2}} dx = 0
+\end{align*}
+</div>
+<div class="para">All of these integrals evaluate to zero. In the evaluate of the bounds of the <span class="process-math">\(y\)</span> integral, the <span class="process-math">\(y\)</span> term is either <span class="process-math">\(y^2\)</span> or <span class="process-math">\(y^4\)</span> and the bounds are symmetric, positive and negative. When I put this into <span class="process-math">\(y^2\)</span> or <span class="process-math">\(y^4\text{,}\)</span> the negatives become positive, and the term becomes <span class="process-math">\((9-x^2) - (9-x^2)\)</span> or <span class="process-math">\((9-x^2)^2 -
+(9-x^2)^2\text{.}\)</span> In either case, this evaluates to zero, making the remaining integral in <span class="process-math">\(x\)</span> just an integral of zero.</div>
+</div></body>
+</html>

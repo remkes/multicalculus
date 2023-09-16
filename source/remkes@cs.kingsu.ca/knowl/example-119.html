@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">11.2.3</span><span class="period">.</span>
+</h4>
+<div class="para">
+<span class="process-math">\(F(x,y,z) = (0,0,k)\)</span> is a constant vertical flow with the same flow rate. I can imagine this flow through a vertical pipe with radius <span class="process-math">\(a\)</span> around the <span class="process-math">\(z\)</span> axis by restricting the field to the domain where <span class="process-math">\(x^2 + y^2 \leq
+a\text{.}\)</span> At some point in the pipe (say <span class="process-math">\(z=0\)</span>), I can ask how much fluid is flowing through the pipe. The cross section of the pipe is a circle of radius <span class="process-math">\(a\)</span> at height <span class="process-math">\(z=0\text{.}\)</span> I can parametrize this circle as <span class="process-math">\(\sigma(r,\theta) = (r \cos \theta, r \sin \theta,0)\)</span> for <span class="process-math">\((r,\theta) \in [0,a] \times [0,2\pi]\text{.}\)</span> Then I can calculate the flux integral to determine how much water is flowing through the pipe at this point.</div>
+<div class="displaymath process-math">
+\begin{align*}
+\sigma_r \amp = (\cos \theta, \sin \theta, 0)\\
+\sigma_\theta \amp = (-r \sin \theta, r \cos \theta, 0)\\
+\sigma_r \times \sigma_\theta \amp = (0, 0, r)\\
+\int_\sigma F \cdot dA \amp = \int_0^a \int_0^{2\pi} k r
+d\theta dr\\
+\amp = \frac{2\pi a^2k}{2} = \pi a^2 k = (\pi a^2) k
+\end{align*}
+</div>
+<div class="para">This answer is unsurpring. <span class="process-math">\(\pi a^2\)</span> is the cross-sectional area and <span class="process-math">\(k\)</span> is the rate of flow. The rate of flow is constant everywhere, so it makes sense that the result of the integral is just the product of this cross sectional area <span class="process-math">\(\pi a^2\)</span> and the flow rate <span class="process-math">\(k\text{.}\)</span>
+</div></article><span class="incontext"><a href="section-flux-integrals.html#example-119" class="internal">in-context</a></span>
+</body>
+</html>

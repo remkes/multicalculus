@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math"><div class="solution solution-like">
+<div class="para">For each part, I need to parametrize the surface, calculate the normal, then use the normal and the field to calculate the flux integral.</div> <ol class="decimal">
+<li>
+<div class="para">The rectangle can be parametrized by the variables <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> with <span class="process-math">\(z\)</span> set to constant zero.</div>
+<div class="displaymath process-math">
+\begin{align*}
+\sigma(x,y) \amp = (x,y,0) \amp \amp (x,y) \in [0,3]
+\times [0,4] \\
+\sigma_x (x,y) \amp = (1,0,0) \amp \amp \\
+\sigma_y (x,y) \amp = (0,1,0) \amp \amp \\
+\sigma_x \times \sigma_y (x,y) \amp = (0,0,1) 
+\end{align*}
+</div>
+<div class="para">Then I calculate the flux integral.</div>
+<div class="displaymath process-math">
+\begin{align*}
+\int_\sigma F \cdot dA \amp = \int_D F(\sigma(x,y))
+\cdot (\sigma_x \times \sigma_y) dx dy\\
+\amp = \int_0^4 \int_0^3 (-u,
+3v, u) \cdot (0,0,1) dx dy \\
+\amp = \int_0^4 \int_0^3 x dx dy = 4 \frac{9}{2} = 18 
+\end{align*}
+</div>
+</li>
+<li>
+<div class="para">The sphere can be parametrized by following <a href="" class="xref" data-knowl="./knowl/example-sphere-parametrization.html" title="Example 11.1.4">Example 11.1.4</a>. Here, the radius is one.</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/example-sphere-parametrization.html">
+\begin{align*}
+\sigma(\theta,\phi) \amp = (\sin \phi \cos \theta,
+\sin \phi \sin \theta, \cos \phi) \\
+\amp (\theta,\phi) \in [0,2\pi] \times [0,\pi] \\
+\sigma_\theta (\theta,\phi) \amp = (-\sin \phi \sin
+\theta, \sin \phi \sin \theta, 0) \\
+\sigma_\phi (\theta,\phi) \amp = (\cos \phi \cos
+\theta, \cos \phi \sin \theta, - \sin \phi)\\
+\sigma_\theta \times \sigma_\phi (u,\phi) \amp = -\sin
+\phi (\sin \phi \cos \theta, \sin \phi \sin \theta,
+\cos \phi) 
+\end{align*}
+</div>
+<div class="para">Then I calculate the flux integral.</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/example-sphere-parametrization.html">
+\begin{align*}
+\amp \int_\sigma F \cdot dA = \int_D
+F(\sigma(\theta,\phi)) \cdot (\sigma_\theta \times
+\sigma_\phi) d\theta d\phi\\
+\amp = \int_0^{2\pi}
+\int_0^{\pi} (4 \cos \phi - \sin \phi
+\cos \theta, 3 \sin \phi \sin \theta + 3 \cos \phi,
+\sin \phi \cos \theta + \cos \phi) \\
+\amp \cdot -\sin \phi
+(\sin \phi \cos \theta, \sin \phi \sin \theta, \cos
+\phi) d \phi d \theta \\
+\amp = \int_0^{2\pi} \int_0^{\pi} 4 \cos \phi \sin^2
+\phi \cos \theta- \sin^3 \phi \cos^2 \phi + 3 \sin^3
+\phi \sin^2 \theta \\
+\amp + 3 \cos \phi \sin^2 \phi \sin
+\theta + \sin^2 \phi \cos \phi \cos \theta + \sin \phi
+\cos^2 \theta d \phi d \theta 
+\end{align*}
+</div>
+<div class="para">There are many terms in this integral. I’m going to use some symmetry to simplify before I calculate. Any integral that involves an odd power of <span class="process-math">\(\sin
+\theta\text{,}\)</span> <span class="process-math">\(\cos \theta\text{,}\)</span> or <span class="process-math">\(\sin \theta \cos
+\theta\)</span> is the integral of a trig function over a whole period, which must vanish by symmetry. Since the <span class="process-math">\(\phi\)</span> and <span class="process-math">\(\theta\)</span> integrals of each piece of the sum are individually seperably, if the <span class="process-math">\(\theta\)</span> integral is zero, the integral of the whole term is zero. Therefore, I’ll remove any term that satisfies my criterion. What’s left over is this integral, which I split up by linearity, seperate, and solve. I’ll ask a computer for the values of each single-variable definite integral.</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/example-sphere-parametrization.html">
+\begin{align*}
+\amp = \int_0^{2\pi} \int_0^\pi -\sin^3 \phi \cos^2
+\theta + 3 \sin^3 \phi \sin^2 \theta + \sin \phi
+\cos^2 \phi d \phi d \theta \\
+\amp = \int_0^{2\pi} \cos^2 \theta d \theta \int_0^\pi
+-\sin^3 \phi d \phi + \int_0^{2\pi} \sin^2 \theta d
+\theta \int_0^\pi 3 \sin^3 \phi d \phi \\
+\amp + \int_0^{2\pi}
+d\theta \int_0^\pi \sin \phi \cos^2 \phi d \phi \\
+\amp = (\pi) \left( \frac{-4}{3} \right)+ (\pi)(4) +
+(2\pi) \left( \frac{2}{3} \right) = 4\pi
+\end{align*}
+</div>
+</li>
+<li>
+<div class="para">The cylinder can be parametrized following <a href="" class="xref" data-knowl="./knowl/example-cylinder-parametrization.html" title="Example 11.1.5">Example 11.1.5</a>. The radius here is <span class="process-math">\(3\text{.}\)</span> The range for <span class="process-math">\(z\)</span> is <span class="process-math">\([0,2]\)</span> as given in the question.</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/example-cylinder-parametrization.html">
+\begin{align*}
+\sigma(\theta,z) \amp = (3 \cos \theta, 3 \sin \theta,
+z) \amp \amp (\theta,z) \in [0,2\pi] \times [0,2] \\
+\sigma_\theta (\theta,z) \amp = (-3 \sin \theta, 3
+\cos \theta, 0)  \amp \amp \\
+\sigma_z (\theta,z) \amp = (0,0,1) \amp \amp \\
+\sigma_\theta \times \sigma_z (\theta,z) \amp = (3
+\cos \theta, 3 \sin \theta, 0) 
+\end{align*}
+</div>
+<div class="para">Then I calculate the flux integral.</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/example-cylinder-parametrization.html">
+\begin{align*}
+\amp \int_\sigma F \cdot dA = \int_D
+F(\sigma(\theta,z)) \cdot (\sigma_\theta \times
+\sigma_z) d\theta dz\\
+\amp = \int_0^2 \int_0^{2\pi}
+(4z - 3 \cos \theta, 9 \sin \theta + 4 z, 3 \cos
+\theta + z) \cdot (3 \cos \theta, 3 \sin \theta, 0) \\
+\amp = \int_0^2 \int_0^{2\pi} 12 z \cos \theta -
+9\cos^2 \theta + 27 \sin^2 \theta + 12 z \sin \theta d
+\theta dz 
+\end{align*}
+</div>
+<div class="para">The integrals of the first and last term are integrals of sine or cosine over a whole period, therefore must be zero. What remains is the two middle integrals. Both are separable and the <span class="process-math">\(z\)</span> integral is trivial.</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/example-cylinder-parametrization.html">
+\begin{align*}
+\amp = -9 \int_0^2 \int_0^{2\pi} \cos^2 \theta d \theta
+dz + 27 \int_0^2 \int_0^{2\pi} \sin^2 \theta d \theta
+dz \\
+\amp = -18 \int_0^{2\pi} \cos^2 \theta d \theta + 54
+\int_0^{2\pi} \sin^2 \theta d \theta = -18\pi + 54\pi
+= 26\pi 
+\end{align*}
+</div>
+</li>
+<li>
+<div class="para">There are three pieces to the surface. The first piece is the cylinder calcualted in the previous part of this question. I don’t need to recalculate this flux integral. The other two parts are the top disc (with an upward, outward normal) and the bottom disc (again with a downward, outward normal). The discs can be parametrized using something like polar coordinates with a constant <span class="process-math">\(z\)</span> term. I must make sure I order the variables to give the correct direction of the normal. I’ll start with the top disc.</div>
+<div class="displaymath process-math">
+\begin{align*}
+\sigma(r,\theta) \amp = (r \cos \theta, r \sin \theta,
+2) \amp \amp (r,\theta) \in [0,3] \times [0,2\pi] \\
+\sigma_r (r,\theta) \amp = (\cos \theta, \sin \theta,
+0) \amp \amp \\
+\sigma_\theta (r,\theta) \amp = (-r \sin \theta, r
+\cos \theta, 0)  \amp \amp \\
+\sigma_r \times \sigma_\theta (r,\theta) \amp = (0,0,r) 
+\end{align*}
+</div>
+<div class="para">Then I calculate the flux integral.</div>
+<div class="displaymath process-math">
+\begin{align*}
+\int_\sigma F \cdot dA \amp = \int_D
+F(\sigma(r,\theta)) \cdot (\sigma_r \times
+\sigma_\theta) dr d\theta\\
+\amp = \int_0^{2\pi} \int_0^3
+(8 - r \cos \theta, 3 r \sin \theta + 9, r \cos \theta
++ 3) \cdot (0,0,r) dr d\theta\\
+\amp = \int_0^{2\pi} \int_0^3 r^2 \cos \theta + 3r dr
+d\theta = 0 + 2\pi \frac{27}{2} = 27 \pi 
+\end{align*}
+</div>
+<div class="para">Then I do the bottom disc. I reverse the variable order to get a downward pointing normal.</div>
+<div class="displaymath process-math">
+\begin{align*}
+\sigma(\theta,r) \amp = (r \cos \theta, r \sin \theta,
+0) \amp \amp (r,\theta) \in [0,3] \times [0,2\pi] \\
+\sigma_\theta (\theta,r) \amp = (-r \sin \theta, r
+\cos \theta, 0)  \amp \amp \\
+\sigma_r (\theta,r) \amp = (\cos \theta, \sin \theta,
+0) \amp \amp \\
+\sigma_\theta \times \sigma_r (\theta,r) \amp = (0,0,-r) 
+\end{align*}
+</div>
+<div class="para">Then I calculate the flux integral.</div>
+<div class="displaymath process-math">
+\begin{align*}
+\int_\sigma F \cdot dA \amp = \int_D
+F(\sigma(r,\theta)) \cdot (\sigma_r \times
+\sigma_\theta) dr d\theta\\
+\amp = \int_0^{2\pi} \int_0^3
+(-r\cos \theta, 3v \sin \theta, r \cos \theta) \cdot
+(0,0,-r) dr d\theta \\
+\amp = \int_0^{2\pi} \int_0^3 -r^2 \cos \theta dr
+d\theta = 0 
+\end{align*}
+</div>
+<div class="para">Flux over the entire closed cylinder is the sum of the flux other the three pieces.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int_C F \cdot da = 27 \pi + 26 \pi + 0 = 53 \pi 
+\end{equation*}
+</div>
+</li>
+</ol>
+</div></body>
+</html>

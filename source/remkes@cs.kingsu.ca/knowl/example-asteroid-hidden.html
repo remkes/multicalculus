@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math"><article class="example example-like"><div class="para">The asteroid is the parametric curve <span class="process-math">\(\gamma(t) = (\cos^3
+t, \sin^3 t)\)</span> for <span class="process-math">\(t \in [0,2\pi]\text{,}\)</span> shown in <a href="" class="xref" data-knowl="./knowl/figure-asteroid.html" title="Figure 2.2.13">Figure 2.2.13</a>. I want to calculate its arclength.</div> <figure class="figure figure-like"><div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><div class="asymptote-box" style="padding-top: 100.207022934531%"><iframe src="generated/asymptote/figure09.html" class="asymptote"></iframe></div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.2.13<span class="period">.</span></span><span class="space"> </span>The Asteroid</figcaption></figure><div class="displaymath process-math" data-contains-math-knowls="./knowl/figure-asteroid.html">
+\begin{align*}
+L \amp = \int_a^b \sqrt{ \left( \frac{dx}{dt} \right)^2 +
+\left( \frac{dy}{dt} \right)^2 } dt\\
+\amp = \int_0^{2\pi} \sqrt{ (-3 \cos^2 t (\sin t))^2 + (3
+\sin^2 t (\cos t))^2} dt\\
+\amp = \int_0^{2\pi} \sqrt{ 9 \cos^4 t \sin^2 t + 9
+\sin^4 t \cos^2 t} dt\\
+\amp = \int_0^{2\pi} |3 \sin t \cos t | \sqrt{ \sin^2 +
+\cos^2 t} dt\\
+\amp = \int_0^{2\pi} |3 \sin t \cos t | dt
+\end{align*}
+</div>
+<div class="para logical">
+<div class="para">The absolute value here causes trouble. A convenient way to drop it is to notice that both <span class="process-math">\(\sin t\)</span> and <span class="process-math">\(\cos
+t\)</span> are positive on <span class="process-math">\([0, \pi/2]\text{.}\)</span> That range covers a quarter of the asteroid and the asteroid is symmetric, so I can calculate the length of that quarter and multiply by 4.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+L = 4\int_0^{\frac{\pi}{2}} 3 \sin t \cos t dt = 6
+\int_0^{\frac{\pi}{2}} \sin 2t = -3\cos 2t
+\Big|_0^{\frac{\pi}{2}} = 6
+\end{equation*}
+</div>
+</div></article></body>
+</html>

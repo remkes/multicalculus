@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">8.2.9</span><span class="period">.</span>
+</h4>
+<figure class="figure figure-like"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><div class="asymptote-box" style="padding-top: 92.6682543712774%"><iframe src="generated/asymptote/figure58.html" class="asymptote"></iframe></div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">8.2.10<span class="period">.</span></span><span class="space"> </span>An Offset Circle in Polar Coordinates</figcaption></figure> <div class="para">Say I wanted to integrate the function <span class="process-math">\(x^2 + y^2\)</span> over the circle of radius 1 centered at <span class="process-math">\((1,0)\text{.}\)</span> The integrand obviously lends itself to polar coordinates. There is circular symmetry in the domain, but the offset is a little confusing.</div> <div class="para">The equation of this circle is <span class="process-math">\((x-1)^2 + y^2 = 1\text{.}\)</span> I can make this a polar locus by replacing <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> with their polar equivalent. Doing so produces <span class="process-math">\(r^2 \cos^2 \theta - 2 r \cos \theta + 1 + r^2 \sin^2
+\theta =1\text{,}\)</span> which simplifies into <span class="process-math">\(r^2 - 2r \cos \theta
+= 0\)</span> or <span class="process-math">\(r = 2 \cos \theta\)</span> for <span class="process-math">\(\theta \in \left[
+-\frac{\pi}{2}, \frac{\pi}{2} \right]\text{.}\)</span> I can actually describe this in terms of polar coordinates; I just have to allow one of the bounds to be variable (like I did with variable bounds for cartesian coordinates). I will let the bound for <span class="process-math">\(\theta\)</span> be constant, so that <span class="process-math">\(\theta\)</span> will be the outside variable. Then I can use the expression <span class="process-math">\(r = 2 \cos \theta\)</span> as an higher bound for <span class="process-math">\(r\)</span> in terms of <span class="process-math">\(\theta\text{.}\)</span> The lower bound for <span class="process-math">\(r\)</span> will stil be <span class="process-math">\(0\text{.}\)</span> <a href="" class="xref" data-knowl="./knowl/figure-offset-circle.html" title="Figure 8.2.10">Figure 8.2.10</a> shows, in the straight lines, the range of the radius from <span class="process-math">\(0\)</span> to <span class="process-math">\(2 \cos \theta\)</span> as <span class="process-math">\(\theta\)</span> ranges from <span class="process-math">\(-\frac{\pi}{2}\)</span> to <span class="process-math">\(\frac{\pi}{2}\text{.}\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/figure-offset-circle.html">
+\begin{align*}
+\int_D f(x,y) dA \amp = \int_{-\pi/2}^{\pi/2}
+\int_0^{2\cos \theta} r^2 r dr d\theta\\
+\amp = \int_{-\pi/2}^{\pi/2} \left. \frac{r^4}{4}
+\right|_0^{2 \cos \theta} d \theta\\
+\amp = 4 \int_{-\pi/2}^{\pi/2} \cos^4 \theta d \theta\\
+\amp = 4 \left. \frac{1}{32} \left( 12 \theta + 8 \sin
+(2\theta) + \sin (4\theta) \right)
+\right|_{-\pi/2}^{\pi/2}\\
+\amp = \frac{1}{8} \left(12 \left( \frac{\pi}{2} -
+\frac{-\pi}{2} \right) \right) + 0 + 0 = \frac{3\pi}{2}
+\end{align*}
+</div></article><span class="incontext"><a href="section-polar-coordinates.html#example-80" class="internal">in-context</a></span>
+</body>
+</html>

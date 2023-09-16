@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<div class="displaymath process-math">
+\begin{align*}
+I_x \amp = \int_D (y^2 + z^2) \rho dV = \int_D (y^2 +
+z^2) z k dV\\
+\amp = k \int_0^{2\pi} \int_0^{\pi/2} \int_0^a r^2
+(\sin^2 \phi \sin^2 \theta + \cos^2 \phi) r \cos \phi
+r^2 \sin\phi drd\phi d\theta\\
+\amp = k \int_0^a r^5 dr \int_0^{2\pi} \int_0^{\pi/2}
+\left( \sin^3 \phi \cos \phi \sin^2 \theta + \cos^3 \phi
+\sin \phi \right) d\phi d\theta\\
+\amp = \frac{ka^6}{6} \left[ \left( \frac{\sin^4
+\phi}{4} \right) \Bigg|_0^{\pi/2} \left(
+\frac{\theta}{2} - \frac{\sin 2\theta}{4} \right)
+\Bigg|_0^{2\pi} + \left( \frac{-\cos^4 \phi}{4}
+\right) \Bigg|_0^{\pi/2} 2\pi \right]\\
+\amp = \frac{ka^6}{6} \left[ \left( \frac{1}{4} - 0
+\right) \pi _ 2\pi \left( \frac{1}{4} - 0 \right)
+\right] = \frac{\pi ka^6}{8}\\
+I_y \amp = \frac{\pi ka^6}{8} \text{ by symmetry }\\
+I_z \amp = \int_D (x^2 + y^2) \rho dV\\
+\amp = k \int_0^{2\pi} \int_0^{\pi/2} \int_0^a r^2
+\sin^2 \phi r \cos \phi r^2 \sin \phi dr d\phi d\theta\\
+\amp = \frac{2\pi ka^6}{6} \int_0^{\pi/2} \sin^3 \phi
+\cos \phi d\phi\\
+\amp = \frac{\pi ka^6}{3} \frac{\sin^4 \phi}{4}
+\Bigg|_0^{\pi/2} = \frac{\pi ka^6}{12}\\
+\bar{\bar{x}}^2 \amp = \frac{\frac{\pi
+ka^6}{8}}{\frac{\pi ka^4}{4}} = \frac{a^2}{2}\\
+\bar{\bar{x}} \amp = \frac{a}{\sqrt{2}}\\
+\bar{\bar{y}}^2 \amp = \frac{a^2}{2}\\
+\bar{\bar{y}} \amp = \frac{a}{\sqrt{2}}\\
+\bar{\bar{z}}^2 \amp = \frac{\frac{\pi
+ka^6}{12}}{\frac{\pi ka^4}{4}} = \frac{a^3}{3}\\
+\bar{\bar{z}} \amp = \frac{a}{\sqrt{3}}
+\end{align*}
+</div>
+<span class="incontext"><a href="section-applications.html#md-210" class="internal">in-context</a></span>
+</body>
+</html>

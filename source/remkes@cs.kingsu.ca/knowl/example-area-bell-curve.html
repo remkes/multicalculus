@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">7.2.11</span><span class="period">.</span>
+</h4>
+<div class="para">Here is an odd application of multiple integration. I know that <span class="process-math">\(e^{-x^2}\)</span> has no elementary antiderivative. Therefore, the intergal</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A = \int_{-\infty}^\infty e^{-x^2} dx
+\end{equation*}
+</div>
+<div class="para">cannot be evaluated directly. However, this is a very important integral: <span class="process-math">\(e^{-x^2}\)</span> is the normal distribution and, in Statistics, I need to integrate it frequently. I’ll use integrals over <span class="process-math">\(\RR^2\text{,}\)</span> strangely enough, to calculate this integral by squaring the single variable integral.</div>
+<div class="displaymath process-math">
+\begin{align*}
+A \amp = 2 \int_{0}^\infty e^{-x^2} dx\\
+A^2 \amp = \left( 2 \int_{0}^\infty e^{-x^2} dx \right)
+\left(2 \int_{0}^\infty e^{-y^2} dy \right)
+\end{align*}
+</div>
+<div class="para">The second integral uses a new variables since variables of integration only matter inside the integral. Then I can combine the two integrals.</div>
+<div class="displaymath process-math">
+\begin{align*}
+A^2 \amp = 4 \int_0^\infty \int_0^\infty e^{-x^2} e^{-y^2}
+dx dy\\
+\amp = 4 \int_0^\infty \int_0^\infty e^{-(x^2 + y^2)} dx
+dy
+\end{align*}
+</div>
+<div class="para">Now I am going to do a substitution in the <span class="process-math">\(y\)</span> variable. Treating the <span class="process-math">\(x\)</span> variable as a constant, I replace <span class="process-math">\(y\)</span> with <span class="process-math">\(y = xs\)</span> so that <span class="process-math">\(dy = x ds\text{.}\)</span> If <span class="process-math">\(y=0\)</span> then <span class="process-math">\(s=0\)</span> and as <span class="process-math">\(y \rightarrow
+\infty\text{,}\)</span> <span class="process-math">\(s \rightarrow \infty\text{,}\)</span> so the bounds for <span class="process-math">\(s\)</span> remain the same as the bounds for <span class="process-math">\(y\text{.}\)</span> Remember, <span class="process-math">\(x\)</span> is a constant through this whole substitution. (Using Fubini’s Theorem, I could think of <span class="process-math">\(y\)</span> as the inside integral for this substitution, and then switch back to thinking of <span class="process-math">\(x\)</span> as the inside integral after the substitution.)</div>
+<div class="displaymath process-math">
+\begin{align*}
+A^2 \amp = 4 \int_0^\infty \int_0^\infty e^{-x^2 (1+s^2)}
+x dx ds\\
+\amp = 4 \int_0^\infty \left. \frac{-1}{2(1+s^2)}
+e^{-x^2(1+s^2)} \right|_0^\infty ds\\
+\amp = 2 \int_0^\infty \frac{1}{1+s^2} ds\\
+\amp = \lim_{a \rightarrow \infty} 2 \arctan a - \arctan 0
+= \frac{2\pi}{2} = \pi\\
+A \amp = \int_{-\infty}^\infty e^{-x^2} dx = \sqrt{\pi}
+\end{align*}
+</div>
+<div class="para">I recover the area under the bell curve: <span class="process-math">\(\sqrt{\pi}\text{.}\)</span> It’s a very strange result. However, if you taken any statistics and worked on normal distributions, likely you will recall the presence of these strange <span class="process-math">\(\sqrt{\pi}\)</span> terms. Now I know they are present to normalize the area (since we want a probability function to have area one under its graph).</div></article><span class="incontext"><a href="section-variable-bounds.html#example-area-bell-curve" class="internal">in-context</a></span>
+</body>
+</html>

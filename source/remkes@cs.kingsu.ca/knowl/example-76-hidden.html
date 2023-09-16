@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math"><article class="example example-like"><div class="para">Now consider the function <span class="process-math">\(e^{x^2 + y^2}\)</span> on the circle of radius <span class="process-math">\(R\)</span> centered at the origin. Notice here that the integrand also has circular symmetry — changing to polar coordinates will help the integrand as well as the domain.</div> <div class="para">The integral is annoying in conventional Cartesian coordinates.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int_D f(x,y) dA = \int_{-R}^R \int_{-\sqrt{R^2 -
+x^2}}^{\sqrt{R^2 - x^2}} e^{x^2 + y^2} dy dx
+\end{equation*}
+</div>
+<div class="para">This is essentially impossible. However, in polar coordinates it improves greatly.</div>
+<div class="displaymath process-math">
+\begin{align*}
+\int_D f(x,y) dA \amp = \int_0^{2\pi} \int_0^R e^{r^2} r
+dr d\theta\\
+\amp = \int_0^{2\pi} d\theta \int_0^R e^{r^2} r dr\\
+\amp = 2\pi \left. \frac{e^{r^2}}{2} \right|_0^R =
+\frac{2\pi}{2} (e^{R^2} - 1) = \pi (e^{R^2} - 1)
+\end{align*}
+</div></article></body>
+</html>

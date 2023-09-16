@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">8.3.4</span><span class="period">.</span>
+</h4>
+<div class="para">Similarly, I can calculate the volume of a parabaloid this way. I orient it along the <span class="process-math">\(z\)</span> axis, opening upwards. If the parabaloid has height <span class="process-math">\(h\)</span> and base radius <span class="process-math">\(R\text{,}\)</span> then the radius is <span class="process-math">\(r =
+\frac{R\sqrt{z}}{\sqrt{h}}\text{.}\)</span> By solving for <span class="process-math">\(z\text{,}\)</span> I get <span class="process-math">\(z = \frac{hr^2}{R^2}\text{.}\)</span> The bounds for <span class="process-math">\(z\)</span> are non-constant, so <span class="process-math">\(z\)</span> must be the inside integral.</div>
+<div class="displaymath process-math">
+\begin{align*}
+\int_D 1 dV \amp = \int_0^{2\pi} \int_0^R
+\int_{\frac{hr^2}{R^2}}^h r dz dr d\theta\\
+\amp = 2\pi \int_0^R r \left( h - \frac{hr^2}{R^2}
+\right) dr\\
+\amp = 2\pi \left( \frac{hr^2}{2} -
+\frac{hr^4}{4R^2} \right) \Bigg|_0^R\\
+\amp = 2\pi \left( \frac{hR^2}{2} - \frac{hR^4}{4R^2}
+\right)\\
+\amp = hR^2 2\pi \left( \frac{1}{2} - \frac{1}{4}
+\right)\\
+\amp = \frac{hR^2 \pi}{2}
+\end{align*}
+</div></article><span class="incontext"><a href="section-cylindrical-and-spherical.html#example-84" class="internal">in-context</a></span>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math"><article class="example example-like"><div class="para">Let <span class="process-math">\((x,y) = F(r,\theta) = (r \cos \theta, r \sin
+\theta)\text{.}\)</span> (There are the polar cooredinates, which I will discuss at length in <a href="section-polar-coordinates.html" class="internal" title="Section 8.2: Polar Coordinates">Section 8.2</a>.) Here are the partial derivatives, the Jacobian matrix and the Jacobian determinant.</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/section-polar-coordinates.html ./knowl/figure-polar-jacobian.html">
+\begin{align*}
+\frac{\del F_1}{\del r} \amp = \cos \theta\\
+\frac{\del F_1}{\del \theta} \amp = -r\sin \theta\\
+\frac{\del F_2}{\del r} \amp = \sin \theta\\
+\frac{\del F_2}{\del \theta} \amp = r \cos \theta\\
+J(F) \amp = \begin{pmatrix} 
+\cos \theta \amp - r \sin \theta \\
+\sin \theta \amp r \cos \theta 
+\end{pmatrix} \\
+\det J(F) \amp = r\\
+dx dy \amp = r dr d\theta
+\end{align*}
+</div>
+<div class="para">This Jacobian shows that the radius term gives the effect on area. This make sense: for larger circles, the differential area is part of a larger arc. <a href="" class="xref" data-knowl="./knowl/figure-polar-jacobian.html" title="Figure 8.1.5">Figure 8.1.5</a> illustrates this. There are two regions; each region has the same increase in radii between the inside and outside of the region, and each region has the same inscribed angle. However, the two regions clearly have a different area: a region with the same ‘width’ (different in radius) and the same ‘height’ (difference in angle) is a larger region the further out it is on the circle.  Ths figure shows this at a marcoscopic level; the Jacobian is essentially measuring the same reality at an infinitesimal level. The Jacobian multiplies by the radius term <span class="process-math">\(r\)</span> to indicate this scaling of area as the radius increases.</div> <figure class="figure figure-like"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><div class="asymptote-box" style="padding-top: 101.289762779918%"><iframe src="generated/asymptote/figure52.html" class="asymptote"></iframe></div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">8.1.5<span class="period">.</span></span><span class="space"> </span>Similar Regions with Different Areas</figcaption></figure></article></body>
+</html>

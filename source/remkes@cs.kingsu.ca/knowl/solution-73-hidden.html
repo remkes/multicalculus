@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math"><div class="solution solution-like">
+<div class="para">I am given a constnat range for <span class="process-math">\(x\)</span> and curves for <span class="process-math">\(y\)</span> in terms of <span class="process-math">\(x\text{,}\)</span> so I can use those to set up the integral. Note that I can use the laws of exponents to write this integrand in an easier form.</div>
+<div class="displaymath process-math">
+\begin{align*}
+\amp \int_0^4 \int_{\frac{x}{4}}^{\frac{x}{3}} e^{x+y} dy dx\\
+\amp = \int_0^4 \int_{\frac{x}{4}}^{\frac{x}{3}} e^x e^y
+dy dx = \int_0^4 e^x dx \int_{\frac{x}{4}}^{\frac{x}{3}}
+e^y dy = \int_0^4 e^x e^y
+\bigg|_{\frac{x}{4}}^{\frac{x}{3}} dx\\
+\amp = \int_0^4 e^x (e^\frac{x}{3} - e^{\frac{x}{4}} )
+dx = \int_0^4 e^\frac{5x}{3} - e^{\frac{5x}{4}} ) dx =
+\frac{3}{5} e^\frac{5x}{3} - \frac{4}{5}e^{5x}{4}
+\bigg|_0^4\\
+\amp = \frac{3}{5} (e^{\frac{20}{3}} - e^0) -
+\frac{4}{5} (e^5 - e^0 ) = \frac{3}{5} (e^{\frac{20}{3}}
+- 1) - \frac{4}{5} (e^5 - 1)
+\end{align*}
+</div>
+</div></body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math"><article class="example example-like"><div class="para">Consider the helix <span class="process-math">\(\gamma(t) = (2 \cos t, 2 \sin t,
+4t)\)</span> defined for <span class="process-math">\(t &gt; 0\text{,}\)</span> shown in <a href="" class="xref" data-knowl="./knowl/figure-helix.html" title="Figure 2.2.17">Figure 2.2.17</a>.</div> <figure class="figure figure-like"><div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><div class="asymptote-box" style="padding-top: 58.4795321637427%"><iframe src="generated/asymptote/figure10.html" class="asymptote"></iframe></div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.2.17<span class="period">.</span></span><span class="space"> </span>The helix <span class="process-math">\(\gamma(t) = (2 \cos t, 2 \sin t, 4t)\)</span></figcaption></figure> <div class="para logical">
+<div class="para">I calculate the arclength function.</div>
+<div class="displaymath process-math">
+\begin{align*}
+s(t) \amp = \int_0^t \sqrt{x^\prime(u)^2 +
+y^\prime(u)^2 + z^\prime(u)^2} du\\
+\amp = \int_0^t \sqrt{4\sin^2 u + 4 \cos^2 u + 4^2} du
+= \int_0^t \sqrt{20} du = t \sqrt{20}
+\end{align*}
+</div>
+</div> <div class="para logical">
+<div class="para">The arclength function is <span class="process-math">\(s = t \sqrt{20}\text{;}\)</span> the inverse is <span class="process-math">\(t = \frac{s}{\sqrt{20}}\text{.}\)</span> I replace <span class="process-math">\(t\)</span> with <span class="process-math">\(t(s)\)</span> in <span class="process-math">\(\gamma(t)\text{.}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\gamma(s) = \left( 2 \cos \left( \frac{s}{\sqrt{20}}
+\right), 2 \sin \left( \frac{s}{\sqrt{20}} \right),
+\frac{4s}{\sqrt{20}} \right)
+\end{equation*}
+</div>
+</div></article></body>
+</html>

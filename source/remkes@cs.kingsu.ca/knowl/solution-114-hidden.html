@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math"><div class="solution solution-like">
+<div class="para">The domain is all of <span class="process-math">\(\RR^3\text{,}\)</span> which is simply connected. I check that the field is conservative on this domain by calculating the curl.</div>
+<div class="displaymath process-math">
+\begin{align*}
+\nabla \times F \amp = \left( \frac{d}{dy} -2 -
+\frac{d}{dz} -3, \frac{d}{dz} 2 - \frac{d}{dx} -2,
+\frac{d}{dx} -3 - \frac{d}{dy} 2 \right) \\
+\amp = (0,0,0)
+\end{align*}
+</div>
+<div class="para">The curl is zero, so the field is conservative. Now I need to find a potential. I integrate each component of the field in the matching variable. I put together these three pieces to find a potential that matches all three.</div>
+<div class="displaymath process-math">
+\begin{align*}
+\int F_1 dx \amp = \int 2 dx = 2x + c\\
+\int F_2 dy \amp = \int -3 dy = -3y + c\\
+\int F_3 dz \amp = \int -2 dz = -2z + c\\
+f \amp = 2x - 3y - 2z 
+\end{align*}
+</div>
+<div class="para">Next I find the endpoints of the curve and evaluate the potential at the endpoints. The different of these two values is the value of the line integral, by the fundamental theorem.</div>
+<div class="displaymath process-math">
+\begin{align*}
+f(\gamma(0)) \amp = f((4,0,0)) = 8\\
+f(\gamma(4\pi)) \amp = f((4,0,16\pi^2)) = 8 - 32\pi^2\\
+f(\gamma(4\pi)) - f(\gamma(0)) \amp = -32\pi^2 
+\end{align*}
+</div>
+</div></body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="hiddenproof"><h4 class="heading"><span class="type">Proof</span></h4>
+<div class="para logical">
+<div class="para">I’ll just prove the theorem for the special case of a sphere. The force of gravity between two masses <span class="process-math">\(m_1\)</span> and <span class="process-math">\(m_2\)</span> is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+F = \frac{Gm_1m_2}{r^2}
+\end{equation*}
+</div>
+</div> <div class="para">I’ll assume the source of the gravitational attraction sits at <span class="process-math">\((0,0,c)\)</span> where <span class="process-math">\(c \gt a\)</span> is larger than <span class="process-math">\(a\)</span> the radius of the sphere. I’ll also assume that <span class="process-math">\(\rho\)</span> is the constant density of the sphere. Then <span class="process-math">\(\rho dV\)</span> is an infinitesimal piece of mass in the sphere, and I can write <span class="process-math">\(\omega\)</span> for the distance from the infinitesimal mass to the gravitational source.</div> <div class="para">The force on the infinitesimal mass is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+F dV = \frac{Gm\rho dV}{\omega^2}\text{.}
+\end{equation*}
+</div>
+<div class="para">I’ll write this in polar coordinates.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+F dV = \frac{Gm\rho r^2 \sin \phi dr d\phi d\theta}{\omega^2}\text{.}
+\end{equation*}
+</div>
+<div class="para">By symmetry of the sphere, all lateral forces will cancel. I only care about the <span class="process-math">\(z\)</span> component of the force. Let <span class="process-math">\(\alpha\)</span> be the angle from the <span class="process-math">\(z\)</span> axis of the line from <span class="process-math">\((0,0,c)\)</span> to the infinitesimal mass. Then I can rewrite the force again.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+F_z dV = \frac{Gm\rho r^2 \sin \phi \cos \alpha dr d\phi
+d\theta}{\omega^2}
+\end{equation*}
+</div>
+<div class="para">Now I’ll do some trigonometry. Consider the triange with vertices <span class="process-math">\((0,0,c)\text{,}\)</span> <span class="process-math">\((0,0,0)\)</span> and the location of our infinitesimal mass. The angle at <span class="process-math">\((0,0,c)\)</span> is <span class="process-math">\(\alpha\)</span> by definition, and likewise the angle at <span class="process-math">\((0,0,0)\)</span> is <span class="process-math">\(\phi\text{.}\)</span> The side lengths are <span class="process-math">\(c\text{,}\)</span> <span class="process-math">\(\omega\)</span> and <span class="process-math">\(r\text{,}\)</span> also by definition. I will also use the cosine law.</div>
+<div class="displaymath process-math">
+\begin{align*}
+\omega^2 \amp = r^2 + c^2 - 2rc \cos \phi\\
+\omega \amp = \sqrt{r^2 + c^2 - 2rc \cos \phi}
+\end{align*}
+</div>
+<div class="para">The length <span class="process-math">\(c\)</span> along the <span class="process-math">\(x\)</span> axis can be divided into two pieces, so that <span class="process-math">\(c = \omega \cos \alpha + r \cos
+\phi\text{.}\)</span> I can solve for <span class="process-math">\(\cos \alpha\text{.}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\cos \alpha = \frac{ c - r \cos \phi}{\omega}
+\end{equation*}
+</div>
+<div class="para">I can replace <span class="process-math">\(\omega\)</span> with the square root expression.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\cos \alpha = \frac{ c - r \cos \phi}{\sqrt{r^2 + c^2 - 2rc
+\cos \phi}}
+\end{equation*}
+</div>
+<div class="para">Now I can replace both <span class="process-math">\(\cos \alpha\)</span> and <span class="process-math">\(\omega\)</span>in the force expression.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+F_z dV = \frac{Gm\rho r^2 \sin \phi}{r^2 + c^2 - 2rc\cos
+\phi} \left( \frac{c - r\cos \phi}{\sqrt{r^2 + c^2 - 2rc
+\cos \phi}} \right) dr d\phi d\theta
+\end{equation*}
+</div>
+<div class="para">The total force is this integral of this infinitesimal force over the sphere.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+F_z = \int_0^{2\pi} \int_0^{\pi} \int_0^a \frac{Gm\rho r^2
+\sin \phi}{r^2 + c^2 - 2rc\cos \phi} \left( \frac{c - r\cos
+\phi}{\sqrt{r^2 + c^2 - 2rc \cos \phi}} \right) dr d\phi
+d\theta
+\end{equation*}
+</div>
+<div class="para">I’ll do some substitution here, more or less reversing the trigonometry. I leave <span class="process-math">\(r\)</span> and <span class="process-math">\(\theta\)</span> alone, but write <span class="process-math">\(\omega^2 = r^2 + c^2 - 2rc\cos\phi\)</span> with the cosine law as before.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+2\omega d\omega = 2rc \sin \phi d\phi \implies r \sin \phi
+d\phi = \frac{\omega}{c} d\omega
+\end{equation*}
+</div>
+<div class="para">The bounds are <span class="process-math">\(\omega(0) = c-r\)</span> and <span class="process-math">\(\omega(\pi) =
+c+r\text{.}\)</span>  Finally, I can solve to get <span class="process-math">\(r\cos \phi =
+\frac{r^2 + c^2 - \omega^2}{2c}\text{.}\)</span> I use this as a substitution in the <span class="process-math">\(\phi\)</span> integral.</div>
+<div class="displaymath process-math">
+\begin{align*}
+F_z \amp = \int_0^{2\pi} \int_0^{\pi} \int_0^a
+\frac{Gm\rho r}{(r^2 + c^2 - 2rc\cos \phi)} \frac{(c-r\cos
+\phi)}{\sqrt{r^2+c^2-2rc\cos\phi}} (r\sin \phi d\phi) dr
+d\theta\\
+\amp = \int_0^{2\pi} \int_0^a \int_{c-r}^{c+r}
+\frac{Gm\rho r}{\omega^2} \frac{c - \frac{r^2 + c^2 -
+\omega^2}{2c}}{\omega} \frac{\omega}{c} d\omega dr
+d\theta\\
+\amp = \int_0^{2\pi} \int_0^a \int_{c-r}^{c+r}
+\frac{Gm\rho r}{\omega^2} \frac{2c^2 - r^2 - c^2 +
+\omega^2}{2c^2} \omega dr d\theta\\
+\amp = \frac{2\pi Gm \rho}{2c^2} \int_0^a \int_{c-r}^{c+r}
+r \left( \frac{c^2 -r^2 +\omega^2}{\omega^2} \right) d
+\omega dr\\
+\amp = \frac{\pi Gm \rho}{c^2} \int_0^a \int_{c-r}^{c+r} r
+\left( (c^2 -r^2) \frac{1}{\omega^2} + 1 \right) d \omega
+dr\\
+\amp = \frac{\pi Gm \rho}{c^2} \int_0^a r \left(
+(c^2-r^2) \frac{-1}{\omega} + \omega \right)
+\Bigg|_{c-r}^{c+r} dr\\
+\amp = \frac{\pi Gm\rho}{c^2} \int_0^a (rc^2 - r^3)
+\left( \frac{1}{c-r} - \frac{1}{c+r} \right) + r
+(c+r-(c-r)) dr\\
+\amp = \frac{\pi G m \rho}{c^2} \int_0^a
+\frac{-r(c^2-r^2)(-2r)}{c^2-r^2} + 2r^2 dr\\
+\amp = \frac{\pi G m \rho}{c^2} 2r^2 + 2r^2 dr\\
+\amp = \frac{\pi G m \rho}{c^2} 4r^2 dr = \frac{4\pi Gm
+\rho a^3}{3c^2} = \frac{Gm \left( \frac{\rho 4 \pi a^3}{3}
+\right)}{c^2}
+\end{align*}
+</div>
+<div class="para">The expression in brackets is the mass of the sphere and <span class="process-math">\(c\)</span> is the distance from the centre of mass to the gravitational sources. This is exactly the expression we wanted: it is the force due to a point mass at the origin with mass equal to the total mass of the sphere.</div></article><span class="incontext"><a href="section-applications.html#proof-5" class="internal">in-context</a></span>
+</body>
+</html>

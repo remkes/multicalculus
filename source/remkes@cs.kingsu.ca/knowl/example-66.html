@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">7.2.7</span><span class="period">.</span>
+</h4>
+<figure class="figure figure-like"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><div class="asymptote-box" style="padding-top: 73.9353257509606%"><iframe src="generated/asymptote/figure50.html" class="asymptote"></iframe></div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">7.2.8<span class="period">.</span></span><span class="space"> </span>The triangle with vertices <span class="process-math">\((0,0)\text{,}\)</span> <span class="process-math">\((4,5)\)</span> and <span class="process-math">\((6,2)\)</span></figcaption></figure> <div class="para">Say I wanted to integrate the function <span class="process-math">\(f(x,y) = xy\)</span> over the triangle <span class="process-math">\(T\)</span> with vertices <span class="process-math">\((0,0)\text{,}\)</span> <span class="process-math">\((4,5)\)</span> and <span class="process-math">\((6,2)\text{.}\)</span> There isn’t any one system of iterated integrals that covers this region; therefore I have to treat it as two sections. I divide the triangle into two pieces using the line <span class="process-math">\(x=4\text{.}\)</span> On the left, the <span class="process-math">\(y\)</span> coordinate is bounded by the lines <span class="process-math">\(y=\frac{x}{3}\)</span> and <span class="process-math">\(y=\frac{5x}{4}\text{.}\)</span> On the right, the <span class="process-math">\(y\)</span> coordinate is bounded by <span class="process-math">\(y=\frac{x}{3}\)</span> and <span class="process-math">\(y=-\frac{3x}{2} +
+11\text{.}\)</span> This division of the triangle and the bounding lines, above and below each piece, is shown in <a href="" class="xref" data-knowl="./knowl/figure-variable-bounds1.html" title="Figure 7.2.8">Figure 7.2.8</a>. I calculate two integrals using these variables bounds for <span class="process-math">\(y\text{.}\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/figure-variable-bounds1.html">
+\begin{align*}
+\int_0^4 \int_{\frac{x}{3}}^{\frac{5x}{4}} xy dy dx \amp =
+\int_0^4 \left. \frac{xy^2}{2}
+\right|_{\frac{x}{3}}^{\frac{5x}{4}} dx\\
+\amp = \int_0^4 \frac{x}{2} \left( \frac{25x^2}{16} -
+\frac{x^2}{9} \right) dx\\
+\amp = \int_0^4 \frac{25x^3}{32} - \frac{x^3}{18} =
+\int_0^4 \frac{209}{289} x^3 dx\\
+\amp = \left. \frac{209}{288} \frac{x^4}{4} \right|_0^4 =
+\frac{1196}{9}\\
+\int_4^6 \int_{\frac{x}{3}}^{\frac{-3x}{2} + 11} xy dy dx
+\amp = \int_4^6 \left. \frac{xy^2}{2}
+\right|_{\frac{x}{3}}^{\frac{-3x}{2} + 11} dx\\
+\amp = \int_4^6 \frac{x}{2} \left( \frac{-3x}{2} + 11
+\right)^2 - \frac{x}{2} \frac{x^2}{9} dx\\
+\amp = \int_4^6 \frac{x}{2} \left( \frac{9x^2}{4} - 32 x +
+121 \right) - \frac{x^3}{18} dx\\
+\amp = \int_4^6 \frac{77x^3}{81} - \frac{33x^2}{2} +
+\frac{121 x}{2} dx\\
+\amp = \left. \frac{77x^4}{324} - \frac{11x^3}{2} +
+\frac{121 x^2}{4} \right|_4^6\\
+\amp = \frac{77 \cdot 6^4}{324} - \frac{11 \cdot 6^3}{2} +
+\frac{121 \cdot 6^2}{4} \\
+\amp - \frac{77\cdot 4^4}{324} +
+\frac{11 4^3}{2} - \frac{121 \cdot 4^2}{4} \\
+\amp = \frac{86845}{81}
+\end{align*}
+</div>
+<div class="para">The total is the sum of the two integrals.</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/figure-variable-bounds1.html">
+\begin{equation*}
+\int_T f dA = \frac{1196}{9} + \frac{86845}{81} =
+\frac{97609}{81}
+\end{equation*}
+</div></article><span class="incontext"><a href="section-variable-bounds.html#example-66" class="internal">in-context</a></span>
+</body>
+</html>

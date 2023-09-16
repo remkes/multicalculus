@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math"><div class="solution solution-like"><div class="para logical">
+<div class="para">First I calculate the gradient.</div>
+<div class="displaymath process-math">
+\begin{align*}
+\nabla f(x,y) \amp = \left( \cos (x) \cos (y), - \sin
+(x) \sin (y) \right) 
+\end{align*}
+</div>
+<div class="para">Then I set the gradient equal to zero to find the critical points. This involves solving a system of two equations.</div>
+<div class="displaymath process-math">
+\begin{align*}
+\cos x \cos y \amp = 0 \\
+-\sin x \sin y  \amp = 0 
+\end{align*}
+</div>
+<div class="para">This is a complicated system. To make both terms vanish, I have to use <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> as the zeros of sine or cosine in matching pairs. This gives two families of point. The first is</div>
+<div class="displaymath process-math">
+\begin{align*}
+\amp \left( n\pi, (2m+1) \frac{\pi}{2} \right) \amp \amp
+n,m \in \ZZ
+\end{align*}
+</div>
+<div class="para">For this first family, the <span class="process-math">\(x\)</span> coordinate makes the sine term vanish and the <span class="process-math">\(y\)</span> coordinate makes the cosine term vanish. The second family does the opposite.</div>
+<div class="displaymath process-math">
+\begin{align*}
+\amp \left( (2n + 1) \frac{\pi}{2}, m\pi \right) \amp
+\amp n,m \in \ZZ
+\end{align*}
+</div>
+<div class="para">Here, the <span class="process-math">\(x\)</span> coordinate makes the cosine terms vanish and the <span class="process-math">\(y\)</span> coordinate makes the sine terms vanish. Then I calculate the determinant of the Hessian and evaluate it at the critical points (which I will have to do in families, since there are infinitely many critical points).</div>
+<div class="displaymath process-math">
+\begin{align*}
+D \amp = \left( -\sin x \cos y \right) \left( -\sin x
+\cos y \right) - \left( - \cos x \sin y \right)^2 \\
+\amp = \sin^2 x \cos^2 y - \cos^2 x \sin^2 y 
+\end{align*}
+</div>
+<div class="para">I have to analyse the two families of critical points. For the points in the family <span class="process-math">\(\left( n\pi, (2m+1)
+\frac{\pi}{2} \right)\text{,}\)</span> <span class="process-math">\(D = -1\text{,}\)</span> so all of these points are saddle points. For points in the family <span class="process-math">\(\left( (2n+1) \frac{\pi}{2}, m \pi \right)\text{,}\)</span> <span class="process-math">\(D =
+1\text{,}\)</span> so these are minima or maxima. I need to additionally look at <span class="process-math">\(\frac{\del^2 f}{\del x^2} = -\sin x \cos y\text{.}\)</span> If <span class="process-math">\(m,n\)</span> are both odd or both even, this partial derivative is negative and the critical point is a maximum. If one of <span class="process-math">\(m,n\)</span> is odd and the other is even, this partial derivative is positive and the critical point is a minimum.</div>
+</div></div></body>
+</html>

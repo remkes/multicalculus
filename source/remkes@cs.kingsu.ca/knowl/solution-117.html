@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<div class="solution solution-like">
+<h4 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">11.3.1.1</span><span class="period">.</span>
+</h4>
+<div class="para">I would like to use <a href="" class="xref" data-knowl="./knowl/example-surface-graph.html" title="Example 11.1.2">Example 11.1.2</a> to parametrization this. To make this the graph of a function, I can solve for <span class="process-math">\(z\)</span> in the equation of the plane as <span class="process-math">\(z = 3x-4y-4\text{.}\)</span> The bounds of the parameter domain are precisely the bounds on <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> given in the descriptions.</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/example-surface-graph.html">
+\begin{align*}
+\sigma(u,v) \amp = (u,v,3u - 4v - 4) \\
+D \amp = (u,v) \in [3,6] \times[-1,4] 
+\end{align*}
+</div>
+<div class="para">To calculate the surface area, I’ll need the partial derivative, the normal, and the length of the normal.</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/example-surface-graph.html">
+\begin{align*}
+\sigma_u \amp = (1,0,3) \\
+\sigma_v \amp = (0,1,-4) \\
+\sigma_u \times \sigma_v \amp = (-3,4,1) \\
+|\sigma_u \times \sigma_v| \amp = \sqrt{9+16+1} = \sqrt{26} 
+\end{align*}
+</div>
+<div class="para">Then I can calculate the surface area by integrating the length of the normal over the parameter domain.</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/example-surface-graph.html">
+\begin{align*}
+A \amp = \int_D |\sigma_u \times \sigma_v| du dv \\
+\amp = \int_{-1}^4 \int_3^6 \sqrt{26} du dv = \sqrt{26}
+(4-(-1))(6-3)\\
+\amp= 15 \sqrt{26}
+\end{align*}
+</div>
+</div>
+<span class="incontext"><a href="week11-activity.html#solution-117" class="internal">in-context</a></span>
+</body>
+</html>

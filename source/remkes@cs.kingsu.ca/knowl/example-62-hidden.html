@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math"><article class="example example-like"><figure class="figure figure-like"><div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><div class="asymptote-box" style="padding-top: 27.7634862208369%"><iframe src="generated/asymptote/figure49.html" class="asymptote"></iframe></div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">7.2.2<span class="period">.</span></span><span class="space"> </span></figcaption></figure> <div class="para">The function <span class="process-math">\(f(x,y) = a - \frac{a(|x-y| + |x+y|)}{2b}\)</span> over the interval <span class="process-math">\([-b.b] \times [-b,b]\)</span> describes a square pyramid with height <span class="process-math">\(a\)</span> and side length <span class="process-math">\(2b\text{.}\)</span> What is the volume of such a pyramid? Doing the integral directly is difficult with the various evaluations of the absolute value terms. I could try to simplify by integrating over one quarter of pyramid with the interval <span class="process-math">\([0,b] \times [0,b]\text{,}\)</span> then multiply by 4 to get the entire area. However, this doesn’t solve the problem with the absolute value terms; over this quarter, there are still essentially two pieces of the function. I need to split the domain further into two regions: one where <span class="process-math">\(x&gt;y\)</span> and one where <span class="process-math">\(x\lt y\text{.}\)</span> In those regions, I can drop the abosolute value in the function and do a reasonable integral. In the interval <span class="process-math">\([0,b] \times [0,b]\text{,}\)</span> those two regions are triangles, so I need to integrate over triangles. Triangles are not intervals, so I need a new technique.</div> <div class="para">I can describe the first triangle (where <span class="process-math">\(y\lt x\)</span>) by saying that <span class="process-math">\(x \in [0,b]\text{,}\)</span> then, once we’ve set an <span class="process-math">\(x\)</span> value, <span class="process-math">\(y \in [0, x]\text{.}\)</span> This is indicated in the triangle with vertical lines in <a href="" class="xref" data-knowl="./knowl/figure-triangle-variable-bounds.html" title="Figure 7.2.2">Figure 7.2.2</a>, showing that for each set <span class="process-math">\(x\)</span> value, the <span class="process-math">\(y\)</span> value has a bound based on the matching <span class="process-math">\(x\)</span> coordinate. I can use this variable bound in an iterate integral. Let <span class="process-math">\(T\)</span> represent the triangle.</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/figure-triangle-variable-bounds.html ./knowl/figure-triangle-variable-bounds.html">
+\begin{equation*}
+\int_T f(x,y) dA = \int_0^b \int_0^x f(x,y) dy dx
+\end{equation*}
+</div>
+<div class="para">I could have reversed the order. If I have <span class="process-math">\(y \in
+[0,b]\)</span> then the condition <span class="process-math">\(y\lt x\)</span> means that <span class="process-math">\(x \in
+[y,b]\text{.}\)</span> This is indicated by the triangle with horizontal lines in <a href="" class="xref" data-knowl="./knowl/figure-triangle-variable-bounds.html" title="Figure 7.2.2">Figure 7.2.2</a>.</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/figure-triangle-variable-bounds.html ./knowl/figure-triangle-variable-bounds.html">
+\begin{equation*}
+\int_T f(x,y) dA = \int_0^b \int_y^b f(x,y) dx dy
+\end{equation*}
+</div>
+<div class="para">Now I will evaluate the square pyramid integral. The function was <span class="process-math">\(f(x,y) = a - \frac{a(|x-y| + |x+y|)}{2b}\text{.}\)</span> On the triangle in <span class="process-math">\([0,b] \times [0,b]\)</span> where <span class="process-math">\(y\lt x\text{,}\)</span> the absolute values are <span class="process-math">\(|x-y| = x-y\)</span> and <span class="process-math">\(|x+y| = x+y\text{,}\)</span> so the function is <span class="process-math">\(a - \frac{a(x-y+x+y)}{2b} = a -
+\frac{2ax}{2b} = a - \frac{ax}{b}\text{.}\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/figure-triangle-variable-bounds.html ./knowl/figure-triangle-variable-bounds.html">
+\begin{align*}
+\int_T f(x,y) dA \amp = \int_0^b \int_0^x a - \frac{ax}{b}
+dy dx\\
+\amp = \int_0^b \left. ay - \frac{axy}{b} \right|_0^x dx\\
+\amp = \int_0^b ax - \frac{ax^2}{b} dx\\
+\amp = \left. \frac{ax^2}{2} - \frac{ax^3}{3b} \right|_0^b\\
+\amp = \frac{ab^2}{2} - \frac{ab^3}{3b} = \frac{ab^2}{2} -
+\frac{ab^2}{3} = \frac{ab^2}{6}
+\end{align*}
+</div>
+<div class="para">This measures one eighth of the total pyramid, so the total volume is <span class="process-math">\(\frac{4ab^2}{3}\text{.}\)</span>
+</div></article></body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<div class="solution solution-like">
+<h4 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">11.3.4.1</span><span class="period">.</span>
+</h4>
+<div class="para">There are a variety of ways to approach this. I could take <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> as parameter and solve for <span class="process-math">\(z\text{;}\)</span> however, the square root gives multiple values, so I can’t get a whole parametric description this way. I could also treat this as a surface of revolution about the <span class="process-math">\(z\)</span> axis and use <a href="" class="xref" data-knowl="./knowl/example-surface-revolution.html" title="Example 11.1.3">Example 11.1.3</a>. Notice that, in the example, the axis of revolution was the <span class="process-math">\(x\)</span> axis. I’ll just adjust for rotation around the <span class="process-math">\(z\)</span> axis by switching the variables.</div> <div class="para">However, I’m going to do something else entirely. This hyperboloid is very similar to the sphere. I’d like to parallel the coordinate system of the sphere to get a coordinate system for this, building a kind-of hyperbolic coordinate system. For rotation about the <span class="process-math">\(z\)</span> axis, this is still like the longitude of the sphere. However, instead of the coltatitue of the sphere, I have hyperbolic cross-section for vertical slices. Therefore, I can use hyperbolic functions for the ‘colatitude’ instead of trig function. That leads to the following parametrization.</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/example-surface-revolution.html">
+\begin{align*}
+\sigma(\phi,\theta) \amp = (\cosh \phi \sin \theta, \cosh
+\phi \cos \theta, \sinh \phi)\\
+D \amp = (\phi,\theta) \in [\arcsinh (-3), \arcsinh (3)]
+\times [0, 2\pi]
+\end{align*}
+</div>
+<div class="para">To calculate the surface area, I’ll need the partial derivative, the normal, and the length of the normal.</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/example-surface-revolution.html">
+\begin{align*}
+\sigma_\phi \amp = (\sinh \phi \sin \theta, \sinh \phi
+\cos \theta, \cosh \phi \phi) \\
+\sigma_\theta \amp = (\cosh \phi \cos \theta, -\cosh \phi
+\sin \theta, 0) \\
+\sigma_\phi \times \sigma_\theta \amp = (\cosh^2 \phi \sin
+\theta, \cosh^2 \phi \cos \theta, -\sinh \phi \cosh \phi )\\
+|\sigma_\phi \times \sigma_\theta| \amp = \sqrt{\cosh^4
+\phi \sin^2 \theta + \cosh^4 \phi \cos^2 \theta + \sinh^2
+\phi \cosh^2 \phi}\\
+\amp = \cosh \phi \sqrt{\cosh^2 \phi + \sinh^2 \phi} 
+\end{align*}
+</div>
+<div class="para">Here I run into a similar program as previous question. The situation is not as nasty, as some simplification does occur. But there is no identity for <span class="process-math">\(\sinh^2 \phi +
+\cosh^2 \phi\)</span> which can remove the square root (unlike the case of the sphere). Therefore, like the last question, I am stuck with this square root. For the surace area integral, this will lead to integral without elementary anti-derivatives.</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/example-surface-revolution.html">
+\begin{align*}
+A \amp = \int_0^{2\pi} \int_{\arcsinh (-3)}^{\arcsinh (3)}
+\cosh \phi \sqrt{\cosh^2 \phi + \sinh^2 \phi} d\phi
+d\theta 
+\end{align*}
+</div>
+</div>
+<span class="incontext"><a href="week11-activity.html#solution-120" class="internal">in-context</a></span>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<div class="displaymath process-math">
+\begin{align*}
+I_x \amp = \int_S (y^2 + z^2) \rho dV  = \int_0^1
+\int_0^{2\pi} \int_{5r}^5 (r^2 \sin^2 \theta + z^2)
+\frac{z^2}{10} dz rd\theta dr = \\
+\amp = \frac{1}{10} \int_0^1 \int_0^{2\pi} \int_{5r}^5 r^3
+\sin^2 \theta z^2dz d\theta dr + \frac{1}{10} \int_0^1
+\int_0^{2\pi} \int_{5r}^5 z^4 rdz d\theta dr\\
+\amp = \frac{1}{10} \int_0^{2\pi} \sin^2 \theta d\theta
+\int_0^1 r^3 \frac{z^3}{3} \Bigg|_{5r}^5 dr + \frac{1}{10}
+2\pi \int_0^1 \frac{z^5}{5} \Bigg|_{5r}^5 rdr\\
+\amp = \frac{1}{30} \pi \int_0^1 (125) (r^3 -  r^6) dr +
+\frac{\pi}{25} \int_0^1 (3125) (r-r^6) dr\\
+\amp = \frac{25\pi}{6} \left( \frac{r^4}{4} -
+\frac{r^7}{7} \right)  \Bigg|_0^1 + 125\pi \left(
+\frac{r^2}{2} -  \frac{r^7}{7} \right) \Bigg|_0^1 \\
+\amp = \frac{25\pi}{6} \left( \frac{1}{4} - \frac{1}{7}
+\right) + 125\pi \left( \frac{1}{2} - \frac{1}{7} \right)\\
+\amp = \frac{25\pi}{6} \frac{3}{14} + 125\pi \frac{5}{14}
+= \frac{2875\pi}{84}
+\end{align*}
+</div>
+<span class="incontext"><a href="section-week8-activity.html#md-244" class="internal">in-context</a></span>
+</body>
+</html>

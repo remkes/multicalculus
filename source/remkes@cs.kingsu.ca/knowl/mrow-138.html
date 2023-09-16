@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<div class="displaymath process-math">
+\begin{align*}
+\gamma(t) \amp = (t^3, 1 - t^2, 1 + t^2) \\
+\gamma^\prime(t) \amp = (x^\prime(t), y^\prime(t),
+z^\prime(t)) = (3t^2, -2t, 2t) \\
+v(t) \amp = |\gamma^\prime(t)| = \sqrt{x^\prime(t)^2 +
+y^\prime(t)^2 + z^\prime(t)^2 }\\
+\amp = \sqrt{ 9t^4 + 4t^2 + 4t^2} = t \sqrt{9t^2 + 4} \\
+T(t) \amp = \frac{\gamma^\prime(t)}{|\gamma^\prime(t)|} =
+\frac{1}{t\sqrt{9t^2 + 4}} \left( 3t^2, -2t, 2t \right)\\
+\amp = \left( \frac{3t}{\sqrt{9t^2+4}}
+\frac{-2}{\sqrt{9t^2+4}} \frac{2}{\sqrt{9t^2+4}} \right)\\
+T^\prime(t) \amp = \left( \frac{12}{(9t^2 +
+4)^{\frac{3}{2}}}, \frac{-18t}{(9t^2+4)^{\frac{3}{2}}},
+\frac{18t}{(9t^2+4)^{\frac{3}{2}}} \right) \\
+\amp = \frac{1}{(9t^2+4)^{\frac{3}{2}}} (12, -18t, 18t)\\
+|T^\prime(t)| \amp = \frac{1}{(9t^2+4)^{\frac{3}{2}}}
+\sqrt{144 + 324t^2 + 324t^2} =
+\frac{1}{(9t^2+4)^{\frac{3}{2}}} \sqrt{144 + 648t^2}\\
+\kappa(t) \amp =
+\frac{|T^\prime(t)|}{|\gamma^\prime(t)|} =
+\frac{\frac{1}{(9t^2+4)^{\frac{3}{2}}} \sqrt{ 144 +
+648t^2}}{\sqrt{ 9t^4 + 4t^2}} = \frac{144 + 648
+t^2}{(9t^2+4)^2}\\
+N(t) \amp = \frac{T^\prime(t)}{|T^\prime(t)|}
+\frac{1}{\sqrt{144 + 648t^2}} \left( 12, -18t, 18t
+\right) \\
+B(t) \amp = T(t) \times N(t) = \frac{1}{\sqrt{9t^2+4}}
+(3t, -2, -2) \times \frac{1}{\sqrt{144+684t^2}} (12,
+-18t, 18t)\\
+\amp = \frac{1}{\sqrt{(9t^2+4)(144+648t^2)}} \left[ 
+(3t, -2, -2) \times (12, -18t, 18t) \right] \\
+\amp = \frac{1}{\sqrt{5832t^4 + 3888t^2 + 576}} (-72t,
+-24 - 54t^2, 24 - 54t^2)\\
+B^\prime(t) \amp = \frac{1}{(81t^4 +54t^2 +
+8)^{\frac{3}{2}}} \left( 6\sqrt{2} (81t^4 - 8),
+9\sqrt{2} t(9t^2 + 4), -9\sqrt{2}t (63t^2 + 20) \right) \\
+\tau(t) \amp = - \frac{B^\prime(t)}{|\gamma^\prime(t)|}
+\cdot N(t)\\
+\amp = \frac{-\left( 12(6\sqrt{2}) (81t^4 - 8) -
+18t(9\sqrt{2})(9t^2 + 4) - 18t(9\sqrt{2})(63t^2 + 20)
+\right)}{t\sqrt{(9t^2+4)(81t^4 + 54t^2 + 8)^3}}\\
+\amp = \frac{-\sqrt{2}}{t\sqrt{(9t^2+4)(81t^4 + 54t^2 +
+8)^3}} (5832t^4 - 11664t^2 - 4464)
+\end{align*}
+</div>
+<span class="incontext"><a href="week2-activity.html#md-63" class="internal">in-context</a></span>
+</body>
+</html>

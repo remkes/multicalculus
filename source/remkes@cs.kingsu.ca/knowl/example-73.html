@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">8.1.7</span><span class="period">.</span>
+</h3>
+<figure class="figure figure-like"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><div class="asymptote-box" style="padding-top: 89.1923584755766%"><iframe src="generated/asymptote/figure53.html" class="asymptote"></iframe></div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">8.1.8<span class="period">.</span></span><span class="space"> </span>The region in the first quadrant betwee <span class="process-math">\(x+y=1\)</span> and <span class="process-math">\(x+y=2\text{.}\)</span></figcaption></figure> <div class="para">Let <span class="process-math">\(D\)</span> be the region in the first quadrant between the lines <span class="process-math">\(x+y = 1\)</span> and the line <span class="process-math">\(x+y =2\text{,}\)</span> shown in <a href="" class="xref" data-knowl="./knowl/figure-cov1.html" title="Figure 8.1.8">Figure 8.1.8</a>. In the following integral, I want to simply the integrand and integrate over a simpler region if possible.</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/figure-cov1.html">
+\begin{equation*}
+\int_D \cos \left( \frac{y-x}{y+x} \right) dA
+\end{equation*}
+</div>
+<div class="para">To simplify the integrand, I can look for transformations where <span class="process-math">\(u = x+y\)</span> and <span class="process-math">\(v = x-y\text{.}\)</span> Inverting these (either by linear algebra, since the transformation is linear, or just by solving with conventional algebra), I get <span class="process-math">\(x =
+\frac{u+v}{2}\)</span> and <span class="process-math">\(y = \frac{u-v}{2}\text{.}\)</span>
+</div> <div class="para">Then I look at the bounds. If I take <span class="process-math">\(x+y=1\)</span> and replace <span class="process-math">\(x\)</span> and <span class="process-math">\(y\text{,}\)</span> I get <span class="process-math">\(u=1\text{.}\)</span> Likewise, <span class="process-math">\(x+y=2\)</span> is <span class="process-math">\(u=2\text{.}\)</span> This is excellent, since I need at least one variable with constant bounds; I’ll take <span class="process-math">\(u\)</span> to be the variable of the outside integral. The other bounds are the axes, which I can express by the equations <span class="process-math">\(y=0\)</span> and <span class="process-math">\(x=0\text{.}\)</span> These turn into <span class="process-math">\(u=v\)</span> and <span class="process-math">\(u=-v\text{,}\)</span> respective. Therefore, the bounds of <span class="process-math">\(v\)</span> will be these two lines: <span class="process-math">\(v \in [u, -u]\text{.}\)</span>
+</div> <div class="para">Finally, we calculate the Jacobian.</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/figure-cov1.html">
+\begin{align*}
+x_u \amp = \frac{1}{2}\\
+x_v \amp = \frac{1}{2}\\
+y_u \amp = \frac{1}{2}\\
+y_v \amp = -\frac{1}{2}\\
+\det J \amp = -\frac{1}{2}\\
+dx dy \amp = \frac{1}{-2} du dv
+\end{align*}
+</div>
+<div class="para">We have the new integrand, the new bounds and the Jacobian. We can proceed to the new integral.</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/figure-cov1.html">
+\begin{align*}
+\int_D \cos \left( \frac{y-x}{y+x} \right) dA \amp =
+\int_1^2 \int_{-u}^u \cos \left( \frac{-v}{u} \right)
+\frac{-1}{2} dv du\\
+\amp = \frac{-1}{2} \int_1^2 \left. -\sin \left(
+\frac{-v}{u} \right) (-u) \right|_{-u}^{u} du\\
+\amp = \frac{-1}{2} \int_1^2 u (\sin (-1) - \sin(1)) du\\
+\amp = \sin (1) \left. \frac{u^2}{2} \right|_1^2\\
+\amp = \sin (1) (2 - \frac{1}{2}) = \frac{3\sin(1)}{2}
+\end{align*}
+</div></article><span class="incontext"><a href="section-change-of-variables.html#example-73" class="internal">in-context</a></span>
+</body>
+</html>

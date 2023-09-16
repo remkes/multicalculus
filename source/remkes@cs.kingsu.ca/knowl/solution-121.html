@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<div class="solution solution-like">
+<h4 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">11.3.5.1</span><span class="period">.</span>
+</h4>
+<div class="para">I’d like to treat this as a surface of revolution about the <span class="process-math">\(z\)</span> axis. I’ll use the setup from <a href="" class="xref" data-knowl="./knowl/example-surface-revolution.html" title="Example 11.1.3">Example 11.1.3</a>, but I switch the variables to reflect the axis of revolution.</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/example-surface-revolution.html">
+\begin{align*}
+\sigma(z,\theta) \amp = \left (z^{\frac{3}{2}} \cos
+\theta, z^{\frac{3}{2}} \sin \theta, z \right)\\
+D \amp = (z,\theta) \in [0,4] \times [0,2\pi] 
+\end{align*}
+</div>
+<div class="para">To calculate the surface area, I’ll need the partial derivative, the normal, and the length of the normal.</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/example-surface-revolution.html">
+\begin{align*}
+\sigma_z \amp = \left( \frac{3}{2} z^{\frac{1}{2}} \cos
+\theta, \frac{3}{2} z^{\frac{1}{2}} \sin \theta, 1 \right) \\
+\sigma_\theta \amp = \left( -z^{\frac{3}{2}} \sin \theta,
+z^{\frac{3}{2}} \cos \theta, 0 \right) \\
+\sigma_z \times \sigma_\theta \amp = \left(
+-z^{\frac{3}{2}} \cos \theta, -z^{\frac{3}{2}} \sin
+\theta, \frac{3}{2}z^2 \right) \\
+|\sigma_z \times \sigma_\theta| \amp = \sqrt{z^3 +
+\frac{9z^4}{4}}
+\end{align*}
+</div>
+<div class="para">Again, the problems are similar. I don’t have a nice technique like trigononmetric subsitution to deal with this strange square root term. It leads to non-elementary antiderivative for the surface area integarl.</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/example-surface-revolution.html">
+\begin{align*}
+A = \int_D |\sigma_z \times \sigma_\theta| dz d\theta \amp = 
+\int_0^{2\pi} \int_0^4 \sqrt{z^3 + \frac{9z^4}{4}} dz
+d\theta  
+\end{align*}
+</div>
+</div>
+<span class="incontext"><a href="week11-activity.html#solution-121" class="internal">in-context</a></span>
+</body>
+</html>

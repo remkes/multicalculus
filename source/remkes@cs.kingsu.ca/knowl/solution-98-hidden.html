@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math"><div class="solution solution-like">
+<div class="para">I expand in components and apply definition of the cross product.</div>
+<div class="displaymath process-math">
+\begin{align*}
+\amp \nabla \cdot (F \times G) = \nabla \cdot \left(
+(F_1,F_2,F_3) \times (G_1,G_2,G_3) \right) \\
+\amp = \nabla \cdot \left( (F_2G_3 - F_3G_2), (F_3G_1 -
+F_1G_3), (F_1G_2 - F_2G_1) \right) \\
+\amp = \frac{\del}{\del x} (F_2G_3 - F_3G_2)) +
+\frac{\del}{\del y} (F_3G_1 - F_1G_3)) + \frac{\del}{\del
+z} (F_1G_2 - F_2G_1)) 
+\end{align*}
+</div>
+<div class="para">I use linearity and the power rule for the partial derivatives to expand this further.</div>
+<div class="displaymath process-math">
+\begin{align*}
+\amp = G_3 \frac{\del}{\del x} F_2 + F_2 \frac{\del}{\del
+x} G_3 - (G_2 \frac{\del}{\del x} F_3 + F_3
+\frac{\del}{\del x} G_2)\\
+\amp + G_1 \frac{\del}{\del y} F_3 + F_3 \frac{\del}{\del
+y} G_1 - (G_3 \frac{\del}{\del y} F_1 + F_1
+\frac{\del}{\del y} G_3) \\
+\amp + G_2 \frac{\del}{\del z} F_1 + F_1 \frac{\del}{\del
+z} G_2 - (G_1 \frac{\del}{\del z} F_2 + F_2
+\frac{\del}{\del z} G_1) 
+\end{align*}
+</div>
+<div class="para">I have twelve terms here. I reorder them in the following way.</div>
+<div class="displaymath process-math">
+\begin{align*}
+\amp = G_1 \left( \frac{\del}{\del y} F_3 -
+\frac{\del}{\del z} F_2 \right) + G_2 \left(
+\frac{\del}{\del z} F_1 - \frac{\del}{\del x} F_3 \right) +
+G_3 \left( \frac{\del}{\del x} F_2 - \frac{\del}{\del y}
+F_1 \right) \\
+\amp - \left( F_1 \left( \frac{\del}{\del y} G_3 -
+\frac{\del}{\del z} G_2 \right) + F_2 \left(
+\frac{\del}{\del z} G_1 - \frac{\del}{\del x} G_3 \right)
++ F_3 \left( \frac{\del}{\del x} G_2 - \frac{\del}{\del y}
+G_1 \right)  \right)
+\end{align*}
+</div>
+<div class="para">From here, I just need to recognize that the result is precisely the expanded form of the right side that I’m trying to work towards.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+= G \cdot ( \nabla \times F) - F \cdot ( \nabla \times G) 
+\end{equation*}
+</div>
+</div></body>
+</html>

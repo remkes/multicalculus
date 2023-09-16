@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<div class="solution solution-like">
+<h4 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">8.5.11.1</span><span class="period">.</span>
+</h4>
+<div class="para">The region here is easy: <span class="process-math">\(r \in [0,2]\)</span> and <span class="process-math">\(\theta
+\in [0, 2\pi]\text{.}\)</span> The integrand, however, doesn’t look that pleasant after I change to polar coordinates: <span class="process-math">\(3r^3 \cos^3
+\theta - (r \sin \theta - 3)^2\text{.}\)</span> Adding the Jacobian gives the new integral. I split it up into several pieces to complete the integral. I did some of the trig integrals using a computer algebra system (though you can see, directly, that some evaluate to zero using symmetry arguments.)</div>
+<div class="displaymath process-math">
+\begin{align*}
+\amp \int_0^{2\pi} \int_0^2 (3r^3 \cos^3 \theta - r^2
+\sin^2 \theta + 6r \sin \theta - 9) r dr d\theta \\
+\amp = \int_0^{2\pi} \int_0^2 3r^4 \cos^3 \theta dr
+d\theta - \int_0^{2\pi} \int_0^2 r^3 \sin^2 \theta dr
+d\theta \\
+\amp + \int_0^{2\pi} \int_0^2 6r^2 \sin
+\theta dr d\theta - \int_0^{2\pi} \int_0^2 9r dr d\theta \\
+\amp = \int_0^{2\pi} \cos^3 \theta d\theta \int_0^2 3r^4
+dr - \int_0^{2\pi} \sin^2 \theta d\theta  \int_0^2 r^3 dr\\
+\amp + \int_0^{2\pi} \sin \theta d\theta
+\int_0^2 6r^2 dr - \int_0^{2\pi} d\theta \int_0^2 9r dr \\
+\amp = (0) \frac{3r^5}{5} \bigg|_0^2 - (\pi) \frac{r^4}{4}
+\bigg|_0^2 + (0) 2r^3 \bigg|_0^2 - (2\pi) \frac{9r^2}{2}
+\bigg|_0^2 \\
+\amp = 0 - 4\pi + 0 - 36\pi = -40\pi 
+\end{align*}
+</div>
+</div>
+<span class="incontext"><a href="section-week8-activity.html#solution-89" class="internal">in-context</a></span>
+</body>
+</html>

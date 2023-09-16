@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">8.3.5</span><span class="period">.</span>
+</h4>
+<div class="para">This example it quite a tricky volume problem, but shows some clever use of polar coordinates. Assume there are three cylinders of radius <span class="process-math">\(R\)</span> along each axis in <span class="process-math">\(\RR^3\text{.}\)</span> What is the volume of the intersection of all three cylinders? (This object is called the tricylinder Steinmetz solid). Setting up the geometry is difficult. I will integrate a volume over the <span class="process-math">\(xy\)</span> plane. By symmetry, I can work with one 16th of the shape: the portion that lies above one 8th of the circle above the axis. The first 8th of the circle is described by the bounds <span class="process-math">\(\theta \in \left[0, \frac{\pi}{4} \right]\)</span> in cylindrical coordinates. The <span class="process-math">\(z\)</span>-axis cylinder restricts the shape to the circle in the <span class="process-math">\(xy\)</span>-plane and the <span class="process-math">\(x\)</span>-axis cylinder is lower than the <span class="process-math">\(y\)</span>-axis cylinder over this particular <span class="process-math">\(8th\)</span> or a circle, so the <span class="process-math">\(x\)</span>-axis cylinder is the limit on height. What is that height function? The equation of the cylinder is <span class="process-math">\(y^2 + z^2 = R^2\text{.}\)</span> I can solve for <span class="process-math">\(z\)</span> to get  <span class="process-math">\(z ^2 = R^2 - y^2 = R^2 - r^2 \sin^2\theta\text{,}\)</span> writing <span class="process-math">\(y\)</span> in cylindrical coordinates. This determines a region of integration. I integrate constant <span class="process-math">\(1\)</span> and I remember to include the Jacobian.</div>
+<div class="displaymath process-math">
+\begin{align*}
+V \amp = 16 \int_0^{\frac{\pi}{4}} \int_0^R
+\int_0^{\sqrt{R^2-r^2 \cos^2\theta}} r dz dr d\theta\\
+\amp = 16 \int_0^{\frac{\pi}{4}} \int_0^R \sqrt{R^2-r^2
+\cos^2\theta} r dr d\theta\\
+\amp = 16 \int_0^{\frac{\pi}{4}} \left( (R^2-r^2
+\cos^2\theta)^{\frac{3}{2}} \frac{2}{3}
+\frac{-1}{2\cos^2\theta} \right) \Bigg|_0^R d\theta\\
+\amp = \frac{16}{3} \int_0^{\frac{\pi}{4}} \left(
+\frac{R^3}{\cos^2 \theta} - \frac{(R^2-R^2\cos^2
+\theta)^{\frac{3}{2}}}{\cos^2 \theta} \right) d \theta\\
+\amp = \frac{16}{3} \int_0^{\frac{\pi}{4}} \left(
+R^3\sec^2 \theta - \frac{R^3\sin^3 \theta}{\cos^2
+\theta} \right) d \theta\\
+\amp = \frac{16R^3}{3} \int_0^{\frac{\pi}{4}} \left(
+\sec^2 \theta - \frac{\sin \theta}{\cos^2 \theta} + \sin
+\theta \right) d \theta\\
+\amp = \frac{16R^3}{3} \left( \tan \theta +
+\frac{-1}{\cos \theta} - \cos \theta \right)
+\Bigg|_0^{\frac{\pi}{4}}\\
+\amp = \frac{16R^3}{3} \left( 1 - \frac{2}{\sqrt{2}} -
+\frac{\sqrt{2}}{2} - 0 + 1 + 1 \right)\\
+\amp = \frac{16R^3}{3} \left( 3 - \frac{2\sqrt{2} +
+\sqrt{2}}{2} = \frac{16R^3}{3} \frac{6-3\sqrt{2}}{2}
+\right) = 8R^3 (2-\sqrt{2})
+\end{align*}
+</div></article><span class="incontext"><a href="section-cylindrical-and-spherical.html#example-85" class="internal">in-context</a></span>
+</body>
+</html>
