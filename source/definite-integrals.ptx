@@ -74,38 +74,6 @@
       domains: intervals. 
     </p>
   </subsection>
-  <subsection xml:id="subsection-review-intervals">
-    <title>Intervals in <m>\RR^n</m></title>
-    <p>
-      Intervals were originally defined in <xref
-      ref="subsection-intervals" />. Rewrite this section to match. 
-    </p>
-    <definition>
-      <statement>
-        <p>
-          An closed interval <m>I</m> in <m>\RR^n</m> is the (geometric)
-          product of single-variable closed intervals.
-        </p>
-        <me>
-          I = [a_1,b_1] \times [a_2,b_2] \times \ldots \times [a_n,b_n]
-        </me>
-        <p>
-          This (geometric) product is defined to be the subset of
-          <m>\RR^n</m> consisting of all <m>(x_1, x_2, \ldots, x_n)</m>
-          such that <m>a_1 \leq x_1 \leq b_1</m>, <m>a_2 \leq x_2, \leq
-          b_2</m> and so on until <m>a_n \leq x_n \leq b_n</m>. In
-          <m>\RR^2</m> it is a rectangle. In <m>\RR^3</m> it is a
-          rectangular prism. Similarly, by using open interval,
-          <m>(a,b)</m> in the definition, I can define an open
-          interval in <m>\RR^n</m>. Likewise, I can define various
-          types of partially closed, partially open intervals by
-          changing the inequalities (strict or non-strict) of the
-          various endpoints of the single variable intervals in the
-          product. 
-        </p>
-      </statement>
-    </definition>
-  </subsection>
   <subsection xml:id="subsection-riemann-integral">
     <title>The Riemann Integral</title>
     <p>
@@ -157,22 +125,23 @@
       appropriate dimension. I will write <m>\Delta V</m> for this
       size, thinking of <m>V</m> for volume or hypervolume. (As
       before, in the special case of two variables, I would write
-      <m>\Delta A</m> instead). 
+      <m>\Delta A</m> instead). I'll define this for a three-variable
+      function, but the definition is general. 
     </p>
     <definition xml:id="definition-definite-riemann-integral">
       <statement>
         <p>
-          Let <m>I \subset \RR^n</m> be an interval and <m>f: I
+          Let <m>I \subset \RR^3</m> be an interval and <m>f: I
           \rightarrow \RR</m> a function. The <term> Riemann
           integral</term>  of a function is the following limit (if it
-          exists), where the sum is taken over all <m>k^n</m>
+          exists), where the sum is taken over all <m>3^n</m>
           subdivision of the interval and <m>x_l^*</m> is any point in
           the <m>l</m>th subinterval, and <m>\Delta V</m> is the
           (hyper)volume of the subinterval.
         </p>
         <me>
-          \int_{I} f(x_1, x_2, \ldots, x_n) dV = \lim_{k \rightarrow
-          \infty} \sum_{l=0}^{k^n} f(x_l^*) \Delta V
+          \int_{I} f(x_1, x_2, x_3) dV = \lim_{k \rightarrow
+          \infty} \sum_{l=0}^{k^3} f(x_l^*) \Delta V
         </me>
         <p>
           If the limit exists, the function <m>f</m> is called 

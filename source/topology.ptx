@@ -196,7 +196,8 @@
         this is a disc not including the boundary. In <m>\RR^3</m>,
         this is a solid sphere, again not including the boundary. In
         higher dimensions, this defines the higher analogue of a
-        solid, round object without boundary. 
+        solid, round object without boundary. The notation for the
+        open ball is <m>B(v,r)</m>.
       </statement>
     </definition>
     <definition>
@@ -208,7 +209,8 @@
         this is a solid sphere including the boundary. In
         <m>\RR^3</m>, this is a solid sphere, again including the
         boundary. In higher dimensions, this defines the higher
-        analogue of a solid, round object with boundary. 
+        analogue of a solid, round object with boundary. The notation
+        for the closed ball is <m>\overline{B(v,r)}</m>.
       </statement>
     </definition>
   </subsection>

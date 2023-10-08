@@ -182,8 +182,8 @@
           </me>
           Finally I eavluate this at the point. 
           <me>
-            D_u f (p) = \frac{1}{\sqrt{3} \left( \frac{4}{5} + 0 +
-            \frac{16}{25} \right) = \frac{32}{25 \sqrt{3}
+            D_u f (p) = \frac{1}{\sqrt{3}} \left( \frac{4}{5} + 0 +
+            \frac{16}{25} \right) = \frac{32}{25} \sqrt{3}
           </me>
         </p>
       </solution>

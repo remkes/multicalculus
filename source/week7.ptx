@@ -1,6 +1,9 @@
 <chapter xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="chapter-week7">
   <title>Week 7</title>
+  <xi:include href="improper-integrals.ptx" />
   <xi:include href="integrable-sets.ptx" />
   <xi:include href="variable-bounds.ptx" />
   <xi:include href="week7-activity.ptx" />
 </chapter>
+
+
