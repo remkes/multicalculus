@@ -527,7 +527,13 @@
           </mrow>
         </md>
         <p>
-          The second integral is more involved.
+          The second integral is more involved. I've shown all the
+          algebra here without much annotation, but there are two
+          substitution here, first u = x-2 and then a sine
+          substitution for the square root. The second integral after
+          the <m>y</m> evaluation is pretty easily evaluated to
+          <m>\frac{28]{3}</m>; I drop that after the first
+          substitution and add it back at the end. 
         </p>
         <md>
           <mrow>
@@ -539,6 +545,16 @@
           </mrow>
           <mrow>
             \amp = \int_1^3 x^2 (1 + \sqrt{1-(x-2)^2}) +
+            \frac{(1+\sqrt{1-(x-2)^2})^3}{3} dx
+          </mrow>
+          <mrow>
+            \amp - \int_1^3 x^2 + \frac{1}{3} dx 
+          </mrow>
+          <mrow>
+            \amp \int_1^3 x^2 + \frac{1}{3} dx = \frac{28}{3} 
+          </mrow>
+          <mrow>
+            \int_1^3 x^2 (1 + \sqrt{1-(x-2)^2}) +
             \frac{(1+\sqrt{1-(x-2)^2})^3}{3} dx
           </mrow>
           <mrow>
@@ -592,6 +608,11 @@
             \amp = \frac{32}{3} + \frac{\pi}{8} + 5\pi + \frac{\pi}{8}
             = \frac{32}{3} + \frac{21\pi}{4}
           </mrow>
+          <mrow>
+            \amp \int_1^3 \int_1^{1+\sqrt{1-(x-2)^2}} x^2 + y^2 dy dx
+            = \frac{32}{3} + \frac{21\pi}{4} - \frac{28}{3} =
+            \frac{4}{3} + \frac{21\pi}{4} 
+          </mrow>
         </md>
         <p>
           The third integral is not quite as bad as the second.
@@ -625,95 +646,9 @@
           The total is the sum of the three integrals.
         </p>
         <me>
-          \frac{1}{3} + \frac{32}{3} + \frac{21\pi}{4} + \frac{7}{6} =
-          \frac{73}{6} + \frac{21\pi}{4}
+          \frac{1}{3} + \frac{4}{3} + \frac{21\pi}{4} + \frac{7}{6} =
+          \frac{17}{6} + \frac{21\pi}{4}
         </me>
-      </statement>
-    </example>
-    <example xml:id="example-area-bell-curve">
-      <statement>
-        <p>
-          Here is an odd application of multiple integration. I know
-          that <m>e^{-x^2}</m> has no elementary antiderivative.
-          Therefore, the intergal
-        </p>
-        <me>
-          A = \int_{-\infty}^\infty e^{-x^2} dx
-        </me>
-        <p>
-          cannot be evaluated directly. However, this is a very
-          important integral: <m>e^{-x^2}</m> is the normal distribution
-          and, in Statistics, I need to integrate it frequently. I'll
-          use integrals over <m>\RR^2</m>, strangely enough, to
-          calculate this integral by squaring the single variable
-          integral.
-        </p>
-        <md>
-          <mrow>
-            A \amp = 2 \int_{0}^\infty e^{-x^2} dx
-          </mrow>
-          <mrow>
-            A^2 \amp = \left( 2 \int_{0}^\infty e^{-x^2} dx \right)
-            \left(2 \int_{0}^\infty e^{-y^2} dy \right)
-          </mrow>
-        </md>
-        <p>
-          The second integral uses a new variables since variables of
-          integration only matter inside the integral. Then I can
-          combine the two integrals.
-        </p>
-        <md>
-          <mrow>
-            A^2 \amp = 4 \int_0^\infty \int_0^\infty e^{-x^2} e^{-y^2}
-            dx dy
-          </mrow>
-          <mrow>
-            \amp = 4 \int_0^\infty \int_0^\infty e^{-(x^2 + y^2)} dx
-            dy
-          </mrow>
-        </md>
-        <p>
-          Now I am going to do a substitution in the <m>y</m>
-          variable. Treating the <m>x</m> variable as a constant, I
-          replace <m>y</m> with <m>y = xs</m> so that <m>dy = x ds</m>.
-          If <m>y=0</m> then <m>s=0</m> and as <m>y \rightarrow
-          \infty</m>, <m>s \rightarrow \infty</m>, so the bounds for
-          <m>s</m> remain the same as the bounds for <m>y</m>.
-          Remember, <m>x</m> is a constant through this whole
-          substitution. (Using Fubini's Theorem, I could think of
-          <m>y</m> as the inside integral for this substitution, and
-          then switch back to thinking of <m>x</m> as the inside
-          integral after the substitution.)
-        </p>
-        <md>
-          <mrow>
-            A^2 \amp = 4 \int_0^\infty \int_0^\infty e^{-x^2 (1+s^2)}
-            x dx ds
-          </mrow>
-          <mrow>
-            \amp = 4 \int_0^\infty \left. \frac{-1}{2(1+s^2)}
-            e^{-x^2(1+s^2)} \right|_0^\infty ds
-          </mrow>
-          <mrow>
-            \amp = 2 \int_0^\infty \frac{1}{1+s^2} ds
-          </mrow>
-          <mrow>
-            \amp = \lim_{a \rightarrow \infty} 2 \arctan a - \arctan 0
-            = \frac{2\pi}{2} = \pi
-          </mrow>
-          <mrow>
-            A \amp = \int_{-\infty}^\infty e^{-x^2} dx = \sqrt{\pi}
-          </mrow>
-        </md>
-        <p>
-          I recover the area under the bell curve: <m>\sqrt{\pi}</m>.
-          It's a very strange result. However, if you taken any
-          statistics and worked on normal distributions, likely you will
-          recall the presence of these strange <m>\sqrt{\pi}</m> terms.
-          Now I know they are present to normalize the area (since we
-          want a probability function to have area one under its
-          graph).
-        </p>
       </statement>
     </example>
   </subsection>
