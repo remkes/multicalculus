@@ -127,6 +127,13 @@
     change variables, I need a term that keeps track of the relative
     change in area/volume/hypervolume.
   </p>
+  <p>
+    In this course, I'll only focus on three special changes of
+    coordinates, which aare covered in the next two sections. However,
+    if you are interested in the general theory, here are some
+    examples of changes of variables, followed by some integration
+    examples uses these general changes of variables. 
+  </p>
   <example>
     <statement>
       <p>
