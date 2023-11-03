@@ -8,7 +8,7 @@
       talking about these two fields.
     </p>
     <p>
-      If I have a field of force, it acts on object in it.
+      If I have a field of force, it acts on objects in it.
       (Gravitation force acts on object with mass, electromagnetic
       force acts on object with charge). A natural question is: if I
       put an object in a field, what will it do? How will the force
@@ -22,17 +22,17 @@
       the movement of the fluid. What path will it take?
     </p>
     <p>
-      In both the primary examples, I ended up asking about a path. A
+      In both of these contexts, I ended up asking about a path. A
       path is a parametric curve. So, so answer this question, there
       should be a connection between vector field and parametric
-      curves. Let me know define this connection.
+      curves. Let me define this connection.
     </p>
     <definition>
       <statement>
         <p>
           Let <m>F: S \rightarrow \RR^n</m> be a vector field on a
           region <m>S \subset \RR^n</m>. A parametric curve <m>\gamma:
-          [a,b] \rightarrow \RR^n </m> is called a <term>integral
+          [a,b] \rightarrow S </m> is called a <term>integral
           curves</term> of the vector field if, at all points on
           the curve, <m>\gamma^\prime(t) = F(\gamma(t))</m>.
           That is, the <term>tangents</term> of the parametric curves
@@ -43,9 +43,12 @@
    <p>
     The parametric curves are the paths I wanted for my application.
     If an boyant object starts <em>at rest</em> in a fluid, or a
-    charged object start <em>at rest</em> in an area with
+    charged object starts in an area with
     electromagnetic force, the integral curve going through the
-    starting point will be the path the object will move along.
+    starting point will be the path the object will move along. (This
+    is not entirely true, I admit: there is a subtlety about the
+    starting velocity of the object and how that interacts with the
+    curve, but I'll leave that aside for now.) 
    </p>
   </subsection>
   <subsection xml:id="subsection-integral-curves-examples">
@@ -176,6 +179,7 @@
     </example>
   </subsection>
   <subsection xml:id="subsection-calculating-integral-curves">
+    <title>Calculating Integral Curves</title>
     <p>
       Integral curves are a very powerful conceptual tool. However,
       they are usually very hard to calculate and most examples are
