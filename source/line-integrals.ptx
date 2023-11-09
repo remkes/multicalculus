@@ -284,7 +284,7 @@
     </me>
     <p>
       The fundamental theorem say that integrating a derivative 
-      Is the same as evaluating the original function on the boundary
+      is the same as evaluating the original function on the boundary
       (endpoints) of the interval. My question now is: are there
       versions of this theorem for our new kinds of integrals? To
       understand the question, let me talk about the main pieces of
