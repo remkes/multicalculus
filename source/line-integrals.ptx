@@ -3,9 +3,9 @@
   <subsection xml:id="subsetion-line-integral-definition">
     <title>Vectors Fields and Curves</title>
     <p>
-      Let's start, again, with a vector field <m>F</m> on a set <m>U
-      \subset \RR^3</m>, represented fluid flow or force. Now I'm
-      going to consider a parametric curve <m>\gamma(y)</m> moving
+      Let me start this section  with a vector field <m>F</m> on a set
+      <m>U \subset \RR^3</m>, represented fluid flow or force. Now I'm
+      going to consider a parametric curve <m>\gamma(t)</m> moving
       through the region <m>U</m>. I'm going to think of this as the
       path of an object moving through the situation caused by the
       field. If this field is, say, wind, this is an object moving
@@ -15,13 +15,12 @@
       and possibly against the force. 
     </p>
     <p>
-      Note that this path doesn't need to be an integral curves, as
-      discussed at the end of the last section. These can be paths
-      influenced by the field or the can be paths of an object acting
-      against the force. This could be the path of a leave in the wind
-      (which, starting at rest, should be an integral curve). Or it
-      could be the path of a person struggling to move upwind, acting
-      against the force. 
+      Note that this path doesn't need to be an integral curve.  This
+      can be a path which is simply influenced by the field, or it can
+      a path of an object acting against the force. This could be the
+      path of a leaf in the wind (which, with the right initial
+      velocity, should be an integral curve). Or it could be the path
+      of a person struggling to move upwind, acting against the force.
     </p>
     <p>
       In either case, there is an interaction of the field and the
@@ -30,17 +29,17 @@
       field and the path are opposed. I'd like to measure this
       interaction. An integral curve was defined to be a curve where
       the tangent vector and the vector field coincided. For another
-      curve, the tangetn vector and the vector field may not coincide,
+      curve, the tangent vector and the vector field may not coincide,
       but they exist and I can look at their interaction. I have a
       tool for this: the dot product. The dot product measures the
-      similarity of two vector, being largest when they are in the
+      similarity of two vectors, being largest when they are in the
       same direction, negative when the are in oppositve directions,
       and zero when they are perpendicular. Given an field <m>F</m>
       and a curve <m>\gamma</m>, the dot product <m>F \cdot
       \gamma^\prime</m> will measure the interaction.
     </p>
     <p>
-      This interaction <m>F \cdot \gamma^\prime</m> tells us how the
+      This interaction <m>F \cdot \gamma^\prime</m> tells me how the
       field and the direction of the curve interact at a point.
       However, I may want a more holistic understanding of what
       happens along the whole curve. In the process of moving along
@@ -196,11 +195,11 @@
           </mrow>
           <mrow>
             F(\gamma(t)) \amp = \frac{GM}{\sqrt{(3t^2)^3}} (-t,-t,-t)
-            = \frac{-GM}{t^2 3\sqrt{3}} (1,1,1)
+            = \frac{-GM}{t^3 3\sqrt{3}} (1,1,1)
           </mrow>
           <mrow>
-            F(\gamma(t)) \cdot \gamma^\prime(t) \amp = \frac{-3
-            GM}{t^2 3\sqrt{3}} = -\frac{GM}{t^2\sqrt{3}}
+            F(\gamma(t)) \cdot \gamma^\prime(t) \amp = \frac{-3t
+            GM}{t^3 3\sqrt{3}} = -\frac{GM}{t^2\sqrt{3}}
           </mrow>
           <mrow>
             \int_{\gamma} F \cdot ds \amp = \int_b^a
@@ -227,7 +226,7 @@
           (approximately) evaluates to <m>g(a-b)</m>. 
         </p>
         <p>
-          Now cecall that the field is defined as force per unit
+          Now recall that the field is defined as force per unit
           mass, so if it acts on a mass <m>m</m>, the output of the
           line integral will be potential of <m>mg(a-b)</m>. 
           Finally, let me call the difference <m>b-a</m> by the letter
