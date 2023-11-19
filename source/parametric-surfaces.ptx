@@ -5,7 +5,7 @@
     <p>
       For the last few sections, I've focused heavily on the force
       example of fields. Now, let me return to the idea of a fluid flow.
-      Conisder a field <m>F</m> that describe the flow of water or air
+      Conisder a field <m>F</m> that describes the flow of water or air
       currents. If I have a net or other porus object in the field, then
       unless the flow is perfectly across the edge of the object, some
       amount of the medium will be flowing through the net. Is there a
