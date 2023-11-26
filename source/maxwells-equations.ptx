@@ -125,8 +125,8 @@
     </ul>
     <p>
       The key piece in all these interactions is change or movement. A
-      static electric field doesn't do anything to a stationy magnets.
-      Likewise, a stationary magnets doesn't have an effect on a
+      static electric field doesn't do anything to a stationary magnet.
+      Likewise, a stationary magnet doesn't have an effect on a
       stational electrically charge particular. It's only when
       something is changing (the magnetic field is changing, the
       charge is moving in a curren, etc) that the interaction happens.
@@ -200,7 +200,7 @@
       </li>
       <li>
         <p>
-          Isoated magnetic charge does not exist, so not symbols or
+          Isoated magnetic charge does not exist, so no symbols or
           units are assigned to it. 
         </p>
       </li>
@@ -211,7 +211,7 @@
           electrically charged particle by changing its direction of
           movement. Therefore, it is natural to describe this field
           as thee force per charge-velocity The unit of <m>B</m>
-          the telsa, which in SI base units is <m>\frac{kg}{A\cdot
+          is the tesla, which in SI base units is <m>\frac{kg}{A\cdot
           s^2}</m>.
         </p>
       </li>
@@ -295,7 +295,7 @@
       </li>
     </ul>
     <p>
-      In this mathematical object, I have written down four
+      In this mathematical model, I have written down four
       differential equations. This is the first presentation of
       Maxwell's equations. (This version is the presentation via
       differential operators; a second presentation will follow
@@ -535,8 +535,8 @@
       </mrow>
     </md>
     <p>
-      I've manage to get away from equations that involves <m>E</m>
-      and <m>B</m> and produce a differential equation that only
+      I've managed to get away from equations that involves <m>E</m>
+      and <m>B</m> and produced a differential equation that only
       involves the electric field. This is progress. Now I want to
       adjust this equation into something I can actually solve.  There
       is an identity for doing the curl twice:  <m>\nabla \times

@@ -36,11 +36,12 @@
   <subsection xml:id="subsection-boundaries-orientation">
     <title>Boundaries and Orientation</title>
     <p>
-      In Calculus III, I defined a topological definition of a
-      boundary. With apologies for poor use of terminology, the notion of
-      boundary in this section is not topological. You could think of
-      this as a geometric boundary or a parametric boundary, if you
-      wanted to give it a different label. 
+      In <xref ref="section-topology" />, I defined a topological
+      definition of a boundary. With apologies for poor use of
+      terminology, the notion of boundary in this section is not
+      topological. You could think of this as a geometric boundary or
+      a parametric boundary, if you wanted to give it a different
+      label.
     </p>
     <p>
       The boundary of a parametric object is the boundary in terms of
