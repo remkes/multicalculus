@@ -532,7 +532,7 @@
           substitution here, first u = x-2 and then a sine
           substitution for the square root. The second integral after
           the <m>y</m> evaluation is pretty easily evaluated to
-          <m>\frac{28]{3}</m>; I drop that after the first
+          <m>\frac{28}{3}</m>; I drop that after the first
           substitution and add it back at the end. 
         </p>
         <md>
