@@ -13,7 +13,7 @@
         <p>
           Consider an equation in the variables <m>x,y,z</m>. The
           <term>locus</term> in <m>\RR^3</m> of this equation is the
-          set of vectors that satisfy the equation. The plural of a
+          set of vectors that satisfy the equation. The plural of
           locus is <term>loci</term>.
         </p>
       </statement>
@@ -23,9 +23,9 @@
       <m>\RR^2</m> is most commonly defined as the locus of the
       equation <m>x^2 + y^2 = 1</m>. The graph of a single-variable
       function is the locus (also in <m>\RR^2</m>) of the equation
-      <m>y = f(x)</m>. My goal in this section is equation of places,
-      which are flat. Flat objects arise as loci of linear equations.
-      Let me remind you of that definition.
+      <m>y = f(x)</m>. My goal in this section is to describe the
+      equations of planes, which are flat. Flat objects arise as loci
+      of linear equations.  Let me remind you of that definition.
     </p>
     <definition xml:id="definition-linear-equation">
       <statement>
@@ -55,6 +55,9 @@
         </p>
       </statement>
     </definition>
+    <p>
+      The plane in <m>\RR^3</m> is define in a very similar manner. 
+    </p>
     <definition>
       <statement>
         <p>
@@ -84,22 +87,22 @@
         300x - 100y + 500z = 1200
       </me>
       Finally, I must be careful multiplying by zero (or any
-      expressing that might evaluate to zero). If I multiply both
+      expression that might evaluate to zero). If I multiply both
       sides of the equation by zero, I get a trivial equation.
       <me>
         (0)(3x - y + 5z) = (0)(12) \implies 0 = 0 
       </me>
       The equation <m>0=0</m> describes all points, not just the
-      plane, so I have destroyed the locus. As with many other places
-      in mathematics, multiplying or dividing by zero always needs to
-      be the back of you mind as something to be careful about. 
+      plane, so I have destroyed the locus. (As with many other places
+      in mathematics, you should always keep half a thought to the
+      risk of multiplying or dividing by zero.) 
     </p>
   </subsection>
   <subsection xml:id="subsection-dot-product-and-loci">
     <title>Dot Products and Loci</title>
     <p>
-      Loci are the solutions to one of more linear equations. These
-      linear equation can be re-interpreted and expressed via via dot
+      Loci are the solutions to one or more linear equations. These
+      linear equation can be re-interpreted and expressed via dot
       products. Consider, again, the  linear equation in
       <m>\RR^3</m>.
       <me>
@@ -137,14 +140,14 @@
       the fixed number <m>d</m>. If <m>d=0</m> (i.e., if the plane
       goes through the origin), the equation become 
       <me>
-        (a,b,c) \cdot (x,y,z) = d
+        (a,b,c) \cdot (x,y,z) = 0
       </me>. 
       A dot product of zero indicates that the two inputs to the dot
       product are perpendicular. Therefore, a plane through the origin
       is the set of all vectors which are perpendicular to a fixed
       vector <m>(a,b,c)</m>. This leads to an important definition. 
     </p>
-    <definition>
+    <definition xml:id="definition-plane-normal">>
       <statement>
         <p>
           Let <m>P</m> be a plane in <m>\RR^3</m> determined by the
@@ -153,13 +156,14 @@
             (a,b,c) \cdot (x,y,z) = d 
           </me>.
           The vector <m>(a,b,c)</m> is called the <term>normal to the
-          plane</term>. 
+          plane</term>. (Recall that <sq>normal</sq>, in mathematics,
+          can be a synonym of <sq>perpendicular</sq>.) 
         </p>
       </statement>
     </definition>
     <p>
       If <m>d=0</m>, the plane or hyperplane is perpendicular to its
-      normal. The remark thing is this: the notion of orthogonality of
+      normal. The remarkable thing is this: the notion of orthogonality of
       the normal still works when <m>d \neq 0</m>. In this case, the
       normal is a <em>local</em> perpendicular direction from any
       point on the  plane.  Treating any such point as a local origin,
@@ -180,7 +184,7 @@
       I'm going to describe three ways of calcualting the equation of
       a plane in <m>\RR^3</m>, each starting from different initial
       information. All three of these collections of data uniquely
-      determine a plane.
+      determines a plane.
       <ul>
         <li>
           A point and the normal.
@@ -193,15 +197,15 @@
         </li>
       </ul>
       I'll describe the algorithm for all three of these in order,
-      since the calculations get longer in each step of this list. 
+      since each consecutive case reduces to the previous. 
     </p>
     <p>
       In the first description, I am actually given the normal
       <m>(a,b,c)</m> and some point <m>(x_0, y_0, z_0)</m> on the
       plane, I only need to calculate <m>d</m>. To do so, I just
-      evaluate the left side of the equation of the plane: doing so is
-      equal to the right side, which is just <m>d</m>. Let me show
-      some examples. 
+      evaluate the left side of the equation in <xref
+      ref="definition-plane-normal" />: doing so is equal to the right
+      side, which is just <m>d</m>. Let me show some examples. 
     </p>
     <example>
       <statement>
@@ -294,15 +298,16 @@
       </statement>
     </example>
     <p>
-      If I am given a point on a plane and two local direction on the
-      plane, then I need to construct the normal first. The normal is
-      perpendicular to any local direction on the plane. This is where
-      the cross product comes is: the cross product is a operation
-      which takes two vectors and produces a third vector
-      perpendicular to the first two. Therefore, the cross product of
-      the two local directions is the normal. After I have the normal,
-      I can proceed as before, using the equation and the point to
-      calculate the constant <m>d</m>. Let me do one example.
+      Second, if I am given a point on a plane and two local
+      directions on the plane, then I need to construct the normal
+      first. The normal is perpendicular to any local direction on the
+      plane. This is where the cross product comes in: the cross
+      product is a operation which takes two vectors and produces a
+      third vector perpendicular to the first two. Therefore, the
+      cross product of the two local directions is the normal. After I
+      have the normal, I can proceed as before, using the equation and
+      the point to calculate the constant <m>d</m>. Let me do one
+      example.
     </p>
     <example>
       <statement>
@@ -363,24 +368,24 @@
           1)</m>.
         </p>
         <p>
-          First I need to calculate the local direction. I'll set
+          First, I need to calculate the local directions. I'll set
           <m>(0,4,0)</m> as my local origin. Then I calculate the
           differences of the two other points from this point.
           <md>
             <mrow>
-              (-3, -6. 2) = (0,4,0) = (-3, -10, 2) 
+              (-3, -6. 2) - (0,4,0) = (-3, -10, 2) 
             </mrow>
             <mrow>
-              (-7, 0. 1) = (0,4,0) = (-7, -4, 1) 
+              (-7, 0. 1) - (0,4,0) = (-7, -4, 1) 
             </mrow>
           </md>
-          These are the two local direction. Then I proceed as with
+          These are the two local directions. Then I proceed as with
           the previous case. I start by taking the cross product of
-          the two local directions to ge the normal to the plane.
+          the two local directions to get the normal to the plane.
           <md>
             <mrow>
               (-3, -10, 2) \times (-7, -4, 1) \amp = (-10 - (-8),
-              (-14, - (-3), 12 - 70))
+              (-14), - (-3), 12 - 70)
             </mrow>
             <mrow>
               \amp = (-2, -11, -58)

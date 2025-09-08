@@ -4,19 +4,20 @@
     <title>Describing Space</title>
     <p>
       The purpose of vectors is to describe the geometry of space. For
-      the purposes of this course, I means two and three dimensional
+      the purposes of this course, I mean two and three dimensional
       space, but many of the tools are more general and can describe
-      higher dimensional spaces. That's very interesting for a more
-      abstract treatment, but to do multivariable calculus, I need
-      two and three dimensional vectors. 
+      higher dimensional spaces. These higher dimensions are valuable
+      for a more abstract treatment, but to do multivariable calculus,
+      I really only need two and three dimensional vectors for most of
+      the material for this course. 
     </p>
     <p>
       I imagine this is not your first exposure to vectors. However,
-      this week is nevertheless important to review the main ideas as
-      well as set our conventions for notation and terminology.
+      this week is important to review the main ideas as
+      well as set conventions for notation and terminology.
       Vectors are used in many places (linear algebra, physics,
       computer graphcis, engineering, among others) and most of those
-      places have minor or even major differences in terms and
+      places have minor or sometimes major differences in terms and
       notations. This review will get us all on the same page for the
       discussions through the course. So, let me start with the basic
       definitions. 
@@ -35,7 +36,7 @@
           A <term>vector</term> is a finite ordered list of scalars.
           Vectors can be written either as columns or rows. If a
           vector is a list of the numbers <m>4</m>, <m>15</m>,
-          <m>\pi</m> and <m>-e</m> (in that order), I write the
+          <m>\pi</m> and <m>-e</m> (in that order), I can write the
           vector in one of two ways:
           <md>
            <mrow>
@@ -48,20 +49,20 @@
     </definition>
     <p>
       If you have taken my linear algebra course, you will know that,
-      in that course, I almost exclusively use column vectors. Here
-      the convention is reversed: I will almost exclusively use row
-      vectors. 
+      in that course, I almost exclusively used column vectors. Both
+      notations have values, but here the convention is reversed: I
+      will almost exclusively use row vectors. 
     </p>
     <definition>
       <statement>
         <p>
           Let <m>n</m> be a positive integer. <term>Real Euclidean
           Space</term> or <term>Cartesian Space</term>, written
-          <m>\RR^n</m>, is the set of all vectors of length <m>n</m>
-          with real number entries. 
+          <m>\RR^n</m>, is the set of all vectors with <m>n</m>
+          real number entries. 
         </p>
         <p>
-          Since there are <m>n</m> coefficieint in its vectors, the
+          Since there are <m>n</m> coefficieints in its vectors, the
           space <m>\RR^n</m> has <term>dimension</term> <m>n</m>.
         </p>
         <p>
@@ -69,7 +70,7 @@
           (the familiar <term>Cartesian Plane</term>) and in
           <m>\RR^3</m> (which I will call <term>Cartesian
           Three-Space</term> or, more briefly, just <term>Cartesian
-          Soace</term>). 
+          Space</term>). 
         </p>
       </statement>
     </definition>
@@ -99,8 +100,8 @@
     <p>
       Euclidean space is visualized by drawing axes, one in each
       independent perpendicular direction. In this visualization, the
-      vector <m>(a,b)</m> corresponds to the unique point I get moving
-      <m>a</m> units in the direction of the <m>x</m> axis and
+      vector <m>(a,b)</m> corresponds to the unique point I get by
+      moving <m>a</m> units in the direction of the <m>x</m> axis and
       <m>b</m> units in the direction of the <m>y</m> axis. <xref
       ref="figure-points-in-the-cartesian-plane" /> shows the location
       of several points in <m>\RR^2</m>.
@@ -166,7 +167,7 @@
     <title>Points or Directions?</title>
     <p>
       I can think of an element of <m>\RR^2</m>, say <m>(1,4)</m>, as
-      both the point located at <m>(1,4</m> and the vector drawn from
+      both the point located at <m>(1,4)</m> and the vector drawn from
       the origin to the point <m>(1,4)</m>, as shown in <xref
       ref="figure-points-and-directions" />. Though these two ideas
       are distinct, I will frequently switch between them, often
@@ -204,7 +205,7 @@
     <title>Local Direction Vectors</title>
     <p>
       I've already spoken about the distinction between elements of
-      <m>\RR^n</m> as points and vectors. There is another important
+      <m>\RR^n</m> as points and directions. There is another important
       subtlety that shows up all throughout vector geometry. In
       addition to thinking of vectors as directions starting at the
       origin, I can think of them as directions starting anywhere in
@@ -247,7 +248,8 @@
       which is an ordinary vector starting from the origin. Second, I
       need to know what direction the camera is pointing, which is a
       local direction vector which treats the camera location as the
-      current origin.
+      current origin. You could interpret the length of this local
+      direction as the zoom or focus of the camera, if you wished. 
     </p>
     <p>
       One of the most difficult things about learning vector geometry

@@ -776,13 +776,13 @@
           </md>
           I then put these into a pythagorian combination.
           <me>
-            \sqrt{64 \sin^2 (t^2) + 64 \cos^2 (t^2)} = \sqrt{64} = 8 
+            \sqrt{64 \sin^2 (t^2) + 64 \cos^2 (t^2)} = \sqrt{64}t = 8t
           </me>
           For arclength, I need to integrate this expression over the
           length of the curve.
           <md>
             <mrow>
-              \int_0^{\sqrt{2\pi}} 8 \amp = 8 \sqrt{2\pi} 
+              \int_0^{\sqrt{2\pi}} 8t \amp = 4 (\sqrt{2\pi})^2 = 8 \pi 
             </mrow>
           </md>
           The result of this integral is the arclength of the
@@ -985,8 +985,8 @@
           functions.
           <md>
             <mrow>
-              \amp x^\prime = -2t \sin t - t^2 \sin t 
-              \amp \amp y^\prime = 2t \cos t + t^2 \cos t 
+              \amp x^\prime = 2t \cos t - t^2 \sin t 
+              \amp \amp y^\prime = 2t \sin t + t^2 \cos t 
             </mrow>
           </md>
           Then I calculate the pythagorian combination of these. This
@@ -995,10 +995,13 @@
           the square root, and some terms cancel. 
           <md>
             <mrow>
-              \amp \sqrt{4t^2 \cos^2 t - 4t^3 \cos t \sin t + t^2 \sin^2 t + 4t^2 \sin^2 t + 4t^3 \cos t \sin t + t^4 \cos^2 t}
+              \amp \sqrt{4t^2 \cos^2 t - 4t^3 \cos t \sin t + t^2
+              \sin^2 t + 4t^2 \sin^2 t + 4t^3 \cos t \sin t + t^4
+              \cos^2 t}
             </mrow>
             <mrow>
-              \amp = \sqrt{4t^2 (\cos^2 t + \sin^2 t) + t^4 (\cos^2 t + \sin^2 t} 
+              \amp = \sqrt{4t^2 (\cos^2 t + \sin^2 t) + t^4 (\cos^2 t
+              + \sin^2 t)} 
             </mrow>
             <mrow>
               \amp = \sqrt{4t^2 + t^4} = t \sqrt{4+t^2}
@@ -1117,7 +1120,7 @@
           the inverse <m>t(s)</m> and replace it implicitly. 
           <md>
             <mrow>
-              \gamma(s) \amp = \left( \ln t(s), 2(t(s))^2 - 1)
+              \gamma(s) \amp = \left( \ln t(s), 2(t(s))^2 - 1
               \right) \amp \amp s \in [0,\infty) 
             </mrow>
           </md>
@@ -1188,7 +1191,7 @@
           <md>
             <mrow>
               \gamma(s) \amp = \left( (t(s))^2 - 4t(s) + 1, 2t(s) - 2
-              \right) \amp \amp t \in [0, \infty) 
+              \right) \amp \amp s \in [0, \infty) 
             </mrow>
           </md>
         </p>
@@ -1396,7 +1399,7 @@
         <p>
           The tangent is the derivative calculated termwise.
           <me>
-            \gamma^\prime(t) = (-t, 1)
+            \gamma^\prime(t) = (-2t, 1)
           </me>
           This parametric curve with some example tangents is shown in
           <xref ref="figure-activity-parametric-tangent-4" />

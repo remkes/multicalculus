@@ -4,7 +4,7 @@
     <title>Definition of Parametric Cuves</title>
     <p>
       The major goal of this course is the extension of calculus to
-      multivariable function. A parametric curve is a function with
+      multivariable functions. A parametric curve is a function with
       multiple outputs; these outputs are coordinates of position in
       some euclidean space depending on time; as such, parametric
       curves are used to talk about motion through space. The calculus
@@ -14,8 +14,8 @@
       parametric curves, I like to imagine the movement of point-like
       objects through space under the influence of various forces.
       Projectiles with gravity and air friction is one imporant
-      example; flying objects such as insect, bird or helicopter is a
-      seond; the motions of planets, moons and satellite under
+      example; flying objects such as insects, birds or helicopters is
+      a second; the motions of planets, moons and satellite under
       gravity is a third. 
     </p>
   </subsection>
@@ -24,11 +24,17 @@
     <definition>
       <statement>
         <p>
-          A parametric curve in <m>\RR^n</m> is a continuous
-          function <m>\gamma :[a,b] \rightarrow \RR^n</m>, that is,
-          a continuous vector-valued function defined on an
-          interval. As is convention, I will typically use the
+          A \emph{parametric curve} in <m>\RR^n</m> is a continuous
+          function <m>\gamma :[a,b] \rightarrow \RR^n</m>.
+          As is convention, I will typically use the
           symbol <m>\gamma</m> for an arbitrary parametric curve.
+          The output is often writen in component as follows (in
+          <m>\RR^3</m> for demonstration).
+          <me>
+            \gamma(t) = (x(t), y(t), z(y))
+          </me>
+          The functions <m>x(t)</m>, <m>y(t)</m> and <m>z(t)</m> are
+          called the \emph{component functions}. 
         </p>
       </statement>
     </definition>
@@ -45,7 +51,7 @@
       The continuity condition is important, since a parametric
       curve is a connected path. I could define a
       function which jumps around, but it wouldn't really fit the
-      notion of a curve <emdash /> it would not describe reasonable
+      notion of a curve <mdash /> it would not describe reasonable
       motion through space.
     </p>
     <p>
@@ -55,6 +61,21 @@
       the parameter of movement along the curve. Let me start with
       some basic examples. 
     </p>
+    <example>
+      <statement>
+        <p>
+          The curve <m>\gamma(t) = (7t, 4t)</m> is a straight line in
+          <m>\RR^2</m>. At <m>t=0</m>, it is at the origin. It then
+          moves upward in the first quadrant: <m>(7,4)</m>,
+          <m>(14,8)</m>, <m>(21,12)</m> and so on. It has slope
+          <m>\frac{4}[7}</m>. It is a special case of a general
+          construction. In <m>\RR^2</m>, any curve <m>\gamma(t) = (at,
+          bt)</m> is a straight line through the orign with slope
+          <m>\frac{b}{a}</m>. In <m>\RR^3</m>, any curve <m>\gamma(t)
+          = (at, bt, ct)</m> is a straight line through the origin as
+          well. 
+      </statement>
+    </example>
     <example>
       <statement>
         <figure xml:id="figure-parametric-curve1">

@@ -6,14 +6,18 @@
       In this section, I introduce/review the basic arithmetic of
       vectors. I'll define the operations in <m>\RR^3</m>; for
       <m>\RR^2</m>, all the operations are the same just without the
-      third component. The exception is the cross-product, which is
-      unique to <m>\RR^3</m>. 
+      third component. Likewise, by adding more component, I can
+      extend these operations to any <m>\RR^n</m>. The exception is
+      the cross-product, which is unique to <m>\RR^3</m>. 
     </p>
     <definition>
       <statement>
         <p>
           The <term>sum</term> of two vectors <m>u</m> and <m>v</m> in
-          <m>\RR^3</m> is the sum taken component wise.
+          <m>\RR^3</m> is the sum taken component wise. This means
+          that the first two entries are added to produce the first
+          entry of the sum, and likewise for the second and third
+          entries. 
           <me>
             u + v = (u_1,u_2,u_3) + (v_1,v_2,v_3) = (u_1 + v_1, u_2 +
             v_2, u_3 + v_3)
@@ -136,7 +140,13 @@
         <p>
           This length is also called the <term>norm</term> of the
           vector. A vector of length one is called a <term>unit
-          vector</term>.
+          vector</term>. I'm using the notation <m>|u\</m>. Other
+          sources may use the notation <m>\lVert u \rVert</m>, mostly
+          to distinguish the notation from the absolute value of
+          numbers. I prefer the single bar notation, but it is
+          important to note that length of vectors and absolute value
+          are different definitions: one applies to scalar and one to
+          vectors. 
         </p>
       </statement>
     </definition>
@@ -247,9 +257,14 @@
         \theta = \arccos \left( \frac{u \cdot v}{|u||v|} \right)
       </me>
       The output of the inverse cosine is an angle in the range <m>[0,
-      \pi) </m>. This convention works well for vectors, since the
-      angle between them can always be chosen to be in this range.  A
-      useful implication of this relationship between angles and
+      \pi] </m>. This convention works well for vectors, since the
+      angle between them can always be chosen to be in this range.  
+      Alternative, if the angle is known, this can be another way to
+      calculate the dot product. 
+      <me>
+        n \cdot v = |u||v| \cos \theta
+      </me>
+      A useful implication of this relationship between angles and
       dot-products is that dot products can be used to identify
       perpendicular vectors.
     </p>
@@ -295,7 +310,7 @@
   <subsection xml:id="subsection-cross-product">
     <title>The Cross Product</title>
     <p>
-      The cross product is a unique operations to <m>\RR^3</m>.  
+      The cross product is a unique operations in <m>\RR^3</m>.  
     </p>
     <definition>
       <statement>
@@ -306,7 +321,8 @@
           defined by the following formula.
           <me>
             u \times v = (u_2v_3 - u_3v_2,  u_3v_1 - u_1v_3,  u_1v_2 -
-            u_2v_1) </me>
+            u_2v_1) 
+          </me>
         </p>
       </statement>
     </definition>
@@ -319,21 +335,33 @@
       <term>vector product</term>. Second, the dot product measures,
       in some sense, the similarity of two vectors. The cross product
       measures, in some sense, the difference between two vectors. The
-      cross product has a greater magnitude if the vectors are closer
-      to being perpendicular. The dot product is zero if two vectors
-      are perpendicular, but the cross product is zero if two vectors
-      are parallel. 
+      closer two vectors are to being perpendicular, the larger the
+      magnitude of their cross product will be. This contrasts with
+      the dot product, which is larger when the vectors are closer to
+      being parallel. 
     </p>
     <p>
-      I could do a general calculation to show that <m>v \cdot (u
-      \times v) = 0</m>. Since a dot product of two vectors is zero if
-      and only if the vectors are perpendicular, the vector <m>v
-      \times u</m> is perpendicular to both <m>u</m> and <m>v</m>.
-      This turns out to be a very useful property of the cross
-      product: it produces a result that is perpendicular to both
-      original vectors. This is part of the reason that is is unique
+      The relative direction of the output of the cross-product is
+      also notable. 
+    </p>
+    <prop>
+      <statment>
+        <p>
+          Let <m>u</m> and <m>v</m> be vectors in <m>\RR^3</m>. Then
+          <m>v \cdot (u \times v) = 0</m> and <m>u \cdot (u \times v)
+          = 0 </m>. Since a dot product of two vectors is zero if and
+          only if the vectors are perpendicular, this is equivalent to
+          stating that  the vector <m>v \times u</m> is perpendicular
+          to both <m>u</m> and <m>v</m>.
+        </p>
+      </statment>
+    </prop>
+    <p>
+      This property of the cross product turns out to be a very useful
+      property: it produces a result that is perpendicular to both
+      original vectors. This is part of the reason that it is unique
       to <m>\RR^3</m>: in three dimensions, if you have two set
-      (non-parallel) direction, there is a unique direction that is
+      (non-parallel) directions, there is a unique direction that is
       perpendicular to both. The cross product constructs that unique
       direction.
     </p>
@@ -350,13 +378,13 @@
   <subsection xml:id="subsection-angular-motion">
     <title>Angular Motion</title>
     <p>
-      An important application of the cross product is found in
-      describing rotational motion. Linear mechanics describes the
-      motion of an object through space, but rotational mechanics
-      describes the rotation of an object independent of its movement
-      through space. A force on an object can cause both kinds of
-      movement, obviously. The following table summarizes the
-      parallel questions of linear motion and rotational motion in
+      An important application of the cross product is describing
+      rotational motion. Linear mechanics describes the motion of an
+      object through its environment, but rotational mechanics
+      describes the rotation of an object independent of its other
+      change in position.  A force on an object can cause both kinds
+      of movement, obviously. The following table summarizes the
+      parallel definitions of linear motion and rotational motion in
       <m>\RR^3</m>.
     </p>
     <tabular>
@@ -405,21 +433,21 @@
       can think of the force <m>F</m> and the distance <m>r</m> as
       vectors. The torque is then <m>\tau = r \times F</m>. Since the
       cross product is zero when vectors are parallel and large when
-      vectors are perpendicualr, a force perpendicular to the radius
+      vectors are perpendicular, a force perpendicular to the radius
       gives the greatest angular acceleration. That makes sense. If
       <m>F</m> and <m>r</m> share a direction, then the force is
       pushing directly along the axis and no rotation can occur.
     </p>
     <p>
       The use of cross products in rotational dynamics is ubiquitous.
-      In fluid dynamics, local rotational motion of the fluid result
+      In fluid dynamics, local rotational motion of the fluid results
       in turbulence, vortices and similar effects. Tornadoes and
       hurricanes are particularly extreme examples of vortices. All
       the descriptions of the force and motion of these vortices
-      involve cross products in the vectors describing the fluid. In
+      involve cross products in the vectors describing the fluid. (In
       this course, I will specifically use cross products to discuss
       angular accelration for parametric curves in <xref
-      ref="subsection-acceleration" />.
+      ref="subsection-acceleration" />.)
     </p>
   </subsection>
 </section>
