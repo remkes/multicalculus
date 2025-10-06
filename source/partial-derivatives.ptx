@@ -6,7 +6,7 @@
       A major goal of this course is extending the notion of the
       derivative to multivariable functions. For parametric curves,
       the previous idea of the derivative (measuring the slope of a
-      tangent line) became the tangent vector instead. For scalar
+      tangent line) became the tangent vector. For scalar
       fields which depend on multiple inputs, the extension of the
       derivative is more difficult. In this and the following
       sections, I'm going to introduce a variety of different ways to
@@ -184,7 +184,7 @@
       partial derivatives to get higher derivatives. First, I can
       iterate the same partial derivative, with the pretense that the
       other variables are constant. If <m>f</m> involves any of the
-      variablse <m>x, y, z</m> or <m>x_i</m>, then here are the second
+      variables <m>x, y, z</m> or <m>x_i</m>, then here are the second
       partials. 
       <md><mrow>
         \amp \frac{\del^2 f}{\del x^2} \amp \amp \frac{\del^2 f}{\del
@@ -196,7 +196,7 @@
       However, I can also iterate partial derivatives in different
       variables. Consider a function of two variables <m>f(x,y)</m>. I
       can pretend <m>x</m> is constant and take the derivative in
-      <m>y</m>. Then, having done that, I can switch and present
+      <m>y</m>. Then, having done that, I can switch and pretend
       <m>y</m> is constant to take the derivative in <m>x</m>. This is
       called a mixed partial and is written with the following notation.
       <me>
@@ -227,7 +227,7 @@
     <definition>
       <statement>
         Let <m>f: \RR^n \rightarrow \RR</m> be a scalar field. Then
-        <m>f</m> is in the class <m>C^n</m> is all of its
+        <m>f</m> is <term>in the class</term> <m>C^n</m> if all of its
         degree <m>n</m> partial derivatives (both pure and mixed)
         exist and are continuous. This property is often written<m>f
         \in C^n</m>. If I want to specify the domain, say some subset
@@ -308,7 +308,7 @@
           <m>x_j</m> represent any two of the <m>n</m> variables. If
           <m>f \in C^2(A)</m> (that is, all the second partial
           derivatives of <m>f</m> exist and are continuous an the  pen
-          set <m>A</m>), then <m>f_{x_ix_j} = f_{x_jx_ix}</m> on that
+          set <m>A</m>), then <m>f_{x_ix_j} = f_{x_jx_i}</m> on that
           set. Informally. for <m>C^2</m> function, I can do mixed
           second partial derivatives in any order. 
         </p>
@@ -317,9 +317,9 @@
     <p>
       All of our elementary functions (polynomials, roots,
       exponentials, etc) will have this property of having continuous
-      second derivative. That means for most usual functions, I can be
+      second derivatives. That means for most usual functions, I can be
       flexible in the order in which I calculate mixed partials. This
-      flexibility is over very useful, since partial derivatives in
+      flexibility is often very useful, since partial derivatives in
       one variable might be much easier to calculate than partials in
       a different variable. 
     </p>

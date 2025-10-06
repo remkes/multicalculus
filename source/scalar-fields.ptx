@@ -30,7 +30,7 @@
     <p>
       Vector fields are the most difficult and complicated, since
       they have both multiple inputs and multiple outputs. The study
-      of vector functions will follow in a future section of this
+      of vector fields will follow in a future section of this
       course. 
     </p>
     <example>
@@ -42,19 +42,19 @@
           mgh</m> is a two variable function. In a circuit, voltage
           in terms of current and reisistance is <m>V = IR</m> is
           another two variable function. The force of gravity between
-          two celestial object <m>F = -MmG/r^2</m> is a three-variable
-          function which depends on both masses, <m>M</m> and
-          <m>m</m>, as well as the distance between them <m>r</m>.
-          Any quantity which can vary in three dimensional space, such
-          a pressure, temperature, humidity, is a function of the
-          three variables of location <m>(x,y,z)</m>.
+          two celestial object <m>F = -\frac{MmG}{r^2}</m> is a
+          three-variable function which depends on both masses,
+          <m>M</m> and <m>m</m>, as well as the distance between them
+          <m>r</m>.  Any quantity which can vary in three dimensional
+          space, such a pressure, temperature, humidity, is a function
+          of the three variables of location <m>(x,y,z)</m>.
         </p>
       </statement>
     </example>
     <example xml:id="example-multivariable1">
       <statement>
         <p>
-          Here are some explicit functions <m>\RR^2 \rightarrow \RR</m>.
+          Here are some functions <m>\RR^2 \rightarrow \RR</m>.
           <md>
             <mrow>  
               f_1(x,y) \amp = x-y
@@ -102,9 +102,8 @@
     <example>
       <statement>
         <p>
-          I'll start with at the domains of the five explicitly stated
-          functions in the Example <xref ref="example-multivariable1"
-          />.
+          I'll start with at the domains of the five functions in
+          <xref ref="example-multivariable1" />.
           <ul>
             <li>
               <p>
@@ -142,13 +141,15 @@
               <p>
                 Lastly, <m>f_3</m>, has an strange exponential. This
                 leads to very strange domain behaviour. If <m>y</m>
-                is an integer, <m>x</m> can be any non-zero real
-                number. If <m>y</m> is a fraction, <m>x</m> must be
-                positive if the denominator of <m>y</m> is even, to
-                avoid square roots of negative numbers. If <m>y</m>
-                is irrational, <m>x</m> must be positive. This all
-                leads to a very complicated domain in <m>\RR^2</m>,
-                something hard to describe directly as a shape. 
+                is a positive integer, <m>x</m> can be any real
+                number. If <m>y</m> is a negative integer or 0, then
+                <m>x</m> can be any real number except 0. If <m>y</m>
+                is a fraction, <m>x</m> must be positive if the
+                denominator of <m>y</m> is even, to avoid square roots
+                of negative numbers. If <m>y</m> is irrational,
+                <m>x</m> must be positive. This all leads to a very
+                complicated domain in <m>\RR^2</m>, something
+                impossible to describe directly as a shape. 
               </p>
             </li>
           </ul>
@@ -184,7 +185,7 @@
     </p>
     <p>
       The <m>\RR^2</m> case is useful to understand the general
-      situation. In this case, <m>x</m> and <m>y</m> are in input
+      situation. In this case, <m>x</m> and <m>y</m> are inputs
       (domain) and <m>z</m> is the output (range). I can think of
       the graph as a height function: over some point <m>(x,y)</m> in
       the domain of <m>f</m>, the graph sits at some height <m>z =
@@ -225,8 +226,9 @@
       to extend the notions. Instead of tangent line, the graph will
       now have a <em>tangent plane</em>. Instead of area under the
       curve, a graph has volume under the surface. For <m>f: \RR^n
-      \rightarrow \RR</m>, there are tangent n-spaces and
-      (n+1)-hyper-volume under the n-dimensions graph surface.
+      \rightarrow \RR</m>, the extension of the idea is more
+      geometrically difficult. There are now tangent n-spaces and
+      (n+1)-hyper-volumes under the n-dimensions graph surface.
     </p>
   </subsection>
   <subsection xml:id="section-contour-plots">
@@ -234,7 +236,7 @@
     <p>
       As an alternative to conventional graphs of function, a nice way
       to visualize height functions is as topological maps. These 
-      visualizations are called plots.
+      visualizations are called contour plots.
     </p>
     <definition>
       <statement>
@@ -298,7 +300,7 @@
           Contour diagrams can show many behaviours. <xref
           ref="figure-contour-plot2">Figure</xref> shows a pass or
           saddle point. (The saddle point will be formally defined in
-          <xref ref="def-saddle-point">Definition</xref>).
+          <xref ref="def-saddle-point" /).
         </p>
       </statement>
     </example>

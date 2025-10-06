@@ -24,7 +24,7 @@
     <definition>
       <statement>
         <p>
-          A \emph{parametric curve} in <m>\RR^n</m> is a continuous
+          A <term>parametric curve</term> in <m>\RR^n</m> is a continuous
           function <m>\gamma :[a,b] \rightarrow \RR^n</m>.
           As is convention, I will typically use the
           symbol <m>\gamma</m> for an arbitrary parametric curve.
@@ -34,7 +34,7 @@
             \gamma(t) = (x(t), y(t), z(y))
           </me>
           The functions <m>x(t)</m>, <m>y(t)</m> and <m>z(t)</m> are
-          called the \emph{component functions}. 
+          called the <term>component functionsi</term>. 
         </p>
       </statement>
     </definition>
@@ -74,6 +74,7 @@
           <m>\frac{b}{a}</m>. In <m>\RR^3</m>, any curve <m>\gamma(t)
           = (at, bt, ct)</m> is a straight line through the origin as
           well. 
+        </p>
       </statement>
     </example>
     <example>
@@ -107,7 +108,7 @@
           \in [0, 2\pi]</m> traces out a circle, as in <xref
           ref="figure-parametric-curve1" />. This is an important
           example: many of the other curves I will use in this course
-          are adaptation of the circle. 
+          are adaptations of the circle. 
         </p>
         <p>
           Notice that I defined this curve on the domain <m>[0,
@@ -230,7 +231,8 @@
           logarithmic spiral, as in <xref
           ref="figure-parametric-curve4" />. For the logarithmic
           spiral, the parameter <m>t</m> be any real number: the
-          spiral will spin inwards and outwards without end. 
+          spiral will spin outwards without end as <m>t \rightarrow
+          \infty</m>. 
         </p>
       </statement>
     </example>
@@ -261,7 +263,9 @@
           archimedian spiral, as in <xref
           ref="figure-parametric-curve5" />. For this spiral, I
           assume the domain <m>t \in [0,\infty)</m>; the shape
-          starts at the origin and spins outward.
+          starts at the origin and spins outward. Unlike the
+          logarithmic spiral, the arms of the archimedian spiral are
+          equally spaced. 
         </p>
       </statement>
     </example>
@@ -295,9 +299,7 @@
           inward, a curve can spiral upward or downward. The curve
           <m>\gamma(t) = (t \cos t, t \sin t, t)</m>, for <m>t \in
           [0,\infty)</m>, is a conical spiral extending infinitely
-          upward.  The curve <m>\gamma(t) = (t\cos t, t\sin t,t)</m>
-          on <m>[0,20]</m> is a spiral in <m>\RR^3</m>, as in <xref
-          ref="figure-parametric-curve6" />.
+          upward, as seen in <xref ref="figure-parametric-curve6" />.
         </p>
       </statement>
     </example>
@@ -372,7 +374,7 @@
       I want a process to switch between them. This process is
       called reparametrization. I'll state the definition in
       <m>\RR^3</m>, but dropping the third coordinate will give the
-      same idea in <m>\RR62</m> and, of course, there a generalization
+      same idea in <m>\RR^2</m> and, of course, there is a generalization
       to <m>\RR^n</m>. 
     </p>
     <definition>
@@ -437,7 +439,7 @@
       length of the shape, I want that length to be the same,
       regardless of how fast the movement is along the curve.
       Therefore, the length calculation should be independent of the
-      parametrization. However, if I want to no details about the
+      parametrization. However, if I want to know details about the
       local movement (speed, acceleration, change in directions), then
       these calculations should depened on the parametrization.
       Different parametrizations will move along the curve at

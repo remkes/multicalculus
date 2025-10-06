@@ -37,7 +37,7 @@
       gradient shows direction of greatest increase.
     </p>
     <p>
-      If we draw topographical lines on a countour plot, the gradient
+      If I draw topographical lines on a countour plot, the gradient
       will always be locally perpendicular to those lines and will
       point in the direction of greatest increase. Rephrased, this is
       a useful result: <m>\nabla f</m> is always the normal to the
@@ -64,8 +64,8 @@
           By convention, this potential energy is negative. It
           approaches <m>-\infty</m> in the limit at the origin, and
           approaches <m>0</m> as the distance from the origin grows to
-          <m>\infty</m>. I'll writ the gradient of this potential
-          energy; I seperate it into two pieces, one of magnitude and
+          <m>\infty</m>. I'll write the gradient of this potential
+          energy; I separate it into two pieces, one of magnitude and
           one of diection (where direction is given by a unit vector). 
           <me>
             \nabla P = \frac{GmM}{\sqrt{(x^2 + y^2 +z^2)^3}} (x, y, z)
@@ -130,8 +130,8 @@
       This is a vector-valued differential operator: it outputs the
       vector of partial derivatives <m>\nabla f</m>. Now that I have
       defined this operator, there are other operations I can use it
-      for.  Most of those operations come in Calculus IV, but I can
-      define one such operation here.
+      for.  Most of those operations come in future weeks of this
+      course, but I can define one such operation here.
     </p>
     <definition>
       <statement>
@@ -161,10 +161,11 @@
     </definition>
     <p>
       The Laplacian, as a second derivative, measure some kind of
-      multi-dimensional concavity. I considered the heat equation in
-      one dimension; in that equation, concavity measured local
-      displacement from equilibrium. The Laplacian does the same in
-      multiple dimensions. The general Heat Equation is
+      multi-dimensional concavity. You may have seen the heat equation in
+      one dimension, perhaps in a differential equations course; in
+      that equation, concavity measured local displacement from
+      equilibrium. The Laplacian does the same in multiple dimensions.
+      The general Heat Equation is
       <me>
         \frac{\del u}{\del t} = \alpha \nabla^2 u
       </me>.

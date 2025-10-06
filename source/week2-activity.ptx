@@ -73,11 +73,11 @@
       </statement>
       <solution>
         <p>
-          Both coordinates are period functions, so I expect a shape
+          Both coordinates are periodic functions, so I expect a shape
           that loops around and return to its starting point. The
           <m>y</m> coordinate has a larger amplitude, but both have
-          the same period, so I expect this to be stretch out in the
-          <m>y</m> direction. Possible an ellipse. 
+          the same period, so I expect this to be stretched out in the
+          <m>y</m> direction. Possibly, this is an ellipse. 
           This parametric curve is shown in <xref
           ref="figure-activity-parametric-curve-2" />
           <figure xml:id="figure-activity-parametric-curve-2">
@@ -135,11 +135,12 @@
         <p>
           This is hard to immediately guess the shape. Both
           coordinates are bounded and periodic, so I do expect a shape
-          that loops around in some way and return to the origin.
-          However, since we have sums of trig functions with different
-          amplitues and periods, I expect a slightly complicated kind
-          of looping. Possible like a sinusoidal oscilaton along a
-          circle, but maybe with self-intersections as well. 
+          that loops around in some way and returns to its starting
+          point.  However, since there are sums of trig functions with
+          different amplitues and periods, I expect a slightly
+          complicated kind of looping. Possible like a sinusoidal
+          oscilaton along a circle, but maybe with self-intersections
+          as well. 
           This parametric curve is shown in <xref
           ref="figure-activity-parametric-curve-3" />
           <figure xml:id="figure-activity-parametric-curve-3">
@@ -198,7 +199,7 @@
         <p>
           The <m>y</m> coordinates is just the parameter <m>t</m>, so
           I can think of this as a graph of the other coordinate (with
-          the axes reverse, since here <m>x</m> will be a function of
+          the axes reversed, since here <m>x</m> will be a function of
           <m>y</m>. The <m>x</m> coordinate is a quadratic, so I
           expect a sideways parabola.
           This parametric curve is shown in <xref
@@ -603,10 +604,10 @@
             <li>
               <me>t = \frac{s}{4}</me>
               <p>
-                The movement will be one quarter th eoriginal speed.
+                The movement will be one quarter the original speed.
                 For any value of <m>s</m>, the position based on the
                 original parameter would be only one quarter as far
-                along the curve, so motvement along the curve happens
+                along the curve, so movement along the curve happens
                 at one quarter the original speed. The domain is still
                 <m>s \in [0, \infty)</m>
               </p>
@@ -640,7 +641,7 @@
                 By squaring the new variable, the movement  will be
                 faster and faster compared with the old variable.
                 Moving linearly in <m>s</m> is moving quadratically in
-                <m>t</m>. The domain is still <m>s\ in [0,\infty)</m>. 
+                <m>t</m>. The domain is still <m>s \in [0,\infty)</m>. 
               </p>
             </li>
             <li>
@@ -649,8 +650,8 @@
                 By taking the square root, movement along the curve
                 will be going slower and slower compared with the old
                 variable. Moving linearly in <m>s</m> is moving only
-                <m>\sqrt{s}</m> in <m>t</m>.The domain is still <m>s\
-                in [0,\infty)</m>. 
+                <m>\sqrt{s}</m> in <m>t</m>.The domain is still <m>s
+                \in [0,\infty)</m>. 
               </p>
             </li>
             <li>
@@ -776,7 +777,8 @@
           </md>
           I then put these into a pythagorian combination.
           <me>
-            \sqrt{64 \sin^2 (t^2) + 64 \cos^2 (t^2)} = \sqrt{64}t = 8t
+            \sqrt{64 t^2 \sin^2 (t^2) + 64 t^2 \cos^2 (t^2)} =
+            \sqrt{64}t = 8t
           </me>
           For arclength, I need to integrate this expression over the
           length of the curve.
@@ -798,19 +800,20 @@
           and the end of the solution). 
           <ol>
             <li>
-              Find a parametric curve which descrives an ellipse with
-              semimajor axis <m>a</m> and semiminor axis <m>b</m>.
-              (It is easiest for future stpes to orient the larger
-              ellipse axis along the <m>x</m> axis.)
+              Describe the construction of  a parametric curve which
+              moves along  an ellipse with semimajor axis <m>a</m> and
+              semiminor axis <m>b</m>.  (It is easiest for future
+              steps to orient the larger ellipse axis along the
+              <m>x</m> axis.)
             </li>
             <li>
               Set up the arclength calculation to find the
               circumference of the ellipse.
             </li>
             <li>
-              Factor <m>a</m> out of the square root and subtract a
-              cosine term so that you can simplify using <m>(\sin^2 t
-              + \cos^2 t = 1)</m>.
+              Factor <m>a</m> out of the square root and then add and
+              subtract a cosine term so that you can simplify using
+              <m>(\sin^2 t + \cos^2 t = 1)</m>.
             </li>
             <li>
               The <em>eccentricity</em> of the ellipse is defined to
@@ -838,8 +841,9 @@
           <ol>
             <li>
               <p>
-                Find a parametric curve which descrives an ellipse with
-                semimajor axis <m>a</m> and semiminor axis <m>b</m>.
+                Describe the construction of  a parametric curve which
+                moves along  an ellipse with semimajor axis <m>a</m>
+                and semiminor axis <m>b</m>. 
               </p>
               <p>
                 I can take the standard curve for the circle and just
@@ -869,9 +873,9 @@
             </li>
             <li>
               <p>
-                Factor <m>a</m> out of the square root and subtract a
-                cosine term to that you can simplify using <m>(\sin^2 t
-                + \cos^2 t = 1)</m>.
+                Factor <m>a</m> out of the square root and then add
+                and subtract a cosine term to that you can simplify
+                using <m>(\sin^2 t + \cos^2 t = 1)</m>.
               </p>
               <md>
                 <mrow>
@@ -947,14 +951,14 @@
                 This is called an elliptic integral (of the second
                 kind, technically). It was a major motivator in 19th
                 century mathematics, since the circumference of the
-                ellipse was considered an important geometric problem.
+                ellipse was an important geometric problem.
                 It led, indirectly, to the objects known as elliptic
-                curves. These are very important geometric object
+                curves. These are very important geometric objects
                 which seem strangely named, since they don't look like
                 they have anything to do with ellipses. The connection
                 is these integrals. Elliptic curves were invented as
                 part of some clever and complicated new methods to
-                approach ellitpic integrals. In this sense, elliptic
+                approach elliptic integrals. In this sense, elliptic
                 curves are not <dq>curves which are like ellipses</dq>,
                 but rather, <dq>curves that solve some elliptic
                 integrals.</dq>
@@ -1577,7 +1581,7 @@
           Interpret the curve using the three scalars, focusing on the
           asymptotic behaviour.  (The expressions get very hectic in
           this example -- it is very hard to construct examples where
-          the functions don't quickly grow difficult. Use a computer
+          the calculations don't quickly grow difficult. Use a computer
           to do the derivatives and cross product to save yourself
           some calculation. I used Wolfram Alpha for all the
           derivatives and cross products, and some of the algebraic
@@ -1603,35 +1607,35 @@
               y^\prime(t)^2 + z^\prime(t)^2 }
             </mrow>
             <mrow>
-             \amp = \sqrt{ 9t^4 + 4t^2 + 4t^2} = t \sqrt{9t^2 + 4} 
+             \amp = \sqrt{ 9t^4 + 4t^2 + 4t^2} = t \sqrt{9t^2 + 8} 
             </mrow>
             <mrow>
               T(t) \amp = \frac{\gamma^\prime(t)}{|\gamma^\prime(t)|} =
-              \frac{1}{t\sqrt{9t^2 + 4}} \left( 3t^2, -2t, 2t \right)
+              \frac{1}{t\sqrt{9t^2 + 8}} \left( 3t^2, -2t, 2t \right)
             </mrow>
             <mrow>
-              \amp = \left( \frac{3t}{\sqrt{9t^2+4}}
-              \frac{-2}{\sqrt{9t^2+4}} \frac{2}{\sqrt{9t^2+4}} \right)
+              \amp = \left( \frac{3t}{\sqrt{9t^2 + 8}}
+              \frac{-2}{\sqrt{9t^2 + 8}} \frac{2}{\sqrt{9t^2 + 8}} \right)
             </mrow>
             <mrow>
               T^\prime(t) \amp = \left( \frac{12}{(9t^2 +
-              4)^{\frac{3}{2}}}, \frac{-18t}{(9t^2+4)^{\frac{3}{2}}},
-              \frac{18t}{(9t^2+4)^{\frac{3}{2}}} \right) 
+              8)^{\frac{3}{2}}}, \frac{-18t}{(9t^2+4)^{\frac{3}{2}}},
+              \frac{18t}{(9t^2 + 8)^{\frac{3}{2}}} \right) 
             </mrow>
             <mrow>
-              \amp = \frac{1}{(9t^2+4)^{\frac{3}{2}}} (12, -18t, 18t)
+              \amp = \frac{1}{(9t^2 + 8)^{\frac{3}{2}}} (12, -18t, 18t)
             </mrow>
             <mrow>
-              |T^\prime(t)| \amp = \frac{1}{(9t^2+4)^{\frac{3}{2}}}
+              |T^\prime(t)| \amp = \frac{1}{(9t^2 + 8)^{\frac{3}{2}}}
               \sqrt{144 + 324t^2 + 324t^2} =
-              \frac{1}{(9t^2+4)^{\frac{3}{2}}} \sqrt{144 + 648t^2}
+              \frac{1}{(9t^2 + 8)^{\frac{3}{2}}} \sqrt{144 + 648t^2}
             </mrow>
             <mrow>
               \kappa(t) \amp =
               \frac{|T^\prime(t)|}{|\gamma^\prime(t)|} =
-              \frac{\frac{1}{(9t^2+4)^{\frac{3}{2}}} \sqrt{ 144 +
+              \frac{\frac{1}{(9t^2 + 8)^{\frac{3}{2}}} \sqrt{ 144 +
               648t^2}}{\sqrt{ 9t^4 + 4t^2}} = \frac{144 + 648
-              t^2}{(9t^2+4)^2}
+              t^2}{(9t^2+ 8)^2}
             </mrow>
             <mrow>
               N(t) \amp = \frac{T^\prime(t)}{|T^\prime(t)|}
@@ -1639,38 +1643,38 @@
               \right) 
             </mrow>
             <mrow>
-              B(t) \amp = T(t) \times N(t) = \frac{1}{\sqrt{9t^2+4}}
-              (3t, -2, -2) \times \frac{1}{\sqrt{144+684t^2}} (12,
+              B(t) \amp = T(t) \times N(t) = \frac{1}{\sqrt{9t^2 + 
+              8}} (3t, -2, -2) \times \frac{1}{\sqrt{144+684t^2}} (12,
               -18t, 18t)
             </mrow>
             <mrow>
-              \amp = \frac{1}{\sqrt{(9t^2+4)(144+648t^2)}} \left[ 
+              \amp = \frac{1}{\sqrt{(9t^2 + 8)(144 + 648t^2)}} \left[ 
               (3t, -2, -2) \times (12, -18t, 18t) \right] 
             </mrow>
             <mrow>
-              \amp = \frac{1}{\sqrt{5832t^4 + 3888t^2 + 576}} (-72t,
+              \amp = \frac{1}{\sqrt{5832t^4 + 6480t^2 + 1152}} (-72t,
               -24 - 54t^2, 24 - 54t^2)
             </mrow>
             <mrow>
-              B^\prime(t) \amp = \frac{1}{(81t^4 +54t^2 +
-              8)^{\frac{3}{2}}} \left( 6\sqrt{2} (81t^4 - 8),
-              9\sqrt{2} t(9t^2 + 4), -9\sqrt{2}t (63t^2 + 20) \right) 
+              B^\prime(t) \amp = \frac{1}{(81t^4 + 90t^2 +
+              16)^{\frac{3}{2}}} \left( 6\sqrt{2} (81t^4 - 16),
+              9\sqrt{2} t(9t^2 - 4), -81\sqrt{2}t (9t^2 + 4) \right) 
             </mrow>
             <mrow>
               \tau(t) \amp = - \frac{B^\prime(t)}{|\gamma^\prime(t)|}
               \cdot N(t)
             </mrow>
             <mrow>
-              \amp = \frac{-\left( 12(6\sqrt{2}) (81t^4 - 8) -
-              18t(9\sqrt{2})(9t^2 + 4) - 18t(9\sqrt{2})(63t^2 + 20)
-              \right)}{t\sqrt{(9t^2+4)(81t^4 + 54t^2 + 8)^3}}
+              \amp = \frac{-\left( 12(6\sqrt{2}) (81t^4 - 16) -
+              18t(9\sqrt{2})(9t^2 - 4) - 18t(-81\sqrt{2})(9t^2 + 4)
+              \right)}{t\sqrt{(9t^2 + 8)(81t^4 + 90t^2 + 16)^3}}
             </mrow>
             <mrow>
-              \amp = \frac{-\sqrt{2}}{t\sqrt{(9t^2+4)(81t^4 + 54t^2 +
-              8)^3}} (5832t^4 - 11664t^2 - 4464)
+              \amp = \frac{144\sqrt{2}}{t\sqrt{(9t^2 + 8)(81t^4 + 90t^2 +
+              16)^3}} (41t^4 + 81t^3 + 45 t - 8)
             </mrow>
           </md>
-          As I warned you, this got pretty intense. However, I can
+          As I warned you, this got pretty complex. However, I can
           simplify and gain useful information by just looking 
           at the asymptotic order of the three scalars. 
           <md>
@@ -1681,7 +1685,7 @@
               \kappa \amp \cong \frac{1}{t^2} 
             </mrow>
             <mrow>
-              \tau \amp \cong \frac{t^4}{t^9} = \frac{1}{t^5}
+              \tau \amp \cong \frac{t^4}{t^8} = \frac{1}{t^4}
             </mrow>
           </md>
           The speed is increasing. This makes sense, since the

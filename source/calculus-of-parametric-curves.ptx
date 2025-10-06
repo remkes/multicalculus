@@ -5,7 +5,7 @@
     <p>
       Parametric curves are functions, but functions with several
       variables of output. What can calculus say about this kind of
-      function? How can I use the tool of single variable calculus to
+      function? How can I use the tools of single variable calculus to
       analyze the movement of parametric curve? Since there is still
       only a single input, I can actually apply the tools of
       single-variable calculus quite directly by taking the ordinary,
@@ -29,7 +29,7 @@
             \gamma^\prime(t) = (x^\prime(t), y^\prime(t),
             z^\prime(t))
           </me>
-          This derivative, <m>\gamma^\prime(t)</m>, produced a vector
+          This derivative, <m>\gamma^\prime(t)</m>, produces a vector
           for each value of <m>t</m>. This vector is called the
           <term>tangent vector</term> to the parametric curve.
         </p>
@@ -41,7 +41,7 @@
       local direction vector along the curve. At <m>\gamma(a)</m>,
       <m>\gamma^\prime(a)</m> points in the local direction of
       movement. The notion of a derivative as a tangent direction
-      replaces old notion of the derivative as the slope of the
+      is replaced by the  notion of the derivative as the slope of the
       tangent line.
     </p>
     <example>
@@ -131,8 +131,11 @@
           </image>
         </figure>
         <p>
-          (REWRITE)
-          tangents to the point <m>(1,1)</m>.
+          Consider the four parametric curves earlier in <xref
+          ref="example-four-parametrizations" />. All four of these
+          followed the same parabola, but at different rates of
+          movement. I'm know going to calculation all of the tangents
+          to these four course at the point <m>(1,1)</m>.
           <md>
             <mrow>
               \gamma_2^\prime (t) \amp = \left( 1, 2t \right) \amp \amp 
@@ -161,7 +164,9 @@
         <p>
           All of these tangent vectors are multiples of the vector
           <m>(1,2)</m>, but they have different lengths, as seen in
-          <xref ref="figure-tangent-lengths" />.
+          <xref ref="figure-tangent-lengths" />. The direction of
+          movement is fixed at that momemnt, but the speed is
+          different. 
         </p>
       </statement>
     </example>
@@ -174,13 +179,23 @@
       large length; if the movement along the curve is slow, the
       tangent vector will be shorter.
     </p>
+    <definition>
+      <statement>
+        <p>
+          If <m>\gamma(t)</m> is a parametric curve, then the length
+          of the tangent vector, <m>|\gamma^\prime(t)|</m>, is called
+          the <term>speed</term> of the curve. The speed is a scalar. 
+        </p>
+      </statement>
+    </definition>
     <p>
       For the parametrizations of the graph of the parabola in <xref
       ref="figure-tangent-lengths" />, I can see this behaviour
       clearly: the direction of the tangent is independent of the
       parametrization, but the length of the tangent is entirely
       dependent on the parametrization. The parametrizations which
-      move more quickly along the curve have longer tangents.
+      move more quickly along the curve have longer tangents, hence
+      higher speed through that point. 
     </p>
     <p>
       Often it is useful to only consider the tangent direction.
@@ -204,9 +219,10 @@
       <statement>
         <p>
           In the various parametrizations of the graph of the
-          parabola, the tangent direction was <m>(1,2)</m>, so the
-          unit tangent is <m>\left( \frac{1}{\sqrt{5}},
-          \frac{2}{\sqrt{5}} \right)</m>.
+          parabola in <xref ref="example-four-parametrizations" />,
+          the tangent direction was <m>(1,2)</m>, so the unit tangent
+          is <m>\left( \frac{1}{\sqrt{5}}, \frac{2}{\sqrt{5}}
+          \right)</m>.
         </p>
       </statement>
     </example>
@@ -309,8 +325,8 @@
       If I take the limit of this process, breaking the curve into
       smaller and smaller pieces, I produce a Riemann sum which
       defines a definite integral. In the limit, the <m>\Delta</m>
-      terms become the infinitesimals <m>dy</m>, <m>dx</m> and
-      <m>dt</m>. 
+      terms become the expression <m>dy</m>, <m>dx</m> and
+      <m>dt</m> and their ratios become derivatives. 
       <me>
         L = \int_a^b \sqrt{ \left( \frac{dx}{dt} \right)^2 + \left(
         \frac{dy}{dt} \right)^2 } dt
@@ -324,7 +340,7 @@
     <proposition>
       <statement>
         <p>
-          Let <m>\gamma(t): [a,b] \rightarrow \RR3n</m> be a
+          Let <m>\gamma(t): [a,b] \rightarrow \RR^3</m> be a
           parametric curve. I'll explicitly write the components of
           the curve as <m>\gamma_1(t), \gamma_2(t), \gamma_3(t)</m>.
           Then the length of the parametric curve is calculated by
@@ -403,10 +419,10 @@
         <p>
           The absolute value here causes trouble. A convenient way to
           drop it is to notice that both <m>\sin t</m> and <m>\cos
-          t</m> are positive on <m>[0, \pi/2]</m>. That range covers
-          a quarter of the asteroid and the asteroid is symmetric, so
-          I can calculate the length of that quarter and multiply by
-          4.
+          t</m> are positive on <m>\let[0, \frac{\pi}{2}\right]</m>.
+          That range covers a quarter of the asteroid and the asteroid
+          is symmetric, so I can calculate the length of that quarter
+          and multiply by 4.
           <me>
             L = 4\int_0^{\frac{\pi}{2}} 3 \sin t \cos t dt = 6
             \int_0^{\frac{\pi}{2}} \sin 2t = -3\cos 2t
@@ -422,7 +438,7 @@
       work with a small section of a curve, particularly for
       integration. If I can argue that the whole curve is just a
       repetition of a small portion (perhaps reflected or rotated),
-      then I can reasonable use the small portion to calculate
+      then I can reasonably use the small portion to calculate
       information about the whole curve. 
     </p>
   </subsection>
@@ -479,8 +495,10 @@
         <li>
           <p>
             I invert the arclength function. Arclength is always an
-            increasing function, so it is always invertible. I write
-            the inverse as <m>t(s)</m>.
+            increasing function, so it is always invertible. (I might
+            not be able to write the inverse as an elementary
+            function, but it does always exist.) I write
+            the inverse as <m>t(s)</m>. 
           </p>
         </li>
         <li>
@@ -599,7 +617,7 @@
     </example>
     <p>
       The process of parametrization by arclenth is a lot of work.
-      What is the point? THe point is that the parametrization by
+      What is the point? The point is that the parametrization by
       arclength has several very pleasant properties, properties which
       will be useful in later constructions.
     </p>
@@ -790,9 +808,9 @@
       possible magnitude.) 
     </p>
     <p>
-      The given definition of curvatuve only works for parametrization
+      The given definition of curvature only works for parametrization
       by arclength. I would like to calculate <m>\kappa</m> in terms
-      of an arbitrary parameter <m>t</m>, since arclength can be
+      of an arbitrary parametrization <m>t</m>, since arclength can be
       difficult to work with.
     </p>
     <proposition>
@@ -906,7 +924,7 @@
         </p>
         <p>
           Again unsurprisingly, the unit circle has constant curvature
-          of one; I would expect uniform curvate for a circle. This
+          of one; I would expect uniform curvature for a circle. This
           also give a reference for the scale of curvature: curvature
           of one is exactly the curvature of the unit circle.
         </p>
@@ -942,7 +960,7 @@
     <title>Normals</title>
     <p>
       To complete the description of motion in <m>\RR^3</m>, I need to
-      define the normal and binormal vectors. I apologizes, on behalf
+      define the normal and binormal vectors. I apologize, on behalf
       of mathematicians everywhere, for the use of the word
       <sq>normal</sq> in this definition (and, franktly, everywhere
       else it's used in mathematics.) Unfortunately, it's standard and
@@ -1004,14 +1022,14 @@
         Alternatively, I could argue more directly from the definition
         of a unit vector. If <m>\gamma(t)</m> is a unit vector, its
         length can never change -- the length is fixed at one. If
-        <m>\gamma^\prime(t)</m> share any small direction with
+        <m>\gamma^\prime(t)</m> shares any small direction with
         <m>\gamma(t)</m> (more formally, if the projection was
         non-zero), then there would be a portion of the tangent vector
-        pointing in the direction of <m>\gamma(t)</m>. This would
-        indicate that there is change in the direction of the vector.
+        pointing in the same direction of <m>\gamma(t)</m>. This would
+        indicate that there is change in the direction as the vector.
         Such a change would necessarily change the length of the
-        vector; increasing it is the growth is aligned with the
-        vector, and decreasing it is the growth is against the vector.
+        vector; an increase is growth aligned with the
+        vector, and a decrease is growth against the vector.
         Therefore, <m>\gamma(t)</m> and <m>\gamma^\prime(t)</m> cannot
         share any such small direction.  The projection of the latter
         onto the former must be zero, which is equivalent to them
@@ -1025,7 +1043,7 @@
       and <m>B</m> are perpendicular to each other. In addition,
       <m>T</m> was already a unit vector and <m>N</m> was defined
       explicitly as a unit vector. The cross product of two
-      perpendicular unit vectors is also a unit vectors, so all three
+      perpendicular unit vectors is also a unit vector, so all three
       are unit vectors. An example of the arrangement of the three
       vrectors is show in  <xref ref="figure-three-unit-vectors" />.
     </p>
@@ -1362,7 +1380,8 @@
       <m>\RR^3</m>, I can do a little physics. This section tries to
       undertstand what acceleration means in the language of
       parametric curves. The starting point is simple: acceleration
-      should be the second derivative of the curve.
+      should be the second derivative of the position and position is
+      just the output of the parametric curve. 
       <me>
         a(t) = \gamma^{\prime \prime}(t) = \frac{d}{dt} \gamma^\prime(t)
       </me>

@@ -2,12 +2,12 @@
   <title>Week 3 Activity</title>
   <subsection xml:id="problems-contour-plots">
     <title>Contour Plots</title>
-    <activity>
+    <activity xml:id="activity-contour-plots">
       <statement>
         <p>
-          Draw the contour graph for <m>f(x,y) = 3y - 4x^2</m> using
+          Draw the contour plot for <m>f(x,y) = 3y - 4x^2</m> using
           a range of contour values <m>c = -4, -3, \ldots, 5, 6</m>.
-          Use the contour graphs to give a qualitative description of
+          Use the contour plot to give a qualitative description of
           the graph. 
         </p>
       </statement>
@@ -43,9 +43,9 @@
     <activity>
       <statement>
         <p>
-          Draw the contour graph for <m>f(x,y) = e^{x^2 + y^2} + 4</m>
+          Draw the contour plot for <m>f(x,y) = e^{x^2 + y^2} + 4</m>
           using a range of contour values <m>c = 5, 5.1, 5.2, \ldots,
-          5.9, 6</m>.  Use the contour graphs to give a qualitative
+          5.9, 6</m>.  Use the contour plot to give a qualitative
           description of the graph. 
         </p>
       </statement>
@@ -82,9 +82,9 @@
     <activity>
       <statement>
         <p>
-          Draw the contour graph for <m>f(x,y) = \frac{x}{\sin y}</m> using
+          Draw the contour plot for <m>f(x,y) = \frac{x}{\sin y}</m> using
           a range of contour values <m>c = 0, 0.3, 0.6, \ldots, 2.4,
-          2.7, 3</m>.  Use the contour graphs to give a qualitative
+          2.7, 3</m>.  Use the contour plot to give a qualitative
           description of the graph. 
         </p>
       </statement>
@@ -122,9 +122,9 @@
     <activity>
       <statement>
         <p>
-          Draw the contour graph for <m>f(x,y) = \frac{x^2 + 1}{y^2 -
+          Draw the contour plot for <m>f(x,y) = \frac{x^2 + 1}{y^2 -
           4}</m> using a range of contour values <m>c = 1, 2, \ldots
-          9, 10</m>.  Use the contour graphs to give a
+          9, 10</m>.  Use the contour plot to give a
           qualitative description of the graph. 
         </p>
       </statement>
@@ -464,8 +464,8 @@
       </statement>
       <solution>
         <p>
-          I differetiate in the <m>x</m> variable, treating other
-          variables as constant. 
+          I differentiate in the <m>x</m> variable, treating other
+          variables as constants. 
           <md>
             <mrow>
               \frac{\del}{\del x} 4x^2 - 4y^2 + 3xy + 4 \amp = 8x - 0
@@ -486,8 +486,8 @@
       </statement>
       <solution>
         <p>
-          I differetiate in the <m>y</m> variable, treating other
-          variables as constant. 
+          I differentiate in the <m>y</m> variable, treating other
+          variables as constants. 
           <md>
             <mrow>
               \frac{\del}{\del y} \cos (3x^2 + 4y^2) \amp = \frac{d}{du}
@@ -513,8 +513,8 @@
       </statement>
       <solution>
         <p>
-          I differetiate in the <m>z</m> variable, treating other
-          variables as constant. 
+          I differentiate in the <m>z</m> variable, treating other
+          variables as constants. 
           <md>
             <mrow>
               \frac{\del}{\del z} \ln (xyz) \amp = \frac{d}{du} \ln u
@@ -536,8 +536,8 @@
       </statement>
       <solution>
         <p>
-          I differetiate in the <m>x</m> variable twice, treating other
-          variables as constant. I use the chain rule in the first
+          I differentiate in the <m>x</m> variable twice, treating other
+          variables as constants. I use the chain rule in the first
           step, and then the product rule and the chain rule for the
           second partial derivative.
           <md>
@@ -582,8 +582,8 @@
       </statement>
       <solution>
         <p>
-          I differetiate in the <m>y</m> variable twice, treating other
-          variables as constant. 
+          I differentiate in the <m>y</m> variable twice, treating other
+          variables as constants. 
           <md>
             <mrow>
               \frac{\del^2}{\del y^2} x^2 + 3y^2 + 4y^2 x^3 - 5x^3 y +
@@ -608,8 +608,8 @@
       </statement>
       <solution>
         <p>
-          I differetiate in the <m>z</m> variable twice, treating other
-          variables as constant. 
+          I differentiate in the <m>z</m> variable twice, treating other
+          variables as constants. 
           <md>
             <mrow>
               \frac{\del^2}{\del z^2} xyz + x^2yz - xy^2z - xyz^2 \amp =
@@ -634,8 +634,8 @@
       </statement>
       <solution>
         <p>
-          I differetiate in <m>y</m> and then in <m>x</m>, in each
-          step treating other variables as constant. I use the chain
+          I differentiate in <m>y</m> and then in <m>x</m>, in each
+          step treating other variables as constants. I use the chain
           rule in the first derivative, then product rule and chain
           rule in the second derivative. 
           <md>
@@ -675,8 +675,8 @@
       </statement>
       <solution>
         <p>
-          I differetiate in <m>y</m> and then in <m>x</m>, in each
-          step treating other variables as constant. I use the chain
+          I differentiate in <m>y</m> and then in <m>x</m>, in each
+          step treating other variables as constants. I use the chain
           rule in the first step, and then the quotient rule in the
           second.
           <md>
@@ -716,8 +716,8 @@
       </statement>
       <solution>
         <p>
-          I differetiate in <m>y</m> and then in <m>x</m>, in each
-          step treating other variables as constant. 
+          I differentiate in <m>y</m> and then in <m>x</m>, in each
+          step treating other variables as constants. 
           <md>
             <mrow>
               \frac{\del^2}{\del x \del y} x^2 y^3 - 7x^4y^3 - x^5 +
@@ -743,8 +743,8 @@
       </statement>
       <solution>
         <p>
-          I differetiate in <m>z</m>, then in <m>y</m>, and then in
-          <m>z</m>, in each step treating other variables as constant. 
+          I differentiate in <m>z</m>, then in <m>y</m>, and then in
+          <m>z</m>, in each step treating other variables as constants. 
           <md>
             <mrow>
               \frac{\del^3}{\del x \del y \del z} 3xyz - xy^2 - xz^2 +
@@ -770,8 +770,8 @@
       </statement>
       <solution>
         <p>
-          I differetiate in <m>y</m> twice and the in <m>x</m>, in
-          each step treating other variables as constant. 
+          I differentiate in <m>y</m> twice and the in <m>x</m>, in
+          each step treating other variables as constants. 
           <md>
             <mrow>
               \frac{\del^3}{\del x \del y^2} x^2 e^y - xy^2 \amp =
@@ -791,7 +791,8 @@
       <statement>
         <p>
           Calculate the gradient of this function. Use the countour
-          plots from the activity from Week 8 and draw some of the
+          plots from the activity from <xref
+          ref="activity-contour-plots" /> and draw some of the
           gradient directions, showing that the gradients are indeed
           perpendicular to the coutour plots. 
           <me>
@@ -854,7 +855,8 @@
       <statement>
         <p>
           Calculate the gradient of this function. Use the countour
-          plots from the activity from Week 8 and draw some of the
+          plots from the activity from <xref
+          ref="activity-contour-plots" /> and draw some of the
           gradient directions, showing that the gradients are indeed
           perpendicular to the coutour plots. 
           <me>
@@ -917,7 +919,8 @@
       <statement>
         <p>
           Calculate the gradient of this function. Use the countour
-          plots from the activity from Week 8 and draw some of the
+          plots from the activity from <xref
+          ref="activity-contour-plots" /> and draw some of the
           gradient directions, showing that the gradients are indeed
           perpendicular to the coutour plots. 
           <me>
@@ -985,7 +988,8 @@
       <statement>
         <p>
           Calculate the gradient of this function. Use the countour
-          plots from the activity from Week 8 and draw some of the
+          plots from the activity from <xref
+          ref="activity-contour-plots" /> and draw some of the
           gradient directions, showing that the gradients are indeed
           perpendicular to the coutour plots. 
           <me>
