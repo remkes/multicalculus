@@ -21,14 +21,21 @@
       these. For the <m>x</m> direciton, the <m>y</m> coordinate is
       <m>0</m> since there is no change in <m>y</m>. That gives the
       vector <m>(1, 0, f_x(a,b))</m>.  Likewise in the <m>y</m>
-      direction, we have the vector <m>(0,1,f_y(a,b))</m>. These are
-      two local tangent direction vectors.
+      direction, I can construct the vector <m>(0,1,f_y(a,b))</m>.
+      These are two local tangent direction vectors.
     </p>
     <p>
       Given two vectors on a plane, the normal of the plane is
-      found by the cross product. So I calculate <m>(1,0, f_x(a,b))
-      \times (0,1, f_y(a,b)) = (-f_x(a,b), -f_y(a,b),1)</m>. This
-      leads to the following result. 
+      found by the cross product. So I calculate the normal to the
+      tangent plane.
+    </p>
+    <me>
+      (1,0, f_x(a,b)) \times (0,1, f_y(a,b)) = (-f_x(a,b),
+      -f_y(a,b),1)
+    </me>. 
+    <p>
+      Then I can use this normal to construct the equation of a plane
+      in the usual way. 
     </p>
     <proposition xml:id="proposition-tangent-plane">
       <statement>
@@ -105,7 +112,7 @@
         </p>
         <p>
           At the point <m>(x,y) = (0,0)</m>, the partial derivative
-          values are we have <m>f_x(0,0) = 0</m> and <m>f_y(0,0) =
+          values are <m>f_x(0,0) = 0</m> and <m>f_y(0,0) =
           0</m>. The normal is <m>(0,0,1)</m> and the point is
           <m>(0,0,1)</m>. The tangent plane is
           <me>
@@ -114,7 +121,7 @@
         </p>
         <p>
           At the point <m>(x,y) = (-2,2)</m>, the partial derivative
-          values are we have <m>f_x(-2,2) = \frac{4}{81}</m> and
+          values are <m>f_x(-2,2) = \frac{4}{81}</m> and
           <m>f_y(-2,2) = \frac{-4}{81}</m>. The normal is <m>\left(
           \frac{4}{81}, \frac{-4}{81}, 1 \right)</m> and the point is
           <m>\left(-2,2, \frac{1}{9} \right)</m>. The tangent plane
@@ -182,8 +189,11 @@
       <md>
         <mrow>
           x_0 - f(a_1, a_2, \ldots a_n) \amp = \frac{\del f}{\del
-          x_1}(a_1, a_2, \ldots a_n ) (x_1-a_2) + \frac{\del f}{\del
-          x_2} (a_1, a_2, \ldots, a_n) (x_2-a_2) + \ldots
+          x_1}(a_1, a_2, \ldots a_n ) (x_1-a_2) + 
+        </mrow>
+        <mrow>
+          \amp \frac{\del f}{\del x_2} (a_1, a_2, \ldots, a_n)
+          (x_2-a_2) + \ldots
         </mrow>
         <mrow>
           \amp \ldots + \frac{\del f}{\del x_n} (a_1,

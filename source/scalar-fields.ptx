@@ -300,7 +300,7 @@
           Contour diagrams can show many behaviours. <xref
           ref="figure-contour-plot2">Figure</xref> shows a pass or
           saddle point. (The saddle point will be formally defined in
-          <xref ref="def-saddle-point" /).
+          <xref ref="def-saddle-point" />.)
         </p>
       </statement>
     </example>

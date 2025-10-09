@@ -1,36 +1,37 @@
 <section xml:id="indefinite-integral">
   <title>The Indefinite Integral</title>
   <p>
-    A major goal of Calculus III was the extention of the derivative
-    to multivariable functions: particularly to parametric curves and
-    scalar fields. This course pursues the matching goal of extending
-    the integral to multivariable functions. The course will consider
-    new kinds of integrals involving parametric curves in <xref
+    A major goal of the first part of this course was the extention of
+    the derivative to multivariable functions: particularly to
+    parametric curves and scalar fields. Now, the  course pivots to
+    pursue the matching goal of extending the integral to
+    multivariable functions. I will consider new kinds of
+    integrals involving parametric curves in <xref
     ref="section-line-integrals" />, as part of the material called
-    Vector Calculus. For the start, though, I'm interesting in scalar
-    fields. What should it mean to integrate a scalar field? Well,
-    there are two kinds of integral: definite and indefinite, so the
-    questions needs to asked twice. First, I'm going to think about
-    indefinite integrals. 
+    Vector Calculus. For the start, though, I'm still interesting in
+    scalar fields. What should it mean to integrate a scalar field?
+    Well, there are two kinds of integral: definite and indefinite, so
+    the question needs to asked twice.  First, I'm going to think
+    about indefinite integrals. 
   </p>
   <p>
     The indefinite integral <m>\int f dx</m> was a notation for 
     <em>all</em> anti-derivatives of the single-variable function. Is
-    there a multivariable version of this anti-derivative? Calculus
-    III tried to extend the derivative to multi-variable functions.
-    The result was a collection of construction: partial derivatives,
-    tangent (hyper-)planes, gradients and the Jacobian matrix.
-    However, none of these notions of the derivative gave a new
-    multi-variable funciton. Therefore, there isn't a nice notion of
-    anti-derivative: going back doesn't make sense, since going
-    forward led to more complicated constructions. If <m>f(x,y,z)</m>
-    is a scalar field, then <m>\int f</m> doesn't have any clear
-    meaning. 
+    there a multivariable version of this anti-derivative? <xref
+    ref="chapter-week4" /> tried to holistically extend the derivative
+    to multi-variable functions. The result was a collection of
+    construction: partial derivatives, tangent (hyper)planes,
+    gradients and the Jacobian matrix. However, none of these notions
+    of the derivative gave a new multi-variable funciton. Therefore,
+    there isn't a nice notion of anti-derivative: going back doesn't
+    make sense, since going forward led to more complicated
+    constructions. If <m>f(x,y,z)</m> is a scalar field, then <m>\int
+    f</m> doesn't have any clear meaning. 
   </p>
   <p>
     I can, however, take indefinite integrals in one variable, much
-    like partial derivatives. If <m>f(x,y,z)</m> is a multivariable
-    continuous function, then the following three integrals are the
+    like partial derivatives. If <m>f(x,y,z)</m> is a continuous
+    scalar field, then the following three integrals are the
     counterparts of partial differentiation. In each of the following,
     I pretend the other two variables are constant; only the variable
     indicated by the infintesimal term is non-constant.
@@ -49,14 +50,14 @@
   <p>
     In addition to extending the integral, a major theme of this
     course will be extensions of the fundamental theorem. Let me
-    remind you of the various forms of the fundametanl theorem.
+    remind you of the various forms of the fundamental theorem.
   </p>
   <theorem>
     <statement>
       <p>
         Let <m>f: [a,b] \rightarrow \RR</m> be a continuous function.
-        Then if <m>F(x)</m> is any antiderivative of <m>f</m> (i.e.
-        <m>F^\prime(x) = f(x)</m>). Any of the following
+        Then assume <m>F(x)</m> is any antiderivative of <m>f</m>, i.e.
+        <m>F^\prime(x) = f(x)</m>. Any of the following
         expressions are versions of the Fundamental Theorem of
         Calculus.
       </p>
@@ -81,15 +82,16 @@
     </statement>
   </theorem>
   <p>
-    The fundamental gheorem deserves its name: it really is the basis
+    The fundamental theorem deserves its name: it really is the basis
     for single variable calculus, giving the deep and remarkable
-    connection between differentiate and integration. As this course
+    connection between differentiation and integration. As this course
     extends the derivative and the integral to multivariable
     situations, there will be new opportunities to create connections
     between new derivatives and new integrals in the spirit of the
-    fundamental theorem. Major goals of this course are new theorems
-    that extend the fundanmental theorem. Therefore, whenever I can, I
-    will be looking for these fundamental-theorem type constructions.
+    fundamental theorem. A major goal of this course is to make new
+    theorems that extend the fundanmental theorem. Therefore, whenever
+    I can, I will be looking for these fundamental-theorem type
+    constructions.
   </p>
   <p>
     Here, I had defined partial derivatives and indefinite integrals
@@ -122,6 +124,6 @@
     There is nothing more to be said about the indefinite integral and
     this is as far as I can extend the notation. All the future
     extensions of the integral (and there are many!) will be
-    extensions of thd definite integral. 
+    extensions of the definite integral. 
   </p>
 </section>

@@ -19,7 +19,7 @@
       tangent line to <m>f</m> at <m>(a,f(a))</m>.
     </p>
     <p>
-      I can rearrange the linear approximaiton to help extent the idea 
+      I can rearrange the linear approximaiton to help extend the idea 
       to multivariable functions.
       <men xml:id="equation-single-linear-approx">
         (f(x) - f(a)) \approx f^\prime(a) (x-a)
@@ -27,11 +27,11 @@
     </p>
     <p>
       In this course, I have encouraged you to think of points in
-      <m>\RR^n</m> along with local direction vectors: each point can
-      be thought of as the origin for a system of local directions.
-      I can do the same here: let <m>(a,f(a))</m> be a local origin
-      for a system of local directions. Then switching from
-      <m>f(x)</m> to <m>f(x) - f(a)</m> and from <m>x</m> to
+      <m>\RR^n</m> along with their local direction vectors: each
+      point can be thought of as the origin for a system of local
+      directions.  I can do the same here: let <m>(a,f(a))</m> be a
+      local origin for a system of local directions. Then switching
+      from <m>f(x)</m> to <m>f(x) - f(a)</m> and from <m>x</m> to
       <m>x-a</m> is just moving from the usual origin to this new,
       local, origin.
     </p>
@@ -120,8 +120,8 @@
         <p>
           Look at the point <m>(0,0)</m>.
           <me>
-            f(x,y) \approx f(0,0) + \left( \begin{matrix} 0 \amp 0
-            \end{matrix} \right) \begin{pmatrix}x\\y\end{pmatrix} = 1
+            f(x,y) \approx f(0,0) + \begin{pmatrix} 0 \amp 0
+            \end{pmatrix} \begin{pmatrix} x \\ y\ end{pmatrix} = 1
           </me>
         </p>
         <p>
@@ -134,8 +134,7 @@
         <p>
           Look at the point <m>(1,1)</m>.
           <me>
-            f(x,y) \approx f(1,1) + \left( \begin{matrix} \frac{-2}{9}
-            \amp \frac{-2}{9} \end{matrix} \right)
+            f(x,y) \approx f(1,1) + \amp \frac{-2}{9} \end{pmatrix}
             \begin{pmatrix}x-1\\y-1\end{pmatrix} = \frac{1}{3} -
             \frac{2(x-1)}{9} - \frac{2(y-1)}{9}
           </me>
@@ -143,8 +142,8 @@
         <p>
           Look at the point <m>(-2,2)</m>.
           <me>
-            f(x,y) \approx f(-2,2) + \left( \begin{matrix}
-            \frac{4}{81} \amp \frac{-4}{81} \end{matrix} \right)
+            f(x,y) \approx f(-2,2) + \begin{pmatrix} \frac{4}{81} \amp
+            \frac{-4}{81} \end{pmatrix}
             \begin{pmatrix}x+2\\y-2\end{pmatrix} = \frac{1}{9} +
             \frac{4(x+2)}{81} - \frac{4(y-2)}{81}
           </me>
@@ -156,27 +155,34 @@
         <p>
           <m>f(x,y) = x^2 e^{x-y}</m>.
           <me>
-            M = \left( \begin{matrix} 2xe^{x-y} + x^2e^{x-y}, -x^2
-            e^{x-y} \end{matrix} \right)
+            M = \begin{pmatrix} 2xe^{x-y} + x^2e^{x-y}, -x^2
+            e^{x-y} \end{pmatrix} 
           </me>
         </p>
         <p>
           Look at the point <m>(2,2)</m>.
-          <me>
-            f(x,y) \approx f(2,2) + \left( \begin{matrix} 4+4 \amp
-            -4 \end{matrix} \right)
-            \begin{pmatrix}x-2\\y-2\end{pmatrix} = 4 + (4+4e^2)(x-2) -
-            4(y-2)
-          </me>
+          <md>
+            <mrow>
+              f(x,y) \amp \approx f(2,2) + \begin{pmatrix} 4+4 \amp -4
+              \end{pmatrix} \begin{pmatrix}x-2\\y-2\end{pmatrix}
+            </mrow>
+            <mrow>
+              = 4 + (4+4e^2)(x-2) - 4(y-2)
+            </mrow>
+          </md>
         </p>
         <p>
           Look at the point <m>(-1,-1)</m>.
-          <me>
-            f(x,y) \approx f(-1,-1) + \left( \begin{matrix} (2+e) \amp
-            -1 \end{matrix} \right)
-            \begin{pmatrix}x+1\\y+1\end{pmatrix} = 1 + (2+e)(x+1) -
-            (y+1)
-          </me>
+          <md>
+            <mrow>
+              f(x,y) \amp \approx f(-1,-1) + \begin{pmatrix} (2+e)
+              \amp -1 \end{pmatrix}
+              \begin{pmatrix}x+1\\y+1\end{pmatrix} 
+            </mrow>
+            <mrow>
+              \amp = 1 + (2+e)(x+1) - (y+1)
+            </mrow>
+          </md>
         </p>
       </statement>
     </example>
@@ -209,8 +215,9 @@
       linear approximation of the function at any point in its domain.
       It will be useful to give this matrix a name, for future
       reference. I'll state the definition so that it works for scalar
-      fields (<m>m=1</m>) for this course, as well as for vector
-      fields (<m>m \gt 1</m>), which is important in Calculus IV.
+      fields (<m>m=1</m>) as well as for vector fields (<m>m \gt
+      1</m>), since I'll need it for those functions later in the
+      course. 
     </p>
     <definition>
       <statement>

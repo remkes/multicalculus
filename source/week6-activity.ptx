@@ -178,14 +178,14 @@
         <md>
           <mrow>
             \int_{-3}^0 \int_{-1}^2 xy^4 dx dy \amp = \int_{-3}^0
-            \frac{x^2 y^4}{2} \bigg|_{-1}^{2} dy 
+            \frac{x^2 y^4}{2} \Bigg|_{-1}^{2} dy 
           </mrow>
           <mrow>
             \amp = \int_{-3}^0 \frac{y^4}{2} (2^2 - (-1)^2) dy 
           </mrow>
           <mrow>
             \amp = \int_{-3}^0 \frac{3y^4}{2} dy = 3 \frac{y^5}{10}
-            \bigg|_{0}^3 = \frac{729}{10}
+            \Bigg|_{0}^3 = \frac{729}{10}
           </mrow>
         </md>
       </solution>
@@ -214,15 +214,17 @@
             \int_0^{\pi} \int_{y=0}^{y=1} \frac{1}{2} \cos u du dx 
           </mrow>
           <mrow>
-            \amp = \int_0^{\pi} \frac{- \sin u}{2} \bigg|_{y=0}^{y=1}
-            = \int_0^{\pi} \frac{ -\sin (xy^2)}{2} \bigg|_0^1
+            \amp = \int_0^{\pi} \frac{- \sin u}{2} \Bigg|_{y=0}^{y=1}
+            = \int_0^{\pi} \frac{ -\sin (xy^2)}{2} \Bigg|_0^1
           </mrow>
           <mrow>
-            \amp = \frac{1}{2} \int_0^{\pi} -\sin (x) + (\sin 0) dx =
-            \frac{-1}{2} \int_0^{\pi} \sin (x) dx 
+            \amp = \frac{1}{2} \int_0^{\pi} -\sin (x) + (\sin 0) dx 
           </mrow>
           <mrow>
-            \amp = \frac{-1}{2} \cos x \bigg|_0^{\pi} = \frac{-1}{2} 2
+            \amp = \frac{-1}{2} \int_0^{\pi} \sin (x) dx 
+          </mrow>
+          <mrow>
+            \amp = \frac{-1}{2} \cos x \Bigg|_0^{\pi} = \frac{-1}{2} 2
             = -1 
           </mrow>
         </md>
@@ -249,7 +251,7 @@
             \amp \int_1^4 \int_1^4 xy \ln (xy) 
           </mrow>
           <mrow>
-            \amp = \int_1^4 \left( \frac{x^2y}{2} \ln(xy) \bigg|_1^4 -
+            \amp = \int_1^4 \left( \frac{x^2y}{2} \ln(xy) \Bigg|_1^4 -
             \int_1^4 \frac{1}{x} \frac{x^2y}{2} dx \right) dy 
           </mrow>
           <mrow>
@@ -258,16 +260,16 @@
           </mrow>
           <mrow>
             \amp = \int_1^4 \left( 8y\ln (4y) - \frac{y}{2} \ln y -
-            \frac{x^2y}{4} \bigg|_1^4 \right) dy 
+            \frac{x^2y}{4} \Bigg|_1^4 \right) dy 
           </mrow>
           <mrow>
             \amp = \int_1^4 8y\ln (4y) - \frac{y}{2} \ln y -
             \frac{15y}{4} dy 
           </mrow>
-          <mrow> \amp = \frac{8y^2}{2} \ln 4y \bigg|_1^4 - \int_1^4
+          <mrow> \amp = \frac{8y^2}{2} \ln 4y \Bigg|_1^4 - \int_1^4
           \frac{8y^2}{2} \frac{1}{y} dy  - \left( \frac{y^2}{4} \ln y
-          \bigg|_1^4 - \int_1^4 \frac{y^2}{4} \frac{1}{y} dy \right) -
-          \frac{15y^2}{8} \bigg|_1^4
+          \Bigg|_1^4 - \int_1^4 \frac{y^2}{4} \frac{1}{y} dy \right) -
+          \frac{15y^2}{8} \Bigg|_1^4
           </mrow>
           <mrow>
             \amp = 64 \ln (16) - 4 \ln 4 - \int_1^4 4y dy - 1 \ln 4 + 0 +
@@ -298,14 +300,14 @@
         <md>
           <mrow>
             \int_0^4 \int_1^4 \frac{1}{x^2y^2} dy dx \amp = \int_0^4
-            \frac{-1}{x^2y} \bigg|_1^4 dx 
+            \frac{-1}{x^2y} \Bigg|_1^4 dx 
           </mrow>
           <mrow>
             \amp = \int_0^4 \frac{-1}{4x^2} - \frac{-1}{x^2} dx =
             \int_0^4 \frac{-1 + 4}{4x^2} dx = \int_0^4 \frac{3}{4x^2}
           </mrow>
           <mrow>
-            \amp = \frac{3}{4} \frac{-1}{x} \bigg|_0^4 = \frac{3}{4} \left(
+            \amp = \frac{3}{4} \frac{-1}{x} \Bigg|_0^4 = \frac{3}{4} \left(
             \frac{-1}{4} - \lim_{a \rightarrow 0} \frac{-1}{a} \right)
           </mrow>
         </md>
@@ -336,12 +338,12 @@
           </mrow>
           <mrow>
             \amp = \int_{-1}^1 \int_{-3}^3 \left( x^3 + 3xyz^2
-            +\frac{x^4}{4}z \right) \bigg|_0^2 dy dz 
+            +\frac{x^4}{4}z \right) \Bigg|_0^2 dy dz 
           </mrow>
           <mrow>
             \amp = \int_{-1}^1 \int_{-3}^3 \left( 8 + 6yz^2 +4z
             \right) dy dz = \int_{-1}^1 \left( 8y + 6\frac{y^3}{3}z^2
-            +4yz \right) \bigg|_{-3}^{3} dz 
+            +4yz \right) \Bigg|_{-3}^{3} dz 
           </mrow>
           <mrow>
             \amp = \int_{-1}^1 \left( 8(3-(-3)) + 2(27-(-3))z^2
@@ -352,8 +354,10 @@
             \right) dz 
           </mrow>
           <mrow>
-            \amp = 48z + 20z^3 +12z^2 \bigg|_{-1}^1 = 48(1-(-1)) +
-            20(1 - (-1)) + 12 (1-1) = 136
+            \amp = 48z + 20z^3 +12z^2 \Bigg|_{-1}^1 
+          </mrow>
+          <mrow>
+            \amp = 48(1-(-1)) + 20(1 - (-1)) + 12 (1-1) = 136
           </mrow>
         </md>
       </solution>
@@ -417,8 +421,8 @@
           </mrow>
           <mrow>
             \amp = \left[ 2 \arcsin \left( \frac{x}{2} \right) -
-            \frac{1}{2} x \sqrt{4-x^2} \bigg|_0^1 \right] \left[
-            \frac{y^3}{3} \bigg|_{-1}^0 \right] 
+            \frac{1}{2} x \sqrt{4-x^2} \Bigg|_0^1 \right] \left[
+            \frac{y^3}{3} \Bigg|_{-1}^0 \right] 
           </mrow>
           <mrow>
             \amp = \left[ 2 \arcsin \frac{1}{2} - \frac{1}{2} \sqrt{3}
@@ -462,7 +466,7 @@
           </mrow>
           <mrow>
             \amp = \int_2^4 \frac{1}{2y^2} \ln |x+y| - \frac{-}{y^2}
-            \ln |x+2y| + \frac{1}{2y^2} \ln |x+3y| \bigg|_{-1}{1} dy
+            \ln |x+2y| + \frac{1}{2y^2} \ln |x+3y| \Bigg|_{-1}{1} dy
           </mrow>
           <mrow>
             \amp = \int_2^4 \frac{1}{2y^2} (\ln |1+y| - \ln |-1+y|) -
@@ -535,7 +539,7 @@
           What is an iterated integral? 
         </li>
         <li>
-          Why can multivariable integral be split into single variable
+          Why can multivariable integrals be split into single variable
           pieces?
         </li>
       </ul>

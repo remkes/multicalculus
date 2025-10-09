@@ -17,28 +17,30 @@
       over all <m>k^n</m> subintervals. This is where I want to start:
       with a better understanding of this sum.  However, working to
       this understanding in full generality or <m>\RR^n</m> at the
-      start is very unwieldy, so I'll start with a function
+      start is very unwieldy, so I'll start with a scalar field
       <m>f(x,y)</m> defined on an interval in <m>\RR^2</m>. As noted
       before, In <m>\RR^2</m>, I will write <m>\Delta A</m> and
       <m>dA</m> instead of <m>\Delta V</m> and <m>dV</m>, since the
-      pieces of an interval in<m>\RR^2</m> are rectangles and have
+      pieces of an interval in <m>\RR^2</m> are rectangles and have
       area, not volume.
     </p>
     <p>
-      Consider an interval in <m>\RR^n</m>: <m>I = [a_1,b_1] \times
+      Consider an interval in <m>\RR^2</m>: <m>I = [a_1,b_1] \times
       [a_2,b_2]</m>. If I divide the two single-variable intervals into
       <m>k</m> pieces, I can choose <m>x_{i_1}^* \in [a_1,b_1]</m> and
       <m>y_{i_2}^* \in [a_2,b_2]</m>. With these choices, the point
       <m>(x_{i_1}^*, y_{i_2}^*)</m> is a point in one of the
       subintervals of <m>I</m>. As both the indices <m>i_1</m> and
-      <m>i_2</m> count from <m>1</m> to <m>k</m>. I want to count the
-      two sums independently, so all count to <m>k_1</m> in <m>x</m>
-      and to <m>k_2</m> in <m>y</m>. This might mean that I have more
-      rectancles in a row than in a column, or vice-versa, but that's
-      fine; the rectangles are still subintervals making up the whole
-      interval. The sum can now be written as a double sum over these
-      two indices. The limit also needs to take both upper bounds to
-      infinity.
+      <m>i_2</m> count from <m>1</m> to <m>k</m>. 
+    </p>
+    <p> 
+      I actuallywant to count the two sums independently, so all count
+      to <m>k_1</m> in <m>x</m> and to <m>k_2</m> in <m>y</m>. This
+      might mean that I have more rectancles in a row than in a
+      column, or vice-versa, but that's fine; the rectangles are still
+      subintervals making up the whole interval. The sum can now be
+      written as a double sum over these two indices. The limit also
+      needs to take both upper bounds to infinity.
     </p>
     <me>
       \int_{I} f(x,y) dA = \lim_{k_1 \rightarrow \infty} \lim_{k_2
@@ -62,7 +64,7 @@
       Now, let me group this using some brackets, moving some
       terms in and out of sums (recall than anything that doesn't
       involve the index of a particular sum and be moved out from the
-      sum.
+      sum).
     </p>
     <me>
       \int_{I} f(x,y) dA = \lim_{k_1 \rightarrow \infty}
@@ -85,7 +87,7 @@
     <p>
       Now I can consider the outside sum and, again, this is just a
       single-variable Riemann integral. It treats the variable <m>y</m>
-      as constant and integrate in <m>x</m>. Let me write this as an
+      as constant and integrates in <m>x</m>. Let me write this as an
       integral as well. 
     </p>
     <me>
@@ -95,8 +97,8 @@
     <p>
       This is called an <term>iterated integral</term> and it will be
       the calculation techinque for definite integrals. Every definite
-      integral of a multivariable function on an interval can be treated
-      as a iterated single-variable integral in each variable
+      integral of an (integrable) scalar field on an interval can be
+      treated as a iterated single-variable integral in each variable
       independently. 
     </p>
     <p>
@@ -105,7 +107,7 @@
       function acts first. Its bounds are written on the right, closest
       to the function. That integral is a single-variable integration,
       pretending that the other variables are constant, as was the
-      case with partial derivatives. Then, once the firstintegration
+      case with partial derivatives. Then, once the first integration
       is finished, I proceed outward to the next integral.
     </p>
     <p>
@@ -132,16 +134,16 @@
       order? I have to choose an order for these iterated integrals.
       Fubini's Theorem tells me that I am able to choose the order.
       This is the counterpart to Clairaut's Theorem for partial
-      derivative, which told me that I could change the order of
+      derivatives, which told me that I could change the order of
       iterated partial derivatives. 
     </p>
     <theorem xml:id="thm-fubini">
       <statement>
         <p>
           (Fubini's Theorem) If <m>f: I \rightarrow \RR</m> is an
-          integrable function on an closed interval, then the iterated
-          integral is independent of the choice or order. Any ordering
-          of the variables will result in the same value.
+          integrable scalar field on an closed interval, then the
+          iterated integral is independent of the choice or order. Any
+          ordering of the variables will result in the same value.
         </p>
       </statement>
     </theorem>
@@ -168,7 +170,7 @@
           the <m>y</m> variable will be entirely gone and I will
           proceed with the single-variable definite integral in
           <m>x</m>.  In this example, I've carefully labelled the
-          bound to remind myself which variable to replace. This isn't
+          bounds to remind myself which variable to replace. This isn't
           standard notation, but a nice reminder for the first
           example.
         </p>
@@ -181,15 +183,15 @@
             dy dx
           </mrow>
           <mrow>
-            \amp = \int_0^1 y e^x \bigg|_{y=3}^{y=6} dx + \int_0^1 e^y
-            \bigg|_{y=3}^{y=6} dx
+            \amp = \int_0^1 y e^x \Bigg|_{y=3}^{y=6} dx + \int_0^1 e^y
+            \Bigg|_{y=3}^{y=6} dx
           </mrow>
           <mrow>
             \amp = \int_0^1 3e^x dx + \int_0^1 (e^6-e^3) dx
           </mrow>
           <mrow>
-            \amp = 3e^x \bigg|_{x=0}^{x=1} + x(e^6-e^3)
-            \bigg|_{x=0}^{x=1}
+            \amp = 3e^x \Bigg|_{x=0}^{x=1} + x(e^6-e^3)
+            \Bigg|_{x=0}^{x=1}
           </mrow>
           <mrow>
             \amp = 3e - 3 + e^6 - e^3
@@ -270,7 +272,7 @@
             \int_0^{\pi} \sin (x+y) dx dy
           </mrow>
           <mrow>
-            \amp = \int_0^{\frac{\pi}{2}} (-\cos (x+y)) \bigg|_0^{\pi}
+            \amp = \int_0^{\frac{\pi}{2}} (-\cos (x+y)) \Bigg|_0^{\pi}
             dy
           </mrow>
           <mrow>
@@ -278,7 +280,7 @@
             \int_0^{\frac{\pi}{2}} 2 \cos y dy
           </mrow>
           <mrow>
-            \amp = 2 \sin y \bigg|_0^{\frac{\pi}{2}} = 2-0 = 2
+            \amp = 2 \sin y \Bigg|_0^{\frac{\pi}{2}} = 2-0 = 2
           </mrow>
         </md>
       </statement>

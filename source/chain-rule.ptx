@@ -31,8 +31,8 @@
         <p>
           (The Chain Rule) Let <m>f: \RR^n \rightarrow \RR</m> be a
           scalar function and <m>\gamma(t)</m> a parametric curve in
-          <m>\RR^n</m> inside the domain of <m>f</m>. The derivative
-          of <m>f</m> along <m>\gamma</m> is
+          <m>\RR^n</m> entirely contained within the domain of
+          <m>f</m>. The derivative of <m>f</m> along <m>\gamma</m> is
           <me>
             \frac{d}{dt} f(\gamma(t)) = \frac{\del f}{\del x_1}
             \frac{dx_1}{dt} + \frac{\del f}{\del x_2} \frac{dx_2}{dt}
@@ -137,7 +137,10 @@
             <mrow>
               \amp = \frac{GmMx}{(x^2 + y^2 + z^2)^{\frac{3}{2}}}
               \frac{dx}{dt} + \frac{GmMy}{(x^2 + y^2 +
-              z^2)^{\frac{3}{2}}} \frac{dy}{dt} + \frac{GmMz}{(x^2 +
+              z^2)^{\frac{3}{2}}} \frac{dy}{dt} 
+            </mrow>
+            <mrow>
+              + \frac{GmMz}{(x^2 +
               y^2 + z^2)^{\frac{3}{2}}} \frac{dz}{dt}
             </mrow>
             <mrow>
@@ -153,8 +156,9 @@
         <p>
           Along this helical path, the potential energy is increases.
           The rate of increase, however, slows over time. This makes
-          sense for leaving a potential energy well: the first steps
-          are more difficult and later movement is not as difficult. 
+          sense for a path which is leaving a potential energy well:
+          the first steps are more difficult and later movement is not
+          as difficult. 
         </p>
         <p>
           Notice that if I let <m>|\gamma(t)| = \sqrt{1 + t^2}</m> at

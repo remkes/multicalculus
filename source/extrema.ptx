@@ -73,7 +73,7 @@
       minimum, maximum or saddle point, there is no such direction, so
       the gradient is zero. As with single-variable calculus, the
       implication is only one direction. As with single variable
-      function, there may be points where the gradient is zero but the
+      functions, there may be points where the gradient is zero but the
       point is neither a minimum, maximum nor saddle point.
     </p>
     <p>
@@ -114,15 +114,15 @@
     <example>
       <statement>
         <p>
-          For example, consider the function <m>f(x,y) = x-y^2+3</m>,
+          Consider the function <m>f(x,y) = x-y^2+3</m>,
           shown in Figure <xref ref="figure-3d-graph5" />. The
           <m>y</m> partial is <m>f_y(x,y) = -2y</m>, which vanishes
           everywhere along the <m>x</m> axis (when <m>y=0</m>).
           However, the other partial is <m>f_x = 1</m>, which never
           vanishes. This means that all points <m>(x,0)</m> are
-          potentiall critical in <m>y</m> but not in <m>x</m>. This
+          potentially critical in <m>y</m> but not in <m>x</m>. This
           function is a ascending/decending ridge (with slope
-          <m>1</m>) above the <m>x</m> axis.
+          <m>1</m>) above the <m>x</m> axis. 
         </p>
       </statement>
     </example>
@@ -170,13 +170,13 @@
     </example>
     <p>
       I want to classify critical points: points where <m>\nabla f =
-      0</m>. We can do this informally by looking at each variable
+      0</m>. I can do this informally by looking at each variable
       individually. If the point is a maximum in all of <m>x_1, x_2,
       \ldots, x_n</m>, then it is a maximum according to our
       definition above. Likewise, if it is a minimum in all the
       variables, it is a minimum. If it is a maximum in some of the
       variables and a minimum in others, it is a saddle point.
-      However, if even one of the variable has no max/min behvaiour
+      However, if even one of the variables has no max/min behvaiour
       (like <m>f(x) = x^3</m> at <m>x=0</m>), then the point is
       neither a maximum, minimum nor saddle point.
     </p>
@@ -193,7 +193,7 @@
       is inconclusive if <m>f^{\prime \prime}(a) = 0</m>.
     </p>
     <p>
-      I'd like to generalize this, but we have many second
+      I'd like to generalize this, but there are many second
       derivatives: all of the possible mixed and non-mixed second
       partials. One way I can organize all these second partials is
       in a matrix.
@@ -376,30 +376,29 @@
           extrema. 
           <md>
             <mrow>
-              \frac{\del f}{\del x} \amp = 2xy^2 \amp \amp 
+              \frac{\del f}{\del x} \amp = 2xy^2 
             </mrow>
             <mrow>
-              \frac{\del f}{\del y} \amp = 2x^2y + 2y \amp \amp 
+              \frac{\del f}{\del y} \amp = 2x^2y + 2y 
             </mrow>
             <mrow>
               \nabla f(x,y) \amp = 0 \implies (x,y) = (a,0)
-              \amp \amp \forall a \in \RR
+              \forall a \in \RR
             </mrow>
             <mrow>
-              \frac{\del^2 f}{\del x^2} \amp = 2y \amp \amp 
+              \frac{\del^2 f}{\del x^2} \amp = 2y 
             </mrow>
             <mrow>
-              \frac{\del^2 f}{\del y^2} \amp = 2x^2 + 2 \amp \amp 
+              \frac{\del^2 f}{\del y^2} \amp = 2x^2 + 2 
             </mrow>
             <mrow>
-              \frac{\del^2 f}{\del x \del y} \amp = 4xy \amp \amp 
+              \frac{\del^2 f}{\del x \del y} \amp = 4xy 
             </mrow>
             <mrow>
-              D \amp = (2y)(2x^2+ 2) - 16x^2 y^2 \amp \amp 
+              D \amp = (2y)(2x^2+ 2) - 16x^2 y^2 
             </mrow>
             <mrow>
-              \amp = 4yx^2 + 4y - 16x^2 y^2 \implies D(a,0) = 0 \amp
-              \amp 
+              \amp = 4yx^2 + 4y - 16x^2 y^2 \implies D(a,0) = 0 
             </mrow>
           </md>
         </p>
@@ -512,7 +511,9 @@
         <p>
           <m>f(x,y) = \frac{8}{3} x^3 + 4y^3 - x^4 - y^4</m> is shown
           in Figure <xref ref="figure-3d-graph9" />.  I calculate the
-          gradient to find the potential extrema. Then I calculate the
+          gradient to find the potential extrema. (I have to solve a
+          non-linear system of equations to find these critical
+          points, which I haven't shown here.)  Then I calculate the
           second partials and the determinant of the Hessian matrix to
           classify the extrema. 
           <md>
@@ -551,7 +552,7 @@
               D(2,3) \amp > 0 
             </mrow>
             <mrow>
-              \frac{\del^2 f}{\del x^2} (2,3) \lt  0
+              \frac{\del^2 f}{\del x^2} (2,3) \amp \lt  0
             </mrow>
           </md>
         </p>

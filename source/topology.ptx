@@ -3,9 +3,6 @@
   <subsection xml:id="subsection-what-is-topology">
   <title>What Is Topology</title>
     <p>
-      Change: abbreviate, just focus on intervals and open set in two
-      and three dimensions. Enough to do iterated integrals and
-      understand GGS statements. 
       Topology is a branch of mathematics which studies concepts of
       shape, near-ness and distance. You might think that such a
       study woulds just be geometry, and you would be partially
@@ -16,7 +13,7 @@
       of geometry, it is fundamental to modern mathematics.
     </p>
     <p>
-      I have already shown you topology of <m>\RR</m> in single
+      I have already shown you some of topology of <m>\RR</m> in single
       variable calculus, mostly notably in the definition of open and
       closed intervals: <m>(a,b)</m> and <m>[a,b]</m>. Open intervals
       did not include their endpoints but closed intervals did.
@@ -94,7 +91,7 @@
     <p>
       This definition properly extends the notions of open and closed
       intervals in <m>\RR</m>. The boundary points of an interval are
-      the endpoints. The open intervals lacks their endpoints and the
+      the endpoints. Open intervals lacks their endpoints and
       closed intervals included their endpoints. In <m>\RR^n</m>, the
       boundaries are much more complicated than endpoints: they can be
       intricate geometric shapes.
@@ -115,7 +112,7 @@
   <subsection xml:id="subsection-intervals">
     <title>Important Open and Closed Sets</title>
     <p>
-      Interval were important subsets of <m>\RR</m>. Here, I extend
+      Intervals were important subsets of <m>\RR</m>. Here, I extend
       the notion to <m>\RR^n</m>.
     </p>
     <definition>
@@ -125,16 +122,16 @@
           points <m>(x_1, x_2, \ldots, x_n) \in \RR^n</m> such that
           <md>
             <mrow>
-              \amp a_1 \amp \lt \amp x_1 \lt  b_1 
+              a_1 \lt x_1 \lt  b_1 
             </mrow>
             <mrow>
-              \amp a_2 \amp \lt \amp x_2 \lt  b_2
+              a_2 \lt x_2 \lt  b_2
             </mrow>
             <mrow>
-              \amp \amp \ldots 
+              \ldots 
             </mrow>
             <mrow>
-              \amp a_n \amp \lt \amp x_n \lt  b_n
+              a_n \lt x_n \lt  b_n
             </mrow>
           </md>
         </p>
@@ -153,16 +150,16 @@
           points <m>(x_1, x_2, \ldots, x_n) \in \RR^n</m> such that
           <md>
             <mrow>
-              \amp a_1 \amp \leq \amp x_1 \leq  b_1 
+              a_1 \leq x_1 \leq  b_1 
             </mrow>
             <mrow>
-              \amp a_2 \amp \leq \amp x_2 \leq  b_2
+              a_2 \leq x_2 \leq  b_2
             </mrow>
             <mrow>
-              \amp \amp \ldots 
+              \ldots 
             </mrow>
             <mrow>
-              \amp a_n \amp \leq \amp x_n \leq  b_n
+              a_n \leq x_n \leq  b_n
             </mrow>
           </md>
         </p>
@@ -176,7 +173,7 @@
     </definition>
     <p>
       Intervals are rectangular objects. In <m>\RR^2</m>, they are
-      filled-in rectangles, including the hollow bounding rectangle if
+      filled-in rectangles, including the bounding rectangle if
       the interval is closed and excluding it if the interval is open.
       In <m>\RR^3</m>, intervals are solid rectangular prisms whose
       boundaries are rectangular boxes. In higher dimensions, I

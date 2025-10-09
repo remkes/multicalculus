@@ -4,24 +4,24 @@
     <title>The Conceptual Integral</title>
     <p>
       The single-variable definite integral measured the area under the
-      graph of a function. Multivariable functions also have graphs. 
-      For a function of two variables, the graph is in
-      <m>\RR^3</m> and there is volume under the grpah instead of area.
-      For functions of three or more variables, the graphs are in higher
-      dimensional spaces and enclose a hyper-volume. If the definite
-      integral of a single variable function asked for the area under
-      its graph, the definite integral for a multivariable integral
-      should ask for the value of the volume or hyper-volume under its
-      graph. This is, indeed, the case. 
+      graph of a function. Multivariable scalar fields also have graphs. 
+      For a scalar field of two variables, the graph is in
+      <m>\RR^3</m> and there is volume under the graph instead of area.
+      For scalar fields with three or more variables, the graphs are
+      in higher dimensional spaces and enclose a hyper-volume. If the
+      definite integral of a single variable function asked for the
+      area under its graph, the definite integral for a multivariable
+      integral should ask for the value of the volume or hyper-volume
+      under its graph. This is, indeed, the case. 
     </p>
     <definition xml:id="definition-conceptual-definite-integral">
       <statement>
         <p>
           Let <m>U</m> be an subset of <m>\RR^n</m> and let
-          <m>f: U \rightarrow \RR</m> be a function. The
+          <m>f: U \rightarrow \RR</m> be a scalar field. The
           graph of <m>f</m> is a hypersurface in <m>\RR^{n+1}</m>
           lying over <m>U</m> (thought of as a subset of the copy of
-          <m>\RR^n</m> which is the <m>x_{n+1} = 0</m> hyperplane.
+          <m>\RR^n</m> which is the <m>x_{n+1} = 0</m> hyperplane.)
           Then the integral
         </p>
         <md>
@@ -31,31 +31,32 @@
         </md>
         <p>
           is the volume or hypervolume under the graph of <m>f</m> in
-          <m>\RR^{n+1}</m> (if such a volume or hypervolume can be
-          defined). Like the single variable integral, (hyper)volume
-          above the <m>x_{n+1} = 0</m> hyperplane is consider positive
-          and (hyper)volume below is considered negative. The notation
-          <m>dV</m> is used for functions of three or more variables,
-          indicating the (hyper)volume in the domain. For functions of
-          only two variables, the notation <m>dA</m> is used to
-          represent the area in the domain. 
+          <m>\RR^{n+1}</m>. If such a volume or hypervolume cannot be
+          defined, then the integral does not exist. Like the single
+          variable integral, (hyper)volume above the <m>x_{n+1} =
+          0</m> hyperplane is consider positive and (hyper)volume
+          below is considered negative. The notation <m>dV</m> is used
+          for scalar fields of three or more variables, indicating the
+          (hyper)volume in the domain. For scalar fields of only two
+          variables, the notation <m>dA</m> is used to represent the
+          area in the domain. 
         </p>
       </statement>
     </definition>
     <p>
       Before moving on, I have a couple important notes to make about
-      this definition. First, note that the function needs to be
+      this definition. First, note that the scalar field needs to be
       defined on the set <m>U</m>.  As with single variable integrals,
-      I should always be aware of the domain of the function. If the
-      function is undefined on some points in <m>U</m>, the integral
-      will be undefined. If the function is undefined on the boundary
+      I should always be aware of the domain of the scalar field. If the
+      scalar field is undefined on some points in <m>U</m>, the integral
+      will be undefined. If the scalar field is undefined on the boundary
       of <m>U</m>, the volume may still be defined. This will be an
       extension of improper integrals, which I will discuss in <xref
       ref="subsection-improper-iterated-integrals" />.
     </p>
     <p>
-      Also note that I said, in parenthesis, the integral is defined
-      only if this volume is defined.  Note all functions will be
+      Also note that I said the integral is defined
+      only if this volume is defined.  Not all scalar fields will be
       integrable (indeed, not all single variable functions are
       integrable). Continuity will be enough to conclude this volume
       exists, but I will also investigate less restrictive conditions
@@ -63,8 +64,8 @@
       subsets <m>U</m> allow for this volume to be defined. The
       definitions in <xref ref="section-iterated-integrals" />  will
       describe which sets <m>U</m> lead to well-defined volumes. For
-      the integrals to be defined, both the function <m>f</m> and the
-      subset<m>U</m> have to be reasonable. 
+      the integrals to be defined, both the scalar field <m>f</m> and the
+      subset <m>U</m> have to be reasonable. 
     </p>
     <p>
       Finally, note that this is a very conceptual definition, but it
@@ -126,25 +127,27 @@
       size, thinking of <m>V</m> for volume or hypervolume. (As
       before, in the special case of two variables, I would write
       <m>\Delta A</m> instead). I'll define this for a three-variable
-      function, but the definition is general. 
+      scalar field for clarity of notation, but the definition the same
+      for any number of variables.
     </p>
     <definition xml:id="definition-definite-riemann-integral">
       <statement>
         <p>
           Let <m>I \subset \RR^3</m> be an interval and <m>f: I
-          \rightarrow \RR</m> a function. The <term> Riemann
-          integral</term>  of a function is the following limit (if it
-          exists), where the sum is taken over all <m>3^n</m>
-          subdivision of the interval and <m>x_l^*</m> is any point in
-          the <m>l</m>th subinterval, and <m>\Delta V</m> is the
+          \rightarrow \RR</m> a scalar field. The <term> Riemann
+          integral</term>  of a scalar field is the following limit (if it
+          exists), where the sum is taken over all <m>n^3</m>
+          subdivision of the interval and <m>x_k^*</m> is any point in
+          the <m>k</m>th subinterval (by some way of counting all the
+          intervals), and <m>\Delta V</m> is the
           (hyper)volume of the subinterval.
         </p>
         <me>
-          \int_{I} f(x_1, x_2, x_3) dV = \lim_{k \rightarrow
-          \infty} \sum_{l=0}^{k^3} f(x_l^*) \Delta V
+          \int_{I} f(x_1, x_2, x_3) dV = \lim_{n \rightarrow
+          \infty} \sum_{l=0}^{n^3} f(x_k^*) \Delta V
         </me>
         <p>
-          If the limit exists, the function <m>f</m> is called 
+          If the limit exists, the scalar field <m>f</m> is called 
           <term>(Riemann) integrable</term> on the interval <m>I</m>.
         </p>
       </statement>
@@ -160,50 +163,52 @@
     <title>Integrable Functions</title>
     <p>
       In <xref ref="definition-definite-riemann-integral" />, I defined
-      an integrable function, on an interval, to be a function such
+      an integrable scalar field, on an interval, to be a scalar field such
       that the limit defining the Riemann integral exists. Most usual
-      functions are integrable, particular functions defined on closed
-      intervals so that they don't diverge near the edges of the
-      interval. There is a whole theory of integrable functions.
-      However, for the purposes of this course, I'm going to work with
-      a slightly restricted class of functions. This won't affect any
-      applications, since all the reasonable functions I want to use
-      will still be in this category. 
+      scalar fields are integrable, particularly scalar fields defined
+      on closed intervals (so that they don't diverge near the edges
+      of the interval). There is a whole theory of integrable higher
+      dimensional functions.  However, for the purposes of this
+      course, I'm going to work with a slightly restricted class of
+      scalar fields. This won't affect any applications, since all the
+      reasonable scalar fields I want to use will still be in this
+      category. The non-integrable functions are, for practical
+      purposes, weird inventions by mathematics to try to break our
+      own definitions (which is, after all, a think we just like to
+      do).
     </p>
     <definition>
       <statement>
         <p>
           Let <m>I</m> be a closed interval in <m>\RR^n</m> and let
-          <m>f: I \rightarrow \RR</m> be a function.  If I can break
+          <m>f: I \rightarrow \RR</m> be a scalar field. If I can break
           the interval <m>I</m> up into finitely many closed
           subintervals and if <m>f</m> is continuous on each of the
-          closed subintervals, I say the function is <term>piecewise
+          closed subintervals, I say the scalar field is <term>piecewise
           continuous</term>.
         </p>
       </statement>
     </definition>
     <p>
-      The purpose of this definition is in the the following
-      proposition. 
+      Then I have the proposition about integrable scalar fields.
     </p>
     <proposition>
       <statement>
         <p>
-          All piecewise continuous functions of several variables are
-          integrable.
+          All piecewise continuous scalar fields are integrable.
         </p>
       </statement>
     </proposition>
     <p>
       As I said above, this is a convenience, since piecewise
       continuous is good enough for our purposes. 
-      There are, in fact, other functions which are also integrable.
+      There are, in fact, other scalar fields which are also integrable.
       Notice, also, that I defined this exlictly on closed intervals.
-      Piecewise-continuous function on open intervals can have
+      Piecewise-continuous scalar fields on open intervals can have
       divergent behaviour (like vertical asymptote) at the edges of
       the intervals. These produce a multivariable version of
       improper integrals. I will consider these later, but insisting
-      on functions defined on closed intervals ensure that I don't
+      on scalar fields defined on closed intervals ensures that I don't
       have problems like asymptotes at the edges.
     </p>
     <p>
@@ -213,7 +218,7 @@
       is Riemann-integrability. In higher mathematics, the most
       commonly used definition of the integral is a different
       definition, called the Lebesgue integral. It is also an
-      approximation process, but it involve approximating the function
+      approximation process, but it involves approximating the function
       with a special functions that only take finitely many values.
       The Lebesgue integral agrees with the Riemann integral on all
       Riemann-integrable functions.  However, there are functions
@@ -238,8 +243,8 @@
         <p>
           Let <m>I</m> be an interval in <m>\RR^n</m>, <m>f: I
           \rightarrow \RR</m> and <m>g: I \rightarrow \RR</m> integrable
-          functions on I, and <m>c \in \RR</m>. First, the integral is
-          linear.
+          scalar fields on I, and <m>c \in \RR</m>. First, the
+          integral is linear.
         </p>
         <md>
           <mrow>

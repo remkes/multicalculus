@@ -3,9 +3,138 @@
   <subsection xml:id="subsection-linear-transformations">
   <title>Linear Transformations</title>
     <p>
-      Definition of a linear transformation, a matrix, a determinant
-      (just in r2 and r3) and the matrix action. Specialization to r1,
-      where after translation, just multiplication
+      This section is a short detour into a few definitions from
+      linear algebra. This is necessary to state the important results
+      in the section immediately following. 
+    </p>
+    <definition>
+      <statment>
+        <p>
+          Let <m>L</m> be a function <m>\RR^n \rightarrow \RR^m</m>.
+          Then <m>L</m> is called a <term>linear transformation</term> 
+          if the follow two properties hold for all <m>u, v, \in
+          \RR^n</m> and <m>a \in \RR</m>.
+        </p>
+        <ol>
+          <li>
+            <m>L(u + v) = L(u) + L(v)</m>
+          </li>
+          <li>
+            <m>L(au) = aL(u)</m>
+          </li>
+        </ol>
+      </statment>
+    </definition>
+    <p>
+      Linear transformations are the functions which are studies in
+      linear algebra. They are a very restricted class of function:
+      most expression to not preserve addition and scalar
+      multiplication in this way. Note that by using <m>a=0</m> in the
+      second property, a linear transformation must always send the
+      zero vector to the zero vector
+    </p>
+    <p>
+      As limited as they are, linear transformations are a key
+      definition in algebra and geometry. They also have a very
+      elegant catalogue and calculation method, which involves
+      matrices. Very briefly, let me define a matrix.
+    </p>
+    <definition>
+      <statement>
+        <p>
+          A <term>matrix</term> is a rectangular array of numbers. It
+          has a number of rows and columns; if there are <m>n</m> rows
+          and <m>m</m> columms, then it is called a <m>n \times m</m>
+          matrix. If the number of rows and columns are the same, it
+          is called a <term>square</term> matrix. 
+        </p>
+      </statement>
+    </definition>
+    <p>
+      Here is an example of a <m>3 \times 3</m> matrix where the
+      entries are real number. 
+    </p>
+    <me>
+      \begin{pmatrix} 
+        \sqrt{7} \amp 0 \amp \frac{1}{e} \\
+        \frac{-15}{31} \amp \pi \amp 5 \\
+        0 \amp 0 \amp 0 
+      \end{pmatrix}
+    </me>
+    <p>
+      Matrices are used for a huge number of purposes in mathematics.
+      For this course, we will only need a couple. The first is one of
+      the most notable and surprising facts in mathematics.
+    </p>
+    <proposition>
+      <statement>
+        <p>
+          The set of all linear transformation <m>\RR^n \rightarrow
+          \RR^m</m> is precisely and perfectly catalogued by the <m>m
+          \times n</m> matrices. That is, for each such linear
+          transformation, there is exactly one matrix that describes
+          it and each matrix describes such a transformation.
+        </p>
+      </statement>
+    </proposition>
+    <p>
+      How is this done? It is done by the matrix action on vectors:
+      there is a clear and algorithmic way that a matrix can be used
+      to take a vector as input and produce another vector as output.
+      I'll state the matrix action just in <m>\RR^3</m> for square
+      matrices, but it applies to any size of matrix. 
+    </p>
+    <definition>
+      <statement>
+        <p>
+          Let <m>M</m> be a <m>3 \times 3</m> matrix and
+          <m>(x,y,z)</m> be a vector in <m>\RR^3</m>. Then, writing
+          the matrix out as nine entries, the following formula
+          defines the matrix action. (Usually, the vector would be
+          written vertically for this action, but I'll write it
+          horizontally to conform to the notation of this course.
+          That'll look a bit wierd to those who have done linear
+          algebra with me -- sorry). 
+        </p>
+        <me>
+          \begin{pmatrix} 
+            a \amp b \amp c \\
+            d \amp e \amp f \\
+            g \amp h \amp i
+          \end{pmatrix} (x,y,z) = 
+          (ax + by + cz, de + ey + fz, gx + hy + iz)
+        </me>
+      </statement>
+    </definition>
+    <p>
+      The details of calculating the matrix action won't actually
+      be that important for us, but I do want you to know that the
+      action exists. For now, there is a second property of matrices
+      which we will need.
+    </p>
+    <definition>
+      <statement>
+        <p>
+          Let <m>M</m> be a square matrix. The there is a real number,
+          called the determinant of M and written <m>\det(M)</m>,
+          with two properties: the absolute value <m>|\det(M)|</m> is
+          the multiplicative effect that <m>M</m> has as a linear
+          tranformation on volume (or the appropriate equivalent in
+          other dimension); and the sign of the determinant records
+          the effect of <m>M</m> on orientation, with positive
+          preserving orientation and negative reversing orientation.
+        </p>
+      </statement>
+    </definition>
+    <p>  
+      Again, the details here won't be extremely important for us, so
+      if you don't know exactly what I mean by multiplicative effect
+      on volume or what orientiation is, that's fine. It's enough to
+      know that this determinant exists and carries important
+      geometric meaning. Likewise, calculating determinants is also
+      not going to be required: I will either explicilty give you the
+      determinant calculations or such calculations can be done by
+      computer. 
     </p>
   </subsection>
 </section>

@@ -15,10 +15,10 @@
       <statement>
         <p>
           Let <m>f: \RR^n \rightarrow \RR</m> be a differentiable
-          function and <m>u</m> a <em>unit</em> vector in
-          <m>\RR^n</m>. The directional derivative of <m>f</m> in the
-          direction <m>u</m> is written <m>D_u f</m> and given by a
-          limit definition. Let <m>v</m> be a point in the domain of
+          function and <m>u</m> a <em>unit</em> vector in <m>\RR^n
+          </m>. The <term>directional derivative</term> of <m>f</m> in
+          the direction <m>u</m> is written <m>D_u f</m> and given by
+          a limit definition. Let <m>v</m> be a point in the domain of
           <m>f</m>.
           <me>
             D_u f(v) = \lim_{h \rightarrow 0} \frac{ f(v + hu) - f(v)}{h}
@@ -50,7 +50,7 @@
         <p>
           Let <m>f: \RR^n \rightarrow \RR</m> be a differentiable
           function and <m>u</m> a <em>unit</em> vector in
-          <m>\RR^n</m>. The directional derivatives <m>D_u f</m> is
+          <m>\RR^n</m>. The directional derivative <m>D_u f</m> is
           the dot product of <m>u</m> with <m>\nabla f</m>.
           <me>
             D_u f = u \cdot \nabla f
@@ -148,8 +148,10 @@
               D_{ \left( \frac{1}{\sqrt{5}} , \frac{2}{\sqrt{5}}
               \right) } f(\sqrt{\pi},\sqrt{\pi}) \amp =
               \frac{2}{\sqrt{5}} \sqrt{\pi} \cos (\pi + \pi) +
-              \frac{4}{\sqrt{5}} \sqrt{\pi} \cos (\pi + \pi) = 6
-              \sqrt{ \frac{\pi}{5}}
+              \frac{4}{\sqrt{5}} \sqrt{\pi} \cos (\pi + \pi) 
+            </mrow>
+            <mrow>
+              \amp = 6 \sqrt{ \frac{\pi}{5}}
             </mrow>
           </md>
         </p>
@@ -191,7 +193,10 @@
           some direction derivatives for this function. 
           <md>
             <mrow>
-              D_{(a,b)} f(x,y) \amp = \left[ -2xe^{-(x^2+y^2)} \sin
+              \amp D_{(a,b)} f(x,y) 
+            </mrow>
+            <mrow>
+              \amp = \left[ -2xe^{-(x^2+y^2)} \sin
               (x^2 + y^2) + 2xe^{-(x^2+y^2)} \cos (x^2 + y^2) \right]
               a
             </mrow>
@@ -200,7 +205,10 @@
               + y^2) + 2ye^{-(x^2+y^2)} \cos (x^2 + y^2) \right] b
             </mrow>
             <mrow>
-              D_{(a,b)} f(\sqrt{\pi},\sqrt{\pi}) \amp = \left[
+              \amp D_{(a,b)} f(\sqrt{\pi},\sqrt{\pi}) 
+            </mrow>
+            <mrow>
+              \amp = \left[
               -2\sqrt{\pi}e^{-(\pi+\pi)} \sin (\pi + \pi) +
               2\sqrt{\pi}e^{-(\pi+\pi)} \cos (\pi + \pi) \right] a
             </mrow>
