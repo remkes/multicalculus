@@ -285,7 +285,7 @@
           points. This involves solving a system of two equations. 
           <md>
             <mrow>
-              3xy^2 - 3y^2 - 8x \amp = 0 
+              2xy^2 - 3y^2 - 8x \amp = 0 
             </mrow>
             <mrow>
               2x^2 y - 6xy \amp = 0 

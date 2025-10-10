@@ -185,7 +185,7 @@
           </mrow>
           <mrow>
             \amp = \int_{-3}^0 \frac{3y^4}{2} dy = 3 \frac{y^5}{10}
-            \Bigg|_{0}^3 = \frac{729}{10}
+            \Bigg|_{-3}^0 = \frac{729}{10}
           </mrow>
         </md>
       </solution>
@@ -200,7 +200,7 @@
       <solution>
         <p>
           This is an interated integral. I choose to integrate with
-          <m>y</m> in the inside and <m>x</m> on the outside. Then the
+          <m>x</m> in the inside and <m>y</m> on the outside. Then the
           integral proceeds as two consecutive single-variable
           integrals.  The first step uses the substitution <m>u =
           xy^2</m> with <m>du = 2xydy</m>. (Not that for this
