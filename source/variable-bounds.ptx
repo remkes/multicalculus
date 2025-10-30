@@ -80,7 +80,7 @@
           </image>
         </figure>
         <p>
-          The function <m>f(x,y) = a - \frac{a(|x-y| + |x+y|)}{2b}</m>
+          The scalar field <m>f(x,y) = a - \frac{a(|x-y| + |x+y|)}{2b}</m>
           over the interval <m>[-b.b] \times [-b,b]</m> describes a
           square pyramid with height <m>a</m> and side length
           <m>2b</m>. What is the volume of such a pyramid? Doing the
@@ -90,10 +90,10 @@
           <m>[0,b] \times [0,b]</m>, then multiply by 4 to get the
           entire area. However, this doesn't solve the problem with
           the absolute value terms; over this quarter, there are still
-          essentially two pieces of the function. I need to split the
+          essentially two pieces of the scalar field. I need to split the
           domain further into two regions: one where <m>x>y</m> and
           one where <m>x\lt y</m>. In those regions, I can drop the
-          abosolute value in the function and do a reasonable
+          abosolute value in the scalar field and do a reasonable
           integral. In the interval <m>[0,b] \times [0,b]</m>, those
           two regions are triangles, so I need to integrate over
           triangles. Triangles are not intervals, so I need a new
@@ -101,7 +101,7 @@
         </p>
         <p>
           I can describe the first triangle (where <m>y\lt x</m>) by
-          saying that <m>x \in [0,b]</m>, then, once we've set an
+          saying that <m>x \in [0,b]</m>, then, once I've set an
           <m>x</m> value, <m>y \in [0, x]</m>. This is indicated in
           the triangle with vertical lines in <xref
           ref="figure-triangle-variable-bounds" />, showing that for
@@ -123,12 +123,13 @@
           \int_T f(x,y) dA = \int_0^b \int_y^b f(x,y) dx dy
         </me>
         <p>
-          Now I will evaluate the square pyramid integral. The function
-          was <m>f(x,y) = a - \frac{a(|x-y| + |x+y|)}{2b}</m>. On the
-          triangle in <m>[0,b] \times [0,b]</m> where <m>y\lt x</m>, the
-          absolute values are <m>|x-y| = x-y</m> and <m>|x+y| = x+y</m>,
-          so the function is <m>a - \frac{a(x-y+x+y)}{2b} = a -
-          \frac{2ax}{2b} = a - \frac{ax}{b}</m>.
+          Now I will evaluate the square pyramid integral. The scalar
+          field was <m>f(x,y) = a - \frac{a(|x-y| + |x+y|)}{2b}</m>.
+          On the triangle in <m>[0,b] \times [0,b]</m> where <m>y\lt
+          x</m>, the absolute values are <m>|x-y| = x-y</m> and
+          <m>|x+y| = x+y</m>, so the scalar field is <m>a -
+          \frac{a(x-y+x+y)}{2b} = a - \frac{2ax}{2b} = a -
+          \frac{ax}{b}</m>.
         </p>
         <md>
           <mrow>
@@ -166,9 +167,8 @@
       the bounds if integration in that variable happens outside. Once
       I do a definite integral, the variable disappears entirey. It
       can't show up again. Therefore, variable bounds only happen on
-      the inside integrals.  If <m>g</m>
-      and <m>h</m> are function, I have two general forms for
-      integration of two-variable scalar fields.
+      the inside integrals.  If <m>g</m> and <m>h</m> are scalar
+      fields, I have two general forms for integration.
     </p>
     <md>
       <mrow>
@@ -191,11 +191,11 @@
     </p>
     <p>
       I won't describe the pattern in full generality for all of
-      <m>\RR^n</m>, but let me briefly look at functions of three
-      variables.  Consider boundings function which satisfy <m>g_1
+      <m>\RR^n</m>, but let me briefly look at scalar fields of three
+      variables. Consider bounding functions which satisfy <m>g_1
       \leq h_1</m> and <m>g_2 \leq h_2</m>. Then any of the following
       six patterns are reasonable, since the bounds include variables
-      which are integrate outside the bounds in question. 
+      which are integratedd outside the bounds in question. 
     </p>
     <md>
       <mrow>
@@ -242,7 +242,7 @@
           <m>x^2 + y^2 = r^2</m> in the <m>xy</m> plane. If I take the
           quarter of that circle in the positive quadrant, let <m>D</m>
           be the region where <m>x \in [0,r]</m> and <m>y \in [0,
-          \sqrt{r^2-x^2}]</m>. One eighth of the sphere is measure by
+          \sqrt{r^2-x^2}]</m>. One eighth of the sphere is measured by
           the following iterated integral.
         </p>
         <md>
@@ -286,8 +286,8 @@
         <p>
           I can also calcuate the volume of a cone of height <m>h</m>
           and radius <m>r</m>. I integrate over the same circle of
-          radius <m>r</m>, but the function is <m>f(x,y) = h -
-          \frac{h}{r} \sqrt{x^2 + y^2}</m>. (This function can be
+          radius <m>r</m>, but the scalar field is <m>f(x,y) = h -
+          \frac{h}{r} \sqrt{x^2 + y^2}</m>. (This scalar field can be
           derived by looking at similar triangles in vertical sections
           of the cone.) The region <m>D</m> is one quarter of the
           cirlce, so this integral will give me one quarter of the
@@ -302,15 +302,15 @@
         </md>
         <p>
           The cone integral is quite difficult to do directly; for now,
-          we'll leave it. I will return to this integral when I do
+          I'll leave it. I will return to this integral when I do
           change of variables.
         </p>
       </statement>
     </example>
     <p>
       The two previous examples found volume of a three-dimension
-      object by integrating a two-variable function. This works
-      because the graph of a two-variable function is an object in
+      object by integrating a two-variable scalar field. This works
+      because the graph of a two-variable scalar field is an object in
       <m>\RR^3</m>, and the volume above the domain (in the <m>z=0</m>
       plane) and below the graph is a normal volume in <m>\RR^3</m>.
       However, there is another approach, one that is more
@@ -339,13 +339,13 @@
       <statement>
         <p>
           I want to use this definition of volume to calculate the
-          volume of a sphere or radius <m>r</m> in <m>\RR^3</m>. I ned
+          volume of a sphere or radius <m>r</m> in <m>\RR^3</m>. I need
           to describe the sphere (or a portion of it) as a domain in
-          <m>\RR^3</m> and then integrate the constant function
+          <m>\RR^3</m> and then integrate the constant scalar field
           <m>f(x,y,z) = 1</m> over that domain. 
         </p>
         <p>
-          I will work with an eight of the sphere (and them multiply
+          I will work with an eighth of the sphere (and them multiply
           the result by eight). I'd like to describe the portion of
           the sphere where all three variables are positive. To
           describe this shape, I  take <m>x \in [0,r]</m>, <m>y \in
@@ -401,7 +401,7 @@
           </image>
         </figure>
         <p>
-          Say I wanted to integrate the function <m>f(x,y) = xy</m>
+          Say I wanted to integrate the scalar field <m>f(x,y) = xy</m>
           over the triangle <m>T</m> with vertices <m>(0,0)</m>,
           <m>(4,5)</m> and <m>(6,2)</m>. There isn't any one system of
           iterated integrals that covers this region; therefore I have
@@ -502,7 +502,7 @@
           </image>
         </figure>
         <p>
-          Say I want to integrate the function <m>f(x) = x^2 + y^2</m>
+          Say I want to integrate the scalar field <m>f(x) = x^2 + y^2</m>
           over the region shown in <xref ref="figure-variable-bounds2"
           />.
         </p>
@@ -529,7 +529,7 @@
         <p>
           The second integral is more involved. I've shown all the
           algebra here without much annotation, but there are two
-          substitution here, first u = x-2 and then a sine
+          substitutions here, first u = x-2 and then a sine
           substitution for the square root. The second integral after
           the <m>y</m> evaluation is pretty easily evaluated to
           <m>\frac{28}{3}</m>; I drop that after the first
@@ -554,7 +554,7 @@
             \amp \int_1^3 x^2 + \frac{1}{3} dx = \frac{28}{3} 
           </mrow>
           <mrow>
-            \int_1^3 x^2 (1 + \sqrt{1-(x-2)^2}) +
+            \amp \int_1^3 x^2 (1 + \sqrt{1-(x-2)^2}) +
             \frac{(1+\sqrt{1-(x-2)^2})^3}{3} dx
           </mrow>
           <mrow>

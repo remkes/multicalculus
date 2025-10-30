@@ -3,11 +3,11 @@
   <subsection xml:id="subsection-curvilinear">
     <title>Curvilinear Coordinate Systems</title>
     <p>
-      Polar coordinates was the most important change of variables in
+      Polar coordinates is the most important change of variables in
       <m>\RR^2</m>. In <m>\RR^3</m>, there are two extremely useful
       changes of coordinates: cylindrical and sphereical coordinates.
-      This section will review the definitions of these coordinate
-      systems and give exmaples where they are used to solve multiple
+      This section will present the definitions of these coordinate
+      systems and give examples where they are used to solve multiple
       integrals.
     </p>
     <p>
@@ -19,7 +19,7 @@
       circles and spheres inevitably lead to annoying square roots in
       the calculations. These other coordinate systems simplify those
       calculations substantially. I want to use the fact that all of
-      these systems involve circles (and thus angle and radii) to
+      these systems involve circles (and thus angles and radii) to
       define a term that unites them.
     </p>
     <definition>
@@ -27,7 +27,7 @@
         A coordinate system for <m>\RR^n</m> where at least one of the
         coordinates is an angle and at least one of the coordinates is
         a radius is called a <term>curvilinear coordinate
-        syste</term>. By contrast, cartesian coordinates are often
+        system</term>. By contrast, cartesian coordinates are often
         referred to as a <term>rectangular coordinate system</term>.
       </statement>
     </definition>
@@ -35,10 +35,10 @@
   <subsection xml:id="subsection-cylindrical">
     <title>Cylindrical Coordinates</title>
     <p>
-      Cylindrical coordinates leave <m>z</m> unchanges and use polar
+      Cylindrical coordinates leave <m>z</m> unchanged and use polar
       coordinates in the <m>xy</m>-plane. Here are the transformation.
       As before, the typical way to write the transformation is
-      treating the cartesian variables as the dependent variables, the
+      treating the cartesian variables as the dependent variables: the
       output. 
     </p>
     <md>
@@ -105,22 +105,23 @@
       locus of <m>r=c</m> is a cylinder of radius <m>c</m> around the
       <m>z</m> axis. The cylinder extends infinitely in the positive
       and negative <m>z</m> axis. This cylinder is the source of the
-      names of the system and, indeed, if it the easiest system to
+      names of the system and, indeed, cylindrical coordinates are the
+      easiest system to
       describe or integration over a cylinder. The locus of <m>\theta
-      = c</m> is a halfplace extending out from the <m>z</m> axis; all
+      = c</m> is a halfplane extending out from the <m>z</m> axis; all
       points which have a particular angle in the <m>xy</m> plane.
       Finally, <m>z=c</m> is a horizontal plane at a fixed height
       <m>c</m>. This is the same as cartesian coordinates, since the
       <m>z</m> of cylindrical and the <m>z</m> of cartesian
-      coordinates are excatly the same. 
+      coordinates are exactly the same. 
     </p>
     <p>
       To describe a solid cylinder of radius <m>3</m> which starts at
-      the <m>xy</m> plane and stops at neight <m>z = 5</m>, I can use
+      the <m>xy</m> plane and stops at height <m>z = 5</m>, I can use
       constant bounds in each variable: <m>r \in [0,3]</m>, <m>\theta
       \in [0,2\pi]</m> and <m>z \in 0,5</m>. Many other objects that
       have some kind of cylindrical symmetry, or even just circular
-      cross-sectiosn along the <m>z</m> axis, can be conveniently
+      cross-sections along the <m>z</m> axis, can be conveniently
       describe with cylindrical coordinates. 
     </p>
   </subsection>
@@ -162,10 +163,11 @@
           radius <m>R</m>, and if I set it opening upwards with its
           point at the origin, then the bounds for <m>z</m> are <m>z
           \in [0,h]</m>. The radius increases linearly with
-          <m>z</m> as <m>r = \frac{zR}{h}</m>. In <m>\RR^3</m>, we
-          integrate <m>1</m> over the cone to calculate its volume.
-          The bounds for <m>z</m> are non-constant, so <m>z</m> must
-          be the inside variable. I must also remember the Jacobian. 
+          <m>z</m> as <m>r = \frac{zR}{h}</m>. In <m>\RR^3</m>, I can  
+          integrate the constant function <m>1</m> over the cone to
+          calculate its volume.  The bounds for <m>z</m> are
+          non-constant, so <m>z</m> must be the inside variable. I
+          must also remember the Jacobian. 
         </p>
         <md>
           <mrow>
@@ -231,7 +233,7 @@
     <example>
       <statement>
         <p>
-          This example it quite a tricky volume problem, but shows
+          This example is quite a tricky volume problem, but shows
           some clever use of polar coordinates. 
           Assume there are three cylinders of radius <m>R</m> along
           each axis in <m>\RR^3</m>. What is the volume of the
@@ -246,7 +248,7 @@
           restricts the shape to the circle in the
           <m>xy</m>-plane and the <m>x</m>-axis cylinder is lower than
           the <m>y</m>-axis cylinder over this particular <m>8th</m>
-          or a circle, so the <m>x</m>-axis cylinder is the limit on
+          of a circle, so the <m>x</m>-axis cylinder is the limit on
           height. What is that height function? The equation of the
           cylinder is <m>y^2 + z^2 = R^2</m>. I can solve for <m>z</m> 
           to get  <m>z ^2 = R^2 - y^2 = R^2 - r^2 \sin^2\theta</m>,
@@ -319,18 +321,19 @@
       Equivalently, <m>r</m> is the radius of the sphere, centred at
       the origin, which contains the point. Once a sphere has been
       identified, I need to use the other two coordinates to specify
-      which point on this sphere. 
+      points on this sphere. 
     </p>
     <p>
       The system to identify points of a sphere is very similar to
       latitude and longitude; the reference points just different. I
-      am going to defined two angles: <m>\theta</m> and <m>\phi</m>.
+      am going to define two angles: <m>\theta</m> and <m>\phi</m>.
       The <m>\theta</m> angle will be the equivalent of longitute.
       Starting from the positive <m>x</m> axis and moving
-      counterclockwise, <m>\theta</m> indicates an arc on the sphere
-      from the <sq>north pole</sq> to the <sq>south pole</sq>. This is
-      essentially longitude, just instead of going from <m>-180</m> to
-      <m>180</m>, using radius the range is <m>[0, 2\pi]</m>.
+      counterclockwise, each value of <m>\theta</m> indicates a
+      specific arc on the sphere from the <sq>north pole</sq> to the
+      <sq>south pole</sq>. This is essentially longitude (the arcs are
+      the lines of longitude), just instead of going from <m>-180</m>
+      to <m>180</m>, using radius the range is <m>[0, 2\pi]</m>.
       Finally, the second angle is something I will call colatitutde.
       This is, again, essentially latitude, but <m>0</m> is now at the
       north poth. The range here is only <m>\phi \in [0,\pi)</m>,
@@ -399,8 +402,8 @@
       area. As with polar coordinates, this corrects the units in
       the infinitesimal expression <m>dr d\theta d\phi</m>. With two
       angles, the infinitesimal expression only has unit of length.
-      Mutiplying by the Jacobian produces units of volume, as we
-      expect for this infinitesimal in <m>\RR^2</m>.
+      Mutiplying by the Jacobian produces units of volume, as I
+      expect for this infinitesimal in <m>\RR^3</m>.
     </p>
     <p>
       As with the other curvilinear coordinates, I'm interesting in
@@ -410,7 +413,7 @@
       this is what gives the coordinates their name. Setting
       longitutde to be constant (but allowing any radius and any
       lattitude) gives a halfplane going out from the <m>z</m> axis,
-      must like with cylindrical coordiantes. Setting the colatitude
+      much like with cylindrical coordiantes. Setting the colatitude
       to be constant (but allowing any radius and any longitute)
       produces a cone. The cone expands upwards if the latitute is
       less than <m>\frac{\pi}{2}</m> and expands downwards if the
@@ -423,7 +426,7 @@
         <p>
           The easiest example is calculating volume of a sphere of
           radius <m>R</m>. The bounds are all constant: <m>r \in
-          [0,R</m>, <m>\theta \in [0,2\pi]</m> and <m>\phi \in
+          [0,R]</m>, <m>\theta \in [0,2\pi]</m> and <m>\phi \in
           [0,\pi]</m>. This describes any longitude, an colatitude,
           and all radii up to <m>R</m>, thus giving the solid sphere.
           Since this is volume, the integrand is <m>1</m>. I must also
@@ -451,14 +454,14 @@
     <example>
       <statement>
         <p>
-          Consider a sphere of radius <m>R</m>. Inside this sphere is
-          a cone with flare angle <m>\frac{\pi}{6}</m>, where the tip of the
-          cone is located at very bottom of the sphere and the cone
-          opens up inside the sphere. The cone, plus the portion of
-          the sphere above the cone, gives a shape that is something
-          like an ice-cream cone; it's a cone plus a spherically
-          curved cap at the top of the cone. What is the volume of
-          this object?
+          Consider a sphere of radius <m>R</m>. Inside this sphere, I
+          place a cone with flare angle <m>\frac{\pi}{6}</m>, where
+          the tip of the cone is located at very bottom of the sphere
+          and the cone opens up inside the sphere. The cone, plus the
+          portion of the sphere above the cone, gives a shape that is
+          something like an ice-cream cone; it's a cone plus a
+          spherically curved cap at the top of the cone. What is the
+          volume of this object?
         </p>
         <p>
           If I put the centre of the sphere at <m>(0,0,R)</m>, then

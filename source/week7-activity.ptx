@@ -5,7 +5,7 @@
     <activity>
       <statement>
         <p>
-           Integrate the function <m>f(x,y) = \frac{xy}{5} +
+           Integrate the scalar field <m>f(x,y) = \frac{xy}{5} +
            \frac{y^2}{6} </m> on the triangle with vertices
            <m>(0,0)</m>, <m>(4,0)</m> and <m>(4,3)</m>.
         </p>
@@ -47,7 +47,7 @@
     <activity>
       <statement>
         <p>
-           Integrate the function <m>f(x,y) = x^2y^2 - x + y</m> on
+           Integrate the scalar field <m>f(x,y) = x^2y^2 - x + y</m> on
            the parallelogram with vertices <m>(0,0)</m>, <m>(0,2)</m>,
            <m>(2,2)</m> and <m>(2,4)</m>.
         </p>
@@ -93,8 +93,9 @@
     <activity>
       <statement>
         <p>
-           Integrate the function <m>f(x,y) = xy</m> on the halfcircle
-           with radius <m>3</m> above the <m>x</m> axis. 
+           Integrate the scalar field <m>f(x,y) = xy</m> on the half
+           circle centred at the origin with radius <m>3</m> above the
+           <m>x</m> axis. 
         </p>
       </statement>
       <solution>
@@ -130,14 +131,14 @@
     <activity>
       <statement>
         <p>
-           Integrate the function <m>f(x,y) = e^{x+y}</m> on the
+           Integrate the scalar field <m>f(x,y) = e^{x+y}</m> on the
            region between <m>g(x) = \frac{x}{4}</m> and <m>h(x) =
            \frac{x}{3}</m> for <m>x \in [0,4]</m>.
         </p>
       </statement>
       <solution>
         <p>
-          I am given a constnat range for <m>x</m> and curves for
+          I am given a constant range for <m>x</m> and curves for
           <m>y</m> in terms of <m>x</m>, so I
           can use those to set up the integral. Note that I can use
           the laws of exponents to write this integrand in an easier
@@ -170,7 +171,7 @@
     <activity>
       <statement>
         <p>
-           Integrate the function <m>f(x,y) = x+y</m> on the crescent
+           Integrate the scalar field <m>f(x,y) = x+y</m> on the crescent
            formed between <m>y^2 = 4-x</m> and <m>y^2 = 8-4x</m>.
         </p>
       </statement>
@@ -231,7 +232,7 @@
     <activity>
       <statement>
         <p>
-           Integrate the function <m>f(x,y) = \sin (xy)</m> on the
+           Integrate the scalar field <m>f(x,y) = \sin (xy)</m> on the
            annulus with inner radius <m>2</m> and outer radius
            <m>4</m>.
         </p>
@@ -246,7 +247,7 @@
           is true on the third and fourth quadrants. All in all, the
           various pieces of the integral will cancel out and the
           integral will evaluate to zero. I admit, this is a bit of a
-          tricky answer, since I'm getting out ot actually describing
+          tricky answer, since I'm getting out of actually describing
           the annulus with bounds. But it is worth remembering that
           these integrals are (hyper)volumes and sometimes there are
           good geometric arguments to be made that help to avoid
@@ -257,7 +258,7 @@
     <activity>
       <statement>
         <p>
-           Integrate the function <m>f(x,y,z) = xy + z</m> on the
+           Integrate the scalar field <m>f(x,y,z) = xy + z</m> on the
            triangular pyramid with vertices <m>(0,0,0)</m>,
            <m>(3,0,0)</m>, <m>(0,2,0)</m> and <m>(0,0,4)</m>. 
         </p>
@@ -374,7 +375,7 @@
     <activity>
       <statement>
         <p>
-           Integrate the function <m>f(x,y,z) = x^2 + y^2 + z^2</m> on
+           Integrate the scalar field <m>f(x,y,z) = x^2 + y^2 + z^2</m> on
            the cone above the <m>xy</m> plane with radius <m>3</m> and
            height <m>5</m>. 
         </p>
@@ -382,12 +383,12 @@
       <solution>
         <p>
           I need a description of the cone to use for the domain of
-          the integral. In the <m>x-y</m> plane, the cone is a circle,
+          the integral. In the <m>xy</m> plane, the cone is a circle,
           so I can take <m>x \in [-3,3]</m> and <m>y</m> between the
           curves <m>-\sqrt{9-x^2}</m> and <m>\sqrt{9-x^2}</m>. For
-          <m>z</m>, I need to start at <m>z</m> and stop at the cone,
-          so I need the cone as the graph of a function of <m>x</m>
-          and <m>y</m>. The function <m>g(x,y) = 5 -
+          <m>z</m>, I need to start at <m>z = 0</m> and stop at the cone,
+          so I need the cone as the graph of a scalar field of <m>x</m>
+          and <m>y</m>. The scalar field <m>g(x,y) = 5 -
           \frac{5}{3}\sqrt{x^2+y^2}</m> describes the cone.
         </p>
         <md>
@@ -459,7 +460,7 @@
     <activity>
       <statement>
         <p>
-           The function <m>f(x,y,z) = xyz</m> on the region between
+           The scalar field <m>f(x,y,z) = xyz</m> on the region between
            <m>z=x^2+y^2</m> and <m>z = 2(x^2+y^2)-3</m>. 
         </p>
       </statement>

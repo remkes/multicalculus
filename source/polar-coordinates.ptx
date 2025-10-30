@@ -3,7 +3,7 @@
   <subsection xml:id="subsection-defining-polar-coordinates">
     <title>Definition of Polar Coordinates</title>
     <p>
-      I have already introduce the polar coordinate transformation in
+      I have already introduced the polar coordinate transformation in
       <xref ref="example-polar-coordinates-jacobian" />. In this
       section, I want to further investigate this transformation and do
       a number of examples with it. 
@@ -15,7 +15,7 @@
       they describe circles and, therefore, anything with circular
       construction or symmetry of any type. Circles are common and
       natural shapes and many applications of mathematics deal with
-      circls, circular motion, object with circular symmetry, etc. When
+      circles, circular motion, object with circular symmetry, etc. When
       a situation has some kind of symmetry to it, it's often best to
       choose a coordinate system that suits the symmetry. 
     </p>
@@ -28,19 +28,18 @@
       intersection, force, etc. To describe the circle in normal
       cartesian coordinates, I use the equation <m>x^2 + y^2 = R^2</m>.
       This isn't a terrible description, but it's also not the easier
-      description; we may need square roots to solve for individual
-      variables when we use this locus, for example. However, in polar
+      description; I may need square roots to solve for individual
+      variables when I use this locus, for example. However, in polar
       coordinates, the locus of the circle is just <m>r=R</m>. This is
       as simple as it gets. The coordinate system suits the task. 
     </p>
     <p>
-      Let me recap the details of the polar coordinate system, though
-      they should be familiar from previous courses. In polar
-      coordinates, a point in <m>\RR^2</m> is described by a radius
-      <m>r</m> (which is the distant from the point to the origin) and
-      an angle <m>\theta</m> (which is the angle between the
-      <m>x</m>-axis and the line from the origin to the point, measure
-      counterclockwise). This is show in <xref
+      Let me recap the details of the polar coordinate system. In
+      polar coordinates, a point in <m>\RR^2</m> is described by a
+      radius <m>r</m> (which is the distance from the point to the
+      origin) and an angle <m>\theta</m> (which is the angle between
+      the <m>x</m>-axis and the line from the origin to the point,
+      measured counterclockwise). This is show in <xrefJ
       ref="figure-polar-coordinates" />.
     </p>
     <figure xml:id="figure-polar-coordinates">
@@ -67,10 +66,9 @@
       </image>
     </figure>
     <p>
-      Let me also recall the change of coordinates. Here is the change
-      where <m>r</m> and <m>\theta</m> are the independent variables
-      (which, in multiple integration, is used for changing from
-      cartesian to polar coordinates). 
+      Let me also recall the algebra for this change of coordinates.
+      <m>r</m> and <m>\theta</m> are the independent variables and
+      these are the equations.
     </p>
     <md>
       <mrow>
@@ -89,7 +87,7 @@
     <p>
       The reverse change of variables is also useful, though less often
       for integration, so I won't calculate the Jacobian determinant
-      here. 
+      here. It's good to know the expressions, though. 
     </p>
     <md>
       <mrow>
@@ -106,7 +104,7 @@
       I want to start with one notable weakness of polar coordinates.
       Unlike cartesian coordinates, which are defined and work well
       everywhere in <m>\RR^2</m>, polar coordaintes are not defined at
-      the origin. The radius. <m>r=0</m>, is fine, but how would
+      the origin. The radius <m>r=0</m>, is fine, but how would
       angle be defined at the origin? There is no arc to measure here,
       no line from the origin to a point to determine an angle. Angle
       simply can't be determined. This fact breaks the coordinate
@@ -117,14 +115,14 @@
     <p>
       One way to understand a coordinate system is to understand the
       paths in <m>\RR^2</m> where one of the coordinates is constant.
-      In cartesian coordinates, this gives the horizontal lines
-      <m>y=c</m> and the vertical lines <m>x=c</m> for the
-      conventional square grid pattern of coordinate lines. 
+      In cartesian coordinates, this way of thinking leads to the
+      horizontal lines <m>y=c</m> and the vertical lines <m>x=c</m>
+      for the conventional square grid pattern of coordinate lines. 
     </p>
     <p>
-      For polar coordinates, the loci <m>r = c</m> are circle, as I
+      For polar coordinates, the loci <m>r = c</m> are circles, as I
       remarked earlier. The loci <m>\theta = c</m> are rays out from
-      the original. This gives a spider-web pattern of coordinate
+      the origin. This gives a spider-web pattern of coordinate
       lines, as shown in <xref ref="figure-polar-coordinates-lines"
       />. When I think of polar coordinates visually, this spider-web
       pattern is what I see.
@@ -169,13 +167,13 @@
     <p>
       I want to make on final comments about the <m>r</m> Jacobian for
       polar coordinates. In cartesian coordinates, both <m>x</m> and
-      <m>y</m> have unit of length. Therefore, the differential <m>dx
+      <m>y</m> have units of length. Therefore, the differential <m>dx
       dy</m> has units of (infinitesimal) area, as it should for
-      integration. (Recall we wrote this as <m>dA</m> when we were
+      integration. (Recall I wrote this as <m>dA</m> when we were
       working in general, without specific coordinates). However, in
       polar coordinates, <m>r</m> has units of distance, but
       <m>\theta</m> has no units. (Radian angles can naturally be
-      define as ratio of distances; the units cancel in the fraction
+      defined as ratios  of distances; the units cancel in the fraction
       and an angle has no natural unit.). Therefore, the differential
       <m>dr d\theta</m> has units only of distance. This doesn't make
       sense for integration, since this should be an infinitesimal
@@ -190,19 +188,20 @@
     <p>
       I said ealier that polar coordinates are good for situations
       with some kind of circular symmetry or description. I want to
-      go over some of these regions. First, I can integrate over a
-      circle, obviously. To integrate over a circle of radius
-      <m>R</m>, the bounds are <m>r \in [0,R]</m> and <m>\theta \in
-      [0,2\pi]</m>.
+      go over some regions with this kind of geometry. First, I can
+      integrate over a circle, obviously. To integrate over a circle
+      of radius <m>R</m>, the bounds are <m>r \in [0,R]</m> and
+      <m>\theta \in [0,2\pi]</m>.
     </p>
     <me>
       \int_0^R \int_0^{2\pi} f(r,\theta) r dr d \theta.
     </me>
     <p>
       I can integrate over various subsets of circles. A wedge is a
-      portion of a circle like a pizza slice. The radius is not limit,
+      portion of a circle like a pizza slice. The radius is not
+      altered from the full circle,
       but the angle is. The bounds are <m>r \in [0,R]</m> and <m>\theta \in
-      [\theta_1, \theta]</m>, for some range of angles. 
+      [\theta_1, \theta_2]</m>, for some range of angles. 
     </p>
     <me>
       \int_0^R \int_{\theta_1}^{\theta_2} f(r,\theta) r dr d \theta.
@@ -210,7 +209,7 @@
     <p>
       A region formed of a larger circle with a smaller circle (with
       the same centre) removed is called an annulus. In an annulus,
-      the angle is unchanges, but the radius has limit. The region
+      the angle is unchanged, but the radius has new bounds. The region
       doesn't start at <m>r=0</m>, but rather starts as the inner
       radius <m>r = R_1</m> and ends at a larger radius <m>r =
       R_2</m>, with <m>R_1 \lt R_2</m>.  The bounds are <m>r \in
@@ -231,7 +230,7 @@
     </me>
     <p>
       <xref ref="figure-polar-regions" /> shows these four types of
-      region for integration with polar coordinates. 
+      regions for integration with polar coordinates. 
     </p>
     <figure xml:id="figure-polar-regions">
       <caption>
@@ -283,11 +282,11 @@
   </subsection>
   <subsection xml:id="subsection-polar-examples">
     <p> 
-      In many of these examples, particular when the bound become
-      constant in polar constants, are seperable integrals. (Recall
+      In many of these examples, particularly when the bounds become
+      constants, are seperable integrals. (Recall
       the definition from <xref ref="definition-separable-integral"
-      />.) For these integral, I'll often split up integral into two
-      separate single-variable integrals. I won't always make not of
+      />.) For these situations, I'll often split up an integral into two
+      separate single-variable integrals. I won't always make note of
       this, but when the <m>dr d\theta</m> suddenly splits up, look to
       see if this is what I've done. 
     </p>
@@ -298,7 +297,7 @@
           first quadrant between radii <m>2</m> and <m>4</m>. I set up
           the integral over the arc with <m>r \in [2,4]</m> and
           <m>\theta \in \left[ 0, \frac{\pi}{2} \right]</m>. Then I
-          proceed to setup an calculate the iterated integral. Note
+          proceed to setup and calculate the iterated integral. Note
           that I must remember to include the Jacobian <m>r</m> in <m>r
           dr d \theta</m> in the setup of the integral. 
         </p>
@@ -450,7 +449,7 @@
         <p>
           I'm  going to do two changes of variables. First, I make the
           change of variables give by <m>x=2u</m> and <m>y=3v</m>.
-          This change of variables has Jacobian <m>|J| = 6</m>
+          This change of variables has Jacobian <m>det(J) = 6</m>
           so that <m>dx dy = 6 du dv</m>. The ellipse <m>D</m> becomes
           the unit circle <m>C</m>.
         </p>
@@ -617,11 +616,11 @@
         </figure>
         <p>
           What if <m>D</m> is the circle of radius <m>2</m> excluding
-          the circle of radius <m>1</m> centered at <m>(1,0)</m> and we
+          the circle of radius <m>1</m> centered at <m>(1,0)</m> and I
           want to integrate <m>\sqrt{x^2 + y^2}</m> over this region?
           (This region is show in <xref
-          ref="figure-circle-without-circle" />
-          Here, we can think of the entire circle of radius 2 as
+          ref="figure-circle-without-circle" />.) 
+          Here, I can think of the entire circle of radius 2 as
           <m>D_1</m> and the removed circle as <m>D_2</m>; then the
           integral will be the integral over <m>D_1</m> subtracting the
           integral over <m>D_2</m>. To describe <m>D_2</m>, I'll use

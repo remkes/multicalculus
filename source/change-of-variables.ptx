@@ -2,10 +2,10 @@
   <title>Change of Variables</title>
   <p>
     Among the single variable integration techniques, substitution was
-    the most useful and most important of them. In this section, I
+    the most useful and most important. In this section, I
     want to extend the notation of substitution to multiple
     integration. Now, since calculation of multiple integrals is by
-    interated integrals, I could do substitutions individual in each
+    interated integrals, I could do substitutions individually in each
     variable, since I do the single-variable integrations one-by-one.
     That's not what I want to do here: I want to introduce
     substitution of all the variables at once. 
@@ -25,22 +25,22 @@
     <m>x</m> variables to <m>u</m> variables in the integral.  I also
     change the bounds, starting from <m>u = g(a)</m> to <m>u =
     g(b)</m>. There is an invertible function, <m>u = g(x)</m>, which
-    defined the substitition; in the process, the old variable is the
-    <em>independent variable</em> of the transformation and the new
-    variable is the <em>dependent variable</em>.
+    defines the substitition; in the process, the old variable is the
+    independent variable of the transformation and the new
+    variable is the dependent variable.
   </p>
   <p>
     However, I could have setup the relationship differently, by
     having <m>x = h(u)</m> and <m>dx = h^\prime(u) du</m>, making old
-    variable the <em>dependent variable</em> and the new variable the
-    <em>independent variable</em>. There is an example of this in the
+    variable the dependent variable and the new variable the
+    independent variable. There is an example of this in the
     integration techinques from Calculus II: trigonometric
     substitution.  Consider a trig substitution:  <m>x = \tan
     \theta</m>. the function acts on the new variable and the old
     variable is the dependent variable. 
   </p>
   <p>
-    The standard single-variable process, where the old variable is
+    For the standard single-variable process, where the old variable is
     the dependent variable, substitution was mostly about doing the
     chain rule in reverse. I would try to look for a form that
     resembled the chain rule, with the derivative of an inside
@@ -48,14 +48,14 @@
     idea to multiple integration, since the chain rule doesn't extend
     in a way that applies to these integrals. In the process for
     trigonometric substitution, the substitution was more about
-    changing the situation, turing other functions into trigonometric
-    functions to use trig identities to solve integrals. This is a
-    much more productive direction: substitution is a thing that
-    changes the situation or functions involved to make a more
-    reasonable integral. 
+    changing the situation, turning other functions into trigonometric
+    functions to using trig identities to solve integrals. This is a
+    much more productive direction: substitution is a process that
+    changes the situation of functions to make a more reasonable
+    integral.
   </p>
   <p>
-    Therefore, let me clarify the setps in the single variable case
+    Therefore, let me clarify the steps in the single variable case
     for this second setup. I introduce a new variable
     <m>u</m> by <m>x = h(u)</m> for some <em>invertible</em> function
     <m>h</m>. Then <m>dx = h^\prime(u) du</m> and the bounds become
@@ -68,15 +68,15 @@
   <p>
     The key relationship here is <m>dx = h^\prime(u) du</m>: the
     derivative tells us the relationships between the differential
-    terms. In Calculus III, I did all that work on extending the
-    notion of the derivative. I came to the conclusion that the
-    derivative measures (in local coordinates) the best linear
-    approximation to the function. In one variable, that was just
-    multiplication by a number. In several variables, though, that
-    linear approximation was a matrix, called the Jacobian matrix.
-    Let me recall the definition. (I'll only state it for an equal
-    number of input and output variables, since that is the case that
-    I will use for extending substitution). 
+    terms. In <xref ref="chapter-week4" />, I did all that work on
+    extending the notion of the derivative. I came to the conclusion
+    that the derivative measures (in local coordinates) the best
+    linear approximation to the function. In one variable, that was
+    just multiplication by a number. In several variables, though,
+    that linear approximation was a matrix, called the Jacobian
+    matrix.  Let me recall the definition. (I'll only state it for an
+    equal number of input and output variables, since that is the case
+    that I will use for extending substitution). 
   </p>
   <definition>
     <statement>
@@ -90,10 +90,10 @@
       <me>
         J(F) = \begin{pmatrix} 
           \dfrac{\del F_1}{\del u_1} \amp \dfrac{\del F_1}{\del u_2}
-            \amp \ldots \amp \dfrac{\del F_1}{\del u_n} \\ 
+            \amp \ldots \amp \dfrac{\del F_1}{\del u_n} \\[0.2em]
           \dfrac{\del F_2}{\del u_1} \amp \dfrac{\del F_2}{\del u_2}
-            \amp \ldots \amp \dfrac{\del F_2}{\del u_n} \\
-          \vdots \amp \vdots \amp \vdots \amp \vdots \\ 
+            \amp \ldots \amp \dfrac{\del F_2}{\del u_n} \\[0.2em]
+          \vdots \amp \vdots \amp \vdots \amp \vdots \\[0.2em]
           \dfrac{\del F_n}{\del u_1} \amp \dfrac{\del F_n}{\del u_2}
             \amp \ldots \amp \dfrac{\del F_n}{\del u_n} 
           \end{pmatrix} 
@@ -128,8 +128,8 @@
     change in area/volume/hypervolume.
   </p>
   <p>
-    In this course, I'll only focus on three special changes of
-    coordinates, which aare covered in the next two sections. However,
+    In this course, I'll mostly focus on three special changes of
+    coordinates, which are covered in the next two sections. However,
     if you are interested in the general theory, here are some
     examples of changes of variables, followed by some integration
     examples uses these general changes of variables. 
@@ -212,7 +212,7 @@
       <p>
         This Jacobian isn't constant. This is a stretch in <m>u</m>,
         the but effect is exagerated away from the origin due to the
-        square term. Therefore, as <m>u</m> get larger, the stretch
+        square term. Therefore, as <m>u</m> gets larger, the stretch
         effect is greater. The Jacobian reflects that.
       </p>
     </statement>
@@ -254,7 +254,7 @@
       </md>
       <p>
         This Jacobian shows that the radius term gives the effect on
-        area. This make sense: for larger circles, the differential
+        area. This makes sense: for larger circles, the differential
         area is part of a larger arc. <xref
         ref="figure-polar-jacobian" /> illustrates this. There are two
         regions; each region has the same increase in radii between
@@ -263,10 +263,11 @@
         different area: a region with the same <sq>width</sq>
         (different in radius) and the same <sq>height</sq> (difference
         in angle) is a larger region the further out it is on the
-        circle.  Ths figure shows this at a marcoscopic level; the
-        Jacobian is essentially measuring the same reality at an
-        infinitesimal level. The Jacobian multiplies by the radius term
-        <m>r</m> to indicate this scaling of area as the radius
+        circle.  <xref ref="figure-polar-jacobian" />  shows this at a
+        marcoscopic level; the Jacobian is essentially measuring the
+        same reality at an infinitesimal level. The Jacobian
+        multiplies by the radius term <m>r</m> to indicate this
+        scaling of area as the radius
         increases. 
       </p>
       <figure xml:id="figure-polar-jacobian">
@@ -328,7 +329,7 @@
     <statement>
       <p>
         Let <m>(x,y) = F(u,v) = (u, uv)</m>. This is the change in
-        variables we used in <xref ref="example-area-bell-curve" />,
+        variables I used in <xref ref="example-area-bell-curve" />,
         just now treated as a two-variable changes of variables
         instead of a one variable substitution. Here are the partial
         derivatives, the Jacobian matrix, and the Jacobian
@@ -365,11 +366,11 @@
   <p>
     For single variable integrals, substitution was used to change the
     integrand to make it more reasonable. For multiple integration,
-    there is difficult both in the integrand and in the region of
-    integration. I can use a change of variables to help us with
+    there is difficulty both in the integrand and in the region of
+    integration. I can use a change of variables to help with
     either problem. Sometime, as in the
     following examples, the same transformation helps both. When I
-    are choosing a change of variables to simplify the region of
+    am choosing a change of variables to simplify the region of
     integration, I am looking for a change of variables where some of the
     non-constant bounding curves of the region become <m>u=c</m> or
     <m>v=c</m>. This can let me setup reasonable bounds of integration
@@ -429,7 +430,7 @@
         of <m>v</m> will be these two lines: <m>v \in [u, -u]</m>.
       </p>
       <p>
-        Finally, we calculate the Jacobian.
+        Finally, I calculate the Jacobian.
       </p>
       <md>
         <mrow>
@@ -452,8 +453,8 @@
         </mrow>
       </md>
       <p>
-        We have the new integrand, the new bounds and the Jacobian.
-        We can proceed to the new integral.
+        I now have a new integrand, the new bounds and the Jacobian.
+        I can proceed to the new integral.
       </p>
       <md>
         <mrow>
@@ -515,7 +516,7 @@
         </image>
       </figure>
       <p>
-        Consider <m>D</m> be the region in the plane bounded by the
+        Let <m>D</m> be the region in the plane bounded by the
         curves <m>y = \frac{1}{x}</m>, <m>y = \frac{3}{x}</m>, <m>y =
         3x</m> and <m>y = x</m>, as shown in <xref
         ref="figure-cov2" />. Consider the following integral.  
@@ -525,7 +526,7 @@
       </me>
       <p>
         The integrand is reasonable, so I will look for a substitution
-        to changes the bounds. I would like to produce  constant
+        to change the bounds. I would like to produce  constant
         bounds in at least one variable. To do that, I'll use this
         change of variables.
       </p>
@@ -637,7 +638,7 @@
         change of variables.  Different changes of variables can have
         very different effects on the integral; some will make it
         easier, some more difficult. Also, the answers from different
-        changes of variables can look quite differet, such as the
+        changes of variables can look quite different, such as the
         expression above, while actually being the same value.
       </p>
       <p>

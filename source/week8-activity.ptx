@@ -35,7 +35,7 @@
           Use polar coordinates to solve this integral of the function
           <m>f(x,y) = x^2 - y^2</m> on the quarter circle of radius
           <m>4</m> which is above line <m>y=-x</m>, below the line
-          <m>y=x</m> and include the positive <m>x</m> axis. 
+          <m>y=x</m> and including the positive <m>x</m> axis. 
         </p>
       </statement>
       <solution>
@@ -102,7 +102,7 @@
           range of the angle is <m>\theta \in [0, \pi]</m>. If I use
           <m>\theta</m> as the outside integral, this gives me a way
           to setup an interated integral with non-constant bounds in
-          polar coordinates. The integral simplifies to <m>r^3</m>. (A
+          polar coordinates. The integral simplifies to <m>r^3</m>. (I
           asked a computer for the antiderivative of <m>\sin^5
           \theta</m>.) 
         </p>
@@ -274,7 +274,7 @@
       <statement>
         <p>
           Integrate <m>f(x,y,z) = x^2 + y^2</m> on he sphere of
-          radius <m>1</m> centred at the <m>(0,0,1</m>. 
+          radius <m>1</m> centred at <m>(0,0,1)</m>. 
         </p>
       </statement>
       <solution>
@@ -377,13 +377,13 @@
       </statement>
       <solution>
         <p>
-          I can work in cylindrical coordinates. The planes <m>z =
+          I can work in cylindrical coordinates. The plane <m>z =
           -1</m> remains <m>z=-1</m>. The plane <m>x + y + z = 5</m>
-          is trickier. In changed into <m>r \cos \theta + r \sin
+          is trickier. It changes into <m>r \cos \theta + r \sin
           \theta + z = 5 = r (\cos \theta + \sin \theta) + z = 5</m>.
           I can use a trig identity to write this as <m>r \left(
           \sqrt{2} \sin \left( \theta + \frac{\pi}{4} \right) \right)
-          + z = 5</m>. This is tricky, since the equation involves all
+          + z = 5</m>. This is difficult, since the equation involves all
           of the variables. I choose to set <m>z</m> first, then
           <m>\theta</m>, then <m>r</m>. For <m>z</m>, I need to
           calculate the maximum value; the highest point where the
@@ -399,16 +399,16 @@
           \frac{\pi}{4} \right) \right)} 
         </me>
         <p>
-          This gets particularly tricky. I can't choose either
+          This gets particularly miserable. I can't choose either
           <m>r</m> or <m>\theta</m> to be the outside variable for the
           whole cylinder; I need two different cases for <m>z \lt
           5</m> and <m>z \gt 5</m>. On the bottom half of the
           cylinder, I can use the previous equation to bound <m>r</m>
           for <m>\theta \in \left[\frac{-\pi}{4} \frac{3\pi}{4}
           \right]</m>, but <m>r</m> goes from <m>0</m> to <m>3</m> for
-          the rest of the range. For the tope half of the cylinder,
+          the rest of the range. For the top half of the cylinder,
           the bound of <m>r</m> in terms of <m>\theta</m> works for
-          <m>\theta in \left[ \frac{3\pi}{4}, \frac{7\pi}{4}
+          <m>\theta \in \left[ \frac{3\pi}{4}, \frac{7\pi}{4}
           \right]</m>. For the rest of the range of <m>\theta</m>,
           there isn't anything at all. This gives three integrals.
         </p>
@@ -429,13 +429,15 @@
           </mrow>
         </md>
         <p>
-          This is a miserable set of integrals, to be sure. Luckly for
-          us, there is another way to approach this entire question.
+          This is a awful set of integrals, to be sure. Luckly for
+          me, there is another way to approach this entire question.
           If we look at the full cylinder for <m>z \in [-1,11]</m>,
           the plane cuts this cylinder into two equal pieces.
           Therefore, the desired volume should be one half of the
           volume of the cylinder of height <m>12</m> and radius
-          <m>3</m>, which is <m>72\pi</m>.
+          <m>3</m>, which is <m>72\pi</m>. Sometimes, when faced with
+          a terrible calculation, I can look back at the geometry to
+          find another way to approach the problem.
         </p>
       </solution>
     </activity>

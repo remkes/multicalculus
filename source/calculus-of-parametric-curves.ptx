@@ -419,7 +419,7 @@
         <p>
           The absolute value here causes trouble. A convenient way to
           drop it is to notice that both <m>\sin t</m> and <m>\cos
-          t</m> are positive on <m>\let[0, \frac{\pi}{2}\right]</m>.
+          t</m> are positive on <m>\left[0, \frac{\pi}{2}\right]</m>.
           That range covers a quarter of the asteroid and the asteroid
           is symmetric, so I can calculate the length of that quarter
           and multiply by 4.

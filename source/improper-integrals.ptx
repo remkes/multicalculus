@@ -3,14 +3,14 @@
   <subsection xml:id="subsection-improper-iterated-integrals">
     <title>Improper Integrals</title>
     <p>
-      An function defined on a closed interval has to include values
-      on the boundary of the interval. Assuming the function is
-      piecewise continuous (as if the habit in this course), this
-      means that the function cannot diverge to infinity near the edge
-      of the interval. However, an function which is only defined on
-      an open interval can have any kind of behaviour near the
-      boundaries, including diverging to infinity. I would like to be
-      able to handle this kind of integral as well
+      An scalar field defined on a closed interval has to include
+      values on the boundary of the interval. Assuming the scalar
+      field is piecewise continuous (as is the habit in this course),
+      this means that the scalar field cannot diverge to infinity near
+      the edge of the interval. However, a scalar field which is only
+      defined on an open interval can have any kind of behaviour near
+      the boundaries, including diverging to infinity. I would like to
+      be able to handle this kind of integral as well.
     </p>
     <p>
       In single variable calculus, we used improper integrals to deal
@@ -24,8 +24,8 @@
       endpoint(s).
     </p>
     <p>
-      Consider a function <m>f: (0,1] \times (0,1] \rightarrow \RR</m>
-      that diverged to infinity when <m>x \rightarrow 0</m>. Here is
+      Consider a scalar field <m>f: (0,1] \times (0,1] \rightarrow \RR</m>
+      that diverges to infinity when <m>x \rightarrow 0</m>. Here is
       the iterated integral.
     </p>
     <me>
@@ -41,7 +41,7 @@
       f(x,y) dy dx 
     </me>
     <p>
-      If, instead, the function diverged to infinity as <m>y
+      If, instead, the scalar field diverges to infinity as <m>y
       \rightarrow 0</m>, then the limit would be in the <m>y</m> part
       of the iterated integral. 
     </p>
@@ -50,16 +50,16 @@
       \int_a^1 f(x,y) dy \right] dx 
     </me>
     <p>
-      Improper integrals also allow us to consider infinite domains of
-      integral. For example, if I want to integrate over all of
-      <m>\RR^2</m>, I set it us as follows.
+      Improper integrals also allow me to consider infinite domains of
+      integration. For example, if I want to integrate over all of
+      <m>\RR^2</m>, I set it up as follows.
     </p>
     <me>
       \int_{\RR^2} f(x,y) dA = \lim_{a \rightarrow \infty} \lim_{b
       \rightarrow \infty} \int_{[-a,a]\times[-b,b]} f(x,y) dA
     </me>
     <p>
-      Then I can write this as in iterated integral where both pieces
+      Then I can write this as an iterated integral where both pieces
       are improper integrals. 
     </p>
     <me>
@@ -70,10 +70,10 @@
     <example>
       <statement>
         <p>
-          Consider the function <m>f(x,y) = \frac{1}{\sqrt{(x^2 +
+          Consider the scalar field <m>f(x,y) = \frac{1}{\sqrt{(x^2 +
           y^2)^3}}</m> on the interval <m>I = (0,1] \times (0,1]</m>.
           As I approach <m>(0,0)</m>, on the corner of the interval,
-          the function is diverges to infinity. I set this up as an
+          the scalar field is diverges to infinity. I set this up as an
           interated integral and, when necessary, I use a limit for
           the single-variable improper integral. 
         </p>
@@ -121,7 +121,7 @@
         <p>
           cannot be evaluated directly. However, this is a very
           important integral: <m>e^{-x^2}</m> is the normal distribution
-          and, in Statistics, I need to integrate it frequently. I'll
+          and, in statistics, I need to integrate it frequently. I'll
           use integrals over <m>\RR^2</m>, strangely enough, to
           calculate this integral by squaring the single variable
           integral.
@@ -189,7 +189,7 @@
           statistics and worked on normal distributions, likely you will
           recall the presence of these strange <m>\sqrt{\pi}</m> terms.
           Now I know they are present to normalize the area (since we
-          want a probability function to have area one under its
+          want a probability distribution to have area one under its
           graph).
         </p>
       </statement>
@@ -199,13 +199,13 @@
     <title>Separable Integrals</title>
     <p>
       I didn't explicitly do an example of this type, but it is useful
-      to mention that a particular class of integrable functions have
+      to mention that a particular class of integrable scalar fields has
       a very nice integration property. 
     </p>
     <definition xml:id="definition-separable-integral">
       <statement>
         <p>
-          If an integrable function on <m>I = [a,b] \times
+          If an integrable scalar field on <m>I = [a,b] \times
           [c,d]</m> has the form <m>f(x,y) = g(x) h(y)</m> for
           some single variable functions <m>g</m> and <m>h</m>, then
           it is called <term>separable</term>. 
@@ -223,11 +223,11 @@
     </me>
     </p>
       is a separable equation if and onl if <m>f(x,y)</m> is a
-      separable function in the sens od this definition.
+      separable scalar field in the sense of this definition.
     </p>
     <p>
-      Separable functions have nice behaviour for interated integrals.
-      If <m>f(x,y) = g(x)h(y)</m> is a separable function, then its
+      Separable scalar fields have nice behaviour for interated integrals.
+      If <m>f(x,y) = g(x)h(y)</m> is a separable scalar fields, then its
       integral separates entirely into two single variable integrals.
     </p>
     <md>
