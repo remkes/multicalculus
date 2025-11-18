@@ -10,7 +10,7 @@
     </latex-image-preamble>
   </docinfo>
 
-  <book xml:id="book-calculus1">
+  <book xml:id="book-multicalculus">
     <title>Course Notes for Multivariable Calculus</title>
 
     <frontmatter xml:id="frontmatter">
