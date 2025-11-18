@@ -68,7 +68,7 @@
           <m>\RR^2</m>. At <m>t=0</m>, it is at the origin. It then
           moves upward in the first quadrant: <m>(7,4)</m>,
           <m>(14,8)</m>, <m>(21,12)</m> and so on. It has slope
-          <m>\frac{4}[7}</m>. It is a special case of a general
+          <m>\frac{4}{7}</m>. It is a special case of a general
           construction. In <m>\RR^2</m>, any curve <m>\gamma(t) = (at,
           bt)</m> is a straight line through the orign with slope
           <m>\frac{b}{a}</m>. In <m>\RR^3</m>, any curve <m>\gamma(t)
