@@ -193,9 +193,9 @@
           Consider the ellipsoid centred at the origin described by
           the following locus.
         </p>
-        <me>
+        <md>
           \frac{x^2}{9} + y^2 + \frac{z^2}{25} = 1 
-        </me>
+        </md>
         <ul>
           <li><p>
             Describe this as a parametric surface.
@@ -445,9 +445,9 @@
         <p>
           Consider this vector field. 
         </p>
-        <me>
+        <md>
           F(x,y,z) = (4z - x, 3y + 3z, x + z) 
-        </me>
+        </md>
         <p>
           Calculate the flux of this vector field over the following
           surface. 
@@ -776,9 +776,9 @@
               Flux over the entire closed cylinder is the sum of the
               flux other the three pieces. 
             </p>
-            <me>
+            <md>
               \int_C F \cdot da = 27 \pi + 26 \pi + 0 = 53 \pi 
-            </me>
+            </md>
           </li>
         </ol>
       </solution>
@@ -788,9 +788,9 @@
         <p>
           Consider this vector field. 
         </p>
-        <me>
+        <md>
           F(x,y,z) = (2y, -2x, 2x + 2y) 
-        </me>
+        </md>
         <p>
           Calculate the flux of this vector field over the following
           surface. 
@@ -1082,9 +1082,9 @@
               Flux over the entire closed cylinder is the sum of the
               flux other the three pieces. 
             </p>
-            <me>
+            <md>
               \int_C F \cdot da = 0 + 0 + 0 = 0 
-            </me>
+            </md>
           </li>
         </ol>
       </solution>
@@ -1094,9 +1094,9 @@
         <p>
           Consider this vector field. 
         </p>
-        <me>
+        <md>
           F(x,y,z) = (x^2, y^2, z^2) 
-        </me>
+        </md>
         <p>
           Calculate the flux of this vector field over the following
           surface. 
@@ -1376,9 +1376,9 @@
               Flux over the entire closed cylinder is the sum of the
               flux other the three pieces. 
             </p>
-            <me>
+            <md>
               \int_C F \cdot da = 0 + 36\pi + 0 = 36\pi 
-            </me>
+            </md>
           </li>
         </ol>
       </solution>

@@ -246,9 +246,9 @@
       <m>v</m>, then the force caused by electric and magnetic fields
       on the charged particular satisfies this equation.
     </p>
-    <me>
+    <md>
       F = Eq + q (v \times B)
-    </me>
+    </md>
     <p>
       Now I need the model to consider changinge electric and magnetic
       fields. A key part of the observation what that changes in
@@ -278,9 +278,9 @@
           The induced <m>E</m> field due to a changing 
           <m>B</m> field satisfies a differential equation.
         </p>
-        <me>
+        <md>
           \nabla \times E = \frac{-\del B}{\del t}
-        </me>
+        </md>
       </li>
       <li>
         <p>
@@ -288,10 +288,10 @@
           <m>E</m> and a current density <m>J</m>
           also satisfies a differential equation.
         </p>
-        <me>
+        <md>
           \nabla \times B = \mu_0 J + \mu_0 \epsilon_0 \frac{\del
           E}{\del t}
-        </me>
+        </md>
       </li>
     </ul>
     <p>
@@ -387,19 +387,19 @@
       <m>D</m>, then I can apply Gauss' theorem to the field
       <m>E</m>.
     </p>
-    <me>
+    <md>
       \Phi_{E,\sigma} = \int_\sigma E \cdot dA = \int_D \nabla \cdot
       E dV = \int_D \frac{\rho}{\epsilon_0} dV =
       \frac{Q_D}{\epsilon_0}
-    </me>
+    </md>
     <p>
       I can do the same for <m>B</m>, remembering that <m>\nabla
       \cdot B = 0</m>.
     </p>
-    <me>
+    <md>
       \Phi_{B,\sigma} = \int_\sigma B \cdot dA = \int_D \nabla \cdot
       B dV = \int_D 0 dV = 0
-    </me>
+    </md>
     <p>
       Now let <m>\sigma</m> be any surface (not the boundary of
       <m>D</m>) and let <m>\gamma</m> be its boundary. I can think
@@ -409,12 +409,12 @@
       the wire. I can use Stokes' theorem and the firsr presentation
       of Maxwell's equation to calculate the line integral.
     </p>
-    <me>
+    <md>
       \int_\gamma E \cdot ds = \int_{\sigma} (\nabla \times E) \cdot
       dA = - \int_\sigma \frac{\del B}{\del t} \cdot dA  =
       -\frac{\del}{\del
       t} \Phi_{B,\sigma}
-    </me>
+    </md>
     <p>
       Thinking the other way around, this calculates the flux through
       the wire of the magnetic field induced by the current. If the
@@ -431,12 +431,12 @@
       For magnetic fields, I can do the same Stokes' theorem
       calculation.
     </p>
-    <me>
+    <md>
       \int_\gamma B \cdot ds = \int_{\sigma} (\nabla \times B) \cdot
       dA = \int_\sigma \mu_0 J \cdot dA + \int_\sigma \mu_0
       \epsilon_0 \frac{\del E}{\del t} = \mu_0 I_\sigma + \mu_0
       \epsilon_0 \frac{\del}{\del t} \Phi_{E, \sigma}
-    </me>
+    </md>
     <p>
       Now I can put all these equation together into the second
       presentation of Maxwell's equations. In the first two equations,
@@ -548,18 +548,18 @@
       \times( \nabla \times E) = -\nabla^2 E</m>. I'll replace the
       left side of the previous equation with this expression.
     </p>
-    <me>
+    <md>
       \nabla^2 E = \mu_0 \epsilon_0 \frac{\del^2 E}{\del t^2}
-    </me>
+    </md>
     <p>
       A similar process exists starting with the third equation,
       applying the curl to both sides, replacing the <m>E</m> field
       with the fourth equation and simplifying the differential
       operators. It produces a very similar equation for <m>B</m>
     </p>
-    <me>
+    <md>
       \nabla^2 B = \mu_0 \epsilon_0 \frac{\del^2 B}{\del t^2}
-    </me>
+    </md>
     <p>
       These are wave equations, so I expect that we will have wave
       solutions for <m>E</m> and <m>B</m>. The full solutions are
@@ -610,20 +610,20 @@
       that rate. I can calculate the rough value of this coefficient
       (which depends only on the two fundamental constants). 
     </p>
-    <me>
+    <md>
       \frac{1}{\sqrt{\mu_0 \epsilon_0}} = \frac{1}{\sqrt{8.86\times
       10^{-12} \cdot 4\pi \times 10^{-9}}} = 2.997 \times 10^8
       \frac{m}{s} 
-    </me>
+    </md>
     <p>
       The units also work out to recover a velocity. I'll put in the
       SI units for the permittivity and permeability constants. 
     </p>
-    <me>
+    <md>
       \frac{1}{\sqrt{\frac{m \cdot kg}{s^2 \cdot A^2} \frac{s^4 \cdot
       A^2}{m^3 \cdot kg}}} = \frac{1}{\sqrt{\frac{s^2}{m^2}}} =
       \frac{m}{s} 
-    </me>
+    </md>
     <p>
       This is a familiar number: <m>c</m>, the speed of light. And
       light is exactly what this wave is: propogation of

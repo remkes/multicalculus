@@ -5,9 +5,9 @@
         <p>
           Calculate the Jacobian of this transformation.
         </p>
-        <me>
+        <md>
           (x,y) = (u^2 - v^2, u^2 + v^2)
-        </me>
+        </md>
       </statement>
       <solution>
         <p>
@@ -49,9 +49,9 @@
         <p>
           Calculate the Jacobian of this transformation.
         </p>
-        <me>
+        <md>
           (x,y) = (3u  - 4v, u + 6v)
-        </me>
+        </md>
       </statement>
       <solution>
         <p>
@@ -93,9 +93,9 @@
         <p>
           Calculate the Jacobian of this transformation.
         </p>
-        <me>
+        <md>
           (x,y) = (u \sin v, v \cos u)
-        </me>
+        </md>
       </statement>
       <solution>
         <p>
@@ -138,9 +138,9 @@
         <p>
           Calculate the Jacobian of this transformation.
         </p>
-        <me>
+        <md>
           (x,y) = (u \ln v, (uv)^2)
-        </me>
+        </md>
       </statement>
       <solution>
         <p>
@@ -220,9 +220,9 @@
           is a transformation which will simplify both the region of
           integration and the integrand.) 
         </p>
-        <me>
+        <md>
           \int_D \frac{2x - 3y}{4y + x} dA 
-        </me>
+        </md>
         <p>
           The region of integration <m>D</m> is the parallelogram with
           vertices <m>(0,0)</m>, <m>(4,-1)</m>, <m>(3,2)</m>,
@@ -299,9 +299,9 @@
           is a transformation which will simplify both the region of
           integration and the integrand.) 
         </p>
-        <me>
+        <md>
           \int_D \frac{x^3 + 4x + 1}{x^2 - y} dA 
-        </me>
+        </md>
         <p>
           The region of integration <m>D</m> is the area bounded above
           by <m>y = x^2 + 1</m>, below by <m>y = x^2 +2</m>, on the
@@ -380,9 +380,9 @@
           is a transformation which will simplify both the region of
           integration and the integrand.) 
         </p>
-        <me>
+        <md>
           \int_D \sqrt{x^2 - y^2} dA 
-        </me>
+        </md>
         <p>
           The region of integration <m>D</m> is the diamon with
           coordinates <m>(4,0)</m>, <m>(10,6)</m>, <m>(10,-6)</m> and

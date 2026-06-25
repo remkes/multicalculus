@@ -193,9 +193,9 @@
       of radius <m>R</m>, the bounds are <m>r \in [0,R]</m> and
       <m>\theta \in [0,2\pi]</m>.
     </p>
-    <me>
+    <md>
       \int_0^{2\pi} \int_0^R f(r,\theta) r dr d \theta.
-    </me>
+    </md>
     <p>
       I can integrate over various subsets of circles. A wedge is a
       portion of a circle like a pizza slice. The radius is not
@@ -203,9 +203,9 @@
       but the angle is. The bounds are <m>r \in [0,R]</m> and <m>\theta \in
       [\theta_1, \theta_2]</m>, for some range of angles. 
     </p>
-    <me>
+    <md>
       \int_{\theta_1}^{\theta_2} \int_0^R f(r,\theta) r dr d \theta.
-    </me>
+    </md>
     <p>
       A region formed of a larger circle with a smaller circle (with
       the same centre) removed is called an annulus. In an annulus,
@@ -215,19 +215,19 @@
       R_2</m>, with <m>R_1 \lt R_2</m>.  The bounds are <m>r \in
       [R_1,R_2]</m> and <m>\theta \in [0,2\pi]</m>.
     </p>
-    <me>
+    <md>
       \int_0^{2\pi} \int_{R_1}^{R_2} f(r,\theta) r dr d \theta.
-    </me>
+    </md>
     <p>
       Finally, I could have a wedge-section of an annulus if I
       restrict both the radius and the angle. I might call this an
       arc. The bounds for this arc <m>r \in [R_1,R_2]</m> and
       <m>\theta \in [\theta_1,\theta_2]</m>.
     </p>
-    <me>
+    <md>
       \int_{\theta_1}^{\theta_2} \int_{R_1}^{R_2} f(r,\theta) r dr d
       \theta.
-    </me>
+    </md>
     <p>
       <xref ref="figure-polar-regions" /> shows these four types of
       regions for integration with polar coordinates. 
@@ -337,10 +337,10 @@
           The integral is annoying in conventional Cartesian
           coordinates.
         </p>
-        <me>
+        <md>
           \int_D f(x,y) dA = \int_{-R}^R \int_{-\sqrt{R^2 -
           x^2}}^{\sqrt{R^2 - x^2}} e^{x^2 + y^2} dy dx
-        </me>
+        </md>
         <p>
           This is essentially impossible. However, in polar coordinates
           it improves greatly.
@@ -367,9 +367,9 @@
           sphere of radius <m>R</m> in <xref
           ref="example-sphere-volume" />. 
         </p>
-        <me>
+        <md>
           8 \int_0^{R} \int_0^{\sqrt{R^2 - x^2}} \sqrt{R^2 - x^2 -
-          y^2} dy dx </me>
+          y^2} dy dx </md>
         <p>
           This was a trickly integral. However, if I change to polar
           coordinates and integrate over the whole circle instead of
@@ -411,10 +411,10 @@
           since I didn't want to deal with the complicated trig
           substitution which would have been required. 
         </p>
-        <me>
+        <md>
           \int_D f(x,y) dA = 4 \int_0^R \int_0^{\sqrt{R^2 - x^2}}
           \left( h - \frac{h}{r} \sqrt{x^2 + y^2} \right) dy dx
-        </me>
+        </md>
         <p>
           Now I can use polar coordinates to make the integral much
           more accessible. I'm integrating over a circle the base of
@@ -443,9 +443,9 @@
           integrating the function <m>f(x,y) = x^2</m> over the ellipse
           <m>D = \frac{x^2}{4} + \frac{y^2}{9} = 1</m>.
         </p>
-        <me>
+        <md>
           \int_D x^2 dA
-        </me>
+        </md>
         <p>
           I'm  going to do two changes of variables. First, I make the
           change of variables give by <m>x=2u</m> and <m>y=3v</m>.
@@ -453,9 +453,9 @@
           so that <m>dx dy = 6 du dv</m>. The ellipse <m>D</m> becomes
           the unit circle <m>C</m>.
         </p>
-        <me>
+        <md>
           \int_C (2u)^2 6 du dv = 24 \int_C u^2 du dv
-        </me>
+        </md>
         <p>
           Now, since I am integrating over the unit circle, I can
           change to polar coordinates. 
@@ -668,10 +668,10 @@
           The result of the original integral is the difference of the
           two parts.
         </p>
-        <me>
+        <md>
           \int_{D_1 \backslash D_2} \sqrt{x^2 + y^2} dA =
           \frac{16\pi}{3} - \frac{32}{9} = \frac{48\pi - 32}{9}
-        </me>
+        </md>
       </statement>
     </example>
   </subsection>

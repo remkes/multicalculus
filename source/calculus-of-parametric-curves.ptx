@@ -19,16 +19,16 @@
           Let <m>\gamma(t): [a,b] \rightarrow \RR^3</m> be a
           parametric curve. I can write <m>\gamma(t)</m> in it
           components. 
-          <me>
+          <md>
             \gamma(t) = (x(t), y(t), z(t))
-          </me>
+          </md>
           The derivative of the parametric curve,
           <m>\gamma^\prime(t)</m>, is calculated by taking the
           ordinary single-variable derivative of each component. 
-          <me>
+          <md>
             \gamma^\prime(t) = (x^\prime(t), y^\prime(t),
             z^\prime(t))
-          </me>
+          </md>
           This derivative, <m>\gamma^\prime(t)</m>, produces a vector
           for each value of <m>t</m>. This vector is called the
           <term>tangent vector</term> to the parametric curve.
@@ -75,11 +75,11 @@
           Consider the logarithmic spiral <m>\gamma(t) =
           (e^{\frac{t}{4}}\sin t, e^{\frac{t}{4}}\cos t)</m> on the
           domain <m>t \in \RR</m>. I calculate its derivative.
-          <me>
+          <md>
             \gamma^\prime(t) = \left( e^{\frac{t}{4}} \cos t +
             \frac{1}{4} e^{\frac{t}{4}} \sin t, -e^{\frac{t}{4}} \sin
             t + \frac{1}{4} e^{\frac{t}{4}} \cos t \right)
-          </me>
+          </md>
         </p>
         <p>
           Evaluating at <m>t=0</m> at the point of the curve
@@ -209,9 +209,9 @@
           <m>\gamma^\prime(t)</m>. It is often written <m>T(t)</m>.
           To calculate the unit tangent, I simply take the tangent
           vector and divide by its length.
-          <me>
+          <md>
             T(t) = \frac{\gamma^\prime(t)}{|\gamma^\prime(t)|}
-          </me>
+          </md>
         </p>
       </statement>
     </definition>
@@ -231,26 +231,26 @@
         <p>
           As introducted in <xref ref="section-parametric-curves" />,
           the archimedian spiral is
-          <me>
+          <md>
             \gamma(t) = (t \cos t, t \sin t) 
-          </me>.
+          </md>.
           The tangent vector is k
-          <me>
+          <md>
             \gamma^\prime (t) = (\cos t - t \sin t, \sin t + t \cos t) 
-          </me>.
+          </md>.
           When <m>t=\pi</m> (at the point <m>(-\pi,0)</m>, the tangent
           vector is 
-          <me>
+          <md>
             \gamma^\prime (\pi) = (-1,-\pi).
-          </me>
+          </md>
           The length of this vector is 
-          <me>
+          <md>
             |\gamma^\prime (\pi)| = \sqrt{1 + \pi^2}.
-          </me>
+          </md>
           Therefore the unit tangent at this point is 
-          <me>
+          <md>
             T (\pi) = \frac{1}{\sqrt{1+\pi^2}} (-1,-\pi).
-          </me>
+          </md>
         </p>
       </statement>
     </example>
@@ -305,9 +305,9 @@
       <m>\Delta x</m>, then the length of the segment is
       <m>\sqrt{\Delta x^2 + \Delta y^2}</m>. I approximate the total
       length of the curve by adding up the lengths of these segments.
-      <me>
+      <md>
         L \cong \sum \sqrt{\Delta x^2 + \Delta y^2}
-      </me>
+      </md>
     </p>
     <p>
       In a parametric curve, everything changes in time. I can adjust
@@ -316,10 +316,10 @@
       one of these segments, then by multiplying and dividing by
       <m>\Delta t</m>, and taking the division into the square root, I
       get the following expression.
-      <me>
+      <md>
         L \cong \sum \sqrt{ \frac{\Delta x^2}{\Delta t^2} +
         \frac{\Delta y^2}{\Delta t^2}} \Delta t 
-      </me>
+      </md>
     </p>
     <p>
       If I take the limit of this process, breaking the curve into
@@ -327,10 +327,10 @@
       defines a definite integral. In the limit, the <m>\Delta</m>
       terms become the expression <m>dy</m>, <m>dx</m> and
       <m>dt</m> and their ratios become derivatives. 
-      <me>
+      <md>
         L = \int_a^b \sqrt{ \left( \frac{dx}{dt} \right)^2 + \left(
         \frac{dy}{dt} \right)^2 } dt
-      </me>
+      </md>
     </p>
     <p>
       The same arguments work in any <m>\RR^n</m>, leading to the
@@ -345,11 +345,11 @@
           the curve as <m>\gamma_1(t), \gamma_2(t), \gamma_3(t)</m>.
           Then the length of the parametric curve is calculated by
           this integral.
-          <me>
+          <md>
             L = \int_a^b \sqrt{ \left( \frac{d\gamma_1}{dt} \right)^2
             + \left( \frac{d\gamma_2}{dt} \right)^2 + \left(
             \frac{d\gamma_n}{dt} \right)^2 } dt.
-          </me>
+          </md>
         </p>
       </statement>
     </proposition>
@@ -360,10 +360,10 @@
           <m>\gamma(t) = (\cos t, \sin t, t)</m>. On the domain <m>t
           \in [0, 8\pi]</m>, the spiral makes four revolutions. I
           calculate its arclength.
-          <me>
+          <md>
             L = \int_0^{8\pi} \sqrt{ \sin^2 t + \cos^2 t + 1} dt =
             \int_0^{8\pi} \sqrt{2} dt = 8 \sqrt{2} \pi
-          </me>
+          </md>
         </p>
       </statement>
     </example>
@@ -423,11 +423,11 @@
           That range covers a quarter of the asteroid and the asteroid
           is symmetric, so I can calculate the length of that quarter
           and multiply by 4.
-          <me>
+          <md>
             L = 4\int_0^{\frac{\pi}{2}} 3 \sin t \cos t dt = 6
             \int_0^{\frac{\pi}{2}} \sin 2t = -3\cos 2t
             \Big|_0^{\frac{\pi}{2}} = 6
-          </me>
+          </md>
         </p>
       </statement>
     </example>
@@ -457,11 +457,11 @@
           \gamma_2(t), \gamma_3(t))</m>. The <term>arclength
           function</term> <m>s(t): [a,b] \rightarrow [0, \infty)</m>
           is defined by this integral.
-          <me>
+          <md>
             s(t) = \int_a^t \sqrt{ \left( \frac{d\gamma_1(u)}{du}
             \right)^2 + \left( \frac{d\gamma_2(u)}{du} \right)^2 +
             \left( \frac{d\gamma_3(u)}{du} \right)^2 } du
-          </me>
+          </md>
         </p>
         <p>
           The letter <m>s</m> is conventional notation for the
@@ -570,22 +570,22 @@
           The arclength function is <m>s = t \sqrt{20}</m>; the
           inverse is <m>t = \frac{s}{\sqrt{20}}</m>. I replace
           <m>t</m> with <m>t(s)</m> in <m>\gamma(t)</m>.
-          <me>
+          <md>
             \gamma(s) = \left( 2 \cos \left( \frac{s}{\sqrt{20}}
             \right), 2 \sin \left( \frac{s}{\sqrt{20}} \right),
             \frac{4s}{\sqrt{20}} \right)
-          </me>
+          </md>
         </p>
       </statement>
     </example>
     <example>
       <statement>
         <p>
-          <me>
+          <md>
             \gamma(s) = \left( 2 \cos \left( \frac{s}{\sqrt{20}}
             \right), 2 \sin \left( \frac{s}{\sqrt{20}} \right),
             \frac{4s}{\sqrt{20}} \right)
-          </me>
+          </md>
         </p>
         <p>
           I'll calculate the speed in this parametrization by
@@ -689,18 +689,18 @@
       arclength which relate to the intepretation of parametric curves
       as movement through space. I'll return to the arc length
       formula (in <m>\RR^2</m>, for simplicity).
-      <me>
+      <md>
         L = \int_a^b \sqrt{x^\prime(t)^2 + y^\prime(t)^2} dt
-      </me>
+      </md>
     </p>
     <p>
       The tangent vector is <m>\gamma^\prime(t) = (x^\prime(t),
       y^\prime(t))</m>, so this integrand in the arclength formula is
       nothing more than the length of the tangent vector. This lets
       me rewrite the arclength formula.
-      <me>
+      <md>
         L = \int_a^b |\gamma^\prime(t)| dt
-      </me>
+      </md>
     </p>
     <p>
       This hopefully makes intuitive sense <mdash/> the length of the
@@ -711,10 +711,10 @@
       An nice event occurs when I differentiate the arclength
       function <m>s(t)</m>. The fundamental theorem of calculus
       lets me differentiate an integral.
-      <me>
+      <md>
         \frac{d}{dt} s(t) = \frac{d}{dt} \int_a^t |\gamma^\prime(u)|
         du = |\gamma^\prime (t)|
-      </me>
+      </md>
     </p>
     <p>
       The derivative of the arclength function is the length of the
@@ -786,9 +786,9 @@
           <term>curvature</term> of <m>\gamma(s)</m> is a scalar
           <m>\kappa(s)</m> which measure how quickly the curve is
           turning.
-          <me>
+          <md>
             \kappa(s) = \left| \frac{dT(s)}{ds} \right|
-          </me>
+          </md>
         </p>
       </statement>
     </definition>
@@ -819,9 +819,9 @@
           Let <m>\gamma(t)</m> be a parametric curve with an arbitrary
           parametrization. The curvature <m>\kappa(t)</m> can be
           calculated in this arbitrary parametrization.
-          <me>
+          <md>
             \kappa(t) = \frac{|T^\prime(t)|}{|\gamma^\prime(t)|}
-          </me>
+          </md>
         </p>
       </statement>
     </proposition>
@@ -833,20 +833,20 @@
         parametrization. This composition also applies to the unit
         tangent: <m>T(s(t)</m>. Then to differentiate in <m>t</m>
         requires a chain rule.
-        <me>
+        <md>
           \frac{dT(t)}{dt} = \frac{dT(s(t))}{ds} \frac{ds}{dt}
-        </me>
+        </md>
       </p>
       <p>
         I can rearrange this equation and then take the lengths of
         the vectors.
-        <me>
+        <md>
           \frac{dT}{ds} = \frac{\frac{dT}{dt}}{\frac{ds}{dt}} \implies
           \left| \frac{dT}{ds} \right| = \left|
           \frac{\frac{dT}{dt}}{\frac{ds}{dt}} \right| \implies \left|
           \frac{dT}{ds} \right| =
           \frac{\left|\frac{dT}{dt}\right|}{\left|\frac{ds}{dt}\right|}
-        </me>
+        </md>
       </p>
       <p>
         The left hand side of this expression is exactly
@@ -973,16 +973,16 @@
           parametric curve in an arbitrary parametrization. The
           <term>normal</term> vector to a curve is written <m>N(t)</m>
           and defined by the formula
-          <me>
+          <md>
             N(t) = \frac{T^\prime(t)}{|T^\prime(t)|}
-          </me>.
+          </md>.
         </p>
         <p>
           The <term>binormal</term> vector to a curve is written
           <m>B(t)</m> and defined by the formula
-          <me>
+          <md>
             B(t) = T(t) \times N(t)
-          </me>.
+          </md>.
         </p>
       </statement>
     </definition>
@@ -998,9 +998,9 @@
           domain of the curve. (That is, <m>\gamma(t)</m> is always a
           unit vector.) Then <m>\gamma</m> is perpendicular to its
           derivative.
-          <me>
+          <md>
             \gamma(t) \cdot \gamma^\prime(t) = 0
-          </me>
+          </md>
         </p>
       </statement>
     </lemma>
@@ -1118,9 +1118,9 @@
           parametric curve parametrized by arclength. Its
           <term>torsion</term> is written <m>\tau(s)</m> and defined
           by the formula
-          <me>
+          <md>
             \tau(s) = \left| \frac{d B(s)}{ds} \right|
-          </me>.
+          </md>.
         </p>
       </statement>
     </definition>
@@ -1140,10 +1140,10 @@
           Let <m>\gamma(t): [a,b] \rightarrow \RR</m> be a parametric
           curve in an arbitrary parametrization. Then its torsion is
           calculabed by the formula
-          <me>
+          <md>
             \tau(t) = \frac{-1}{|\gamma^\prime(t)|} B^\prime(t) \cdot
             N(t)
-          </me>.
+          </md>.
         </p>
       </statement>
     </proposition>
@@ -1154,16 +1154,16 @@
         <m>s = s(t)</m>. Then I can write <m>B(s(t))</m> for the
         binormal in the arbitrary parametrization. The chain rule
         calculates the derivative of the binormal vector.
-        <me>
+        <md>
           \frac{dB(t)}{dt} = \frac{dB(t(s))}{ds} \frac{ds}{dt}
-        </me>
+        </md>
       </p>
       <p>
         I can rearrange this expression.
-        <me>
+        <md>
           \frac{dB(s)}{ds} = \frac{\frac{dB(t)}{dt}}{\frac{dt}{ds}} =
           \frac{B^\prime(t)}{|\gamma^\prime(t)|}
-        </me>
+        </md>
       </p>
       <p>
         Omiting the proof here, it is true that <m>B^\prime(t)</m>
@@ -1382,25 +1382,25 @@
       parametric curves. The starting point is simple: acceleration
       should be the second derivative of the position and position is
       just the output of the parametric curve. 
-      <me>
+      <md>
         a(t) = \gamma^{\prime \prime}(t) = \frac{d}{dt} \gamma^\prime(t)
-      </me>
+      </md>
     </p>
     <p>
       This means acceleration is a vector. I will try to work out its
       direction and magnitude, using <m>T</m>, <m>N</m> and <m>B</m>
       as reference for directions. Recall the definition of the unit
       tangent.
-      <me>
+      <md>
         T(t) = \frac{\gamma^\prime(t)}{|\gamma^\prime(t)|}
-      </me>
+      </md>
     </p>
     <p>
       I solve for <m>\gamma^\prime(t)</m>.
-      <me>
+      <md>
         \gamma^\prime(t) = \underbrace{|\gamma^\prime|}_{\text{ scalar
         } } \cdot \underbrace{T(t)}_{\text{ direction } }
-      </me>
+      </md>
     </p>
     <p>
       I differentiate this, using the product rule.
@@ -1412,9 +1412,9 @@
     </p>
     <p>
       Recall the definition of the normal.
-      <me>
+      <md>
         N(t) = \frac{T^\prime(t)}{|T^\prime(t)|}
-      </me>
+      </md>
     </p>
     <p>
       I isolate <m>T^\prime(t)</m>.
@@ -1424,27 +1424,27 @@
     </p>
     <p>
       Finally, recall the definition of curvature.
-      <me>
+      <md>
         \kappa(t) = \frac{|T^\prime(t)|}{|\gamma^\prime(t)|} \implies
         |T^\prime(t)| = \kappa(t) |\gamma^\prime(t)|
-      </me>
+      </md>
     </p>
     <p>
       I use this expression to replace <m>|T^\prime(t)|</m> in <xref
       ref="equation-reference1">Equation</xref>.
-      <me>
+      <md>
         T^\prime(t) = \kappa(t) |\gamma^\prime(t)| N(t)
-      </me>
+      </md>
     </p>
     <p>
       Finally, I put this expression for <m>T^\prime(t)</m> into the
       second term of <xref ref="equation-reference2">Equation</xref>,
       then group and label the terms.
-      <me>
+      <md>
         a(t) = \underbrace{\frac{d}{dt} |\gamma^\prime(t)|}_{\text{
         linear acceleration } } T(t) + \underbrace{\kappa(t)
         |\gamma^\prime(t)|^2}_{\text{ angular acceleration } } N(t)
-      </me>
+      </md>
     </p>
     <definition>
       <statement>
@@ -1465,9 +1465,9 @@
         <p>
           For the helix, <m>|\gamma^\prime(t)|</m> is constant, so the
           acceleration is entirely angular.
-          <me>
+          <md>
             a(t) = 0 T(t) + r N(t) = r N(t)
-          </me>
+          </md>
         </p>
         <p>
           This makes sense, since the linear speed doesn't every

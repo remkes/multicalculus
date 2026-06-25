@@ -29,10 +29,10 @@
       found by the cross product. So I calculate the normal to the
       tangent plane.
     </p>
-    <me>
+    <md>
       (1,0, f_x(a,b)) \times (0,1, f_y(a,b)) = (-f_x(a,b),
       -f_y(a,b),1)
-    </me>. 
+    </md>. 
     <p>
       Then I can use this normal to construct the equation of a plane
       in the usual way. 
@@ -43,9 +43,9 @@
           Let <m>f(x,y)</m> be a function <m>\RR^2 \rightarrow
           \RR</m>. The equation of the tangent plane to <m>f</m> at
           <m>(a,b,f(a,b))</m> is
-          <me>
+          <md>
             z - f(a,b) = f_x(a,b) (x-a) + f_y(a,b) (y-b)
-          </me>
+          </md>
         </p>
       </statement>
     </proposition>
@@ -56,23 +56,23 @@
         -f_y(a,b),1)</m>. The equation of the plane
         is given by the dot product of the variables with the normal.
         Here is this dot product, with an unknown value <m>c</m>.
-        <me>
+        <md>
           - f_x(a,b) x - f_y(a,b) y + z = c
-        </me>
+        </md>
       </p>
       <p>
         I already know a point on the plane: <m>(a,b,f(a,b))</m>. By
         substitution, I can solve for <m>c</m>.
-        <me>
+        <md>
           c = f(a,b) - f_x(a,b) a - f_y(a,b) b
-        </me>
+        </md>
       </p>
       <p>
         Putting this <m>c</m> in gives the equation of the plane.
-        <me>
+        <md>
           - f_x(a,b) x - f_y(a,b) y + z = f(a,b) - f_x(a,b)a -
           f_y(a,b)b
-        </me>
+        </md>
       </p>
       <p>
         From here, is it just a re-arrangement to get the form in the
@@ -115,9 +115,9 @@
           values are <m>f_x(0,0) = 0</m> and <m>f_y(0,0) =
           0</m>. The normal is <m>(0,0,1)</m> and the point is
           <m>(0,0,1)</m>. The tangent plane is
-          <me>
+          <md>
             z=1
-          </me>.
+          </md>.
         </p>
         <p>
           At the point <m>(x,y) = (-2,2)</m>, the partial derivative
@@ -126,9 +126,9 @@
           \frac{4}{81}, \frac{-4}{81}, 1 \right)</m> and the point is
           <m>\left(-2,2, \frac{1}{9} \right)</m>. The tangent plane
           is
-          <me>
+          <md>
             \frac{-4}{81} x + \frac{4}{81} y + z = \frac{1}{9}
-          </me>.
+          </md>.
         </p>
       </statement>
     </example>
@@ -142,46 +142,46 @@
       Its tangent spaces are 3-spaces in <m>\RR^4</m>. I can
       understand those 3-spaces in a very similar method. I
       calcluate the three local tangent directions.
-      <me>
+      <md>
         v_1 = \left( 1, 0, 0, \frac{\del f}{\del x} \right)
         v_2 = \left( 0, 1, 0, \frac{\del f}{\del y}
         \right) v_3 = \left( 0, 0, 1, \frac{\del f}{\del
         z} \right)
-      </me>
+      </md>
     </p>
     <p>
       There isn't a cross-product in <m>\RR^4</m>, but I can
       genearlize the pattern in this case to get the normal to the
       tangent 3-space.
-      <me>
+      <md>
         \left( - \frac{\del f}{\del x}, - \frac{\del f}{\del y}, -
         \frac{\del f}{\del z}, 1 \right)
-      </me>
+      </md>
     </p>
     <p>
       The equation of the tangent 3-space at <m>(a,b,c,f(a,b,c))</m> is
-      <me>
+      <md>
         w - f(a,b,c) = \frac{\del f}{\del x}(a,b,c) (x-a) + \frac{\del
         f}{\del y} (a,b,c) (y-b) + \frac{\del f}{\del z} (a,b,c)
         (z-c)
-      </me>
+      </md>
     </p>
     <p>
       And I could extend this to <m>f: \RR^n \rightarrow \RR</m>,
       which has a tangent hyperplane in <m>\RR^{n+1}</m>.
-      <me>
+      <md>
         v_1 = \left( 1, 0, \ldots, \frac{\del f}{\del x_1} \right)
         v_2 = \left( 0, 1, 0, \ldots, \frac{\del f}{\del
         x_2} \right) \ldots v_n = \left( 0,
         \ldots, 0, 1, \frac{\del f}{\del x_n} \right)
-      </me>
+      </md>
     </p>
     <p>
       The normal to the tangent hyperplane is
-      <me>
+      <md>
         \left( - \frac{\del f}{\del x_1}, - \frac{\del f}{\del x_2},
         \ldots, - \frac{\del f}{\del x_n}, 1 \right)
-      </me>.
+      </md>.
     </p>
     <p>
       The equation of the tangent hyperplane at <m>(a_1, a_2, a_3,

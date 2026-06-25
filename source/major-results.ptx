@@ -11,9 +11,9 @@
       me remind you of the most general idea of the fundamental
       theorem. 
     </p>
-    <me>
+    <md>
       \int_{\del D} f = \int_D df
-    </me>
+    </md>
     <p>
       Here, <m>\del</m> is a boundary operator for geoemtric object
       and <m>df</m> is some kind of derivative of <m>f</m>. On one
@@ -279,10 +279,10 @@
           neighbourhood of <m>\sigma</m>. Then the following equation
           is true. 
         </p>
-        <me>
+        <md>
           \int_{\del \sigma} F \cdot ds = \int_\sigma (\nabla \times
           F) \cdot dA
-        </me>
+        </md>
       </statement>
     </theorem>
     <p>
@@ -305,9 +305,9 @@
           <m>C^1</m> vector field defined on a neighbourhood of
           <m>D</m>. Then the following equation is true. 
         </p>
-        <me>
+        <md>
           \int_{\del D} F \cdot dA = \int_D (\nabla \cdot F) dV
-        </me>
+        </md>
       </statement>
     </theorem>
     <p>
@@ -344,11 +344,11 @@
           In this setting, appling Stokes' to gives Green's
           theorem, which is the following equation.
         </p>
-        <me>
+        <md>
           \int_{\del D} F \cdot ds = \int_D (\nabla \times F) \cdot
           dA = \int_D \left( \frac{\del F_2}{\del x} - \frac{\del
           F_1}{\del y} \right) dx dy
-        </me>
+        </md>
       </statement>
     </theorem>
     <p>
@@ -434,10 +434,10 @@
           treat the original (very complicated) line integral as a
           very straightforward surface integral.
         </p>
-        <me>
+        <md>
           \int_\gamma F \cdot ds = \int_\sigma (\nabla \times F) \cdot
           N dA = \int_{\sigma} 0 dA = 0
-        </me>
+        </md>
       </statement>
     </example>
     <example>
@@ -448,10 +448,10 @@
           apply Stokes' theorem to the integral of the curl of
           <m>F</m> over the sphere. 
         </p>
-        <me>
+        <md>
           \int_{\sigma} (\nabla \times F) \cdot N dA  = 
           = \int_{\emptyset} F \cdot dV 
-        </me>
+        </md>
         <p>
           The integal on the right is the integral over the empty set.
           There is no set to integrate over, so the value of the
@@ -624,9 +624,9 @@
           boundary <m>\sigma</m>, Gauss' theorem gives us a vanishing
           result.
         </p>
-         <me>
+         <md>
            \int_{\sigma} F \cdot dA = \int_D \nabla \cdot F dV = 0
-         </me>
+         </md>
       </statement>
     </example>
     <p>
@@ -664,30 +664,30 @@
           <m>\sigma</m> (I won't actually care about the other details
           of the surface). Then I apply Stokes' theorem. 
         </p>
-        <me>
+        <md>
           \int_{\gamma} F \cdot ds = \int_{\sigma} \nabla \times F
           \cdot dA = \int_{\gamma} \left( 0, z, 0 \right) 
           \cdot dA
-        </me>
+        </md>
         <p>
           Now consider the vector field <m>G(x,y,z) = \left(
           \frac{z^2}{2}, 0, 0 \right)</m>. The curl of this vector
           field is also <m>(0,z,0)</m>. I'll apply Stokes' theorem for
           the integral of the curl of this field over <m>\sigma</m>.
         </p>
-        <me>
+        <md>
           \int_{\gamma} \left( 0, z, 0 \right) \cdot dA =
           \int_{\sigma} \nabla \times G \cdot dA = \int_{\gamma} G
           \cdot ds
-        </me>
+        </md>
         <p>
           Now let me chain the two equalities together. 
         </p>
-        <me>
+        <md>
           \int_{\gamma} F \cdot ds = \int_{\gamma} \left(
           0, z, 0 \right) \cdot dA = \int_{\gamma} G \cdot
           ds 
-        </me>
+        </md>
         <p>
           What I've done here is replace the field <m>F</m>, which is
           quite complicated, with the field <m>G</m>, which is much
@@ -800,18 +800,18 @@
         <p>
           I'll just calculate the curl of <m>F + \nabla f</m>
         </p>
-        <me>
+        <md>
           \nabla \times (F + \nabla f) = \nabla \times F + \nabla \times
           \nabla f = \nabla \times F + (0,0,0) = \nabla \times F = G
-        </me>
+        </md>
         <p>
           If <m>H</m> is some other vector potential for <m>G</m>, let
           me calculate <m>\nabla times (F - H)</m>. 
         </p>
-        <me>
+        <md>
           \nabla \times (F - H) = \nabla \times F - \nabla \times H =
           G - G = 0 
-        </me>
+        </md>
         <p>
           The difference <m>(F-H)</m> has zero curl on the simply
           connected open set, so it is conservative. Therefore <m>F -
@@ -832,20 +832,20 @@
           vector potentials for <m>G</m>. Their difference must be a
           conservative field.
         </p>
-        <me>
+        <md>
           F_a - F_b = \left( \frac{z^2}{x}, y, xz \right) = \nabla
           \left( \frac{xz^2}{2} + \frac{y^2}{2} \right)
-        </me>
+        </md>
         <p>
           If <m>\gamma</m> is any closed curve entirely in the
           <m>xy</m> plane, then since <m>F_b = 0</m> on the <m>xy</m>
           plane, we have a general vanish result about line integrals
           along <m>\gamma</m>.
         </p>
-        <me>
+        <md>
           \int_\gamma F_a \cdot ds = \int_\gamma F_b \cdot ds =
           \int_\gamma 0 \cdot ds = 0
-        </me>
+        </md>
       </statement>
     </example>
     <p>
@@ -875,10 +875,10 @@
           just the integral of zero over a solid region in
           <m>\RR^3</m>.
         </p>
-        <me>
+        <md>
           \int_{\sigma} F \cdot dA = \int_{D} \nabla \cdot F dV -
           \int_\mu F \cdot dA = -\int_\mu F \cdot dA
-        </me>
+        </md>
         <p>
           This tells me that I can actually change the surface of
           integration via Gauss' theorem, at least when the field is
@@ -890,10 +890,10 @@
           match the orientation. (The negative sign reflects that
           change in direction and orientation.) 
         </p>
-        <me>
+        <md>
           \int_\sigma F \cdot dA = \int_\gamma G \cdot ds =
           -\int_\mu F \cdot dA
-        </me>
+        </md>
         <p>
           The result of either Guass' or Stokes' here is the same.
           Since the field is incompressible, I can 
@@ -950,9 +950,9 @@
           with <m>\del \sigma = \gamma</m>. Then the flux of <m>F</m>
           is the same over either surface.
         </p>
-        <me>
+        <md>
           \int_{\sigma_1} F \cdot dA = \int_{\sigma_2} F \cdot dA 
-        </me>
+        </md>
       </statement>
     </proposition>
     <p>
@@ -983,20 +983,20 @@
           <m>xy</m> plane. Call the half circle <m>\sigma</m>. Using
           this as the surface, I can apply Stokes' theorem. F
         </p>
-        <me>
+        <md>
           \int_{\del \sigma} F \cdot ds = \int_\sigma (\nabla
           \times F) \cdot dA
-        </me>
+        </md>
         <p>
           The line integral over <m>\del \sigma</m> is the line
           integral over <m>\delta</m> plus the line integral over
           <m>\gamma</m>. Writing the two line integral, I can solve
           for the line integral over <m>\gamma</m>.
         </p>
-        <me>
+        <md>
           \int_\gamma F \cdot ds = \int_\sigma (\nabla \times F)
           \cdot dA - \int_\delta F \cdot ds
-        </me>
+        </md>
         <p>
           This clever use of Stokes' theorem has changes the original
           integral into two integrals. This might seem
@@ -1025,10 +1025,10 @@
           F) \cdot N = (-1)</m> and the value of the first integral
           would be non-zero.
         </p>
-        <me>
+        <md>
           \int_\sigma -1 dA = - \frac{9\pi}{2} \implies \int_\gamma
           F \cdot ds = \frac{-9\pi}{2}
-        </me>
+        </md>
       </statement>
     </example>
   </subsection>

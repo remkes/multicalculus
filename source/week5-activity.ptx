@@ -6,9 +6,9 @@
       <statement>
         <p>
           Calculate and classify the extrema of the function
-          <me>
+          <md>
             f(x,y) = \sqrt{xy + 1}
-          </me>
+          </md>
         </p>
       </statement>
       <solution>
@@ -60,9 +60,9 @@
       <statement>
         <p>
           Calculate and classify the extrema of the function
-          <me>
+          <md>
             f(x,y) = (x^2 - 1) \ln (xy) 
-          </me>
+          </md>
         </p>
       </statement>
       <solution>
@@ -94,15 +94,15 @@
           these <m>x</m> coordinates, I can replace <m>x</m> in the
           first equation and solve for <m>y</m>. First I substitute
           <m>x = 1</m>.
-          <me>
+          <md>
             2 \ln (y) + 1 - 1 = 0 \implies \ln y = 0 \implies y =
             1
-          </me>
+          </md>
           Then I substitute <m>x = -1</m>
-          <me>
+          <md>
             -2 \ln (-y) - 1 + 1 = 0 \implies -\ln (-y) = 0 \implies y =
             -1
-          </me>
+          </md>
           This gives me the critical points <m>(1,1)</m> and
           <m>(-1,-1)</m>.  Then I calculate the determinant of the
           Hessian and evaluate it at the critical point.
@@ -134,9 +134,9 @@
       <statement>
         <p>
           Calculate and classify the extrema of the function
-          <me>
+          <md>
             f(x,y) = \sin (x) \cos (y) 
-          </me>
+          </md>
         </p>
       </statement>
       <solution>
@@ -211,9 +211,9 @@
       <statement>
         <p>
           Calculate and classify the extrema of the function
-          <me>
+          <md>
             f(x,y) = x^3y + 4x^2y + xy - 6y
-          </me>
+          </md>
         </p>
       </statement>
       <solution>
@@ -239,9 +239,9 @@
           involves the <m>x</m> coordinate. This cubic has three roots
           <m>x = 1, -2, -3</m>. Then I look at the second equation,
           which I can factor.
-          <me>
+          <md>
             y(3x^2  + 8x +  1) = 0 
-          </me>
+          </md>
           I need to replace <m>x</m> with the three roots. However,
           none of the three roots will produce zero in the second
           factor in this equation. Therefore, to satisfy the first
@@ -268,9 +268,9 @@
       <statement>
         <p>
           Calculate and classify the extrema of the function
-          <me>
+          <md>
             f(x,y) = x^2y^2 - 3xy^2 -4x^2 
-          </me>
+          </md>
         </p>
       </statement>
       <solution>
@@ -293,23 +293,23 @@
           </md>
           I work with the second equation first. I can factor the left
           side.
-          <me>
+          <md>
             (x)(y)(2x - 6) = 0 
-          </me>
+          </md>
           This leads to three possibilities: <m>x=0</m>, <m>y=0</m>
           and <m>x=3</m>. I need to try all these possibilities in the
           first equation. Let me start with <m>x=0</m> and rewrite the
           first equation.
-          <me>
+          <md>
             3(0)y^2 - 3y^2 - 8(0) = 0 \implies 3y^2 = 0 
-          </me>
+          </md>
           This is solved only when <m>y=0</m>, so I get a critical
           point at <m>(0,0)</m>. If i start with <m>x=0</m>, I get the
           same critical point. Lastly, I need to check <m>x=3</m>.
-          <me>
+          <md>
             3(3)y^2 - 3y^2 - 8(3) = 0 \implies 6y^2 = 24 \implies y^2
             = 8 
-          </me>
+          </md>
           There are two solutions here: <m>y = \pm 2\sqrt{2}</m>. That
           gives two more critical points.  In total, I have three
           critical points <m>(0,0)</m>, <m>(3, 2\sqrt{2})</m> and

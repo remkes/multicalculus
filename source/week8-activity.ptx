@@ -394,10 +394,10 @@
           \theta + \frac{\pi}{4} \right) \right) + z = 5</m> between
           <m>r</m> and <m>\theta</m>. If I solve for <m>r</m>, I get
         </p>
-        <me>
+        <md>
           r = \frac{5-z}{\left( \sqrt{2} \sin \left( \theta +
           \frac{\pi}{4} \right) \right)} 
-        </me>
+        </md>
         <p>
           This gets particularly miserable. I can't choose either
           <m>r</m> or <m>\theta</m> to be the outside variable for the

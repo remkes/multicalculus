@@ -30,10 +30,10 @@
           <term>characteristic function of <m>S</m></term> is defined as
           follows, where <m>v \in \RR^n</m>.
         </p>
-        <me>
+        <md>
           \chi_S (v) : = \left\{ \begin{matrix} 1 \amp v \in S \\ 0
           \amp v \notin S \end{matrix} \right.
-        </me>
+        </md>
       </statement>
     </definition>
     <p>
@@ -54,9 +54,9 @@
           an interval <m>I</m>. <m>S</m> is called a <term>integrable
           set</term> if the following integral exists.
         </p>
-        <me>
+        <md>
           \int_I \chi_S dV
-        </me>
+        </md>
       </statement>
     </definition>
     <p>
@@ -102,9 +102,9 @@
           <m>I</m>. Then the integral of <m>f</m> over <m>S</m> is
           defined as:
         </p>
-        <me>
+        <md>
           \int_S f dV \defeq \int_I \tilde{f} \chi_S dV
-        </me>
+        </md>
       </statement>
     </definition>
     <p>
@@ -124,9 +124,9 @@
           <m>S^0</m> be the set of interior points of <m>S</m>. Let
           <m>f: S \rightarrow \RR</m> be an integrable scalar field. Then
         </p>
-        <me>
+        <md>
           \int_S f dV = \int_{S^0} f dV
-        </me>
+        </md>
       </statement>
     </proposition>
     <p>

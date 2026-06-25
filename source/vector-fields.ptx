@@ -143,25 +143,25 @@
           magnitude of the force of gravity per unit mass due to a mass
           <m>M</m> at the origin is a scalar field. <m>(x,y,z)</m> is:
         </p>
-        <me>
+        <md>
           f = \frac{MG}{x^2+y^2+z^2}
-        </me>
+        </md>
         <p>
           However, the force itself also includes direction, so it is a
           vector field.
         </p>
-        <me>
+        <md>
           F = \frac{MG}{(x^2+y^2+z^2)^{\frac{3}{2}}} (-x,-y,-z)
-        </me>
+        </md>
         <p>
           The direction <m>(-x,-y,-z)</m> is back towards the origin.
           I can recover the magnitude by taking the length of the
           vector.
         </p>
-        <me>
+        <md>
            |F| = \frac{MG}{(x^2 + y^2 + z^2)^\frac{3}{2}} \sqrt{x^2
            +y^2+z^2} = \frac{MG}{x^2 +y^2+z^2} = \frac{MG}{r^2}
-        </me>
+        </md>
       </statement>
     </example>
     <p>
@@ -201,9 +201,9 @@
           The length of a vector field, which is the length of each
           output vector, is a scalar field. 
         </p>
-        <me>
+        <md>
           |F|
-        </me>
+        </md>
       </li>
       <li>
         <p>
@@ -212,44 +212,44 @@
           field gives the direction of movement at each point in the
           vector field, but erases the maagnitude. 
         </p>
-        <me>
+        <md>
           \frac{F}{|F|}
-        </me>
+        </md>
       </li>
       <li>
         <p>
           The sum or different of two vectors fields is another vector
           field.
         </p>
-        <me>
+        <md>
           F \pm  G 
-        </me>
+        </md>
       </li>
       <li>
         <p>
           The dot product of two vector fields is a scalar field. 
         </p>
-        <me>
+        <md>
           F \cdot G 
-        </me>
+        </md>
       </li>
       <li>
         <p>
           The scalar product of a scalar field with a vector field is
           another vector field. 
         </p>
-        <me>
+        <md>
           fF
-        </me>
+        </md>
       </li>
       <li>
         <p>
           If <m>S \subset \RR^3</m>, then the cross product of two
           vectors fields is another vector field. 
         </p>
-        <me>
+        <md>
           F \times G 
-        </me>
+        </md>
       </li>
     </ul>
   </subsection>

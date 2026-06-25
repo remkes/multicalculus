@@ -20,9 +20,9 @@
           the direction <m>u</m> is written <m>D_u f</m> and given by
           a limit definition. Let <m>v</m> be a point in the domain of
           <m>f</m>.
-          <me>
+          <md>
             D_u f(v) = \lim_{h \rightarrow 0} \frac{ f(v + hu) - f(v)}{h}
-          </me>
+          </md>
         </p>
       </statement>
     </definition>
@@ -52,9 +52,9 @@
           function and <m>u</m> a <em>unit</em> vector in
           <m>\RR^n</m>. The directional derivative <m>D_u f</m> is
           the dot product of <m>u</m> with <m>\nabla f</m>.
-          <me>
+          <md>
             D_u f = u \cdot \nabla f
-          </me>
+          </md>
         </p>
       </statement>
     </proposition>
@@ -229,9 +229,9 @@
     <p>
       Finally, look at what happens when I apply the length of a dot
       product to the directional derivative.
-      <me>
+      <md>
         |D_u f| = |\nabla f \cdot u| = |\nabla f||u| \cos \theta
-      </me>
+      </md>
     </p>
     <p>
       The cosine term is maximized when the angle <m>\theta =0</m>,

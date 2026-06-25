@@ -110,18 +110,18 @@
           variable bound in an iterate integral. 
           Let <m>T</m> represent the triangle.
         </p>
-        <me>
+        <md>
           \int_T f(x,y) dA = \int_0^b \int_0^x f(x,y) dy dx
-        </me>
+        </md>
         <p>
           I could have reversed the order. If I have <m>y \in
           [0,b]</m> then the condition <m>y\lt x</m> means that <m>x \in
           [y,b]</m>. This is indicated by the triangle with horizontal
           lines in <xref ref="figure-triangle-variable-bounds" />.
         </p>
-        <me>
+        <md>
           \int_T f(x,y) dA = \int_0^b \int_y^b f(x,y) dx dy
-        </me>
+        </md>
         <p>
           Now I will evaluate the square pyramid integral. The scalar
           field was <m>f(x,y) = a - \frac{a(|x-y| + |x+y|)}{2b}</m>.
@@ -181,9 +181,9 @@
     <p>
       If I reverse the first of these two, I get 
     </p>
-    <me>
+    <md>
         \int_{g(x)}^{h(x)} \int_a^b f(x,y) dx dy
-    </me>
+    </md>
     <p>
       This makes no sense, since the bounds that involve <m>x</m> are
       outside the integral in <m>x</m>; outside that integral, the
@@ -323,9 +323,9 @@
           <term> size (area, volume, hypervolume)</term> of <m>S</m>
           is defined to be
         </p>
-        <me>
+        <md>
           \int_S 1 dV
-        </me>.
+        </md>.
       </statement>
     </definition>
     <p>
@@ -469,10 +469,10 @@
         <p>
           The total is the sum of the two integrals.
         </p>
-        <me>
+        <md>
           \int_T f dA = \frac{1196}{9} + \frac{86845}{81} =
           \frac{97609}{81}
-        </me>
+        </md>
       </statement>
     </example>
     <example>
@@ -645,10 +645,10 @@
         <p>
           The total is the sum of the three integrals.
         </p>
-        <me>
+        <md>
           \frac{1}{3} + \frac{4}{3} + \frac{21\pi}{4} + \frac{7}{6} =
           \frac{17}{6} + \frac{21\pi}{4}
-        </me>
+        </md>
       </statement>
     </example>
   </subsection>

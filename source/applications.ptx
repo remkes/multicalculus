@@ -19,9 +19,9 @@
           object <m>S</m> is found from by integrating the density
           function.
         </p>
-        <me>
+        <md>
           m = \int_S \rho dV
-        </me>
+        </md>
         <p>
           This can also be done in <m>\RR^2</m> for flat objects with
           variable density depending on only <m>x</m> and <m>y</m>.
@@ -278,10 +278,10 @@
           can quickly  calculate the moment of inertia for the
           rectangle.
         </p>
-        <me>
+        <md>
           I_x = \int_{-1}^1 \int_{-\frac{1}{5}}^\frac{1}{5} y^2 dx
           dy = \frac{4}{15}
-        </me>
+        </md>
         <p>
           The previous shape has twice the resitance to rotation
           compare with the rectangle, even though it has the same
@@ -581,9 +581,9 @@
         I'll just prove the theorem for the special case of a
         sphere. The force of gravity between two masses <m>m_1</m>
         and <m>m_2</m> is
-        <me>
+        <md>
           F = \frac{Gm_1m_2}{r^2}
-        </me>
+        </md>
       </p>
       <p>
         I'll assume the source of the gravitational attraction sits
@@ -597,15 +597,15 @@
       <p>
         The force on the infinitesimal mass is
       </p>
-      <me>
+      <md>
         F dV = \frac{Gm\rho dV}{\omega^2}
-      </me>.
+      </md>.
       <p>
         I'll write this in polar coordinates. 
       </p>
-      <me>
+      <md>
         F dV = \frac{Gm\rho r^2 \sin \phi dr d\phi d\theta}{\omega^2}
-      </me>.
+      </md>.
       <p>
         By symmetry of the sphere, all lateral forces will cancel. I
         only care about the <m>z</m> component of the force. Let
@@ -613,10 +613,10 @@
         from <m>(0,0,c)</m> to the infinitesimal mass. Then I can
         rewrite the force again.
       </p>
-      <me> 
+      <md> 
         F_z dV = \frac{Gm\rho r^2 \sin \phi \cos \alpha dr d\phi
         d\theta}{\omega^2}
-      </me>
+      </md>
       <p>
         Now I'll do some trigonometry. Consider the triange with
         vertices <m>(0,0,c)</m>, <m>(0,0,0)</m> and the location of
@@ -639,45 +639,45 @@
         into two pieces, so that <m>c = \omega \cos \alpha + r \cos
         \phi</m>. I can solve for <m>\cos \alpha</m>.
       </p>
-      <me>
+      <md>
         \cos \alpha = \frac{ c - r \cos \phi}{\omega}
-      </me>
+      </md>
       <p>
         I can replace <m>\omega</m> with the square root expression.
       </p>
-      <me>
+      <md>
         \cos \alpha = \frac{ c - r \cos \phi}{\sqrt{r^2 + c^2 - 2rc
         \cos \phi}}
-      </me>
+      </md>
       <p>
         Now I can replace both <m>\cos \alpha</m> and <m>\omega</m>in the
         force expression.
       </p>
-      <me>
+      <md>
         F_z dV = \frac{Gm\rho r^2 \sin \phi}{r^2 + c^2 - 2rc\cos
         \phi} \left( \frac{c - r\cos \phi}{\sqrt{r^2 + c^2 - 2rc
         \cos \phi}} \right) dr d\phi d\theta
-      </me>
+      </md>
       <p>
         The total force is this integral of this infinitesimal force
         over the sphere.
       </p>
-      <me>
+      <md>
         F_z = \int_0^{2\pi} \int_0^{\pi} \int_0^a \frac{Gm\rho r^2
         \sin \phi}{r^2 + c^2 - 2rc\cos \phi} \left( \frac{c - r\cos
         \phi}{\sqrt{r^2 + c^2 - 2rc \cos \phi}} \right) dr d\phi
         d\theta
-      </me>
+      </md>
       <p>
         I'll do some substitution here, more or less reversing the
         trigonometry. I leave <m>r</m> and <m>\theta</m> alone, but
         write <m>\omega^2 = r^2 + c^2 - 2rc\cos\phi</m> with the
         cosine law as before. 
       </p>
-      <me> 
+      <md> 
         2\omega d\omega = 2rc \sin \phi d\phi \implies r \sin \phi
         d\phi = \frac{\omega}{c} d\omega
-      </me>
+      </md>
       <p>
         The bounds are <m>\omega(0) = c-r</m> and <m>\omega(\pi) =
         c+r</m>.  Finally, I can solve to get <m>r\cos \phi =
@@ -796,9 +796,9 @@
           <m>D \subset \RR^n</m> is a function <m>\rho: D \rightarrow
           [0, \infty)</m> such that
         </p>
-        <me>
+        <md>
           \int_D \rho dV = 1
-        </me>.
+        </md>.
         <p>
           The set <m>D</m> is called the <term>set of states</term>;
           each point represents the state of the system. For any
@@ -806,9 +806,9 @@
           the state of the system is in the subset <m>A</m> is the
           integral over that subset.
         </p>
-        <me>
+        <md>
           P(A) = \int_A \rho dV
-        </me>
+        </md>
       </statement>
     </definition>
     <definition>
@@ -822,9 +822,9 @@
           <m>f</m> over the state. It is written <m>\langle
           f\rangle</m> and calculated by integration.
         </p>
-        <me>
+        <md>
           \langle f\rangle = \int_D f \rho dV
-        </me>
+        </md>
       </statement>
     </definition>
     <p>
@@ -892,9 +892,9 @@
           deviation <m>\sigma_f</m> is calculate by the following
           integral.
         </p>
-        <me>
+        <md>
           \sigma^2_f = \int_D (f-\langle f\rangle)^2 \rho dV
-        </me>
+        </md>
       </statement>
     </definition>
     <p>
@@ -953,9 +953,9 @@
       where <m>D</m> is the domain of states and <m>f</m> is a
       observable on that domain of states.
     </p>
-    <me>
+    <md>
       \langle f\rangle = \int_D \bar{\Psi} f \Psi dV
-    </me>
+    </md>
     <p>
       All observables in quantum mechancs are calcualted from the wave
       function. Determining the behaviour of the wave function over
@@ -965,10 +965,10 @@
       is a constant, <m>m</m> is the mass and <m>\imath</m> is the
       imaginary number, with <m>\imath^2 = -1</m>.
     </p>
-    <me>
+    <md>
       \imath \hbar \frac{\del \Psi}{\del t} = \frac{-\hbar}{2m}
       \nabla^2 \Psi + V \Psi
-    </me>
+    </md>
     <p>
       I'll assume that <m>\Psi(x,t)</m> has only one variable of
       position. (The following derivation works in three variables of
@@ -983,12 +983,12 @@
       theorems, which I've omitted in this course, which allow this
       exchange).
     </p>
-    <me>
+    <md>
       \frac{\del \langle x\rangle}{\del t} = \frac{\del}{\del t}
       \int_{\RR} \bar{\Psi} x \Psi dx = \int_{\RR} \frac{\del}{\del
       t} x \bar{\Psi}\Psi dx = \int_{\RR} x \frac{\del}{\del t}
       \left( \bar{\Psi}\Psi \right) dx
-    </me>
+    </md>
     <p>
       I need to calculate this derivative term. I make use of the
       Schrodinger equation to change the time derivatives into space
@@ -1029,13 +1029,13 @@
     <p>
       Here I integrate by parts. 
     </p>
-    <me>
+    <md>
       = \frac{\imath \hbar}{2m} x \left( \bar{\Psi}
       \frac{\del \Psi}{\del x} - \frac{\del \bar{\Psi}}{\del x}
       \Psi \right) \Bigg|_{-\infty}^{\infty} - \frac{\imath
       \hbar}{2m} \int \left( \bar{\Psi} \frac{\del \Psi}{\del x} -
       \frac{\del \bar{\Psi}}{\del x} \Psi \right) dx
-    </me>
+    </md>
     <p>
       The first term, when evaluated on the bounds, decays to zero
       due to the normalization limits. Then I integrate by parts
@@ -1101,9 +1101,9 @@
       operator <m>F</m> on the space of wave functions. Its
       expectation value is its integral.
     </p>
-    <me>
+    <md>
       \langle F\rangle = \int_D \bar{\Psi} (F\Psi) dV
-    </me>
+    </md>
     <p>
       Moreover, all operators in quantum mechanics can be derived from
       combination of the position and momentum opreators.
@@ -1126,9 +1126,9 @@
           For any objects with multiplication <m>a</m> and <m>b</m>,
           the commutator bracket is defined as
         </p>
-        <me>
+        <md>
           [a,b]= ab - ba
-        </me>.
+        </md>.
         <p>
           The two items commute if and only is <m>[a,b] = 0</m>.
         </p>
@@ -1145,10 +1145,10 @@
         <p>
           Let <m>F</m> and <m>G</m> be operators on wave functions.
         </p>
-        <me>
+        <md>
           \sigma_F \sigma_G \geq \frac{1}{2i} \left\langle [F,G]
           \right\rangle
-        </me>
+        </md>
       </statement>
     </theorem>
     <p>
@@ -1180,11 +1180,11 @@
       So I know the commutator of position and momentum. What is its
       expectation value?
     </p>
-    <me>
+    <md>
       \left\langle \imath \hbar \right\rangle = \int \bar{\Psi}
       \imath \hbar \Psi dx = \imath \hbar \int \bar{\Psi} \Psi dx =
       \imath \hbar
-    </me>
+    </md>
     <p>
       This makes some sense: this operator is simply multiplication by
       a constant; it doesn't change the wave functions at all. It's
@@ -1195,9 +1195,9 @@
       next result, where <m>x</m> stands for position and <m>p</m> for
       momentum.
     </p>
-    <me>
+    <md>
       \sigma_x \sigma_p \geq \frac{\hbar}{2}
-    </me>
+    </md>
     <p>
       What does this mean? The <m>\sigma</m> is the standard
       deviation: it measures how wide the probability is for each of

@@ -82,10 +82,10 @@
           contains the entire surface.) The <term>flux integral</term>
           is defined to be the following integral.
         </p>
-        <me>
+        <md>
           \int_{\sigma} F \cdot N dA = \int_{\sigma} F \cdot dA =
           \int_D F(\sigma(s,t)) \cdot N(s,t) ds dt 
-        </me>
+        </md>
         <p>
           The first notation is more complete, but the second notation
           is conventional.
@@ -174,10 +174,10 @@
           the flow through the pipe is not uniform. Consider this
           field. 
         </p>
-        <me>
+        <md>
           F(x,y,z) = \left( 0, 0, \frac{k (a^2 - x^2 -
           y^2)}{a^2} \right)
-        </me>
+        </md>
         <p>
           In the very middle of the pipe, this flow has the same flow
           rate <m>k</m> as the previous example. However, the flow
@@ -297,10 +297,10 @@
           important. The paddle is a part of a plane, so it has a
           constant normal.) Then I calculate the flux integral. 
         </p>
-        <me>
+        <md>
           \int_\sigma F \cdot N dA = \int_D V \cos \theta dA = v \cos
           \theta \int_D 1 dA = 450 v \cos \theta
-        </me>
+        </md>
         <p>
          Compared to the perpendicular force or <m>450v</m>
          the force due to a paddle stroke at an angle is this original

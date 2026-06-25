@@ -18,10 +18,10 @@
           that the first two entries are added to produce the first
           entry of the sum, and likewise for the second and third
           entries. 
-          <me>
+          <md>
             u + v = (u_1,u_2,u_3) + (v_1,v_2,v_3) = (u_1 + v_1, u_2 +
             v_2, u_3 + v_3)
-          </me>
+          </md>
         </p>
       </statement>
     </definition>
@@ -68,9 +68,9 @@
           multiplication by <m>a</m> in each component of <m>u</m>.
           By convention, scalar multiplication is written with the
           scalar on the left of the vector.
-          <me>
+          <md>
             au = a (u_1, u_2, u_3) = (au_1, au_2, au_3)
-          </me>
+          </md>
         </p>
       </statement>
     </definition>
@@ -120,10 +120,10 @@
           the vector <m>u + (-1)v</m>, defined using addition and
           scalar multiplication. This works out to be componentwise
           subtraction.
-          <me>
+          <md>
             u - v = u + (-1) v= (u_1, u_2,u_3) + (-1) (v_1, v_2, v_3) 
             = (u_1 - v_1, u_2 - v_2, u_3 - v_3)
-          </me>
+          </md>
         </p>
       </statement>
     </definition>
@@ -133,9 +133,9 @@
           The <term>length</term> of a vector <m>u</m> in <m>\RR^3</m>
           is written <m>|u|</m> and is given by a generalized form of
           the Pythagorean rule for right triangles.
-          <me>
+          <md>
             |u| = \sqrt{u_1^2 + u_2^2 + u_3^2}
-          </me>
+          </md>
         </p>
         <p>
           This length is also called the <term>norm</term> of the
@@ -160,9 +160,9 @@
     <p>
       Often the square root is annoying, and I find it convenient to
       work with the square of the length.
-      <me>
+      <md>
         |u|^2 = u_1^2 + u_2^2 + u_3^2
-      </me>
+      </md>
     </p>
     <p>
       The notions of length and difference allow me to define the
@@ -228,10 +228,10 @@
           The <term>dot product</term> or <term>inner product</term>
           or <term>scalar product</term> of two vectors <m>u</m> and
           <m>v</m> is given by the following formula.
-          <me>
+          <md>
             u \cdot v = (u_1,u_2,u_3) \cdot (v_1,v_2,v_3) = 
             u_1 v_1 + u_2 v_2 + u_3 v_3
-          </me>
+          </md>
         </p>
       </statement>
     </definition>
@@ -244,26 +244,26 @@
         <p>
           If <m>u</m> and <m>v</m> are two vectors in <m>\RR^n</m>, then
           the angle between them <m>\theta</m> satisfies this equation.
-          <me>
+          <md>
             \cos \theta = \frac{u \cdot v}{|u||v|}
-          </me>
+          </md>
         </p>
       </statement>
     </proposition>
     <p>
       This can be used to calculate the angle between two vectors
       simply by calculating the inverse cosine. 
-      <me>
+      <md>
         \theta = \arccos \left( \frac{u \cdot v}{|u||v|} \right)
-      </me>
+      </md>
       The output of the inverse cosine is an angle in the range <m>[0,
       \pi] </m>. This convention works well for vectors, since the
       angle between them can always be chosen to be in this range.  
       Alternative, if the angle is known, this can be another way to
       calculate the dot product. 
-      <me>
+      <md>
         n \cdot v = |u||v| \cos \theta
-      </me>
+      </md>
       A useful implication of this relationship between angles and
       dot-products is that dot products can be used to identify
       perpendicular vectors.
@@ -319,10 +319,10 @@
           two vectors in <m>\RR^3</m>. The <term>cross product</term>
           of <m>u</m> and <m>v</m> is written <m>u \times v</m> and
           defined by the following formula.
-          <me>
+          <md>
             u \times v = (u_2v_3 - u_3v_2,  u_3v_1 - u_1v_3,  u_1v_2 -
             u_2v_1) 
-          </me>
+          </md>
         </p>
       </statement>
     </definition>

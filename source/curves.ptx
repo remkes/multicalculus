@@ -30,9 +30,9 @@
           symbol <m>\gamma</m> for an arbitrary parametric curve.
           The output is often writen in component as follows (in
           <m>\RR^3</m> for demonstration).
-          <me>
+          <md>
             \gamma(t) = (x(t), y(t), z(y))
-          </me>
+          </md>
           The functions <m>x(t)</m>, <m>y(t)</m> and <m>z(t)</m> are
           called the <term>component functionsi</term>. 
         </p>

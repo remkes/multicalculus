@@ -49,12 +49,12 @@
           The <term>curl</term> of <m>F</m> is the 
           cross product of <m>\nabla</m> and <m>F</m>. Note that this
           outputs a new vector field, not a scalar field.
-          <me>
+          <md>
             \nabla \times F = \left( \frac{\del F_3}{\del y} -
             \frac{\del F_2}{\del z}, \frac{\del F_1}{\del z} -
             \frac{\del F_3}{\del x}, \frac{\del F_2}{\del x} -
             \frac{\del F_1}{\del y}, \right)
-          </me>
+          </md>
         </p>
       </statement>
     </definition>
@@ -98,10 +98,10 @@
           any dimension. The <term>divergence</term> of <m>F</m> is
           the dot product <m>\nabla \cdot F</m>. Note that this
           outputs a new scalar field, not a vector field.
-          <me>
+          <md>
             \nabla \cdot F = \frac{\del F_1}{\del x_1} + \frac{\del
             F_2}{\del x_2} + \ldots + \frac{\del F_n}{\del x_n}
-          </me>
+          </md>
         </p>
       </statement>
     </definition>

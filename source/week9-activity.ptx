@@ -41,11 +41,11 @@
         <p>
           I use the linearity of the single variable derivatives.
         </p>
-        <me>
+        <md>
           = a \frac{\del}{\del x} F_1 \pm b \frac{\del}{\del x} G_1 +
           = a \frac{\del}{\del y} F_2 \pm b \frac{\del}{\del y} G_2 +
           = a \frac{\del}{\del z} F_3 \pm b \frac{\del}{\del z} G_3 a
-        </me>
+        </md>
         <p>
           Then I reoder the terms.
         </p>
@@ -73,10 +73,10 @@
         <p>
           Prove this identity for vector fields in <m>\RR^3</m>.
         </p>
-        <me>
+        <md>
           \nabla \cdot (F \times G) = (\nabla \times F) \cdot G - F
           \cdot (\nabla \times G)
-        </me>
+        </md>
       </statement>
       <solution>
         <p>
@@ -144,9 +144,9 @@
           precisely the expanded form of the right side that I'm
           trying to work towards. 
         </p>
-        <me>
+        <md>
           = G \cdot ( \nabla \times F) - F \cdot ( \nabla \times G) 
-        </me>
+        </md>
       </solution>
     </activity>
   </subsection>
@@ -158,9 +158,9 @@
           Determine if the following vector field is irrotational
           and/or incompressible. 
         </p>
-        <me>
+        <md>
           F(x,y,z) = (yz,xz,xy) 
-        </me>
+        </md>
       </statement>
       <solution>
         <p>
@@ -193,9 +193,9 @@
           Determine if the following vector field is irrotational
           and/or incompressible. 
         </p>
-        <me>
+        <md>
           F(x,y,z) = \left( \ln(xy),\frac{1}{x}, \frac{-x}{z} \right)
-        </me>
+        </md>
       </statement>
       <solution>
         <p>
@@ -231,9 +231,9 @@
           Determine if the following vector field is irrotational
           and/or incompressible. 
         </p>
-        <me>
+        <md>
           F(x,y,z) = (x^2,yz,xz) 
-        </me>
+        </md>
       </statement>
       <solution>
         <p>
@@ -266,9 +266,9 @@
           Determine if the following vector field is irrotational
           and/or incompressible. 
         </p>
-        <me>
+        <md>
           F(x,y,z) = (4,9,-12) 
-        </me>
+        </md>
       </statement>
       <solution>
         <p>
@@ -298,9 +298,9 @@
           Determine if the following vector field is irrotational
           and/or incompressible. 
         </p>
-        <me>
+        <md>
           F(x,y,z) = (\sin(x),\cos(y),\sin(z)) 
-        </me>
+        </md>
       </statement>
       <solution>
         <p>
@@ -333,9 +333,9 @@
           Determine if the following vector field is irrotational
           and/or incompressible. 
         </p>
-        <me>
+        <md>
           F(x,y,z) = (xy^2,z^2+y^2,x^2-z^2) 
-        </me>
+        </md>
       </statement>
       <solution>
         <p>
@@ -371,9 +371,9 @@
         <p>
           Determine if this scalar field is harmonic.
         </p>
-        <me>
+        <md>
           f(x,y,z) = x^2yz 
-        </me>
+        </md>
       </statement>
       <solution>
         <p>
@@ -396,9 +396,9 @@
         <p>
           Determine if this scalar field is harmonic.
         </p>
-        <me>
+        <md>
           f(x,y,z) = x^2+3y^2-4z^2 
-        </me>
+        </md>
       </statement>
       <solution>
         <p>
@@ -424,9 +424,9 @@
         <p>
           Determine if this scalar field is harmonic.
         </p>
-        <me>
+        <md>
           f(x,y,z) = e^{x+y+z} 
-        </me>
+        </md>
       </statement>
       <solution>
         <p>
@@ -452,9 +452,9 @@
         <p>
           Determine if this scalar field is harmonic.
         </p>
-        <me>
+        <md>
           f(x,y,z) = 7x+8y-4z 
-        </me>
+        </md>
       </statement>
       <solution>
         <p>

@@ -15,9 +15,9 @@
     language and showing the way forward for higher dimensions.
     Consider a single variable integral.
   </p>
-  <me>
+  <md>
     \int_a^b f(x) dx
-  </me>
+  </md>
   <p>
     Typically, I substitute <m>u = g(x)</m> using some
     <em>invertible</em> function <m>g</m>. Then I calculate <m>du =
@@ -62,9 +62,9 @@
     <m>h^{-1}(a)</m> and <m>h^{-1}(b)</m>. We get a new integral in
     the variable <m>u</m>.
   </p>
-  <me>
+  <md>
     \int_{u=h^{-1}(a)}^{u=h^{-1}(b)} f(h(u)) h^\prime(u) du
-  </me>
+  </md>
   <p>
     The key relationship here is <m>dx = h^\prime(u) du</m>: the
     derivative tells us the relationships between the differential
@@ -87,7 +87,7 @@
         Then the <term>Jacobian matrix</term> of <m>F</m> is the
         matrix of all partial derivatives.
       </p>
-      <me>
+      <md>
         J(F) = \begin{pmatrix} 
           \dfrac{\del F_1}{\del u_1} \amp \dfrac{\del F_1}{\del u_2}
             \amp \ldots \amp \dfrac{\del F_1}{\del u_n} \\[0.2em]
@@ -97,7 +97,7 @@
           \dfrac{\del F_n}{\del u_1} \amp \dfrac{\del F_n}{\del u_2}
             \amp \ldots \amp \dfrac{\del F_n}{\del u_n} 
           \end{pmatrix} 
-      </me>
+      </md>
       <p>
         The determinant <m>\det J(F)</m> is called the Jacobian
         determinaint. Often, this determinant is just called the
@@ -116,9 +116,9 @@
     Jacobian determines the relationship between the differential in
     these variables.
   </p>
-  <me>
+  <md>
     dx_1 dx_2 \ldots dx_n = (\det J(F)) du_1 du_2 \ldots du_n
-  </me>
+  </md>
   <p>
     I can interpret the Jacobian as the change in
     area/volume/hyper-volume due to the change in variables. Its
@@ -408,9 +408,9 @@
         to simply the integrand and integrate over a simpler region if
         possible.
       </p>
-      <me>
+      <md>
         \int_D \cos \left( \frac{y-x}{y+x} \right) dA
-      </me>
+      </md>
       <p>
         To simplify the integrand, I can look for transformations
         where <m>u = x+y</m> and <m>v = x-y</m>. Inverting these
@@ -521,18 +521,18 @@
         3x</m> and <m>y = x</m>, as shown in <xref
         ref="figure-cov2" />. Consider the following integral.  
       </p>
-      <me>
+      <md>
         \int_D xy dA
-      </me>
+      </md>
       <p>
         The integrand is reasonable, so I will look for a substitution
         to change the bounds. I would like to produce  constant
         bounds in at least one variable. To do that, I'll use this
         change of variables.
       </p>
-      <me>
+      <md>
         (x,y) = F(u,v) = (uv,v)
-      </me> 
+      </md> 
       <p>
         The lines <m>y=3x</m> and <m>y=x</m> become <m>v=3uv</m> and
         <m>v=uv</m>. Away from <m>v=0</m>, these lines are

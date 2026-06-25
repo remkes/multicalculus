@@ -12,10 +12,10 @@
         <p>
           The gradient of a function <m>f: \RR^n \rightarrow \RR</m>
           is written <m>\nabla f</m> and defined as
-          <me>
+          <md>
             \nabla f = \left( \frac{\del f}{\del x_1}, \frac{\del
             f}{\del x_2}, \ldots, \frac{\del f}{\del x_n} \right)
-          </me>
+          </md>
         </p>
       </statement>
     </definition>
@@ -56,9 +56,9 @@
           <m>M</m> at the the origin. Another object of mass <m>m</m>
           and position <m>(x,y,z)</m> has potential gravitational
           energy of
-          <me>
+          <md>
             P = \frac{-GmM}{\sqrt{x^2 + y^2 +z^2}}
-          </me>.
+          </md>.
         </p>
         <p>
           By convention, this potential energy is negative. It
@@ -67,11 +67,11 @@
           <m>\infty</m>. I'll write the gradient of this potential
           energy; I separate it into two pieces, one of magnitude and
           one of diection (where direction is given by a unit vector). 
-          <me>
+          <md>
             \nabla P = \frac{GmM}{\sqrt{(x^2 + y^2 +z^2)^3}} (x, y, z)
             = \frac{GmM}{x^2 + y^2 + z^2} \frac{1}{\sqrt{x^2 + y^2 +
             z^2}} (x,y,z)
-          </me>.
+          </md>.
         </p>
         <p>
           This is precisely the force of gravity. The gradient points
@@ -95,16 +95,16 @@
           which measures the pressure in a rotating cylindrial drum.
           (Think of a centrifuge). With bounds <m>z \in [0,5]</m> and
           <m>x,y \in [0, \sqrt{3}]</m>, the function is
-          <me>
+          <md>
             p(x,y,z) = \frac{1}{z+1} (x^2 + y^2)
-          </me>
+          </md>
         </p>
         <p>
           The gradient is
-          <me>
+          <md>
             \nabla p(x,y,z) = \left( \frac{2x}{z+1}, \frac{2y}{z+1},
             \frac{-(x^2 + y^2)}{(z+1)^2} \right)
-          </me>
+          </md>
         </p>
         <p>
           This points in the direction of greatest increase in
@@ -121,10 +121,10 @@
     <p>
       In addition to the gradient, <m>\nabla</m> itself is the
       following differential operator.
-      <me>
+      <md>
         \nabla = \left( \frac{\del}{\del x_1}, \frac{\del}{\del x_2},
         \frac{\del}{\del x_3}, \ldots, \frac{\del}{\del x_n} \right)
-      </me>
+      </md>
     </p>
     <p>
       This is a vector-valued differential operator: it outputs the
@@ -166,15 +166,15 @@
       that equation, concavity measured local displacement from
       equilibrium. The Laplacian does the same in multiple dimensions.
       The general Heat Equation is
-      <me>
+      <md>
         \frac{\del u}{\del t} = \alpha \nabla^2 u
-      </me>.
+      </md>.
     </p>
     <p>
       Similarly, the general Wave Equation is
-      <me>
+      <md>
         \frac{\del^2 u}{\del t^2} = \alpha \nabla^2 u
-      </me>.
+      </md>.
     </p>
   </subsection>
 </section>

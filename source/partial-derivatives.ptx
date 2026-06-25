@@ -199,9 +199,9 @@
       <m>y</m>. Then, having done that, I can switch and pretend
       <m>y</m> is constant to take the derivative in <m>x</m>. This is
       called a mixed partial and is written with the following notation.
-      <me>
+      <md>
         \frac{\del^2 f}{\del x \del y}
-      </me>
+      </md>
       In the denominator of this notation, <m>\del x \del y</m>, the
       derivative in <m>y</m> happens first and the derivative in
       <m>x</m> happens second. This is like the right-to-left notation
@@ -214,9 +214,9 @@
       I can iterate this as many times as I want. If I have a function
       of three variables, <m>f(x,y,z)</m>, consider this mixed
       partial.
-      <me>
+      <md>
         \frac{\del^4 f}{\del x \del y \del z \del y}
-      </me>
+      </md>
       In this partial, I differentiate first in <m>y</m>, then in
       <m>z</m>, then in <m>y</m> again, and finally in <m>x</m>.
     </p>

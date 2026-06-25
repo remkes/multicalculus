@@ -194,19 +194,19 @@
           Calculate this limit or prove that it does not exist. If the
           limit doesn't exist, describe the behaviour approaching the
           limit point. 
-          <me>
+          <md>
             \lim_{(x,y) \rightarrow (3,4)} \frac{x^2 + y^2}{x - y + 3}
-          </me>
+          </md>
         </p>
       </statement>
       <solution>
         <p>
           This limit can be directly evaluated, since there are no
           division by zero (or similar) problems. 
-          <me>
+          <md>
             \lim_{(x,y) \rightarrow (3,4)} \frac{x^2 + y^2}{x - y + 3}
             = \frac{3^2 + 4^2}{3-4+3} = \frac{25}{2}
-          </me>
+          </md>
         </p>
       </solution>
     </activity>
@@ -216,30 +216,30 @@
           Calculate this limit or prove that it does not exist. If the
           limit doesn't exist, describe the behaviour approaching the
           limit point. 
-          <me>
+          <md>
             \lim_{(x,y) \rightarrow (0,0)} \frac{xy + x^2y +
             xy^2}{x^2y + 3xy} 
-          </me>
+          </md>
         </p>
       </statement>
       <solution>
         <p>
           I can factor <m>xy</m> out of the numerator and the
           denominator.
-          <me>
+          <md>
             \lim_{(x,y) \rightarrow (0,0)} \frac{xy + x^2y +
             xy^2}{x^2y + 3xy} = 
             \lim_{(x,y) \rightarrow (0,0)} \frac{xy(1 + x +
             y)}{xy(x + 3)} = 
             \lim_{(x,y) \rightarrow (0,0)} \frac{1 + x +
             y}{x + 3} 
-          </me>
+          </md>
           After this <m>xy</m> term is cancelled out, the remaining
           limit can just be evaluted.
-          <me>
+          <md>
             \lim_{(x,y) \rightarrow (0,0)} \frac{1 + x +
             y}{x + 3} = \frac{1 + 0 + 0}{0 + 3} = \frac{1}{3} 
-          </me>
+          </md>
         </p>
       </solution>
     </activity>
@@ -249,9 +249,9 @@
           Calculate this limit or prove that it does not exist. If the
           limit doesn't exist, describe the behaviour approaching the
           limit point. 
-          <me>
+          <md>
             \lim_{(x,y) \rightarrow (4,\pi)} \frac{x}{\sin y}
-          </me>
+          </md>
         </p>
       </statement>
       <solution>
@@ -269,18 +269,18 @@
           Calculate this limit or prove that it does not exist. If the
           limit doesn't exist, describe the behaviour approaching the
           limit point. 
-          <me>
+          <md>
             \lim_{(x,y) \rightarrow (-3,0)} \frac{x^2 + 1}{y^2 - 4}
-          </me>
+          </md>
         </p>
       </statement>
       <solution>
         <p>
           This limit can be directly evaluted. 
-          <me>
+          <md>
             \lim_{(x,y) \rightarrow (-3,0)} \frac{x^2 + 1}{y^2 - 4} =
             \frac{(-3)^1 + 1}{0^2 - 4} = \frac{10}{-4} = \frac{-5}{2} 
-          </me>
+          </md>
         </p>
       </solution>
     </activity>
@@ -290,9 +290,9 @@
           Calculate this limit or prove that it does not exist. If the
           limit doesn't exist, describe the behaviour approaching the
           limit point. 
-          <me>
+          <md>
             \lim_{(x,y) \rightarrow (4,2)} \frac{x^2 + 1}{y^2 - 4}
-          </me>
+          </md>
         </p>
       </statement>
       <solution>
@@ -314,10 +314,10 @@
           Calculate this limit or prove that it does not exist. If the
           limit doesn't exist, describe the behaviour approaching the
           limit point. 
-          <me>
+          <md>
             \lim_{(x,y) \rightarrow (0,0)} \frac{4x^2 - 3xy -
             y^2}{2x^2 + xy - 5y^2} 
-          </me>
+          </md>
         </p>
       </statement>
       <solution>
@@ -326,26 +326,26 @@
           approaches along a variety of lines. I do this by setting
           <m>y = mx</m>, turing this into a single variable limit in
           <m>x</m>. 
-          <me>
+          <md>
             \lim_{(x,y) \rightarrow (0,0)} \frac{4x^2 - 3xy -
             y^2}{2x^2 + xy - 5y^2} = \lim_{x \rightarrow 0} \frac{4x^2
             - 3xmx - m^2x^2}{2x^2 + xmx - 5m^2 x^2}
-          </me>
+          </md>
           Then I can factor <m>x^2</m> out of numerator and
           denominator. 
-          <me>
+          <md>
             \lim_{x \rightarrow 0} \frac{4x^2 - 3mx^2 - m^2x^2}{2x^2 +
             mx^2 - 5m^2 x^2} = 
             \lim_{x \rightarrow 0} \frac{x^2(4 - 3m - m^2)}{x^2 (2 + m
             - 5m^2)} = 
             \lim_{x \rightarrow 0} \frac{4 - 3m - m^2}{2 + m - 5m^2} 
-          </me>
+          </md>
           Then I can just evaluate the limit, since there are no
           <m>x</m> variables left at all..
-          <me>
+          <md>
             \lim_{x \rightarrow 0} \frac{4 - 3m - m^2}{2 + m - 5m^2} = 
             \frac{4 - 3m - m^2}{2 + m - 5m^2} 
-          </me>
+          </md>
           Now I can argue that the limit depends on the slope of the
           line of approach. If <m>m=0</m>, the limit is <m>\frac{4}{2}
           = 2</m>. If <m>m=1</m>, the limit is <m>\frac{4 - 3 - 1}{2 +
@@ -360,20 +360,20 @@
           Calculate this limit or prove that it does not exist. If the
           limit doesn't exist, describe the behaviour approaching the
           limit point. 
-          <me>
+          <md>
             \lim_{(x,y,z) \rightarrow (0,0,0)} \frac{z^2 - xy + y^2 -
             4}{5xy^2 - xyz + 3}
-          </me>
+          </md>
         </p>
       </statement>
       <solution>
         <p>
           This limit can be directly evaluted.
-          <me>
+          <md>
             \lim_{(x,y,z) \rightarrow (0,0,0)} \frac{z^2 - xy + y^2 -
             4}{5xy^2 - xyz + 3} = \frac{0 - 0 + 0 - 4}{0 - 0 + 3} =
             \frac{-4}{3} 
-          </me>
+          </md>
         </p>
       </solution>
     </activity>
@@ -383,10 +383,10 @@
           Calculate this limit or prove that it does not exist. If the
           limit doesn't exist, describe the behaviour approaching the
           limit point. 
-          <me>
+          <md>
             \lim_{(x,y,z) \rightarrow (0,0,0)} \frac{xy - y^2 +
             yz}{z^2 - 3xy + x^2} 
-          </me>
+          </md>
         </p>
       </statement>
       <solution>
@@ -398,11 +398,11 @@
           aren't all possible lines of approach, but all I need to
           show is that there are at least a few directions which lead
           to different values). 
-          <me>
+          <md>
             \lim_{(x,y,z) \rightarrow (0,0,0)} \frac{xy - y^2 +
             yz}{z^2 - 3xy + x^2} = \lim_{x \rightarrow 0} \frac{xmx -
             m^2x^2 + m^2x^2}{m^2x^2 - 3mxx + x^2} 
-          </me>
+          </md>
           Then I can simplify, factor out <m>x^2</m>, cancel it off,
           and evlaute the limit. 
           <md>
@@ -429,10 +429,10 @@
           Calculate this limit or prove that it does not exist. If the
           limit doesn't exist, describe the behaviour approaching the
           limit point. 
-          <me>
+          <md>
             \lim_{(x,y,z) \rightarrow (0,0,0)} \arctan
             \frac{1}{|x+y+z|}
-          </me>
+          </md>
         </p>
       </statement>
       <solution>
@@ -457,9 +457,9 @@
       <statement>
         <p>
           Calculate this partial derivative.
-          <me>
+          <md>
             \frac{\del}{\del x} 4x^2 - 4y^2 + 3xy + 4 
-          </me>
+          </md>
         </p>
       </statement>
       <solution>
@@ -479,9 +479,9 @@
       <statement>
         <p>
           Calculate this partial derivative.
-          <me>
+          <md>
             \frac{\del}{\del y} \cos (3x^2 + 4y^2)
-          </me>
+          </md>
         </p>
       </statement>
       <solution>
@@ -506,9 +506,9 @@
       <statement>
         <p>
           Calculate this partial derivative.
-          <me>
+          <md>
             \frac{\del}{\del z} \ln (xyz) 
-          </me>
+          </md>
         </p>
       </statement>
       <solution>
@@ -529,9 +529,9 @@
       <statement>
         <p>
           Calculate this partial derivative.
-          <me>
+          <md>
             \frac{\del^2}{\del x^2} e^{x^2 + y^2} 
-          </me>
+          </md>
         </p>
       </statement>
       <solution>
@@ -574,10 +574,10 @@
       <statement>
         <p>
           Calculate this partial derivative.
-          <me>
+          <md>
             \frac{\del^2}{\del y^2} x^2 + 3y^2 + 4y^2 x^3 - 5x^3 y +
             8y^4 
-          </me>
+          </md>
         </p>
       </statement>
       <solution>
@@ -601,9 +601,9 @@
       <statement>
         <p>
           Calculate this partial derivative.
-          <me>
+          <md>
             \frac{\del^2}{\del z^2} xyz + x^2yz - xy^2z - xyz^2 
-          </me>
+          </md>
         </p>
       </statement>
       <solution>
@@ -627,9 +627,9 @@
       <statement>
         <p>
           Calculate this partial derivative.
-          <me>
+          <md>
             \frac{\del^2}{\del x \del y} \sin (xy) 
-          </me>
+          </md>
         </p>
       </statement>
       <solution>
@@ -668,9 +668,9 @@
       <statement>
         <p>
           Calculate this partial derivative.
-          <me>
+          <md>
             \frac{\del^2}{\del x \del y} \frac{1}{x^2 + y^2 + 3}
-          </me>
+          </md>
         </p>
       </statement>
       <solution>
@@ -708,10 +708,10 @@
       <statement>
         <p>
           Calculate this partial derivative.
-          <me>
+          <md>
             \frac{\del^2}{\del x \del y} x^2 y^3 - 7x^4y^3 - x^5 +
             3y^7
-          </me>
+          </md>
         </p>
       </statement>
       <solution>
@@ -735,10 +735,10 @@
       <statement>
         <p>
           Calculate this partial derivative.
-          <me>
+          <md>
             \frac{\del^3}{\del x \del y \del z} 3xyz - xy^2 - xz^2 +
             yz^2 
-          </me>
+          </md>
         </p>
       </statement>
       <solution>
@@ -763,9 +763,9 @@
       <statement>
         <p>
           Calculate this partial derivative.
-          <me>
+          <md>
             \frac{\del^3}{\del x \del y^2} x^2 e^y - xy^2
-          </me>
+          </md>
         </p>
       </statement>
       <solution>
@@ -795,9 +795,9 @@
           ref="activity-contour-plots" /> and draw some of the
           gradient directions, showing that the gradients are indeed
           perpendicular to the coutour plots. 
-          <me>
+          <md>
             f(x,y) = 3y - 4x^2 
-          </me>
+          </md>
         </p>
       </statement>
       <solution>
@@ -812,9 +812,9 @@
             </mrow>
           </md>
           The gradient has these two as components. 
-          <me>
+          <md>
             \nabla f(x,y) = (-8x,3) 
-          </me>
+          </md>
           I've chosen some points and drawn the gradients in <xref
           ref="figure-activity-gradient-1" />
           <figure xml:id="figure-activity-gradient-1">
@@ -859,9 +859,9 @@
           ref="activity-contour-plots" /> and draw some of the
           gradient directions, showing that the gradients are indeed
           perpendicular to the coutour plots. 
-          <me>
+          <md>
             f(x,y) = e^{x^2 + y^2} + 4
-          </me>
+          </md>
         </p>
       </statement>
       <solution>
@@ -876,9 +876,9 @@
             </mrow>
           </md>
           The gradient has these two as components. 
-          <me>
+          <md>
             \nabla f(x,y) = (2xe^{x^2 + y^2}, 2ye^{x^2 + y^2}) 
-          </me>
+          </md>
           I've chosen some points and drawn the gradients in <xref
           ref="figure-activity-gradient-2" />
           <figure xml:id="figure-activity-gradient-2">
@@ -923,9 +923,9 @@
           ref="activity-contour-plots" /> and draw some of the
           gradient directions, showing that the gradients are indeed
           perpendicular to the coutour plots. 
-          <me>
+          <md>
             f(x,y) = \frac{x}{\sin y} 
-          </me>
+          </md>
         </p>
       </statement>
       <solution>
@@ -940,10 +940,10 @@
             </mrow>
           </md>
           The gradient has these two as components. 
-          <me>
+          <md>
             \nabla f(x,y) = \left( \frac{1}{\sin y}, \frac{-x \cos
             y}{\sin^2 y} \right)
-          </me>
+          </md>
           I've chosen some points and drawn the gradients in <xref
           ref="figure-activity-gradient-3" />
           <figure xml:id="figure-activity-gradient-3">
@@ -992,9 +992,9 @@
           ref="activity-contour-plots" /> and draw some of the
           gradient directions, showing that the gradients are indeed
           perpendicular to the coutour plots. 
-          <me>
+          <md>
             f(x,y) = \frac{x^2 + 1}{y^2 - 4}
-          </me>
+          </md>
         </p>
       </statement>
       <solution>
@@ -1010,10 +1010,10 @@
             </mrow>
           </md>
           The gradient has these two as components. 
-          <me>
+          <md>
             \nabla f(x,y) = \left( \frac{2x + 1}{y^2-4},
             \frac{-2y(x^2+1)}{(y^2-4)^2} \right) 
-          </me>
+          </md>
           I've chosen some points and drawn the gradients in <xref
           ref="figure-activity-gradient-4" />
           <figure xml:id="figure-activity-gradient-4">

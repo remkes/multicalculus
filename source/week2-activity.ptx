@@ -591,7 +591,7 @@
         <p>
           <ol>
             <li>
-              <me>t = 3s</me>
+              <md>t = 3s</md>
               <p>
                 The movement will be consistently three times faster.
                 For any value of <m>s</m>, the position based on the
@@ -602,7 +602,7 @@
               </p>
             </li>
             <li>
-              <me>t = \frac{s}{4}</me>
+              <md>t = \frac{s}{4}</md>
               <p>
                 The movement will be one quarter the original speed.
                 For any value of <m>s</m>, the position based on the
@@ -613,7 +613,7 @@
               </p>
             </li>
             <li>
-              <me>t = s + 7</me>
+              <md>t = s + 7</md>
               <p>
                 The speed doesn't change. However, at <m>s=0</m> (the
                 starting time for the new variable), the position is
@@ -624,7 +624,7 @@
               </p>
             </li>
             <li>
-              <me>t = s - 10</me>
+              <md>t = s - 10</md>
               <p>
                 The speed doesn't change. However, at <m>s=0</m> (the
                 starting time for the new variable), the position has
@@ -636,7 +636,7 @@
               </p>
             </li>
             <li>
-              <me>t = s^2</me>
+              <md>t = s^2</md>
               <p>
                 By squaring the new variable, the movement  will be
                 faster and faster compared with the old variable.
@@ -645,7 +645,7 @@
               </p>
             </li>
             <li>
-              <me>t = \sqrt{s}</me>
+              <md>t = \sqrt{s}</md>
               <p>
                 By taking the square root, movement along the curve
                 will be going slower and slower compared with the old
@@ -655,7 +655,7 @@
               </p>
             </li>
             <li>
-              <me>t = e^s</me>
+              <md>t = e^s</md>
               <p>
                 The speed will accelerate more and more compared with
                 the old variable. This is like the quadratic change,
@@ -667,7 +667,7 @@
               </p>
             </li>
             <li>
-              <me>t = -s</me>
+              <md>t = -s</md>
               <p>
                 The speed will not change, but the direction of
                 movement along the curve will be reversed. The domain
@@ -702,9 +702,9 @@
             </mrow>
           </md>
           I then put them into a pythagorian combination.
-          <me>
+          <md>
             \sqrt{1^2 + 3^2} = \sqrt{10}
-          </me>
+          </md>
           For arclength, I need to integrate this expression over the
           length of the curve.
           <md>
@@ -738,9 +738,9 @@
             </mrow>
           </md>
           I then put these into a pythagorian combination.
-          <me>
+          <md>
             \sqrt{(2t)^2 + (-2t)^2} = \sqrt{8t^2} = (2\sqrt{2})t
-          </me>
+          </md>
           For arclength, I need to integrate this expression over the
           length of the curve.
           <md>
@@ -776,10 +776,10 @@
             </mrow>
           </md>
           I then put these into a pythagorian combination.
-          <me>
+          <md>
             \sqrt{64 t^2 \sin^2 (t^2) + 64 t^2 \cos^2 (t^2)} =
             \sqrt{64}t = 8t
-          </me>
+          </md>
           For arclength, I need to integrate this expression over the
           length of the curve.
           <md>
@@ -848,9 +848,9 @@
               <p>
                 I can take the standard curve for the circle and just
                 scale the amplitude of the two coordinate functions.
-                <me>
+                <md>
                   \gamma(t) = (a \cos t, b \sin t) 
-                </me>
+                </md>
                 The shape is given by one period of the sine and
                 cosine functions, so <m>t \in [0,2\pi]</m>.
               </p>
@@ -865,10 +865,10 @@
                 <m>y^\prime = b \cos t</m>. I put these in a
                 pythagorian combination and integrate to find the
                 arclength.
-                <me>
+                <md>
                   \int_0^{2\pi} \sqrt{a^2 \sin^2 (t) + b^2 \cos^2
                   (t)} dt
-                </me>
+                </md>
               </p>
             </li>
             <li>
@@ -927,10 +927,10 @@
               <p>
                  Calculate the integral in the special case <m>e=0</m>.
                </p>
-               <me>
+               <md>
                   = \int_0^{2\pi} a \sqrt{ 1 - 0 \cos^2 (t)} dt = 
                   \int_0^{2\pi} a dt = 2\pi a
-               </me>
+               </md>
             </li>
             <li>
               <p>
@@ -1100,10 +1100,10 @@
             </mrow>
           </md>
           Then I calculate the pythagorian combination of these.
-          <me>
+          <md>
             \sqrt{\frac{1}{t^2} + 16t^2} = \sqrt{\frac{1 +
             16t^4}{t^2}} = \frac{1}{t} \sqrt{1+ 16t^4} 
-          </me>
+          </md>
           Then I set up the arclength function, which is the integral
           of this pythagorian combination.
           <md>
@@ -1159,15 +1159,15 @@
             </mrow>
           </md>
           Then I calculate the pythagorian combination of these.
-          <me>
+          <md>
             \sqrt{4t^2 - 16t + 16 + 4} = \sqrt{4t^2 - 16t + 20} = 2
             \sqrt{t^2 - 4t + 5} 
-          </me>
+          </md>
           I'm going to complete the square here to make this more
           approachable.
-          <me>
+          <md>
             2 \sqrt{t^2 - 4t + 5} = 2 \sqrt{(t-2)^2 + 1}
-          </me>
+          </md>
           Then I set up the arclength function, which is the integral
           of this pythagorian combination.
           <md>
@@ -1221,9 +1221,9 @@
       <solution>
         <p>
           The tangent is the derivative calculated termwise.
-          <me>
+          <md>
             \gamma^\prime(t) = (2t, 3t^2) 
-          </me>
+          </md>
           This parametric curve with some example tangents is shown in
           <xref ref="figure-activity-parametric-tangent-1" />
           <figure xml:id="figure-activity-parametric-tangent-1">
@@ -1272,9 +1272,9 @@
       <solution>
         <p>
           The tangent is the derivative calculated termwise.
-          <me>
+          <md>
             \gamma^\prime(t) = (\sin t, - 2 \cos t) 
-          </me>
+          </md>
           This parametric curve with some example tangents is shown in
           <xref ref="figure-activity-parametric-tangent-2" />
           <figure xml:id="figure-activity-parametric-tangent-2">
@@ -1335,10 +1335,10 @@
       <solution>
         <p>
           The tangent is the derivative calculated termwise.
-          <me>
+          <md>
             \gamma^\prime(t) = (-4 \sin t + 2 \cos 2t, 4 \cos t - 2
             \sin 2t) 
-          </me>
+          </md>
           This parametric curve with some example tangents is shown in
           <xref ref="figure-activity-parametric-tangent-3" />
           <figure xml:id="figure-activity-parametric-tangent-3">
@@ -1402,9 +1402,9 @@
       <solution>
         <p>
           The tangent is the derivative calculated termwise.
-          <me>
+          <md>
             \gamma^\prime(t) = (-2t, 1)
-          </me>
+          </md>
           This parametric curve with some example tangents is shown in
           <xref ref="figure-activity-parametric-tangent-4" />
           <figure xml:id="figure-activity-parametric-tangent-4">
@@ -1464,11 +1464,11 @@
       <solution>
         <p>
           The tangent is the derivative calculated termwise.
-          <me>
+          <md>
             \gamma^\prime(t) = \left( \frac{-2\pi^2}{t^3} \cos t -
             \frac{\pi^2}{t^2} \sin t, \frac{-2\pi^2}{t^3} \sin t +
             \frac{\pi^2}{t^2} \cos t \right)
-          </me>
+          </md>
           This parametric curve with some example tangents is shown in
           <xref ref="figure-activity-parametric-tangent-5" />
           <figure xml:id="figure-activity-parametric-tangent-5">
@@ -1526,10 +1526,10 @@
       <solution>
         <p>
           The tangent is the derivative calculated termwise.
-          <me>
+          <md>
             \gamma^\prime(t) = \left( \frac{1}{2\sqrt{t}}, \frac{1}{3
             \sqrt[3]{t^2}} \right) 
-          </me>
+          </md>
           This parametric curve with some example tangents is shown in
           <xref ref="figure-activity-parametric-tangent-6" />.
           <figure xml:id="figure-activity-parametric-tangent-6">
@@ -1575,9 +1575,9 @@
           For this curve, calculate the speed, curvature, torsion.
           Also calculate the tangent vector, normal vector and
           binormal vector. 
-          <me>
+          <md>
             \gamma(t) = (t^3, 1 - t^2, 1 + t^2)
-          </me>
+          </md>
           Interpret the curve using the three scalars, focusing on the
           asymptotic behaviour.  (The expressions get very hectic in
           this example -- it is very hard to construct examples where

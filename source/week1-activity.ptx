@@ -11,34 +11,34 @@
         <p>
           <ol>
             <li>
-              <me>
+              <md>
                 u + v 
-              </me>
+              </md>
             </li>
             <li>
-              <me>
+              <md>
                 u - v 
-              </me>
+              </md>
             </li>
             <li>
-              <me>
+              <md>
                 \frac{1}{4} u - \frac{3}{5} v 
-              </me>
+              </md>
             </li>
             <li>
-              <me>  
+              <md>  
                 |u|
-              </me>
+              </md>
             </li>
             <li>
-              <me>
+              <md>
                 |u - v| 
-              </me>
+              </md>
             </li>
             <li>
-              <me>  
+              <md>  
                 u \cdot v 
-              </me>
+              </md>
             </li>
             <li>
               The angle between <m>u</m> and <m>v</m>. 
@@ -50,43 +50,43 @@
         <p>
           <ol>
             <li>
-              <me>
+              <md>
                 u + v = (4 + (-1)1, 5 + (-3)) = (3,2) 
-              </me>
+              </md>
             </li>
             <li>
-              <me>
+              <md>
                 u - v = (4 - (-1), 5 - (-3)) = (5, 8)
-              </me>
+              </md>
             </li>
             <li>
-              <me>
+              <md>
                 \frac{1}{4} u - \frac{3}{5} v = \left(1, \frac{5}{4}
                 \right) - \left( \frac{-3}{5}, \frac{-9}{5} \right) =
                 \left( \frac{8}{5}, \frac{61}{20} \right) 
-              </me>
+              </md>
             </li>
             <li>
-              <me>  
+              <md>  
                 |u| = \sqrt{4^2 + 5^2} = \sqrt{41}
-              </me>
+              </md>
             </li>
             <li>
-              <me>
+              <md>
                 |u - v| \sqrt{5^2 + 8^2} = \sqrt{89}
-              </me>
+              </md>
             </li>
             <li>
-              <me>  
+              <md>  
                 u \cdot v = (4)(-1) + (5)(-3) = -19
-              </me>
+              </md>
             </li>
             <li>
               The angle between <m>u</m> and <m>v</m>. 
-              <me>
+              <md>
                 \cos \theta = \frac{u \cdot v}{|u||v|} =
                 \frac{-19}{\sqrt{41}\sqrt{13}}
-              </me>. 
+              </md>. 
               Inverse cosine gives <m> \theta \doteq 2.54</m>.
             </li>
           </ol>
@@ -133,19 +133,19 @@
           The normal determines the coefficients of the equation of
           the plane. I put those coefficients into the general form,
           with the constant <m>d</m> undetermined.
-          <me>
+          <md>
             (-1)x + (-1)y + 0 z = d 
-          </me>
+          </md>
           I can calculate the constant using the point. I put the
           coordinates of the point into the left side of the equation
           and calculate <m>d</m>.
-          <me>
+          <md>
             d = (-1)(0) + (-1)(1) + (0)(3) = -1 
-          </me>
+          </md>
           Therefore, the equation of the plane is 
-          <me>
+          <md>
             - x - y = -1 
-          </me>.
+          </md>.
         </p>
       </solution>
     </activity>
@@ -161,19 +161,19 @@
           The normal determines the coefficients of the equation of
           the plane. I put those coefficients into the general form,
           with the constant <m>d</m> undetermined.
-          <me>
+          <md>
             2x + 0y + 3z = d 
-          </me>
+          </md>
           I can calculate the constant using the point. I put the
           coordinates of the point into the left side of the equation
           and calculate <m>d</m>.
-          <me>
+          <md>
             d = 2(-4) + 0(-1) + 3(2) = -2 
-          </me>
+          </md>
           Therefore, the equation of the plane is 
-          <me>
+          <md>
             2x + 3z = -2 
-          </me>.
+          </md>.
         </p>
       </solution>
     </activity>
@@ -201,19 +201,19 @@
           This is the normal. The normal determines the coefficients
           of the equation of the plane. I put those coefficients into
           the general form, with the constant <m>d</m> undetermined.
-          <me>
+          <md>
             -x - 2y - 3z = d 
-          </me>
+          </md>
           I can calculate the constant using the point. I put the
           coordinates of the point into the left side of the equation
           and calculate <m>d</m>.
-          <me>
+          <md>
             d = -(1)(2) - (2)(1) - 3(1) = -7
-          </me>
+          </md>
           Therefore, the equation of the plane is 
-          <me>
+          <md>
             -x - 2y - 3z = -7 
-          </me>.
+          </md>.
         </p>
       </solution>
     </activity>
@@ -241,19 +241,19 @@
           This is the normal. The normal determines the coefficients
           of the equation of the plane. I put those coefficients into
           the general form, with the constant <m>d</m> undetermined.
-          <me>
+          <md>
             0x - 2y + 2z = d 
-          </me>
+          </md>
           I can calculate the constant using the point. I put the 
           coordinates of the point into the left side of the equation
           and calculate <m>d</m>.
-          <me>
+          <md>
             d = 0(-1) - 2(0) + 2(-3) = -6 
-          </me>
+          </md>
           Therefore, the equation of the plane is 
-          <me>
+          <md>
             -2y + 2z = -6 
-          </me>.
+          </md>.
         </p>
       </solution>
     </activity>
@@ -292,20 +292,20 @@
           This is the normal. The normal determines the coefficients
           of the equation of the plane. I put those coefficients into
           the general form, with the constant <m>d</m> undetermined.
-          <me>
+          <md>
             0x + 2y - 2z = d 
-          </me>
+          </md>
           I can calculate the constant using the point (I can use
           any of the three points <mdash /> all will determine the same
           constant). I put the coordinates of the point into the left
           side of the equation and calculate <m>d</m>.
-          <me>
+          <md>
             d = (0)(0) + 2 (1) - 2(1) = 0 
-          </me>
+          </md>
           Therefore, the equation of the plane is 
-          <me>
+          <md>
             2y - 2z = 0 
-          </me>.
+          </md>.
         </p>
       </solution>
     </activity>
@@ -344,20 +344,20 @@
           This is the normal. The normal determines the coefficients
           of the equation of the plane. I put those coefficients into
           the general form, with the constant <m>d</m> undetermined.
-          <me>
+          <md>
             -24 x + 12 y + 0z = d 
-          </me>
+          </md>
           I can calculate the constant using the point (I can use
           any of the three points <mdash /> all will determine the same
           constant). I put the coordinates of the point into the left
           side of the equation and calculate <m>d</m>.
-          <me>
+          <md>
             d =  -24(0) + 12(5) + 0 z = 60 
-          </me>
+          </md>
           Therefore, the equation of the plane is 
-          <me>
+          <md>
             -24 x + 12 y = 60 
-          </me>.
+          </md>.
         </p>
       </solution>
     </activity>

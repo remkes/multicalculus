@@ -46,9 +46,9 @@
           set. A <term>parametric surface</term> in <m>\RR^n</m> is a
           continuous function 
         </p>
-        <me>
+        <md>
           \sigma: D \rightarrow \RR^n
-        </me>
+        </md>
       </statement>
     </definition>
     <p>
@@ -72,10 +72,10 @@
       Again similar to a curve, each coordinate is a scalar function
       of the parameter. 
     </p>
-    <me>
+    <md>
       \sigma(u,v) = \left( \sigma_1(u,v), \sigma_2(u,v), \sigma_3(u,v)
       \right) 
-    </me>
+    </md>
     <p>
       Typically, parametric surfaces are use to give a parametrization
       to an already known 2-dimensional object: planes, a hollow
@@ -121,9 +121,9 @@
           the surface of revolution is describe as a parametric
           surface on the parameter domain <m>D</m>. 
         </p>
-        <me>
+        <md>
           \sigma(u,v) = (u, f(u) \cos v, f(u) \sin v)
-        </me>
+        </md>
         <p>
           I don't have to use <m>u</m> and <m>v</m> as the variable of
           the paremtrization. If I want to be reminded that one of the
@@ -135,9 +135,9 @@
           parameter domain <m>D = [a,b] \times [2,\pi]</m> can be
           described this way. 
         </p>
-        <me>
+        <md>
           \sigma(x,\theta) = (x, f(x) \cos \theta, f(x) \sin \theta)
-        </me>
+        </md>
       </statement>
     </example>
     <example xml:id="example-sphere-parametrization">
@@ -151,10 +151,10 @@
           <m> D = [0, 2\pi] \times [0, \pi]</m>. Then the sphere is
           described as a parametric surface in the following way.
         </p>
-        <me>
+        <md>
           \sigma (\theta, \phi) = (R \sin \phi \cos \theta, R
           \sin \phi \sin \theta, R \cos \phi)
-        </me>
+        </md>
       </statement>
     </example>
     <example xml:id="example-cylinder-parametrization">
@@ -168,9 +168,9 @@
           as the other parameter, since it is mapped direclty to the
           normal <m>z</m> coordinate. 
         </p>
-        <me>
+        <md>
           \sigma (\theta, z) = (R \cos \theta, R \sin \theta, z)
-        </me>
+        </md>
       </statement>
     </example>
     <example xml:id="example-cone-parametrization">
@@ -183,10 +183,10 @@
           same parameter domain, <m> D = [0, 2\pi] \times [0,h] </m>,
           the cone is described by this parametric surface. 
         </p>
-        <me>
+        <md>
           \sigma(\theta, z) = \left( \frac {R(h-z)}{h} \cos \theta,
           \frac{R(h-z)}{h} \sin \theta, z \right) 
-        </me>
+        </md>
       </statement>
     </example>
   </subsection>
@@ -256,9 +256,9 @@
           Here is the graph of a scalar field in two dimensions on a
           simply connected domain <m>D</m>. 
         </p>
-        <me>
+        <md>
           \sigma (u,v) = (u,v,f(u,v))
-        </me>
+        </md>
         <p>
           I'll calculate the partial derivative and take the cross
           product to calculate the normal. 
@@ -289,9 +289,9 @@
           Here is the surface of revolution about the <m>x</m> axis
           for <m>f: [a,b] \rightarrow \RR</m>. 
         </p>
-        <me>
+        <md>
           \sigma (x,\theta) = (x, f(x) \cos \theta, f(x), \sin \theta) 
-        </me>
+        </md>
         <p>
           I'll calculate the partial derivative and take the cross
           product to calculate the normal. 
@@ -321,10 +321,10 @@
         <p>
           Here is the parametric description of the sphere. 
         </p>
-        <me>
+        <md>
           \sigma (\theta, \phi) = (R \sin \phi \cos \theta, R \sin
           \phi \sin \theta, R \cos \phi) 
-        </me>
+        </md>
         <p>
           I'll calculate the partial derivative and take the cross
           product to calculate the normal. 
@@ -373,9 +373,9 @@
         <p>
           Here is the parametric description of the cylinder. 
         </p>
-        <me>
+        <md>
           \sigma (\theta,z) = (R \cos \theta, R \sin \theta, z) 
-        </me>
+        </md>
         <p>
           I'll calculate the partial derivative and take the cross
           product to calculate the normal. 
@@ -404,10 +404,10 @@
         <p>
           Here is the parametric description of the cone. 
         </p>
-        <me>
+        <md>
           \sigma (\theta,z) = \left( \frac{R(h-z)}{h} \cos \theta,
           \frac{R(h-z)}{h} \sin \theta z \right) 
-        </me>
+        </md>
         <p>
           I'll calculate the partial derivative and take the cross
           product to calculate the normal. 

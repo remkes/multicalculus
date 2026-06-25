@@ -33,11 +33,11 @@
           scalar function and <m>\gamma(t)</m> a parametric curve in
           <m>\RR^n</m> entirely contained within the domain of
           <m>f</m>. The derivative of <m>f</m> along <m>\gamma</m> is
-          <me>
+          <md>
             \frac{d}{dt} f(\gamma(t)) = \frac{\del f}{\del x_1}
             \frac{dx_1}{dt} + \frac{\del f}{\del x_2} \frac{dx_2}{dt}
             + \ldots + \frac{\del f}{\del x_n} \frac{dx_n}{dt}
-          </me>
+          </md>
         </p>
         <p>
           The total rate of change is the sum of the rates of changes
@@ -47,11 +47,11 @@
     </proposition>
     <p>
       For reference, here is the chain rule in <m>\RR^3</m>.
-      <me>
+      <md>
         \frac{d}{dt} f((x(t), y(t), z(t)) = \frac{\del f}{\del x}
         \frac{dx}{dt} + \frac{\del f}{\del y} \frac{dy}{dt} +
         \frac{\del f}{\del z} \frac{dz}{dt}
-      </me>
+      </md>
     </p>
     <p>
       This is a slightly strange extension of the single-variable
@@ -117,9 +117,9 @@
       <statement>
         <p>
           Consider the potential gravitational energy function
-          <me>
+          <md>
             P = - \frac{GmM}{r} = \frac{-GmM}{\sqrt{x^2 + y^2 + z^2}}
-          </me>
+          </md>
         </p>
         <p>
           It would be  nice to know how the potential energy changes

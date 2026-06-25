@@ -137,9 +137,9 @@
         </p>
         <p>
           The notation for this interval is 
-          <me>
+          <md>
             I = (a_1,b_1)\times (a_2,b_2) \times \ldots \times (a_n,b_n)
-          </me>.
+          </md>.
         </p>
       </statement>
     </definition>
@@ -165,9 +165,9 @@
         </p>
         <p>
           The notation for this interval is 
-          <me>
+          <md>
             I = [a_1,b_1]\times [a_2,b_2] \times \ldots \times [a_n,b_n]
-          </me>.
+          </md>.
         </p>
       </statement>
     </definition>

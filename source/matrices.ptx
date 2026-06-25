@@ -54,13 +54,13 @@
       Here is an example of a <m>3 \times 3</m> matrix where the
       entries are real number. 
     </p>
-    <me>
+    <md>
       \begin{pmatrix} 
         \sqrt{7} \amp 0 \amp \frac{1}{e} \\
         \frac{-15}{31} \amp \pi \amp 5 \\
         0 \amp 0 \amp 0 
       \end{pmatrix}
-    </me>
+    </md>
     <p>
       Matrices are used for a huge number of purposes in mathematics.
       For this course, we will only need a couple. The first is one of
@@ -96,14 +96,14 @@
           That'll look a bit wierd to those who have done linear
           algebra with me -- sorry). 
         </p>
-        <me>
+        <md>
           \begin{pmatrix} 
             a \amp b \amp c \\
             d \amp e \amp f \\
             g \amp h \amp i
           \end{pmatrix} (x,y,z) = 
           (ax + by + cz, de + ey + fz, gx + hy + iz)
-        </me>
+        </md>
       </statement>
     </definition>
     <p>

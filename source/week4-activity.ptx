@@ -14,28 +14,28 @@
       <solution>
         <p>
           First I need to make the direction a unit vector. The length
-          of the direction is <me>
+          of the direction is <md>
             |v| = \sqrt{ (-1)^2 + (-1)^2 } = \sqrt{2} 
-          </me>
-          so the unit vector is <me>
+          </md>
+          so the unit vector is <md>
             u = \frac{v}{|v|} = \left( \frac{-1}{\sqrt{2}},
             \frac{-1}{\sqrt{2}} \right) 
-          </me>.
+          </md>.
           Then I calculate the gradient of <m>f</m>, taking the
           partials in each variable. 
-          <me>
+          <md>
             \nabla f = \left( (3-2y + 2x, 5 - 2x - 2y \right) 
-          </me>
+          </md>
           Finally, the directional derivative is the dot product of
           gradient and the direction.
-          <me>
+          <md>
             D_u f = \frac{1}{\sqrt{2}} (-3 + 2y - 2x -5 + 2x + 2y ) =
             \frac{-8 + 4y}{\sqrt{2}} 
-          </me>
+          </md>
           Finally I evaluate this at the point. 
-          <me>
+          <md>
             D_u f (p) = \frac{-8 - 8}{\sqrt{2}} = \frac{-16}{\sqrt{2}} 
-          </me>
+          </md>
         </p>
       </solution>
     </activity>
@@ -52,28 +52,28 @@
       <solution>
         <p>
           First I need to make the direction a unit vector. The length
-          of the direction is <me>
+          of the direction is <md>
             |v| = \sqrt{ 2^2 + 1^1 } = \sqrt{5} 
-          </me>
-          so the unit vector is <me>
+          </md>
+          so the unit vector is <md>
             u = \frac{v}{|v|} = \left( \frac{2}{\sqrt{5}},
             \frac{1}{\sqrt{5}} \right) 
-          </me>.
+          </md>.
           Then I calculate the gradient of <m>f</m>, taking the
           partials in each variable. 
-          <me>
+          <md>
             \nabla f = \left( -\sin (x - y), \sin (x - y) \right) 
-          </me>
+          </md>
           Finally, the directional derivative is the dot product of
           gradient and the direction.
-          <me>
+          <md>
             D_u f = \frac{1}{\sqrt{5}} (-2 \sin (x - y) + \sin (x- y))
             = \frac{-\sin (x - y)}{\sqrt{5}}
-          </me>
+          </md>
           Finally I evaluate this at the point. 
-          <me>
+          <md>
             D_u f (p) = \frac{-\sin (0)}{\sqrt{5}} = 0 
-          </me>
+          </md>
         </p>
       </solution>
     </activity>
@@ -88,29 +88,29 @@
       <solution>
         <p>
           First I need to make the direction a unit vector. The length
-          of the direction is <me>
+          of the direction is <md>
             |v| = \sqrt{1^2 + 3^2 + 1^2} = \sqrt{11} 
-          </me>
-          so the unit vector is <me>
+          </md>
+          so the unit vector is <md>
             u = \frac{v}{|v|} = \left( \frac{1}{\sqrt{11}},
             \frac{3}{\sqrt{11}}, \frac{1}{\sqrt{11}} \right) 
-          </me>.
+          </md>.
           Then I calculate the gradient of <m>f</m>, taking the
           partials in each variable. 
-          <me>
+          <md>
             \nabla f = \left(y - 3x^2, x - z + z^2, -y + 2yz \right) 
-          </me>
+          </md>
           Finally, the directional derivative is the dot product of
           gradient and the direction.
-          <me>
+          <md>
             D_u f = \frac{1}{\sqrt{11}} (y - 3x^2 + 3x - 3z + 3x^2 - y
             + 2yz) 
-          </me>
+          </md>
           Finally I evaluate this at the point. 
-          <me>
+          <md>
             D_u f (p) = \frac{1}{\sqrt{11}} (1 - 27 + 9 + 6 + 12 - 1 -
             4) = \frac{-4}{\sqrt{11}} 
-          </me>
+          </md>
         </p>
       </solution>
     </activity>
@@ -125,27 +125,27 @@
       <solution>
         <p>
           First I need to make the direction a unit vector. The length
-          of the direction is <me>
+          of the direction is <md>
             |v| = \sqrt{(-1)^2 + (-2)^2} = \sqrt{5} 
-          </me>
-          so the unit vector is <me>
+          </md>
+          so the unit vector is <md>
             u = \frac{v}{|v|} = \left( \frac{-1}{\sqrt{5}}, 0,
             \frac{-2}{\sqrt{5}} \right) 
-          </me>.
+          </md>.
           Then I calculate the gradient of <m>f</m>, taking the
           partials in each variable. 
-          <me>
+          <md>
             \nabla f = \left( yze^{xyz}, xze^{xyz} xye^{xyz} \right)  
-          </me>
+          </md>
           Finally, the directional derivative is the dot product of
           gradient and the direction.
-          <me>
+          <md>
             D_u f = \frac{1}{\sqrt{5}} (-yze^{xyz} - 2xye^{xyz}) 
-          </me>
+          </md>
           Finally I evaluate this at the point. 
-          <me>
+          <md>
             D_u f (p) = \frac{0}{\sqrt{5}} = 0 
-          </me>
+          </md>
         </p>
       </solution>
     </activity>
@@ -160,31 +160,31 @@
       <solution>
         <p>
           First I need to make the direction a unit vector. The length
-          of the direction is <me>
+          of the direction is <md>
             |v| = \sqrt{1^2 + 1^2 +1^2} = 3
-          </me>
-          so the unit vector is <me>
+          </md>
+          so the unit vector is <md>
             u = \frac{v}{|v|} = \left( \frac{1}{\sqrt{3}},
             \frac{1}{\sqrt{3}}, \frac{1}{\sqrt{3}} \right) 
-          </me>.
+          </md>.
           Then I calculate the gradient of <m>f</m>, taking the
           partials in each variable. 
-          <me>
+          <md>
             \nabla f = \left( \frac{2x}{1 + z^2}, \frac{2y}{1 + z^2}
             \frac{-2z(x^2 +y^2)}{(1 + z^2)^2} \right) 
-          </me>
+          </md>
           Finally, the directional derivative is the dot product of
           gradient and the direction.
-          <me>
+          <md>
             D_u f = \frac{1}{\sqrt{3}} \left( \frac{2x}{1 + z^2} +
             \frac{2y}{1+ x^2} - \frac{2z(x^2 + y^2)}{(1+z^2)^2}
             \right) 
-          </me>
+          </md>
           Finally I evaluate this at the point. 
-          <me>
+          <md>
             D_u f (p) = \frac{1}{\sqrt{3}} \left( \frac{4}{5} + 0 +
             \frac{16}{25} \right) = \frac{32}{25} \sqrt{3}
-          </me>
+          </md>
         </p>
       </solution>
     </activity>
@@ -205,14 +205,14 @@
       <solution>
         <p>
           To do the chain rule, first I need the partials of f. 
-          <me>
+          <md>
             \frac{\del f}{\del x} = 4 \hspace{1cm} \frac{\del f}{\del
             y} = 3 
-          </me>
+          </md>
           Then I need the tangent to the curve.
-          <me>
+          <md>
             \gamma^\prime (t) = \left( 2t + 1, 3t^2 - 2t + 1 \right) 
-          </me>
+          </md>
           Then I put these together into the chain rule.
           <md>
             <mrow>
@@ -231,16 +231,16 @@
         </p>
           More directly, I calculate the whole composition by
           substituting the components of the curve into the field.
-          <me>
+          <md>
             f(\gamma(t)) = (t^2 + t - 1) + 3 (t^3 - 2t^2 + t + 1)=
             3t^3 + t^2 + 7t - 1 
-          </me>
+          </md>
           Then I just calcualte the <m>t</m> derivative of this
           single-variable function.
-          <me>
+          <md>
             \frac{d}{dt} f(\gamma(t)) = \frac{d}{df} 3t^3 + t^2 + 7t -
             1 = 9t^2 + 2t + 7 
-          </me>
+          </md>
           Both results do produce the same derivative. 
         </p>
       </solution>
@@ -258,29 +258,29 @@
       </statement>
       <solution>
         <p>
-          To do the chain rule, first I need the partials of f. <me>
+          To do the chain rule, first I need the partials of f. <md>
             \frac{\del f}{\del x} = 2x
             \hspace{1cm} 
             \frac{\del f}{\del y} = -2y 
-          </me>
+          </md>
           Then I need the tangent to the curve.
-          <me>
+          <md>
             \gamma^\prime (t) = \left( -\sin t, \cos t \right)
-          </me>
-          Then I put these together into the chain rule.<me>
+          </md>
+          Then I put these together into the chain rule.<md>
             \frac{d}{dt} f(\gamma(t)) = \frac{df}{dx} \frac{dx}{dt} +
             \frac{df}{dy} \frac{dy}{dt} = 2x (-\sin t) - 2y (\cos t) 
-          </me>
+          </md>
           Then I substitute the <m>x</m> and <m>y</m> with the
-          components of the curve. <me>
+          components of the curve. <md>
             = -2 (\cos t) \sin t) = 2 \sin t (\cos t) = -4 \sin t \cos
             t = -4 \sin (2t)
-          </me>
+          </md>
           More directly, I calculate the whole composition by
           substituting the components of the curve into the field.
-          <me>
+          <md>
             f(\gamma(t)) = \cos^2 t - \sin^2 t 
-          </me>
+          </md>
           Then I just calcualte the <m>t</m> derivative of this
           single-variable function.
           <md>
@@ -310,15 +310,15 @@
       </statement>
       <solution>
         <p>
-          To do the chain rule, first I need the partials of f. <me>
+          To do the chain rule, first I need the partials of f. <md>
             \frac{\del f}{\del x} = \frac{-2x}{(x^2 + y^2 + 1)^2} 
             \hspace{1cm} 
             \frac{\del f}{\del y} = \frac{-2y}{(x^2 + y^2 + 1)^2} 
-          </me>. 
+          </md>. 
           Then I need the tangent to the curve.
-          <me>
+          <md>
             \gamma^\prime (t) = (3, 1)  
-          </me>
+          </md>
           Then I put these together into the chain rule.<md>
             <mrow>
               \frac{d}{dt} f(\gamma(t)) \amp = \frac{df}{dx}
@@ -333,22 +333,22 @@
             </mrow>
           </md>
           Then I substitute the <m>x</m> and <m>y</m> with the
-          components of the curve. <me>
+          components of the curve. <md>
             = \frac{-18 t - 12 - 2t - 8}{((3t-2)^2 + (t_4)^2 + 1)^2} =
             \frac{-20t + 4}{(10t^2 - 4t + 21)^2}
-          </me>
+          </md>
           More directly, I calculate the whole composition by
           substituting the components of the curve into the field.
-          <me>
+          <md>
             f(\gamma(t)) = \frac{1}{((3t-2)^2 + (t+4)^2 + 1)} =
             \frac{1}{(10t^2 - 4t + 21)} 
-          </me>
+          </md>
           Then I just calcualte the <m>t</m> derivative of this
           single-variable function.
-          <me>
+          <md>
             \frac{d}{dt} f(\gamma(t)) = \frac{d}{dt} \frac{1}{10t^2 -
             4t + 21} = \frac{-20t + 4}{(10t^2 - 4t + 21)} 
-          </me>
+          </md>
           Both results do produce the same derivative. 
         </p>
       </solution>
@@ -366,16 +366,16 @@
       </statement>
       <solution>
         <p>
-          To do the chain rule, first I need the partials of f. <me>
+          To do the chain rule, first I need the partials of f. <md>
             \frac{\del f}{\del x} = -2xe^{-(x^2 + y^2)} 
             \hspace{1cm} 
             \frac{\del f}{\del y} = -2ye^{-(x^2 + y^2)} 
-          </me>. 
+          </md>. 
           Then I need the tangent to the curve.
-          <me>
+          <md>
             \gamma^\prime (t) = \left( \cos t - t \sin t, \sin t + t
             \cos t \right)
-          </me>
+          </md>
           Then I put these together into the chain rule.
           <md>
             <mrow>
@@ -408,16 +408,16 @@
           </md>
           More directly, I calculate the whole composition by
           substituting the components of the curve into the field.
-          <me>
+          <md>
             f(\gamma(t)) = e^{-(t^2 \cos^2 t + t^2 \sin^2 t)} =
             e^{-t^2} 
-          </me>
+          </md>
           Then I just calcualte the <m>t</m> derivative of this
           single-variable function.
-          <me>
+          <md>
             \frac{d}{dt} f(\gamma(t)) = \frac{d}{dt} e^{-t^2} = -2t
             e^{-t^2} 
-          </me>
+          </md>
           Both results do produce the same derivative. 
         </p>
       </solution>
@@ -426,9 +426,9 @@
       <statement>
         <p>
           Consider the gravitation potential defined from the videos.
-          <me>
+          <md>
             P(x,y,z) = \frac{-GmM}{\sqrt{x^2 + y^2 + z^2}}
-          </me>
+          </md>
           Calcualte the change in potential energy along the curve
           <m>\gamma(t) = (3 \cos t, 3 \sin t, 0) </m>. Describe the
           curve and give reasons for the increase or decrease of
@@ -455,9 +455,9 @@
             </mrow>
           </md>. 
           Then I need the tangent to the curve.
-          <me>
+          <md>
             \gamma^\prime (t) = \left( -3 \sin t, 3 \cos t, 0 \right) 
-          </me>
+          </md>
           Then I put these together into the chain rule.
           <md>
             <mrow>
@@ -502,9 +502,9 @@
       <statement>
         <p>
           Consider the gravitation potential defined from the videos.
-          <me>
+          <md>
             P(x,y,z) = \frac{-GmM}{\sqrt{x^2 + y^2 + z^2}}
-          </me>
+          </md>
           Calcualte the change in potential energy along the curve
           <m>\gamma(t) = \left( \frac{1}{t} \cos t, \frac{1}{t} \sin
           t\right) 
@@ -532,11 +532,11 @@
             </mrow>
           </md>. 
           Then I need the tangent to the curve.
-          <me>
+          <md>
             \gamma^\prime (t) = \left( \frac{-1}{t^2} \cos t -
             \frac{1}{t} \sin t, \frac{-1}{t^2} \sin t + \frac{1}{t}
             \cos t, 0 \right) 
-          </me>
+          </md>
           Then I put these together into the chain rule.
           <md>
             <mrow>
@@ -595,9 +595,9 @@
       <statement>
         <p>
           Consider the gravitation potential defined from the videos.
-          <me>
+          <md>
             P(x,y,z) = \frac{-GmM}{\sqrt{x^2 + y^2 + z^2}}
-          </me>
+          </md>
           Calcualte the change in potential energy along the curve
           <m>\gamma(t) = (3 \cos t, 4 \sin t, 4 \cos t) 
           </m>. Describe the curve and give reasons for the increase
@@ -623,10 +623,10 @@
               + z^2)^\frac{3}{2}} 
             </mrow>
           </md>. Then I need the tangent to the curve.
-          <me>
+          <md>
             \gamma^\prime (t) = \left( -3 \sin t, 5 \cos t, -4 \sin t
             \right) 
-          </me>
+          </md>
           Then I put these together into the chain rule.
           <md>
             <mrow>
@@ -689,9 +689,9 @@
       <solution>
         <p>
           The equation to the tangent line has this form.
-          <me>
+          <md>
             z - f(a,b) = f_x(a,b) (x-a) + f_y(a,b) (y-b) 
-          </me>
+          </md>
           I need to calculate the values of the function and its
           derivatives and put them into this form. 
           <md>
@@ -712,9 +712,9 @@
             </mrow>
           </md>
           Then I put all the data into the equation.
-          <me>
+          <md>
             z - 0 = 0 (x-0) + 3 (y-0) \implies z = 3y 
-          </me>
+          </md>
           This is the equation of the tangent plane at the point. 
         </p>
       </solution>
@@ -730,9 +730,9 @@
       <solution>
         <p>
           The equation to the tangent line has this form.
-          <me>
+          <md>
             z - f(a,b) = f_x(a,b) (x-a) + f_y(a,b) (y-b) 
-          </me>
+          </md>
           I need to calculate the values of the function and its
           derivatives and put them into this form. 
           <md>
@@ -753,9 +753,9 @@
             </mrow>
           </md>
           Then I put all the data into the equation.
-          <me>
+          <md>
             z - 1 = 0 (x-0) + 0 (y-0) \implies z = 1 
-          </me>
+          </md>
           This is the equation of the tangent plane at the point. 
         </p>
       </solution>
@@ -771,9 +771,9 @@
       <solution>
         <p>
           The equation to the tangent line has this form.
-          <me>
+          <md>
             z - f(a,b) = f_x(a,b) (x-a) + f_y(a,b) (y-b) 
-          </me>
+          </md>
           I need to calculate the values of the function and its
           derivatives and put them into this form. 
           <md>
@@ -794,13 +794,13 @@
             </mrow>
           </md>
           Then I put all the data into the equation.
-          <me>
+          <md>
             z - \frac{9}{5} = \frac{-6}{5}  (x+3) + \frac{-12}{5}  (y-3) 
-          </me>
+          </md>
           This simplifies to 
-          <me>
+          <md>
             27 = 6x + 12y + 5z 
-          </me>
+          </md>
           This is the equation of the tangent plane at the point. 
         </p>
       </solution>

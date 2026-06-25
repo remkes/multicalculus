@@ -28,45 +28,45 @@
       that diverges to infinity when <m>x \rightarrow 0</m>. Here is
       the iterated integral.
     </p>
-    <me>
+    <md>
       \int_I f(x,y) dA = \int_0^1 \int_0^1 f(x,y) dy dx 
-    </me>
+    </md>
     <p>
       Since the problems happen at the edge of the <m>x</m> interval,
       the resulting improper integral uses a limit for the <m>x</m>
       part of the iterated integral.
     </p>
-    <me>
+    <md>
       \int_I f(x,y) dA = \lim_{a \rightarrow 0^+} \int_a^1 \int_0^1
       f(x,y) dy dx 
-    </me>
+    </md>
     <p>
       If, instead, the scalar field diverges to infinity as <m>y
       \rightarrow 0</m>, then the limit would be in the <m>y</m> part
       of the iterated integral. 
     </p>
-    <me>
+    <md>
       \int_I f(x,y) dA = \int_0^1 \left[ \lim_{a \rightarrow 0^+}
       \int_a^1 f(x,y) dy \right] dx 
-    </me>
+    </md>
     <p>
       Improper integrals also allow me to consider infinite domains of
       integration. For example, if I want to integrate over all of
       <m>\RR^2</m>, I set it up as follows.
     </p>
-    <me>
+    <md>
       \int_{\RR^2} f(x,y) dA = \lim_{a \rightarrow \infty} \lim_{b
       \rightarrow \infty} \int_{[-a,a]\times[-b,b]} f(x,y) dA
-    </me>
+    </md>
     <p>
       Then I can write this as an iterated integral where both pieces
       are improper integrals. 
     </p>
-    <me>
+    <md>
       \int_{\RR^2} f(x,y) dA = \lim_{a \rightarrow \infty}
       \int_{-a}^a \left[ \lim_{b \rightarrow \infty} \int_{-b}^b
       f(x,y) dy \right] dx 
-    </me>
+    </md>
     <example>
       <statement>
         <p>
@@ -115,9 +115,9 @@
           that <m>e^{-x^2}</m> has no elementary antiderivative.
           Therefore, the intergal
         </p>
-        <me>
+        <md>
           A = \int_{-\infty}^\infty e^{-x^2} dx
-        </me>
+        </md>
         <p>
           cannot be evaluated directly. However, this is a very
           important integral: <m>e^{-x^2}</m> is the normal distribution
@@ -218,9 +218,9 @@
       the term for
       separable differential equations; a differential equation
     <p>
-    <me>
+    <md>
       \frac{dy}{dx} = f(x,y) 
-    </me>
+    </md>
     </p>
       is a separable equation if and onl if <m>f(x,y)</m> is a
       separable scalar field in the sense of this definition.

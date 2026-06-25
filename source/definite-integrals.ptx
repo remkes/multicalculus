@@ -92,10 +92,10 @@
           the sum the interval is divided into <m>n</m> equal pieces and
           <m>x_k^*</m> is any point in the <m>k</m>th subinterval.
         </p>
-        <me>
+        <md>
           \int_a^b f(x) dx = \lim_{n \rightarrow 0} \sum_{k=1}^n
           f(x_k^*) \frac{b-a}{n} 
-        </me>
+        </md>
         <p>
           If the limit exists, the function is called
           <term>integrable</term>. 
@@ -142,10 +142,10 @@
           intervals), and <m>\Delta V</m> is the
           (hyper)volume of the subinterval.
         </p>
-        <me>
+        <md>
           \int_{I} f(x_1, x_2, x_3) dV = \lim_{n \rightarrow
           \infty} \sum_{l=0}^{n^3} f(x_k^*) \Delta V
-        </me>
+        </md>
         <p>
           If the limit exists, the scalar field <m>f</m> is called 
           <term>(Riemann) integrable</term> on the interval <m>I</m>.
@@ -258,18 +258,18 @@
         <p>
           Assume, in addition, that <m>f \leq g</m> on all of <m>I</m>.
         </p>
-        <me>
+        <md>
           \int_I f dV \leq \int_I g dV
-        </me>
+        </md>
         <p>
           Let <m>J</m> be another interval where <m>f</m> is integrable
           and assume <m>J</m> is of matching size and adjacent to
           <m>I</m> (such that they have no open intersection and their
           union <m>I \cup J</m> is also also an interval).
         </p>
-        <me>
+        <md>
           \int_{I \cup J} f dV = \int_I f dV + \int_I f dV
-        </me>
+        </md>
       </statement>
     </proposition>
   </subsection>

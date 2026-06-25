@@ -6,10 +6,10 @@
       I want to be able to calculate the multivariable Riemann
       integral.
     </p>
-    <me>
+    <md>
       \int_{I} f(x_1, x_2, \ldots, x_n) dV = \lim_{k \rightarrow
       \infty} \sum_{l=0}^{k^n} f(x_l^*) \Delta V
-    </me>
+    </md>
     <p>
       The original Riemann integral was already a very difficult
       definition to actually work with. This multivariable version is
@@ -42,11 +42,11 @@
       written as a double sum over these two indices. The limit also
       needs to take both upper bounds to infinity.
     </p>
-    <me>
+    <md>
       \int_{I} f(x,y) dA = \lim_{k_1 \rightarrow \infty} \lim_{k_2
       \rightarrow \infty} \sum_{i_1=1}^{k_1} \sum_{i_2=1}^{k_2}
       f(x_{i_1}^*,y_{i_2}^*) \Delta A 
-    </me>
+    </md>
     <p>
       Instead of writing <m>\Delta A</m> for the area of a subintervals,
       I could write this as the product of the height and width of this
@@ -55,23 +55,23 @@
       <m>x</m> variable. The height, <m>\Delta y</m>, is likewise
       <m>\frac{b_2-a_2}{k_2}</m>. 
     </p>
-    <me>
+    <md>
       \int_{I} f(x,y) dA = \lim_{k \rightarrow \infty}
       \sum_{i_1=1}^{k_1} \sum_{i_2=1}^{k_2} f(x_{i_1}^*,y_{i_2}^*)
       \Delta x \Delta y 
-    </me>
+    </md>
     <p>
       Now, let me group this using some brackets, moving some
       terms in and out of sums (recall than anything that doesn't
       involve the index of a particular sum and be moved out from the
       sum).
     </p>
-    <me>
+    <md>
       \int_{I} f(x,y) dA = \lim_{k_1 \rightarrow \infty}
       \sum_{i_1=1}^{k_1} \left[ \lim_{k_2 \rightarrow \infty} 
       \sum_{i_2=1}^{k_2} f(x_{i_1}^*,y_{i_2}^*) \Delta y
       \right] \Delta x
-    </me>
+    </md>
     <p>
       Now the term inside the brackets is just a single-variable Riemann
       integral. As far as the sum inside the brackets is concerns,
@@ -79,21 +79,21 @@
       the <m>y</m> coordinates. I can treat this as a single variable
       integral in the variable <m>y</m>.
     </p>
-    <me>
+    <md>
       \int_{I} f(x,y) dA = \lim_{k_1 \rightarrow \infty}
       \sum_{i_1}^{k_1} \left[ \int_c^d f(x_{i_1}^*,y) dy \right]
       \Delta x
-    </me>
+    </md>
     <p>
       Now I can consider the outside sum and, again, this is just a
       single-variable Riemann integral. It treats the variable <m>y</m>
       as constant and integrates in <m>x</m>. Let me write this as an
       integral as well. 
     </p>
-    <me>
+    <md>
       \int_{I} f(x,y) dA = \int_a^b \left[ \int_c^d f(x,y) dy \right]
       dx
-    </me>
+    </md>
     <p>
       This is called an <term>iterated integral</term> and it will be
       the calculation techinque for definite integrals. Every definite
@@ -116,10 +116,10 @@
       [a_1,b_1] \times [a_2,b_2] \times [a_3,b_3]</m> with three
       iterations, this is the setup. 
     </p>
-    <me>
+    <md>
       \int_{I} f(x,y,z) dV = \int_{a_1}^{b_1} \left[ \int_{a_2}^{b_2}
       \left[ \int_{a_3}^{b_3} f(x,y,z) dz \right] dy \right] dx
-    </me>
+    </md>
     <p>
       Notice that the bounds of integration always match with
       the correct infinitesimal piece, working from the inside out.

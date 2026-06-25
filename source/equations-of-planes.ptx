@@ -33,9 +33,9 @@
           Let <m>a</m>, <m>b</m>, <m>c</m> and <m>d</m> be real
           numbers. A <term>linear equation</term> in the variables
           <m>x,y,z</m> is an equation of the following form.
-          <me>
+          <md>
             a x + b y + c z = d 
-          </me>
+          </md>
         </p>
       </statement>
     </definition>
@@ -73,25 +73,25 @@
       I can change them by doing the same thing to both sides (hence
       preserving the equality). Consider the plane given by this
       equation.
-      <me>
+      <md>
         3x - y + 5z = 12
-      </me>
+      </md>
       I can multiply both sides by <m>-1</m> and still describe the
       same plane. 
-      <me>
+      <md>
         -3x + y - 5z = -12
-      </me>
+      </md>
       I could also multiply the original equation by any constant, say
       <m>100</m>, and still describe the same plane. 
-      <me>
+      <md>
         300x - 100y + 500z = 1200
-      </me>
+      </md>
       Finally, I must be careful multiplying by zero (or any
       expression that might evaluate to zero). If I multiply both
       sides of the equation by zero, I get a trivial equation.
-      <me>
+      <md>
         (0)(3x - y + 5z) = (0)(12) \implies 0 = 0 
-      </me>
+      </md>
       The equation <m>0=0</m> describes all points, not just the
       plane, so I have destroyed the locus. (As with many other places
       in mathematics, you should always keep half a thought to the
@@ -105,9 +105,9 @@
       linear equation can be re-interpreted and expressed via dot
       products. Consider, again, the  linear equation in
       <m>\RR^3</m>.
-      <me>
+      <md>
         ax + by + cz = d 
-      </me>
+      </md>
     </p>
     <p>
       I can think  of the variables <m>a,b,c</m> as the components of
@@ -132,16 +132,16 @@
       result of a variable vector <m>v</m> with a fixed vector
       <m>u</m> must have the result <m>d</m>. In this light, a
       plane in <m>\RR^3</m> is given by the equation
-      <me>
+      <md>
         (a,b,c) \cdot (x,y,z) = d
-      </me>. 
+      </md>. 
       This plane is precisely all vectors whose dot product with the
       vector <m>(a,b,c)</m> produces 
       the fixed number <m>d</m>. If <m>d=0</m> (i.e., if the plane
       goes through the origin), the equation become 
-      <me>
+      <md>
         (a,b,c) \cdot (x,y,z) = 0
-      </me>. 
+      </md>. 
       A dot product of zero indicates that the two inputs to the dot
       product are perpendicular. Therefore, a plane through the origin
       is the set of all vectors which are perpendicular to a fixed
@@ -152,9 +152,9 @@
         <p>
           Let <m>P</m> be a plane in <m>\RR^3</m> determined by the
           equation 
-          <me>
+          <md>
             (a,b,c) \cdot (x,y,z) = d 
-          </me>.
+          </md>.
           The vector <m>(a,b,c)</m> is called the <term>normal to the
           plane</term>. (Recall that <sq>normal</sq>, in mathematics,
           can be a synonym of <sq>perpendicular</sq>.) 
@@ -218,22 +218,22 @@
           I calculate the left side of the equation of the plane,
           which is the dot product of the point and the normal. This
           will result in the constant <m>d</m>. 
-          <me>
+          <md>
             (0,-2,-3) \cdot (1, -7, 5) = 0 + 14 - 15 = -1 = d
-          </me>
+          </md>
           So <m>d = -1</m>, which means I can write the equation of
           the plane. The coefficients of the variables are the
           coordinates of the normal.
-          <me>
+          <md>
             0x - 2y - 3z = -1 
-          </me>
+          </md>
           There is always some variability in how to write these
           equations. Since the <m>x</m> variable is multiplied by
           zero, I can remove it. I can also multiply both sides by
           <m>-1</m> if I wanted to.
-          <me>
+          <md>
             2y + 3z = 1 
-          </me>
+          </md>
           This equation also describes the same plane. 
         </p>
       </statement>
@@ -249,15 +249,15 @@
           I calculate the left side of the equation of the plane,
           which is the dot product of the point and the normal. This
           will result in the constant <m>d</m>. 
-          <me>
+          <md>
             (-5,1,4) \cdot (0,3,11) = 0 + 3 + 44 = 47 
-          </me>
+          </md>
           So <m>d = 47</m>, which means I can write the equation of
           the plane. The coefficients of the variables are the
           coordinates of the normal.
-          <me>
+          <md>
             -5x + y + 4z = 47
-          </me>
+          </md>
         </p>
       </statement>
     </example>
@@ -274,25 +274,25 @@
           I calculate the left side of the equation of the plane,
           which is the dot product of the point and the normal. This
           will result in the constant <m>d</m>. 
-          <me>
+          <md>
             \left( \frac{-4}{7},\frac{-11}{13}, \frac{5}{2} \right)
             \cdot \left( \frac{1}{4}, \frac{-1}{2}, \frac{-4}{13}
             \right) = \frac{-4}{28} + \frac{11}{26} - \frac{20}{26} =
             \frac{-89}{182} 
-          </me>
+          </md>
           So <m>d = -\frac{89}{182}</m>, which means I can write the
           equation of the plane. The coefficients of the variables are
           the coordinates of the normal.
-          <me>
+          <md>
             \frac{-4}{7} x - \frac{11}{13} y + \frac{5}{2} z =
             \frac{-89}{182} 
-          </me>
+          </md>
           Again, there is variability in how to write the equation. If
           I wanted to clear denominators, I could multiply through by
           <m>182</m>. 
-          <me>
+          <md>
             -104x - 154y + 455 z = -89 
-          </me>
+          </md>
           This equation also describes the same plane. 
         </p>
       </statement>
@@ -319,28 +319,28 @@
         <p>
           I take the cross product of the two local directions to ge
           the normal to the plane.
-          <me>
+          <md>
             (-1,-5,3) \times (-5,0,1) = (-5 - 0, -15 - (-1), 0 - 25) =
             (-5, -14, -25) 
-          </me>
+          </md>
           Then I proceed as before. 
           I calculate the left side of the equation of the plane,
           which is the dot product of the point and the normal. This
           will result in the constant <m>d</m>. 
-          <me>
+          <md>
             (-5, -14, -25) \cdot (0,3,7) = -42 - 175 = -217 
-          </me>
+          </md>
           So <m>d = -217</m>, which means I can write the
           equation of the plane. The coefficients of the variables are
           the coordinates of the normal.
-          <me>
+          <md>
             -5x - 14y - 25 z = -217
-          </me>
+          </md>
           I could multiply through by <m>-1</m> to make everything
           positive, if I wanted.
-          <me>
+          <md>
             5x + 14y + 25 z = 217
-          </me>
+          </md>
           This equation also describes the same plane. 
         </p>
       </statement>
@@ -396,20 +396,20 @@
           plane, which is the dot product of the point and the normal.
           This will result in the constant <m>d</m>. I use the first
           point, but I could use any of the three points. 
-          <me>
+          <md>
             (-2, -11, -58) \cdot (0,4,) = 0 - 44 + 0 = -44 
-          </me>
+          </md>
           So <m>d = -44</m>, which means I can write the
           equation of the plane. The coefficients of the variables are
           the coordinates of the normal.
-          <me>
+          <md>
             -2x - 11y - 58 z = -44
-          </me>
+          </md>
           I could multiply through by <m>-1</m> to make everything
           positive, if I wanted.
-          <me>
+          <md>
             2x + 11y + 58z = 44
-          </me>
+          </md>
           This equation also describes the same plane. 
         </p>
       </statement>

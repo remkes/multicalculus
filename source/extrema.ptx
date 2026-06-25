@@ -209,18 +209,18 @@
     </definition>
     <p>
       Here is the Hessian matrix for <m>f(x,y)</m> in two variables.
-      <me>
+      <md>
         \begin{pmatrix} 
           \dfrac{\del^2 f}{\del x^2} \amp \dfrac{\del^2 f}{\del y \del
           x} \\ 
           \dfrac{\del^2 f}{\del x \del y} \amp \dfrac{\del^2 f}{\del
           y^2} 
         \end{pmatrix}
-      </me>
+      </md>
     </p>
     <p>
       Here is the Hessian matrix for <m>f(x,y,z)</m> in three variables.
-      <me>
+      <md>
         \begin{pmatrix} 
           \dfrac{\del^2 f}{\del x^2} \amp \dfrac{\del^2 f}{\del y \del
           x} \amp \dfrac{\del^2 f}{\del z \del y} \\[1em]
@@ -229,7 +229,7 @@
           \dfrac{\del^2 f}{\del x \del z} \amp \dfrac{\del^2 f}{\del y
           \del z} \amp \dfrac{\del^2 f}{\del z^2} 
         \end{pmatrix} 
-      </me>
+      </md>
     </p>
     <p>
       Note that the Hessian is not the Jacobian matrix from before;
@@ -246,10 +246,10 @@
       <m>D</m> be the determinant of the Hessian matrix. For
       <m>f(x,y)</m>, <m>D</m> has the following form (using Clairaut's
       theorm to simplify the mixed partials).
-      <me>
+      <md>
         D = \frac{\del^2 f}{\del x^2} \frac{\del^2 f}{\del y^2} -
         \left( \frac{\del^2 f}{\del x \del y} \right)^2
-      </me>
+      </md>
     </p>
     <p>
       For functions of two variables, the determinant of the Hessian
